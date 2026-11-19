@@ -234,7 +234,7 @@ for x in t:
     maker_cta='<p class="quiet-feature"><a href="../sponsor.html">Get featured</a></p>'
     botstore=""
     out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{MAKER_CTA}}",maker_cta).replace("{{ABOUT}}",about).replace("{{BOTSTORE}}",botstore).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
-    for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(build_extras.utm(x.get("visit_url") or prim,x)),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
+    for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(build_extras.utm(x.get("visit_url") or prim,x)),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"MCPCHECK":build_extras.mcp_check_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
         out=out.replace("{{"+k+"}}",v)
     # Archived GitHub repo label (tools.json "repo_archived": true, owner-approved Oct 22 2026)
     if x.get("repo_archived"):
@@ -406,7 +406,11 @@ def _unique_words(x,rich):
     return len(re.findall(r"[A-Za-z0-9']+"," ".join(parts)))
 def _has_enrichment(x,rich):
     r=rich.get(x["slug"]) or {}
-    return any(r.get(k) for k in ENRICH_FIELDS)
+    if any(r.get(k) for k in ENRICH_FIELDS): return True
+    # First-party MCP probe (Nov 18 2026, indexing content): a server that responded
+    # to our own handshake counts as enriched. The daily new-page cap still gates
+    # admission in apply_thin_page_rule; this only changes the enriched signal.
+    return build_extras.mcp_responded(x["slug"])
 def _is_thin_tool(x,rich):
     """Short or boilerplate tool copy with no enrichment fields. Enriched pages are not thin."""
     if _has_enrichment(x,rich): return False

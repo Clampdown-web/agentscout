@@ -264,7 +264,9 @@ class ServerCase(unittest.TestCase):
         self.assertEqual(result["tool_count"], 2)
         self.assertEqual(result["http_status"], 200)
         self.assertIsNone(result["reason"])
-        self.assertNotIn("alpha", json.dumps(result))
+        # Nov 18 2026 (indexing content): the probe records the first 10 tool names so
+        # tool pages can show them in the "Our check" block. Names only, never descriptions.
+        self.assertEqual(result["tool_names"], ["alpha", "beta"])
         self.assertEqual(calls[0]["headers"]["user-agent"], mrr.USER_AGENT)
         for call in calls:
             self.assertNotIn("authorization", call["headers"])

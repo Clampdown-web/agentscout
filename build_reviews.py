@@ -18,6 +18,12 @@ def data():
     except Exception as ex: print("reviews: using cached reviews.json (",str(ex)[:80],")")
     try: return json.load(open("reviews.json")).get("tools",{})
     except Exception: return {}
+# Review-form disclaimer (Nov 18 2026, indexing content): identical boilerplate on every tool
+# page, so it renders after </main> (see run()), not inside the reviews form in <main>.
+# Single source for the copy; do not change the wording here.
+RV_NOTE = ('<p class="rv-note muted">Star ratings count right away; written reviews appear after a quick check. '
+           'One rating per tool per visitor. Reviews are from site visitors, not verified users. '
+           '<a href="../privacy.html#reviews">How reviews work</a></p>')
 def star_num(n):
     try: v=float(n)
     except (TypeError, ValueError): return 0
@@ -39,8 +45,7 @@ def section(x,d,V):
         f'<label for="rv-text">Short review (optional)</label><textarea id="rv-text" name="rv-text" rows="3" maxlength="600" placeholder="What worked, what didn\'t? 10 to 600 characters, no links."></textarea><span class="rv-cnt muted" aria-hidden="true">0 / 600</span>'
         f'<label for="rv-name">Name (optional)</label><input type="text" id="rv-name" name="rv-name" maxlength="40" autocomplete="nickname">'
         f'<div class="rv-hp" aria-hidden="true"><label for="rv-website">Leave this empty</label><input type="text" id="rv-website" name="website" tabindex="-1" autocomplete="off"></div>'
-        f'<p style="margin:14px 0 0"><button type="submit" class="btn primary">Submit rating</button></p><p class="rv-msg" role="status" aria-live="polite"></p>'
-        f'<p class="rv-note muted">Star ratings count right away; written reviews appear after a quick check. One rating per tool per visitor. Reviews are from site visitors, not verified users. <a href="../privacy.html#reviews">How reviews work</a></p></form>'
+        f'<p style="margin:14px 0 0"><button type="submit" class="btn primary">Submit rating</button></p><p class="rv-msg" role="status" aria-live="polite"></p></form>'
         f'<script src="../reviews.js?v={V}" defer></script></section>')
 def top(x,d):
     """Compact rating line under the tool name (Oct 18 2026): average + count, or 'No ratings yet', and a jump link to #reviews.
@@ -64,6 +69,11 @@ def run(t):
         h,k=re.subn(r'(<h2 style="font-size:16px;margin-bottom:12px">[^<]*alternatives</h2>)',lambda m:sec+m.group(1),h,count=1)
         if not k: h,k=re.subn(r'(<h2 style="font-size:16px;margin:36px 0 6px">Badge for makers</h2>)',lambda m:sec+m.group(1),h,count=1)
         ins+=k
+        # Review-form disclaimer (Nov 18 2026, indexing content): identical on every tool page,
+        # so it sits after </main> instead of inside the main element. Strip any copy left by
+        # an older build (inside the form or after </main>), then insert once, after </main>.
+        h=re.sub(r'<p class="rv-note[^>]*>.*?</p>','',h,flags=re.S)
+        if '</main>' in h: h=h.replace('</main>','</main>\n<aside class="wrap">'+RV_NOTE+'</aside>',1)
         d=D.get(s0) or {}; R=d.get("reviews") or []
         def fix(m):
             try: L=json.loads(m.group(1))

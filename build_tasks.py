@@ -213,6 +213,19 @@ def ai_ref_cta_html(d="../"):
         + __import__("build_sponsor").pay_note(d) +
         '</div></aside>'
     )
+def _cta_after_main(s, d):
+    """Refresh the ai-ref-cta aside and move it to after </main> (Nov 18 2026, indexing content).
+    The Submit Free / Fast-Track / sponsorship CTA is identical boilerplate on every list page
+    and must not sit inside the main element. Pages without a </main> keep the refreshed
+    aside where it is."""
+    m = re.search(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>', s, flags=re.S)
+    if not m:
+        return s
+    arc = ai_ref_cta_html(d)
+    if "</main>" in s:
+        s = s[:m.start()] + s[m.end():]
+        return s.replace("</main>", "</main>\n" + arc, 1)
+    return s[:m.start()] + arc + s[m.end():]
 def _subpages_write(m):
     urls=[]
     for sl,p_,sub,its in SUBP:
@@ -998,13 +1011,11 @@ def sitewide(t):
         if _phase2:
             s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>','',s,count=1,flags=re.S)
         elif 'class="ai-ref-cta"' in s:
-            s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>',lambda mm:ai_ref_cta_html(d),s,count=1,flags=re.S)
+            # Refresh the CTA and move it out of <main> (Nov 18 2026, indexing content).
+            s=_cta_after_main(s,d)
         elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","videos/","bot-store/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
-            _arc=ai_ref_cta_html(d)
-            if '<p class="disclose">' in s:
-                s=s.replace('<p class="disclose">',_arc+'<p class="disclose">',1)
-            elif "</main>" in s:
-                s=s.replace("</main>",_arc+"</main>",1)
+            # List pages get the CTA after </main>, not before the disclose line inside <main>.
+            s=s.replace("</main>","</main>\n"+ai_ref_cta_html(d),1)
         s=re.sub(r'<section id="nlblock".*?</section>',lambda mm:NL,s,count=1,flags=re.S)  # refresh older signup markup in place
         if 'id="nlblock"' not in s and "<footer" in s: s=s.replace("<footer",NL+"<footer",1)
         if f.startswith("tools/"):

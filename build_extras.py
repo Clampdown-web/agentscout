@@ -152,6 +152,89 @@ def badge_html(x,depth="../"):
             f'<p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? {note} It links to this page. <a href="{depth}badges.html">About badges</a></p>'
             f'<div class="badgebox" data-badgebox><div class="bdtabs" role="tablist" aria-label="Badge color"><button type="button" role="tab" id="bd-tab-light" class="on" data-bd="light" aria-selected="true" aria-controls="bd-panel-light" tabindex="0">Light</button><button type="button" role="tab" id="bd-tab-dark" data-bd="dark" aria-selected="false" aria-controls="bd-panel-dark" tabindex="-1">Dark</button></div>'
             f'<div class="embeds">{panels}{launch}</div></div>')
+# First-party MCP probe data (Nov 18 2026, indexing content): the daily probe writes one row per
+# server per run to data/mcp-health/*.jsonl. The latest row per slug is the source for the
+# "Our check" block on tool pages and for the responded-counts-as-enriched rule.
+_MCP_PROBES = None
+def latest_mcp_probes(root="."):
+    """Latest probe row per slug, keyed by slug. Rows are read newest-first by ts so the
+    first row seen for a slug wins; rows without a ts sort last. Cached per process."""
+    global _MCP_PROBES
+    if _MCP_PROBES is not None:
+        return _MCP_PROBES
+    import glob as _glob
+    import os as _os
+    rows = []
+    for path in sorted(_glob.glob(_os.path.join(root, "data", "mcp-health", "*.jsonl"))):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                for line in fh:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        row = json.loads(line)
+                    except ValueError:
+                        continue
+                    if isinstance(row, dict) and isinstance(row.get("slug"), str):
+                        rows.append(row)
+        except OSError:
+            continue
+    rows.sort(key=lambda r: str(r.get("ts") or ""), reverse=True)
+    out = {}
+    for row in rows:
+        out.setdefault(row["slug"], row)
+    _MCP_PROBES = out
+    return out
+def mcp_probe(slug, root="."):
+    """Latest probe row for one slug, or None when the server was never probed."""
+    return latest_mcp_probes(root).get(slug)
+def mcp_responded(slug, root="."):
+    """True when the latest probe row for the slug says the server responded."""
+    row = mcp_probe(slug, root)
+    return bool(row) and row.get("outcome") == "responded"
+_OUTCOME_LABEL = {"responded": "Responded", "needs_auth": "Needs auth", "failed": "Failed"}
+def _probe_date(ts):
+    try:
+        return datetime.date.fromisoformat(str(ts)[:10]).strftime("%b %-d, %Y")
+    except (ValueError, TypeError):
+        return str(ts or "")[:10]
+def mcp_check_html(x, root="."):
+    """'Our check' block for a probed MCP server (Nov 18 2026, indexing content).
+    Transport, last handshake outcome, tool count + first ~10 tool names, latency,
+    protocol version and probe date, all from the latest data/mcp-health row for
+    the slug. Empty string when the slug was never probed. Tool names are shown
+    only when the row records them (rows written before the probe recorded names
+    omit the line rather than claiming none)."""
+    row = mcp_probe(x.get("slug") or "", root)
+    if not row:
+        return ""
+    outcome = str(row.get("outcome") or "failed")
+    label = _OUTCOME_LABEL.get(outcome, outcome.replace("_", " ").title())
+    lines = [("Transport", str(row.get("transport") or "—")),
+             ("Last handshake", label)]
+    tc = row.get("tool_count")
+    if outcome == "responded" and isinstance(tc, int):
+        names = [n for n in (row.get("tool_names") or []) if isinstance(n, str) and n][:10]
+        tools = f"{tc} tool{'s' if tc != 1 else ''}"
+        if names:
+            tools += ": " + ", ".join(names)
+            if tc > len(names):
+                tools += f", and {tc - len(names)} more"
+        lines.append(("Tools", tools))
+    lat = row.get("latency_ms")
+    if isinstance(lat, int):
+        lines.append(("Latency", f"{lat:,} ms"))
+    pv = row.get("protocol_version")
+    if pv:
+        lines.append(("Protocol version", str(pv)))
+    lines.append(("Checked", _probe_date(row.get("ts"))))
+    items = "".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a, b in lines)
+    return (f'<section class="mcp-check" data-mcp-check="1" aria-label="Our MCP check">'
+            f'<h2 style="font-size:16px;margin-bottom:10px">Our check</h2>'
+            f'<p class="muted" style="margin:0 0 10px">We probed this MCP server ourselves with an initialize and tools/list handshake. '
+            f'The numbers below are from our latest probe, not the maker&rsquo;s claims.</p>'
+            f'<dl>{items}</dl></section>')
 def featured_generic(x):
     """Example Featured snippet. Same tool page as the Listed example; the SVG paths stay put."""
     url=f"{B}tools/{x['slug']}.html"
