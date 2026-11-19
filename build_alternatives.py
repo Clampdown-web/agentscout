@@ -65,7 +65,7 @@ def pages(t):
         uniq=words(intro)+sum(words(why(x,y,tg)) for y in alts)
         if uniq<MIN_WORDS: continue
         gf=lambda y:", ".join(m[s][0][1] for s in sorted(tm.get(y["slug"],[]),key=ORD.get)[:2]) or y["category"]
-        rows="".join(f'<tr><td><a href="../tools/{y["slug"]}.html">{e(y["name"])}</a></td><td>{e(y["pricing"])}</td><td>{e(lic(y)) or ("Yes" if y["pricing"] in S.OPEN else "No")}</td><td>{(format(y["github_stars"],",") if y.get("github_stars") else "—")}</td><td>{e(gf(y))}</td></tr>' for y in [x]+alts)
+        rows="".join(f'<tr><td><a href="../tools/{y["slug"]}.html">{e(y["name"])}</a>{X.sponsored_badge(y["slug"])}</td><td>{e(y["pricing"])}</td><td>{e(lic(y)) or ("Yes" if y["pricing"] in S.OPEN else "No")}</td><td>{(format(y["github_stars"],",") if y.get("github_stars") else "—")}</td><td>{e(gf(y))}</td></tr>' for y in [x]+alts)
         table=(f'<h2 style="font-size:18px;margin:28px 0 10px">{e(n)} vs alternatives at a glance</h2><div class="tablewrap"><table class="cmp"><thead><tr><th scope="col">Tool</th><th scope="col">Pricing</th><th scope="col">Open source / licence</th><th scope="col">GitHub stars</th><th scope="col">Good for</th></tr></thead><tbody>{rows}</tbody></table></div>')
         cmpl=[f'<a href="../compare/{c}.html">{e(X_n(t,c))}</a>' for c in sorted({X.cslug(a,b) for a,b in X.PAIRS if x["slug"] in (a,b)})]
         alts_os=sum(1 for y in alts if y["pricing"] in S.OPEN); alts_fr=sum(1 for y in alts if y["pricing"] in S.FREE)
@@ -74,11 +74,12 @@ def pages(t):
         if len(title)>70: title=f"{n} Alternatives (2026): {len(alts)} Tools · AgentScout"
         desc=f"Compare the {len(alts)} closest {n} alternatives in 2026 ({alts_os} open source, {alts_fr} free/freemium): {', '.join(y['name'] for y in alts[:3])}. Pricing & GitHub stars."
         if len(desc)>158: desc=f"Compare {len(alts)} {n} alternatives ({alts_os} open source, {alts_fr} free/freemium), including {', '.join(y['name'] for y in alts[:3])}. Verified pricing & stars."[:158]
+        spon=any(y["slug"] in X.sponsored_slugs() for y in [x]+alts)  # TASK-18: paid rows are labeled Sponsored in the table
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(n)} alternatives</div><section class="calm"><h1 style="text-align:left">{e(n)} alternatives (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p>'+(f'<p class="muted" style="margin:-4px 0 14px;font-size:14px">Looking for the open-source microservice workflow engine? See <a href="../tools/orkes.html">Orkes Conductor →</a>.</p>' if x["slug"]=="conductor" else "")+f'<ol style="padding-left:20px">{lines}</ol>{table}'
               +(f'<p style="margin-top:20px">Written comparisons</p><ul class="guide-list">{"".join(f"<li>{a}</li>" for a in cmpl)}</ul>' if cmpl else "")
               +f'<p style="margin-top:16px">More</p><ul class="guide-list"><li><a href="../tools/{x["slug"]}.html">{e(n)} listing</a></li><li><a href="../categories/{X.catslug(x["category"])}.html">All {e(x["category"])} tools</a></li><li><a href="index.html#alternatives">All alternatives pages</a></li></ul>'
-              f'<p class="disclose">Alternatives are picked from directory data only: same category plus shared tasks and sub-tasks. Pricing is as each maker states it; GitHub stars as recorded on each listing.</p></section>')
+              f'<p class="disclose">Alternatives are picked from directory data only: same category plus shared tasks and sub-tasks. Pricing is as each maker states it; GitHub stars as recorded on each listing.{" Rows labeled Sponsored are paid placements; the label does not change the ranking." if spon else ""}</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":f"{n} alternatives","description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":len(alts),"itemListElement":[{"@type":"ListItem","position":i+1,"name":y["name"],"url":f"{B}tools/{y['slug']}.html"} for i,y in enumerate(alts)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best lists","item":B+"best/"},{"@type":"ListItem","position":3,"name":f"{n} alternatives","item":canon}]}]}
@@ -89,6 +90,15 @@ def pages(t):
         # Never delete a published alternatives page (Oct 20 2026): the word-count gate above flips with data changes, which used to
         # remove pages like best/cognee-alternatives.html that are indexed. Pages not rebuilt this run keep their last good version.
         if b!="cursor-alternatives" and b not in keep: print("alternatives: kept existing (not rebuilt this run):",f)
+    # TASK-18: only the keep-list alternatives pages stay indexable. Every other
+    # *-alternatives page on disk (including stale pages not rebuilt this run) gets
+    # noindex,follow; kept pages have any noindex meta stripped. The sitemap filter
+    # in build_extras drops the same set, so the two stay in sync.
+    for f in glob.glob("best/*-alternatives.html"):
+        b=os.path.basename(f)[:-5]
+        s=open(f,encoding="utf-8").read()
+        new=X.add_noindex(s) if b not in X.kept_alternatives() else X.strip_noindex(s)
+        if new!=s: open(f,"w",encoding="utf-8").write(new)
     # tool page link (one line, no repeated list)
     for x,sl,k in made:
         p=f"tools/{x['slug']}.html"

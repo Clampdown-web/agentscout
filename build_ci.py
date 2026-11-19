@@ -87,8 +87,8 @@ def home(t):
           f'<li><a href="mcp/status/">{e(phrase)}</a></li>'
           '<li><a href="skills/">Agent Skills with install commands</a></li></ul>')
     s=_blk(s,"mcp",line,'</p><p class="quizcta">',after=False) if '<!--ci:mcp-->' not in s else re.sub(r"<!--ci:mcp-->.*?<!--/ci:mcp-->",f"<!--ci:mcp-->{line}<!--/ci:mcp-->",s,flags=re.S)
-    tot=len(t)
-    d=f"AgentScout: {tot:,} AI agent tools, including {n:,} MCP servers, link-checked daily. Coding agents, frameworks, browser use, voice and no-code."
+    # TASK-18: the homepage meta description carries no catalog total.
+    d="AgentScout: AI agent tools and MCP servers, link-checked daily. Coding agents, frameworks, browser use, voice and no-code."
     for a,k in (("name","description"),("property","og:description"),("name","twitter:description")):
         s=re.sub(rf'(<meta {a}="{k}" content=")[^"]*',lambda m:m.group(1)+e(d),s,count=1)
     s=re.sub(r'(<a href="categories/mcp-servers.html">)(?:<span data-live-mcp>)?\d[\d,]*(?:</span>)? MCP servers(</a>)',lambda m:m.group(1)+f'<span data-live-mcp>{n:,}</span> MCP servers'+m.group(2),s)

@@ -6,6 +6,7 @@
 Idempotent; runs after build_fresh and before build_listlogos so table tool names still get their 24x24 logos."""
 import glob, html, json, os, re, datetime, collections
 import build_api
+import build_extras as X  # TASK-18: sponsored_badge for the ranked comparison rows
 
 e = html.escape
 B = "https://agentscouthq.com/"
@@ -122,9 +123,9 @@ def block(rows, all_items, date, ranked_by_stars=True):
         f'<p class="qa"><b>Quick answer:</b> the top picks on this list, {how}, are {lst}{of}. '
         f'<b>At a glance:</b> {e(glance)} (last verified <time datetime="{date}">{_fmt(date)}</time>).</p>'
     )
-    ver = f'<p class="muted" style="font-size:13px;margin:0 0 14px">Verified on <time datetime="{date}">{_fmt(date)}</time>: every tool link on this page was checked by our daily link check. No paid placements.</p>'
+    ver = f'<p class="muted" style="font-size:13px;margin:0 0 14px">Verified on <time datetime="{date}">{_fmt(date)}</time>: every tool link on this page was checked by our daily link check. {"Rows labeled Sponsored are paid placements; the label does not change the ranking." if any(x["slug"] in X.sponsored_slugs() for x in rows) else "No paid placements."}</p>'
     trs = "".join(
-        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></th>'
+        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>{X.sponsored_badge(x["slug"])}</th>'
         f'<td>{e(x["pricing"])}</td><td>{e(", ".join(x.get("use_cases", [])[:2]) or x["category"])}</td>'
         f'<td>{"Yes" if x["pricing"] in OS else "No"}</td>'
         f'<td>{e(locality_label(x))}</td>'
@@ -267,12 +268,12 @@ def best_block(path, rows, all_items, date, ranked_by_stars, by):
     qa = f'<p class="qa"><b>Quick answer:</b> {linked}</p>' if plain else ""
     time = f'<time datetime="{dt}">{e(pretty)}</time>' if dt else e(pretty)
     trs = "".join(
-        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></th>'
+        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>{X.sponsored_badge(x["slug"])}</th>'
         f'<td>{e(x["pricing"])}</td><td>{e(", ".join(x.get("use_cases", [])[:2]) or x["category"])}</td>'
         f'<td>{"Yes" if x["pricing"] in OS else "No"}</td>'
         f'<td>{e(locality_label(x))}</td>'
         f'<td>{x["github_stars"]:,}</td></tr>' if x.get("github_stars") else
-        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></th>'
+        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>{X.sponsored_badge(x["slug"])}</th>'
         f'<td>{e(x["pricing"])}</td><td>{e(", ".join(x.get("use_cases", [])[:2]) or x["category"])}</td>'
         f'<td>{"Yes" if x["pricing"] in OS else "No"}</td>'
         f'<td>{e(locality_label(x))}</td><td></td></tr>'
@@ -288,7 +289,7 @@ def best_block(path, rows, all_items, date, ranked_by_stars, by):
     ) if rows else ""
     rank = (
         f'<p class="muted" style="margin:0 0 8px"><strong>How we rank:</strong> {e(how)}. '
-        "Stars and maturity come from each AgentScout listing. No vendor paid for a position.</p>"
+        f'Stars and maturity come from each AgentScout listing. {"Rows labeled Sponsored are paid placements; the label does not change the ranking." if any(x["slug"] in X.sponsored_slugs() for x in rows) else "No vendor paid for a position."}</p>'
     )
     updated = f'<p class="srcchecked" style="margin:0 0 14px">Updated / sources checked {time}.</p>'
     return f"<!--ci:aeo-->{qa}{tbl}{rank}{updated}<!--/ci:aeo-->", plain

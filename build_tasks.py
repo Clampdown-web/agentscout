@@ -301,7 +301,7 @@ def submit_page(t):
     import build_counts
     tools_pitch = build_counts.pitch_tools_label(m["tools_count"])
     canon=B+"submit.html"; cats=submit_categories(t); title="Submit an AI Tool or Get Featured ($0–$99) · AgentScout"
-    desc=f"Submit your AI agent tool or MCP server to AgentScout ({tools_pitch}). Free listing, $15 Fast-Track, $49 Category Pin, or $99/wk Sponsor."
+    desc="Submit your AI agent tool or MCP server to AgentScout. Free listing, $15 Fast-Track, $49 Category Pin, or $99/wk Sponsor."
     inp='style="width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;box-sizing:border-box"'
     def f(id,label,typ="text",req=True,extra=""): return f'<label style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="{id}">{label}{"" if req else " <span style=\"color:var(--faint);font-weight:400\">(optional)</span>"}</label><input id="{id}" name="{id}" type="{typ}" {"required" if req else ""} {extra} {inp}>'
     opts="".join(f'<option value="{e(c)}">{e(c)}</option>' for c in cats)

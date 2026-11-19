@@ -42,6 +42,71 @@ def su(u):
 
 # Standard outbound tracking on tool-page Visit buttons (owner-approved Oct 20 2026). Official-site links and JSON-LD stay clean.
 # Per-tool opt-out: tools.json "no_utm": true (for sites that break on query params).
+# Paid placements (Nov 18 2026, indexing hygiene): outbound links to these tools' own
+# hosts carry rel="sponsored" (Google paid-link disclosure). The list lives in
+# data/sponsored_links.json so later tasks can reuse it.
+_SPONSORED=None
+def sponsored_slugs():
+    global _SPONSORED
+    if _SPONSORED is None:
+        try: _SPONSORED=set(json.load(open("data/sponsored_links.json")).get("slugs") or [])
+        except Exception: _SPONSORED=set()
+    return _SPONSORED
+def _host_of(u):
+    h=re.sub(r"^https?://","",str(u or "")).split("/")[0].split("?")[0].lower()
+    return h[4:] if h.startswith("www.") else h
+def sponsored_rel(html,slug,host):
+    """Add rel="sponsored" to outbound links to this tool's own host (listed slugs only).
+
+    Only rewrites rel="noopener noreferrer" anchors whose href host matches the
+    tool's host (www-insensitive); other links and unlisted slugs are untouched.
+    Later passes must not strip it: they rewrite blocks, nav and scripts, never rel.
+    """
+    if slug not in sponsored_slugs() or not host: return html
+    want=_host_of(host)
+    def _fix(m):
+        tag=m.group(0)
+        hm=re.search(r'href="([^"]+)"',tag)
+        if not hm or _host_of(hm.group(1))!=want: return tag
+        if 'rel="noopener noreferrer"' not in tag: return tag
+        return tag.replace('rel="noopener noreferrer"','rel="sponsored noopener noreferrer"',1)
+    return re.sub(r'<a\b[^>]*>',_fix,html)
+def visit_rel(slug):
+    """rel for a tool's outbound Visit link: sponsored for listed slugs, plain otherwise."""
+    return "sponsored noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
+def sponsored_badge(slug):
+    """Visible 'Sponsored' badge for a paid placement shown in a /best or /compare table (TASK-18)."""
+    return ' <span class="b">Sponsored</span>' if slug in sponsored_slugs() else ""
+# Indexing quality (TASK-18): which alternatives pages stay indexable, and which URLs
+# must never reach sitemap.xml. The keep list lives in data/index_keep_alternatives.json
+# so it can change without touching code.
+_KEPT_ALTS=None
+def kept_alternatives():
+    global _KEPT_ALTS
+    if _KEPT_ALTS is None:
+        try: _KEPT_ALTS=set(json.load(open("data/index_keep_alternatives.json")).get("keep") or [])
+        except Exception: _KEPT_ALTS=set()
+    return _KEPT_ALTS
+_STORY_RE=re.compile(r"^https://agentscouthq\.com/news/\d{4}/\d{2}/[^/]+\.html$")
+_ALT_RE=re.compile(r"^https://agentscouthq\.com/best/([a-z0-9-]+)-alternatives\.html$")
+def sitemap_drop(u):
+    """True when a URL must not appear in sitemap.xml (TASK-18): news story pages,
+    non-kept alternatives pages, and sponsor.html. Monthly news hubs, news.html and
+    the kept alternatives pages are unaffected."""
+    if u==B+"sponsor.html": return True
+    if _STORY_RE.match(u): return True
+    m=_ALT_RE.match(u)
+    if m and m.group(1)+"-alternatives" not in kept_alternatives(): return True
+    return False
+NOINDEX_TAG='<meta name="robots" content="noindex,follow">'
+def add_noindex(html):
+    """Insert a noindex,follow robots meta after <head>; idempotent (TASK-18)."""
+    if 'name="robots" content="noindex' in html[:4000]: return html
+    if "<head>" in html: return html.replace("<head>","<head>\n"+NOINDEX_TAG,1)
+    return NOINDEX_TAG+"\n"+html
+def strip_noindex(html):
+    """Remove a noindex robots meta (kept pages must stay indexable); idempotent (TASK-18)."""
+    return re.sub(r'\n?<meta name="robots" content="noindex[^"]*">\n?',"",html,count=1)
 UTM="utm_source=agentscout&utm_medium=referral&utm_campaign=directory"
 def utm(u,x=None):
     u=su(u)
@@ -201,8 +266,8 @@ def build(t):
         body=f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Compare</a> / {e(A["name"])} vs {e(Bt["name"])}</div>
 <section class="calm"><h1 style="text-align:left">{e(h1)}</h1>
 <p class="lede" style="margin-left:0;text-align:left">{f"Two closely related {e(A['category'])} tools" if A["category"]==Bt["category"] else f"A {e(A['category'])} tool and a {e(Bt['category'])} tool that overlap"}, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
-<div class="tablewrap"><table class="cmp"><thead><tr><th><span class="sr">Feature</span></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a></th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
-<tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td></tr></tbody></table></div>
+<div class="tablewrap"><table class="cmp"><thead><tr><th><span class="sr">Feature</span></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a>{sponsored_badge(a)}</th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a>{sponsored_badge(b)}</th></tr></thead><tbody>{rows}
+<tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="{visit_rel(a)}">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="{visit_rel(b)}">Visit ↗</a></td></tr></tbody></table></div>
 <p class="disclose">{"We don't run benchmarks. The recommendation below is based on the listing facts in this table, not on testing." if N else "We don't benchmark tools or rank one above the other here."} Check each official site for current pricing and features before you choose.</p>
 {faqh}{guide}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
         ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
@@ -245,8 +310,9 @@ def build(t):
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
     import build_guides; urls+=build_guides.pages()
+    urls=[u for u in urls if not sitemap_drop(u)]  # TASK-18: story pages, non-kept alternatives and sponsor.html leave the sitemap
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in [B,B+"feed.xml",B+"new.html",B+"quiz.html",B+"llms.txt",B+"llms-full.txt",B+"generate.html",B+"sponsor.html",B+"how-it-started.html",B+"mcp-test-report.html",B+"ai-visibility-check.html",B+"launches/"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
+    for u in [B,B+"feed.xml",B+"new.html",B+"quiz.html",B+"llms.txt",B+"llms-full.txt",B+"generate.html",B+"how-it-started.html",B+"mcp-test-report.html",B+"ai-visibility-check.html",B+"launches/"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}
         sm.append(f"  <url><loc>{u}</loc><lastmod>{max(today,_r.get('updated',today))}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))
@@ -312,11 +378,11 @@ def _mrr():
     if p not in sys.path: sys.path.insert(0,p)
     import mcp_response_rate as mrr
     return mrr
-def card(x,d="../"):
+def card(x,d="../",sponsored=False):
     attrs=health=""
     if x.get("category")=="MCP servers":
         m=_mrr(); attrs=m.responds_attrs(x["slug"]); health=m.badge_html_for(x["slug"])
-    return f'<a class="card tile" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+    return f'<a class="card tile" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{sponsored_badge(x["slug"]) if sponsored else ""}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -377,7 +443,7 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     _bar = _script = _list = ""
     if _mcp_best:
         _m=_mrr(); _bar=_m.responds_bar(); _script=_m.responds_script("../"); _list=' data-responds-list'
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x,sponsored=path.startswith("best/")) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
@@ -390,9 +456,10 @@ _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and co
   "e-commerce & retail":"AI e-commerce and retail agents","robotics & physical AI":"AI robotics and physical agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
 def fmt_n(n): return f"{int(n):,}"
-def cat_title(c,n): return f"{fmt_n(n)} best {cat_phrase(c)} (2026) · AgentScout"
+def cat_title(c,n): return f"Best {cat_phrase(c)} (2026) · AgentScout"  # TASK-18: no catalog total in the title ("3194 Best MCP Servers" is out)
 def mcp_client_copy(client, named, cat):
-    """Subset size for one MCP client, next to the live directory totals.
+    """Subset size for one MCP client. The meta description carries only the subset
+    count; the directory totals stay in the body lede (count_sentence, TASK-18).
 
     named mixes MCP servers with other tools whose listings mention the client.
     The directory totals are api/metrics.json, the same file the homepage reads.
@@ -408,7 +475,6 @@ def mcp_client_copy(client, named, cat):
         f"({n_mcp} are MCP servers), sorted by GitHub stars."
     )
     desc=clip_text(
-        f"As of {when}: {tools_n} tools and {mcp_n} MCP servers. "
         f"{n} listings say they work with {client} ({n_mcp} are MCP servers).",
         156,
     )
@@ -422,7 +488,7 @@ def seo(t,urls):
         items=[x for x in t if x["category"]==c]
         title=cat_title(c,n)
         _nm=', '.join(x['name'] for x in (agentic_first(f"categories/{catslug(c)}.html",newfirst(items)) if c in LEAD_CATS else items)[:3])
-        desc=next((d for d in (f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}."[:158])
+        desc=next((d for d in (f"Link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"Link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"Link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"Link-checked {cat_phrase(c)}, including {_nm}."[:158])
         import build_tasks as _bt,build_subtasks as _bs
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
@@ -447,7 +513,7 @@ def seo(t,urls):
         _more=[_by[s] for s in MEDIA_XLINK.get(c,[]) if s in _by]
         out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,({"MCP servers":"MCP servers and MCP tools","agent infra":"AI agent infrastructure tools"}.get(c) or (f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools")),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre,more=_more))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{fmt_n(n)} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
-    canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {fmt_n(len(t))} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
+    canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {fmt_n(len(t))} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)
     mcp=[x for x in t if x["category"]=="MCP servers" or "connect tools via MCP" in x["use_cases"]]

@@ -78,7 +78,7 @@ def item(i,x):
     if x.get("category")=="MCP servers":
         m=X._mrr(); attrs=m.responds_attrs(x["slug"]); health=m.badge_html_for(x["slug"])
     return (f'<li class="card tile"{attrs} style="list-style:none"><a class="stretch" href="../tools/{x["slug"]}.html" aria-label="{e(x["name"])}"></a><div class="ct">{X.ico(x)}<div class="tn"><h3>{i}. {e(x["name"])}</h3><div class="badges">'
-            f'<a class="b cat has-cico" href="../categories/{X.catslug(x["category"])}.html">{X.cico(x["category"])}{e(x["category"])}</a><span class="b">{e(x["pricing"])}</span>{health}{gs}</div></div></div>'
+            f'<a class="b cat has-cico" href="../categories/{X.catslug(x["category"])}.html">{X.cico(x["category"])}{e(x["category"])}</a><span class="b">{e(x["pricing"])}</span>{health}{gs}{X.sponsored_badge(x["slug"])}</div></div></div>'
             f'<p class="hook">{e(x["description"])}</p><p class="muted" style="font-size:12.5px;flex:0">Pricing (as stated): {e(x.get("pricing_detail") or x["pricing"])} · {e(x["maturity"])}</p></li>')
 def page(t,P,asof):
     s,h,f,how,cap,intro,see=P
@@ -189,7 +189,7 @@ def mcp_2026_page(t):
         rows.append(
             f'<li class="card tile"{_hm.responds_attrs(x["slug"])} style="list-style:none;min-width:0;max-width:100%">'
             f'<div class="ct">{X.ico(x)}<div class="tn"><h3>{i}. <a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></h3>'
-            f'<div class="badges"><span class="b">{e(x["pricing"])}</span><span class="b">{e(st["status"])}</span>{_hm.badge_html_for(x["slug"])}</div></div></div>'
+            f'<div class="badges"><span class="b">{e(x["pricing"])}</span><span class="b">{e(st["status"])}</span>{_hm.badge_html_for(x["slug"])}{X.sponsored_badge(x["slug"])}</div></div></div>'
             f'<p class="hook">{e(x["description"])}</p>'
             f'<p class="muted" style="font-size:12.5px;overflow-wrap:anywhere">{stars(x)} · Status {e(st["status"])}'
             +(f' ({e(st["detail"])})' if st.get("detail") else "")

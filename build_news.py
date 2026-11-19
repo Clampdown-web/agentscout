@@ -100,7 +100,9 @@ def pages(t):
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},
              {"@type":"ListItem","position":3,"name":_month(ym),"item":f"{B}news/{ym[:4]}/{ym[5:]}/"},{"@type":"ListItem","position":4,"name":x["title"][:110],"item":canon}]}]}
         s=X.shell(d,title,desc,canon,body,ld).replace('<meta property="og:type" content="article">',f'<meta property="og:type" content="article"><meta property="article:published_time" content="{e(x["date"])}"><meta property="article:section" content="AI agents">',1)
-        os.makedirs(os.path.dirname(x["page"]),exist_ok=True); open(x["page"],"w").write(stamp_assets(s)); urls.append(canon)
+        # TASK-18: story pages are noindex,follow and leave sitemap.xml. The monthly
+        # hubs and news.html stay indexable, so only they are returned.
+        os.makedirs(os.path.dirname(x["page"]),exist_ok=True); open(x["page"],"w").write(stamp_assets(X.add_noindex(s)))
     # monthly archives
     for ym,its in sorted(months.items(),reverse=True):
         d="../../../"; canon=f"{B}news/{ym[:4]}/{ym[5:]}/"; days={}
