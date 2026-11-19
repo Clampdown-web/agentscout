@@ -548,17 +548,25 @@ def _check_lengths(title, desc, h1, query, max_title=60):
         raise SystemExit("target query missing from title, H1, or description")
 
 
-def _ensure(path, snippet, anchor, slug, before=False):
-    """Add one contextual link. A later rebuild that already emits the href is left alone."""
+def _ensure(path, snippet, anchor, slug, before=False, fallbacks=()):
+    """Add one contextual link. A later rebuild that already emits the href is left alone.
+
+    fallbacks are tried when the preferred anchor is not on the page yet. A full
+    site build writes task and list pages before build_fresh and build_aeo, so
+    <p class="updated"> and <!--/ci:aeo--> are absent on the first pass.
+    """
     if not os.path.exists(path):
         return
     s = open(path, encoding="utf-8").read()
     if f"guides/{slug}.html" in s:
         return
-    if anchor not in s:
+    choices = [(anchor, before)] + [fb if isinstance(fb, tuple) else (fb, before) for fb in fallbacks]
+    hit = next(((a, b) for a, b in choices if a in s), None)
+    if not hit:
         raise SystemExit(f"guide link anchor missing in {path}")
-    repl = snippet + anchor if before else anchor + snippet
-    open(path, "w", encoding="utf-8").write(s.replace(anchor, repl, 1))
+    found, place_before = hit
+    repl = snippet + found if place_before else found + snippet
+    open(path, "w", encoding="utf-8").write(s.replace(found, repl, 1))
 
 
 def _link_existing():
@@ -623,10 +631,14 @@ def _crawl_link_existing():
         '<p style="margin:-12px 0 28px">If you are choosing Crawl4AI against Firecrawl or a hosted API, read '
         f'<a href="{CRAWL_HREF}">how to crawl websites for AI agents</a>.</p>'
     )
-    _ensure("tasks/web-scraping.html", note_tasks, '<p class="updated">', CRAWL_SLUG, before=True)
-    _ensure("tasks/browsing-the-web-web-scraping.html", note_tasks, '<p class="updated">', CRAWL_SLUG, before=True)
-    _ensure("s/free-ai-web-scraping-tools.html", note_free, "<!--/ci:aeo-->", CRAWL_SLUG)
-    _ensure("mcp/web-search-and-scraping-mcp-servers.html", note_mcp, "<!--/ci:aeo-->", CRAWL_SLUG)
+    _ensure("tasks/web-scraping.html", note_tasks, '<p class="updated">', CRAWL_SLUG, before=True,
+            fallbacks=('<p class="tcount"',))
+    _ensure("tasks/browsing-the-web-web-scraping.html", note_tasks, '<p class="updated">', CRAWL_SLUG, before=True,
+            fallbacks=('<div class="grid">',))
+    _ensure("s/free-ai-web-scraping-tools.html", note_free, "<!--/ci:aeo-->", CRAWL_SLUG,
+            fallbacks=(("<ol", True),))
+    _ensure("mcp/web-search-and-scraping-mcp-servers.html", note_mcp, "<!--/ci:aeo-->", CRAWL_SLUG,
+            fallbacks=(("<ol", True),))
     _ensure(
         "tools/firecrawl.html",
         note_firecrawl,

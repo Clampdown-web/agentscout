@@ -1,8 +1,8 @@
 {
  "version": 1,
- "generated": "2026-11-18T16:57:29Z",
- "updated": "2026-11-18T16:57:29Z",
- "last_checked": "2026-11-18",
+ "generated": "2026-11-19T03:33:17Z",
+ "updated": "2026-11-19T03:33:17Z",
+ "last_checked": "2026-11-19",
  "count": 5900,
  "total_tools": 5900,
  "tools": [
@@ -49451,7 +49451,7 @@
    "website": "https://kling.ai",
    "github": "https://github.com/klingai-tech/claude-plugin",
    "category": "video generation",
-   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips. A hosted MCP server at https://kling.ai/mcp/plugin, the endpoint in Kling's official Claude Code plugin and MCP Registry entry, lets compatible assistants run Kling image and video workflows. Users authorize a Kling account through OAuth, and generation consumes account credits. The official Claude Code plugin provides three Skills for request routing, image generation, and video generation.",
+   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips. Kling's MCP and CLI guide documents a remote HTTP server at https://kling.ai/mcp for international accounts: in Claude Code run claude mcp add --transport http klingai --scope user https://kling.ai/mcp, then /mcp and authorize the Kling account. Claude connectors use Customize, Connectors, Add custom connector, and the same URL. The official Claude Code plugin uses a different endpoint, https://kling.ai/mcp/plugin (claude plugin install kling-ai --marketplace klingai-tech/claude-plugin, then /mcp). Keep one connection. There is no API key, and generation spends account credits. The plugin adds three Skills for request routing, image generation and video generation.",
    "key_features": [
     "API: prepaid credit packages (per-second units)",
     "Active",
@@ -64212,19 +64212,19 @@
    "page": "https://agentscouthq.com/tools/phase.html"
   },
   {
-   "name": "Handsy",
-   "slug": "handsy",
-   "url": "https://handsy.tech/",
-   "website": "https://handsy.tech/",
+   "name": "Manina AI",
+   "slug": "manina-ai",
+   "url": "https://manina.ai/",
+   "website": "https://manina.ai/",
    "github": "https://github.com/onehumanbeing/esp32-iphone-agent",
    "category": "browser/computer use",
-   "description": "Lets an AI model use a real iPhone through a $7 ESP32 board that acts as a Bluetooth keyboard and mouse, tapping and typing through apps with no jailbreak and no computer attached.",
+   "description": "Manina AI (ESP32 iPhone Agent) lets an AI operate a real, unmodified iPhone. A $7 XIAO ESP32S3 board receives the screen through AirPlay Screen Mirroring and acts as a USB mouse and keyboard, so it can tap, swipe and type with no jailbreak. The iPhone app can run a goal on the phone, or Manina AI CLI connects an agent on your computer over Bluetooth.",
    "key_features": [
     "Open source",
     "Active",
     "4,115 GitHub stars",
     "Automate the browser",
-    "Automate workflows"
+    "Voice & phone calls"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -64250,11 +64250,11 @@
    "license": "",
    "tags": [
     "automate the browser",
-    "automate workflows"
+    "voice & phone calls"
    ],
    "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/handsy.png",
-   "page": "https://agentscouthq.com/tools/handsy.html"
+   "logo": "https://agentscouthq.com/assets/logos/manina-ai.png",
+   "page": "https://agentscouthq.com/tools/manina-ai.html"
   },
   {
    "name": "Doop",

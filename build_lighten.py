@@ -144,11 +144,21 @@ def grids(f,names):
             cards, i=_slices(s, m.end(), '<a class="card tile"', '</a>')
             if not s.startswith('</div>', i) or len(cards)<=K+4 or "".join(cards)!=s[m.end():i].strip():
                 continue
+            shown, deferred = cards[:K], cards[K:]
+            # MCP category: a thick response rate stays on the first page. The
+            # deferred file is unchecked servers only, so "Responds" sort can
+            # still find every measured server without loading the rest.
+            if f=="categories/mcp-servers.html":
+                hot=[c for c in cards if 'data-resp="1"' in c]
+                cold=[c for c in cards if 'data-resp="1"' not in c]
+                # Measured servers stay on the page, and the first screen still
+                # includes unchecked cards so the "Not yet checked" badge is visible.
+                shown, deferred = hot+cold[:K], cold[K:]
             out.append(s[pos:m.start()])
-            k=f"g{gi}"; gi+=1; J[k]="".join(cards[K:])
-            removed.extend(re.search(r'data-s="([^"]+)"',c).group(1) for c in cards[K:])
-            btn=f'<div class="morewrap" style="margin:14px 0 0;text-align:center"><button type="button" class="btn" data-more="{base}.more.json">Show all {len(cards):,} tools ({len(cards)-K:,} more)</button></div>'
-            out.append(s[m.start():m.end()-1]+f' data-mg="{k}" data-total="{len(cards)}">'+"".join(cards[:K])+"</div>"+btn)
+            k=f"g{gi}"; gi+=1; J[k]="".join(deferred)
+            removed.extend(re.search(r'data-s="([^"]+)"',c).group(1) for c in deferred)
+            btn=f'<div class="morewrap" style="margin:14px 0 0;text-align:center"><button type="button" class="btn" data-more="{base}.more.json">Show all {len(cards):,} tools ({len(deferred):,} more)</button></div>'
+            out.append(s[m.start():m.end()-1]+f' data-mg="{k}" data-total="{len(cards)}">'+"".join(shown)+"</div>"+btn)
             pos=i+len('</div>')
         out.append(s[pos:])
         return "".join(out)

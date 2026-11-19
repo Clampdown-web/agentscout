@@ -73,7 +73,8 @@ class HomepageCatalogTest(unittest.TestCase):
         self.assertLessEqual(cards, NEW_DATED_CARDS_MAX)
         self.assertGreater(cards, 0)
         self.assertIn("catalog-only", html)
-        self.assertIn('href="index.html#spanel"', html)
+        # Directory URL, not index.html (indexing hygiene). The link still opens the homepage search.
+        self.assertIn('href="./#spanel"', html)
         self.assertNotIn("5,071", html)
         # A catalog-only slug from the bulk import must not be a row.
         self.assertNotIn('href="tools/marimo.html"', html)
