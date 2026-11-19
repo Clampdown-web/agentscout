@@ -114,6 +114,12 @@ class SourceRulesTest(unittest.TestCase):
             pages.normalize_url(raw),
         )
 
+    def test_main_text_drops_a_script_whose_end_tag_has_space(self) -> None:
+        script = "<main><script>alert(1)</script ><p>Visible guide text</p></main>"
+        style = "<main><style>body{color:red}</style ><p>Visible guide text</p></main>"
+        self.assertEqual(pages.main_text(script), "Visible guide text")
+        self.assertEqual(pages.main_text(style), "Visible guide text")
+
     def test_reason_line_rejects_placeholders(self) -> None:
         self.assertIsNone(pages.reason_problem(REASON, ["guides/a.html"]))
         self.assertIsNotNone(pages.reason_problem("", ["guides/a.html"]))

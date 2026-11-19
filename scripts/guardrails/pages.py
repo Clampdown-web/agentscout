@@ -157,8 +157,10 @@ _HREF = re.compile(r"""\bhref\s*=\s*["']([^"']+)["']""", re.I)
 _CONTENT = re.compile(r"""\bcontent\s*=\s*["']([^"']*)["']""", re.I)
 _LOC = re.compile(r"<loc>\s*([^<]+?)\s*</loc>", re.I)
 _MAIN = re.compile(r"<main\b[^>]*>(.*?)</main>", re.I | re.S)
-_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.I | re.S)
-_STYLE = re.compile(r"<style\b[^>]*>.*?</style>", re.I | re.S)
+# The closing tag may carry whitespace, as in </script >. A bare </script>
+# misses that and is the CodeQL bad-tag-filter alert.
+_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script\b[^>]*>", re.I | re.S)
+_STYLE = re.compile(r"<style\b[^>]*>.*?</style\b[^>]*>", re.I | re.S)
 _COMMENT = re.compile(r"<!--.*?-->", re.S)
 _TAG = re.compile(r"<[^>]+>")
 _REASON = re.compile(r"(?im)^[ \t>*-]*Reason this page exists:[ \t]*(.*?)\s*$")
