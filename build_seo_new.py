@@ -248,6 +248,32 @@ def redirect_stub(html):
     return 'http-equiv="refresh"' in head or "location.replace(" in head
 
 
+# Hamburger drawer row. Same markup as the other menu rows. Chat bubble, same stroke style.
+# Placed directly after Bot Store. Not a top bar and not a footer link.
+_PROMPTS_MENU_ROW = (
+    '<a class="mrow" href="prompts/">'
+    '<span class="mico" aria-hidden="true">'
+    '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+    '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'
+    '</svg></span><span>Prompts</span></a>'
+)
+
+
+def ensure_prompts_menu_row(html):
+    """Put the Prompts row in the existing Menu drawer, directly after Bot Store.
+
+    Idempotent. The row is a relative prompts/ link so unify_all_nav_and_footer
+    can prefix it (../prompts/ from a subfolder). Footer markup is left alone.
+    """
+    html = html.replace(_PROMPTS_MENU_ROW, "")
+    needle = '<span>Bot Store</span></a>'
+    at = html.find(needle)
+    if at < 0:
+        raise SystemExit("menu is missing the Bot Store row; Prompts cannot be placed")
+    at += len(needle)
+    return html[:at] + _PROMPTS_MENU_ROW + html[at:]
+
+
 def canonical_index_html(idx_s=None):
     """index.html with the nav and footer reduced to the sitewide chrome.
 
@@ -268,7 +294,7 @@ def canonical_index_html(idx_s=None):
     # Bot Store is a neon pill inside the footer cluster. Only a footer that has no Bot Store link at all gets the plain fallback.
     if foot and 'bot-store/' not in foot.group(0):
         idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
-    return idx_s
+    return ensure_prompts_menu_row(idx_s)
 
 
 def chrome_for(depth_prefix, idx_html=None):

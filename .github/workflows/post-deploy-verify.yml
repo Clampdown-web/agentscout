@@ -1,0 +1,69 @@
+name: post-deploy verify
+
+# Live check after GitHub Pages publishes main.
+# pages-build-deployment is GitHub's built-in Pages workflow. This repo does
+# not define its own Pages workflow. workflow_run is what actually starts
+# after that workflow, because a deployment created with the built-in token
+# does not start other workflows. deployment_status is still wired for a
+# github-pages success on main in case GitHub delivers one.
+# A failed page fails this job so GitHub can email the repository owner.
+# IndexNow is pinged from scripts/indexnow_ping.py with the key file already
+# in the repo. No new secrets.
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  deployment_status:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: post-deploy-verify-${{ github.event.workflow_run.head_sha || github.event.deployment.sha }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: post-deploy verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Decide
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          DEPLOY_STATE: ${{ github.event.deployment_status.state }}
+          DEPLOY_ENV: ${{ github.event.deployment.environment }}
+          DEPLOY_REF: ${{ github.event.deployment.ref }}
+          DEPLOY_SHA: ${{ github.event.deployment.sha }}
+        run: |
+          set -euo pipefail
+          run=false
+          sha=""
+          if [ "$EVENT_NAME" = "workflow_run" ] && [ "$RUN_CONCLUSION" = "success" ] && [ "$HEAD_BRANCH" = "main" ]; then
+            run=true
+            sha="$HEAD_SHA"
+          elif [ "$EVENT_NAME" = "deployment_status" ] && [ "$DEPLOY_STATE" = "success" ] && [ "$DEPLOY_ENV" = "github-pages" ] && { [ "$DEPLOY_REF" = "refs/heads/main" ] || [ "$DEPLOY_REF" = "main" ]; }; then
+            run=true
+            sha="$DEPLOY_SHA"
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "post-deploy verify will run: $run ${sha}"
+
+      - name: Checkout deployed commit
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ steps.gate.outputs.sha }}
+          fetch-depth: 10
+          persist-credentials: false
+
+      - name: Verify changed pages and ping IndexNow
+        if: steps.gate.outputs.run == 'true'
+        env:
+          DEPLOY_SHA: ${{ steps.gate.outputs.sha }}
+        run: python3 scripts/guardrails/post_deploy.py
