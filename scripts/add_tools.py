@@ -148,7 +148,7 @@ def verify(row):
   pretty=name if (not repo or row[5] or any(ch.isupper() for ch in name)) else name.replace('-',' ').replace('_',' ').title()
   e={"name":pretty,"url":site or f"https://github.com/{repo}","description":desc,"category":cat,"pricing":pr,
      "maturity":"Mature" if (stars or 0)>=5000 else "Active","audience":aud,"featured":False,"new":True,
-     "verified":__import__('datetime').date.today().isoformat(),"added":__import__('datetime').date.today().isoformat(),"source":SOURCE,"pricing_detail":"","use_cases":[],
+     "verified":__import__('datetime').datetime.now(__import__('zoneinfo').ZoneInfo('America/Los_Angeles')).date().isoformat(),"added":__import__('datetime').datetime.now(__import__('zoneinfo').ZoneInfo('America/Los_Angeles')).date().isoformat(),"source":SOURCE,"pricing_detail":"","use_cases":[],
      "website":site,"github":f"https://github.com/{repo}" if repo else ""}
   listing_flags(e)
   if repo: e["repo"]=repo; e["github_stars"]=stars

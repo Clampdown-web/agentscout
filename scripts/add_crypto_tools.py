@@ -78,7 +78,7 @@ def main():
     if ap=="all": ok=None
     elif os.path.exists(ap): ok={slugify(l) for l in open(ap) if l.strip() and not l.startswith("#")}
     else: ok={slugify(s) for s in ap.split(",")}
-    t=json.load(open("tools.json")); K=keys(t); nid=max(x["id"] for x in t); today=datetime.date.today().isoformat()
+    t=json.load(open("tools.json")); K=keys(t); nid=max(x["id"] for x in t); today=datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date().isoformat()  # TASK-22: Pacific, not the container's UTC date
     added=[]; skipped={}
     for x in load_audit(audit):
         name=x.get("name","").strip(); slug=x.get("slug") or slugify(name)
