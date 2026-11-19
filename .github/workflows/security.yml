@@ -86,6 +86,7 @@ jobs:
           python3 scripts/test_takedown_blocklist.py
           python3 scripts/test_sponsored_links.py
           python3 scripts/test_indexing_hygiene.py
+          python3 scripts/test_crawl_guide.py
       - name: Share card images
         run: |
           python3 -m pip install --disable-pip-version-check pillow==13.0.0
