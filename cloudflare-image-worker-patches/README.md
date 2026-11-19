@@ -128,16 +128,30 @@ as a new tool listing, dropping `prompt` and `works_with`.
 (the worker source itself is not in this repo). Copy it into the
 agentscout-image project next to its entry file and call it at the top of
 `handleSubmit`, before the tool-only validation, passing the parsed JSON
-body and the same KV binding the worker uses for tool submissions
-(`sub:` keys):
+body, the same KV binding the worker uses for tool submissions
+(`sub:` keys), and the same mail send the tool-submission flow already
+uses:
 
 ```js
 import { handlePromptSubmit } from "./prompt-submit.js";
 
-// Pass the same KV binding the worker uses for tool submissions (sub: keys).
-const prompt = await handlePromptSubmit(body, env.<submissions-KV-binding>);
+// Pass the same KV binding the worker uses for tool submissions (sub: keys),
+// and the same mail send handleSubmit already uses for tool submissions
+// (same provider, same From, same credentials) — no new mail path.
+const prompt = await handlePromptSubmit(body, env.<submissions-KV-binding>, Date.now(), sendMail);
 if (prompt.handled) return Response.json(prompt.body, { status: prompt.status });
 ```
+
+`sendMail` takes one message, `{ to, subject, text, html }`: one
+"Prompt submission" email to support@agentscouthq.com per stored prompt,
+with the maker's text escaped in the HTML part. The module never calls
+a mail API itself, so it adds no secret or binding; the deployer confirms
+the live helper's name at the call site (the worker source is not in
+this repo). Omit the mailer and prompts are still stored and accepted,
+with `emailSent: false` in the response. A mail failure after a
+successful store still returns 200 with `emailSent: false` — the prompt
+is kept, the email is not retried, and the submission is never failed
+because a notification failed.
 
 A valid prompt is stored under a `prompt:<uuid>` key (90-day TTL) with
 `type: "prompt"` and subject `"Prompt submission"`, so it is never a new
