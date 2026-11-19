@@ -39,8 +39,10 @@ def _main_html(s):
 
 def _main_text(s):
     t = _main_html(s)
-    t = re.sub(r"<script\b.*?</script>", " ", t, flags=re.S)
-    t = re.sub(r"<textarea\b.*?</textarea>", " ", t, flags=re.S)
+    # Case-insensitive, and a closing tag may carry whitespace. A case-sensitive
+    # <script> filter misses <SCRIPT> and is the CodeQL bad-tag-filter alert.
+    t = re.sub(r"(?is)<script\b[^>]*>.*?</script\b[^>]*>", " ", t)
+    t = re.sub(r"(?is)<textarea\b[^>]*>.*?</textarea\b[^>]*>", " ", t)
     t = re.sub(r"<[^>]+>", " ", t)
     return _html.unescape(t)
 
