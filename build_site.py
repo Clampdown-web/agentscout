@@ -306,7 +306,8 @@ def _sync_index_counts():
         _lc = _dt.date(_y,_m,_d).strftime("%b %-d, %Y")
     except Exception:
         _lc = _dt.date.today().strftime("%b %-d, %Y")
-    s = re.sub(r"\b\d[\d,]* AI Agent Tools", f"{n:,} AI Agent Tools", s)
+    # TASK-18: the homepage title (and its og/twitter mirrors) carries no catalog total.
+    s = re.sub(r"AgentScout: \d[\d,]* AI Agent Tools &amp; MCP Servers \(2026\)", "AgentScout: AI Agent Tools & MCP Servers (2026)", s)
     s = re.sub(r"Directory of \d[\d,]* link-checked", f"Directory of {n:,} link-checked", s)
     s = re.sub(r'(id="s-eyebrow">)\d[\d,]* tools · Links checked [^<]+', lambda m: m.group(1) + f"{n:,} tools · Links checked " + _lc, s)
     s = re.sub(r'(id="s-total">)\d[\d,]*', lambda m: m.group(1) + f"{n:,}", s)

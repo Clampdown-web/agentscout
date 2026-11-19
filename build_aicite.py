@@ -755,7 +755,7 @@ def connect_page(t):
     M=_c["mcp_servers"]; canon=B+"mcp/connect.html"; uline=reach_sentence(mcp_reachability(t))
     _hs=handshake_sentence(); _hs_suf=(" "+_hs) if _hs else ""
     title="AgentScout MCP Server (com.agentscouthq/directory) · Connect"
-    desc=f"Official AgentScout MCP server (com.agentscouthq/directory): free, read-only access to {_c['tools']:,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
+    desc="Official AgentScout MCP server (com.agentscouthq/directory): free, read-only access to AI agent tools and MCP servers. No API key or x402 wallet."
     doc=live_mcp_tools()
     live_tools=doc["tools"]
     protocol=doc.get("protocolVersion") or ""

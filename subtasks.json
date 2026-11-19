@@ -4552,10 +4552,10 @@
 "images-design"
 ],
 "kling-ai": [
+"vector-rag",
 "agent-auth",
 "mcp-gateways",
-"mcp-servers",
-"workflow-automation",
+"terminal-agents",
 "video-editing",
 "video",
 "images-design",
@@ -5955,7 +5955,9 @@
 ],
 "manina-ai": [
 "voice-phone",
-"computer-use"
+"computer-use",
+"terminal-agents",
+"mobile"
 ],
 "doop": [
 "parallel-orchestration",

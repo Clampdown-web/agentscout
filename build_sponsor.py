@@ -1,5 +1,6 @@
 """Sponsor / Featured Packages page (sponsor.html) + shared live metrics (`api/metrics.json`) + reusable 4-tier package cards.
-Public, indexed, in sitemap.xml & llms.txt (Oct 26, 2026 — owner-approved 4-Tier Neon Lineup)."""
+Noindex, out of sitemap.xml (TASK-18 indexing quality, Nov 18 2026): the page still
+exists for makers who have the link, but it is not an indexed landing page."""
 import json, html, os, glob, re
 from datetime import datetime, timezone, timedelta
 
@@ -291,7 +292,7 @@ def build(t):
 {live_metrics_script("", catalog=False)}'''
 
     title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
-    desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {tools_pitch}."
+    desc = "List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk)."
 
     # Visible FAQ (the <details> block above) as structured data; keep the two in sync.
     faq = [
@@ -357,7 +358,8 @@ def build(t):
         ]
     }
     out = shell("", title, desc, "https://agentscouthq.com/sponsor.html", body, schema)
-    open("sponsor.html", "w").write(out)
+    import build_extras as _X
+    open("sponsor.html", "w").write(_X.add_noindex(out))  # TASK-18: sponsor.html is noindex,follow and out of the sitemap
 
 if __name__ == "__main__":
     build(json.load(open("tools.json")))
