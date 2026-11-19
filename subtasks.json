@@ -2488,9 +2488,13 @@
 ],
 "code-review-graph": [
 "codebase-context",
+"evals",
 "local-models"
 ],
-"mcp-for-blender": [],
+"mcp-for-blender": [
+"mcp-servers",
+"video-editing"
+],
 "xiaozhi-esp32": [
 "voice-phone"
 ],
@@ -2503,7 +2507,9 @@
 ],
 "repomix": [
 "codebase-context",
+"agent-auth",
 "mcp-servers",
+"local-models",
 "terminal-agents"
 ],
 "go-micro": [
@@ -3136,19 +3142,27 @@
 "scrapegraphai": [
 "vector-rag",
 "web-scraping",
-"agent-frameworks"
+"agent-frameworks",
+"local-models"
 ],
 "task-master": [
+"terminal-agents",
+"ide-agents",
+"video-editing",
 "mastering"
 ],
 "opik": [
 "vector-rag",
+"voice-phone",
 "observability",
 "evals",
-"workflow-automation",
-"local-models"
+"agent-frameworks"
 ],
-"guidance": [],
+"guidance": [
+"voice-phone",
+"agent-frameworks",
+"mixing"
+],
 "rocketride": [
 "workflow-automation",
 "terminal-agents",
@@ -3531,7 +3545,14 @@
 ],
 "assistant-ui": [],
 "agent-zero": [
-"agent-frameworks"
+"vector-rag",
+"research-agents",
+"browser-automation",
+"computer-use",
+"sandboxes",
+"local-models",
+"terminal-agents",
+"video-editing"
 ],
 "agi-0-by-agi-inc": [
 "computer-use",
@@ -4142,12 +4163,17 @@
 ],
 "supermemory": [
 "agent-memory",
-"mcp-servers",
-"local-models"
+"observability",
+"evals",
+"mcp-servers"
 ],
 "kilo-code": [
+"planning-tasks",
+"mcp-gateways",
+"local-models",
 "terminal-agents",
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "nango": [
 "voice-phone",
@@ -9274,8 +9300,8 @@
 "assetly": [],
 "routerah": [],
 "builditomi": [
-"browser-automation",
-"computer-use"
+"text-to-sql",
+"no-code-apps"
 ],
 "justblogged": [
 "observability",
@@ -20759,5 +20785,218 @@
 "voice-phone",
 "email-agents",
 "mcp-servers"
+],
+"solari": [
+"planning-tasks",
+"web-scraping",
+"browser-automation",
+"computer-use",
+"sandboxes",
+"observability",
+"evals",
+"vfx-compositing",
+"stem-separation"
+],
+"makeasong": [
+"planning-tasks",
+"stem-separation",
+"video",
+"images-design"
+],
+"the-engine": [
+"planning-tasks",
+"voice-phone",
+"email-agents",
+"sales-agents",
+"marketing-agents",
+"research-agents",
+"video"
+],
+"aicost": [
+"planning-tasks",
+"token-costs",
+"evals"
+],
+"manwe": [],
+"playableworld-ai": [
+"planning-tasks",
+"browser-automation",
+"video",
+"images-design"
+],
+"cedric": [
+"planning-tasks",
+"chat-app-agents",
+"email-agents",
+"sales-agents",
+"marketing-agents"
+],
+"datacircle": [
+"agent-payments",
+"planning-tasks",
+"voice-phone",
+"email-agents",
+"evals"
+],
+"syncbooster": [
+"planning-tasks",
+"marketing-agents",
+"mcp-servers"
+],
+"videosi": [
+"planning-tasks",
+"vfx-compositing",
+"color-upscaling",
+"video-editing",
+"mixing",
+"video",
+"images-design"
+],
+"macswarm": [
+"parallel-orchestration",
+"multi-agent",
+"local-models",
+"stem-separation",
+"mobile"
+],
+"scrapewise": [
+"web-scraping",
+"observability",
+"no-code-apps"
+],
+"vocotype": [
+"voice-phone",
+"mcp-servers",
+"local-models",
+"subtitles-transcripts",
+"dialogue-cleanup",
+"mixing",
+"video"
+],
+"brigade-lol": [
+"planning-tasks",
+"voice-phone",
+"sales-agents",
+"support-agents",
+"marketing-agents",
+"computer-use",
+"local-models",
+"personal-assistants"
+],
+"promptclay": [
+"trading-agents",
+"email-agents",
+"sales-agents",
+"computer-use",
+"agent-frameworks",
+"local-models",
+"images-design",
+"games"
+],
+"sabriel-ai": [
+"planning-tasks",
+"vector-rag",
+"sales-agents",
+"stem-separation"
+],
+"beatmusic": [
+"planning-tasks",
+"voice-phone",
+"video-editing",
+"foley-sfx",
+"ai-dubbing-voices",
+"stem-separation"
+],
+"beatmv": [
+"planning-tasks",
+"storyboards-previs",
+"color-upscaling",
+"video-editing",
+"video",
+"images-design",
+"rules-config"
+],
+"ai-sales-trainer": [
+"voice-phone",
+"sales-agents",
+"rules-config"
+],
+"venbit-content-agent": [
+"planning-tasks",
+"local-models",
+"images-design"
+],
+"pixel-agents": [
+"terminal-agents",
+"ide-agents",
+"video-editing"
+],
+"yearning": [
+"text-to-sql",
+"marketing-agents",
+"local-models",
+"images-design"
+],
+"lieflat-charts": [
+"vector-rag",
+"observability",
+"ide-agents",
+"video-editing",
+"images-design",
+"rules-config"
+],
+"jonex": [
+"vector-rag",
+"voice-phone",
+"local-models",
+"video"
+],
+"empryo": [
+"codebase-context",
+"agent-memory",
+"computer-use",
+"evals",
+"agent-frameworks",
+"terminal-agents",
+"video-editing"
+],
+"open-design-agent-kit": [
+"computer-use",
+"observability",
+"agent-frameworks",
+"vfx-compositing",
+"vocal-tuning",
+"images-design",
+"mobile",
+"rules-config"
+],
+"kubai-icons": [
+"rules-config"
+],
+"claude-animation-skills": [
+"local-models",
+"video-editing",
+"rules-config"
+],
+"boring-marketing-skills": [
+"email-agents",
+"marketing-agents",
+"research-agents",
+"local-models",
+"rules-config"
+],
+"stashdock": [
+"computer-use",
+"agent-frameworks",
+"local-models",
+"images-design",
+"rules-config"
+],
+"swipt": [
+"voice-phone",
+"workflow-automation",
+"agent-frameworks",
+"terminal-agents",
+"mobile"
 ]
 }

@@ -11,7 +11,7 @@
  },
  "scope": {
   "artifact_date": "2026-11-19",
-  "artifact_tools": 5901
+  "artifact_tools": 5932
  },
  "subject": "candidate-local",
  "note": "This checkout served at http://127.0.0.1:8767 on 2026-11-19, headless Chrome, cache disabled, wait=load. Not production. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
@@ -28,57 +28,57 @@
  "pages": [
   {
    "url": "http://127.0.0.1:8767/",
-   "lcp_ms": 216.0,
-   "cls": 0.021144575327625852,
-   "ttfb_ms": 7.300000000279397,
+   "lcp_ms": 196.0,
+   "cls": 0.02290030957563261,
+   "ttfb_ms": 4.199999988079071,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/bot-store/",
-   "lcp_ms": 132.0,
+   "lcp_ms": 200.0,
    "cls": 0.0,
-   "ttfb_ms": 3.1999999997206032,
+   "ttfb_ms": 6.9000000059604645,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/videos/",
-   "lcp_ms": 188.0,
+   "lcp_ms": 264.0,
    "cls": 0.0,
-   "ttfb_ms": 11.0,
+   "ttfb_ms": 1.7000000178813934,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/bot-templates/",
-   "lcp_ms": 192.0,
+   "lcp_ms": 360.0,
    "cls": 0.0,
-   "ttfb_ms": 5.399999999906868,
+   "ttfb_ms": 2.0999999940395355,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/mcp/",
-   "lcp_ms": 112.0,
+   "lcp_ms": 172.0,
    "cls": 0.0,
-   "ttfb_ms": 3.6000000000931323,
+   "ttfb_ms": 2.2000000178813934,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/tools/noteboxd.html",
-   "lcp_ms": 124.0,
-   "cls": 0.0007477497213270375,
-   "ttfb_ms": 4.600000000093132,
+   "lcp_ms": 264.0,
+   "cls": 0.0006628126333061164,
+   "ttfb_ms": 2.199999988079071,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/submit.html?notrack=1",
-   "lcp_ms": 160.0,
-   "cls": 0.00027928001639925497,
-   "ttfb_ms": 7.7000000001862645,
+   "lcp_ms": 276.0,
+   "cls": 0.0002475565256926459,
+   "ttfb_ms": 3.4000000059604645,
    "grade": "PASS",
    "wait": "load"
   }
