@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-20T00:15:26-08:00",
- "updated": "2026-11-20T00:15:26-08:00",
- "last_checked": "2026-11-19",
- "count": 5932,
- "total_tools": 5932,
+ "generated": "2026-11-20T05:28:35-08:00",
+ "updated": "2026-11-20T05:28:35-08:00",
+ "last_checked": "2026-11-20",
+ "count": 5962,
+ "total_tools": 5962,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -34959,17 +34959,16 @@
   {
    "name": "RocketRide",
    "slug": "rocketride",
-   "url": "https://rocketride.org/",
-   "website": "https://rocketride.org/",
+   "url": "https://rocketride.ai/",
+   "website": "https://rocketride.ai/",
    "github": "https://github.com/rocketride-org/rocketride-server",
    "category": "frameworks",
-   "description": "AI pipeline engine with a C++ core and 50+ Python nodes for building, debugging and deploying LLM workflows and agents from VS Code or the CLI.",
+   "description": "RocketRide is an MIT-licensed open-source AI meta-harness with a C++ runtime for building, testing and publishing durable agents. The README still documents its pipeline builder. On-prem is marked free; RocketRide Cloud is marked live. GitHub listed 20,008 stars on 20 Nov 2026.",
    "key_features": [
     "Open source",
     "Mature",
     "18,862 GitHub stars",
-    "Build an agent",
-    "Automate workflows"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -34991,10 +34990,9 @@
    "repo": "rocketride-org/rocketride-server",
    "github_stars": 18862,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "build an agent",
-    "automate workflows"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/rocketride.png",
@@ -46031,12 +46029,14 @@
    "website": "https://openworker.com/",
    "github": "https://github.com/andrewyng/openworker",
    "category": "personal agents",
-   "description": "Andrew Ng's open-source desktop coworker that turns requests into finished work in your files, Slack and calendar, asking before important actions.",
+   "description": "OpenWorker is an MIT-licensed desktop app for everyday work with AI agents, plus a Harness SDK for building agent apps. You bring the model. Actions that leave the machine, such as email or Slack, wait for approval on the homepage examples.",
    "key_features": [
     "Open source",
     "Mature",
     "18,751 GitHub stars",
-    "Control a computer"
+    "Control a computer",
+    "Build an agent",
+    "Automate workflows"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -46057,9 +46057,11 @@
    "repo": "andrewyng/openworker",
    "github_stars": 18751,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "control a computer"
+    "control a computer",
+    "build an agent",
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openworker.png",
@@ -98087,11 +98089,11 @@
    "category": "app builders",
    "description": "AI app builder: describe an idea in one sentence and Omi builds a working website or full-stack app with sign-in, a database and hosting.",
    "key_features": [
-    "15 million free credits with no card; Starter plan $19 a month",
+    "1,50,00,000 (15 million) free credits, no card; then Starter $19 a month and Pro $49 a month (builditomi.com/pricing, 20 Nov 2026). A first-month discount runs through 25 Dec 2026.",
     "Active",
-    "Research the web"
+    "Build apps without code"
    ],
-   "pricing": "15 million free credits with no card; Starter plan $19 a month",
+   "pricing": "1,50,00,000 (15 million) free credits, no card; then Starter $19 a month and Pro $49 a month (builditomi.com/pricing, 20 Nov 2026). A first-month discount runs through 25 Dec 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -98112,7 +98114,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web"
+    "build apps without code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/builditomi.png",
@@ -246323,31 +246325,27 @@
   {
    "name": "AIHOT",
    "slug": "aihot",
-   "url": "https://aihot.news/",
+   "url": "https://aihot.news/agent?tab=mcp",
    "website": "https://aihot.news/",
    "github": "https://github.com/KKKKhazix/AIHOT",
-   "category": "research",
-   "description": "AIHOT is the open-source engine behind the aihot.news AI news site: it pulls items from a list of sources every day, has an LLM pre-filter them, scores the likely-important ones twice independently, writes Chinese headlines and summaries, clusters reports of the same event and ranks them by how widely they are discussed, then publishes a daily brief. All prompts and selection thresholds are in the repo, so you can swap in your own sources and criteria to run a hot-topics site for any industry. MIT licensed, with an MCP endpoint for agents.",
+   "category": "MCP servers",
+   "description": "AIHOT publishes a read-only remote MCP for its Chinese AI news desk. The connect page at https://aihot.news/agent?tab=mcp says access is anonymous, with no API key, and shows the endpoint https://aihot.news/api/mcp with an aihot_actor query parameter. The page's own summary says the server exposes 11 tools for clients such as Claude Desktop and Cursor, covering the curated feed, hot list and daily brief. The older /api/public paths were retired on 31 Oct 2026 in favor of /api/v1. The listing stays catalog-only.",
    "key_features": [
-    "Open source",
+    "Anonymous read-only MCP, no API key, as stated on aihot.news/agent?tab=mcp on 20 Nov 2026.",
     "Mature",
     "10,724 GitHub stars",
-    "Write code",
-    "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Anonymous read-only MCP, no API key, as stated on aihot.news/agent?tab=mcp on 20 Nov 2026.",
    "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-11-15",
    "added": "2026-11-15",
    "source": "GitHub",
    "goals": [
-    "research",
-    "writing"
+    "automation"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -246356,11 +246354,9 @@
    "new_this_week": true,
    "repo": "KKKKhazix/AIHOT",
    "github_stars": 10724,
-   "open_source": true,
-   "license": "MIT",
+   "open_source": false,
+   "license": "",
    "tags": [
-    "write code",
-    "research the web",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -251102,6 +251098,1247 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/swipt.png",
    "page": "https://agentscouthq.com/tools/swipt.html"
+  },
+  {
+   "name": "Product Hunt MCP",
+   "slug": "product-hunt-mcp",
+   "url": "https://www.producthunt.com/mcp/install",
+   "website": "https://www.producthunt.com/mcp/install",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Product Hunt's own remote MCP server, at https://mcp.producthunt.com/mcp, connects Claude, ChatGPT, Codex, Cursor and VS Code to Product Hunt. You sign in with a Product Hunt account. The install page does not ask for an API key. From the assistant you can look up launches, read what the community said, and draft or schedule your own launch. The install guide was live on 20 Nov 2026.",
+   "key_features": [
+    "Free",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Product Hunt",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/product-hunt-mcp.png",
+   "page": "https://agentscouthq.com/tools/product-hunt-mcp.html"
+  },
+  {
+   "name": "Scalekit",
+   "slug": "scalekit",
+   "url": "https://www.scalekit.com/",
+   "website": "https://www.scalekit.com/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Scalekit AgentKit is an MCP gateway that gives an agent a scoped set of tools across many apps, with per-user tokens and a log of every tool use. On 20 Nov 2026 the pricing page listed a free plan at $0 a month, Growth at $99 a month (100,000 tool calls, then $0.50 per 1,000, and 50,000 trigger events, then $3 per 1,000) and Scale at $699 a month (500,000 tool calls and 200,000 trigger events on the same overage rates). Enterprise is custom. The homepage says the catalog covers 1,100+ apps.",
+   "key_features": [
+    "Free $0/mo; Growth $99/mo; Scale $699/mo (scalekit.com/pricing, 20 Nov 2026)",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free $0/mo; Growth $99/mo; Scale $699/mo (scalekit.com/pricing, 20 Nov 2026)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Product Hunt",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/scalekit.png",
+   "page": "https://agentscouthq.com/tools/scalekit.html"
+  },
+  {
+   "name": "TradingAgents",
+   "slug": "tradingagents",
+   "url": "https://tauric.ai/",
+   "website": "https://tauric.ai/",
+   "github": "https://github.com/TauricResearch/TradingAgents",
+   "category": "frameworks",
+   "description": "TradingAgents is Tauric Research's Apache-2.0 multi-agent framework for market research. The repository homepage, tauric.ai, describes market and filing data, agentic research, and one API plus an MCP server for Claude, ChatGPT, Claude Code, Codex and other assistants. GitHub listed 123,235 stars on 20 Nov 2026. This listing does not quote a hosted API price; none was published as a rate card on the homepage that day.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "123,235 GitHub stars",
+    "Write code",
+    "Build multi-agent systems",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "TauricResearch/TradingAgents",
+   "github_stars": 123235,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "build multi-agent systems",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tradingagents.png",
+   "page": "https://agentscouthq.com/tools/tradingagents.html"
+  },
+  {
+   "name": "Meetily",
+   "slug": "meetily",
+   "url": "https://meetily.ai/",
+   "website": "https://meetily.ai/",
+   "github": "https://github.com/Zackriya-Solutions/meetily",
+   "category": "productivity",
+   "description": "Meetily is an MIT-licensed meeting assistant that records, transcribes and summarizes on the device, and it does not put a bot into the meeting. It works with Zoom, Teams and Google Meet, including offline. On 20 Nov 2026 the pricing page billed Pro yearly at $120 per user and offered a 14-day trial. GitHub listed 32,908 stars.",
+   "key_features": [
+    "Pro billed yearly at $120 per user; 14-day trial (meetily.ai/pricing, 20 Nov 2026)",
+    "Mature",
+    "32,908 GitHub stars"
+   ],
+   "pricing": "Pro billed yearly at $120 per user; 14-day trial (meetily.ai/pricing, 20 Nov 2026)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Zackriya-Solutions/meetily",
+   "github_stars": 32908,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "productivity"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/meetily.png",
+   "page": "https://agentscouthq.com/tools/meetily.html"
+  },
+  {
+   "name": "Khoj",
+   "slug": "khoj",
+   "url": "https://khoj.dev/",
+   "website": "https://khoj.dev/",
+   "github": "https://github.com/khoj-ai/khoj",
+   "category": "personal agents",
+   "description": "Khoj is an AGPL-3.0, self-hostable second brain. The repository says you can ask questions of your own documents or the web, run custom agents and scheduled automations, and point it at a cloud or local model. GitHub listed 38,182 stars on 20 Nov 2026, last pushed 2 Aug 2026. The company site also presents Pipali, a desktop coworker in beta, and Open Paper, a research reading bench.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "38,182 GitHub stars",
+    "Write code",
+    "Control a computer",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "khoj-ai/khoj",
+   "github_stars": 38182,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "write code",
+    "control a computer",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/khoj.png",
+   "page": "https://agentscouthq.com/tools/khoj.html"
+  },
+  {
+   "name": "GEPA",
+   "slug": "gepa",
+   "url": "https://gepa-ai.github.io/gepa/",
+   "website": "https://gepa-ai.github.io/gepa/",
+   "github": "https://github.com/gepa-ai/gepa",
+   "category": "evals & observability",
+   "description": "GEPA is an MIT library for optimizing text you can score, including prompts, code and agent architectures, by letting a model reflect on what failed and searching for better variants. The docs site is the project homepage. GitHub listed 7,513 stars on gepa-ai/gepa on 20 Nov 2026.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7,513 GitHub stars",
+    "Write code",
+    "Build an agent",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "gepa-ai/gepa",
+   "github_stars": 7513,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "build an agent",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gepa.png",
+   "page": "https://agentscouthq.com/tools/gepa.html"
+  },
+  {
+   "name": "SillyTavern",
+   "slug": "sillytavern",
+   "url": "https://sillytavern.app/",
+   "website": "https://sillytavern.app/",
+   "github": "https://github.com/SillyTavern/SillyTavern",
+   "category": "personal agents",
+   "description": "SillyTavern is an AGPL-3.0 local interface for power users of text-generation models, with hooks for image generation and text-to-speech. It runs on your machine and the project says it stays free. GitHub listed 35,866 stars on 20 Nov 2026.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "35,866 GitHub stars",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "SillyTavern/SillyTavern",
+   "github_stars": 35866,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sillytavern.png",
+   "page": "https://agentscouthq.com/tools/sillytavern.html"
+  },
+  {
+   "name": "Marker",
+   "slug": "marker",
+   "url": "https://www.datalab.to/",
+   "website": "https://www.datalab.to/",
+   "github": "https://github.com/datalab-to/marker",
+   "category": "data & analytics",
+   "description": "Marker is Datalab's Apache-2.0 converter that turns PDFs, scans, spreadsheets and slides into Markdown, HTML or JSON for people and for agents. GitHub listed 40,995 stars on datalab-to/marker on 20 Nov 2026. Datalab's site says new users get free credit and then pay per 1,000 pages; this listing does not repeat a dollar rate.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "40,995 GitHub stars"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "datalab-to/marker",
+   "github_stars": 40995,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "data & analytics"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/marker.png",
+   "page": "https://agentscouthq.com/tools/marker.html"
+  },
+  {
+   "name": "Alsona",
+   "slug": "alsona",
+   "url": "https://alsona.com/",
+   "website": "https://alsona.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Alsona is a sales agent that watches buying signals, scores prospects against an ideal customer profile, and drafts LinkedIn and email outreach. On 20 Nov 2026 alsona.com/pricing listed a 7-day trial, Starter at $99 a month, Pro at $149 a month (API access and an MCP server) and Ultra at $499 a month.",
+   "key_features": [
+    "7-day trial; Starter $99/mo; Pro $149/mo; Ultra $499/mo (alsona.com/pricing, 20 Nov 2026)",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "7-day trial; Starter $99/mo; Pro $149/mo; Ultra $499/mo (alsona.com/pricing, 20 Nov 2026)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Product Hunt",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/alsona.png",
+   "page": "https://agentscouthq.com/tools/alsona.html"
+  },
+  {
+   "name": "AnyForge",
+   "slug": "anyforge",
+   "url": "https://anyforge.ai/",
+   "website": "https://anyforge.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "AnyForge is an agent workspace for a whole company: people set goals, agents propose a plan and open pull requests, and a person approves what ships. The homepage says you can start free and bring your own model keys. It also publishes a remote MCP at https://crew.anyforge.ai/api/mcp.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Build multi-agent systems",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "MCP registry",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/anyforge.png",
+   "page": "https://agentscouthq.com/tools/anyforge.html"
+  },
+  {
+   "name": "AdStar",
+   "slug": "adstar",
+   "url": "https://adstar.ai/",
+   "website": "https://adstar.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "AdStar turns a product into video ads and connects to the assistants people already use, including ChatGPT, Claude, Claude Code, Codex and Cursor. The homepage, checked 20 Nov 2026, did not publish a price, so this listing does not state one.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "MCP registry",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/adstar.png",
+   "page": "https://agentscouthq.com/tools/adstar.html"
+  },
+  {
+   "name": "AgenticCart",
+   "slug": "agenticcart",
+   "url": "https://agenticcart.ai/",
+   "website": "https://agenticcart.ai/",
+   "github": "",
+   "category": "e-commerce & retail",
+   "description": "AgenticCart makes a store's catalog findable and buyable inside ChatGPT, Claude, Gemini and other agents, without a second checkout. The homepage on 20 Nov 2026 offered a 7-day free trial that you can cancel.",
+   "key_features": [
+    "7-day free trial (agenticcart.ai, 20 Nov 2026)",
+    "Active"
+   ],
+   "pricing": "7-day free trial (agenticcart.ai, 20 Nov 2026)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "e-commerce & retail"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agenticcart.png",
+   "page": "https://agentscouthq.com/tools/agenticcart.html"
+  },
+  {
+   "name": "inference.sh",
+   "slug": "inference-sh",
+   "url": "https://inference.sh/",
+   "website": "https://inference.sh/",
+   "github": "",
+   "category": "agent infra",
+   "description": "inference.sh is a single API for running image, video, audio, text, search and 3D models, plus a skill registry and a path from a demo agent to a durable one with a person in the loop. It is listed in the official MCP registry. The homepage on 20 Nov 2026 did not show a rate card, so this listing does not state a price.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/inference-sh.png",
+   "page": "https://agentscouthq.com/tools/inference-sh.html"
+  },
+  {
+   "name": "APIPod",
+   "slug": "apipod",
+   "url": "https://www.apipod.ai/",
+   "website": "https://www.apipod.ai/",
+   "github": "",
+   "category": "image generation",
+   "description": "APIPod is one API, and a remote MCP, for image and video models from several providers. The site says you pay as you go, with no subscription, and you can start for free. It documents the MCP at https://api.apipod.ai/mcp for Claude, ChatGPT, Cursor and Codex.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Generate images"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "MCP registry",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/apipod.png",
+   "page": "https://agentscouthq.com/tools/apipod.html"
+  },
+  {
+   "name": "Creatify",
+   "slug": "creatify",
+   "url": "https://creatify.ai/",
+   "website": "https://creatify.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "Creatify generates image and video ads from a product URL, including avatar spots and ad variations, and its product navigation includes an MCP integration. The homepage says you can try it for free. The pricing page lists credit plans; the struck monthly and annual figures were not clear enough to quote, so this listing does not state a dollar price.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Product Hunt",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/creatify.png",
+   "page": "https://agentscouthq.com/tools/creatify.html"
+  },
+  {
+   "name": "Plurai",
+   "slug": "plurai",
+   "url": "https://www.plurai.ai/",
+   "website": "https://www.plurai.ai/",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Plurai is a simulation and post-training layer that runs an agent through scenarios so later runs get sharper. The homepage shows a plugin install for Claude Code, GitHub Copilot CLI, OpenAI Codex and Cursor. Hosted use is offered through a demo rather than a public rate card, so this listing does not state a price.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Product Hunt",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/plurai.png",
+   "page": "https://agentscouthq.com/tools/plurai.html"
+  },
+  {
+   "name": "TOON",
+   "slug": "toon",
+   "url": "https://toonformat.dev/",
+   "website": "https://toonformat.dev/",
+   "github": "https://github.com/toon-format/toon",
+   "category": "agent infra",
+   "description": "TOON (Token-Oriented Object Notation) is an MIT format for putting the JSON data model into an LLM prompt in fewer tokens. The project ships a spec, a CLI and implementations. Its own benchmark, published on toonformat.dev, says retrieval accuracy stays close to JSON (72.2% versus 71.4%) at 42.6% fewer tokens. GitHub listed 25,641 stars on toon-format/toon on 20 Nov 2026.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "25,641 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "toon-format/toon",
+   "github_stars": 25641,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "agent infra"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/toon.png",
+   "page": "https://agentscouthq.com/tools/toon.html"
+  },
+  {
+   "name": "AI Picture Checker",
+   "slug": "ai-picture-checker",
+   "url": "https://www.aipicturechecker.com/",
+   "website": "https://www.aipicturechecker.com/",
+   "github": "",
+   "category": "vision",
+   "description": "AI Picture Checker uploads a JPG, PNG or WebP, up to 20 MB, and returns a verdict on whether the picture looks AI-generated, with a confidence score and sometimes a guess at the source model. The site's FAQ says free checks have a daily limit and the checker shows how many are left. A specific daily number was not in the page source on 20 Nov 2026, so this listing does not state one.",
+   "key_features": [
+    "Free checks with a daily limit shown in the app (aipicturechecker.com, 20 Nov 2026). The page did not state the number.",
+    "Active",
+    "Computer vision"
+   ],
+   "pricing": "Free checks with a daily limit shown in the app (aipicturechecker.com, 20 Nov 2026). The page did not state the number.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "computer vision"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-picture-checker.png",
+   "page": "https://agentscouthq.com/tools/ai-picture-checker.html"
+  },
+  {
+   "name": "Twitch Emote Maker",
+   "slug": "twitch-emote-maker",
+   "url": "https://twitchemotemaker.app/",
+   "website": "https://twitchemotemaker.app/",
+   "github": "",
+   "category": "image generation",
+   "description": "Twitch Emote Maker, from Emote Studio, turns a text idea or a photo into a Twitch emote and previews it at 112, 56 and 28 pixels. Static emotes cost 30 credits and animated GIFs cost 80. On 20 Nov 2026 the pricing page sold a Starter pack at $5.99 for 250 credits, as one-time packs with no subscription. Failed generations return the credits. Sample files can be previewed before you buy.",
+   "key_features": [
+    "Starter $5.99 for 250 credits (twitchemotemaker.app/pricing, 20 Nov 2026). Static emotes 30 credits; animated GIFs 80.",
+    "Active",
+    "Generate images"
+   ],
+   "pricing": "Starter $5.99 for 250 credits (twitchemotemaker.app/pricing, 20 Nov 2026). Static emotes 30 credits; animated GIFs 80.",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/twitch-emote-maker.png",
+   "page": "https://agentscouthq.com/tools/twitch-emote-maker.html"
+  },
+  {
+   "name": "Kruqond",
+   "slug": "kruqond",
+   "url": "https://kruqond.com/",
+   "website": "https://kruqond.com/",
+   "github": "",
+   "category": "research",
+   "description": "Kruqond is an AI search engine that queries public web pages, social posts, comments, video and code and returns cited results. The homepage offers 5 free searches with no sign-up. On 20 Nov 2026 the pricing page listed a monthly plan at $19 for 50 credits and an annual plan at $15 a month, billed $180 a year, for 700 credits.",
+   "key_features": [
+    "5 free searches, no sign-up. Monthly $19 for 50 credits; annual $15/mo billed $180/year for 700 credits (kruqond.com/pricing, 20 Nov 2026).",
+    "Active",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "5 free searches, no sign-up. Monthly $19 for 50 credits; annual $15/mo billed $180/year for 700 credits (kruqond.com/pricing, 20 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kruqond.png",
+   "page": "https://agentscouthq.com/tools/kruqond.html"
+  },
+  {
+   "name": "Nowah",
+   "slug": "nowah",
+   "url": "https://nowah.xyz/",
+   "website": "https://nowah.xyz/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Nowah is an AI travel agent for iPhone and Android. You describe a trip, paste a short-video link, or name a budget, and it proposes flights with live fares, builds an itinerary, and books only after you confirm and pay. It also tracks prices, checks visas and sells eSIMs. On 20 Nov 2026 Nowah Pro Monthly was $24.99 a month, and Pro Yearly was $79 for the first year, then $199 a year.",
+   "key_features": [
+    "Pro Monthly $24.99/mo; Pro Yearly $79 the first year, then $199/year (nowah.xyz/pricing, 20 Nov 2026).",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Pro Monthly $24.99/mo; Pro Yearly $79 the first year, then $199/year (nowah.xyz/pricing, 20 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nowah.png",
+   "page": "https://agentscouthq.com/tools/nowah.html"
+  },
+  {
+   "name": "TianDun",
+   "slug": "tiandun",
+   "url": "https://098899.cn/en/",
+   "website": "https://098899.cn/en/",
+   "github": "",
+   "category": "video generation",
+   "description": "TianDun is a video studio from Quanzhou TianDun Intelligent Things Tech that chains a brief, a template, images, speech, avatars and video into one plan. The English page lets you browse without an account and asks you to sign in to generate. A product-ad template is marked from about 1.2 credits, failed jobs are refunded, and credits are recharged in the app. No dollar price was on that page on 20 Nov 2026.",
+   "key_features": [
+    "Browse free; generation spends credits. A product-ad template is listed from about 1.2 credits (098899.cn/en, 20 Nov 2026). No dollar price on that page.",
+    "Active"
+   ],
+   "pricing": "Browse free; generation spends credits. A product-ad template is listed from about 1.2 credits (098899.cn/en, 20 Nov 2026). No dollar price on that page.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tiandun.png",
+   "page": "https://agentscouthq.com/tools/tiandun.html"
+  },
+  {
+   "name": "Valmera",
+   "slug": "valmera",
+   "url": "https://valmera.io/",
+   "website": "https://valmera.io/",
+   "github": "https://github.com/ABO3SKRALMASAOODI/valmera-mcp",
+   "category": "film & TV production",
+   "description": "Valmera is an AI video editor that turns a long talk or podcast into a short with captions, reframing and music, then exports an MP4. The same paid plans include a hosted MCP so Claude, ChatGPT or Cursor can drive the edit. The MCP page is https://valmera.io/mcp and the connector repo is ABO3SKRALMASAOODI/valmera-mcp. On 20 Nov 2026 Plus was $15 a month (500 credits), Pro $50 (1,500 credits) and Max $100 (4,000 credits). Annual billing is ten months' price for twelve: $150, $500 or $1,000. Example exports on the homepage carry a free-tier watermark.",
+   "key_features": [
+    "Plus $15/mo (500 credits), Pro $50/mo (1,500), Max $100/mo (4,000). Annual: $150, $500 or $1,000 (valmera.io/pricing, 20 Nov 2026). Free-tier exports show a watermark.",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "Plus $15/mo (500 credits), Pro $50/mo (1,500), Max $100/mo (4,000). Annual: $150, $500 or $1,000 (valmera.io/pricing, 20 Nov 2026). Free-tier exports show a watermark.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ABO3SKRALMASAOODI/valmera-mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/valmera.png",
+   "page": "https://agentscouthq.com/tools/valmera.html"
+  },
+  {
+   "name": "NextlerAI",
+   "slug": "nextlerai",
+   "url": "https://nextlerai.com/",
+   "website": "https://nextlerai.com/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "NextlerAI builds a website, a web app or an iOS and Android app from a short description of the business and what a visitor should do. The public page, in Estonian and English, starts from example projects such as a menu, a portfolio or an event page, and the English description says you start with a free account. No dollar price was on the page on 20 Nov 2026.",
+   "key_features": [
+    "Free to start. No dollar price on nextlerai.com on 20 Nov 2026.",
+    "Active",
+    "Write code",
+    "Research the web",
+    "Build apps without code"
+   ],
+   "pricing": "Free to start. No dollar price on nextlerai.com on 20 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nextlerai.png",
+   "page": "https://agentscouthq.com/tools/nextlerai.html"
+  },
+  {
+   "name": "APT Video AI",
+   "slug": "apt-video-ai",
+   "url": "https://aptvideoai.app/",
+   "website": "https://aptvideoai.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "APT Video AI makes a short music video from two photos on a fixed pink-studio template: one person at the drums, one singing, with the template audio already in the file. A clip is about 13 seconds in landscape or portrait and costs 26 credits. The page says $9.90 is two videos, paid once, with no subscription. Photos are described as staying on the device until you sign in.",
+   "key_features": [
+    "26 credits per video; $9.90 is two videos; one-time, no subscription (aptvideoai.app, 20 Nov 2026).",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "26 credits per video; $9.90 is two videos; one-time, no subscription (aptvideoai.app, 20 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/apt-video-ai.png",
+   "page": "https://agentscouthq.com/tools/apt-video-ai.html"
+  },
+  {
+   "name": "VideoEnhancer",
+   "slug": "videoenhancer",
+   "url": "https://videoenhancer.app/",
+   "website": "https://videoenhancer.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "VideoEnhancer upscales video in the browser with FlashVSR to 1080p, 2K or 4K, and uses Real-ESRGAN for still images. A 5-second trial is free; longer processing is paid. Video HD accepts MP4 up to 120 seconds and 500 MB, with no watermark. On 20 Nov 2026 the pricing page listed Basic at $19.90 a month for 1,660 credits ($0.012 a credit) and Premium at $39.90 a month for 4,000 credits ($0.01 a credit). One-time packs start at $30 for 1,000 credits.",
+   "key_features": [
+    "5-second free trial. Basic $19.90/mo (1,660 credits); Premium $39.90/mo (4,000 credits). Packs from $30 for 1,000 credits (videoenhancer.app/pricing, 20 Nov 2026).",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "5-second free trial. Basic $19.90/mo (1,660 credits); Premium $39.90/mo (4,000 credits). Packs from $30 for 1,000 credits (videoenhancer.app/pricing, 20 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/videoenhancer.png",
+   "page": "https://agentscouthq.com/tools/videoenhancer.html"
+  },
+  {
+   "name": "imageat",
+   "slug": "imageat",
+   "url": "https://imageat.com/",
+   "website": "https://imageat.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "imageat is an agentic studio for photos and video: you pick a model, edit on one canvas, and can call the same credits from an MCP connector or an API. Sign-up is free. On 20 Nov 2026 the pricing page showed monthly image allowances of 10, 30 and 100 on the tiers it displayed, with the MCP connector billed to an API balance. Dollar amounts on that page were not a single clean rate card, so they are not repeated here.",
+   "key_features": [
+    "Free signup. Pricing page shows monthly image allowances of 10, 30 and 100 on the displayed tiers (imageat.com/pricing, 20 Nov 2026).",
+    "Active",
+    "Generate images"
+   ],
+   "pricing": "Free signup. Pricing page shows monthly image allowances of 10, 30 and 100 on the displayed tiers (imageat.com/pricing, 20 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/imageat.png",
+   "page": "https://agentscouthq.com/tools/imageat.html"
+  },
+  {
+   "name": "AI Rap Video Forge",
+   "slug": "ai-rap-video-forge",
+   "url": "https://airapvideoforge.com/",
+   "website": "https://airapvideoforge.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "AI Rap Video Forge builds a short rap video from two photos and a prompt, on templates such as a studio, a neon street, a rooftop or a pet performance. You confirm you are 18 or older and have permission to use the photos. On 20 Nov 2026 the pricing page listed Basic at $9.90 for 30 credits, Pro at $19.90 for 70 credits and Studio at $29.90 for 110 credits. A 5-second clip is 10 credits, 10 seconds is 20 and 15 seconds is 30. Credits do not expire, and failed videos return them.",
+   "key_features": [
+    "Basic $9.90 / 30 credits; Pro $19.90 / 70; Studio $29.90 / 110 (airapvideoforge.com/pricing, 20 Nov 2026).",
+    "Active"
+   ],
+   "pricing": "Basic $9.90 / 30 credits; Pro $19.90 / 70; Studio $29.90 / 110 (airapvideoforge.com/pricing, 20 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-rap-video-forge.png",
+   "page": "https://agentscouthq.com/tools/ai-rap-video-forge.html"
+  },
+  {
+   "name": "Bitpont",
+   "slug": "bitpont",
+   "url": "https://www.bitpont.com/",
+   "website": "https://www.bitpont.com/",
+   "github": "",
+   "category": "crypto",
+   "description": "Bitpont is an onchain finance app for swaps, bridges, derivatives and earn positions, with a remote MCP for agents at https://www.bitpont.com/api/v1/mcp. The agent guides say a public read needs no API key, and a trade is signed by the agent's own wallet rather than by handing Bitpont the keys. Setup notes are at https://www.bitpont.com/help/ai-agents/ and the developer docs are at https://www.bitpont.com/developers/.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Reviewed submission",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bitpont.png",
+   "page": "https://agentscouthq.com/tools/bitpont.html"
+  },
+  {
+   "name": "AskSolique",
+   "slug": "asksolique",
+   "url": "https://asksolique.ai/",
+   "website": "https://asksolique.ai/",
+   "github": "",
+   "category": "legal & compliance",
+   "description": "AskSolique is an AI research workspace for India tax and company law. It answers from primary sources across income tax, GST, FEMA, corporate law, SEBI and customs, and it can turn that research into a deliverable. Browsing the regulatory library costs 0 credits. A 7-day trial needs no card. Paid use, quoted exclusive of GST on 20 Nov 2026, is a pack at ₹999 for 4,000 credits or ₹3,999 a month for 16,000 credits.",
+   "key_features": [
+    "7-day trial, no card. Pay as you go ₹999 + GST for 4,000 credits (7 days). Pro ₹3,999 + GST/mo for 16,000 credits (asksolique.ai/pricing, 20 Nov 2026).",
+    "Active",
+    "Build an agent",
+    "Research the web"
+   ],
+   "pricing": "7-day trial, no card. Pay as you go ₹999 + GST for 4,000 credits (7 days). Pro ₹3,999 + GST/mo for 16,000 credits (asksolique.ai/pricing, 20 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-20",
+   "added": "2026-11-20",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/asksolique.png",
+   "page": "https://agentscouthq.com/tools/asksolique.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-20"
   }
  ]
 }

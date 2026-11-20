@@ -874,6 +874,10 @@ components:
               date:
                 type: "string"
               tool:
+                type:
+                  - "null"
+                  - "string"
+              summary:
                 type: "string"
               page:
                 type: "string"
@@ -885,6 +889,7 @@ components:
               - "url"
               - "date"
               - "tool"
+              - "summary"
               - "page"
               - "page_url"
         generate:

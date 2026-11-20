@@ -316,6 +316,20 @@ class EntrypointTest(unittest.TestCase):
         pre = morning_audit.predeploy(root)
         self.assertTrue(any("cwv-seo-benchmark.json" in item and "missing" in item for item in pre.problems), pre.problems)
 
+    def test_video_guides_pair_is_not_a_duplicate_button(self):
+        allowed = (
+            '<a class="mrow" href="videos/"><span class="mico"></span><span>Video guides</span></a>'
+            '<div class="navpanel"><a href="videos/">Video guides</a><a href="best/">See all guides</a></div>'
+        )
+        self.assertEqual(morning_audit.duplicate_header_labels(allowed), [])
+        different_href = allowed.replace('<a href="videos/">Video guides</a>', '<a href="guides/">Video guides</a>', 1)
+        self.assertEqual(morning_audit.duplicate_header_labels(different_href), ["video guides"])
+        two_rows = (
+            '<a class="mrow" href="videos/"><span>Video guides</span></a>'
+            '<a class="mrow" href="videos/"><span>Video guides</span></a>'
+        )
+        self.assertEqual(morning_audit.duplicate_header_labels(two_rows), ["video guides"])
+
     def test_nav_mismatch_fails_the_predeploy_path(self):
         root = _fixture()
         page = (root / "videos" / "index.html").read_text(encoding="utf-8")
