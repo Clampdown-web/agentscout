@@ -3,11 +3,13 @@ Checks: duplicates (scripts/dedupe_check.py), off-topic share per list page (scr
 logos (scripts/check_logos.py, when present), no sideways scroll on phones (scripts/check_overflow.py), sponsor page stays noindex and out of the sitemap (PR #171). Stripe links stay."""
 import subprocess,sys,os,re
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-bad=[]
 def run(name,cmd):
     r=subprocess.run(cmd,capture_output=True,text=True); out=(r.stdout+r.stderr).strip().splitlines()
     print(f"[{'ok' if r.returncode==0 else 'FAIL'}] {name}: "+(out[-1] if out else ""))
-    if r.returncode: bad.append(name); print("\n".join("   "+l for l in out[-25:]))
+    if r.returncode:
+        print("\n".join("   "+l for l in out[-25:]))
+        print("RECHECK FAILED: "+name)
+        sys.exit(r.returncode or 1)
 run("dedupe",[sys.executable,"scripts/dedupe_check.py"])
 run("relevance",[sys.executable,"scripts/check_relevance.py","--strict","--write"])
 if os.path.exists("scripts/check_logos.py"): run("logos",[sys.executable,"scripts/check_logos.py"])
@@ -23,6 +25,8 @@ if os.path.exists("sponsor.html"):
     noindex='name="robots" content="noindex' in s
     ok=noindex and (not in_sitemap) and stripe_ok
     print(f"[{'ok' if ok else 'FAIL'}] sponsor page hidden: noindex={noindex}, in sitemap={in_sitemap}, stripe_links={stripe_ok}")
-    if not ok: bad.append("sponsor")
-print("RECHECK", "FAILED: "+", ".join(bad) if bad else "passed")
-sys.exit(1 if bad else 0)
+    if not ok:
+        print("RECHECK FAILED: sponsor")
+        sys.exit(1)
+print("RECHECK passed")
+sys.exit(0)

@@ -1,0 +1,3 @@
+# Packages the site build imports, plus Pagefind. requirements.txt is the audited set.
+-r requirements.txt
+pagefind==1.6.0

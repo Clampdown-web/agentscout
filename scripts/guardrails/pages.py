@@ -246,6 +246,61 @@ def is_generated_output(path: str) -> bool:
     return is_published_html(rel)
 
 
+# Files the site build rewrites. refresh-pr-builds keeps main's copy when one of
+# these conflicts, then runs the build so the pull request's source and data are
+# applied again. Published HTML (tools/, best/, compare/, and the other public
+# pages) stays is_generated_output, above. Do not add source catalogs here:
+# tools.json, tool_rich.json, and data/*.json that authors edit are not generated.
+REFRESH_GENERATED_EXACT = (
+    "llms.txt",
+    "llms-full.txt",
+    "openapi.json",
+    "openapi.yaml",
+    "og.png",
+    "server.json",
+    "status.json",
+    "data/lastmod.json",
+    "data/og_cache.json",
+    "data/mcp_snapshot.json",
+    "search/names.json",
+    "search/words.json",
+    "mcp-server/src/products_snapshot.json",
+    ".well-known/openapi.yaml",
+)
+REFRESH_GENERATED_PREFIXES = (
+    "pagefind/",
+    "og/",
+)
+
+
+def is_refresh_generated(path: str) -> bool:
+    """True when a merge conflict in this path can be rebuilt from source.
+
+    The guardrail's is_generated_output covers published HTML, sitemap.xml,
+    sitemap-core.xml, and free-tools-rest.html. The extra names are the other
+    build outputs page-update pull requests usually touch: api/*.json, root
+    sitemap-*.xml, the Pagefind index, lastmod state, share images, catalog
+    snapshots, and .well-known JSON.
+    """
+    rel = path.replace("\\", "/").strip()
+    if rel.startswith("./"):
+        rel = rel[2:]
+    if is_generated_output(rel):
+        return True
+    if rel in REFRESH_GENERATED_EXACT or rel.startswith(REFRESH_GENERATED_PREFIXES):
+        return True
+    parent, _, name = rel.rpartition("/")
+    if parent == "" and name.startswith("sitemap") and name.endswith(".xml"):
+        return True
+    if parent == "api" and name.endswith(".json"):
+        return True
+    if parent == ".well-known" and name.endswith(".json"):
+        return True
+    if parent == "cloudflare-mcp-worker" and name.endswith("_snapshot.json"):
+        return True
+    return False
+
+
 def source_outputs(path: str) -> tuple[str, ...] | None:
     """Output prefixes a changed source must refresh, or None when it is not a page source."""
     rel = path.replace("\\", "/")

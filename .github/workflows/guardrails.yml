@@ -6,12 +6,27 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize, reopened, edited]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Pull request number"
+        required: true
+        type: string
+      head_sha:
+        description: "Head commit to check"
+        required: true
+        type: string
+      base_sha:
+        description: "Base commit to diff against"
+        required: true
+        type: string
 
 permissions:
   contents: read
+  pull-requests: read
 
 concurrency:
-  group: guardrails-${{ github.event.pull_request.number }}
+  group: guardrails-${{ github.event_name == 'workflow_dispatch' && inputs.pr_number || github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -27,12 +42,15 @@ jobs:
           fetch-depth: 1
 
       - name: Fetch the pull request and recent main
+        env:
+          HEAD_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.head_sha || github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.base_sha || github.event.pull_request.base.sha }}
         run: |
           set -euo pipefail
-          git fetch --no-tags --depth=200 origin "${{ github.event.pull_request.head.sha }}"
+          git fetch --no-tags --depth=200 origin "${HEAD_SHA}"
           git fetch --no-tags --depth=500 origin "+refs/heads/main:refs/remotes/origin/main"
-          if ! git cat-file -e "${{ github.event.pull_request.base.sha }}^{commit}" 2>/dev/null; then
-            git fetch --no-tags --depth=200 origin "${{ github.event.pull_request.base.sha }}"
+          if ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            git fetch --no-tags --depth=200 origin "${BASE_SHA}"
           fi
 
       - name: Unit tests
@@ -40,8 +58,16 @@ jobs:
 
       - name: Check this pull request
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+          BASE_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.base_sha || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.head_sha || github.event.pull_request.head.sha }}
           MAIN_REF: origin/main
+          PR_NUMBER: ${{ github.event_name == 'workflow_dispatch' && inputs.pr_number || github.event.pull_request.number }}
           PR_BODY: ${{ github.event.pull_request.body }}
-        run: python3 scripts/guardrails/pr_check.py
+        run: |
+          set -euo pipefail
+          if [ -z "${PR_BODY}" ] && [ -n "${PR_NUMBER}" ]; then
+            PR_BODY="$(gh pr view "${PR_NUMBER}" --json body --jq .body)"
+            export PR_BODY
+          fi
+          python3 scripts/guardrails/pr_check.py
