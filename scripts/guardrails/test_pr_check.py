@@ -452,6 +452,34 @@ class LiveCheckTest(unittest.TestCase):
         self.assertTrue(any("no text in <main>" in item for item in problems))
         self.assertTrue(indexable)
 
+    def test_noindex_page_may_point_canonical_at_its_hub(self) -> None:
+        problems, indexable = post_deploy.page_problems(
+            "launches/page-2.html",
+            200,
+            {},
+            "<!doctype html><html><head><meta name=\"robots\" content=\"noindex,follow\">"
+            + f"<link rel=\"canonical\" href=\"{SITE}/launches/\"></head><body><main>Week list</main></body></html>",
+            f"{SITE}/launches/page-2.html",
+            {},
+            None,
+        )
+        self.assertEqual(problems, [])
+        self.assertFalse(indexable)
+
+    def test_indexable_page_still_needs_self_canonical(self) -> None:
+        problems, indexable = post_deploy.page_problems(
+            "guides/hub.html",
+            200,
+            {},
+            "<!doctype html><html><head>"
+            + f"<link rel=\"canonical\" href=\"{SITE}/guides/\"></head><body><main>Text</main></body></html>",
+            f"{SITE}/guides/hub.html",
+            {f"{SITE}/guides/hub.html": f"{SITE}/guides/hub.html"},
+            None,
+        )
+        self.assertTrue(any("canonical is" in item for item in problems))
+        self.assertTrue(indexable)
+
     def test_retry_accepts_a_page_after_cdn_lag(self) -> None:
         path = "guides/lag.html"
         url = f"{SITE}/{path}"

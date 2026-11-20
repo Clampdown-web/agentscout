@@ -9,6 +9,7 @@ Every agent news item gets a permanent page at /news/YYYY/MM/<slug>.html, plus m
   homepage box, news.html and api/sections.json link to the story pages.
 Called from build_extras.build() on every build_site.py run, before news.html is generated."""
 import json,os,re,html,datetime
+import pacific
 B="https://agentscouthq.com/"
 # Same cache-bust as build_tasks.sitewide(). Read the constant from the file so this
 # module can load while build_extras is still importing (build_tasks imports build_extras).
@@ -40,7 +41,7 @@ def history():
         if o is None:
             base=f'news/{x["date"][:4]}/{x["date"][5:7]}/{_slug(x["title"])}'; p=base+".html"; i=2
             while p in used: p=f"{base}-{i}.html"; i+=1
-            used.add(p); o=byu[x["url"]]={"url":x["url"],"page":p,"first_seen":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}; changed=True
+            used.add(p); o=byu[x["url"]]={"url":x["url"],"page":p,"first_seen":pacific.iso()}; changed=True
         for k in ("title","source","date","tool","summary"):
             if x.get(k) is not None and o.get(k)!=x[k]: o[k]=x[k]; changed=True
     items=sorted(byu.values(),key=lambda x:x["date"],reverse=True)
@@ -144,7 +145,7 @@ def _when(iso):
     try: d=datetime.datetime.fromisoformat(s)
     except ValueError: return None
     if d.tzinfo is None: d=d.replace(tzinfo=datetime.timezone.utc)
-    return d.astimezone(datetime.timezone.utc)
+    return d.astimezone(pacific.PT)
 def _local(url):
     if not str(url).startswith(B): return ""
     rel=url[len(B):].split("?",1)[0].split("#",1)[0]
@@ -186,12 +187,15 @@ def write_feed(tools=None):
     rows.sort(key=lambda z:z[0],reverse=True)
     if not rows: raise SystemExit("feed.xml: no items")
     built=max(z[0] for z in rows)
+    def _gmt(when):
+        # RSS pubDate is GMT. Story times are stored in Pacific for the pages.
+        return email.utils.format_datetime(when.astimezone(datetime.timezone.utc), usegmt=True)
     items="\n".join(
         "<item>"
         f"<title>{_xml(title)}</title>"
         f"<link>{_xml(url)}</link>"
         f"<guid isPermaLink=\"true\">{_xml(url)}</guid>"
-        f"<pubDate>{email.utils.format_datetime(when,usegmt=True)}</pubDate>"
+        f"<pubDate>{_gmt(when)}</pubDate>"
         f"<description>{_xml(desc)}</description>"
         "</item>"
         for when,title,url,desc in rows)
@@ -203,7 +207,7 @@ def write_feed(tools=None):
         f"<link>{B}</link>\n"
         "<description>Latest AI agent tools and agent news from AgentScout.</description>\n"
         "<language>en-us</language>\n"
-        f"<lastBuildDate>{email.utils.format_datetime(built,usegmt=True)}</lastBuildDate>\n"
+        f"<lastBuildDate>{email.utils.format_datetime(built.astimezone(datetime.timezone.utc),usegmt=True)}</lastBuildDate>\n"
         f'<atom:link href="{FEED}" rel="self" type="application/rss+xml"/>\n'
         f"{items}\n</channel>\n</rss>\n")
     root=ET.fromstring(doc)

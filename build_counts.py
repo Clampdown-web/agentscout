@@ -5,7 +5,8 @@ Writes data/site_counts.json. api/metrics.json and data/site_metrics.json are de
 /bot-templates/, not from a frozen sum of the source files.
 """
 import glob, json, os, re
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
+import pacific
 
 PATH = "data/site_counts.json"
 METRICS = "api/metrics.json"
@@ -13,7 +14,7 @@ SITE_METRICS = "data/site_metrics.json"
 
 
 def _now():
-    return datetime.now(timezone(timedelta(hours=-7)))
+    return pacific.now()
 
 
 def load_tools(path="tools.json"):

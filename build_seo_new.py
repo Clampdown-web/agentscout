@@ -159,7 +159,8 @@ def animation_cache_buster(n_tools=None):
     import datetime
     if n_tools is None:
         n_tools = len(json.load(open("tools.json", encoding="utf-8")))
-    return f"{datetime.date.today().strftime('%Y%m%d')}-{int(n_tools)}"
+    import pacific
+    return f"{pacific.today().strftime('%Y%m%d')}-{int(n_tools)}"
 
 
 def sync_animations(t=None):
@@ -180,7 +181,8 @@ def sync_animations(t=None):
     ]
     script = next((p for p in script_candidates if os.path.exists(p)), script_candidates[-1])
     script_mtime = int(os.path.getmtime(script)) if os.path.exists(script) else 0
-    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "bot_templates": n_bt, "free_tools": n_ft, "date": datetime.date.today().isoformat(), "script_mtime": script_mtime}
+    import pacific
+    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "bot_templates": n_bt, "free_tools": n_ft, "date": pacific.today().isoformat(), "script_mtime": script_mtime}
     old_state = {}
     if os.path.exists(state_file):
         try:
@@ -258,6 +260,47 @@ _PROMPTS_MENU_ROW = (
     '</svg></span><span>Prompts</span></a>'
 )
 
+# Play button, same stroke style as the other .mico icons. Placed directly after Prompts.
+_VIDEO_GUIDES_MENU_ROW = (
+    '<a class="mrow" href="videos/">'
+    '<span class="mico" aria-hidden="true">'
+    '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+    '<circle cx="12" cy="12" r="9"/><polygon points="10 8.5 16 12 10 15.5 10 8.5"/>'
+    '</svg></span><span>Video guides</span></a>'
+)
+
+
+def dedupe_menu_labels(html):
+    """One label per header menu control.
+
+    The drawer row "MCP servers" and the Categories chip used the same words,
+    and both "See all" links did too. morning_audit counts those repeated
+    labels as duplicate header menu buttons. Footer links are outside <nav>
+    and stay as they are. Idempotent.
+    """
+    m = re.search(r"<nav\b[^>]*>.*?</nav>", html, re.S)
+    if not m:
+        return html
+    nav = m.group(0)
+    new = re.sub(
+        r'(href="(?:\.\./|/)*categories/mcp-servers\.html">)MCP servers(</a>)',
+        r"\1All MCP servers\2",
+        nav,
+    )
+    new = re.sub(
+        r'(class="msee" href="(?:\.\./|/)*categories/">)See all(</a>)',
+        r"\1See all categories\2",
+        new,
+    )
+    new = re.sub(
+        r'(class="msee" href="(?:\.\./|/)*best/">)See all(</a>)',
+        r"\1See all guides\2",
+        new,
+    )
+    if new == nav:
+        return html
+    return html[:m.start()] + new + html[m.end():]
+
 
 def ensure_prompts_menu_row(html):
     """Put the Prompts row in the existing Menu drawer, directly after Bot Store.
@@ -274,6 +317,34 @@ def ensure_prompts_menu_row(html):
     return html[:at] + _PROMPTS_MENU_ROW + html[at:]
 
 
+def ensure_video_guides_menu(html):
+    """Put Video guides in the Menu drawer, directly after Prompts.
+
+    The Guides dropdown keeps a link to the same page, renamed from
+    Quick-start guides so both controls use one label: Video guides.
+    Idempotent. The row is a relative videos/ link so unify_all_nav_and_footer
+    can prefix it. Footer markup is left alone.
+    """
+    html = html.replace(_VIDEO_GUIDES_MENU_ROW, "")
+    needle = '<span>Prompts</span></a>'
+    at = html.find(needle)
+    if at < 0:
+        raise SystemExit("menu is missing the Prompts row; Video guides cannot be placed")
+    at += len(needle)
+    html = html[:at] + _VIDEO_GUIDES_MENU_ROW + html[at:]
+    html, n = re.subn(
+        r'(<div class="navpanel"><a href="videos/">)'
+        r'(?:Quick-start guides|Quick-Start Guides \(8\)|🎬 Guides|Videos|Video guides)'
+        r'(</a>)',
+        r'\1Video guides\2',
+        html,
+        count=1,
+    )
+    if n != 1:
+        raise SystemExit("Guides menu is missing the videos link to rename")
+    return html
+
+
 def canonical_index_html(idx_s=None):
     """index.html with the nav and footer reduced to the sitewide chrome.
 
@@ -285,7 +356,6 @@ def canonical_index_html(idx_s=None):
         with open("index.html", encoding="utf-8") as fh:
             idx_s = fh.read()
     idx_s = idx_s.replace('href="videos/">Videos</a>', 'href="videos/">🎬 Guides</a>')
-    idx_s = idx_s.replace('href="videos/">Video guides</a>', 'href="videos/">Quick-Start Guides (8)</a>')
     idx_s = idx_s.replace('🎬 How-To Video Guides (8) →', '🎬 Quick-Start Guides (8) →')
     idx_s = idx_s.replace('How-To Video Guides (8) →', 'Quick-Start Guides (8) →')
     idx_s = re.sub(r'\s*·\s*<a href="(?:\.\./)*mcp/">Best MCP servers by task</a>', '', idx_s)
@@ -294,7 +364,7 @@ def canonical_index_html(idx_s=None):
     # Bot Store is a neon pill inside the footer cluster. Only a footer that has no Bot Store link at all gets the plain fallback.
     if foot and 'bot-store/' not in foot.group(0):
         idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
-    return ensure_prompts_menu_row(idx_s)
+    return dedupe_menu_labels(ensure_video_guides_menu(ensure_prompts_menu_row(idx_s)))
 
 
 def chrome_for(depth_prefix, idx_html=None):

@@ -1,6 +1,31 @@
 """Write category <option>s into the homepage and /search/ panels at build time,
 so the Category dropdown is full before any JS or data loads (Oct 22 2026)."""
 import json, re, html
+NEWSLETTER_TUESDAY=(
+    ("Tuesday maker brief","Wednesday maker brief"),
+    ("every Tuesday","every Wednesday"),
+    ("Newsletter, every Tuesday","Newsletter, every Wednesday"),
+    ("want the Tuesday","want the Wednesday"),
+)
+def apply_wednesday_newsletter(root="."):
+    """The daily build used to leave Tuesday signup copy in pages this step never rewrote."""
+    import os
+    n=0
+    skip={".git","node_modules","pagefind","preview","bot-packages"}
+    for dirpath, dirs, files in os.walk(root):
+        dirs[:]=[d for d in dirs if d not in skip]
+        for fn in files:
+            if not fn.endswith(".html"): continue
+            path=os.path.join(dirpath, fn)
+            try: s=open(path,encoding="utf-8").read()
+            except OSError: continue
+            nxt=s
+            for old, new in NEWSLETTER_TUESDAY:
+                nxt=nxt.replace(old, new)
+            if nxt!=s:
+                open(path,"w",encoding="utf-8").write(nxt)
+                n+=1
+    return n
 def run(t=None):
     if t is None:
         d=json.load(open("tools.json",encoding="utf-8")); t=d if isinstance(d,list) else d["tools"]
@@ -13,6 +38,11 @@ def run(t=None):
         if not k: raise SystemExit(f"build_catopts: no #fcat in {f}")
         open(f,"w",encoding="utf-8").write(n)
     lighten(); agent_json(); refresh_rest_counts()
+    apply_wednesday_newsletter()
+    if __import__("os").path.exists("free-tools.html"):
+        s=open("free-tools.html",encoding="utf-8").read()
+        n=hoist_head_tags(s)
+        if n!=s: open("free-tools.html","w",encoding="utf-8").write(n)
     return len(cats)
 def refresh_rest_counts():
     """free-tools-rest.html is a stashed directory tail the splitter no longer rewrites.
@@ -84,9 +114,29 @@ def unwrap_fx_rest(s):
     else:
         s=s.replace("</ul><p id=\"fx-morep\"", hold+"</ul><p id=\"fx-morep\"", 1)
     return s
+def hoist_head_tags(s):
+    """Put title, meta description and canonical back in <head> if a later pass left them in the body."""
+    head_end=s.find("</head>")
+    if head_end<0: return s
+    patterns=(
+        r"<title>.*?</title>",
+        r'<meta name="description" content="[^"]*">',
+        r'<link rel="canonical" href="[^"]*">',
+    )
+    found=[]
+    for pat in patterns:
+        m=re.search(pat, s, re.S)
+        if m and m.start()>head_end:
+            found.append(m.group(0))
+    if not found: return s
+    for block in found:
+        s=s.replace(block, "", 1)
+    head_end=s.find("</head>")
+    return s[:head_end]+"".join(found)+s[head_end:]
 def move_big_ld(s):
-    """The directory ItemList is ~230KB in <head>, ahead of the intro paragraph that is the LCP."""
-    m=re.search(r'<script type="application/ld\+json">.{20000,}?</script>', s, re.S)
+    """The directory ItemList is ~230KB in <head>, ahead of the intro paragraph that is the LCP.
+    The match stops at the first </script> so it cannot swallow the title that follows a shorter JSON-LD block."""
+    m=re.search(r'<script type="application/ld\+json">(?:(?!</script>).){20000,}?</script>', s, re.S)
     if not m:
         return s
     block=m.group(0)
@@ -199,6 +249,7 @@ def mark_free_directory(s, page_size=50):
     s=stash_free_tail(s)
     s=move_big_ld(s)
     s=flush_free(s)
+    s=hoist_head_tags(s)
     return s
 def lighten():
     import re

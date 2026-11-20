@@ -33,13 +33,20 @@ def ptype(x):
     return "paid" if p else "unknown"
 def lstat(codes):
     if not codes: return ("not checked","")
+    nums=[(k,c) for k,c in codes.items() if isinstance(c,int)]
+    if not nums: return ("not checked","")
+    numd=dict(nums)
     worst=None
-    gh_ok=200<=codes.get("github",0)<400
-    for c in codes.values():
-        s=("ok" if 200<=c<400 or c==405 or (c in(401,403,429) and (gh_ok or len(codes)==1)) else "blocked" if c in(401,403,429) else "broken")
+    gh_ok=200<=numd.get("github",0)<400
+    n=len(nums)
+    for _,c in nums:
+        s=("ok" if 200<=c<400 or c==405 or (c in(401,403,429) and (gh_ok or n==1)) else "blocked" if c in(401,403,429) else "broken")
         if worst is None or ["ok","blocked","broken"].index(s)>["ok","blocked","broken"].index(worst): worst=s
-    return ({"ok":"OK","blocked":"Reachable, blocks automated checks","broken":"Not responding" if 0 in codes.values() else "Error"}[worst],
-            ", ".join(f"{k} {c if c else 'no response'}" for k,c in codes.items()))
+    bits=[f"{k} {c if c else 'no response'}" for k,c in nums]
+    for k,c in codes.items():
+        if not isinstance(c,int) and c: bits.append(str(c) if k=="note" else f"{k} {c}")
+    return ({"ok":"OK","blocked":"Reachable, blocks automated checks","broken":"Not responding" if 0 in numd.values() else "Error"}[worst],
+            ", ".join(bits))
 def mcp_uptime_line(t=None):
     """Same population as the homepage card: checked servers only."""
     return reach_sentence(mcp_reachability(t))
@@ -93,7 +100,7 @@ def reach_sentence(st):
     return line
 def methodology_plain():
     return ("Once a day, AgentScout requests every MCP server in the directory, including catalog-only listings, and, when it is a different link, its GitHub URL. "
-            "The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. "
+            "The request is HEAD, then GET, with a 20-second timeout. If that returns 403, 406, 429, or 5xx, or it fails on TLS, times out, or gets no response, it retries once with a browser user agent. An http URL that still returns 5xx is tried once as https, and a passing https response counts as OK and the row notes https works. A GitHub 404 does not mark the server down when the site URL is OK; the row notes github_404 instead. "
             "A server counts as live when its stored label is OK or Reachable, blocks automated checks. "
             "OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. "
             "Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. "
@@ -573,8 +580,18 @@ def stamp_mcp_pages(t=None):
         else:
             m=re.search(r"<h1\b[^>]*>.*?</h1>(\s*<div class=\"shareacts\">.*?</div>)?", s, flags=re.S)
             if m: s=s[:m.end()]+block+s[m.end():]
-            tail=tails.get(path) or (_h1_text(s) or "MCP servers on AgentScout")
-            meta=_fit_desc(sentence+" "+tail)
+            if path=="mcp/pricing.html":
+                # The reachability sentence is the quick answer in the body. It must
+                # not replace the meta description, which describes the pricing table.
+                import build_counts
+                cat=build_counts.metrics_catalog()
+                when=cat.get("updated_display") or cat.get("updated") or ""
+                M=mcp(t)
+                cnt={k:sum(1 for x in M if ptype(x)==k) for k in ("free","freemium","paid","unknown")}
+                meta=pricing_table_description(cnt, when)
+            else:
+                tail=tails.get(path) or (_h1_text(s) or "MCP servers on AgentScout")
+                meta=_fit_desc(sentence+" "+tail)
             s=_set_desc(s, meta)
         s=_patch_graph(s, st, meta, faq, slugs, names, allow_list=path!="mcp/connect.html")
         s=_beside_plain_reach_sentence(s, sentence, hs)
@@ -645,9 +662,18 @@ def hist_html(H):
         r.append(f'<li><b>{e(nice(h["date"]))}</b>: '+" ".join(e(c) for c in ch[:25])+more+"</li>")
     return "".join(r)+"</ul>"
 def tbl(head,rows):
-    return ('<div style="overflow-x:auto;max-width:100%"><table class="cmp-table" style="width:100%;border-collapse:collapse;font-size:14px"><thead><tr>'+
-            "".join(f'<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd">{h}</th>' for h in head)+"</tr></thead><tbody>"+
-            "".join("<tr>"+"".join(f'<td style="padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;overflow-wrap:anywhere">{c}</td>' for c in r)+"</tr>" for r in rows)+"</tbody></table></div>")
+    # Cell rules live in styles.css (.cmp-pricing). Repeating them on every cell
+    # made /mcp/pricing.html larger than the post-deploy fetch, so </main> never
+    # arrived and the checker reported an empty main.
+    return ('<div class="tablewrap"><table class="cmp-table cmp-pricing"><thead><tr>'+
+            "".join(f"<th>{h}</th>" for h in head)+"</tr></thead><tbody>"+
+            "".join("<tr>"+"".join(f"<td>{c}</td>" for c in r)+"</tr>" for r in rows)+"</tbody></table></div>")
+def pricing_table_description(cnt, when):
+    """Meta description for /mcp/pricing.html. Describes the table. No directory total."""
+    parts=[f"{cnt['free']:,} free", f"{cnt['freemium']:,} free with paid plans", f"{cnt['paid']:,} paid"]
+    if cnt.get("unknown"): parts.append(f"{cnt['unknown']:,} not stated")
+    desc=f"MCP server pricing as of {when}, as each maker states it: {', '.join(parts)}."
+    return _fit_desc(desc)
 def pages(t):
     LSD=json.load(open(LS)) if os.path.exists(LS) else {}
     H=history(t,LSD); M=mcp(t); upd=""
@@ -667,9 +693,8 @@ def pages(t):
     else:
         scope=f"the {len(M):,} MCP servers in this table ({mcp_n:,} in the directory)"
     # pricing. Directory totals come from api/metrics.json, the same file the homepage reads.
-    canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"
-    desc=f"As of {when}, AgentScout lists {tools_n:,} tools and {mcp_n:,} MCP servers. Pricing: {cnt['free']:,} free, {cnt['freemium']:,} free plus paid, {cnt['paid']:,} paid."
-    if len(desc)>158: desc=f"As of {when}: {tools_n:,} tools, {mcp_n:,} MCP servers. {cnt['free']:,} free, {cnt['freemium']:,} freemium, {cnt['paid']:,} paid."[:158]
+    canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"  # no catalog total in the title
+    desc=pricing_table_description(cnt, when)
     def stars_cell(x):
         n=x.get("github_stars")
         if not n: return "–"

@@ -1,5 +1,6 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
 import json,re,datetime
+import pacific
 import atexit as _ax0
 def _pf_last():
     import sys as _s
@@ -72,15 +73,18 @@ def sponsored_rel(html,slug,host):
         tag=m.group(0)
         hm=re.search(r'href="([^"]+)"',tag)
         if not hm or _host_of(hm.group(1))!=want: return tag
+        if 'rel="sponsored nofollow noopener noreferrer"' in tag: return tag
+        if 'rel="sponsored noopener noreferrer"' in tag:
+            return tag.replace('rel="sponsored noopener noreferrer"','rel="sponsored nofollow noopener noreferrer"',1)
         if 'rel="noopener noreferrer"' not in tag: return tag
-        return tag.replace('rel="noopener noreferrer"','rel="sponsored noopener noreferrer"',1)
+        return tag.replace('rel="noopener noreferrer"','rel="sponsored nofollow noopener noreferrer"',1)
     return re.sub(r'<a\b[^>]*>',_fix,html)
 def visit_rel(slug):
     """rel for a tool's outbound Visit link: sponsored for listed slugs, plain otherwise."""
-    return "sponsored noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
+    return "sponsored nofollow noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
 def sponsored_badge(slug):
-    """Visible 'Sponsored' badge for a paid placement shown in a /best or /compare table (TASK-18)."""
-    return ' <span class="b">Sponsored</span>' if slug in sponsored_slugs() else ""
+    """Visible affiliate label on a /best or /compare row. Grids do not use it."""
+    return ' <span class="b">Affiliate link</span>' if slug in sponsored_slugs() else ""
 # Indexing quality (TASK-18): which alternatives pages stay indexable, and which URLs
 # must never reach sitemap.xml. The keep list lives in data/index_keep_alternatives.json
 # so it can change without touching code.
@@ -93,6 +97,19 @@ def kept_alternatives():
     return _KEPT_ALTS
 _STORY_RE=re.compile(r"^https://agentscouthq\.com/news/\d{4}/\d{2}/[^/]+\.html$")
 _ALT_RE=re.compile(r"^https://agentscouthq\.com/best/([a-z0-9-]+)-alternatives\.html$")
+# Real free-tool pages. They stay indexable, so the sitemap writer has to list
+# them. build_growth appends them, then the next full sitemap rewrite dropped them.
+FREE_TOOL_SITEMAP=["free-tools/ai-tool-launch-day-checklist.html","free-tools/roast-my-ai-tool-listing.html"]
+def indexable_extra_urls():
+    """Canonical URLs of indexable pages the main sitemap loop does not build itself."""
+    import os
+    out=[]
+    for rel in FREE_TOOL_SITEMAP:
+        if not os.path.exists(rel): continue
+        head=open(rel,encoding="utf-8").read(4000)
+        if 'name="robots" content="noindex' in head or 'http-equiv="refresh"' in head: continue
+        out.append(B+rel)
+    return out
 def sitemap_drop(u):
     """True when a URL must not appear in sitemap.xml (TASK-18): news story pages,
     non-kept alternatives pages, and sponsor.html. Monthly news hubs, news.html and
@@ -311,14 +328,14 @@ def facts(x):
        ("GitHub stars",f'{x["github_stars"]:,}' if x.get("github_stars") is not None else "Not tracked"),("Use cases",", ".join(x["use_cases"])),("Link checked",x["verified"])]
     return f
 def build(t):
-    bs={y["slug"]:y for y in t}; today=datetime.datetime.now(datetime.timezone.utc).date().isoformat(); urls=[]
+    bs={y["slug"]:y for y in t}; today=pacific.today().isoformat(); urls=[]
     for a,b in PAIRS:
         A,Bt=bs[a],bs[b]; s=cslug(a,b); canon=f"{B}compare/{s}.html"
         title=f"{A['name']} vs {Bt['name']}: side-by-side comparison · AgentScout"
         desc=f"{A['name']} vs {Bt['name']} compared: pricing as stated by the makers, audience, maturity and use cases. {A['description']}"[:158]
         h1=f"{A['name']} vs {Bt['name']}"; faq=[]
         if s=="claude-code-vs-openai-codex-cli":
-            h1="Codex vs Claude Code (2026)"; title="Codex vs Claude Code (2026): OpenAI Codex CLI vs Claude Code compared · AgentScout"
+            h1="Codex vs Claude Code (2026)"; title="OpenAI Codex CLI vs Claude Code (2026) · AgentScout"
             desc="Codex vs Claude Code in 2026: OpenAI's open-source Codex CLI vs Anthropic's Claude Code, compared on pricing as stated, audience and maturity."
             faq=[("What is the difference between Codex and Claude Code?",f"Claude Code is {A['description'][0].lower()+A['description'][1:]} OpenAI Codex CLI is {Bt['description'][0].lower()+Bt['description'][1:]}"),
                  ("Is Codex CLI open source?",f"Yes. Our listing for OpenAI Codex CLI states its pricing as: {Bt['pricing_detail']}."),
@@ -414,6 +431,7 @@ def build(t):
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
     import build_guides; urls+=build_guides.pages()
     urls=[u for u in urls if not sitemap_drop(u)]  # TASK-18: story pages, non-kept alternatives and sponsor.html leave the sitemap
+    urls+=indexable_extra_urls()  # free tools the growth step publishes; a later full sitemap rewrite used to drop them
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B+s for s in SITEMAP_SEED]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         if sitemap_drop(u): continue
@@ -472,7 +490,7 @@ def write_core_sitemap(t):
     try: sm=open("sitemap.xml",encoding="utf-8").read()
     except Exception: sm=""
     have=set(re.findall(r"<loc>([^<]+)</loc>",sm))
-    today=datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    today=pacific.today().isoformat()
     urls=[u for u in core_sitemap_urls(t) if u in have]
     rows=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -547,7 +565,10 @@ def card(x,d="../",sponsored=False):
     attrs=health=""
     if x.get("category")=="MCP servers":
         m=_mrr(); attrs=m.responds_attrs(x["slug"]); health=m.badge_html_for(x["slug"])
-    return f'<a class="card tile" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{sponsored_badge(x["slug"]) if sponsored else ""}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+    disc=is_disc(x)
+    tag='<span class="b warn">Discontinued</span>' if disc else ""
+    cls="card tile is-disc" if disc else "card tile"
+    return f'<a class="{cls}" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{tag}{sponsored_badge(x["slug"]) if sponsored else ""}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -586,11 +607,21 @@ def agentic_first(path,items):
     """Media category pages (Oct 18, 2026) lead with agentic tools; the order is otherwise unchanged."""
     if path in {f"categories/{catslug(c)}.html" for c in LEAD_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
     return items
-def catbar(n, responds=False):
+def is_disc(x):
+    return "discontinued" in (x.get("maturity") or "").lower()
+def disc_count_html(n, hidden):
+    """Both numbers stay the catalog total. The note says how many cards the checkbox is hiding."""
+    return (f'<span class="when-disc-off">Showing {n:,} of {n:,} tools ({hidden:,} discontinued hidden)</span>'
+            f'<span class="when-disc-on">Showing {n:,} of {n:,} tools</span>')
+def disc_toggle():
+    return '<label class="fchk"><input type="checkbox" id="fdisc"> Show discontinued servers</label>'
+def catbar(n, responds=False, hidden_disc=0):
     opt='<option value="responds">Responds</option>' if responds else ''
+    toggle=disc_toggle() if hidden_disc else ''
+    count=disc_count_html(n, hidden_disc) if hidden_disc else f'Showing {n} of {n} tools'
     return ('<div class="filters cfilters" id="cfilters" role="group" aria-label="Filter and sort these tools"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option value="free">Free</option><option value="freeplan">Free or free plan</option><option value="freemium">Freemium</option><option value="paid">Paid</option><option value="unknown">Pricing not listed</option></select>'
- '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label><label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option>'+opt+'</select>'
- '<button type="button" class="chip" id="freset" hidden>Clear all filters</button></div><p class="count" id="ccount" aria-live="polite">Showing {n} of {n} tools</p><p class="snote muted" id="snote" hidden></p>').replace("{n}",str(n))
+ '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label>'+toggle+'<label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option>'+opt+'</select>'
+ '<button type="button" class="chip" id="freset" hidden>Clear all filters</button></div><p class="count" id="ccount" aria-live="polite">'+count+'</p><p class="snote muted" id="snote" hidden></p>')
 def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     canon=B+path
     rows=list(agentic_first(path,newfirst(items)))
@@ -598,6 +629,7 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     for x in more or []:
         if x["slug"] not in seen:
             rows.append(x); seen.add(x["slug"])
+    nd=sum(1 for x in rows if is_disc(x))
     listed=rows[:60] if path.startswith("categories/") and len(rows)>60 else rows
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","numberOfItems":len(listed),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(listed)]},
@@ -608,7 +640,8 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     _bar = _script = _list = ""
     if _mcp_best:
         _m=_mrr(); _bar=_m.responds_bar(); _script=_m.responds_script("../"); _list=' data-responds-list'
-    body=f'<div class="crumb"><a href="../">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x,sponsored=path.startswith("best/")) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    _discbar=catbar(len(items), responds=_mcp_cat, hidden_disc=nd) if path.startswith("categories/") else (disc_toggle()+'<p class="count">'+disc_count_html(len(rows), nd)+'</p>' if nd else "")
+    body=f'<div class="crumb"><a href="../">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{_discbar}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x,sponsored=path.startswith("best/")) for x in agentic_first(path,newfirst(rows)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
@@ -639,10 +672,12 @@ def mcp_client_copy(client, named, cat):
         f"These {n} listings say in their own listing or docs that they work with {e(client)} "
         f"({n_mcp} are MCP servers), sorted by GitHub stars."
     )
-    desc=clip_text(
-        f"{n} listings say they work with {client} ({n_mcp} are MCP servers).",
-        156,
+    desc=(
+        f"{n} listings work with {client} ({n_mcp} are MCP servers). "
+        f"Each links to its AgentScout page. Pricing is as stated. "
+        f"Affiliate links do not change the order."
     )
+    if len(desc)>160: desc=desc[:157].rstrip()+"..."
     return {"n":n,"n_mcp":n_mcp,"desc":desc,"count_sentence":count_sentence}
 def seo(t,urls):
     import os,collections
@@ -659,7 +694,8 @@ def seo(t,urls):
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
         _tc=[z for z in _tc if z[2]>=3][:14]
         _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({fmt_n(k)})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
-        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{fmt_n(n)} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
+        _nd=sum(1 for x in items if is_disc(x))
+        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{fmt_n(n)} {e(_cn)} in the AgentScout directory, each with a link-checked listing."+(f" {fmt_n(_nd)} discontinued hidden until you turn on Show discontinued servers." if _nd else "")
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
             import build_aicite as _bac
@@ -667,7 +703,7 @@ def seo(t,urls):
             _lede+=f' <strong>{e(_bac.reach_sentence(_bac.mcp_reachability(t)))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
             if _hs:
                 _lede+=" "+e(_hs)
-        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {fmt_n(n)} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
+        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {fmt_n(n)} {e(_cn)}{f" ({fmt_n(_nd)} discontinued hidden)" if _nd else ""}: {e(_bs.price_line(items))}.</p>'+_chips
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
             if _ws: _pre+=(f'<section id="wallet-safety" aria-labelledby="wallet-safety-h"><h2 id="wallet-safety-h" style="font-size:18px;margin:24px 0 6px">Wallet safety</h2>'

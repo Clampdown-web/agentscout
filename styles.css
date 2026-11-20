@@ -101,6 +101,7 @@ dl{margin:0;display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:
 .b{line-height:1.5;align-self:flex-start}.ucsel{height:34px;font-size:13px}
 .embeds{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}.embed{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:var(--card)}.embed img{max-width:100%;height:auto}.embed label{font-size:12px;color:var(--faint);font-weight:600}.embed textarea{width:100%;font:12px ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:8px;padding:8px;resize:vertical;box-sizing:border-box}.embed .btn{align-self:flex-start}
 .tablewrap{overflow-x:auto;margin:20px 0}table.cmp{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}table.cmp tbody th{color:var(--faint);font-weight:500;width:22%}table.cmp thead th{font-size:16px}
+table.cmp-pricing{width:100%;border-collapse:collapse;font-size:14px}table.cmp-pricing th,table.cmp-pricing td{text-align:left;padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;overflow-wrap:anywhere}table.cmp-pricing th{border-bottom-color:#ddd}
 /* nav + newsletter band */
 .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}img{max-width:100%;height:auto}
 @media(max-width:640px){nav .wrap{flex-wrap:wrap;gap:8px;height:auto;padding-top:8px;padding-bottom:6px}nav .links{width:100%;display:flex;overflow-x:auto;gap:14px;white-space:nowrap;padding-bottom:6px;font-size:14px}nav .links .btn{padding:6px 10px}}
@@ -480,6 +481,11 @@ footer a.navbt::before{content:'';width:14px;height:14px;flex:0 0 14px;backgroun
 @media(max-width:430px){nav .links a:not(.btn){padding:2px 0}nav .links{row-gap:2px}}
 /* search filters on home + category pages, bigger chip tap targets (Oct 21 2026) */
 .filters{display:flex;gap:8px 10px;flex-wrap:wrap;align-items:center;margin:0 0 4px;font-size:13px;color:var(--faint)}.filters .fchk{display:inline-flex;align-items:center;gap:6px;min-height:40px;color:var(--text);cursor:pointer}.filters .fchk input{width:18px;height:18px;margin:0}.filters select{min-height:40px}.snote{font-size:12.5px;margin:-6px 0 12px}.cfilters{margin:16px 0 6px}.card[hidden]{display:none}
+/* Discontinued listings stay in the HTML. The checkbox shows them with or without JS. */
+body:has(#fdisc):not(:has(#fdisc:checked)) .is-disc{display:none}
+body:has(#fdisc):not(:has(#fdisc:checked)) .when-disc-on{display:none}
+body:has(#fdisc:checked) .when-disc-off{display:none}
+label.fchk{display:inline-flex;align-items:center;gap:6px;min-height:40px;cursor:pointer}
 .chip{height:auto;min-height:40px}.chips{gap:8px}
 @media(max-width:640px){.filters select{flex:1 1 140px}.chip{min-height:44px}}
 /* unified nav search (Oct 21 2026) */
@@ -757,14 +763,15 @@ nav .links .navpills .npico,nav .links .navpills a.navsp .npico,nav .links .navp
 [data-theme=dark] .ai-ref-cta{border-color:#38bdf8;background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(91,91,247,.14));box-shadow:0 6px 20px rgba(14,165,233,.20)}
 .arc-body{flex:1 1 300px;min-width:0;font-size:13.8px;line-height:1.45;color:var(--text)}
 .arc-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-@media(max-width:560px){.ai-ref-cta{padding:12px}.arc-acts{width:100%}.arc-acts .btn{flex:1 1 auto;justify-content:center;text-align:center}}
+.arc-acts{min-width:0;max-width:100%}
+@media(max-width:560px){.ai-ref-cta{padding:12px}.arc-acts{width:100%}.arc-acts .btn{flex:1 1 auto;min-width:0;max-width:100%;justify-content:center;text-align:center;white-space:normal;height:auto;box-sizing:border-box}}
 nav .links a.navsrch{font-weight:600;color:var(--text)}
 @media(min-width:600px) and (max-width:760px){nav .links a:not(.btn){min-width:0}nav .links{column-gap:3px}}
 
 /* Responsive text-wrap guard for 360px/390px at 1.3x text scale */
 .hms-card,.spkg-opt,.pkg-card,#makers .card{max-width:100%;box-sizing:border-box;overflow:hidden}
 .hms-card .npill,.spkg-name .npill,.pkg-pill{white-space:normal !important;max-width:100%;line-height:1.35;height:auto}
-.hms-card .btn,#makers .btn,.pkg-cta,.pkg-cta-lp{white-space:normal !important;height:auto !important;min-height:42px;padding-top:8px;padding-bottom:8px;text-align:center;line-height:1.3;max-width:100%;box-sizing:border-box}
+.hms-card .btn,#makers .btn,.arc-acts .btn,.pkg-cta,.pkg-cta-free,.pkg-cta-fast,.pkg-cta-pop,.pkg-cta-vip,.pkg-cta-lp{white-space:normal !important;height:auto !important;min-height:42px;padding-top:8px;padding-bottom:8px;text-align:center;line-height:1.3;max-width:100%;min-width:0;box-sizing:border-box}
 .spkg-body,.spkg-row,.spkg-name{min-width:0;max-width:100%;overflow-wrap:anywhere}
 
 /* Stats bar, launch board, MCP status, Launch Pack, badge tabs */
@@ -1391,3 +1398,15 @@ nav.sitenav .navsheet{max-width:100%}
 nav.sitenav{backdrop-filter:none;background:transparent}
 nav.sitenav.is-open{z-index:1000}
 nav.sitenav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--navbg);backdrop-filter:saturate(180%) blur(12px)}
+/* Homepage phone tap targets. Lighthouse flags controls under 48px that sit close together. */
+@media(max-width:780px){
+  body.home .hero-chips{gap:12px}
+  body.home .hero-chips a{min-height:48px}
+  body.home .homegen .ig-ex{gap:12px}
+  body.home .homegen .ig-ex button{min-height:48px;min-width:48px;padding:10px 14px}
+  body.home .chip{height:auto;min-height:48px;padding:0 14px}
+  body.home .stats a{display:inline-flex;align-items:center;min-height:48px;padding:4px 2px}
+  body.home footer.footcols .footmeta a{min-height:48px}
+  body.home .scard{min-height:48px}
+  body.home #xcats .scrow,body.home #xroles .scrow{gap:12px}
+}

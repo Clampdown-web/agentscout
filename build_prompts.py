@@ -9,6 +9,7 @@ that rebuilds the Pagefind search index, which a small section builder must not 
 standalone run. ASSET_V is read from build_tasks.py source the same way (no import).
 """
 import datetime
+import pacific
 import html
 import json
 import os
@@ -369,7 +370,7 @@ def _sitemap_add(rels):
         return 0
     original = open(p, encoding="utf-8").read()
     s = _align_index_html_locs(original)
-    day = datetime.date.today().isoformat()
+    day = pacific.today().isoformat()
     extra = ""
     for rel in rels:
         loc = _loc_for(rel)

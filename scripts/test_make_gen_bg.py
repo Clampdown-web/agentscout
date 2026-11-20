@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import make_gen_bg as bg
 
 REPO = Path(__file__).resolve().parents[1]
-SAMPLE = REPO / "assets" / "gen-bg-archive" / "gen-art-2026-10-26.webp"
+SAMPLE = REPO / "data" / "gen-bg-bank" / "bank-01.webp"
 CSS = ":root{--gen-art:url(assets/gen-art.webp?v=20261030)}\n"
 
 

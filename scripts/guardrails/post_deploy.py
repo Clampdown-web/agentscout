@@ -146,11 +146,13 @@ def page_problems(
     if host not in {"agentscouthq.com"}:
         problems.append(f"{path} ended on {final_url}, which is outside {SITE}.")
     if status == 200:
-        canon = canonical_problem(body, path)
-        if canon:
-            problems.append(canon)
         header = headers.get("x-robots-tag", "")
         noindex = is_noindex(body, header)
+        # A noindex page (paginated archive, redirect stub) may point its canonical
+        # at the hub page it folds into. Only indexable pages must be self-canonical.
+        canon = None if noindex else canonical_problem(body, path)
+        if canon:
+            problems.append(canon)
         norm = normalize_url(expected)
         listed = norm in sitemap_norms
         if noindex and listed:

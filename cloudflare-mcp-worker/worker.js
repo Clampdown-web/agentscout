@@ -1,6 +1,9 @@
 /**
  * AgentScout read-only MCP worker.
- * Catalog and commerce data come from catalog_snapshot.json and products_snapshot.json.
+ * Commerce data comes from products_snapshot.json.
+ * The tool catalog is fetched from https://agentscouthq.com/api/tools.json and
+ * cached for 10 minutes, so a site build refreshes search without another deploy.
+ * catalog_snapshot.json is the fallback when that fetch fails.
  *
  * Every response gets the security headers below. Burst (15 / 10s) and per-minute
  * (60 / 60s) caps use the Workers Rate Limiting bindings MCP_BURST and MCP_MINUTE,
@@ -38,8 +41,118 @@ const MAX_IP_LEN = 128;
 const MAX_RPC_ID = 256;
 const MAX_METHOD = 128;
 
-const tools = Array.isArray(catalog.tools) ? catalog.tools : [];
-const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
+const BUNDLED_TOOLS = Array.isArray(catalog.tools) ? catalog.tools : [];
+const BUNDLED_BY_SLUG = new Map(BUNDLED_TOOLS.map((tool) => [tool.slug, tool]));
+const CATALOG_URL = "https://agentscouthq.com/api/tools.json";
+const CATALOG_TTL_MS = 10 * 60 * 1000;
+let catalogMemory = null;
+
+function bundledView() {
+  return {
+    updated: pacificIso(catalog.updated),
+    last_checked: catalog.last_checked,
+    count: catalog.count,
+    category_count: catalog.category_count,
+    mcp_count: catalog.mcp_count,
+    tools: BUNDLED_TOOLS,
+    bySlug: BUNDLED_BY_SLUG,
+    source: "bundle",
+  };
+}
+
+function pacificIso(value) {
+  const date = value ? new Date(value) : new Date();
+  if (Number.isNaN(date.getTime())) return String(value || "");
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+    timeZoneName: "longOffset",
+  }).formatToParts(date);
+  const get = (type) => parts.find((part) => part.type === type)?.value || "";
+  let offset = get("timeZoneName").replace(/^GMT/i, "");
+  const match = offset.match(/^([+-])(\d{1,2})(?::(\d{2}))?$/);
+  if (match) offset = `${match[1]}${match[2].padStart(2, "0")}:${match[3] || "00"}`;
+  else offset = "-08:00";
+  return `${get("year")}-${get("month")}-${get("day")}T${get("hour")}:${get("minute")}:${get("second")}${offset}`;
+}
+
+function classifyLocality(tool) {
+  if (tool.data_locality) return tool.data_locality;
+  const cat = String(tool.category || "").toLowerCase();
+  const tags = (tool.tags || []).map((tag) => String(tag).toLowerCase());
+  const plats = tool.platforms || [];
+  const blob = `${tool.description || ""} ${tool.pricing || ""} ${tags.join(" ")}`;
+  const openSrc = !!tool.open_source;
+  const hasSelf = plats.includes("Self-host");
+  const offline = /\b(runs?\s+locally|100%\s+local(?:ly)?|fully\s+local(?:ly)?|offline|on-device|on\s+your\s+(?:mac|pc|machine|computer|device|laptop)|local-first|ollama|lm\s*studio|llama\.cpp|gguf)\b/i;
+  const selfHost = /\b(self-host(?:ed|able|ing)?|on-prem(?:ise|ises)?|docker|own\s+server|local\s+or\s+remote|stdio)\b/i;
+  const cloud = /\b(hosted\s+service|managed\s+cloud|cloud-only|saas\s+platform)\b/i;
+  if ((cat === "models & local runtimes" || tags.includes("local models") || tags.includes("offline") || offline.test(blob)) && !cloud.test(blob)) return "offline";
+  if (hasSelf || tags.includes("self-hosting") || (openSrc && selfHost.test(blob))) return "self_hosted";
+  if (!openSrc && !hasSelf && (plats.includes("Web") || cloud.test(blob))) return "cloud";
+  return "unknown";
+}
+
+export function catalogFromApi(data) {
+  const rows = Array.isArray(data?.tools) ? data.tools : [];
+  const tools = rows.filter((row) => row && row.slug).map((row) => ({
+    name: row.name,
+    slug: row.slug,
+    category: row.category,
+    description: row.description || "",
+    pricing: row.pricing || "",
+    price_tag: row.price_tag || "unknown",
+    open_source: !!row.open_source,
+    github_stars: row.github_stars ?? null,
+    website: row.website || row.url || "",
+    page: row.page || "",
+    key_features: row.key_features || [],
+    platforms: row.platforms || [],
+    tags: row.tags || [],
+    github: row.github || null,
+    license: row.license || null,
+    date_added: row.date_added || row.added || "",
+    data_locality: classifyLocality(row),
+  }));
+  const categories = [...new Set(tools.map((tool) => tool.category).filter(Boolean))].sort();
+  const mcp = tools.filter((tool) => tool.category === "MCP servers").length;
+  const checked = data?.last_checked;
+  return {
+    updated: pacificIso(data?.updated || data?.generated),
+    last_checked: typeof checked === "string" && /^\d{4}-\d{2}-\d{2}$/.test(checked) ? checked : pacificIso(checked).slice(0, 10),
+    count: tools.length,
+    category_count: categories.length,
+    mcp_count: mcp,
+    tools,
+    bySlug: new Map(tools.map((tool) => [tool.slug, tool])),
+    source: "api",
+  };
+}
+
+export async function loadCatalog(fetcher) {
+  // Node tests have no Worker cache. They keep using the bundled snapshot.
+  if (!fetcher && typeof caches === "undefined") return bundledView();
+  const now = Date.now();
+  if (catalogMemory && now - catalogMemory.at < CATALOG_TTL_MS) return catalogMemory.view;
+  const fetchImpl = fetcher || fetch;
+  try {
+    const response = await fetchImpl(CATALOG_URL, { cf: { cacheTtl: 600, cacheEverything: true } });
+    if (!response.ok) throw new Error(String(response.status));
+    const data = await response.json();
+    const view = catalogFromApi(data);
+    if (!view.count) throw new Error("empty");
+    catalogMemory = { at: now, view };
+    return view;
+  } catch {
+    return catalogMemory ? catalogMemory.view : bundledView();
+  }
+}
 
 const SERVER_INFO = {
   name: "agentscout",
@@ -285,11 +398,11 @@ function card(tool) {
   };
 }
 
-function baseEnvelope() {
+function baseEnvelope(view) {
   return {
     source: "https://agentscouthq.com/",
-    catalog_updated: catalog.updated,
-    links_checked: catalog.last_checked,
+    catalog_updated: view.updated,
+    links_checked: view.last_checked,
     note: PRICE_NOTE,
     data_locality_caveat: LOCALITY_CAVEAT,
   };
@@ -303,13 +416,13 @@ function haystack(tool) {
   return [tool.name, tool.slug, tool.category, tool.description, ...(tool.tags || [])].join(" ").toLowerCase();
 }
 
-function matchTools(query, args, cap) {
+function matchTools(view, query, args, cap) {
   const words = tokens(query);
   const category = args.category ? String(args.category) : "";
   const pricing = args.pricing && args.pricing !== "any" ? String(args.pricing) : "";
   const openSource = args.open_source === true;
   const scored = [];
-  for (const tool of tools) {
+  for (const tool of view.tools) {
     if (category && tool.category !== category) continue;
     if (pricing && tool.price_tag !== pricing) continue;
     if (openSource && !tool.open_source) continue;
@@ -324,34 +437,34 @@ function matchTools(query, args, cap) {
   return { total: scored.length, rows: scored.slice(0, cap).map((row) => card(row[2])) };
 }
 
-function searchTools(args) {
+function searchTools(view, args) {
   const query = args.query == null || args.query === "" ? "" : args.query;
   if (typeof query !== "string" || query.length > 200) return { error: "query must be a string of at most 200 characters." };
   const category = args.category == null || args.category === "" ? "" : args.category;
   if (typeof category !== "string" || category.length > 80) return { error: "category must be a string of at most 80 characters." };
   const limit = Math.min(25, Math.max(1, Number(args.limit) || 10));
-  const found = matchTools(query, { ...args, category }, limit);
-  return { ...baseEnvelope(), total_matches: found.total, results: found.rows };
+  const found = matchTools(view, query, { ...args, category }, limit);
+  return { ...baseEnvelope(view), total_matches: found.total, results: found.rows };
 }
 
-function bestForTask(args) {
+function bestForTask(view, args) {
   const task = args.task == null ? "" : args.task;
   if (typeof task !== "string" || task.length > 200) return { error: "task must be a string of at most 200 characters." };
   const category = args.category == null || args.category === "" ? "" : args.category;
   if (typeof category !== "string" || category.length > 80) return { error: "category must be a string of at most 80 characters." };
   const limit = Math.min(10, Math.max(1, Number(args.limit) || 5));
-  const found = matchTools(task, { ...args, category }, limit);
-  return { ...baseEnvelope(), total_matches: found.total, results: found.rows };
+  const found = matchTools(view, task, { ...args, category }, limit);
+  return { ...baseEnvelope(view), total_matches: found.total, results: found.rows };
 }
 
-function getTool(args) {
+function getTool(view, args) {
   const slug = String(args.slug || "");
-  const tool = bySlug.get(slug);
+  const tool = view.bySlug.get(slug);
   if (!tool) {
     return { error: `No AgentScout listing for slug '${slug}'.`, isError: true };
   }
   return {
-    ...baseEnvelope(),
+    ...baseEnvelope(view),
     tool: {
       ...card(tool),
       key_features: tool.key_features || [],
@@ -365,9 +478,9 @@ function getTool(args) {
   };
 }
 
-function listCategories() {
+function listCategories(view) {
   const counts = new Map();
-  for (const tool of tools) {
+  for (const tool of view.tools) {
     counts.set(tool.category, (counts.get(tool.category) || 0) + 1);
   }
   const categories = [...counts.entries()]
@@ -377,7 +490,7 @@ function listCategories() {
       tools: count,
       agentscout_url: `https://agentscouthq.com/categories/${catSlug(name)}.html`,
     }));
-  return { ...baseEnvelope(), total_tools: tools.length, categories };
+  return { ...baseEnvelope(view), total_tools: view.tools.length, categories };
 }
 
 function listPackages(args) {
@@ -421,10 +534,10 @@ function rpcError(id, code, message) {
   return { jsonrpc: "2.0", id, error: { code, message } };
 }
 
-function callTool(name, args) {
+function callTool(view, name, args) {
   const input = plainObject(args) ? args : {};
   if (name === "search_tools") {
-    const data = searchTools(input);
+    const data = searchTools(view, input);
     if (data.error) return { error: data.error };
     return { data };
   }
@@ -432,7 +545,7 @@ function callTool(name, args) {
     if (typeof input.task !== "string" || input.task.trim().length < 2) {
       return { error: "task is required (at least 2 characters)." };
     }
-    const data = bestForTask(input);
+    const data = bestForTask(view, input);
     if (data.error) return { error: data.error };
     return { data };
   }
@@ -440,17 +553,17 @@ function callTool(name, args) {
     if (!args || typeof args.slug !== "string" || !/^[a-z0-9][a-z0-9-]{0,99}$/.test(args.slug)) {
       return { error: "slug is required." };
     }
-    const data = getTool(args);
+    const data = getTool(view, args);
     if (data.isError) return { data, isError: true };
     return { data };
   }
-  if (name === "list_categories") return { data: listCategories() };
+  if (name === "list_categories") return { data: listCategories(view) };
   if (name === "list_packages") return { data: listPackages(input) };
   if (typeof name !== "string" || name.length > 80 || /[\u0000-\u001f]/.test(name)) return { error: "Unknown tool." };
   return { error: `Unknown tool '${name}'.` };
 }
 
-function handleRpc(message) {
+function handleRpc(view, message) {
   const parsedId = rpcId(message);
   if (parsedId.error) return rpcError(null, -32600, "Invalid Request");
   const id = parsedId.id;
@@ -474,7 +587,7 @@ function handleRpc(message) {
   if (method === "tools/list") return { jsonrpc: "2.0", id, result: { tools: TOOL_DEFS } };
   if (method === "tools/call") {
     const name = params.name;
-    const called = callTool(name, params.arguments || {});
+    const called = callTool(view, name, params.arguments || {});
     if (called.error) return toolResult(id, { error: called.error }, true);
     return toolResult(id, called.data, !!called.isError);
   }
@@ -509,18 +622,18 @@ function registryBody() {
   };
 }
 
-function infoBody() {
+function infoBody(view) {
   return {
     name: "AgentScout MCP server",
     endpoint: "https://mcp.agentscouthq.com/mcp",
     transport: "streamable-http",
     read_only: true,
     docs: "https://agentscouthq.com/mcp/connect.html",
-    tools_indexed: catalog.count,
-    categories: catalog.category_count,
-    mcp_servers: catalog.mcp_count,
-    catalog_updated: catalog.updated,
-    links_checked: catalog.last_checked,
+    tools_indexed: view.count,
+    categories: view.category_count,
+    mcp_servers: view.mcp_count,
+    catalog_updated: view.updated,
+    links_checked: view.last_checked,
     tools: TOOL_DEFS.map((tool) => tool.name),
   };
 }
@@ -528,6 +641,7 @@ function infoBody() {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const view = await loadCatalog();
     let status = 200;
     try {
       if (request.method === "OPTIONS") {
@@ -570,7 +684,7 @@ export default {
       if (request.method === "GET") {
         status = 200;
         console.log(JSON.stringify({ message: "mcp request", method: "GET", path: logToken(url.pathname), status }));
-        return jsonResponse(infoBody(), 200, extra);
+        return jsonResponse(infoBody(view), 200, extra);
       }
       if (request.method !== "POST") {
         status = 405;
@@ -601,7 +715,7 @@ export default {
         console.log(JSON.stringify({ message: "mcp notification", method: "POST", path: logToken(url.pathname), status }));
         return emptyResponse(202, extra);
       }
-      const result = handleRpc(message);
+      const result = handleRpc(view, message);
       if (result == null) {
         status = 202;
         return emptyResponse(202, extra);

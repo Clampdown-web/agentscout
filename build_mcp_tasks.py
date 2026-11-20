@@ -87,7 +87,9 @@ def item(i,x):
 def mini(x):
     gs=f' · ★ {x["github_stars"]:,}' if x.get("github_stars") is not None else ""
     m=X._mrr()
-    return f'<li class="mcp-row"{m.responds_attrs(x["slug"])}><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span>{m.badge_html_for(x["slug"])}<span class="muted" style="font-size:12.5px">{gs}</span><br><span class="mcp-hook">{e(x["description"])}</span></li>'
+    disc=X.is_disc(x)
+    tag=' <span class="b warn">Discontinued</span>' if disc else ""
+    return f'<li class="mcp-row{" is-disc" if disc else ""}"{m.responds_attrs(x["slug"])}><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span>{tag}{m.badge_html_for(x["slug"])}<span class="muted" style="font-size:12.5px">{gs}</span><br><span class="mcp-hook">{e(x["description"])}</span></li>'
 H2='style="font-size:18px;margin:32px 0 8px"'
 def _catlink(made):
     p="categories/mcp-servers.html"
@@ -157,7 +159,14 @@ def pages(t):
          ("Why do some tasks not have their own page?",f"We only build a task page when at least {MIN} solid MCP servers in our directory do that job and no other AgentScout page already covers the same list. Docs, cloud and design already have focused pages, and payments has fewer than {MIN} servers, so they're listed here instead."),
          ("How many MCP servers does AgentScout list?",f"{nmcp:,} in the MCP servers category, each with a link-checked listing. This page covers {tot:,} of them, grouped by task.")]
     fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(a)}</h3><p style="margin:0">{e(b)}</p>' for a,b in faq)
-    jump='<ul class="guide-list">'+"".join(f'<li><a href="#{a[0]}">{e(a[2])}</a></li>' for a in made)+'<li><a href="#more">More tasks</a></li></ul>'
+    disc=sorted((x for x in t if x.get("category")=="MCP servers" and X.is_disc(x)), key=lambda z: z["name"].lower())
+    disc_html=""
+    if disc:
+        disc_html=(f'<h2 id="discontinued" {H2}>Discontinued MCP servers</h2>'
+                   f'{X.disc_toggle()}<p class="count"><span class="when-disc-off">{len(disc):,} discontinued hidden</span>'
+                   f'<span class="when-disc-on">Showing {len(disc):,} discontinued servers</span></p>'
+                   f'<ul data-responds-list style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in disc)}</ul>')
+    jump='<ul class="guide-list">'+"".join(f'<li><a href="#{a[0]}">{e(a[2])}</a></li>' for a in made)+'<li><a href="#more">More tasks</a></li>'+(f'<li><a href="#discontinued">Discontinued ({len(disc)})</a></li>' if disc else "")
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"hasPart":[{"@type":"WebPage","name":f"Best MCP servers for {a[1]}","url":f"{B}mcp/{a[0]}.html"} for a in made]},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":canon}]},{"@type":"VideoObject","name":"AgentScout MCP Command Center & Live JSON-RPC Stream","description":"Animated terminal and pipeline overview showing how Claude Code, Cursor, and Windsurf query AgentScout's free MCP server (com.agentscouthq/directory).","thumbnailUrl":B+"assets/animations/agentscout-mcp-terminal-poster.png","contentUrl":B+"assets/animations/agentscout-mcp-terminal.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT20S"}]}
@@ -168,7 +177,7 @@ def pages(t):
           f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-mcp-terminal-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-mcp-terminal.mp4" type="video/mp4"></video></figure>'
           f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we ranked them:</strong> GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push, then listing maturity. Every server is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a>; links checked {asof}. No paid placements.</p>'
           f'{X._mrr().responds_bar()}{X._mrr().responds_script("../")}'
-          f'{secs}<h2 id="more" {H2}>More tasks</h2>{fold}'
+          f'{secs}<h2 id="more" {H2}>More tasks</h2>{fold}{disc_html}'
           f'<h2 {H2}>FAQ</h2>{fq}'
           f'<p style="margin-top:28px">More</p><ul class="guide-list"><li><a href="../categories/mcp-servers.html">All {nmcp:,} MCP servers</a></li><li><a href="{flink("mcp").replace("&q=mcp","")}">Filter MCP servers by pricing and open source</a></li><li><a href="../s/free-mcp-servers.html">Free MCP servers</a></li><li><a href="../best/open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../best/best-mcp-servers-2026.html">Best MCP servers 2026</a></li><li><a href="../best/mcp-servers-for-claude-code.html">For Claude Code</a></li><li><a href="../best/mcp-servers-for-cursor.html">For Cursor</a></li><li><a href="../best/mcp-servers-for-codex.html">For Codex</a></li><li><a href="../free-tools/mcp-server-picker.html">MCP server picker</a></li></ul>'
           f'<p class="disclose">Facts come from our directory listings and each project\'s GitHub repo; pricing is as each maker states it and can change. Missing a server? <a href="../submit.html">Submit it free</a>.</p></section>')

@@ -7,6 +7,7 @@ Pages: leaderboard/, tasks/writing-code.html, categories/mcp-servers.html. Nothi
 4. Crawlability: every tool that loses its static card keeps a plain text link on the page ("All tools on this page"),
    so every tool stays reachable and crawlable without JavaScript."""
 import re,json,os,html,glob
+import pacific
 KEEP=48
 KEEP_BY={"tasks/writing-code.html":12}  # many sub-grids: show 12 per section
 CAT_KEEP=60  # first screen of a heavy category
@@ -62,8 +63,7 @@ def _sitemap_add(paths):
     p="sitemap.xml"
     if not os.path.exists(p) or not paths: return
     s=open(p, encoding="utf-8").read()
-    import datetime
-    day=datetime.date.today().isoformat()
+    day=pacific.today().isoformat()
     extra=""
     for rel in paths:
         loc="https://agentscouthq.com/"+rel
@@ -89,7 +89,12 @@ def _write_list_pages(src, slugs, names, title):
               f'<section class="calm"><h1 style="text-align:left">More {html.escape(title)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">Page {n}. {len(chunk):,} more tools from this category. Every name links to its listing.</p>'
               f'{navp}<ul class="catmore">{items}</ul>{navp}</section>')
-        desc=f"More {title}: page {n}, {len(chunk)} tools."
+        desc=(
+            f"Page {n} of {title} on AgentScout. {len(chunk)} more listings on this page, "
+            f"each name linked to its own listing, with pricing as the maker states it."
+        )
+        if len(desc)<120: desc+=" The order is not paid."
+        if len(desc)>160: desc=desc[:157].rstrip()+"..."
         canon=X.B+rel
         ld={"@context":"https://schema.org","@type":"CollectionPage","name":f"{title} page {n}","description":desc,"url":canon}
         page=X.shell("../", f"{title}, page {n} · AgentScout", desc, canon, body, ld)
@@ -143,7 +148,7 @@ def grids(f,names):
         out=[]; pos=0
         for m in re.finditer(r'<div class="grid"(?: id="cgrid")?>', s):
             if m.start()<pos: continue
-            cards, i=_slices(s, m.end(), '<a class="card tile"', '</a>')
+            cards, i=_slices(s, m.end(), '<a class="card tile', '</a>')
             if not s.startswith('</div>', i) or len(cards)<=K+4 or "".join(cards)!=s[m.end():i].strip():
                 continue
             shown, deferred = cards[:K], cards[K:]
@@ -156,6 +161,14 @@ def grids(f,names):
                 # Measured servers stay on the page, and the first screen still
                 # includes unchecked cards so the "Not yet checked" badge is visible.
                 shown, deferred = hot+cold[:K], cold[K:]
+            # Discontinued cards stay in the page so the checkbox can reveal them
+            # without the "show all" fetch. CSS hides them until it is checked.
+            hold=[c for c in deferred if " is-disc" in c]
+            if hold:
+                shown=shown+hold
+                deferred=[c for c in deferred if " is-disc" not in c]
+            if not deferred:
+                continue
             out.append(s[pos:m.start()])
             k=f"g{gi}"; gi+=1; J[k]="".join(deferred)
             removed.extend(re.search(r'data-s="([^"]+)"',c).group(1) for c in deferred)
@@ -238,7 +251,7 @@ def shrink_heavy(f, names):
 def run(t):
     names={x["slug"]:x["name"] for x in t}
     leaderboard(names)
-    targets=["tasks/writing-code.html","categories/mcp-servers.html"]
+    targets=["tasks/writing-code.html","tasks/connecting-tools-mcp.html","categories/mcp-servers.html"]
     for f in glob.glob("categories/*.html"):
         if f.endswith("index.html"): continue
         try:
@@ -248,4 +261,68 @@ def run(t):
         if os.path.exists(f): grids(f,names)
     for f in list(targets):
         if f.startswith("categories/"): shrink_heavy(f, names)
+    sync_category_pages()
+_PAGE=re.compile(r"-p\d+\.html$")
+def _pager_targets(text, base):
+    return {f"categories/{base}-p{n}.html" for n in re.findall(rf'href="(?:\.\./|/)*{re.escape(base)}-p(\d+)\.html"', text)}
+def sync_category_pages():
+    """Indexable paginated category pages stay in the sitemap. A page the current
+    category no longer links (the series shrank) is noindex and leaves the sitemap.
+    Does not add a new HTML page.
+    """
+    import build_extras as X
+    current=set()
+    for path in glob.glob("categories/*.html"):
+        name=os.path.basename(path)
+        if name=="index.html" or _PAGE.search(name): continue
+        base=name[:-5]
+        current |= _pager_targets(open(path, encoding="utf-8").read(), base)
+    # Follow next/prev only along pages the category index already links.
+    seen=set()
+    stack=list(current)
+    while stack:
+        rel=stack.pop()
+        if rel in seen or not os.path.exists(rel): continue
+        seen.add(rel)
+        base=re.sub(r"-p\d+$", "", os.path.basename(rel)[:-5])
+        for nxt in _pager_targets(open(rel, encoding="utf-8").read(), base):
+            if nxt not in current and os.path.exists(nxt):
+                current.add(nxt); stack.append(nxt)
+    stale=[]
+    for path in glob.glob("categories/*-p*.html"):
+        rel=path.replace("\\","/")
+        if not _PAGE.search(rel): continue
+        if rel not in current: stale.append(rel)
+    sm_path="sitemap.xml"
+    sm=open(sm_path, encoding="utf-8").read() if os.path.exists(sm_path) else ""
+    original=sm
+    changed=0
+    for rel in stale:
+        text=open(rel, encoding="utf-8").read()
+        new=X.add_noindex(text)
+        if new!=text:
+            open(rel,"w",encoding="utf-8").write(new); changed+=1
+        loc=X.B+rel
+        if loc in sm:
+            sm=re.sub(r"\s*<url>\s*<loc>"+re.escape(loc)+r"</loc>.*?</url>", "", sm, count=1, flags=re.S)
+    added=0
+    import build_seo_follow as seo
+    rows=[]
+    for rel in sorted(current):
+        if not os.path.exists(rel): continue
+        text=open(rel, encoding="utf-8").read()
+        new=X.strip_noindex(text)
+        if new!=text:
+            open(rel,"w",encoding="utf-8").write(new); text=new
+        loc=X.B+rel
+        if loc in sm: continue
+        if 'name="robots" content="noindex' in text[:4000]: continue
+        day=seo._git_day(rel) or seo.TODAY
+        rows.append(f"  <url><loc>{loc}</loc><lastmod>{day}</lastmod></url>")
+        added+=1
+    if rows and "</urlset>" in sm:
+        sm=sm.replace("</urlset>", "\n".join(rows)+"\n</urlset>")
+    if sm!=original and os.path.exists(sm_path):
+        open(sm_path,"w",encoding="utf-8").write(sm)
+    print(f"category pages: {len(current)} in the current series, {len(stale)} noindexed, {added} added to the sitemap, {changed} newly noindexed")
 if __name__=="__main__": run(json.load(open("tools.json")))

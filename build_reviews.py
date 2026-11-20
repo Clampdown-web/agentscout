@@ -7,6 +7,7 @@
 - Adds a "rating" object to api/tools.json for tools with ratings.
 Called from build_site.py after build_api, on every build."""
 import json,os,re,html,glob,urllib.request,datetime
+import pacific
 W="https://api.agentscouthq.com"
 e=lambda s:html.escape(str(s if s is not None else ""))
 def data():
@@ -32,7 +33,7 @@ def star_text(n):
     v=star_num(n)
     return str(int(v)) if v==int(v) else str(v)
 def stars(n): return f'<span class="rv-stars" style="--r:{star_text(n)}" aria-hidden="true">★★★★★</span>'
-def day(ts): return datetime.datetime.fromtimestamp(ts/1000,datetime.timezone.utc)
+def day(ts): return datetime.datetime.fromtimestamp(ts/1000, pacific.PT)
 def section(x,d,V):
     n=x["name"]; s=x["slug"]; c=(d or {}).get("count",0); R=(d or {}).get("reviews",[]) if c else []
     summ=(f'{stars(d["avg"])} <span class="rv-text"><b>{d["avg"]:.1f}</b> out of 5 · {c} rating{"s" if c!=1 else ""}</span>' if c else f'<span class="rv-text">No ratings yet. Be the first to review {e(n)}.</span>')
@@ -101,7 +102,7 @@ def run(t):
             if isinstance(A,dict):
                 A["tools"]=tools; A["count"]=len(tools); out=A
             else:
-                out={"count":len(tools),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"tools":tools}
+                out={"count":len(tools),"updated":pacific.iso(),"tools":tools}
             json.dump(out,open("api/tools.json","w"),indent=1,ensure_ascii=False)
     except Exception as ex: print("reviews api:",ex)
     print("reviews:",ins,"sections,",sum(1 for v in D.values() if v.get("count")),"tools with ratings,",ld_n,"with review JSON-LD")

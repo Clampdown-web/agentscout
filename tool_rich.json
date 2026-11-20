@@ -20791,29 +20791,39 @@
   "go-micro": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Go Micro is a Go framework for distributed systems, providing RPC, service discovery, messaging, storage and configuration. Each component is a Go interface with a default implementation you can replace.",
-      "It now also treats services as tools for agents: it includes agents (models, conversation history, tools and execution), workflows with retries and checkpoints, and a gateway that exposes services over HTTP and MCP."
-    ],
-    "who": "Go developers building microservices who want to expose them to AI agents, or add agents and workflows to an existing service architecture.",
-    "features": [
-      "RPC with streaming, encoding and service discovery",
-      "Agents with models, history and tools",
-      "Workflows with ordered steps, retries and checkpoints",
-      "Gateway exposing services over HTTP and MCP",
-      "Pluggable Go interfaces"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/micro/go-micro",
       "https://go-micro.dev/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Go Micro is a Go framework for distributed systems. The README lists RPC, service discovery, messaging, storage and configuration, each behind a Go interface you can replace. Agents use those services as tools.",
+      "The same README says the gateway exposes services over HTTP and MCP, and that a service can be built and chatted with from the terminal. Install is `go get go-micro.dev/v6@latest`. GitHub recorded Apache-2.0 and 23,077 stars on 20 Nov 2026. No commercial price list was found on go-micro.dev that day."
+    ],
+    "who": "Go developers who want services, and the agents that call them, in one framework.",
+    "features": [
+      "RPC with streaming, encoding and service discovery",
+      "Agents with models, history, tools, background tasks and recovery",
+      "Gateway that exposes services over HTTP and MCP",
+      "Apache-2.0. 23,077 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Does Go Micro speak MCP?",
+        "The README says the gateway exposes services through HTTP and MCP so other applications and agents can call them."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records Apache-2.0. Checked 20 Nov 2026."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/micro/go-micro",
-      "stars": 23086,
-      "checked": "2026-10-18",
-      "license": "the Apache License 2.0",
+      "stars": 23077,
+      "forks": 2435,
+      "checked": "2026-11-20",
+      "license": "Apache-2.0",
       "osi": true
     }
   },
@@ -20878,29 +20888,39 @@
   "funasr": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "FunASR is an industrial speech-recognition toolkit from ModelScope for offline, streaming and edge deployment.",
-      "It covers speech recognition, voice activity detection, punctuation, speaker pipelines and emotion and audio-event models, and can serve models through an OpenAI-compatible API. Fun-ASR-Nano can also run through Hugging Face Transformers."
-    ],
-    "who": "Developers building voice agents or transcription features who want self-hosted speech recognition, including streaming and edge setups.",
-    "features": [
-      "Speech recognition for offline, streaming and edge use",
-      "Voice activity detection and punctuation",
-      "Speaker, emotion and audio-event models",
-      "OpenAI-compatible serving",
-      "Hugging Face Transformers quickstart and Colab notebook"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/modelscope/FunASR",
-      "https://github.com/modelscope/FunASR"
+      "https://github.com/modelscope/FunASR/blob/main/README.md"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "FunASR is ModelScope's industrial speech toolkit for offline, streaming and edge recognition. The README covers voice activity detection, punctuation, speaker pipelines, and emotion and audio-event models, plus an OpenAI-compatible server.",
+      "The repository description also names MCP serving. CPU-only installs can use the default PyPI wheels, and the flagship path can add VAD, recognition, punctuation and speaker labels in one pipeline. GitHub recorded MIT and 21,082 stars on 20 Nov 2026. No paid FunASR price was found."
+    ],
+    "who": "Developers adding speech recognition, diarization or an OpenAI-compatible speech API to a product they host themselves.",
+    "features": [
+      "Offline, streaming and edge speech recognition",
+      "VAD, punctuation, speaker pipelines, emotion and audio events",
+      "OpenAI-compatible serving, and MCP serving named in the repo description",
+      "MIT. 21,082 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Does FunASR only do batch transcription?",
+        "No. The README covers offline, streaming and edge deployment, and a pipeline that returns VAD segments with speaker ids and timestamps."
+      ],
+      [
+        "Is there a hosted price?",
+        "Not one this listing could verify. The project is MIT-licensed and installed from PyPI or the repo."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/modelscope/FunASR",
-      "stars": 20742,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 21082,
+      "forks": 2139,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
@@ -20936,227 +20956,317 @@
   "moli": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Moli is a headless browser for AI agents. Its on-demand layout and rendering design combines a complete browser runtime with a lightweight resource footprint.",
-      "It helps agents fetch and extract web pages (as Markdown or a compact semantic tree), search the web and automate browser tasks. You can drive it through its CLI, CDP, WebDriver Classic or WebDriver BiDi on Linux, macOS and Windows."
-    ],
-    "who": "Developers building agents that need to read and automate web pages with less overhead than a full desktop browser.",
-    "features": [
-      "Headless browser built for AI agents",
-      "Page extraction as Markdown or a semantic tree",
-      "CLI, CDP, WebDriver Classic and WebDriver BiDi",
-      "On-demand layout and screenshots",
-      "Linux, macOS and Windows"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/lexmount/moli",
       "https://browser.lexmount.com/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Moli is a Rust headless browser aimed at agents. The README's quick start covers a direct install, a CLI that extracts a page, and an automation server. A basic server is described as DOM-first; a fuller mode turns on geometry, coordinate input and screenshots.",
+      "Lexmount's site sells cloud browser sessions that it says are powered by Moli, with a playground and an SDK. This listing does not quote a Lexmount cloud price, because no rate card was captured on 20 Nov 2026. The browser itself is Apache-2.0. GitHub listed 24,129 stars that day. The README does not describe fingerprint spoofing or stealth evasion."
+    ],
+    "who": "Developers whose agents need to read and drive pages with less overhead than a full desktop Chrome.",
+    "features": [
+      "Headless browser written in Rust for agent workloads",
+      "CLI page extraction and an automation server",
+      "Optional geometry, coordinate input and screenshots",
+      "Apache-2.0. 24,129 GitHub stars on 20 Nov 2026",
+      "Lexmount offers Moli-powered cloud browsers; cloud prices are not repeated here"
+    ],
+    "faq": [
+      [
+        "Is Moli a fingerprint-evasion tool?",
+        "No. The README describes a headless browser for fetching, extracting and automating pages. It does not document stealth or fingerprint spoofing."
+      ],
+      [
+        "Can I run it myself?",
+        "Yes. The README has a direct install and a CLI. Lexmount also hosts cloud sessions it says are powered by Moli."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/lexmount/moli",
-      "stars": 19401,
-      "checked": "2026-10-18"
+      "stars": 24129,
+      "forks": 694,
+      "checked": "2026-11-20",
+      "license": "Apache-2.0",
+      "osi": true
     }
   },
   "hermes-webui": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Hermes WebUI is a lightweight, dark-themed browser interface for Hermes Agent, the autonomous agent from Nous Research that runs on your server.",
-      "It aims for full parity with the Hermes CLI and is built with plain Python and vanilla JavaScript, with no build step. The layout has sessions on the left, chat in the center and workspace files on the right, plus a control center for settings and password protection."
-    ],
-    "who": "People running Hermes Agent on a server who want to use it from a web browser instead of the terminal.",
-    "features": [
-      "Browser UI with full CLI parity for Hermes Agent",
-      "Three-panel layout: sessions, chat and workspace files",
-      "Model, profile and workspace controls",
-      "Token-usage context ring",
-      "Python and vanilla JS, no build step"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/nesquena/hermes-webui",
       "https://get-hermes.ai/setup/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Hermes WebUI is a browser and phone interface for Hermes Agent, the Nous Research agent that runs on a server you control. The README aims for parity with the CLI: sessions, chat, a workspace file browser, model and profile controls, voice input, and a control center for settings.",
+      "The setup guide says you run one server, then point a native app or any browser at it, so the same sessions and memory follow you. It is Python and vanilla JavaScript, with no build step. GitHub recorded MIT and 19,589 stars on 20 Nov 2026. The setup page does not list a license fee for the UI."
+    ],
+    "who": "People who already run Hermes Agent and want the same agent from a browser or phone instead of only a terminal.",
+    "features": [
+      "Browser UI with CLI parity for Hermes Agent",
+      "Sessions, chat, workspace files, profiles and voice input",
+      "One server, then clients on laptop, phone or any browser",
+      "Python and vanilla JS, no build step",
+      "MIT. 19,589 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Do I need a separate Hermes install?",
+        "The setup guide treats the WebUI server as the Hermes backend: one process holds conversations, memory, jobs and the agent, and the apps are clients."
+      ],
+      [
+        "Is the UI paid?",
+        "The setup page describes a server you run yourself. GitHub lists the license as MIT. No UI price was published there on 20 Nov 2026."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/nesquena/hermes-webui",
-      "stars": 19013,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 19589,
+      "forks": 2851,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
   "openworker": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "OpenWorker is an open-source AI coworker that runs on your desktop and aims to deliver finished work, such as reviewed code with fixes, polished documents or drafted Slack replies, rather than just chat. It is in open beta.",
-      "It doesn't lock you into one model: bring your own API key for OpenAI, Anthropic, Google or an open-weight provider, or run fully locally with Ollama."
-    ],
-    "who": "People who want a desktop AI assistant that completes everyday tasks with their choice of model, including fully local models.",
-    "features": [
-      "Desktop AI coworker that completes tasks",
-      "Bring your own key for OpenAI, Anthropic, Google and others",
-      "Fully local option with Ollama",
-      "Integrations you choose; data stays on your machine otherwise",
-      "Open source, in open beta"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/andrewyng/openworker",
       "https://openworker.com/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "OpenWorker is two things in one MIT repository: a desktop app for everyday work, and a Harness SDK for building your own agent apps. The README's desktop tasks include meeting prep, scheduling, incident triage and security review.",
+      "You bring a cloud or local model. The homepage shows actions that leave the machine, such as sending email or posting to Slack, waiting for an approval. GitHub listed 19,478 stars on 20 Nov 2026. The homepage did not publish a price that day."
+    ],
+    "who": "People who want a desktop agent for daily work, and developers who want the same harness inside their own app.",
+    "features": [
+      "Desktop app for meeting prep, scheduling, triage and review",
+      "Harness SDK for agent apps",
+      "Bring your own cloud or local model",
+      "Actions that leave the machine wait for approval, as shown on the homepage",
+      "MIT. 19,478 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Does OpenWorker include a model?",
+        "No. The README says you bring a cloud or local model."
+      ],
+      [
+        "Will it email someone on its own?",
+        "The homepage examples show email and Slack sends waiting for an approval before they leave the machine."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/andrewyng/openworker",
-      "stars": 18561,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 19478,
+      "forks": 2788,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
   "rocketride": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "RocketRide describes itself as an open-source AI Development Environment: it turns your IDE, or the CLI, into a place to compose, debug, observe and deploy AI runtimes.",
-      "Under the hood it is a data-pipeline builder and runtime for AI and ML workloads, with 100+ pipeline nodes spanning 15+ LLM providers, 9 vector databases, OCR and NER. Pipelines are portable JSON and can be built visually."
-    ],
-    "who": "Developers building AI data pipelines and RAG workloads who want to design and run them from their editor.",
-    "features": [
-      "Pipeline builder and runtime for AI and ML",
-      "100+ nodes: 15+ LLM providers, 9 vector databases, OCR and NER",
-      "Pipelines as portable JSON, built visually",
-      "Works inside your IDE or from the CLI"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/rocketride-org/rocketride-server",
-      "https://rocketride.org/"
+      "https://rocketride.ai/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "RocketRide's README now calls it an open-source AI meta-harness with a C++ runtime for building, testing and publishing durable agents. The same README still documents pipelines (a first pipe, observability) and two ways to run it.",
+      "On-prem is marked free and MIT. RocketRide Cloud is marked now live; this listing does not quote a cloud price because the public pages checked on 20 Nov 2026 did not show a rate card. GitHub listed 20,008 stars. The repository homepage is https://rocketride.ai/. The older rocketride.org address redirects to the cloud host."
+    ],
+    "who": "Developers who want a self-hosted agent runtime, or the hosted cloud, and who still build AI work as pipelines.",
+    "features": [
+      "C++ runtime the README describes as a meta-harness for durable agents",
+      "Pipeline builder still documented, with observability",
+      "On-prem marked free and MIT; Cloud marked live, price not quoted here",
+      "20,008 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Is RocketRide only a pipeline builder now?",
+        "The README leads with a C++ meta-harness for durable agents and still documents pipelines, a first pipe and observability."
+      ],
+      [
+        "Is the cloud priced on the site?",
+        "Cloud is marked live. No rate card was on the pages checked 20 Nov 2026, so no cloud price is stated here. On-prem is marked free and MIT."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/rocketride-org/rocketride-server",
-      "stars": 17751,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 20008,
+      "forks": 8680,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
   "browser-use-web-ui": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Browser Use Web UI is a Gradio interface for browser-use, the library that makes websites accessible to AI agents. It supports most browser-use features in a user-friendly UI.",
-      "It works with models from Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama and others, can use your own browser so you stay logged in to sites, and supports high-definition screen recording."
-    ],
-    "who": "People who want to try or run browser-use agents through a web interface instead of writing code.",
-    "features": [
-      "Gradio web UI for browser-use",
-      "Supports Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek and Ollama models",
-      "Use your own browser and logins",
-      "Persistent browser sessions",
-      "HD screen recording"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/browser-use/web-ui",
-      "https://github.com/browser-use/web-ui"
+      "https://docs.browser-use.com"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Browser Use Web UI is a Gradio interface on top of browser-use, the library that lets an agent operate a website. The README says it supports most of the library's features and adds a window for people who do not want to start from code.",
+      "It lists models from Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek and Ollama, and it can attach your own browser so existing logins stay available. Install is local or Docker. GitHub recorded MIT and 16,661 stars on 20 Nov 2026. The README does not describe fingerprint spoofing. This UI is not the hosted Browser Use cloud product."
+    ],
+    "who": "People who want to run browser-use tasks from a web page, with a model they already have a key for.",
+    "features": [
+      "Gradio UI for the browser-use library",
+      "Models from Google, OpenAI, Azure, Anthropic, DeepSeek and Ollama",
+      "Can use your own browser and logins",
+      "Local install or Docker",
+      "MIT. 16,661 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Is this a stealth or fingerprint browser?",
+        "No. The README presents a Gradio UI for browser-use so an agent can operate websites. It does not document fingerprint evasion."
+      ],
+      [
+        "Does the UI include a model?",
+        "No. You configure a provider key. The README names Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek and Ollama."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/browser-use/web-ui",
-      "stars": 16618,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 16661,
+      "forks": 2757,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
   "framelink-figma-mcp": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Framelink MCP for Figma gives Cursor and other AI coding tools access to your Figma files through the Model Context Protocol, so they can implement designs in any framework.",
-      "You paste a link to a Figma file, frame or group into your IDE's chat; the server fetches the metadata from the Figma API and simplifies it to the most relevant layout and style information before passing it to the model."
-    ],
-    "who": "Front-end developers who build UIs from Figma designs and use Cursor or another AI coding tool.",
-    "features": [
-      "MCP server for Figma data",
-      "Works with Cursor and other AI coding tools",
-      "Paste a Figma link to implement a design",
-      "Simplifies Figma API responses to relevant layout and styles"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/GLips/Figma-Context-MCP",
       "https://www.framelink.ai/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Framelink MCP for Figma gives a coding agent layout data from a Figma file so it can implement a design. You paste a link to a file, frame or group. The server pulls the Figma API response and simplifies it to layout and styles.",
+      "On 20 Nov 2026 framelink.ai said the server is free, open source and self-hostable, and compared its output with Figma's own MCP: descriptive JSON rather than framework-specific code, with style names kept. GitHub recorded MIT and 16,267 stars. The site's '15,000+ stars' line is the older round number. No paid tier was listed on that page."
+    ],
+    "who": "Front-end developers who implement Figma frames in Cursor or another coding agent and want the design data, not a screenshot.",
+    "features": [
+      "MCP server that fetches and simplifies Figma layout",
+      "Works from a pasted Figma link",
+      "Free, open source and self-hostable, as stated on framelink.ai",
+      "MIT. 16,267 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Do I pay for Framelink?",
+        "framelink.ai says it is free, open source and self-hostable. No paid plan was on that page on 20 Nov 2026. Figma API access is still Figma's own."
+      ],
+      [
+        "How is this different from Figma's MCP?",
+        "Framelink's page says it sends descriptive JSON and keeps style names, while it describes Figma's MCP as sending framework-specific code."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/GLips/Figma-Context-MCP",
-      "stars": 16004,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 16267,
+      "forks": 1294,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
   "outlines": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Outlines is a library for structured outputs from LLMs, made by the team at .txt. It makes models generate output that follows a schema or format you define.",
-      "Its README lists examples such as customer-support triage, e-commerce product categorization and parsing event details. It is trusted by projects including NVIDIA, Cohere, Hugging Face and vLLM, according to its maker."
-    ],
-    "who": "Developers who need LLM output that reliably matches a JSON schema, type or grammar.",
-    "features": [
-      "Structured generation that follows a schema",
-      "JSON schemas, types and grammars",
-      "Works with popular model backends",
-      "Open source from .txt"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/dottxt-ai/outlines",
       "https://dottxt-ai.github.io/outlines/"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Outlines is a Python library from .txt for structured generation. You describe a schema, a type or a grammar, and the model is steered to follow it. The README's examples include classification and extracting typed fields.",
+      "It connects to more than one model backend. The README says a separate .txt API is in early access by request, with no public price, so this listing does not invent one. The library itself is Apache-2.0. GitHub listed 16,016 stars on 20 Nov 2026."
+    ],
+    "who": "Python developers who need model output that matches a schema, type or grammar.",
+    "features": [
+      "Structured generation against schemas, types and grammars",
+      "More than one model backend",
+      "Apache-2.0 library; the .txt hosted API is a separate early-access offer with no public price here",
+      "16,016 GitHub stars on 20 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Is Outlines the same as the .txt API?",
+        "No. Outlines is the open library. The README points at a separate .txt API in early access. No public price for that API was stated."
+      ],
+      [
+        "What license is the library?",
+        "GitHub records Apache-2.0. Checked 20 Nov 2026."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/dottxt-ai/outlines",
-      "stars": 15951,
-      "checked": "2026-10-18",
-      "license": "the Apache License 2.0",
+      "stars": 16016,
+      "forks": 918,
+      "checked": "2026-11-20",
+      "license": "Apache-2.0",
       "osi": true
     }
   },
   "midscene-js": {
     "kind": "lite",
     "src_kind": "README",
-    "long": [
-      "Midscene.js brings AI vision to end-to-end testing for web, mobile and desktop apps. You describe UI steps and expected results in natural language, and its visual GUI agent carries them out and checks what users see.",
-      "You can write YAML test cases with Midscene Test or call its agent APIs from existing Playwright tests, and review HTML reports with screenshots, actions and assertion results."
-    ],
-    "who": "QA engineers and developers who want to write end-to-end tests in plain language instead of brittle selectors.",
-    "features": [
-      "Natural-language E2E tests",
-      "Visual GUI agent for web, mobile and desktop",
-      "YAML test cases with Midscene Test",
-      "Integrates with Playwright",
-      "HTML reports with screenshots and assertions"
-    ],
-    "faq": [],
+    "cite": true,
+    "updated": "2026-11-20",
     "sources": [
       "https://github.com/web-infra-dev/midscene",
       "https://midscenejs.com/introduction"
     ],
-    "updated": "2026-10-18",
+    "long": [
+      "Midscene.js is a vision-based end-to-end test framework. You describe a step and the expected screen in natural language, and a GUI agent carries it out on web, mobile and desktop apps.",
+      "The README shows YAML cases with Midscene Test and JavaScript calls inside existing tests, plus HTML reports. You choose the model and pay that model yourself; the README has a section on models and cost but no Midscene subscription was found on 20 Nov 2026. GitHub recorded MIT and 15,658 stars."
+    ],
+    "who": "QA engineers and developers who want end-to-end tests written in plain language instead of selectors.",
+    "features": [
+      "Natural-language steps and assertions",
+      "Web, mobile and desktop from one API, as the README describes it",
+      "YAML cases or JavaScript in an existing test",
+      "HTML reports of what the agent saw and did",
+      "MIT. 15,658 GitHub stars on 20 Nov 2026. Model cost is yours; no Midscene price is stated here"
+    ],
+    "faq": [
+      [
+        "Does Midscene include a model?",
+        "You choose a model. The README discusses model choice and cost. No Midscene subscription price was found on 20 Nov 2026."
+      ],
+      [
+        "Can I keep my current test runner?",
+        "The README shows JavaScript calls inside existing tests as well as standalone YAML cases."
+      ]
+    ],
     "facts": {
       "repo": "https://github.com/web-infra-dev/midscene",
-      "stars": 15313,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
+      "stars": 15658,
+      "forks": 1229,
+      "checked": "2026-11-20",
+      "license": "MIT",
       "osi": true
     }
   },
@@ -33811,6 +33921,69 @@
         "The same credits as the REST API, with no separate MCP fee. One credit per phone, email or IP lookup, one credit per bulk_verify record, and get_account is free. On the pricing page checked 18 Nov 2026, Starter is $99 a month for 20,000 credits (about $4.95 per 1,000 core lookups), Growth is $299 for 85,000, Professional is $799 for 250,000, and Enterprise is $1,999 for 1,000,000."
       ]
     ]
+  },
+  "asksolique": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-20",
+    "sources": [
+      "https://asksolique.ai/",
+      "https://asksolique.ai/pricing"
+    ],
+    "long": [
+      "AskSolique is a research workspace for India tax and company law, aimed at CA firms, company secretaries, in-house tax teams and CFOs. The site lists income tax, GST, FEMA, corporate law, SEBI and customs. Answers are tied to primary sources. A regulatory library, the Data Centre, is marked at 0 credits to browse. Deeper research and a deliverable draw more credits as the question gets wider.",
+      "On 20 Nov 2026 the pricing page, which says every rupee is exclusive of GST, listed a free trial at ₹0 with starter credits for 7 days and no card, a pay-as-you-go pack at ₹999 + GST for 4,000 credits valid 7 days, and Pro at ₹3,999 + GST a month for 16,000 credits. A yearly plan is mentioned with bonus credits; its rupee amount was not in the portion of the page captured here, so it is not quoted."
+    ],
+    "who": "CA firms, company secretaries, in-house tax teams and CFOs who need cited answers on Indian tax and company law.",
+    "features": [
+      "Cited research across income tax, GST, FEMA, corporate law, SEBI and customs",
+      "Regulatory library marked at 0 credits to browse",
+      "One credit wallet shared across practice areas, not a price per seat",
+      "7-day trial at ₹0, no card, with starter credits",
+      "Pay as you go ₹999 + GST for 4,000 credits; Pro ₹3,999 + GST/mo for 16,000 credits (20 Nov 2026)"
+    ],
+    "faq": [
+      [
+        "Is browsing the statute library billed?",
+        "The site marks the Data Centre, its regulatory library, at 0 credits to browse. Research questions and deliverables draw credits."
+      ],
+      [
+        "What does a paid month cost?",
+        "On 20 Nov 2026 Pro was ₹3,999 + GST a month for 16,000 credits. A pack was ₹999 + GST for 4,000 credits, valid 7 days. Prices are exclusive of GST."
+      ],
+      [
+        "Can I try it without a card?",
+        "The pricing page says the 7-day trial is ₹0 and no card is required."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-20",
+      "pricing_src": "https://asksolique.ai/pricing"
+    },
+    "pricing_v": {
+      "free": false,
+      "tiers": [
+        [
+          "Free trial",
+          "₹0",
+          "Starter credits, 7 days, no card"
+        ],
+        [
+          "Pay as you go",
+          "₹999 + GST",
+          "4,000 credits, valid 7 days from purchase"
+        ],
+        [
+          "Pro monthly",
+          "₹3,999 + GST / month",
+          "16,000 credits, renews monthly"
+        ]
+      ],
+      "note": "Prices exclude GST. A yearly plan is listed with bonus credits; its rupee price was not in the captured page text, so it is omitted.",
+      "src": "https://asksolique.ai/pricing",
+      "checked": "2026-11-20"
+    }
   },
   "macswarm": {
     "kind": "lite",

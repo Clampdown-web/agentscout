@@ -3164,9 +3164,8 @@
 "mixing"
 ],
 "rocketride": [
-"workflow-automation",
-"terminal-agents",
-"ide-agents"
+"vector-rag",
+"agent-frameworks"
 ],
 "outlines": [
 "agent-frameworks"
@@ -4185,7 +4184,9 @@
 ],
 "openworker": [
 "chat-app-agents",
-"computer-use"
+"email-agents",
+"computer-use",
+"agent-frameworks"
 ],
 "warp": [
 "computer-use",
@@ -20348,7 +20349,7 @@
 "images-design"
 ],
 "aihot": [
-"trading-agents"
+"computer-use"
 ],
 "tick-stock-panel-tsp": [
 "text-to-sql",
@@ -20998,5 +20999,145 @@
 "agent-frameworks",
 "terminal-agents",
 "mobile"
+],
+"product-hunt-mcp": [
+"mcp-servers",
+"ide-agents"
+],
+"scalekit": [
+"planning-tasks",
+"voice-phone",
+"mcp-gateways"
+],
+"tradingagents": [
+"research-agents",
+"mcp-servers",
+"multi-agent",
+"agent-frameworks"
+],
+"meetily": [
+"local-models",
+"subtitles-transcripts"
+],
+"khoj": [
+"vector-rag",
+"research-agents",
+"computer-use",
+"local-models"
+],
+"gepa": [
+"agent-frameworks"
+],
+"sillytavern": [
+"voice-phone",
+"local-models",
+"dialogue-cleanup",
+"images-design"
+],
+"marker": [
+"vector-rag"
+],
+"alsona": [
+"email-agents",
+"sales-agents",
+"mcp-servers"
+],
+"anyforge": [
+"code-review",
+"planning-tasks",
+"multi-agent"
+],
+"adstar": [
+"marketing-agents",
+"video"
+],
+"agenticcart": [
+"agent-payments"
+],
+"inference-sh": [
+"mcp-gateways",
+"video",
+"images-design"
+],
+"apipod": [
+"vector-rag",
+"video",
+"images-design"
+],
+"creatify": [
+"planning-tasks",
+"marketing-agents",
+"video",
+"images-design"
+],
+"plurai": [
+"fine-tuning",
+"terminal-agents",
+"mobile"
+],
+"toon": [
+"vector-rag",
+"evals",
+"terminal-agents"
+],
+"ai-picture-checker": [],
+"twitch-emote-maker": [],
+"kruqond": [
+"planning-tasks",
+"research-agents",
+"search-apis",
+"video"
+],
+"nowah": [
+"voice-phone",
+"video",
+"mobile"
+],
+"tiandun": [
+"planning-tasks",
+"voice-phone",
+"marketing-agents",
+"dialogue-cleanup",
+"video",
+"images-design"
+],
+"valmera": [
+"planning-tasks",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"nextlerai": [
+"mobile"
+],
+"apt-video-ai": [
+"video-editing",
+"video"
+],
+"videoenhancer": [
+"browser-automation",
+"color-upscaling",
+"video",
+"images-design"
+],
+"imageat": [
+"voice-phone",
+"video-editing",
+"video",
+"images-design"
+],
+"ai-rap-video-forge": [
+"guardrails",
+"video-editing",
+"video"
+],
+"bitpont": [
+"trading-agents",
+"agent-wallets"
+],
+"asksolique": [
+"research-agents",
+"agent-frameworks"
 ]
 }

@@ -8,7 +8,7 @@ the caller saves, so a second build the same day does not release another batch.
 """
 
 
-def held_slugs(today, hold, state, cap=15):
+def held_slugs(today, hold, state, cap=3):
     """Slugs that stay noindex. Updates `state` when a batch is released."""
     if not isinstance(hold, dict):
         return set()

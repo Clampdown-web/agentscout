@@ -66,14 +66,14 @@ def test_noindex_helpers():
 
 def test_sponsored_helpers():
     assert X.sponsored_slugs() == set(SPONSORED), f"sponsored slugs: {sorted(X.sponsored_slugs())}"
-    assert X.visit_rel("botpress") == "sponsored noopener noreferrer"
+    assert X.visit_rel("botpress") == "sponsored nofollow noopener noreferrer"
     assert X.visit_rel("cursor") == "noopener noreferrer"
-    assert X.sponsored_badge("botpress") == ' <span class="b">Sponsored</span>'
+    assert X.sponsored_badge("botpress") == ' <span class="b">Affiliate link</span>'
     assert X.sponsored_badge("cursor") == ""
     sample = ('<a href="https://botpress.com" target="_blank" rel="noopener noreferrer">Visit</a> '
               '<a href="https://example.com" target="_blank" rel="noopener noreferrer">Other</a>')
     out = X.sponsored_rel(sample, "botpress", "https://botpress.com")
-    assert 'href="https://botpress.com" target="_blank" rel="sponsored noopener noreferrer"' in out
+    assert 'href="https://botpress.com" target="_blank" rel="sponsored nofollow noopener noreferrer"' in out
     assert 'href="https://example.com" target="_blank" rel="noopener noreferrer"' in out
     assert X.sponsored_rel(sample, "cursor", "cursor.com") == sample
     assert X.sponsored_rel(sample, "botpress", "") == sample
@@ -85,7 +85,8 @@ def test_honest_titles():
     copy = X.mcp_client_copy("Cursor", [{"category": "MCP servers"}] * 3,
                              {"tools": 5900, "mcp": 3194, "updated": "Nov 18, 2026"})
     assert not TOTAL_RE.search(copy["desc"]), f"client-guide desc still claims a total: {copy['desc']}"
-    assert "3 listings say they work with Cursor" in copy["desc"]
+    assert "3 listings work with Cursor" in copy["desc"]
+    assert 120 <= len(copy["desc"]) <= 160, copy["desc"]
     # the body lede may still show catalog counts
     assert "5,900 tools" in copy["count_sentence"]
 
@@ -185,8 +186,8 @@ def check_built_tree():
                     if card_end <= m.start() or s.find(close_tag, card_start) <= m.start():
                         continue
                     block = s[card_start:card_end]
-                assert ">Sponsored<" in block, (
-                    f"{p.relative_to(ROOT)}: sponsored slug {slug} shown without a Sponsored label")
+                assert ">Affiliate link<" in block, (
+                    f"{p.relative_to(ROOT)}: sponsored slug {slug} shown without an Affiliate link label")
                 checked_rows += 1
     # Compare Visit links: no sponsored slug is in a compare pair right now, so this
     # asserts the helper contract and reports the live count (0 expected today).

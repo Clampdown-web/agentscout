@@ -16,6 +16,9 @@ from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import pacific
+
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", "preview", "pagefind", "bot-packages", "node_modules", "__pycache__", "notes", "docs"}
 MARKUP = re.compile(r"&lt;(?:h1|h2|div|p|img|picture)\b", re.I)
@@ -286,7 +289,7 @@ def problems(root: Path | None = None) -> list[str]:
             bad.append("news.html has no dated stories")
         else:
             newest = max(dates)
-            age = (date.today() - date.fromisoformat(newest)).days
+            age = (pacific.today() - date.fromisoformat(newest)).days
             if age > 21:
                 bad.append(f"news.html newest story is {newest}, {age} days old")
         by_kind["news.html"].append("checked")

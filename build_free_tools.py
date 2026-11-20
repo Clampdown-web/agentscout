@@ -1,7 +1,7 @@
 """AgentScout's own browser-only free tools in free-tools/ (Oct 18 2026 batch). Called from build_extras.build().
 Everything runs in the visitor's browser: no API calls, no servers, no fees. Prices come from assets/ai-prices.json,
 copied by hand from each provider's official pricing page (date in "checked")."""
-import json,os
+import html,json,os
 import build_extras as X
 B=X.B; e=X.e
 CAP=lambda s:s[:1].upper()+s[1:]
@@ -31,6 +31,7 @@ def others(s): return " · ".join(f'<a href="{t[0]}.html">{e(t[1])}</a>' for t i
 def wrap(s,h1,lede,inner,faq,js,t):
     slug,name,desc,_=next(x for x in TOOLS if x[0]==s)
     canon=f"{B}free-tools/{s}.html"; title=f"Free {name} (2026, no sign-up) · AgentScout"
+    if len(html.unescape(title))>65: title=f"Free {name} · AgentScout"
     ld={"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":f"AgentScout {name}","url":canon,"description":desc,"applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in your browser)","isAccessibleForFree":True,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"AgentScout","url":B}},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Free tools","item":B+"free-tools.html"},{"@type":"ListItem","position":3,"name":name,"item":canon}]}]}
