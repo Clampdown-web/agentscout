@@ -797,6 +797,8 @@ def _http(url: str, method: str = "GET", data: bytes | None = None, headers: dic
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", "ignore")
         return exc.code, {k.lower(): v for k, v in exc.headers.items()}, body
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        return 0, {}, f"network error: {exc}"
 
 
 def mcp_body_problems(status: int, body: str) -> list[str]:

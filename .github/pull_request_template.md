@@ -5,6 +5,7 @@
 ## Checklist
 
 - [ ] Built HTML is included for every change to a generator or data file
+- [ ] Page-update PRs that should stay current with main carry the `auto-rebuild` label (docs/pipeline.md)
 - [ ] sitemap.xml is updated when pages were added, removed, or had their indexability change
 - [ ] New indexable pages in this PR: 0
 
