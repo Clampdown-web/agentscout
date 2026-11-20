@@ -304,6 +304,8 @@ class CommentAndDispatchTest(unittest.TestCase):
         self.assertIn("labeled", text)
         self.assertIn("branches: [main]", text)
         self.assertIn("refresh_pr_build.py", text)
+        plan = text.split("- name: Choose pull requests", 1)[1].split("- name:", 1)[0]
+        self.assertIn("GH_TOKEN: ${{ github.token }}", plan)
         self.assertIn("git fetch --no-tags origin main", text)
         self.assertIn("build_site.py", text)
         self.assertIn("build_lastmod.py", text)
