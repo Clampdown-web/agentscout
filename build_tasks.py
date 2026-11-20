@@ -167,7 +167,7 @@ _TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: too
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Want every crypto tool in one list? See the <a href="../categories/crypto.html">Crypto category</a>.</p>'},
  "connecting-tools-mcp":{"h1":"How to connect AI agents to your tools with MCP, by use case",
   "title":"Connect AI agents to your tools with MCP: picks by use case (2026)",
-  "desc":lambda n,items:f"How to connect an AI agent to apps and data with MCP: {n:,} servers, gateways and tools grouped by job, from databases to browsers and auth."[:158],
+  "desc":lambda n,items:"How to connect an AI agent to apps and data with MCP: servers, gateways and tools grouped by job, from databases to browsers and auth.",
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Looking for the full list of MCP servers? See the <a href="../categories/mcp-servers.html">MCP servers category</a>.</p>'}}
 def task_title(s,label):
     if s in _TT_FULL: return _TT_FULL[s]

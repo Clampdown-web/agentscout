@@ -24,8 +24,11 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import pacific
 
 USER_AGENT = "AgentScoutBot/1.0 (+https://agentscouthq.com)"
 PROTOCOL = "2025-06-18"
@@ -65,11 +68,12 @@ def repo_root() -> Path:
 
 
 def utcnow() -> datetime:
-    return datetime.now(timezone.utc).replace(microsecond=0)
+    """Pacific clock. The name stays so existing callers keep working."""
+    return pacific.now().replace(microsecond=0)
 
 
 def iso(dt: datetime) -> str:
-    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return dt.astimezone(pacific.PT).replace(microsecond=0).isoformat()
 
 
 def parse_ts(value: str) -> datetime | None:
@@ -81,8 +85,8 @@ def parse_ts(value: str) -> datetime | None:
     except ValueError:
         return None
     if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    return parsed.astimezone(timezone.utc)
+        parsed = parsed.replace(tzinfo=pacific.PT)
+    return parsed.astimezone(pacific.PT)
 
 
 def load_json(path: Path, default):

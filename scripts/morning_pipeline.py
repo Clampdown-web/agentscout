@@ -14,7 +14,10 @@ import os
 import subprocess
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+PT = ZoneInfo("America/Los_Angeles")
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,7 +39,8 @@ def recheck_command(root: Path | None = None) -> list[str]:
 
 
 def retry_line(when: datetime | None = None) -> str:
-    stamp = (when or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    moment = (when or datetime.now(PT)).astimezone(PT).replace(microsecond=0)
+    stamp = moment.isoformat()
     return f"RETRY {stamp} recheck failed; retrying once after {WAIT_SECONDS}s"
 
 

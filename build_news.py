@@ -9,6 +9,7 @@ Every agent news item gets a permanent page at /news/YYYY/MM/<slug>.html, plus m
   homepage box, news.html and api/sections.json link to the story pages.
 Called from build_extras.build() on every build_site.py run, before news.html is generated."""
 import json,os,re,html,datetime
+import pacific
 B="https://agentscouthq.com/"
 # Same cache-bust as build_tasks.sitewide(). Read the constant from the file so this
 # module can load while build_extras is still importing (build_tasks imports build_extras).
@@ -40,7 +41,7 @@ def history():
         if o is None:
             base=f'news/{x["date"][:4]}/{x["date"][5:7]}/{_slug(x["title"])}'; p=base+".html"; i=2
             while p in used: p=f"{base}-{i}.html"; i+=1
-            used.add(p); o=byu[x["url"]]={"url":x["url"],"page":p,"first_seen":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}; changed=True
+            used.add(p); o=byu[x["url"]]={"url":x["url"],"page":p,"first_seen":pacific.iso()}; changed=True
         for k in ("title","source","date","tool","summary"):
             if x.get(k) is not None and o.get(k)!=x[k]: o[k]=x[k]; changed=True
     items=sorted(byu.values(),key=lambda x:x["date"],reverse=True)
@@ -144,7 +145,7 @@ def _when(iso):
     try: d=datetime.datetime.fromisoformat(s)
     except ValueError: return None
     if d.tzinfo is None: d=d.replace(tzinfo=datetime.timezone.utc)
-    return d.astimezone(datetime.timezone.utc)
+    return d.astimezone(pacific.PT)
 def _local(url):
     if not str(url).startswith(B): return ""
     rel=url[len(B):].split("?",1)[0].split("#",1)[0]

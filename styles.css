@@ -1393,3 +1393,15 @@ nav.sitenav .navsheet{max-width:100%}
 nav.sitenav{backdrop-filter:none;background:transparent}
 nav.sitenav.is-open{z-index:1000}
 nav.sitenav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--navbg);backdrop-filter:saturate(180%) blur(12px)}
+/* Homepage phone tap targets. Lighthouse flags controls under 48px that sit close together. */
+@media(max-width:780px){
+  body.home .hero-chips{gap:12px}
+  body.home .hero-chips a{min-height:48px}
+  body.home .homegen .ig-ex{gap:12px}
+  body.home .homegen .ig-ex button{min-height:48px;min-width:48px;padding:10px 14px}
+  body.home .chip{height:auto;min-height:48px;padding:0 14px}
+  body.home .stats a{display:inline-flex;align-items:center;min-height:48px;padding:4px 2px}
+  body.home footer.footcols .footmeta a{min-height:48px}
+  body.home .scard{min-height:48px}
+  body.home #xcats .scrow,body.home #xroles .scrow{gap:12px}
+}

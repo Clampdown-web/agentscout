@@ -1,5 +1,6 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
 import json,re,datetime
+import pacific
 import atexit as _ax0
 def _pf_last():
     import sys as _s
@@ -72,15 +73,18 @@ def sponsored_rel(html,slug,host):
         tag=m.group(0)
         hm=re.search(r'href="([^"]+)"',tag)
         if not hm or _host_of(hm.group(1))!=want: return tag
+        if 'rel="sponsored nofollow noopener noreferrer"' in tag: return tag
+        if 'rel="sponsored noopener noreferrer"' in tag:
+            return tag.replace('rel="sponsored noopener noreferrer"','rel="sponsored nofollow noopener noreferrer"',1)
         if 'rel="noopener noreferrer"' not in tag: return tag
-        return tag.replace('rel="noopener noreferrer"','rel="sponsored noopener noreferrer"',1)
+        return tag.replace('rel="noopener noreferrer"','rel="sponsored nofollow noopener noreferrer"',1)
     return re.sub(r'<a\b[^>]*>',_fix,html)
 def visit_rel(slug):
     """rel for a tool's outbound Visit link: sponsored for listed slugs, plain otherwise."""
-    return "sponsored noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
+    return "sponsored nofollow noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
 def sponsored_badge(slug):
-    """Visible 'Sponsored' badge for a paid placement shown in a /best or /compare table (TASK-18)."""
-    return ' <span class="b">Sponsored</span>' if slug in sponsored_slugs() else ""
+    """Visible affiliate label on a /best or /compare row. Grids do not use it."""
+    return ' <span class="b">Affiliate link</span>' if slug in sponsored_slugs() else ""
 # Indexing quality (TASK-18): which alternatives pages stay indexable, and which URLs
 # must never reach sitemap.xml. The keep list lives in data/index_keep_alternatives.json
 # so it can change without touching code.
@@ -324,14 +328,14 @@ def facts(x):
        ("GitHub stars",f'{x["github_stars"]:,}' if x.get("github_stars") is not None else "Not tracked"),("Use cases",", ".join(x["use_cases"])),("Link checked",x["verified"])]
     return f
 def build(t):
-    bs={y["slug"]:y for y in t}; today=datetime.datetime.now(datetime.timezone.utc).date().isoformat(); urls=[]
+    bs={y["slug"]:y for y in t}; today=pacific.today().isoformat(); urls=[]
     for a,b in PAIRS:
         A,Bt=bs[a],bs[b]; s=cslug(a,b); canon=f"{B}compare/{s}.html"
         title=f"{A['name']} vs {Bt['name']}: side-by-side comparison · AgentScout"
         desc=f"{A['name']} vs {Bt['name']} compared: pricing as stated by the makers, audience, maturity and use cases. {A['description']}"[:158]
         h1=f"{A['name']} vs {Bt['name']}"; faq=[]
         if s=="claude-code-vs-openai-codex-cli":
-            h1="Codex vs Claude Code (2026)"; title="Codex vs Claude Code (2026): OpenAI Codex CLI vs Claude Code compared · AgentScout"
+            h1="Codex vs Claude Code (2026)"; title="OpenAI Codex CLI vs Claude Code (2026) · AgentScout"
             desc="Codex vs Claude Code in 2026: OpenAI's open-source Codex CLI vs Anthropic's Claude Code, compared on pricing as stated, audience and maturity."
             faq=[("What is the difference between Codex and Claude Code?",f"Claude Code is {A['description'][0].lower()+A['description'][1:]} OpenAI Codex CLI is {Bt['description'][0].lower()+Bt['description'][1:]}"),
                  ("Is Codex CLI open source?",f"Yes. Our listing for OpenAI Codex CLI states its pricing as: {Bt['pricing_detail']}."),
@@ -486,7 +490,7 @@ def write_core_sitemap(t):
     try: sm=open("sitemap.xml",encoding="utf-8").read()
     except Exception: sm=""
     have=set(re.findall(r"<loc>([^<]+)</loc>",sm))
-    today=datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    today=pacific.today().isoformat()
     urls=[u for u in core_sitemap_urls(t) if u in have]
     rows=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -653,10 +657,12 @@ def mcp_client_copy(client, named, cat):
         f"These {n} listings say in their own listing or docs that they work with {e(client)} "
         f"({n_mcp} are MCP servers), sorted by GitHub stars."
     )
-    desc=clip_text(
-        f"{n} listings say they work with {client} ({n_mcp} are MCP servers).",
-        156,
+    desc=(
+        f"{n} listings work with {client} ({n_mcp} are MCP servers). "
+        f"Each links to its AgentScout page. Pricing is as stated. "
+        f"Affiliate links do not change the order."
     )
+    if len(desc)>160: desc=desc[:157].rstrip()+"..."
     return {"n":n,"n_mcp":n_mcp,"desc":desc,"count_sentence":count_sentence}
 def seo(t,urls):
     import os,collections

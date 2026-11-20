@@ -7,6 +7,7 @@ Pages: leaderboard/, tasks/writing-code.html, categories/mcp-servers.html. Nothi
 4. Crawlability: every tool that loses its static card keeps a plain text link on the page ("All tools on this page"),
    so every tool stays reachable and crawlable without JavaScript."""
 import re,json,os,html,glob
+import pacific
 KEEP=48
 KEEP_BY={"tasks/writing-code.html":12}  # many sub-grids: show 12 per section
 CAT_KEEP=60  # first screen of a heavy category
@@ -62,8 +63,7 @@ def _sitemap_add(paths):
     p="sitemap.xml"
     if not os.path.exists(p) or not paths: return
     s=open(p, encoding="utf-8").read()
-    import datetime
-    day=datetime.date.today().isoformat()
+    day=pacific.today().isoformat()
     extra=""
     for rel in paths:
         loc="https://agentscouthq.com/"+rel
@@ -89,7 +89,12 @@ def _write_list_pages(src, slugs, names, title):
               f'<section class="calm"><h1 style="text-align:left">More {html.escape(title)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">Page {n}. {len(chunk):,} more tools from this category. Every name links to its listing.</p>'
               f'{navp}<ul class="catmore">{items}</ul>{navp}</section>')
-        desc=f"More {title}: page {n}, {len(chunk)} tools."
+        desc=(
+            f"Page {n} of {title} on AgentScout. {len(chunk)} more listings on this page, "
+            f"each name linked to its own listing, with pricing as the maker states it."
+        )
+        if len(desc)<120: desc+=" The order is not paid."
+        if len(desc)>160: desc=desc[:157].rstrip()+"..."
         canon=X.B+rel
         ld={"@context":"https://schema.org","@type":"CollectionPage","name":f"{title} page {n}","description":desc,"url":canon}
         page=X.shell("../", f"{title}, page {n} · AgentScout", desc, canon, body, ld)

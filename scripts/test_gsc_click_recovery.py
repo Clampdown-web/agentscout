@@ -33,7 +33,7 @@ class ClickRecoveryTests(unittest.TestCase):
         cls.links = (ROOT / "build_intlinks.py").read_text(encoding="utf-8")
 
     def test_daily_cap_and_thin_threshold_unchanged(self):
-        self.assertIn("NEW_TOOL_CAP=15", self.rule)
+        self.assertIn("NEW_TOOL_CAP=3", self.rule)
         self.assertIn("THIN_WORDS=80", self.rule)
         self.assertIn("if enr or (not thin and (grandfather or slug in slots)):", self.rule)
 

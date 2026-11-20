@@ -418,7 +418,13 @@ def build_x_4x5_60fps_mp4():
 import datetime
 
 def _day_seed():
-    return datetime.date.today().toordinal()
+    import sys
+    from pathlib import Path
+    root = str(Path(__file__).resolve().parents[1])
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    import pacific
+    return pacific.today().toordinal()
 
 def build_mcp_terminal_infographic():
     """Style A: Live Terminal & JSON-RPC MCP Stream + Multi-Agent Command Center HUD (1200x540)"""

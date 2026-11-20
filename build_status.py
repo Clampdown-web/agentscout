@@ -7,13 +7,10 @@ live share of checked servers, and is red when that share is below 90% or the
 stored check time is older than 36 hours.
 """
 import glob, html, json, os, re
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
-try:
-    from zoneinfo import ZoneInfo
-    _PT = ZoneInfo("America/Los_Angeles")
-except Exception:
-    _PT = timezone(timedelta(hours=-8))
+_PT = ZoneInfo("America/Los_Angeles")
 
 import build_aeo
 

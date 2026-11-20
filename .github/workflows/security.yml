@@ -32,6 +32,7 @@ jobs:
           cloudflare-api-worker/test/roast.test.mjs
           cloudflare-api-worker/test/ratelimit.test.mjs
           cloudflare-mcp-worker/test/rate-limit.test.mjs
+          cloudflare-mcp-worker/test/catalog.test.mjs
           cloudflare-image-worker-patches/security.test.mjs
           cloudflare-image-worker-patches/backup.test.mjs
           cloudflare-image-worker-patches/captured-handler.test.mjs
@@ -85,6 +86,9 @@ jobs:
           python3 scripts/test_cwv_benchmark.py
           python3 scripts/test_takedown_blocklist.py
           python3 scripts/test_sponsored_links.py
+          python3 scripts/test_pacific_dates.py
+          python3 scripts/test_newsletter_wednesday.py
+          python3 scripts/test_mcp_pricing_meta.py
           python3 scripts/test_indexing_hygiene.py
           python3 scripts/test_crawl_guide.py
       - name: Share card images

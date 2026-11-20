@@ -1,12 +1,14 @@
 name: gitleaks
 
-# Secret scan of the current tree on pull requests.
-# Direct pushes to main do not run this job, so the morning build is not blocked by it.
+# Secret scan of the current tree on pull requests and on pushes to main.
+# The scan runs after the push. It does not block the push itself.
 # The OSS gitleaks CLI is used instead of gitleaks-action. Organization repos need a
 # GITLEAKS_LICENSE for that action, and the action comments on pull requests.
 # This job has contents: read, prints no secret values, and does not comment.
 on:
   pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions: {}

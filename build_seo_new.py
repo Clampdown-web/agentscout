@@ -159,7 +159,8 @@ def animation_cache_buster(n_tools=None):
     import datetime
     if n_tools is None:
         n_tools = len(json.load(open("tools.json", encoding="utf-8")))
-    return f"{datetime.date.today().strftime('%Y%m%d')}-{int(n_tools)}"
+    import pacific
+    return f"{pacific.today().strftime('%Y%m%d')}-{int(n_tools)}"
 
 
 def sync_animations(t=None):
@@ -180,7 +181,8 @@ def sync_animations(t=None):
     ]
     script = next((p for p in script_candidates if os.path.exists(p)), script_candidates[-1])
     script_mtime = int(os.path.getmtime(script)) if os.path.exists(script) else 0
-    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "bot_templates": n_bt, "free_tools": n_ft, "date": datetime.date.today().isoformat(), "script_mtime": script_mtime}
+    import pacific
+    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "bot_templates": n_bt, "free_tools": n_ft, "date": pacific.today().isoformat(), "script_mtime": script_mtime}
     old_state = {}
     if os.path.exists(state_file):
         try:

@@ -2,7 +2,8 @@
 Noindex, out of sitemap.xml (TASK-18 indexing quality, Nov 18 2026): the page still
 exists for makers who have the link, but it is not an indexed landing page."""
 import json, html, os, glob, re
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
+import pacific
 
 STRIPE_FAST_URL = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
 STRIPE_FAST = STRIPE_FAST_URL
@@ -47,7 +48,7 @@ def load_metrics(t):
     pages = c["pages_sitemap"]
     fol = c["followers"]
 
-    pt_now = datetime.now(timezone(timedelta(hours=-7)))
+    pt_now = pacific.now()
     updated_iso = pt_now.strftime("%Y-%m-%d")
     updated_display = pt_now.strftime("%b %-d, %Y")
 
@@ -383,7 +384,7 @@ def bar_html(sp, depth=""):
       'display:flex;align-items:center;gap:10px;max-width:calc(100vw - 24px);padding:8px 10px 8px 14px;border:1px solid var(--line);border-radius:999px;'
       'background:var(--card);box-shadow:var(--shadow);font-size:13px;line-height:20px;color:var(--text)">'
       '<span style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);flex:none">Sponsor</span>'
-      f'<a href="{e(sp["url"])}" target="_blank" rel="sponsored noopener noreferrer" style="display:flex;align-items:center;gap:8px;min-width:0;color:inherit;text-decoration:none">{logo}'
+      f'<a href="{e(sp["url"])}" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:flex;align-items:center;gap:8px;min-width:0;color:inherit;text-decoration:none">{logo}'
       f'<span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b>{e(sp["name"])}</b>: {e(sp["pitch"])}</span></a>'
       '<button type="button" aria-label="Hide sponsor" onclick="try{localStorage.setItem(\'as_sponsorbar\',\'0\')}catch(e){}this.parentNode.remove()" '
       'style="flex:none;width:24px;height:24px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;font-size:16px;line-height:24px">×</button></div>'

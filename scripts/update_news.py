@@ -9,6 +9,9 @@ left over. --offline skips the feeds. --dry-run prints the selection and does
 not write. This script does not submit listings.
 After this script, run `python3 build_site.py`: build_news.py then gives every item a permanent page under news/YYYY/MM/ (tracked in news-history.json). Commit news/ and news-history.json with the other files."""
 import json,re,sys,datetime as dt,urllib.request,xml.etree.ElementTree as ET,email.utils,html,argparse,os
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import pacific
 FEEDS=[("TechCrunch","https://techcrunch.com/category/artificial-intelligence/feed/"),
 ("The Verge","https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),
 ("VentureBeat","https://venturebeat.com/category/ai/feed/"),
@@ -101,7 +104,7 @@ def main(argv=None,now=None):
     ap.add_argument("--dry-run",action="store_true",help="Print the selection and do not write news.json")
     a=ap.parse_args(argv)
     root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    now=now or dt.datetime.now(dt.timezone.utc); cut=now-dt.timedelta(hours=a.hours); out=[]; used=[]
+    now=now or pacific.now(); cut=now-dt.timedelta(hours=a.hours); out=[]; used=[]
     if not a.offline:
         tools=json.load(open(os.path.join(root,"tools.json")))
         names=sorted(((x["name"],x["slug"]) for x in tools if len(x["name"])>3),key=lambda z:-len(z[0]))

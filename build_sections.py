@@ -1,6 +1,7 @@
 """api/sections.json: the site's sections (categories, tasks, compare, best, news, image generator, submit) as JSON for the app.
 Built from the same data/pages the site generator produces, so the app always matches the website."""
 import json,re,glob,os,html,datetime
+import pacific
 import build_tasks,build_extras
 B=build_extras.B
 def txt(s): return html.unescape(re.sub(r'\s+',' ',re.sub(r'<[^>]+>','',s))).strip()
@@ -45,7 +46,7 @@ def build(t):
     badges={"title":"Badges for makers","lede":"If your tool is on AgentScout, you can show it. Badges are free and link to your tool's page, so readers can see how it compares.",
         "kinds":[{"id":"listed","label":"Listed","desc":"for any tool in the directory."},{"id":"featured","label":"Featured","desc":"for tools we've picked as featured."}],
         "variants":["light","dark"],"svg":B+"badges/{id}-{variant}.svg","png":B+"badges/{id}-{variant}.png","link":B}
-    out={"free_tools":free_tools,"badges":badges,"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"categories":categories,"tasks":tasks,"compare":compare,"best":best,"news":news,"generate":generate,"submit":submit,
+    out={"free_tools":free_tools,"badges":badges,"updated":pacific.iso(),"categories":categories,"tasks":tasks,"compare":compare,"best":best,"news":news,"generate":generate,"submit":submit,
         "newsletter":{"url":"https://agentscout.beehiiv.com/","subscribe":"https://agentscout.beehiiv.com/subscribe","latest":(lambda L:{"title":L["title"],"date":L["date"],"summary":L["subtitle"],"url":L["url"]})(json.load(open("data/latest-issue.json")))}}
     # Daily generator background: same file + version the site's generate.css uses (daily routine bumps ?v=)
     css=open("generate.css").read(); mv=re.search(r"--gen-art:url\((assets/gen-art\.webp\?v=[^)]+)\)",css)
