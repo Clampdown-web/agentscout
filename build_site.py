@@ -149,6 +149,7 @@ UC_SET={"disconfirmai":["research the web"],  # Nov 14 2026: maker correction. "
 "cosvoice":["voice & phone calls","connect tools via MCP"],  # CosVoice (Oct 20 PT, owner): phone/email for AI assistants; keyword guess would add "write code" (mentions Cursor, repo)
 "mailveri-mcp":["connect tools via MCP"],
 "1lookup":["connect tools via MCP"],  # Nov 19 2026: phone/email/IP validation MCP. "phone" would tag it as voice calls.
+"builditomi":["build apps without code"],  # Nov 20 2026: app builder. The approved sentence says "website", which the keyword rule would tag as research.
 # Oct 20, 2026 PT morning discovery: keyword rules mis-tagged these ("call"/"phone" -> voice, "browser" -> browser automation, "search" -> research), so pinned by hand
 "opcode":["write code"],"memori":["give agents memory","build an agent"],"cloudcli":["write code"],"xerj":["give agents memory","connect tools via MCP"],
 "onlook":["build apps without code","write code"],"agentos":["run code safely","write code"],"agent-sandbox-kubernetes":["run code safely","automate the browser"],
