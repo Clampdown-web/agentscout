@@ -148,7 +148,7 @@ def grids(f,names):
         out=[]; pos=0
         for m in re.finditer(r'<div class="grid"(?: id="cgrid")?>', s):
             if m.start()<pos: continue
-            cards, i=_slices(s, m.end(), '<a class="card tile"', '</a>')
+            cards, i=_slices(s, m.end(), '<a class="card tile', '</a>')
             if not s.startswith('</div>', i) or len(cards)<=K+4 or "".join(cards)!=s[m.end():i].strip():
                 continue
             shown, deferred = cards[:K], cards[K:]
@@ -161,6 +161,14 @@ def grids(f,names):
                 # Measured servers stay on the page, and the first screen still
                 # includes unchecked cards so the "Not yet checked" badge is visible.
                 shown, deferred = hot+cold[:K], cold[K:]
+            # Discontinued cards stay in the page so the checkbox can reveal them
+            # without the "show all" fetch. CSS hides them until it is checked.
+            hold=[c for c in deferred if " is-disc" in c]
+            if hold:
+                shown=shown+hold
+                deferred=[c for c in deferred if " is-disc" not in c]
+            if not deferred:
+                continue
             out.append(s[pos:m.start()])
             k=f"g{gi}"; gi+=1; J[k]="".join(deferred)
             removed.extend(re.search(r'data-s="([^"]+)"',c).group(1) for c in deferred)
