@@ -1244,6 +1244,12 @@
          "type": "string"
         },
         "tool": {
+         "type": [
+          "null",
+          "string"
+         ]
+        },
+        "summary": {
          "type": "string"
         },
         "page": {
@@ -1259,6 +1265,7 @@
         "url",
         "date",
         "tool",
+        "summary",
         "page",
         "page_url"
        ]

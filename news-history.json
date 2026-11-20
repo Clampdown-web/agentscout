@@ -1,6 +1,73 @@
 {
  "items": [
   {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1038370/openai-is-starting-to-bring-dots-to-plus-tier-subscribers",
+   "page": "news/2026/11/openai-starts-testing-always-on-dots-agents-on-the-20-plus-plan.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "OpenAI starts testing always-on Dots agents on the $20 Plus plan",
+   "source": "The Verge",
+   "date": "2026-11-20T08:50:33Z",
+   "summary": "The Verge reports OpenAI is testing its always-on Dots agents with a small number of $20 ChatGPT Plus subscribers. Dots had been limited to Pro and higher tiers, and they are also rolling out to every ChatGPT Business Standard user."
+  },
+  {
+   "url": "https://x.com/i/trending/2123599603068981629",
+   "page": "news/2026/11/kong-says-its-volcano-agent-cloud-is-live-and-looks-for-bugs-on-its.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Kong says its Volcano agent cloud is live and looks for bugs on its own",
+   "source": "X News",
+   "date": "2026-11-20T02:14:47Z",
+   "summary": "Kong's November 19 post says Volcano, its agent cloud, is live: one place to host agents and apps, with sandboxes, durable workflows, and a system that finds bugs and proposes fixes. Cursor, Codex, and Claude Code can deploy to it."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+   "page": "news/2026/11/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Apple may be developing its own AI agent that runs your Mac",
+   "source": "TechCrunch",
+   "date": "2026-11-20T00:56:01Z",
+   "tool": "agent",
+   "summary": "Bloomberg found an Apple job listing for an AI agent that can browse, use apps, run commands, and write code on a Mac. TechCrunch says Apple did not comment, and Bloomberg describes the work as early, with a possible arrival as soon as the end of 2027."
+  },
+  {
+   "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+   "page": "news/2026/11/apple-is-hiring-engineers-to-build-its-own-ai-agent.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Apple is hiring engineers to build its own AI agent",
+   "source": "The Verge",
+   "date": "2026-11-19T23:13:01Z",
+   "tool": "agent",
+   "summary": "The Verge reports Apple is hiring engineers to build its own AI agent, based on a job listing for software that can use a computer across apps, the web, and code."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
+   "page": "news/2026/11/recent-outages-look-like-ai-era-growing-pains-not-one-attack.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Recent outages look like AI-era growing pains, not one attack",
+   "source": "TechCrunch",
+   "date": "2026-11-19T21:42:31Z",
+   "tool": "agent",
+   "summary": "TechCrunch looks at a cluster of outages, including Apple Pay, NASA, the FAA, and Microsoft 365. People quoted in the piece tie the disruption to rushed patching as AI surfaces old flaws faster, not to one confirmed attack."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+   "page": "news/2026/11/gemini-can-now-use-a-mac-working-across-apps-files-and-the-web.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Gemini can now use a Mac, working across apps, files, and the web",
+   "source": "TechCrunch",
+   "date": "2026-11-19T18:09:11Z",
+   "summary": "Google's Gemini app on macOS can now take actions on the computer: native apps, local files, and the web, with a live preview and a way to pause or approve steps. TechCrunch says it is in English in the US for Google AI Plus, Pro, and Ultra subscribers."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+   "page": "news/2026/11/meta-employees-say-muse-mixed-up-chats-and-showed-other-peoples-data.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Meta employees say Muse mixed up chats and showed other people's data",
+   "source": "TechCrunch",
+   "date": "2026-11-19T17:38:40Z",
+   "tool": "agent",
+   "summary": "Reuters, via TechCrunch, says Meta employees testing Muse saw it mix up chats and surface other people's data, including bank balances and a Signal reminder. Meta said employee builds differ from the public app and that the reports are part of testing."
+  },
+  {
    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbXM0U2ZfRWZxTkRPT1Vwa01ZbkxNQlNXZVBzaGpMWTI2Tk5MdmRUOWtrUE0yb3QxUWlIdmc2aXRNclZ4b0xTbUxiYXE3dTBCc1hXX1UxWDVQR0w2T2VadHowR3NIRG5CT0lCUThRWjBDUzBPd0pjRXF2TWJmOW5NbTlnVjRNY2NBNTBnMzRtelB1QkhkZm1MUnlaQUo0RzFvbi1N?oc=5",
    "page": "news/2026/11/metano-emerges-from-stealth-to-unify-ai-agent-security-across-the.html",
    "first_seen": "2026-11-19T15:07:01Z",
@@ -17,6 +84,15 @@
    "source": "Yahoo Finance",
    "date": "2026-11-19T14:00:00Z",
    "tool": "rogue"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/",
+   "page": "news/2026/11/superhuman-rolls-its-go-agent-out-across-docs-mail-and-connected-apps.html",
+   "first_seen": "2026-11-20T04:46:02-08:00",
+   "title": "Superhuman rolls its Go agent out across Docs, Mail, and connected apps",
+   "source": "TechCrunch",
+   "date": "2026-11-19T14:00:00Z",
+   "summary": "Superhuman is rolling its Go assistant through Docs and Mail, where it can draft, search company context, and run other agents in the background. The update adds about 20 connected agents through the Go SDK, including DeepL, Amplitude, and Databricks."
   },
   {
    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdWtacjhMQ3F4UzI4NWpGb1A0OXBadE9WVVVJbklfdDdqVVg2YU45LWw5Vl9tcUdwZTNiYjdPbUFkczBmRkVmbWc3MmotVFFlOFpxeTJJcEQ4SXAzcFJRU09yTHp3MHdPdmhyN3V2cU9BYzV5Y0ZzdVZ6cWxqMVRFWE1CenhPTFRWZEYyWFYwdjJ5elZfYTNXNGVZNlE?oc=5",
