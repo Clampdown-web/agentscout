@@ -36374,14 +36374,11 @@
       "connect tools via MCP"
     ],
     "website": "https://mailveri.com/docs/mcp/?atp=agentscout",
-    "github": "https://github.com/mailveri/mailveri-mcp",
     "id": 1429,
     "slug": "mailveri-mcp",
     "logo": "assets/logos/mailveri-mcp.png",
     "maker_submitted": true,
-    "submitted": "2026-10-19",
-    "github_stars": 1,
-    "stars_checked": "2026-10-30"
+    "submitted": "2026-10-19"
   },
   {
     "name": "MCP-UI",
@@ -82299,9 +82296,9 @@
       "connect tools via MCP"
     ],
     "website": "https://agenticweb.wiki/",
-    "github": "https://github.com/Belgravia-Labs/agenticweb-data",
+    "github": "https://github.com/Belgravia-Labs/agenticweb-schemas",
     "catalog_only": true,
-    "repo": "Belgravia-Labs/agenticweb-data",
+    "repo": "Belgravia-Labs/agenticweb-schemas",
     "github_stars": 0,
     "slug": "agentic-web-wiki",
     "id": 3170,
@@ -84634,7 +84631,7 @@
   },
   {
     "name": "UniFi Access MCP",
-    "url": "http://unifimcp.com/",
+    "url": "https://unifimcp.com/",
     "description": "UniFi Access MCP is an MCP server agents call to manage UniFi Access doors, credentials, policies, visitors, and events via MCP.",
     "category": "MCP servers",
     "pricing": "Open source",
@@ -84651,7 +84648,7 @@
       "connect tools via MCP",
       "run code safely"
     ],
-    "website": "http://unifimcp.com/",
+    "website": "https://unifimcp.com/",
     "github": "https://github.com/sirkirby/unifi-mcp",
     "catalog_only": true,
     "repo": "sirkirby/unifi-mcp",
@@ -99150,10 +99147,10 @@
     "description": "Live crypto yields for BTC, stablecoins and ETH across DeFi and CeFi, with A-D risk grades.",
     "category": "MCP servers",
     "pricing": "See site",
-    "maturity": "Active",
+    "maturity": "Discontinued (site returned HTTP 410 Gone; checked Nov 19, 2026)",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-11",
     "added": "2026-11-11",
     "source": "MCP registry",
@@ -99166,7 +99163,8 @@
     "catalog_only": true,
     "slug": "bitcoinyield",
     "id": 3826,
-    "logo": "assets/logos/bitcoinyield.png"
+    "logo": "assets/logos/bitcoinyield.png",
+    "status_note": "Discontinued: bitcoinyield.co returns HTTP 410 Gone and says BitcoinYield is offline, including its yield comparison and API. Checked Nov 19, 2026 (PT)."
   },
   {
     "name": "Bitculator",
@@ -118355,10 +118353,10 @@
     "description": "AI picks for every product category: the product an AI model would buy, why, and who should skip it.",
     "category": "MCP servers",
     "pricing": "See site",
-    "maturity": "Active",
+    "maturity": "Discontinued (site returned HTTP 410 Closed; checked Nov 19, 2026)",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-11",
     "added": "2026-11-11",
     "source": "MCP registry",
@@ -118371,7 +118369,8 @@
     "catalog_only": true,
     "slug": "intelligence-pick",
     "id": 4605,
-    "logo": "assets/logos/intelligence-pick.png"
+    "logo": "assets/logos/intelligence-pick.png",
+    "status_note": "Discontinued: intelligencepick.com returns HTTP 410 Gone and a \"Closed\" page, including the /developers and /mcp URLs. Checked Nov 19, 2026 (PT)."
   },
   {
     "name": "Inttegro",
@@ -129356,10 +129355,10 @@
     "description": "Live USDC rates on Base, any address's Obento position, and deposits and withdrawals to sign.",
     "category": "MCP servers",
     "pricing": "See site",
-    "maturity": "Active",
+    "maturity": "Discontinued (Vercel deployment gone, HTTP 404; checked Nov 19, 2026)",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-11",
     "added": "2026-11-11",
     "source": "MCP registry",
@@ -129372,7 +129371,8 @@
     "catalog_only": true,
     "slug": "obento",
     "id": 5050,
-    "logo": "assets/logos/obento.png"
+    "logo": "assets/logos/obento.png",
+    "status_note": "Discontinued: obentoapp.com returns HTTP 404 and Vercel reports the deployment could not be found, including /docs/agents and the /mcp endpoint. Checked Nov 19, 2026 (PT)."
   },
   {
     "name": "OceanToken",
@@ -130546,7 +130546,7 @@
   },
   {
     "name": "Passport Sorted: passport & visa photo rules",
-    "url": "https://passportsorted.com/mcp/",
+    "url": "https://passportsorted.com/",
     "description": "Official passport and visa photo rules for 27 documents, with sources and check dates.",
     "category": "MCP servers",
     "pricing": "See site",
@@ -130561,7 +130561,7 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "website": "https://passportsorted.com/mcp/",
+    "website": "https://passportsorted.com/",
     "github": "",
     "catalog_only": true,
     "slug": "passport-sorted-passport-visa-photo-rules",
@@ -143149,7 +143149,7 @@
   },
   {
     "name": "Langchain4J Aideepin",
-    "url": "http://www.aideepin.com/",
+    "url": "https://www.aideepin.com/",
     "description": "AI 应用平台（聊天、绘画、知识库、工作流、 MCP服务市场、语音输入输出、长期记忆） | AI application platform (Chat,Draw,RAG,Workflow,MCP marketplace, ASR,TTS, Long-term memory etc)",
     "category": "MCP servers",
     "pricing": "Open source",
@@ -143166,7 +143166,7 @@
       "connect tools via MCP",
       "give agents memory"
     ],
-    "website": "http://www.aideepin.com/",
+    "website": "https://www.aideepin.com/",
     "github": "https://github.com/moyangzhan/langchain4j-aideepin",
     "catalog_only": true,
     "repo": "moyangzhan/langchain4j-aideepin",
@@ -143882,10 +143882,7 @@
       "connect tools via MCP"
     ],
     "website": "https://atlasrepo.com/",
-    "github": "https://github.com/Arnon-hs/open-source",
     "catalog_only": true,
-    "repo": "Arnon-hs/open-source",
-    "github_stars": 310,
     "slug": "open-source",
     "id": 5629,
     "logo": "assets/logos/open-source.png"

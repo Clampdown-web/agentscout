@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-11-19T16:00:21Z",
- "updated": "2026-11-19T16:00:21Z",
+ "generated": "2026-11-19T23:26:38-08:00",
+ "updated": "2026-11-19T23:26:38-08:00",
  "last_checked": "2026-11-19",
  "count": 5932,
  "total_tools": 5932,
@@ -59366,13 +59366,12 @@
    "slug": "mailveri-mcp",
    "url": "https://mailveri.com/docs/mcp/?atp=agentscout",
    "website": "https://mailveri.com/docs/mcp/?atp=agentscout",
-   "github": "https://github.com/mailveri/mailveri-mcp",
+   "github": "",
    "category": "MCP servers",
    "description": "Open-source MCP server that lets AI agents and coding assistants verify single emails and bulk email lists through the MailVeri API, with SMTP, catch-all, disposable and role-account detection.",
    "key_features": [
     "MIT-licensed server; MailVeri API is pay-as-you-go credits (1,000 free on sign-up, from $9 for 10,000), no subscription",
     "Active",
-    "1 GitHub stars",
     "Connect tools via mcp"
    ],
    "pricing": "MIT-licensed server; MailVeri API is pay-as-you-go credits (1,000 free on sign-up, from $9 for 10,000), no subscription",
@@ -59393,7 +59392,7 @@
    "seed": false,
    "new_this_week": false,
    "repo": null,
-   "github_stars": 1,
+   "github_stars": null,
    "open_source": true,
    "license": "MIT",
    "tags": [
@@ -133756,7 +133755,7 @@
    "slug": "agentic-web-wiki",
    "url": "https://agenticweb.wiki/",
    "website": "https://agenticweb.wiki/",
-   "github": "https://github.com/Belgravia-Labs/agenticweb-data",
+   "github": "https://github.com/Belgravia-Labs/agenticweb-schemas",
    "category": "MCP servers",
    "description": "Agentic Web Wiki is an MCP server that gives agents a way to handle look up 133 agentic-web standards, live-probe any domain, validate manifests, generate boilerplate.",
    "key_features": [
@@ -133781,7 +133780,7 @@
    "new": true,
    "seed": false,
    "new_this_week": false,
-   "repo": "Belgravia-Labs/agenticweb-data",
+   "repo": "Belgravia-Labs/agenticweb-schemas",
    "github_stars": 0,
    "open_source": true,
    "license": "",
@@ -137534,8 +137533,8 @@
   {
    "name": "UniFi Access MCP",
    "slug": "unifi-access-mcp",
-   "url": "http://unifimcp.com/",
-   "website": "http://unifimcp.com/",
+   "url": "https://unifimcp.com/",
+   "website": "https://unifimcp.com/",
    "github": "https://github.com/sirkirby/unifi-mcp",
    "category": "MCP servers",
    "description": "UniFi Access MCP is an MCP server agents call to manage UniFi Access doors, credentials, policies, visitors, and events via MCP.",
@@ -161470,7 +161469,7 @@
    "description": "Live crypto yields for BTC, stablecoins and ETH across DeFi and CeFi, with A-D risk grades.",
    "key_features": [
     "See site",
-    "Active",
+    "Discontinued (site returned HTTP 410 Gone; checked Nov 19, 2026)",
     "Connect tools via mcp"
    ],
    "pricing": "See site",
@@ -161487,7 +161486,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -193395,7 +193394,7 @@
    "description": "AI picks for every product category: the product an AI model would buy, why, and who should skip it.",
    "key_features": [
     "See site",
-    "Active",
+    "Discontinued (site returned HTTP 410 Closed; checked Nov 19, 2026)",
     "Connect tools via mcp"
    ],
    "pricing": "See site",
@@ -193411,7 +193410,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -211712,7 +211711,7 @@
    "description": "Live USDC rates on Base, any address's Obento position, and deposits and withdrawals to sign.",
    "key_features": [
     "See site",
-    "Active",
+    "Discontinued (Vercel deployment gone, HTTP 404; checked Nov 19, 2026)",
     "Connect tools via mcp"
    ],
    "pricing": "See site",
@@ -211728,7 +211727,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -213703,8 +213702,8 @@
   {
    "name": "Passport Sorted: passport & visa photo rules",
    "slug": "passport-sorted-passport-visa-photo-rules",
-   "url": "https://passportsorted.com/mcp/",
-   "website": "https://passportsorted.com/mcp/",
+   "url": "https://passportsorted.com/",
+   "website": "https://passportsorted.com/",
    "github": "",
    "category": "MCP servers",
    "description": "Official passport and visa photo rules for 27 documents, with sources and check dates.",
@@ -234634,8 +234633,8 @@
   {
    "name": "Langchain4J Aideepin",
    "slug": "langchain4j-aideepin",
-   "url": "http://www.aideepin.com/",
-   "website": "http://www.aideepin.com/",
+   "url": "https://www.aideepin.com/",
+   "website": "https://www.aideepin.com/",
    "github": "https://github.com/moyangzhan/langchain4j-aideepin",
    "category": "MCP servers",
    "description": "AI 应用平台（聊天、绘画、知识库、工作流、 MCP服务市场、语音输入输出、长期记忆） | AI application platform (Chat,Draw,RAG,Workflow,MCP marketplace, ASR,TTS, Long-term memory etc)",
@@ -235796,13 +235795,12 @@
    "slug": "open-source",
    "url": "https://atlasrepo.com/",
    "website": "https://atlasrepo.com/",
-   "github": "https://github.com/Arnon-hs/open-source",
+   "github": "",
    "category": "MCP servers",
    "description": "A living, machine-readable catalog of open-source projects with practical summaries, categories, quality signals and transparent scoring.",
    "key_features": [
     "Open source",
     "Active",
-    "310 GitHub stars",
     "Connect tools via mcp"
    ],
    "pricing": "Open source",
@@ -235822,8 +235820,8 @@
    "new": true,
    "seed": false,
    "new_this_week": false,
-   "repo": "Arnon-hs/open-source",
-   "github_stars": 310,
+   "repo": null,
+   "github_stars": null,
    "open_source": true,
    "license": "",
    "tags": [

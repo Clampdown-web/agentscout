@@ -118,13 +118,15 @@ def mapping(t):
     return m
 def tasks_for(x,m): return [T for s,(T,items) in m.items() if x in items]
 def _grid(items,task=None):
+    nd=sum(1 for x in items if build_extras.is_disc(x))
+    bar=(build_extras.disc_toggle()+'<p class="count">'+build_extras.disc_count_html(len(items), nd)+'</p>') if nd else ""
     r=build_subtasks.sections(items,task=task)
-    if not r: return f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(items))}</div>'
+    if not r: return bar+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(items))}</div>'
     secs,other=r
     chips='<div class="badges stchips" role="navigation" aria-label="Sub-tasks" style="margin:10px 0 4px">'+"".join(f'<a class="b uc" href="#st-{sl}">{e(l[0].upper()+l[1:])} ({len(v):,})</a>' for sl,l,v in secs)+(f'<a class="b uc" href="#st-more">More tools ({len(other):,})</a>' if other else "")+('<a class="b uc" href="#repos">GitHub repos</a>' if len(build_subtasks.repo_rows(items)[0])>=3 else "")+'</div>'
     sp={(p_,sub):sl for sl,p_,sub,_ in SUBP}
     h=lambda i,l,n:f'<h2 id="st-{i}" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(l)} <span style="color:var(--muted);font-weight:400">({n:,})</span>'+(f' <a href="{sp[(task,i)]}.html" style="font-size:14px;font-weight:500;margin-left:6px">See the full list →</a>' if (task,i) in sp else "")+'</h2>'
-    out=chips+"".join(h(sl,l[0].upper()+l[1:],len(v))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(v))}</div>' for sl,l,v in secs)
+    out=bar+chips+"".join(h(sl,l[0].upper()+l[1:],len(v))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(v))}</div>' for sl,l,v in secs)
     if other: out+=h("more","More tools",len(other))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(other))}</div>'
     return out
 SUBP=[]

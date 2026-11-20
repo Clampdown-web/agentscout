@@ -1,8 +1,8 @@
 {
  "catalog": {
   "mcp_servers": 3196,
-  "live": 3181,
-  "down": 15,
+  "live": 3189,
+  "down": 7,
   "checked": 3196,
   "not_yet_checked": 0,
   "directory_last_checked": "2026-11-19",
@@ -11,8 +11,40 @@
   "history": [
    {
     "date": "2026-11-19",
-    "note": "3,181 of 3,196 checked servers live, 15 down",
+    "note": "3,189 of 3,196 checked servers live, 7 down",
     "time": "07:05"
+   },
+   {
+    "date": "2026-11-19",
+    "note": "WordRadar link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "UniFi Access MCP link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "Passport Sorted: passport & visa photo rules link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "Open Source link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "MailVeri MCP link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "Langchain4J Aideepin link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "Agentic Web Wiki link status changed from Error to OK."
+   },
+   {
+    "date": "2026-11-19",
+    "note": "A1 Synthetic Oil (independent AMSOIL dealer) link status changed from Error to OK."
    },
    {
     "date": "2026-11-19",
@@ -25,38 +57,6 @@
    {
     "date": "2026-11-19",
     "note": "GoodWatch link status changed from Error to OK."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "Open Source link status changed from OK to Error."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "Obento link status changed from OK to Error."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "Neuronto ARD Registry: Agentic Resource link status changed from Not responding to OK."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "Helmbeam link status changed from OK to Error."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "GoodWatch link status changed from OK to Error."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "DataSnack link status changed from Error to OK."
-   },
-   {
-    "date": "2026-11-18",
-    "note": "Backlnk link status changed from OK to Error."
-   },
-   {
-    "date": "2026-11-16",
-    "note": "Neuronto ARD Registry: Agentic Resource link status changed from OK to Not responding."
    }
   ]
  },
@@ -455,15 +455,18 @@
    "slug": "a1-synthetic-oil-independent-amsoil-dealer",
    "name": "A1 Synthetic Oil (independent AMSOIL dealer)",
    "page": "https://agentscouthq.com/tools/a1-synthetic-oil-independent-amsoil-dealer.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 520",
-   "check_label": "Error",
+   "detail": "url 202",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 520)",
+     "note": "live (url 202)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "A1 Synthetic Oil (independent AMSOIL dealer) link status changed from Error to OK."
     }
    ]
   },
@@ -1566,15 +1569,18 @@
    "slug": "agentic-web-wiki",
    "name": "Agentic Web Wiki",
    "page": "https://agentscouthq.com/tools/agentic-web-wiki.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 200, github 404",
-   "check_label": "Error",
+   "detail": "url 200, github 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 200, github 404)",
+     "note": "live (url 200, github 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "Agentic Web Wiki link status changed from Error to OK."
     },
     {
      "date": "2026-11-13",
@@ -26912,15 +26918,18 @@
    "slug": "langchain4j-aideepin",
    "name": "Langchain4J Aideepin",
    "page": "https://agentscouthq.com/tools/langchain4j-aideepin.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 500, github 200",
-   "check_label": "Error",
+   "detail": "url 200, github 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 500, github 200)",
+     "note": "live (url 200, github 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "Langchain4J Aideepin link status changed from Error to OK."
     }
    ]
   },
@@ -29505,15 +29514,18 @@
    "slug": "mailveri-mcp",
    "name": "MailVeri MCP",
    "page": "https://agentscouthq.com/tools/mailveri-mcp.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 200, github 404",
-   "check_label": "Error",
+   "detail": "url 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 200, github 404)",
+     "note": "live (url 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "MailVeri MCP link status changed from Error to OK."
     },
     {
      "date": "2026-11-13",
@@ -35767,15 +35779,18 @@
    "slug": "open-source",
    "name": "Open Source",
    "page": "https://agentscouthq.com/tools/open-source.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 200, github 404",
-   "check_label": "Error",
+   "detail": "url 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 200, github 404)",
+     "note": "live (url 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "Open Source link status changed from Error to OK."
     },
     {
      "date": "2026-11-18",
@@ -37535,15 +37550,18 @@
    "slug": "passport-sorted-passport-visa-photo-rules",
    "name": "Passport Sorted: passport & visa photo rules",
    "page": "https://agentscouthq.com/tools/passport-sorted-passport-visa-photo-rules.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 404",
-   "check_label": "Error",
+   "detail": "url 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 404)",
+     "note": "live (url 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "Passport Sorted: passport & visa photo rules link status changed from Error to OK."
     },
     {
      "date": "2026-11-14",
@@ -46762,15 +46780,18 @@
    "slug": "unifi-access-mcp",
    "name": "UniFi Access MCP",
    "page": "https://agentscouthq.com/tools/unifi-access-mcp.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 500, github 200",
-   "check_label": "Error",
+   "detail": "url 200, github 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 500, github 200)",
+     "note": "live (url 200, github 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "UniFi Access MCP link status changed from Error to OK."
     }
    ]
   },
@@ -47723,15 +47744,18 @@
    "slug": "wordradar",
    "name": "WordRadar",
    "page": "https://agentscouthq.com/tools/wordradar.html",
-   "status": "down",
+   "status": "live",
    "last_checked": "2026-11-19 07:05",
-   "detail": "url 406",
-   "check_label": "Error",
+   "detail": "url 200",
    "history": [
     {
      "date": "2026-11-19",
-     "note": "down (url 406)",
+     "note": "live (url 200)",
      "time": "07:05"
+    },
+    {
+     "date": "2026-11-19",
+     "note": "WordRadar link status changed from Error to OK."
     },
     {
      "date": "2026-11-10",

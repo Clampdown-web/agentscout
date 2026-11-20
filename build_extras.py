@@ -565,7 +565,10 @@ def card(x,d="../",sponsored=False):
     attrs=health=""
     if x.get("category")=="MCP servers":
         m=_mrr(); attrs=m.responds_attrs(x["slug"]); health=m.badge_html_for(x["slug"])
-    return f'<a class="card tile" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{sponsored_badge(x["slug"]) if sponsored else ""}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+    disc=is_disc(x)
+    tag='<span class="b warn">Discontinued</span>' if disc else ""
+    cls="card tile is-disc" if disc else "card tile"
+    return f'<a class="{cls}" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{tag}{sponsored_badge(x["slug"]) if sponsored else ""}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -604,11 +607,21 @@ def agentic_first(path,items):
     """Media category pages (Oct 18, 2026) lead with agentic tools; the order is otherwise unchanged."""
     if path in {f"categories/{catslug(c)}.html" for c in LEAD_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
     return items
-def catbar(n, responds=False):
+def is_disc(x):
+    return "discontinued" in (x.get("maturity") or "").lower()
+def disc_count_html(n, hidden):
+    """Both numbers stay the catalog total. The note says how many cards the checkbox is hiding."""
+    return (f'<span class="when-disc-off">Showing {n:,} of {n:,} tools ({hidden:,} discontinued hidden)</span>'
+            f'<span class="when-disc-on">Showing {n:,} of {n:,} tools</span>')
+def disc_toggle():
+    return '<label class="fchk"><input type="checkbox" id="fdisc"> Show discontinued servers</label>'
+def catbar(n, responds=False, hidden_disc=0):
     opt='<option value="responds">Responds</option>' if responds else ''
+    toggle=disc_toggle() if hidden_disc else ''
+    count=disc_count_html(n, hidden_disc) if hidden_disc else f'Showing {n} of {n} tools'
     return ('<div class="filters cfilters" id="cfilters" role="group" aria-label="Filter and sort these tools"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option value="free">Free</option><option value="freeplan">Free or free plan</option><option value="freemium">Freemium</option><option value="paid">Paid</option><option value="unknown">Pricing not listed</option></select>'
- '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label><label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option>'+opt+'</select>'
- '<button type="button" class="chip" id="freset" hidden>Clear all filters</button></div><p class="count" id="ccount" aria-live="polite">Showing {n} of {n} tools</p><p class="snote muted" id="snote" hidden></p>').replace("{n}",str(n))
+ '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label>'+toggle+'<label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option>'+opt+'</select>'
+ '<button type="button" class="chip" id="freset" hidden>Clear all filters</button></div><p class="count" id="ccount" aria-live="polite">'+count+'</p><p class="snote muted" id="snote" hidden></p>')
 def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     canon=B+path
     rows=list(agentic_first(path,newfirst(items)))
@@ -616,6 +629,7 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     for x in more or []:
         if x["slug"] not in seen:
             rows.append(x); seen.add(x["slug"])
+    nd=sum(1 for x in rows if is_disc(x))
     listed=rows[:60] if path.startswith("categories/") and len(rows)>60 else rows
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","numberOfItems":len(listed),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(listed)]},
@@ -626,7 +640,8 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     _bar = _script = _list = ""
     if _mcp_best:
         _m=_mrr(); _bar=_m.responds_bar(); _script=_m.responds_script("../"); _list=' data-responds-list'
-    body=f'<div class="crumb"><a href="../">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x,sponsored=path.startswith("best/")) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    _discbar=catbar(len(items), responds=_mcp_cat, hidden_disc=nd) if path.startswith("categories/") else (disc_toggle()+'<p class="count">'+disc_count_html(len(rows), nd)+'</p>' if nd else "")
+    body=f'<div class="crumb"><a href="../">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{_discbar}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x,sponsored=path.startswith("best/")) for x in agentic_first(path,newfirst(rows)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
@@ -679,7 +694,8 @@ def seo(t,urls):
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
         _tc=[z for z in _tc if z[2]>=3][:14]
         _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({fmt_n(k)})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
-        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{fmt_n(n)} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
+        _nd=sum(1 for x in items if is_disc(x))
+        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{fmt_n(n)} {e(_cn)} in the AgentScout directory, each with a link-checked listing."+(f" {fmt_n(_nd)} discontinued hidden until you turn on Show discontinued servers." if _nd else "")
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
             import build_aicite as _bac
@@ -687,7 +703,7 @@ def seo(t,urls):
             _lede+=f' <strong>{e(_bac.reach_sentence(_bac.mcp_reachability(t)))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
             if _hs:
                 _lede+=" "+e(_hs)
-        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {fmt_n(n)} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
+        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {fmt_n(n)} {e(_cn)}{f" ({fmt_n(_nd)} discontinued hidden)" if _nd else ""}: {e(_bs.price_line(items))}.</p>'+_chips
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
             if _ws: _pre+=(f'<section id="wallet-safety" aria-labelledby="wallet-safety-h"><h2 id="wallet-safety-h" style="font-size:18px;margin:24px 0 6px">Wallet safety</h2>'

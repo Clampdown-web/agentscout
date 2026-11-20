@@ -33,13 +33,20 @@ def ptype(x):
     return "paid" if p else "unknown"
 def lstat(codes):
     if not codes: return ("not checked","")
+    nums=[(k,c) for k,c in codes.items() if isinstance(c,int)]
+    if not nums: return ("not checked","")
+    numd=dict(nums)
     worst=None
-    gh_ok=200<=codes.get("github",0)<400
-    for c in codes.values():
-        s=("ok" if 200<=c<400 or c==405 or (c in(401,403,429) and (gh_ok or len(codes)==1)) else "blocked" if c in(401,403,429) else "broken")
+    gh_ok=200<=numd.get("github",0)<400
+    n=len(nums)
+    for _,c in nums:
+        s=("ok" if 200<=c<400 or c==405 or (c in(401,403,429) and (gh_ok or n==1)) else "blocked" if c in(401,403,429) else "broken")
         if worst is None or ["ok","blocked","broken"].index(s)>["ok","blocked","broken"].index(worst): worst=s
-    return ({"ok":"OK","blocked":"Reachable, blocks automated checks","broken":"Not responding" if 0 in codes.values() else "Error"}[worst],
-            ", ".join(f"{k} {c if c else 'no response'}" for k,c in codes.items()))
+    bits=[f"{k} {c if c else 'no response'}" for k,c in nums]
+    for k,c in codes.items():
+        if not isinstance(c,int) and c: bits.append(str(c) if k=="note" else f"{k} {c}")
+    return ({"ok":"OK","blocked":"Reachable, blocks automated checks","broken":"Not responding" if 0 in numd.values() else "Error"}[worst],
+            ", ".join(bits))
 def mcp_uptime_line(t=None):
     """Same population as the homepage card: checked servers only."""
     return reach_sentence(mcp_reachability(t))
@@ -93,7 +100,7 @@ def reach_sentence(st):
     return line
 def methodology_plain():
     return ("Once a day, AgentScout requests every MCP server in the directory, including catalog-only listings, and, when it is a different link, its GitHub URL. "
-            "The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. "
+            "The request is HEAD, then GET, with a 20-second timeout. If that returns 403, 406, 429, or 5xx, or it fails on TLS, times out, or gets no response, it retries once with a browser user agent. An http URL that still returns 5xx is tried once as https, and a passing https response counts as OK and the row notes https works. A GitHub 404 does not mark the server down when the site URL is OK; the row notes github_404 instead. "
             "A server counts as live when its stored label is OK or Reachable, blocks automated checks. "
             "OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. "
             "Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. "
