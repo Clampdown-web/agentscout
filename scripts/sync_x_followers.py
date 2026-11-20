@@ -10,6 +10,7 @@ That warning is not a copy: the numbers still came from this run's fetch.
 """
 from __future__ import annotations
 
+import argparse
 import copy
 import json
 import re
@@ -174,6 +175,7 @@ def apply_fetch(tracker: dict, day: str, fetched: dict, fetched_at: str, err=sys
             "combined_followers": row["combined_followers"],
             "as_of": day,
             "source": "live_fetch",
+            "x_followers_fetched_at": fetched_at,
         }
     )
     updated = dict(tracker)
@@ -222,10 +224,38 @@ def load_tracker(path: Path = TRACKER) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def parse_args(argv):
+    """Counts already fetched from the X API. Omit both to scrape instead.
+
+    There is no page rebuild flag. This script writes the tracker only.
+    """
+    ap = argparse.ArgumentParser(description="Record today's X follower counts on the sprint tracker.")
+    ap.add_argument("--clampdown19", type=int, default=None, help="Follower count already fetched for @clampdown19")
+    ap.add_argument("--agentscouthq", type=int, default=None, help="Follower count already fetched for @AgentScoutHQ")
+    return ap.parse_args(argv)
+
+
+def counts_from_args(args) -> dict | None:
+    if args.clampdown19 is None and args.agentscouthq is None:
+        return None
+    if args.clampdown19 is None or args.agentscouthq is None:
+        raise FetchError("pass both --clampdown19 and --agentscouthq, or neither")
+    return {
+        "clampdown19_followers": args.clampdown19,
+        "agentscouthq_followers": args.agentscouthq,
+    }
+
+
 def main(argv=None, fetch=fetch_followers) -> int:
-    del argv
+    supplied = None
+    if argv is not None:
+        try:
+            supplied = counts_from_args(parse_args(argv))
+        except FetchError as exc:
+            print(f"ERROR: {exc}.", file=sys.stderr)
+            return 1
     try:
-        fetched = fetch()
+        fetched = supplied if supplied is not None else fetch()
         if not isinstance(fetched, dict):
             raise FetchError("fetch did not return counts")
     except FetchError as exc:
@@ -263,4 +293,4 @@ def main(argv=None, fetch=fetch_followers) -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))
