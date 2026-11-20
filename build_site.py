@@ -393,7 +393,7 @@ if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).
 # (featured, GA, lastmod) and before Pagefind, which only indexes sitemap URLs that are not noindex.
 ENRICH_FIELDS=("long","who","features","pros","cons","setup","faq","pricing","pricing_v","mcp")
 THIN_WORDS=80
-NEW_TOOL_CAP=15
+NEW_TOOL_CAP=3  # three new indexable tool URLs per Pacific day
 def _tool_rich():
     import build_rich
     return build_rich.R

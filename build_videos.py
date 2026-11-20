@@ -1,5 +1,6 @@
 """Build Quick-Start Guides, Walkthroughs & Pro Tips hub (/videos/index.html)."""
 import os, re, json, datetime
+import pacific
 from build_extras import B, e, shell, clip_text, clip_title
 
 def pages(t):
@@ -10,7 +11,7 @@ def pages(t):
     n_bt = c["bot_templates"]
     n_mcp = c["mcp_servers"]
     n_cats = c["categories"]
-    today_iso = datetime.date.today().strftime("%Y-%m-%dT08:00:00-07:00")
+    today_iso = datetime.datetime.combine(pacific.today(), datetime.time(8, 0), pacific.PT).isoformat()
 
     guides = [
         {

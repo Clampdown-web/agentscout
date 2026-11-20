@@ -36,7 +36,7 @@ def main():
         host = re.sub(r"^https?://(www\.)?", "", tools[slug]["url"]).split("/")[0]
         html = _page(slug, tools[slug]["url"], host)
         out = X.sponsored_rel(html, slug, host)
-        sponsored = re.findall(r'rel="sponsored noopener noreferrer"', out)
+        sponsored = re.findall(r'rel="sponsored nofollow noopener noreferrer"', out)
         assert len(sponsored) == 3, (
             f"{slug}: expected 3 sponsored links (Visit, Official site, pricing), got {len(sponsored)}"
         )
@@ -46,7 +46,7 @@ def main():
         assert 'rel="nofollow noopener noreferrer">Watch the demo' in out, (
             f"{slug}: non-Visit rel was rewritten"
         )
-        assert X.visit_rel(slug) == "sponsored noopener noreferrer", f"{slug}: visit_rel wrong"
+        assert X.visit_rel(slug) == "sponsored nofollow noopener noreferrer", f"{slug}: visit_rel wrong"
         # www-insensitive host match: pricing on the bare host still counts
         bare = host[4:] if host.startswith("www.") else "www." + host
         out2 = X.sponsored_rel(

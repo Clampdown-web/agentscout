@@ -123,7 +123,7 @@ def block(rows, all_items, date, ranked_by_stars=True):
         f'<p class="qa"><b>Quick answer:</b> the top picks on this list, {how}, are {lst}{of}. '
         f'<b>At a glance:</b> {e(glance)} (last verified <time datetime="{date}">{_fmt(date)}</time>).</p>'
     )
-    ver = f'<p class="muted" style="font-size:13px;margin:0 0 14px">Verified on <time datetime="{date}">{_fmt(date)}</time>: every tool link on this page was checked by our daily link check. {"Rows labeled Sponsored are paid placements; the label does not change the ranking." if any(x["slug"] in X.sponsored_slugs() for x in rows) else "No paid placements."}</p>'
+    ver = f'<p class="muted" style="font-size:13px;margin:0 0 14px">Verified on <time datetime="{date}">{_fmt(date)}</time>: every tool link on this page was checked by our daily link check. {"Some links are affiliate links; we may earn a commission. It does not change the order." if any(x["slug"] in X.sponsored_slugs() for x in rows) else "No paid placements."}</p>'
     trs = "".join(
         f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>{X.sponsored_badge(x["slug"])}</th>'
         f'<td>{e(x["pricing"])}</td><td>{e(", ".join(x.get("use_cases", [])[:2]) or x["category"])}</td>'
@@ -289,7 +289,7 @@ def best_block(path, rows, all_items, date, ranked_by_stars, by):
     ) if rows else ""
     rank = (
         f'<p class="muted" style="margin:0 0 8px"><strong>How we rank:</strong> {e(how)}. '
-        f'Stars and maturity come from each AgentScout listing. {"Rows labeled Sponsored are paid placements; the label does not change the ranking." if any(x["slug"] in X.sponsored_slugs() for x in rows) else "No vendor paid for a position."}</p>'
+        f'Stars and maturity come from each AgentScout listing. {"Some links are affiliate links; we may earn a commission. It does not change the order." if any(x["slug"] in X.sponsored_slugs() for x in rows) else "No vendor paid for a position."}</p>'
     )
     updated = f'<p class="srcchecked" style="margin:0 0 14px">Updated / sources checked {time}.</p>'
     return f"<!--ci:aeo-->{qa}{tbl}{rank}{updated}<!--/ci:aeo-->", plain

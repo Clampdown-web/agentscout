@@ -1,5 +1,6 @@
 """Generates api/tools.json (machine-readable daily feed for the AgentScout app) from tools.json."""
 import json,os,datetime,re
+import pacific
 def tag(p):
     """Same classes as build_extras.ptag / pc() in index.html (Oct 21 2026 fix: 'Free' was tagged paid, 'Open source + cloud' free)."""
     p=(p or "").lower()
@@ -53,7 +54,7 @@ def build(t):
             item["submitted"]=x.get("submitted") or x.get("added")
         tools.append(item)
     lc=max((x.get("verified") or "") for x in t)
-    json.dump({"version":1,"generated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"last_checked":lc,"count":len(tools),"total_tools":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
+    json.dump({"version":1,"generated":pacific.iso(),"updated":pacific.iso(),"last_checked":lc,"count":len(tools),"total_tools":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
     # small file for the homepage "Recently added" stats (stats.js.html), so the homepage doesn't download the full 1.5 MB API
     stats=[]
     for x in t:

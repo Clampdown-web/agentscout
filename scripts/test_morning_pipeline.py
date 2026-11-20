@@ -80,7 +80,7 @@ class MorningPipelineTest(unittest.TestCase):
         when = datetime(2026, 11, 19, 17, 0, tzinfo=timezone.utc)
         self.assertEqual(
             morning_pipeline.retry_line(when),
-            "RETRY 2026-11-19T17:00:00Z recheck failed; retrying once after 300s",
+            "RETRY 2026-11-19T09:00:00-08:00 recheck failed; retrying once after 300s",
         )
 
 

@@ -10,8 +10,12 @@ from __future__ import annotations
 import json
 import re
 import zipfile
-from datetime import datetime, timezone
+import sys
+from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import pacific
 
 ROOT = Path(__file__).resolve().parents[1]
 VERIFICATION_PATH = ROOT / "data" / "pack-verification.json"
@@ -455,10 +459,10 @@ def prepare_packs() -> None:
 
 
 def stamp_verification(passed: dict[str, dict]) -> None:
-    now = datetime.now(timezone.utc).replace(microsecond=0)
+    now = pacific.now().replace(microsecond=0)
     payload = {
         "source": "scripts/verify_bot_zip_packages.py",
-        "verified_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "verified_at": now.isoformat(),
         "packs": passed,
     }
     VERIFICATION_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -466,10 +470,10 @@ def stamp_verification(passed: dict[str, dict]) -> None:
 
 
 def success_record(zip_rel: str) -> dict:
-    now = datetime.now(timezone.utc).replace(microsecond=0)
+    now = pacific.now().replace(microsecond=0)
     return {
         "ok": True,
-        "verified_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "verified_at": now.isoformat(),
         "verified_on": now.date().isoformat(),
         "zip": zip_rel,
     }

@@ -54,7 +54,7 @@ class EnrichNextBatchTests(unittest.TestCase):
         cls.sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
 
     def test_cap_and_threshold_stay(self):
-        self.assertIn("NEW_TOOL_CAP=15", self.rule)
+        self.assertIn("NEW_TOOL_CAP=3", self.rule)
         self.assertIn("THIN_WORDS=80", self.rule)
         self.assertIn("if enr or (not thin and (grandfather or slug in slots)):", self.rule)
         self.assertLess(
@@ -166,7 +166,7 @@ class HoldReleaseTests(unittest.TestCase):
     def test_the_rule_uses_the_dated_hold_and_keeps_the_cap(self):
         rule = (ROOT / "build_site.py").read_text(encoding="utf-8")
         self.assertIn("held=_ih.held_slugs(today, _hold, state, NEW_TOOL_CAP)", rule)
-        self.assertIn("NEW_TOOL_CAP=15", rule)
+        self.assertIn("NEW_TOOL_CAP=3", rule)
 
 
 if __name__ == "__main__":
