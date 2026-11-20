@@ -45,25 +45,32 @@ function mountDom() {
 }
 
 test("retryable widget codes get a bounded automatic reset", () => {
+  assert.equal(ts.AUTO_RESETS, 3);
+  assert.equal(ts.RETRY_INTERVAL, 2000);
   assert.equal(ts.planWidgetError("600010", 0).auto, true);
-  assert.equal(ts.planWidgetError("600010", 0).fresh, false);
-  assert.equal(ts.planWidgetError(600010, 1).auto, true);
-  assert.equal(ts.planWidgetError("600010", 2).auto, false);
+  assert.equal(ts.planWidgetError("600010", 0).fresh, true);
+  assert.equal(ts.planWidgetError(600010, 2).auto, true);
   assert.equal(ts.planWidgetError("600010", 2).fresh, true);
   assert.match(ts.planWidgetError("600010", 2).text, /Trying again automatically/);
   assert.match(ts.planWidgetError("600010", 2).text, /Nothing was sent/);
-  assert.equal(ts.planWidgetError("600010", 2, 1).fresh, false);
-  assert.match(ts.planWidgetError("600010", 2, 1).text, /Try the check again/);
-  assert.equal(ts.planWidgetError("300010", 2, 0).fresh, false);
-  assert.match(ts.planWidgetError("300010", 2, 0).text, /Try the check again/);
-  assert.equal(ts.planWidgetError("110200", 0, 0).fresh, false);
+  assert.equal(ts.planWidgetError("600010", 3).auto, false);
+  assert.equal(ts.planWidgetError("600010", 3).fresh, false);
+  assert.match(ts.planWidgetError("600010", 3).text, /Try verification again/);
+  assert.match(ts.planWidgetError("600010", 3).text, /support@agentscouthq\.com/);
+  assert.equal(ts.planWidgetError("300010", 0).fresh, false);
+  assert.equal(ts.planWidgetError("300010", 0).auto, true);
+  assert.equal(ts.planWidgetError("", 0).auto, true);
+  assert.equal(ts.planWidgetError("", 3).auto, false);
+  assert.match(ts.planWidgetError("", 3).text, /Try verification again/);
+  assert.equal(ts.planWidgetError("110200", 0).auto, false);
+  assert.equal(ts.planWidgetError("110200", 0).fresh, false);
   assert.equal(ts.planWidgetError("600010", 0).suppressBuiltinRetry, true);
   assert.equal(ts.retryable("110200"), false);
   assert.equal(ts.retryable("400020"), false);
   assert.equal(ts.retryable("200100"), false);
   assert.equal(ts.retryable("110600"), true);
   assert.equal(ts.retryable("300010"), true);
-  assert.equal(ts.retryable(""), false);
+  assert.equal(ts.retryable(""), true);
 });
 
 test("a token is not replayed after any HTTP response", () => {
@@ -87,7 +94,7 @@ test("a token is not replayed after any HTTP response", () => {
   assert.match(ts.SCRIPT, /render=explicit&onload=asTsLoad/);
 });
 
-test("an explicit widget renders once, retries twice, then offers a button", async () => {
+test("an explicit widget retries three times, then offers a button and the email", async () => {
   const originalFetch = globalThis.fetch;
   const urls = [];
   globalThis.fetch = async (url) => {
@@ -125,7 +132,8 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
       assert.equal(el, nodes["sf-turnstile"]);
       assert.equal(options.sitekey, ts.SITEKEY);
       assert.equal(options.action, "submit");
-      assert.equal(options.retry, "never");
+      assert.equal(options.retry, "auto");
+      assert.equal(options["retry-interval"], 2000);
       assert.equal(options["refresh-expired"], "auto");
       assert.equal(options["refresh-timeout"], "auto");
       assert.equal(typeof options["error-callback"], "function");
@@ -146,32 +154,29 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
   globalThis.asTsLoad();
   assert.deepEqual(renders, ["widget-1"]);
   assert.equal(ts.readToken(), "token-1");
-  assert.equal(globalThis.asTsErr(600010), true);
-  assert.match(nodes.sfts.textContent, /600010/);
-  assert.match(nodes.sfts.textContent, /Trying again automatically/);
-  assert.equal(nodes["sfts-retry-wrap"].hidden, true);
-  await new Promise((resolve) => setTimeout(resolve, ts.AUTO_MS + 50));
-  assert.deepEqual(resets, ["widget-1"]);
-  assert.equal(globalThis.asTsErr("600010"), true);
-  await new Promise((resolve) => setTimeout(resolve, ts.AUTO_MS + 50));
-  assert.equal(resets.length, 2);
-  assert.deepEqual(removed, []);
-  assert.equal(globalThis.asTsErr(600010), true);
-  assert.equal(nodes["sfts-retry-wrap"].hidden, true);
-  assert.match(nodes.sfts.textContent, /Trying again automatically/);
-  await new Promise((resolve) => setTimeout(resolve, 30));
-  assert.deepEqual(removed, ["widget-1"]);
-  assert.deepEqual(renders, ["widget-1", "widget-2"]);
-  assert.equal(resets.length, 2);
-  assert.equal(globalThis.asTsErr(600010), true);
+  for (let i = 0; i < 3; i++) {
+    assert.equal(globalThis.asTsErr(undefined), true);
+    assert.match(nodes.sfts.textContent, /Trying again automatically/);
+    assert.match(nodes.sfts.textContent, /Nothing was sent/);
+    assert.equal(nodes["sfts-retry-wrap"].hidden, true);
+    assert.equal(globalThis.turnstile.options.retry, "never");
+    await new Promise((resolve) => setTimeout(resolve, ts.RETRY_INTERVAL + 40));
+    assert.equal(resets.length, i + 1);
+    assert.deepEqual(removed, []);
+    assert.equal(globalThis.turnstile.options.retry, "auto");
+  }
+  assert.equal(globalThis.asTsErr(""), true);
   assert.equal(nodes["sfts-retry-wrap"].hidden, false);
-  assert.match(nodes.sfts.textContent, /Try the check again/);
-  await new Promise((resolve) => setTimeout(resolve, 30));
-  assert.deepEqual(removed, ["widget-1"]);
-  assert.equal(resets.length, 2);
-  nodes["sfts-retry"].listeners.click();
+  assert.match(nodes.sfts.textContent, /Try verification again/);
+  assert.match(nodes.sfts.textContent, /support@agentscouthq\.com/);
+  assert.match(ts.missingTokenText(), /support@agentscouthq\.com/);
+  assert.match(ts.missingTokenText(), /nothing was sent/i);
+  await new Promise((resolve) => setTimeout(resolve, 40));
   assert.equal(resets.length, 3);
-  assert.equal(resets[2], "widget-2");
+  assert.deepEqual(removed, []);
+  nodes["sfts-retry"].listeners.click();
+  assert.equal(resets.length, 4);
+  assert.equal(resets[3], "widget-1");
   globalThis.asTsOk("token-2");
   assert.equal(nodes.sfts.textContent, "");
   assert.equal(nodes["sfts-retry-wrap"].hidden, true);
@@ -182,9 +187,72 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
   globalThis.document.querySelector = () => ({ value: "stale-spent-token" });
   assert.equal(ts.readToken(), "");
   ts.invalidate();
-  assert.equal(resets.length, 4);
+  assert.equal(resets.length, 5);
   assert.match(nodes.sfts.textContent, /Complete the check again/);
   assert.equal(ts.readToken() === "stale-spent-token", false);
+});
+
+test("a 600 code replaces the widget instead of calling reset", async () => {
+  const removed = [];
+  const resets = [];
+  const renders = [];
+  const turnstileEl = {
+    id: "sf-turnstile",
+    attributes: { "data-sitekey": "0x4AAAAAAFfaxf14aQF-sky1" },
+    getAttribute(name) { return this.attributes[name]; },
+    getBoundingClientRect() { return { width: 360, height: 65, top: 0, left: 0, right: 360, bottom: 65 }; },
+  };
+  const wrap = { id: "sfts-retry-wrap", hidden: true };
+  const status = { id: "sfts", textContent: "", dataset: {} };
+  const sandbox = {
+    removed,
+    resets,
+    renders,
+    document: {
+      getElementById(id) {
+        if (id === "sf-turnstile") return turnstileEl;
+        if (id === "sfts") return status;
+        if (id === "sfts-retry-wrap") return wrap;
+        return null;
+      },
+      head: { child: null, appendChild(node) { this.child = node; } },
+      querySelector() { return null; },
+      querySelectorAll() { return []; },
+      createElement() { return { src: "", async: false, defer: false }; },
+      documentElement: { getAttribute() { return "light"; } },
+    },
+    setTimeout,
+    clearTimeout,
+    scrollBy() {},
+    getComputedStyle() { return { visibility: "visible", display: "block", opacity: "1" }; },
+  };
+  sandbox.turnstile = {
+    render(_el, options) {
+      assert.equal(options.retry, "auto");
+      assert.equal(options["retry-interval"], 2000);
+      assert.equal(options["refresh-expired"], "auto");
+      const id = "widget-" + (renders.length + 1);
+      renders.push(id);
+      return id;
+    },
+    reset(id) { resets.push(id); },
+    remove(id) { removed.push(id); },
+    getResponse() { return ""; },
+    isExpired() { return false; },
+  };
+  vm.createContext(sandbox);
+  vm.runInContext(source, sandbox);
+  sandbox.AgentScoutTurnstile.start();
+  sandbox.asTsLoad();
+  assert.equal(sandbox.asTsErr("600010"), true);
+  assert.equal(wrap.hidden, true);
+  assert.match(status.textContent, /Trying again automatically/);
+  assert.match(status.textContent, /600010/);
+  await new Promise((resolve) => setTimeout(resolve, sandbox.AgentScoutTurnstile.RETRY_INTERVAL + 40));
+  assert.deepEqual(removed, ["widget-1"]);
+  assert.deepEqual(resets, []);
+  assert.deepEqual(renders, ["widget-1", "widget-2"]);
+  assert.match(status.textContent, /Starting the check again/);
 });
 
 test("asTsLoad works whether api.js finishes before or after this file", () => {

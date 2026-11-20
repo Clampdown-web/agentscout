@@ -40,7 +40,9 @@ class SubmitWidgetTest(unittest.TestCase):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")
         self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
         self.assertIn('id="sfts-retry"', html)
-        self.assertIn("Try the check again", html)
+        self.assertIn("Try verification again", html)
+        self.assertIn('id="sfts-email"', html)
+        self.assertIn("mailto:support@agentscouthq.com", html)
         self.assertIn('type="button" class="btn" id="sfts-retry"', html)
         self.assertIn("submit-turnstile.js?v=", html)
         self.assertNotIn('class="cf-turnstile"', html)
@@ -50,7 +52,11 @@ class SubmitWidgetTest(unittest.TestCase):
         self.assertIn("AgentScoutTurnstile.invalidate", html)
         self.assertIn("https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=asTsLoad", widget)
         self.assertIn('action: ACTION', widget)
-        self.assertIn('retry: "never"', widget)
+        self.assertIn('retry: "auto"', widget)
+        self.assertIn('"retry-interval": RETRY_INTERVAL', widget)
+        self.assertIn("var RETRY_INTERVAL = 2000", widget)
+        self.assertIn('"refresh-expired": "auto"', widget)
+        self.assertNotIn('retry: "never"', widget)
         err_fn = widget.split("function onError")[1].split("function onSuccess")[0]
         ok_fn = widget.split("function onSuccess")[1].split("function onExpired")[0]
         status_fn = widget.split("function setStatus")[1].split("function showRetry")[0]
@@ -69,12 +75,31 @@ class SubmitWidgetTest(unittest.TestCase):
         self.assertIn("!ts", gate)
         self.assertIn("missingTokenText", gate)
         csp = re.search(r'Content-Security-Policy" content="([^"]+)"', html).group(1)
+        headers = (ROOT / "_headers").read_text(encoding="utf-8")
+        header = re.search(r"(?m)^  Content-Security-Policy: (.+)$", headers).group(1)
         connect = csp.split("connect-src ", 1)[1].split(";", 1)[0]
+        header_connect = header.split("connect-src ", 1)[1].split(";", 1)[0]
         self.assertNotIn("data:", connect)
-        self.assertIn("https://challenges.cloudflare.com", connect)
+        self.assertNotIn("data:", header_connect)
+        for bit in (
+            "'wasm-unsafe-eval'",
+            "https://challenges.cloudflare.com",
+            "https://mcp.agentscouthq.com",
+        ):
+            self.assertIn(bit, csp)
+            self.assertIn(bit, header)
         self.assertNotIn("unsafe-eval", csp.replace("'wasm-unsafe-eval'", ""))
-        self.assertIn("https://challenges.cloudflare.com", csp.split("script-src ", 1)[1].split(";", 1)[0])
-        self.assertIn("https://challenges.cloudflare.com", csp.split("frame-src ", 1)[1].split(";", 1)[0])
+        self.assertNotIn("unsafe-eval", header.replace("'wasm-unsafe-eval'", ""))
+        for directive in ("script-src", "frame-src", "connect-src"):
+            self.assertIn("https://challenges.cloudflare.com", csp.split(directive + " ", 1)[1].split(";", 1)[0])
+            self.assertIn("https://challenges.cloudflare.com", header.split(directive + " ", 1)[1].split(";", 1)[0])
+        # The submit button stays enabled until a real send. A missing token explains why.
+        button = re.search(r'<button id="sbtn"[^>]*>', html).group(0)
+        self.assertNotIn("disabled", button)
+        gate_at = html.find("var ts=sfTs()")
+        disabled_at = html.find("btn.disabled=true")
+        self.assertGreater(gate_at, 0)
+        self.assertGreater(disabled_at, gate_at)
         head = html.split("</head>", 1)[0]
         pre = head.find('<link rel="preconnect" href="https://challenges.cloudflare.com">')
         stub = head.find("window.asTsLoad=window.asTsLoad||function(){window.asTsLoaded=1}")

@@ -1,12 +1,14 @@
 /* Submit-form Turnstile. api.js is in the page head (explicit render, onload=asTsLoad).
    This file installs asTsLoad as soon as it runs, and honors a head stub that set
    asTsLoaded if api.js finished first. Siteverify stays on the worker.
-   This file never calls challenges.cloudflare.com/siteverify. */
+   The widget is rendered with retry auto, refresh-expired auto, and a 2s
+   retry interval. This file resets it up to 3 times, then shows a button
+   and the support email. It never calls challenges.cloudflare.com/siteverify. */
 (function (root) {
   var SITEKEY = "0x4AAAAAAFfaxf14aQF-sky1";
   var ACTION = "submit";
-  var AUTO_RESETS = 2;
-  var AUTO_MS = 8000;
+  var AUTO_RESETS = 3;
+  var RETRY_INTERVAL = 2000;
   var SCRIPT = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=asTsLoad";
   /* These codes are not visitor-retryable (bad sitekey, wrong domain, clock). 600* and 300* are. */
   var NON_RETRY = {
@@ -15,8 +17,8 @@
   };
   var started = false;
   var widgetId = null;
+  var renderOptions = null;
   var attempts = 0;
-  var freshUsed = 0;
   var apiReady = false;
   var lastCode = "";
   var timer = 0;
@@ -27,7 +29,9 @@
 
   function retryable(code) {
     var n = codeOf(code);
-    if (!n || NON_RETRY[n]) return false;
+    if (NON_RETRY[n]) return false;
+    /* No code is the intermittent "Verification failed" with nothing to quote. */
+    if (!n) return true;
     if (n.slice(0, 3) === "600" || n.slice(0, 3) === "300") return true;
     return n === "110600" || n === "110620" || n === "200500";
   }
@@ -40,8 +44,8 @@
     var n = codeOf(code);
     var tail = auto
       ? " Trying again automatically. Nothing was sent."
-      : " Press Try the check again. Nothing was sent. You can also use the email link below the form.";
-    return "The anti-bot check did not finish" + (n ? " (code " + n + ")" : "") + ". It is still required before this form can send." + tail;
+      : " Press Try verification again, or email support@agentscouthq.com. Nothing was sent.";
+    return "The verification check did not finish" + (n ? " (code " + n + ")" : "") + ". It is still required before this form can send." + tail;
   }
 
   function expiredText() {
@@ -53,6 +57,12 @@
   }
 
   function missingTokenText() {
+    if (attempts >= AUTO_RESETS) {
+      return "The verification check did not finish, so nothing was sent. Press Try verification again, or email support@agentscouthq.com.";
+    }
+    if (attempts > 0) {
+      return "The verification check is still running. Wait until it finishes, then press Submit. Nothing has been sent.";
+    }
     return "Please complete the quick check above, then press Submit.";
   }
 
@@ -77,13 +87,11 @@
     return codeOf(code).slice(0, 3) === "600";
   }
 
-  /* freshCount is how many remove()+render() recoveries already ran.
-     Two reset() attempts come first. One fresh render follows only for 600* codes. */
-  function planWidgetError(code, attemptCount, freshCount) {
-    var used = freshCount == null ? 0 : freshCount;
+  /* A 600* widget often ignores reset(), so those tries replace it.
+     Other retryable failures, including a failure with no code, use reset(). */
+  function planWidgetError(code, attemptCount) {
     var auto = shouldAutoReset(code, attemptCount);
-    var fresh = !auto && is600(code) && used < 1;
-    return { auto: auto, fresh: fresh, text: widgetErrorText(code, auto || fresh), suppressBuiltinRetry: true };
+    return { auto: auto, fresh: auto && is600(code), text: widgetErrorText(code, auto), suppressBuiltinRetry: true };
   }
 
   function $(id) {
@@ -182,26 +190,31 @@
     setStatus(message || "Starting the check again.");
   }
 
-  /* api.js retries on its own unless this returns true AND the widget retry mode is not auto.
-     render() sets retry to never, so this return stops that scheduler, including the immediate
-     retry it otherwise uses for challenge-crash codes. */
+  /* api.js still schedules a retry after error-callback returns true when
+     retry is auto, and crash codes 300030/300031 use a 0ms timer. Pause that
+     scheduler for this turn. Our own timer resets the widget. */
+  function holdBuiltinRetry() {
+    if (renderOptions) renderOptions.retry = "never";
+  }
+
+  function releaseBuiltinRetry() {
+    if (renderOptions) renderOptions.retry = "auto";
+  }
+
   function onError(code) {
     clearTimer();
     lastCode = codeOf(code);
-    var plan = planWidgetError(code, attempts, freshUsed);
+    var plan = planWidgetError(code, attempts);
     setStatus(plan.text);
+    holdBuiltinRetry();
     if (plan.auto) {
       attempts += 1;
       showRetry(false);
       timer = setTimeout(function () {
-        resetWidget("Starting the check again.");
-      }, AUTO_MS);
-    } else if (plan.fresh) {
-      freshUsed += 1;
-      showRetry(false);
-      timer = setTimeout(function () {
-        freshRender("Starting the check again.");
-      }, 0);
+        releaseBuiltinRetry();
+        if (plan.fresh) freshRender("Starting the check again.");
+        else resetWidget("Starting the check again.");
+      }, RETRY_INTERVAL);
     } else {
       showRetry(true);
       try { reveal(); } catch (e) {}
@@ -211,8 +224,8 @@
 
   function onSuccess() {
     attempts = 0;
-    freshUsed = 0;
     clearTimer();
+    releaseBuiltinRetry();
     showRetry(false);
     setStatus("");
   }
@@ -234,7 +247,13 @@
 
   function onManual() {
     attempts = 0;
-    freshUsed = 0;
+    releaseBuiltinRetry();
+    if (widgetId == null) {
+      renderWidget();
+      showRetry(false);
+      setStatus("Starting the check again. Wait until it finishes, then press Submit.");
+      return;
+    }
     resetWidget("Starting the check again. Wait until it finishes, then press Submit.");
   }
 
@@ -259,12 +278,13 @@
     if (!el || !api || typeof api.render !== "function") return;
     var width = 0;
     try { width = el.getBoundingClientRect().width; } catch (e) {}
-    widgetId = api.render(el, {
+    renderOptions = {
       sitekey: el.getAttribute("data-sitekey") || SITEKEY,
       action: ACTION,
       size: widgetSize(width),
       theme: themeNow(),
-      retry: "never",
+      retry: "auto",
+      "retry-interval": RETRY_INTERVAL,
       "refresh-expired": "auto",
       "refresh-timeout": "auto",
       callback: onSuccess,
@@ -272,7 +292,8 @@
       "expired-callback": onExpired,
       "timeout-callback": onTimeout,
       "before-interactive-callback": onBeforeInteractive
-    });
+    };
+    widgetId = api.render(el, renderOptions);
     root.setTimeout(function () { try { clearOfFixedBars(); } catch (e) {} }, 0);
   }
 
@@ -351,7 +372,7 @@
 
   function invalidate() {
     attempts = 0;
-    freshUsed = 0;
+    releaseBuiltinRetry();
     resetWidget("Complete the check again, then press Submit.");
   }
 
@@ -361,7 +382,7 @@
     SITEKEY: SITEKEY,
     ACTION: ACTION,
     SCRIPT: SCRIPT,
-    AUTO_MS: AUTO_MS,
+    RETRY_INTERVAL: RETRY_INTERVAL,
     AUTO_RESETS: AUTO_RESETS,
     retryable: retryable,
     shouldAutoReset: shouldAutoReset,

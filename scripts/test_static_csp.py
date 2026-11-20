@@ -114,6 +114,41 @@ class StaticCspTest(unittest.TestCase):
         # Tool pages do not compile WebAssembly. The homepage keeps its own token.
         self.assertNotIn("wasm-unsafe-eval", policy)
 
+    def test_submit_meta_matches_header_turnstile_tokens(self):
+        html = (ROOT / "submit.html").read_text(encoding="utf-8")
+        meta = _policy(html)
+        header = re.search(
+            r"(?m)^  Content-Security-Policy: (.+)$",
+            (ROOT / "_headers").read_text(encoding="utf-8"),
+        ).group(1)
+        for bit in (
+            "https://challenges.cloudflare.com",
+            "'wasm-unsafe-eval'",
+            "https://mcp.agentscouthq.com",
+        ):
+            self.assertIn(bit, meta)
+            self.assertIn(bit, header)
+        for directive in ("script-src", "frame-src", "connect-src"):
+            meta_part = meta.split(directive + " ", 1)[1].split(";", 1)[0]
+            header_part = header.split(directive + " ", 1)[1].split(";", 1)[0]
+            self.assertIn("https://challenges.cloudflare.com", meta_part)
+            self.assertIn("https://challenges.cloudflare.com", header_part)
+        meta_connect = meta.split("connect-src ", 1)[1].split(";", 1)[0]
+        self.assertNotIn("data:", meta_connect)
+        self.assertNotIn("'unsafe-eval'", meta.replace("'wasm-unsafe-eval'", ""))
+        # Tool pages do not gain the submit-only tokens.
+        tool = csp.harden(
+            "<!doctype html><html><head><meta charset=\"utf-8\"></head><body></body></html>",
+            "tools/x.html",
+        )
+        tool_policy = _policy(tool)
+        self.assertNotIn("wasm-unsafe-eval", tool_policy)
+        self.assertNotIn("mcp.agentscouthq.com", tool_policy)
+        submit = csp.policy_for(csp.POLICY, "submit.html")
+        self.assertIn("'wasm-unsafe-eval'", submit)
+        self.assertIn("https://mcp.agentscouthq.com", submit)
+        self.assertEqual(meta, submit)
+
     def test_missing_meta_is_restored_without_stripping_wasm(self):
         bare = "<!doctype html><html><head><meta charset=\"utf-8\"></head><body></body></html>"
         restored = csp.harden(bare, "tools/x.html")
