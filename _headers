@@ -4,9 +4,13 @@
 # Enforced on purpose (owner, 2026-11-10). The same allowlist was Report-Only
 # until this change. Inline scripts stay under 'unsafe-inline' because the
 # morning build rewrites them; there is no per-response nonce. 'unsafe-eval'
-# stays off. 'wasm-unsafe-eval' is only for Pagefind compiling same-origin
-# wasm.*.pagefind bytes. frame-ancestors cannot be set from a meta tag, so it
-# lives here. There is no report-uri or report-to endpoint to keep.
+# stays off. 'wasm-unsafe-eval' is for Pagefind compiling same-origin
+# wasm.*.pagefind bytes, and submit.html's meta has to repeat it (and
+# https://mcp.agentscouthq.com) because browsers enforce this header and the
+# meta together. frame-ancestors cannot be set from a meta tag, so it lives
+# here. There is no report-uri or report-to endpoint to keep. Do not add
+# 'unsafe-eval' or connect-src data:. Turnstile's documented CSP is
+# challenges.cloudflare.com on script-src and frame-src.
 /r/*
   X-Robots-Tag: noindex, nofollow
 

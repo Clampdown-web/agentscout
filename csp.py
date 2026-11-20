@@ -7,17 +7,25 @@ gets one enforcing policy via <meta http-equiv="Content-Security-Policy">.
 The browser applies both, so a host has to be allowed by each.
 
 The policy is the one already proven on tool pages, plus 'wasm-unsafe-eval'
-kept only where a page already has it (homepage search compiles Pagefind
-WebAssembly). 'unsafe-inline' stays because the morning build rewrites
-per-page inline scripts (theme boot, GA4, counts, JSON-LD is not a script,
-onclick handlers). Hashing those would break the next rebuild.
+kept where a page already has it (homepage search compiles Pagefind
+WebAssembly). submit.html also repeats 'wasm-unsafe-eval' and
+https://mcp.agentscouthq.com, which the HTTP header already allows. Browsers
+enforce the meta and the header together, so a token missing from the meta
+is blocked even when the header allows it. 'unsafe-inline' stays because the
+morning build rewrites per-page inline scripts (theme boot, GA4, counts,
+JSON-LD is not a script, onclick handlers). Hashing those would break the
+next rebuild.
 
 Third parties this policy allows, and why:
 - challenges.cloudflare.com: Turnstile script, iframe, and the parent-page
-  api.js calls (script-src, frame-src, and connect-src). The iframe has its
-  own origin, but api.js also connects from this page. Blocking that is what
-  leaves real makers on error 600010 ("The anti-bot check did not finish").
-  The host is on the enforcing header as well. 'unsafe-eval' stays off.
+  api.js calls (script-src, frame-src, and connect-src). Cloudflare's
+  Turnstile CSP is that host on script-src and frame-src. connect-src is
+  included because api.js also connects from this page. The challenge iframe
+  is a separate origin; its own CSP cannot be set from here. 'unsafe-eval'
+  stays off, and connect-src does not gain data:.
+- 'wasm-unsafe-eval' on submit.html only among pages that do not already
+  compile WebAssembly: the header allows it, and the meta has to as well or
+  the stricter policy blocks it. Tool pages still omit it.
 - www.googletagmanager.com: gtag.js injected by the GA4 snippet.
 - *.google-analytics.com and *.analytics.google.com: GA4 collection.
 - static.cloudflareinsights.com and cloudflareinsights.com: Cloudflare Web
@@ -76,11 +84,25 @@ def safe_http_url(url):
     return "#"
 
 
-def policy_for(existing):
-    """Canonical policy. Keep wasm-unsafe-eval when the page already has it."""
-    if existing and "'wasm-unsafe-eval'" in existing and "'wasm-unsafe-eval'" not in POLICY:
-        return POLICY.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'", 1)
-    return POLICY
+def policy_for(existing, path=""):
+    """Canonical policy. Keep wasm-unsafe-eval when the page already has it.
+
+    submit.html also matches the header tokens its meta used to drop. The
+    browser applies both policies. Nothing else is added: no 'unsafe-eval',
+    and no data: in connect-src.
+    """
+    policy = POLICY
+    rel = str(path or "").replace("\\", "/").lstrip("./")
+    keep_wasm = rel == "submit.html" or (existing and "'wasm-unsafe-eval'" in existing)
+    if keep_wasm and "'wasm-unsafe-eval'" not in policy:
+        policy = policy.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'", 1)
+    if rel == "submit.html" and "https://mcp.agentscouthq.com" not in policy:
+        policy = policy.replace(
+            "https://agentscout-image.agentscouthq.workers.dev",
+            "https://agentscout-image.agentscouthq.workers.dev https://mcp.agentscouthq.com",
+            1,
+        )
+    return policy
 
 
 def _meta(policy):
@@ -92,7 +114,7 @@ def apply_csp(html, path="x.html"):
     if not _site_page(path, html):
         return html
     found = _CSP.search(html)
-    tag = _meta(policy_for(found.group(1) if found else ""))
+    tag = _meta(policy_for(found.group(1) if found else "", path))
     if found:
         current = found.group(0)
         if current == tag:
