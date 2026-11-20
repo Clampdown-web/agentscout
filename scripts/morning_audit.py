@@ -173,8 +173,7 @@ def nav_footer_problems(root: Path, tool_count: int) -> list[str]:
         checked += 1
         nav_links = [_link_text(a) for a in re.findall(r"<a[^>]*>(.*?)</a>", nav.group(1), re.S)]
         ft_links = [_link_text(a) for a in re.findall(r"<a[^>]*>(.*?)</a>", foot.group(1), re.S)]
-        norm = [re.sub(r"[^a-z0-9 ]", "", link.lower()).strip() for link in nav_links]
-        dups = sorted({link for link in norm if link and norm.count(link) > 1})
+        dups = duplicate_header_labels(nav.group(1))
         if dups:
             dup_pages.append(f"{rel}:{dups}")
         if ref_nav is None:
@@ -201,6 +200,81 @@ def nav_footer_problems(root: Path, tool_count: int) -> list[str]:
 
 def _link_text(raw: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", raw)).strip()
+
+
+def _norm_menu_label(text: str) -> str:
+    return re.sub(r"[^a-z0-9 ]", "", text.lower()).strip()
+
+
+def _attr(attrs: str, name: str) -> str:
+    match = re.search(rf"""\b{name}\s*=\s*(["'])(.*?)\1""", attrs, re.I | re.S)
+    return match.group(2) if match else ""
+
+
+def _navpanel_spans(nav_html: str) -> list[tuple[int, int]]:
+    """Byte ranges of the markup inside each Guides dropdown panel."""
+    spans = []
+    for opener in re.finditer(r"<div\b[^>]*>", nav_html, re.I):
+        classes = set(_attr(opener.group(0)[4:-1], "class").split())
+        if "navpanel" not in classes:
+            continue
+        depth = 1
+        cursor = opener.end()
+        while cursor < len(nav_html) and depth:
+            nxt = re.search(r"</?div\b[^>]*>", nav_html[cursor:], re.I)
+            if not nxt:
+                break
+            tag = nxt.group(0)
+            cursor += nxt.end()
+            if tag.startswith("</"):
+                depth -= 1
+                if depth == 0:
+                    spans.append((opener.end(), cursor - len(tag)))
+            else:
+                depth += 1
+    return spans
+
+
+def duplicate_header_labels(nav_html: str) -> list[str]:
+    """Repeated header labels.
+
+    One exception: the Menu drawer row (class mrow) and the link inside the
+    Guides dropdown (.navpanel) may share a label when they also share an
+    href. That pair is the Video guides row and the Videos item, the same
+    control twice. Any other repeat, including the same words with different
+    hrefs, or a third copy, still counts.
+    """
+    panels = _navpanel_spans(nav_html)
+    grouped: dict[str, list[dict]] = {}
+    for match in re.finditer(r"<a\b([^>]*)>(.*?)</a>", nav_html, re.S | re.I):
+        label = _norm_menu_label(_link_text(match.group(2)))
+        if not label:
+            continue
+        classes = set(_attr(match.group(1), "class").split())
+        start = match.start()
+        grouped.setdefault(label, []).append({
+            "href": _attr(match.group(1), "href"),
+            "mrow": "mrow" in classes,
+            "panel": any(left <= start < right for left, right in panels),
+        })
+    repeated = []
+    for label, items in grouped.items():
+        if len(items) < 2 or _video_guides_pair(items):
+            continue
+        repeated.append(label)
+    return sorted(repeated)
+
+
+def _video_guides_pair(items: list[dict]) -> bool:
+    """True only for one drawer row and one Guides-panel link, same href."""
+    if len(items) != 2:
+        return False
+    hrefs = {item["href"] for item in items}
+    if len(hrefs) != 1:
+        return False
+    drawer = [item for item in items if item["mrow"] and not item["panel"]]
+    panel = [item for item in items if item["panel"] and not item["mrow"]]
+    return len(drawer) == 1 and len(panel) == 1
 
 
 def submit_link_problems(root: Path) -> list[str]:

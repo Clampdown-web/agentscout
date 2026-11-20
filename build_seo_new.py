@@ -297,15 +297,6 @@ def dedupe_menu_labels(html):
         r"\1See all guides\2",
         new,
     )
-    # The drawer row and the Guides panel both pointed at /videos/ as
-    # "Video guides". morning_audit counts that repeated label as a
-    # duplicate header button. The row keeps Video guides; the panel
-    # keeps the older, distinct name.
-    new = re.sub(
-        r'(<div class="navpanel"><a href="(?:\.\./|/)*videos/">)Video guides(</a>)',
-        r"\1Quick-start guides\2",
-        new,
-    )
     if new == nav:
         return html
     return html[:m.start()] + new + html[m.end():]
@@ -329,9 +320,8 @@ def ensure_prompts_menu_row(html):
 def ensure_video_guides_menu(html):
     """Put Video guides in the Menu drawer, directly after Prompts.
 
-    The Guides dropdown keeps a link to the same page, labeled
-    Quick-start guides. The drawer row stays Video guides. One label
-    on both controls is a duplicate header button in morning_audit.
+    The Guides dropdown keeps a link to the same page, renamed from
+    Quick-start guides so both controls use one label: Video guides.
     Idempotent. The row is a relative videos/ link so unify_all_nav_and_footer
     can prefix it. Footer markup is left alone.
     """
@@ -346,7 +336,7 @@ def ensure_video_guides_menu(html):
         r'(<div class="navpanel"><a href="videos/">)'
         r'(?:Quick-start guides|Quick-Start Guides \(8\)|🎬 Guides|Videos|Video guides)'
         r'(</a>)',
-        r'\1Quick-start guides\2',
+        r'\1Video guides\2',
         html,
         count=1,
     )
