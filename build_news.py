@@ -187,12 +187,15 @@ def write_feed(tools=None):
     rows.sort(key=lambda z:z[0],reverse=True)
     if not rows: raise SystemExit("feed.xml: no items")
     built=max(z[0] for z in rows)
+    def _gmt(when):
+        # RSS pubDate is GMT. Story times are stored in Pacific for the pages.
+        return email.utils.format_datetime(when.astimezone(datetime.timezone.utc), usegmt=True)
     items="\n".join(
         "<item>"
         f"<title>{_xml(title)}</title>"
         f"<link>{_xml(url)}</link>"
         f"<guid isPermaLink=\"true\">{_xml(url)}</guid>"
-        f"<pubDate>{email.utils.format_datetime(when,usegmt=True)}</pubDate>"
+        f"<pubDate>{_gmt(when)}</pubDate>"
         f"<description>{_xml(desc)}</description>"
         "</item>"
         for when,title,url,desc in rows)
@@ -204,7 +207,7 @@ def write_feed(tools=None):
         f"<link>{B}</link>\n"
         "<description>Latest AI agent tools and agent news from AgentScout.</description>\n"
         "<language>en-us</language>\n"
-        f"<lastBuildDate>{email.utils.format_datetime(built,usegmt=True)}</lastBuildDate>\n"
+        f"<lastBuildDate>{email.utils.format_datetime(built.astimezone(datetime.timezone.utc),usegmt=True)}</lastBuildDate>\n"
         f'<atom:link href="{FEED}" rel="self" type="application/rss+xml"/>\n'
         f"{items}\n</channel>\n</rss>\n")
     root=ET.fromstring(doc)
