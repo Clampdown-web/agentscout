@@ -1,17 +1,17 @@
 {
  "catalog": {
   "mcp_servers": 3199,
-  "live": 3184,
+  "live": 3183,
   "down": 15,
-  "checked": 3199,
-  "not_yet_checked": 0,
+  "checked": 3198,
+  "not_yet_checked": 1,
   "directory_last_checked": "2026-11-21",
   "mcp_last_checked": "2026-11-21 08:24",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-21",
-    "note": "3,184 of 3,199 checked servers live, 15 down",
+    "note": "3,183 of 3,198 checked servers live, 15 down, +1 listed, not yet checked",
     "time": "08:24"
    },
    {
@@ -32555,21 +32555,6 @@
    ]
   },
   {
-   "slug": "monolithos",
-   "name": "Monolithos",
-   "page": "https://agentscouthq.com/tools/monolithos.html",
-   "status": "live",
-   "last_checked": "2026-11-21 08:24",
-   "detail": "url 200",
-   "history": [
-    {
-     "date": "2026-11-21",
-     "note": "live (url 200)",
-     "time": "08:24"
-    }
-   ]
-  },
-  {
    "slug": "monomo",
    "name": "MoNomo",
    "page": "https://agentscouthq.com/tools/monomo.html",
@@ -37285,6 +37270,15 @@
      "time": "08:24"
     }
    ]
+  },
+  {
+   "slug": "pakish-net-hosting-mcp",
+   "name": "Pakish.NET Hosting MCP",
+   "page": "https://agentscouthq.com/tools/pakish-net-hosting-mcp.html",
+   "status": "not yet checked",
+   "unverified": true,
+   "catalog_only": true,
+   "detail": "Listed, not yet checked"
   },
   {
    "slug": "palaner",
