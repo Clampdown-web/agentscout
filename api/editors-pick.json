@@ -1,12 +1,12 @@
 {
- "date": "2026-11-19",
- "slug": "hycanvas",
- "name": "HyCanvas",
- "why": "A standout MCP servers tool for builders: hyCanvas is an MCP server that gives agents a way to handle canva alternative you can self-host: graphics, slides, video, whiteboards and docs.",
- "category": "MCP servers",
- "description": "HyCanvas is an MCP server that gives agents a way to handle canva alternative you can self-host: graphics, slides, video, whiteboards and docs.",
- "logo": "https://agentscouthq.com/assets/logos/hycanvas.png",
- "page": "https://agentscouthq.com/tools/hycanvas.html",
+ "date": "2026-11-21",
+ "slug": "everos",
+ "name": "EverOS",
+ "why": "A standout memory & RAG tool for builders: local-first, portable memory layer for AI agents stored as Markdown.",
+ "category": "memory & RAG",
+ "description": "Local-first, portable memory layer for AI agents stored as Markdown.",
+ "logo": "https://agentscouthq.com/assets/logos/everos.png",
+ "page": "https://agentscouthq.com/tools/everos.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -139,6 +139,10 @@
   {
    "date": "2026-11-19",
    "slug": "hycanvas"
+  },
+  {
+   "date": "2026-11-21",
+   "slug": "everos"
   }
  ]
 }
