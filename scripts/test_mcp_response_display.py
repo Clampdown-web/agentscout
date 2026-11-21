@@ -131,8 +131,11 @@ class PageTests(unittest.TestCase):
 
     def test_sample_pages_render_the_badge_and_the_responds_sort(self):
         tool = (ROOT / "tools" / "github-mcp-server.html").read_text(encoding="utf-8")
-        self.assertIn('<span class="b" data-mcp-health="1">Not yet checked</span>', tool)
-        self.assertNotRegex(BADGE.search(tool).group(1), r"%|down")
+        badge = BADGE.search(tool)
+        self.assertIsNotNone(badge, "github-mcp-server.html is missing the MCP health badge")
+        # After a daily probe this may be Needs auth / Responds / Failed, not only Not yet checked.
+        self.assertNotRegex(badge.group(1), r"%|down")
+        self.assertTrue(badge.group(1).strip(), "empty MCP health badge")
 
         cat = (ROOT / "categories" / "mcp-servers.html").read_text(encoding="utf-8")
         self.assertIn('<span class="b" data-mcp-health="1">Not yet checked</span>', cat)

@@ -136,7 +136,9 @@ def _normalize(value) -> Outcome:
 def _run_commands(step: Step, root: Path) -> Outcome:
     last_reason = ""
     for argv in command_for(step.name, root):
-        result = subprocess.run(argv, cwd=root, capture_output=True, text=True)
+        env = os.environ.copy()
+        env.setdefault("AGENTSCOUT_ROOT", str(root))
+        result = subprocess.run(argv, cwd=root, capture_output=True, text=True, env=env)
         combined = (result.stdout or "") + (result.stderr or "")
         if combined:
             print(combined, end="" if combined.endswith("\n") else "\n", flush=True)
