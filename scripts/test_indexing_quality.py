@@ -24,7 +24,7 @@ KEEP = ["browser-use-alternatives", "chrome-devtools-mcp-alternatives",
         "oh-my-pi-alternatives", "omniroute-alternatives", "opencode-alternatives",
         "open-webui-alternatives", "openviking-alternatives",
         "paperclip-alternatives", "ruflo-alternatives", "skills-sh-alternatives"]
-SPONSORED = ["botpress", "sendblox", "lazy-ads", "mailveri-mcp", "swipeharbor"]
+SPONSORED = ["botpress", "sendblox", "lazy-ads", "mailveri-mcp", "swipeharbor", "deed-page"]
 TOTAL_RE = re.compile(r"(?:\d{1,3}(?:,\d{3})+|\d{4,})\s+(AI agent tools|MCP servers)")
 
 

@@ -1072,7 +1072,10 @@
   "1lookup": "2026-11-19",
   "macswarm": "2026-11-19",
   "solari": "2026-11-19",
-  "asksolique": "2026-11-20"
+  "asksolique": "2026-11-20",
+  "monolithos": "2026-11-21",
+  "hanflow-bot": "2026-11-21",
+  "tinycommand": "2026-11-21"
  },
  "slots": {
   "2026-11-04": [],
@@ -1122,7 +1125,11 @@
   "2026-11-20": [
    "asksolique"
   ],
-  "2026-11-21": []
+  "2026-11-21": [
+   "monolithos",
+   "hanflow-bot",
+   "tinycommand"
+  ]
  },
  "queued": [],
  "hold_released_slugs": [

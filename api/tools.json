@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-21T08:33:33-08:00",
- "updated": "2026-11-21T08:33:33-08:00",
+ "generated": "2026-11-21T10:16:17-08:00",
+ "updated": "2026-11-21T10:16:17-08:00",
  "last_checked": "2026-11-21",
- "count": 5962,
- "total_tools": 5962,
+ "count": 5976,
+ "total_tools": 5976,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -207181,26 +207181,26 @@
    "url": "https://monolithos.ai/",
    "website": "https://monolithos.ai/",
    "github": "",
-   "category": "MCP servers",
-   "description": "Recall authorized Vault notes with keyword and hybrid search, original excerpts, and source paths.",
+   "category": "personal agents",
+   "description": "Monolithos is a personal agent OS built around a memory vault you keep, including an Obsidian-compatible vault. It offers writing, tasks and cross-device work, and you choose the models and compute you want to use. A seven-day full-access trial needs no credit card. This updates the existing catalog-only slug; it is not a new row.",
    "key_features": [
-    "See site",
+    "7-day full-access trial at $0, no credit card. Core $39/mo or $349/year. A higher tier $89/mo or $859/year. A 50-seat lifetime plan is listed at $999 once. A bespoke Audit engagement is listed at $5,000 (monolithos.ai/pricing, 21 Nov 2026).",
     "Active",
-    "Research the web",
-    "Connect tools via mcp"
+    "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "7-day full-access trial at $0, no credit card. Core $39/mo or $349/year. A higher tier $89/mo or $859/year. A 50-seat lifetime plan is listed at $999 once. A bespoke Audit engagement is listed at $5,000 (monolithos.ai/pricing, 21 Nov 2026).",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)"
+    "Web"
    ],
    "date_added": "2026-11-11",
    "added": "2026-11-11",
-   "source": "MCP registry",
+   "source": "Maker submission",
    "goals": [
-    "automation"
+    "automation",
+    "writing"
    ],
-   "skill": "developer",
+   "skill": "no-code",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -207210,12 +207210,13 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web",
-    "connect tools via MCP"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/monolithos.png",
-   "page": "https://agentscouthq.com/tools/monolithos.html"
+   "page": "https://agentscouthq.com/tools/monolithos.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-16"
   },
   {
    "name": "Moonlauncher",
@@ -243332,8 +243333,8 @@
   {
    "name": "deed.page",
    "slug": "deed-page",
-   "url": "https://deed.page/",
-   "website": "https://deed.page/",
+   "url": "https://deed.page/?ref=aff-agentscouthq",
+   "website": "https://deed.page/?ref=aff-agentscouthq",
    "github": "",
    "category": "MCP servers",
    "description": "deed.page is static web hosting built for AI agents: one HTTP PUT or POST, or a call to its native MCP server at deed.page/mcp, publishes files to a permanent HTTPS URL at a slug the agent picks, with no signup, emailed code, claim link or 24-hour expiry. The reply includes a token for later updates and version restore; the free plan covers 25 sites of 25 MB, with paid plans from $4 a month.",
@@ -252339,6 +252340,586 @@
    "page": "https://agentscouthq.com/tools/asksolique.html",
    "maker_submitted": true,
    "submitted": "2026-11-20"
+  },
+  {
+   "name": "HanFlow Bot",
+   "slug": "hanflow-bot",
+   "url": "https://hanflowbot.com/",
+   "website": "https://hanflowbot.com/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "HanFlow Bot is a lightweight AI assistant you install on a PC. One bot can write and draft email, work with office files, add calendar entries, write code, create images, and run web tasks such as filling forms. Voice input is built in, and a free phone app can continue a session while the bot runs on the computer. The site's pricing page is aimed at Windows; the homepage also mentions Mac.",
+   "key_features": [
+    "Required HanFlow Bot (Base) plan $10/mo or $90/year, billed yearly for 25% off. Optional 'manager' add-ons from $2/mo or $18/year (some at $4/mo or $36/year). A first subscription includes an extra free month after the paid period. The phone app is free. Checkout is on account.hanflowbot.com (hanflowbot.com/pricing, 21 Nov 2026).",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Voice & phone calls"
+   ],
+   "pricing": "Required HanFlow Bot (Base) plan $10/mo or $90/year, billed yearly for 25% off. Optional 'manager' add-ons from $2/mo or $18/year (some at $4/mo or $36/year). A first subscription includes an extra free month after the paid period. The phone app is free. Checkout is on account.hanflowbot.com (hanflowbot.com/pricing, 21 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "media",
+    "research",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hanflow-bot.png",
+   "page": "https://agentscouthq.com/tools/hanflow-bot.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-16"
+  },
+  {
+   "name": "Map Animation Studio",
+   "slug": "map-animation-studio",
+   "url": "https://map-animation.com/",
+   "website": "https://map-animation.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "Map Animation Studio is a browser tool for making map videos on a visual timeline. You can animate travel routes, highlight regions, control camera moves, and export a finished video. The FAQ refers to a free plan and its limits. This listing describes the map-animation product shown on map-animation.com on 21 Nov 2026; plan prices were not visible in the page source (they load in the browser).",
+   "key_features": [
+    "Freemium: a free plan is mentioned in the FAQ. Paid plan prices were not in the static page source on 21 Nov 2026 (map-animation.com, plans load in the page).",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Freemium: a free plan is mentioned in the FAQ. Paid plan prices were not in the static page source on 21 Nov 2026 (map-animation.com, plans load in the page).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/map-animation-studio.png",
+   "page": "https://agentscouthq.com/tools/map-animation-studio.html"
+  },
+  {
+   "name": "TinyCommand",
+   "slug": "tinycommand",
+   "url": "https://tinycommand.com/",
+   "website": "https://tinycommand.com/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "TinyCommand puts forms, workflows, AI agents, a database and email on one platform so a small team can capture a lead, keep the record and send the follow-up. The site also lists related jobs such as research, web scrape and an AI writer. A free-forever plan is available; paid plans start at $19/mo, or $17/mo when billed annually.",
+   "key_features": [
+    "Free forever: $0/mo, 1,000 credits/mo, 1 seat. Basic $17/mo billed annually ($199/year) or $19/mo on the monthly path; Professional $42/mo billed annually ($499/year). Higher and enterprise-style tiers are also listed (tinycommand.com/pricing, 21 Nov 2026).",
+    "Active",
+    "Write code",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Free forever: $0/mo, 1,000 credits/mo, 1 seat. Basic $17/mo billed annually ($199/year) or $19/mo on the monthly path; Professional $42/mo billed annually ($499/year). Higher and enterprise-style tiers are also listed (tinycommand.com/pricing, 21 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tinycommand.png",
+   "page": "https://agentscouthq.com/tools/tinycommand.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-16"
+  },
+  {
+   "name": "Motion Control",
+   "slug": "motion-control",
+   "url": "https://motion-control.app/",
+   "website": "https://motion-control.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "Motion Control is a web workspace that turns still photos and a reference movement clip into a video. The site also offers prepared performances and trend templates you can start from. New accounts are offered 60 free credits; paid Lite and higher plans are sold monthly or yearly.",
+   "key_features": [
+    "60 free credits to start. Lite $14.90/mo or $13.41/mo when billed yearly ($160.92/year). Higher tiers include about $31.92/mo and $39.90/mo yearly-equivalent prices (motion-control.app/pricing, 21 Nov 2026).",
+    "Active"
+   ],
+   "pricing": "60 free credits to start. Lite $14.90/mo or $13.41/mo when billed yearly ($160.92/year). Higher tiers include about $31.92/mo and $39.90/mo yearly-equivalent prices (motion-control.app/pricing, 21 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/motion-control.png",
+   "page": "https://agentscouthq.com/tools/motion-control.html"
+  },
+  {
+   "name": "Telo",
+   "slug": "telo",
+   "url": "https://telo.blynkai.app/",
+   "website": "https://telo.blynkai.app/",
+   "github": "",
+   "category": "healthcare & biotech",
+   "description": "Telo is an AI health coach that syncs sleep, heart-rate variability and workouts from Apple Health and shows daily readiness and recovery. The submitted URL https://telo.ferryman.app/ redirects to the live site at https://telo.blynkai.app/. The site also describes a custom MCP endpoint at https://api.incubator.blynkai.app/v1/health/mcp for ChatGPT.",
+   "key_features": [
+    "Public pricing was not stated on telo.blynkai.app on 21 Nov 2026.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Public pricing was not stated on telo.blynkai.app on 21 Nov 2026.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/telo.png",
+   "page": "https://agentscouthq.com/tools/telo.html"
+  },
+  {
+   "name": "AI Room Makeover",
+   "slug": "ai-room-makeover",
+   "url": "https://airoommakeover.com/",
+   "website": "https://airoommakeover.com/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "AI Room Makeover takes a photo of a room and shows a redesigned version with new styles, furniture and colors, so you can preview a makeover in your own space. The homepage says it is free to try. Paid credit amounts appear on the pricing page.",
+   "key_features": [
+    "Free to try (airoommakeover.com, 21 Nov 2026). The pricing page lists credit pack amounts including $1, $4 and $18; the static source did not spell out a full plan table.",
+    "Active"
+   ],
+   "pricing": "Free to try (airoommakeover.com, 21 Nov 2026). The pricing page lists credit pack amounts including $1, $4 and $18; the static source did not spell out a full plan table.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "photography & photo editing"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-room-makeover.png",
+   "page": "https://agentscouthq.com/tools/ai-room-makeover.html"
+  },
+  {
+   "name": "Nuteq AI",
+   "slug": "nuteq-ai",
+   "url": "https://nuteqai.com/",
+   "website": "https://nuteqai.com/",
+   "github": "",
+   "category": "voice",
+   "description": "Nuteq AI is a 24/7 AI receptionist for phone calls, SMS, WhatsApp and web chat. It is aimed at businesses that want to book appointments, capture leads and answer after hours. Pricing starts with a free-forever plan, with paid plans when call volume grows.",
+   "key_features": [
+    "Free forever at $0/mo. Paid plans listed on 21 Nov 2026 include $41/mo (and yearly options around $490) and higher tiers such as $108/mo and $249/mo (nuteqai.com/pricing).",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free forever at $0/mo. Paid plans listed on 21 Nov 2026 include $41/mo (and yearly options around $490) and higher tiers such as $108/mo and $249/mo (nuteqai.com/pricing).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nuteq-ai.png",
+   "page": "https://agentscouthq.com/tools/nuteq-ai.html"
+  },
+  {
+   "name": "Pakish.NET Hosting MCP",
+   "slug": "pakish-net-hosting-mcp",
+   "url": "https://pakish.net/for-agents",
+   "website": "https://pakish.net/for-agents",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Pakish.NET's for-agents page is a public catalog of shared hosting plans for websites and for AI agents, including website count, storage, initial charges and renewal terms, and it can be read without an account. The same page describes connecting to that catalog through MCP, A2A or a public JSON API.",
+   "key_features": [
+    "Plan prices are shown in the public catalog on pakish.net/for-agents (21 Nov 2026). This listing does not restate amounts because they are listed in local currency and can change with renewal terms.",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Plan prices are shown in the public catalog on pakish.net/for-agents (21 Nov 2026). This listing does not restate amounts because they are listed in local currency and can change with renewal terms.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pakish-net-hosting-mcp.png",
+   "page": "https://agentscouthq.com/tools/pakish-net-hosting-mcp.html"
+  },
+  {
+   "name": "Vid2Notes",
+   "slug": "vid2notes",
+   "url": "https://vid2notes.com/",
+   "website": "https://vid2notes.com/",
+   "github": "",
+   "category": "education & tutoring",
+   "description": "Vid2Notes turns a video or audio file into structured notes with chapters, screenshots, timestamps and an AI summary. A free plan allows three notes a day. Paid Unlimited plans remove that cap.",
+   "key_features": [
+    "Free: 3 notes daily. Unlimited $20/mo, or $10/mo when billed yearly ($120/year). One-time options are also linked from the pricing page (vid2notes.com/pricing, 21 Nov 2026).",
+    "Active"
+   ],
+   "pricing": "Free: 3 notes daily. Unlimited $20/mo, or $10/mo when billed yearly ($120/year). One-time options are also linked from the pricing page (vid2notes.com/pricing, 21 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "media",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "education & tutoring"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vid2notes.png",
+   "page": "https://agentscouthq.com/tools/vid2notes.html"
+  },
+  {
+   "name": "Taste Stack",
+   "slug": "taste-stack",
+   "url": "https://tastestack.dev/",
+   "website": "https://tastestack.dev/",
+   "github": "",
+   "category": "coding",
+   "description": "Taste Stack gives coding agents such as Claude Code, Codex and Cursor a visual design identity through installable 'taste' skills. A free plan lets you browse the catalog and use four starter tastes (Swiss, Midnight, Soft Depth and House Blend). Paid plans add more tastes.",
+   "key_features": [
+    "Free $0 forever (catalog previews and four starter tastes). Paid plans $3.99 and $6.99/mo, or $83.88/year, listed on tastestack.dev on 21 Nov 2026.",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Free $0 forever (catalog previews and four starter tastes). Paid plans $3.99 and $6.99/mo, or $83.88/year, listed on tastestack.dev on 21 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/taste-stack.png",
+   "page": "https://agentscouthq.com/tools/taste-stack.html"
+  },
+  {
+   "name": "Sapien1 Resource Filter",
+   "slug": "sapien1-resource-filter",
+   "url": "https://sapien1.com/research/terminal-bench-resource-settings",
+   "website": "https://sapien1.com/research/terminal-bench-resource-settings",
+   "github": "",
+   "category": "evals & observability",
+   "description": "This Sapien1 research page is a census of declared CPU, memory, storage and GPU settings across 66 Terminal-Bench 4.1 tasks, with reproducible data and configuration guidance. It is a public research artifact, not a hosted product with a checkout.",
+   "key_features": [
+    "No product price list was on sapien1.com/research/terminal-bench-resource-settings on 21 Nov 2026.",
+    "Active",
+    "Research the web",
+    "Monitor & evaluate agents",
+    "Give agents memory"
+   ],
+   "pricing": "No product price list was on sapien1.com/research/terminal-bench-resource-settings on 21 Nov 2026.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "monitor & evaluate agents",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sapien1-resource-filter.png",
+   "page": "https://agentscouthq.com/tools/sapien1-resource-filter.html"
+  },
+  {
+   "name": "DDScore",
+   "slug": "ddscore",
+   "url": "https://www.ddscore.ai/",
+   "website": "https://www.ddscore.ai/",
+   "github": "",
+   "category": "finance & accounting",
+   "description": "DDScore is a first-pass diligence tool for private companies. It describes company strengths, risks and potential across stages from a planned business through pre-seed, seed, Series A and growth, including probabilistic outcome scenarios. Public pricing was not stated on the homepage on 21 Nov 2026.",
+   "key_features": [
+    "No public price list was on ddscore.ai on 21 Nov 2026.",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "No public price list was on ddscore.ai on 21 Nov 2026.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ddscore.png",
+   "page": "https://agentscouthq.com/tools/ddscore.html"
+  },
+  {
+   "name": "MatterMind",
+   "slug": "mattermind",
+   "url": "https://mattermind.co/",
+   "website": "https://mattermind.co/",
+   "github": "",
+   "category": "legal & compliance",
+   "description": "MatterMind is legal AI software for law firms. It connects case management, case files, intake and communications to the AI tools a firm already uses, and the site discusses using MCP for those connections. Access is described as invitation-only.",
+   "key_features": [
+    "Invitation-only. No public price list was on mattermind.co on 21 Nov 2026.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Invitation-only. No public price list was on mattermind.co on 21 Nov 2026.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mattermind.png",
+   "page": "https://agentscouthq.com/tools/mattermind.html"
+  },
+  {
+   "name": "RapBooth",
+   "slug": "rapbooth",
+   "url": "https://rap-video-ai.app/",
+   "website": "https://rap-video-ai.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "RapBooth turns two photos into an AI rap-video duet with vocals and a beat, which you can download and share. There is no subscription: you buy a one-time credit pack. A 480p video uses 10 credits and a 720p video uses 20. Credits do not expire.",
+   "key_features": [
+    "One-time packs: 10 credits $4.99, 20 credits $9.99, 50 credits $19.99 (USD). A 480p video uses 10 credits; 720p uses 20 (rap-video-ai.app/pricing, 21 Nov 2026).",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "One-time packs: 10 credits $4.99, 20 credits $9.99, 50 credits $19.99 (USD). A 480p video uses 10 credits; 720p uses 20 (rap-video-ai.app/pricing, 21 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-21",
+   "added": "2026-11-21",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rapbooth.png",
+   "page": "https://agentscouthq.com/tools/rapbooth.html"
   }
  ]
 }

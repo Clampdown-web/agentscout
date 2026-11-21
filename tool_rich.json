@@ -34074,5 +34074,112 @@
       "auth": "Solari API key as a Bearer Authorization header (not OAuth)",
       "docs": "https://docs.getsolari.com/mcp"
     }
+  },
+  "hanflow-bot": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-21",
+    "sources": [
+      "https://hanflowbot.com/",
+      "https://hanflowbot.com/pricing"
+    ],
+    "long": [
+      "HanFlow Bot is a desktop AI assistant you install on a PC. One bot can write and draft email, work with office files, add calendar entries, write code, create images, and run web tasks such as filling forms. Voice input is built in. A free phone app can continue a session while the bot keeps running on the computer. Checkout is on account.hanflowbot.com.",
+      "On 21 Nov 2026 the pricing page listed a required HanFlow Bot (Base) plan at $10/mo or $90/year (25% off when billed yearly). Optional manager add-ons start at $2/mo or $18/year, with some at $4/mo or $36/year. A first subscription includes an extra free month after the paid period. The phone app is free. The pricing page is aimed at Windows; the homepage also mentions Mac."
+    ],
+    "who": "People who want a desktop AI assistant on a Windows PC (the site also mentions Mac) that can write, handle files, draft email, use a calendar, and run web tasks.",
+    "features": [
+      "One desktop bot for writing, images, office files, calendar, email drafts, code, and web or form tasks",
+      "Voice input on the computer, plus a free phone app that continues a session while the bot runs on the PC",
+      "Base plan $10/mo or $90/year, billed yearly for 25% off (hanflowbot.com/pricing, 21 Nov 2026)",
+      "Optional manager add-ons from $2/mo or $18/year; some at $4/mo or $36/year",
+      "First subscription includes an extra free month after the paid period; checkout on account.hanflowbot.com"
+    ],
+    "faq": [
+      [
+        "What does HanFlow Bot cost?",
+        "On 21 Nov 2026 the required Base plan was $10/mo or $90/year. Optional manager add-ons started at $2/mo or $18/year. A first subscription includes an extra free month after the paid period."
+      ],
+      [
+        "Does it run on a phone?",
+        "The phone app is free and can continue a session, but the bot itself runs on the computer. Checkout is on account.hanflowbot.com."
+      ],
+      [
+        "Is there a Mac version?",
+        "The pricing page is aimed at Windows. The homepage also mentions Mac; check the official site for current system support."
+      ]
+    ]
+  },
+  "tinycommand": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-21",
+    "sources": [
+      "https://tinycommand.com/",
+      "https://tinycommand.com/pricing"
+    ],
+    "long": [
+      "TinyCommand puts forms, workflows, AI agents, a database and email on one platform so a small team can capture a lead, keep the record and send the follow-up. The site also lists related jobs such as research, web scrape and an AI writer.",
+      "On 21 Nov 2026 the pricing page listed a free-forever plan at $0/mo with 1,000 credits a month and one seat. Basic is $17/mo when billed annually ($199/year) or $19/mo on the monthly path. Professional is $42/mo billed annually ($499/year). Higher and enterprise-style tiers are also listed."
+    ],
+    "who": "Small teams that want forms, workflows, AI agents, a database and email in one no-code workspace, including a free-forever plan.",
+    "features": [
+      "Forms, workflows, AI agents, a database and email on one platform",
+      "Free forever: $0/mo, 1,000 credits a month, one seat (tinycommand.com/pricing, 21 Nov 2026)",
+      "Basic $17/mo billed annually ($199/year) or $19/mo monthly",
+      "Professional $42/mo billed annually ($499/year), with higher and enterprise-style tiers also listed"
+    ],
+    "faq": [
+      [
+        "Is there a free plan?",
+        "Yes. On 21 Nov 2026 TinyCommand listed a free-forever plan at $0/mo with 1,000 credits a month and one seat."
+      ],
+      [
+        "What do paid plans cost?",
+        "Basic is $17/mo billed annually ($199/year) or $19/mo monthly. Professional is $42/mo billed annually ($499/year)."
+      ],
+      [
+        "What is it for?",
+        "The site presents one workspace for forms, workflows, AI agents, a database and email, so a team can capture a lead, keep the record and send the follow-up."
+      ]
+    ]
+  },
+  "monolithos": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-21",
+    "sources": [
+      "https://monolithos.ai/",
+      "https://monolithos.ai/pricing"
+    ],
+    "long": [
+      "Monolithos is a personal agent OS built around a memory vault you keep, including an Obsidian-compatible vault. It offers writing, tasks and cross-device work, and you choose the models and compute you want to use. This listing promotes the existing catalog-only slug; it is not a new row.",
+      "On 21 Nov 2026 the pricing page listed a 7-day full-access trial at $0 with no credit card, Core at $39/mo or $349/year, a higher tier at $89/mo or $859/year, a 50-seat lifetime plan at $999 once, and a bespoke Audit engagement at $5,000."
+    ],
+    "who": "People who want a personal agent OS with a memory vault they keep, including an Obsidian-compatible vault, and who choose their own models and compute.",
+    "features": [
+      "Personal agent OS with a memory vault you keep, including an Obsidian-compatible vault",
+      "Writing, tasks and cross-device work; you choose the models and compute",
+      "7-day full-access trial at $0, no credit card (monolithos.ai/pricing, 21 Nov 2026)",
+      "Core $39/mo or $349/year; a higher tier $89/mo or $859/year",
+      "A 50-seat lifetime plan listed at $999 once, and a bespoke Audit engagement at $5,000"
+    ],
+    "faq": [
+      [
+        "Is there a free trial?",
+        "Yes. On 21 Nov 2026 Monolithos listed a 7-day full-access trial at $0 with no credit card."
+      ],
+      [
+        "What do paid plans cost?",
+        "Core is $39/mo or $349/year. A higher tier is $89/mo or $859/year. A 50-seat lifetime plan is listed at $999 once. A bespoke Audit engagement is listed at $5,000."
+      ],
+      [
+        "What is the memory vault?",
+        "The site describes a memory vault you keep, including an Obsidian-compatible vault, as the center of this personal agent OS."
+      ]
+    ]
   }
 }
