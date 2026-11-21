@@ -87,7 +87,7 @@ Tool pages, `categories/mcp-servers.html`, and the ranked MCP lists are generate
 python3 scripts/mcp_response_rate.py --limit 600
 ```
 
-and commits only `data/mcp-health/` as `github-actions[bot]`. No secrets, no deploy, no Cloudflare worker changes. The link-check script is unchanged.
+When `data/mcp-health/` changed, it commits only that directory as `github-actions[bot]` on a new branch `bot/mcp-health-<Pacific date>-<run id>` and opens a pull request. It does not push to `main`. A pull request opened with `GITHUB_TOKEN` does not start `pull_request` workflows, so the job dispatches the same checks as `refresh-pr-builds` (`guardrails.yml`, `security.yml`, `gitleaks.yml`, and `codeql.yml` via `workflow_dispatch`) and enables squash auto-merge. The repository's Allow auto-merge setting has to be on for that merge to queue. The ruleset still requires the `guardrails` check. An empty probe does not open a pull request. This job does not rebuild generated HTML. Tool pages and the handshake line read `summary.json` the next time the site is built. No secrets, no deploy, no Cloudflare worker changes. The link-check script is unchanged.
 
 ### Run locally
 

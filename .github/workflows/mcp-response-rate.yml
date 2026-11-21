@@ -2,7 +2,12 @@ name: mcp response rate
 
 # Daily read-only MCP initialize + tools/list for a rotating slice of listed
 # servers that publish a public remote endpoint. Appends data/mcp-health and
-# commits that directory only. No secrets, no deploy, no tool calls.
+# opens a pull request for that directory only. It does not push to main.
+# A pull request opened with GITHUB_TOKEN does not start pull_request workflows.
+# After the branch is pushed, this job dispatches the same checks as
+# refresh-pr-builds (workflow_dispatch is allowed for GITHUB_TOKEN) and enables
+# squash auto-merge. The ruleset still requires the guardrails check.
+# No secrets, no deploy, no tool calls.
 on:
   schedule:
     # 15:15 UTC. 7:15 AM Pacific during standard time, 8:15 AM during daylight time.
@@ -16,6 +21,8 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
+  actions: write
 
 concurrency:
   group: mcp-response-rate
@@ -29,7 +36,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # The job commits data/mcp-health. The token is not stored in the remote.
+          # The job pushes a new branch and opens a pull request. The token is not stored in the remote.
           persist-credentials: true
       - name: Setup Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
@@ -45,7 +52,9 @@ jobs:
           python3 scripts/mcp_response_rate.py --limit "$limit"
         env:
           PROBE_LIMIT: ${{ github.event.inputs.limit }}
-      - name: Commit health data
+      - name: Open a pull request for health data
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           git add -- data/mcp-health
@@ -59,7 +68,60 @@ jobs:
             echo "no health changes"
             exit 0
           fi
+          day=$(TZ=America/Los_Angeles date +%Y-%m-%d)
+          branch="bot/mcp-health-${day}-${GITHUB_RUN_ID}"
+          python3 - "$branch" <<'PY'
+          import sys
+          sys.path.insert(0, "scripts")
+          import refresh_pr_build as r
+          branch = sys.argv[1]
+          if (
+              not branch.startswith("bot/mcp-health-")
+              or branch == "main"
+              or "/main" in branch
+              or not r.safe_branch(branch)
+          ):
+              print(f"refusing branch name {branch}", file=sys.stderr)
+              sys.exit(1)
+          PY
+          base=$(git rev-parse HEAD)
+          git checkout -b "$branch"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config commit.gpgsign false
           git commit -m "Record daily MCP response probes"
-          git push
+          git push origin "HEAD:${branch}"
+          head=$(git rev-parse HEAD)
+          body_file="${RUNNER_TEMP}/mcp-health-pr.txt"
+          cat > "$body_file" <<EOF
+          Daily MCP handshake results for ${day} (America/Los_Angeles). Only data/mcp-health/ is updated.
+
+          Generated pages read that summary the next time the site is built. This job does not rebuild HTML.
+
+          New indexable pages in this PR: 0
+
+          Reason this page exists: daily MCP handshake results, no new indexable pages
+          EOF
+          url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --title "Record daily MCP response probes (${day})" --body-file "$body_file")
+          number=${url##*/}
+          case "$number" in
+            ''|*[!0-9]*)
+              echo "could not read the pull request number from ${url}" >&2
+              exit 1
+              ;;
+          esac
+          python3 scripts/refresh_pr_build.py dispatch-ci \
+            --repo "${GITHUB_WORKSPACE}" \
+            --slug "$GITHUB_REPOSITORY" \
+            --branch "$branch" \
+            --pr "$number" \
+            --head "$head" \
+            --base "$base" \
+            --no-wait
+          if ! gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --auto --squash; then
+            echo "squash auto-merge was not enabled for ${url}." >&2
+            echo "Allow auto-merge has to be on (Settings, General, Pull Requests). Squash merges are already allowed." >&2
+            echo "This job does not push to main, does not bypass repository rules, and does not admin-merge." >&2
+            exit 1
+          fi
+          echo "opened ${url}"

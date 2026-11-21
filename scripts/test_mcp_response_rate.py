@@ -646,6 +646,22 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("--limit 600", source)
         self.assertIn("--limit 20 --dry-run", source)
         self.assertIn("timeout-minutes: 60", text)
+        self.assertIn('cron: "15 15 * * *"', text)
+        self.assertIn("pull-requests: write", text)
+        self.assertIn("actions: write", text)
+        self.assertIn("TZ=America/Los_Angeles", text)
+        self.assertIn('branch="bot/mcp-health-${day}-${GITHUB_RUN_ID}"', text)
+        self.assertIn("no health changes", text)
+        self.assertIn("gh pr create", text)
+        self.assertIn("--base main", text)
+        self.assertIn("dispatch-ci", text)
+        self.assertIn("--no-wait", text)
+        self.assertIn("gh pr merge", text)
+        self.assertIn("--auto", text)
+        self.assertIn("--squash", text)
+        self.assertNotIn("--admin", text)
+        pushes = [line.strip() for line in text.splitlines() if line.strip().startswith("git push")]
+        self.assertEqual(pushes, ['git push origin "HEAD:${branch}"'])
 
 
 if __name__ == "__main__":

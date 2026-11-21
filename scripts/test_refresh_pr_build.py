@@ -297,6 +297,53 @@ class CommentAndDispatchTest(unittest.TestCase):
         self.assertIn("-f", argv)
         self.assertNotIn("--force", argv)
 
+    def test_dispatch_can_start_checks_without_waiting(self):
+        calls = []
+
+        def run(argv, **_kwargs):
+            calls.append(list(argv))
+
+            class Result:
+                returncode = 0
+                stdout = ""
+                stderr = ""
+
+            result = Result()
+            if argv[:3] == ["gh", "run", "list"]:
+                result.stdout = json.dumps([{
+                    "databaseId": 9,
+                    "headSha": "abc",
+                    "createdAt": "2026-11-21T00:00:00Z",
+                    "event": "workflow_dispatch",
+                    "status": "completed",
+                }])
+            return result
+
+        waited = refresh_pr_build.dispatch_ci(
+            REPO, "feature", 7, "abc", "def", run=run, sleep=lambda _seconds: None
+        )
+        self.assertEqual(waited, [])
+        self.assertTrue(any(argv[:3] == ["gh", "run", "watch"] for argv in calls))
+
+        calls.clear()
+
+        def boom(_seconds):
+            raise AssertionError("should not sleep")
+
+        started = refresh_pr_build.dispatch_ci(
+            REPO, "bot/mcp-health-2026-11-21-1", 7, "abc", "def", run=run, sleep=boom, wait=False
+        )
+        self.assertEqual(started, [])
+        workflows = [argv[3] for argv in calls if argv[:3] == ["gh", "workflow", "run"]]
+        self.assertEqual(workflows, ["guardrails.yml", "security.yml", "gitleaks.yml", "codeql.yml"])
+        guard = next(argv for argv in calls if argv[:4] == ["gh", "workflow", "run", "guardrails.yml"])
+        self.assertIn("--ref", guard)
+        self.assertIn("bot/mcp-health-2026-11-21-1", guard)
+        self.assertIn("pr_number=7", guard)
+        self.assertIn("head_sha=abc", guard)
+        self.assertIn("base_sha=def", guard)
+        self.assertFalse(any("watch" in argv for argv in calls))
+
     def test_workflow_serializes_pushes_and_reruns_ci(self):
         text = (ROOT / ".github" / "workflows" / "refresh-pr-builds.yml").read_text(encoding="utf-8")
         self.assertIn("auto-rebuild", text)
