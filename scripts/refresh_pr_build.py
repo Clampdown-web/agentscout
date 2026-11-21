@@ -362,8 +362,21 @@ def find_run(slug: str, workflow: str, branch: str, head: str, run, sleep) -> in
     return None
 
 
-def dispatch_ci(slug: str, branch: str, pr: int, head: str, base: str, run=None, sleep=None) -> list[str]:
-    """Start the pull-request workflows on head. GITHUB_TOKEN may dispatch workflow_dispatch."""
+def dispatch_ci(
+    slug: str,
+    branch: str,
+    pr: int,
+    head: str,
+    base: str,
+    run=None,
+    sleep=None,
+    wait: bool = True,
+) -> list[str]:
+    """Start the pull-request workflows on head. GITHUB_TOKEN may dispatch workflow_dispatch.
+
+    When wait is false, return after GitHub accepts the dispatches. The refresh
+    job waits. A caller that enables auto-merge leaves the wait to that merge.
+    """
     run = run or subprocess.run
     pause = sleep or time.sleep
     failed: list[str] = []
@@ -373,6 +386,8 @@ def dispatch_ci(slug: str, branch: str, pr: int, head: str, base: str, run=None,
         if started.returncode != 0:
             print(started.stderr or started.stdout or f"could not dispatch {workflow}", file=sys.stderr)
             failed.append(workflow)
+    if not wait:
+        return failed
     for workflow in CI_WORKFLOWS:
         if workflow in failed:
             continue
@@ -467,6 +482,7 @@ def _run(argv: list[str] | None = None) -> int:
     dispatch.add_argument("--head", default="")
     dispatch.add_argument("--base", default=os.environ.get("MAIN_SHA", ""))
     dispatch.add_argument("--repo", type=Path, default=Path("."))
+    dispatch.add_argument("--no-wait", action="store_true")
 
     args = parser.parse_args(argv)
     if args.cmd == "plan":
@@ -535,12 +551,17 @@ def _run(argv: list[str] | None = None) -> int:
 
     if args.cmd == "dispatch-ci":
         head = args.head or _git(args.repo, "rev-parse", "HEAD").stdout.strip()
-        failed = dispatch_ci(args.slug, args.branch, args.pr, head, args.base)
+        failed = dispatch_ci(
+            args.slug, args.branch, args.pr, head, args.base, wait=not args.no_wait
+        )
         if failed:
-            post_if_new(args.slug, args.pr, ci_comment(head, failed))
+            # The comment names this refresh job. Callers that only start the
+            # checks print the failure and leave the pull-request thread alone.
+            if not args.no_wait:
+                post_if_new(args.slug, args.pr, ci_comment(head, failed))
             print("CI_FAILED " + " ".join(failed), flush=True)
             return 1
-        print("CI passed", flush=True)
+        print("CI dispatched" if args.no_wait else "CI passed", flush=True)
         return 0
     return 2
 
