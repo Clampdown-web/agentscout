@@ -4200,7 +4200,7 @@
   "pricing": "See site"
  },
  "cryptodataapi": {
-  "link": "Not responding",
+  "link": "OK",
   "name": "CryptoDataAPI",
   "pricing": "See site"
  },
@@ -6835,7 +6835,7 @@
   "pricing": "See site"
  },
  "goodwatch": {
-  "link": "OK",
+  "link": "Error",
   "name": "GoodWatch",
   "pricing": "See site"
  },
@@ -7570,7 +7570,7 @@
   "pricing": "See site"
  },
  "hptsu-mcp": {
-  "link": "OK",
+  "link": "Not responding",
   "name": "Hptsu Mcp",
   "pricing": "Open source"
  },
@@ -12330,7 +12330,7 @@
   "pricing": "See site"
  },
  "pakish-net-hosting-mcp": {
-  "link": "not checked",
+  "link": "OK",
   "name": "Pakish.NET Hosting MCP",
   "pricing": "See site"
  },
@@ -13665,7 +13665,7 @@
   "pricing": "See site"
  },
  "quran-reels-mcp": {
-  "link": "Error",
+  "link": "OK",
   "name": "Quran Reels MCP",
   "pricing": "See site"
  },
@@ -14714,6 +14714,11 @@
   "name": "Serpstat MCP",
   "pricing": "Paid"
  },
+ "servana": {
+  "link": "OK",
+  "name": "Servana",
+  "pricing": "Freemium"
+ },
  "server": {
   "link": "OK",
   "name": "Server",
@@ -15218,6 +15223,11 @@
   "link": "OK",
   "name": "Tanatasa Beauty MCP",
   "pricing": "Free"
+ },
+ "tapline": {
+  "link": "OK",
+  "name": "Tapline",
+  "pricing": "Freemium"
  },
  "tavily-mcp": {
   "link": "OK",

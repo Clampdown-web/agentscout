@@ -34181,5 +34181,112 @@
         "The site describes a memory vault you keep, including an Obsidian-compatible vault, as the center of this personal agent OS."
       ]
     ]
+  },
+  "calleez": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-22",
+    "sources": [
+      "https://calleez.ai/",
+      "https://calleez.ai/pricing"
+    ],
+    "long": [
+      "CallEez is an AI phone receptionist with a dedicated number that answers missed calls, takes messages and can book jobs while you work or sleep. You create an agent in the browser and get a number that handles calls for a small team.",
+      "On 22 Nov 2026 the pricing page listed a 7-day free trial, then monthly plans excluding VAT: Essential £19/mo (50 minutes, 20 SMS, 1 AI receptionist), Pro £99/mo (250 minutes, 100 SMS, 2 receptionists) and Max £199/mo (500 minutes, 200 SMS, 4 receptionists). Elyte is a bespoke plan."
+    ],
+    "who": "Small businesses that want an AI receptionist to answer the phone, take messages and book jobs when they miss a call.",
+    "features": [
+      "AI receptionist with a dedicated phone number that answers missed calls and can book jobs",
+      "7-day free trial, then the selected plan bills monthly, excluding VAT (calleez.ai/pricing, 22 Nov 2026)",
+      "Essential £19/mo: 50 minutes, 20 SMS, 1 AI receptionist",
+      "Pro £99/mo: 250 minutes, 100 SMS, 2 receptionists; Max £199/mo: 500 minutes, 200 SMS, 4 receptionists",
+      "Elyte is listed as a bespoke plan"
+    ],
+    "faq": [
+      [
+        "What does CallEez cost?",
+        "On 22 Nov 2026 plans were Essential £19/mo, Pro £99/mo and Max £199/mo, excluding VAT, after a 7-day free trial. Elyte is a bespoke plan."
+      ],
+      [
+        "Is there a free trial?",
+        "Yes. The pricing page listed a 7-day free trial. After seven days the selected plan starts billing unless you cancel first."
+      ],
+      [
+        "What does it do?",
+        "It provides an AI receptionist on a dedicated number that can answer missed calls, send SMS and book jobs while you work."
+      ]
+    ]
+  },
+  "tapline": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-22",
+    "sources": [
+      "https://tapline.sh/"
+    ],
+    "long": [
+      "Tapline is a hosted MCP server and a set of maintained web data APIs for social, property, travel, search, jobs and market data. The MCP URL is https://api.tapline.sh/mcp. You can add it in Claude Code, Codex, ChatGPT, Cursor or VS Code and ask in plain words; failed requests do not use credits.",
+      "On 22 Nov 2026 the site listed a free plan at $0 with no card and 100 API credits (1 req/s), a Pay As You Go pack at $9 one-time from 5,000 credits that never expire (5 req/s), and Starter at $39/mo or $468/year with 100,000 credits a month. Growth, Pro and custom Enterprise tiers are also listed."
+    ],
+    "who": "Developers and coding agents that need maintained web data APIs, including an MCP connection, without running their own scrapers.",
+    "features": [
+      "Hosted MCP server at https://api.tapline.sh/mcp for Claude, ChatGPT, Cursor, VS Code and other clients",
+      "Maintained APIs for social, property, travel, search, jobs and market data; failed requests cost 0 credits",
+      "Free $0 plan: 100 API credits, no card, 1 req/s (tapline.sh, 22 Nov 2026)",
+      "Pay As You Go $9 one-time from 5,000 credits that never expire, 5 req/s",
+      "Starter $39/mo or $468/year with 100,000 credits/mo; Growth, Pro and Enterprise tiers also listed"
+    ],
+    "faq": [
+      [
+        "Is there a free plan?",
+        "Yes. On 22 Nov 2026 Tapline listed a $0 plan with 100 API credits and no card required. Failed requests do not use credits."
+      ],
+      [
+        "What do paid plans cost?",
+        "Pay As You Go is $9 one-time from 5,000 credits. Starter is $39/mo or $468/year. Growth, Pro and custom Enterprise tiers are also listed."
+      ],
+      [
+        "How do I connect MCP?",
+        "Add https://api.tapline.sh/mcp in your client (for example `claude mcp add --transport http tapline https://api.tapline.sh/mcp`) and sign in."
+      ]
+    ]
+  },
+  "merrows": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-22",
+    "sources": [
+      "https://www.merrows.ai/",
+      "https://www.merrows.ai/en/pricing"
+    ],
+    "long": [
+      "Merrows is an AI-powered customer rep for web chat, email, phone and SMS. It answers from your own orders and bookings, and can take orders, track deliveries and handle returns in your POS and helpdesk.",
+      "On 22 Nov 2026 the pricing page listed a free plan at $0/mo with 100 web chat and email conversations and no card, then paid plans at $99/mo or $79/mo billed annually (250 credits), Growth at $399/mo or $319/mo annually (1,200 credits), and $999/mo or $799/mo annually (3,500 credits). Voice is a $49/mo add-on, SMS $29/mo, or voice and SMS together at $69/mo."
+    ],
+    "who": "Shops, restaurants and other operators that want an AI-powered rep to answer customers on chat, email, phone or SMS from their own order and booking data.",
+    "features": [
+      "AI-powered rep for web chat, email, phone and SMS that works from your orders, bookings, POS and helpdesk",
+      "Free plan: $0/mo, 100 web chat and email conversations, no card (merrows.ai/en/pricing, 22 Nov 2026)",
+      "Paid chat/email plans $99/mo or $79/mo billed annually (250 credits); Growth $399/mo or $319/mo annually (1,200 credits)",
+      "A higher plan at $999/mo or $799/mo annually (3,500 credits)",
+      "Voice add-on $49/mo, SMS $29/mo, or voice+SMS $69/mo; credit packs from $39"
+    ],
+    "faq": [
+      [
+        "Is there a free plan?",
+        "Yes. On 22 Nov 2026 Merrows listed a $0 plan with 100 web chat and email conversations a month and no card."
+      ],
+      [
+        "What do paid plans cost?",
+        "Chat and email plans start at $99/mo or $79/mo billed annually. Growth is $399/mo or $319/mo annually. A higher plan is $999/mo or $799/mo annually. Voice and SMS are add-ons."
+      ],
+      [
+        "Does it handle phone calls?",
+        "Yes. Voice is a $49/mo add-on, and a combined voice and SMS line is listed at $69/mo."
+      ]
+    ]
   }
 }
