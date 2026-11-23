@@ -58,12 +58,16 @@ class OgCardTest(unittest.TestCase):
     def test_static_cards_keep_generic_counts(self):
         self.assertEqual(build_counts.pitch_tools_label(5716), "5,000+ AI agent tools")
         self.assertEqual(build_counts.pitch_mcp_label(3177), "3,000+ MCP servers")
+        tools_pitch, mcp_pitch = build_og.pitches()
         blob = " ".join(str(part) for row in build_og.static_specs() for part in row)
         self.assertIn("The AI agent tools actually worth trying.", blob)
-        self.assertIn("5,000+ AI agent tools", blob)
-        self.assertIn("3,000+ MCP servers", blob)
+        self.assertIn(tools_pitch, blob)
+        self.assertIn(mcp_pitch, blob)
         self.assertNotIn("5,716", blob)
         self.assertNotIn("3,177", blob)
+        counts = build_counts.load()
+        self.assertNotIn(f"{counts['tools']:,}", blob)
+        self.assertNotIn(f"{counts['mcp_servers']:,}", blob)
 
 
 if __name__ == "__main__":
