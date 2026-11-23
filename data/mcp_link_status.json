@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-22 04:31",
+ "checked": "2026-11-23 04:22",
  "tz": "America/Los_Angeles",
  "includes_catalog_only": true,
  "results": {
@@ -367,7 +367,7 @@
    "github": 200
   },
   "agentndx": {
-   "url": 200
+   "url": 403
   },
   "agentor": {
    "url": 200
@@ -1326,6 +1326,10 @@
   "basecamp": {
    "url": 200
   },
+  "batchdata": {
+   "url": 200,
+   "github": 200
+  },
   "batterysnap": {
    "url": 200
   },
@@ -1778,7 +1782,7 @@
    "github": 200
   },
   "bryti": {
-   "url": 403
+   "url": 200
   },
   "bucket": {
    "url": 200,
@@ -3486,7 +3490,7 @@
    "github": 200
   },
   "empiria-local-seo": {
-   "url": 200
+   "url": 403
   },
   "empiriolabs-ai": {
    "url": 200,
@@ -3587,7 +3591,7 @@
    "url": 200
   },
   "everyai": {
-   "url": 200
+   "url": 403
   },
   "everything-search": {
    "url": 200,
@@ -4217,7 +4221,7 @@
    "github": 200
   },
   "furringline": {
-   "url": 200,
+   "url": 403,
    "github": 200
   },
   "furrsati": {
@@ -4541,7 +4545,7 @@
    "github": 200
   },
   "goodwatch": {
-   "url": 503,
+   "url": 200,
    "github": 200
   },
   "google-ads": {
@@ -4636,7 +4640,7 @@
    "url": 200
   },
   "grisoco-ai-security-audits": {
-   "url": 403
+   "url": 200
   },
   "grounded-docs-mcp": {
    "url": 200,
@@ -4729,6 +4733,9 @@
    "github": 200
   },
   "gyms-nj-directory": {
+   "url": 200
+  },
+  "gymup": {
    "url": 200
   },
   "ha-mcp-for-xiaozhi": {
@@ -5031,7 +5038,7 @@
    "url": 200
   },
   "hptsu-mcp": {
-   "url": 0,
+   "url": 200,
    "github": 200
   },
   "hr-flare": {
@@ -6896,7 +6903,7 @@
    "url": 200
   },
   "mediora-lab-catalog": {
-   "url": 403
+   "url": 200
   },
   "medusa": {
    "url": 200
@@ -7435,7 +7442,7 @@
    "url": 200
   },
   "netsendo-website": {
-   "url": 200
+   "url": 403
   },
   "network-sketcher-local-mcp": {
    "url": 200
@@ -7929,6 +7936,10 @@
   },
   "openai-compatible-chat": {
    "url": 200
+  },
+  "openany": {
+   "url": 200,
+   "github": 200
   },
   "openapi-schema-explorer": {
    "url": 200
@@ -8658,6 +8669,9 @@
   "poplin-account": {
    "url": 200
   },
+  "poptin-mcp": {
+   "url": 200
+  },
   "porch": {
    "url": 200
   },
@@ -8867,7 +8881,7 @@
    "url": 200
   },
   "promopilot": {
-   "url": 200
+   "url": 403
   },
   "promostash": {
    "url": 200
@@ -9882,7 +9896,7 @@
    "url": 200
   },
   "signoz-mcp-server": {
-   "url": 200,
+   "url": 404,
    "github": 200
   },
   "sikaru-docs": {
@@ -10196,6 +10210,9 @@
    "github": 200
   },
   "tapline": {
+   "url": 200
+  },
+  "taskbullet-hub": {
    "url": 200
   },
   "tavily-mcp": {

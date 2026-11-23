@@ -34288,5 +34288,113 @@
         "Yes. Voice is a $49/mo add-on, and a combined voice and SMS line is listed at $69/mo."
       ]
     ]
+  },
+  "kwern": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-23",
+    "sources": [
+      "https://kwern.app/",
+      "https://kwern.app/pricing"
+    ],
+    "long": [
+      "Kwern is a set of AI marketing agents for indie makers. You give it the URL of what you built; one agent per channel drafts posts, replies and ads on your own model key, and nothing publishes until you approve, edit or reject it.",
+      "On 23 Nov 2026 the pricing page listed three plans that also decide how many products you run: Lite $29/mo or $290/yr (1 product), Pro $59/mo or $590/yr (3 products) and Max $99/mo or $990/yr (5 products). Kwern bills the reads its agents need; model tokens are billed to you by your own provider and are not marked up."
+    ],
+    "who": "Indie makers who want marketing agents for app stores, ads and social channels, with approval before anything is published.",
+    "features": [
+      "One marketing agent per channel drafts posts, replies and ads; nothing goes out until you approve it",
+      "Runs on your own model provider key; tokens are billed by the provider, not marked up (kwern.app/pricing, 23 Nov 2026)",
+      "Lite $29/mo or $290/yr for 1 product",
+      "Pro $59/mo or $590/yr for 3 products; Max $99/mo or $990/yr for 5 products",
+      "Connectors for App Store Connect, Apple Ads, Google Play, Google Ads, X, Reddit, LinkedIn and others"
+    ],
+    "faq": [
+      [
+        "What does Kwern cost?",
+        "On 23 Nov 2026 plans were Lite $29/mo or $290/yr, Pro $59/mo or $590/yr, and Max $99/mo or $990/yr, depending on how many products you run."
+      ],
+      [
+        "Do I pay for the model as well?",
+        "Yes. The model runs on your own provider key, so token costs are billed by that provider and are not marked up by Kwern."
+      ],
+      [
+        "Does it post on its own?",
+        "No. You approve, edit or reject drafts; nothing publishes until you do."
+      ]
+    ]
+  },
+  "poptin-mcp": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-23",
+    "sources": [
+      "https://www.poptin.com/mcp/",
+      "https://www.poptin.com/pricing"
+    ],
+    "long": [
+      "Poptin MCP is a hosted MCP server that connects Claude, ChatGPT, Cursor and other clients to your Poptin account. You can create popups and forms, set targeting, segment visitors, send campaigns and automate follow-ups from the assistant you already use.",
+      "On 23 Nov 2026 Poptin's pricing page listed a Free Forever plan at 1,000 visitors/mo, then Basic $25/mo or $240 billed annually (10,000 visitors/mo), Pro $59/mo or $564 billed annually (50,000 visitors/mo) and Agency $119/mo or $1,140 billed annually."
+    ],
+    "who": "Marketers who already use Poptin and want to run popups, forms and campaigns from an MCP client such as Claude, ChatGPT or Cursor.",
+    "features": [
+      "Hosted MCP server at https://www.poptin.com/mcp/ for Claude, ChatGPT, Cursor and other clients",
+      "Create popups and forms, segment visitors, send campaigns and automate follow-ups from your Poptin account",
+      "Free Forever plan: 1,000 visitors/mo (poptin.com/pricing, 23 Nov 2026)",
+      "Basic $25/mo or $240/yr (10,000 visitors/mo); Pro $59/mo or $564/yr (50,000 visitors/mo)",
+      "Agency $119/mo or $1,140/yr"
+    ],
+    "faq": [
+      [
+        "Is there a free plan?",
+        "Yes. On 23 Nov 2026 Poptin listed a Free Forever plan with 1,000 visitors a month."
+      ],
+      [
+        "What do paid plans cost?",
+        "Basic is $25/mo or $240/yr, Pro $59/mo or $564/yr, and Agency $119/mo or $1,140/yr."
+      ],
+      [
+        "What does the MCP server do?",
+        "It connects your Poptin account to an MCP client so you can create popups, target visitors and run campaigns by asking the assistant."
+      ]
+    ]
+  },
+  "openany": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-23",
+    "sources": [
+      "https://openany.si/",
+      "https://openany.si/pricing"
+    ],
+    "long": [
+      "OpenAny is a B2A marketplace where agents can discover and buy models, APIs, skills, data and services. You can connect through the MCP server at https://mcp.openany.si, or with an API key. Sign-in alone does not authorize spending; review pricing and set a task budget first.",
+      "On 23 Nov 2026 the pricing page described pay-as-you-go billing per call with no OpenAny subscription required. A free account does not include free calls. Eligible new accounts can receive $0.50 in signup credits. Balance top-ups can use a card, USDC or x402."
+    ],
+    "who": "Developers and coding agents that need a pay-as-you-go marketplace of APIs, models, skills and data, including an MCP connection.",
+    "features": [
+      "B2A marketplace for models, APIs, skills, data and services, with an MCP server at https://mcp.openany.si",
+      "Pay-as-you-go per call; no OpenAny subscription required (openany.si/pricing, 23 Nov 2026)",
+      "Eligible new accounts can receive $0.50 in signup credits; a free account does not include free calls",
+      "Sign-in alone does not authorize spending; set a task budget before paid actions",
+      "Balance top-ups via card, USDC or x402"
+    ],
+    "faq": [
+      [
+        "Is there a free plan?",
+        "There is no subscription. Eligible new accounts can receive $0.50 in signup credits, but a free account does not include free calls."
+      ],
+      [
+        "How does pricing work?",
+        "Calls are billed pay-as-you-go at each resource's published rate. You can fund a balance with a card, USDC or x402."
+      ],
+      [
+        "How do I connect MCP?",
+        "Add https://mcp.openany.si in your MCP client. Review pricing and authorize a task budget before paid actions."
+      ]
+    ]
   }
 }

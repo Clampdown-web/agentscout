@@ -19665,7 +19665,6 @@
 "agent-payments",
 "voice-phone",
 "mcp-gateways",
-"vfx-compositing",
 "mastering"
 ],
 "sml-url-to-markdown-api": [
@@ -20447,7 +20446,8 @@
 "mcp-servers"
 ],
 "knowloop": [
-"email-agents"
+"email-agents",
+"video-editing"
 ],
 "scam-mirror": [
 "agent-auth",
@@ -21186,7 +21186,7 @@
 ],
 "taste-stack": [
 "planning-tasks",
-"agent-auth",
+"video",
 "images-design",
 "rules-config"
 ],
@@ -21272,5 +21272,51 @@
 "coherta": [
 "planning-tasks",
 "sales-agents"
+],
+"kwern": [
+"marketing-agents",
+"local-models"
+],
+"poptin-mcp": [
+"mcp-servers"
+],
+"openany": [
+"voice-phone",
+"mcp-gateways",
+"mcp-servers",
+"rules-config"
+],
+"voice-ai-for-canva": [
+"voice-phone",
+"ai-dubbing-voices",
+"video"
+],
+"gymup": [
+"fine-tuning",
+"mcp-servers",
+"video-editing",
+"mobile"
+],
+"ai-song-writer-songlab": [],
+"taskbullet-hub": [
+"voice-phone",
+"sales-agents"
+],
+"wan3-ai": [
+"video",
+"images-design"
+],
+"batchdata": [
+"mcp-servers"
+],
+"tancky-ai": [
+"browser-automation",
+"ide-agents",
+"vfx-compositing",
+"video-editing",
+"images-design"
+],
+"wechatai": [
+"images-design"
 ]
 }

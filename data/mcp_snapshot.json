@@ -1979,6 +1979,11 @@
   "name": "Basecamp",
   "pricing": "See site"
  },
+ "batchdata": {
+  "link": "OK",
+  "name": "BatchData",
+  "pricing": "Paid"
+ },
  "batterysnap": {
   "link": "OK",
   "name": "BatterySnap",
@@ -6835,7 +6840,7 @@
   "pricing": "See site"
  },
  "goodwatch": {
-  "link": "Error",
+  "link": "OK",
   "name": "GoodWatch",
   "pricing": "See site"
  },
@@ -7118,6 +7123,11 @@
   "link": "OK",
   "name": "Gyms NJ directory",
   "pricing": "See site"
+ },
+ "gymup": {
+  "link": "OK",
+  "name": "GymUp",
+  "pricing": "Paid"
  },
  "ha-mcp-for-xiaozhi": {
   "link": "OK",
@@ -7570,7 +7580,7 @@
   "pricing": "See site"
  },
  "hptsu-mcp": {
-  "link": "Not responding",
+  "link": "OK",
   "name": "Hptsu Mcp",
   "pricing": "Open source"
  },
@@ -11884,6 +11894,11 @@
   "name": "OpenAI Compatible Chat",
   "pricing": "See site"
  },
+ "openany": {
+  "link": "OK",
+  "name": "OpenAny",
+  "pricing": "Usage-based"
+ },
  "openapi-schema-explorer": {
   "link": "OK",
   "name": "OpenAPI Schema Explorer",
@@ -12988,6 +13003,11 @@
   "link": "OK",
   "name": "Poplin account",
   "pricing": "See site"
+ },
+ "poptin-mcp": {
+  "link": "OK",
+  "name": "Poptin MCP",
+  "pricing": "Freemium"
  },
  "porch": {
   "link": "OK",
@@ -14800,7 +14820,7 @@
   "pricing": "See site"
  },
  "signoz-mcp-server": {
-  "link": "OK",
+  "link": "Error",
   "name": "SigNoz MCP Server",
   "pricing": "Open source + cloud"
  },
@@ -15228,6 +15248,11 @@
   "link": "OK",
   "name": "Tapline",
   "pricing": "Freemium"
+ },
+ "taskbullet-hub": {
+  "link": "OK",
+  "name": "TaskBullet Hub",
+  "pricing": "See site"
  },
  "tavily-mcp": {
   "link": "OK",
