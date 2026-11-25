@@ -703,5 +703,49 @@
  "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/": {
   "title": "Meta employees say Muse mixed up chats and showed other people's data",
   "summary": "Reuters, via TechCrunch, says Meta employees testing Muse saw it mix up chats and surface other people's data, including bank balances and a Signal reminder. Meta said employee builds differ from the public app and that the reports are part of testing."
+ },
+ "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/11/developers-creating-agentic-ai-services-for-consumers-reminded-to-meet-their-data-protection-responsibilities/": {
+  "title": "UK ICO says it will act if consumer AI agents ship without user controls",
+  "summary": "The UK Information Commissioner's Office said it will step in when organisations rush out consumer AI agents without privacy safeguards and real user controls. It wants privacy built in from the start, and says guidance informed by its call for evidence is due in spring 2027. The post does not name a product or announce a fine."
+ },
+ "https://www.prnewswire.com/news-releases/mesh-launches-mesh-mcp-turning-one-prompt-into-a-payments-integration-302949189.html": {
+  "title": "Mesh launches an MCP server so coding agents can build payments flows",
+  "summary": "Mesh launched Mesh MCP, a hosted server that lets a coding agent assemble a payments integration from Mesh's live documentation and API spec. Each request is checked against that spec before it is sent. The server is read-only, does not move funds, and connects to Claude Code, Cursor, Codex, and other MCP clients."
+ },
+ "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/": {
+  "title": "JFrog says an AI agent published Hugging Face malware and leaked its own keys",
+  "summary": "JFrog Security Research says an autonomous agent it calls ARTEX uploaded fake Hugging Face models that steal cloud credentials and commit them back to a public repo. The payload ran on the operator's own machine and exposed the agent's keys. Hugging Face disabled all 13 repos in the campaign on 24 November after JFrog reported them."
+ },
+ "https://www.caixinglobal.com/2026-11-25/bytedance-expands-personal-ai-agent-push-with-xiaodou-beta-102508431.html": {
+  "title": "ByteDance opens its Xiaodou personal agent to an invitation beta",
+  "summary": "Caixin reports that ByteDance's Doubao team opened an invitation-only public beta of Xiaodou on 24 November. The standalone agent is built for ongoing personal tasks and can connect to outside apps after a user allows it. ByteDance described the product as experimental."
+ },
+ "https://thenextweb.com/news/anthropic-claude-skills-over-mcp-tasks-elicitation": {
+  "title": "Anthropic opens Skills over MCP and long-running tasks in Claude",
+  "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users."
+ },
+ "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/": {
+  "title": "Maple raises $5.3M for a private desktop agent and a cloud agent that stays on",
+  "summary": "TechCrunch reports Maple closed a $5.3 million seed round led by Epic Ventures. Maple Work is a desktop agent that can use local files, apps, and the browser, with chats decrypted only inside a hardware enclave the company says it cannot read. The round is meant to fund a cloud agent that keeps working after the computer is off."
+ },
+ "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/": {
+  "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
+  "summary": "TechCrunch reports Walmart is partnering with Meta so Black Friday deals show up inside Muse, Meta's personal AI agent."
+ },
+ "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/": {
+  "title": "Even the best AI agents struggle with everyday life",
+  "summary": "TechCrunch covers ShellBench, a test of 100 everyday tasks built from real agent requests in messy personal files. The leading models finished only about 60 percent of attempts, and 15.7 percent of all runs missed a safety check. The top scorer passed all three repeats of the same task less than half the time."
+ },
+ "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace": {
+  "title": "Google Workspace opens MCP servers and a CLI for governed AI agents",
+  "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access."
+ },
+ "https://www.canva.com/newsroom/news/canva-mcp-update/": {
+  "title": "Canva opens its MCP server to every developer and AI agent",
+  "summary": "Canva removed the waitlist on its MCP server, so agents can generate editable designs, images, and video, remove backgrounds, resize, and export. New REST APIs and a wider CLI give coding agents a second way in. Canva says the finished files stay editable, with a person still able to change them before they go out."
+ },
+ "https://vercel.com/changelog/agents-can-now-manage-ai-gateway-through-vercel-mcp": {
+  "title": "Agents can now manage AI Gateway through Vercel MCP",
+  "summary": "Vercel says an agent on Vercel MCP can now create virtual model IDs for AI Gateway, change routing rules, and set team or project budgets in plain language. Apps can call a name such as vmc/coding-agent, and the model behind it can change later without a redeploy. The caller's Vercel team permissions still apply."
  }
 }
