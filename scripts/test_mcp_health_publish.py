@@ -98,9 +98,39 @@ class PublishRuleTests(unittest.TestCase):
             "data/mcp-health/state.json",
             "tools/one.html",
             "categories/mcp-servers.more.json",
+            "tasks/connecting-tools-mcp.more.json",
+            "tasks/writing-code.more.json",
             "llms.txt",
         ]
         self.assertIsNone(publish.commit_block(paths))
+        for path in (
+            "tasks/connecting-tools-mcp.more.json",
+            "tasks/writing-code.more.json",
+            "categories/mcp-servers.more.json",
+        ):
+            self.assertTrue(publish.allowed_path(path))
+
+    def test_allow_list_stays_tight_around_task_fragments(self):
+        self.assertFalse(publish.allowed_path("tasks/nested/writing-code.more.json"))
+        self.assertFalse(publish.allowed_path("tasks/writing-code.json"))
+        self.assertFalse(publish.allowed_path("best/mcp.more.json"))
+        self.assertFalse(publish.allowed_path("categories/nested/mcp-servers.more.json"))
+
+    def test_only_a_new_month_log_may_be_untracked(self):
+        rows = [
+            ("??", "data/mcp-health/2026-12.jsonl"),
+            (" M", "data/mcp-health/summary.json"),
+            (" M", "tools/one.html"),
+            (" M", "tasks/connecting-tools-mcp.more.json"),
+        ]
+        self.assertTrue(publish.is_new_month_log("??", "data/mcp-health/2026-12.jsonl"))
+        self.assertIsNone(publish.review_status(rows))
+        self.assertFalse(publish.is_new_month_log("??", "data/mcp-health/2026-13.jsonl"))
+        self.assertFalse(publish.is_new_month_log("??", "data/mcp-health/notes.txt"))
+        self.assertFalse(publish.is_new_month_log("A ", "data/mcp-health/2026-12.jsonl"))
+        refused = publish.review_status([("??", "tools/extra.html"), (" M", "tools/one.html")])
+        self.assertIn("tools/extra.html", refused)
+        self.assertIn("status other than a modification", refused)
 
     def test_sitemap_and_new_paths_are_refused(self):
         message = publish.commit_block(["data/mcp-health/summary.json", "tools/one.html", "sitemap.xml"])
@@ -120,6 +150,12 @@ class PublishRuleTests(unittest.TestCase):
                 {"number": 2, "headRefName": "bot/mcp-health-2026-11-24-9", "updatedAt": "2026-11-24T00:00:00Z"},
                 {"number": 1, "headRefName": "feature", "updatedAt": "2026-11-25T00:00:00Z"},
                 {"number": 3, "headRefName": "bot/mcp-health-2026-11-23-8", "updatedAt": "2026-11-23T00:00:00Z"},
+                {
+                    "number": 9,
+                    "headRefName": "bot/mcp-health-2026-11-22-1",
+                    "updatedAt": "2026-11-22T00:00:00Z",
+                    "isCrossRepository": True,
+                },
             ]
         )
         self.assertEqual([row["number"] for row in rows], [3, 2])
@@ -203,6 +239,102 @@ class RebuildFixtureTests(unittest.TestCase):
         self.assertIn("Responded 3/3 checks in last 30 days", rebuilt)
         self.assertIn('data-mcp-check="1"', rebuilt)
         self.assertNotIn("tools/two.html", rebuilt)
+
+    def test_replacement_text_is_not_read_as_a_backreference(self):
+        cadence = pages_job.CADENCE_FALLBACK
+        text = "Handshake check: 1 of 2 remote servers checked so far. " + cadence
+        updated, missed = pages_job.rewrite_document(
+            text,
+            servers=SERVERS,
+            sentence=r"Handshake check: \1 stayed literal.",
+            cadence=cadence,
+        )
+        self.assertEqual(missed, [])
+        self.assertIn(r"\1 stayed literal.", updated)
+
+
+class CheckWaitTests(unittest.TestCase):
+    def _run(self, rows_for):
+        def run(argv, **_kwargs):
+            workflow = argv[argv.index("--workflow") + 1]
+
+            class Result:
+                returncode = 0
+                stdout = json.dumps(rows_for(workflow))
+                stderr = ""
+
+            return Result()
+
+        return run
+
+    def test_auto_merge_waits_until_all_four_succeed(self):
+        calls = {"n": 0}
+
+        def rows_for(_workflow):
+            calls["n"] += 1
+            return [{
+                "headSha": "abc",
+                "status": "completed",
+                "conclusion": "success",
+                "createdAt": "2026-11-25T00:00:00Z",
+            }]
+
+        failed = publish.wait_for_checks(
+            "owner/repo", "bot/mcp-health-2026-11-25-1", "abc",
+            run=self._run(rows_for), sleep=lambda _seconds: None, clock=lambda: 0, timeout=30, poll=15,
+        )
+        self.assertEqual(failed, [])
+        self.assertEqual(calls["n"], len(publish.CI_WORKFLOWS))
+
+    def test_a_failed_check_blocks_auto_merge(self):
+        def rows_for(workflow):
+            conclusion = "failure" if workflow == "gitleaks.yml" else "success"
+            return [{
+                "headSha": "abc",
+                "status": "completed",
+                "conclusion": conclusion,
+                "createdAt": "2026-11-25T00:00:00Z",
+            }]
+
+        failed = publish.wait_for_checks(
+            "owner/repo", "branch", "abc",
+            run=self._run(rows_for), sleep=lambda _seconds: (_ for _ in ()).throw(AssertionError("should not poll again")),
+            clock=lambda: 0, timeout=30, poll=15,
+        )
+        self.assertEqual(failed, ["gitleaks.yml failure"])
+
+    def test_timeout_leaves_the_unfinished_workflows(self):
+        now = {"t": 0}
+
+        def clock():
+            return now["t"]
+
+        def sleep(seconds):
+            now["t"] += seconds
+
+        def rows_for(workflow):
+            if workflow == "guardrails.yml":
+                return [{
+                    "headSha": "abc",
+                    "status": "completed",
+                    "conclusion": "success",
+                    "createdAt": "2026-11-25T00:00:00Z",
+                }]
+            return [{
+                "headSha": "abc",
+                "status": "in_progress",
+                "conclusion": None,
+                "createdAt": "2026-11-25T00:00:00Z",
+            }]
+
+        failed = publish.wait_for_checks(
+            "owner/repo", "branch", "abc",
+            run=self._run(rows_for), sleep=sleep, clock=clock, timeout=30, poll=15,
+        )
+        self.assertIn("security.yml", failed)
+        self.assertIn("gitleaks.yml", failed)
+        self.assertIn("codeql.yml", failed)
+        self.assertNotIn("guardrails.yml", failed)
 
 
 if __name__ == "__main__":

@@ -18,9 +18,11 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
+import time
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -32,12 +34,18 @@ sys.path.insert(0, str(ROOT / "scripts" / "guardrails"))
 import mcp_health_pages as pages_job  # noqa: E402
 import mcp_response_rate as mrr  # noqa: E402
 from pages import is_published_html  # noqa: E402
-from refresh_pr_build import dispatch_ci, safe_branch  # noqa: E402
+from refresh_pr_build import CI_WORKFLOWS, dispatch_ci, safe_branch  # noqa: E402
 
 PT = ZoneInfo("America/Los_Angeles")
 BRANCH_PREFIX = "bot/mcp-health-"
 BOT_NAME = "github-actions[bot]"
 BOT_EMAIL = "41898282+github-actions[bot]@users.noreply.github.com"
+# A new month file is the only untracked path this job may add.
+_MONTH_LOG = re.compile(r"data/mcp-health/(\d{4})-(0[1-9]|1[0-2])\.jsonl")
+# CodeQL and the other scans have to finish before auto-merge. The ruleset
+# only requires guardrails, so enabling auto-merge earlier would merge first.
+CHECK_TIMEOUT_SECONDS = 35 * 60
+CHECK_POLL_SECONDS = 20
 
 
 def git(repo: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
@@ -101,9 +109,37 @@ def allowed_path(path: str) -> bool:
         return True
     if rel in {"llms.txt", "llms-full.txt"}:
         return True
-    if rel.startswith("categories/") and rel.endswith(".more.json") and rel.count("/") == 1:
-        return True
+    # Category and task pages spill the rest of a long list into one JSON file.
+    # Those are the only generated JSON fragments this restamp rewrites.
+    for directory in ("categories", "tasks"):
+        prefix = directory + "/"
+        if rel.startswith(prefix) and rel.endswith(".more.json") and rel.count("/") == 1:
+            return True
     return is_published_html(rel)
+
+
+def is_new_month_log(code: str, path: str) -> bool:
+    """True for an untracked data/mcp-health/YYYY-MM.jsonl and nothing else."""
+    if code.strip() != "??":
+        return False
+    return _MONTH_LOG.fullmatch(path.replace("\\", "/").strip()) is not None
+
+
+def review_status(rows: list[tuple[str, str]]) -> str | None:
+    """None when the worktree may be committed. Empty string when there is nothing to commit.
+
+    A modification is allowed. The only addition allowed is next month's probe log.
+    """
+    odd: list[str] = []
+    for code, path in rows:
+        if set(code) <= {" ", "M"}:
+            continue
+        if is_new_month_log(code, path):
+            continue
+        odd.append(f"{code} {path}".strip())
+    if odd:
+        return "refusing to commit a status other than a modification: " + ", ".join(odd[:12])
+    return commit_block([path for _code, path in rows])
 
 
 def commit_block(paths: list[str]) -> str | None:
@@ -127,6 +163,8 @@ def commit_block(paths: list[str]) -> str | None:
 def select_health_prs(rows: list[dict]) -> list[dict]:
     chosen = []
     for row in rows:
+        if row.get("isCrossRepository") is True:
+            continue
         branch = str(row.get("headRefName") or "")
         if branch.startswith(BRANCH_PREFIX) and safe_branch(branch):
             chosen.append(row)
@@ -278,11 +316,71 @@ def list_open_health_prs(slug: str, run=None) -> list[dict]:
     rows = _gh_json(
         [
             "gh", "pr", "list", "--repo", slug, "--state", "open", "--limit", "100",
-            "--json", "number,headRefName,updatedAt",
+            "--json", "number,headRefName,updatedAt,isCrossRepository",
         ],
         run,
     )
     return select_health_prs(rows)
+
+
+def _listed_runs(result: subprocess.CompletedProcess[str]) -> list[dict]:
+    if result.returncode != 0 or not (result.stdout or "").strip():
+        return []
+    try:
+        payload = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return []
+    return payload if isinstance(payload, list) else []
+
+
+def wait_for_checks(
+    slug: str,
+    branch: str,
+    head: str,
+    *,
+    run=None,
+    sleep=None,
+    clock=None,
+    timeout: float = CHECK_TIMEOUT_SECONDS,
+    poll: float = CHECK_POLL_SECONDS,
+) -> list[str]:
+    """Poll the four CI workflows on head until each has concluded success.
+
+    Returns the workflows that failed or were still unfinished at the timeout.
+    An empty list means all four succeeded.
+    """
+    run = run or run_cmd
+    pause = sleep or time.sleep
+    now = clock or time.monotonic
+    started = now()
+    pending = list(CI_WORKFLOWS)
+    failed: list[str] = []
+    while pending:
+        still: list[str] = []
+        for workflow in pending:
+            listed = run(
+                [
+                    "gh", "run", "list", "--repo", slug, "--workflow", workflow,
+                    "--branch", branch, "--limit", "20",
+                    "--json", "databaseId,headSha,status,conclusion,createdAt",
+                ]
+            )
+            matches = [row for row in _listed_runs(listed) if row.get("headSha") == head]
+            matches.sort(key=lambda row: str(row.get("createdAt") or ""), reverse=True)
+            if not matches or matches[0].get("status") != "completed":
+                still.append(workflow)
+                continue
+            conclusion = matches[0].get("conclusion")
+            if conclusion != "success":
+                failed.append(f"{workflow} {conclusion or 'completed'}")
+        pending = still
+        if not pending or failed:
+            return failed
+        if now() - started >= timeout:
+            return failed + pending
+        print("waiting for " + ", ".join(pending), flush=True)
+        pause(poll)
+    return failed
 
 
 def fetch_main(repo: Path) -> str:
@@ -318,26 +416,32 @@ def _pr_body(day: str) -> str:
     )
 
 
-def publish(repo: Path, slug: str, run_id: str, day: str | None = None, run=None) -> int:
+def publish(repo: Path, slug: str, run_id: str, day: str | None = None, run=None, dry_run: bool = False) -> int:
     run = run or run_cmd
     day = day or pacific_day()
     branch = make_branch(day, run_id)
-    probe = read_health(repo)
-    fetch_main(repo)
-    git(repo, "checkout", "-f", "-B", branch, "origin/main")
-    merge_probe_health(repo, probe)
-    pages_job.rebuild_pages(repo)
-    rows = _status_rows(repo)
-    odd = [f"{code} {path}" for code, path in rows if set(code) - {" ", "M"}]
-    if odd:
-        raise RuntimeError("refusing to commit a status other than a modification: " + ", ".join(odd[:12]))
-    paths = [path for _code, path in rows]
-    block = commit_block(paths)
+    if dry_run:
+        # The caller already probed and restamped. Do not fetch, reset, or push.
+        rows = _status_rows(repo)
+    else:
+        probe = read_health(repo)
+        fetch_main(repo)
+        git(repo, "checkout", "-f", "-B", branch, "origin/main")
+        merge_probe_health(repo, probe)
+        pages_job.rebuild_pages(repo)
+        rows = _status_rows(repo)
+    block = review_status(rows)
     if block == "":
         print("no health changes", flush=True)
         return 0
     if block:
         raise RuntimeError(block)
+    paths = [path for _code, path in rows]
+    if dry_run:
+        print(f"dry-run: {len(paths)} path(s) would be committed", flush=True)
+        for path in paths:
+            print(path, flush=True)
+        return 0
     _ensure_identity(repo)
     git(repo, "add", "--", *paths)
     if git(repo, "diff", "--cached", "--quiet", check=False).returncode == 0:
@@ -382,7 +486,15 @@ def publish(repo: Path, slug: str, run_id: str, day: str | None = None, run=None
     if os.environ.get("DISPATCH_CI", "1") != "0":
         failed = dispatch_ci(slug, branch, pr_number, head, base, wait=False)
         if failed:
-            raise RuntimeError("CI dispatch failed: " + " ".join(failed))
+            print(f"leaving {url} open. CI dispatch failed: {' '.join(failed)}", file=sys.stderr)
+            return 1
+    unfinished = wait_for_checks(slug, branch, head, run=run)
+    if unfinished:
+        print(
+            f"leaving {url} open. checks did not succeed: {', '.join(unfinished)}",
+            file=sys.stderr,
+        )
+        return 1
     merged = run(["gh", "pr", "merge", number, "--repo", slug, "--auto", "--squash"])
     if merged.returncode != 0:
         print(f"squash auto-merge was not enabled for {url}.", file=sys.stderr)
@@ -410,6 +522,7 @@ def main(argv: list[str] | None = None) -> int:
     publish_cmd.add_argument("--slug", default=os.environ.get("GITHUB_REPOSITORY", ""))
     publish_cmd.add_argument("--run-id", default=os.environ.get("GITHUB_RUN_ID", ""))
     publish_cmd.add_argument("--day", default="")
+    publish_cmd.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
     try:
         if args.cmd == "carry":
@@ -418,7 +531,13 @@ def main(argv: list[str] | None = None) -> int:
             return carry(args.repo, args.slug)
         if not args.slug or not args.run_id:
             raise RuntimeError("slug and run id are required")
-        return publish(args.repo, args.slug, args.run_id, day=args.day or None)
+        return publish(
+            args.repo,
+            args.slug,
+            args.run_id,
+            day=args.day or None,
+            dry_run=args.dry_run,
+        )
     except RuntimeError as exc:
         print(str(exc), file=sys.stderr)
         return 1

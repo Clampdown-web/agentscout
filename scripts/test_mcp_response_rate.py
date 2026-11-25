@@ -649,7 +649,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotIn("--limit 200", source)
         self.assertIn("--limit 600", source)
         self.assertIn("--limit 20 --dry-run", source)
-        self.assertIn("timeout-minutes: 60", text)
+        self.assertIn("timeout-minutes: 120", text)
         self.assertIn('cron: "15 15 * * *"', text)
         self.assertIn("pull-requests: write", text)
         self.assertIn("actions: write", text)

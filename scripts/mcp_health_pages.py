@@ -156,14 +156,15 @@ def rewrite_document(
 
     if sentence and cadence:
         pattern = re.compile(r"Handshake check: .*?" + re.escape(cadence), re.S)
-        text = pattern.sub(sentence, text)
+        # A lambda keeps a "\1" in generated text from being read as a backreference.
+        text = pattern.sub(lambda _match: sentence, text)
 
     if home_html and not escaped and _HAND_ROW.search(text):
-        text = _HAND_ROW.sub(home_html, text, count=1)
+        text = _HAND_ROW.sub(lambda _match: home_html, text, count=1)
 
     if not escaped and default_slug is not None and check_html is not None:
         if _SECTION.search(text):
-            text = _SECTION.sub(check_html, text, count=1)
+            text = _SECTION.sub(lambda _match: check_html, text, count=1)
         elif check_html and _REVIEWS in text:
             text = text.replace(_REVIEWS, check_html + _REVIEWS, 1)
     return text, missed
