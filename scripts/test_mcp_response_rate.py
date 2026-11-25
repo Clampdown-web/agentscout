@@ -621,14 +621,18 @@ class ExecuteTests(unittest.TestCase):
 
 
 class WorkflowTests(unittest.TestCase):
-    def test_schedule_commits_only_health_data_and_pins_actions(self):
+    def test_schedule_rebuilds_pages_and_opens_one_pr(self):
         text = (ROOT / ".github" / "workflows" / "mcp-response-rate.yml").read_text(encoding="utf-8")
+        publish = (ROOT / "scripts" / "mcp_health_publish.py").read_text(encoding="utf-8")
         self.assertIn("cron:", text)
         self.assertIn("data/mcp-health", text)
         self.assertIn("contents: write", text)
         self.assertNotIn("pull_request_target", text)
-        self.assertNotIn("secrets.", text)
         self.assertNotIn("wrangler", text.lower())
+        self.assertIn("secrets.MCP_HEALTH_PR_TOKEN", text)
+        self.assertNotIn("secrets.GITHUB_TOKEN", text)
+        other_secrets = re.findall(r"secrets\.[A-Z0-9_]+", text)
+        self.assertEqual(set(other_secrets), {"secrets.MCP_HEALTH_PR_TOKEN"})
         actions = re.findall(r"uses:\s+(\S+)", text)
         self.assertGreaterEqual(len(actions), 2)
         for action in actions:
@@ -649,19 +653,24 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('cron: "15 15 * * *"', text)
         self.assertIn("pull-requests: write", text)
         self.assertIn("actions: write", text)
-        self.assertIn("TZ=America/Los_Angeles", text)
-        self.assertIn('branch="bot/mcp-health-${day}-${GITHUB_RUN_ID}"', text)
-        self.assertIn("no health changes", text)
-        self.assertIn("gh pr create", text)
-        self.assertIn("--base main", text)
-        self.assertIn("dispatch-ci", text)
-        self.assertIn("--no-wait", text)
-        self.assertIn("gh pr merge", text)
-        self.assertIn("--auto", text)
-        self.assertIn("--squash", text)
+        self.assertIn("mcp_health_publish.py carry", text)
+        self.assertIn("mcp_health_publish.py publish", text)
+        self.assertIn('BRANCH_PREFIX = "bot/mcp-health-"', publish)
+        self.assertIn("America/Los_Angeles", publish)
+        self.assertIn("no health changes", publish)
+        self.assertIn('"gh", "pr", "create"', publish)
+        self.assertIn('"--base", "main"', publish)
+        self.assertIn("dispatch_ci", publish)
+        self.assertIn("wait=False", publish)
+        self.assertIn('["gh", "pr", "merge"', publish)
+        self.assertIn('"--auto"', publish)
+        self.assertIn('"--squash"', publish)
+        self.assertIn('["gh", "pr", "close"', publish)
         self.assertNotIn("--admin", text)
-        pushes = [line.strip() for line in text.splitlines() if line.strip().startswith("git push")]
-        self.assertEqual(pushes, ['git push origin "HEAD:${branch}"'])
+        self.assertNotIn("--admin", publish)
+        self.assertIn('git(repo, "push", "origin", f"HEAD:{branch}")', publish)
+        self.assertNotIn("--force", publish)
+        self.assertNotIn("force-with-lease", publish)
 
 
 if __name__ == "__main__":

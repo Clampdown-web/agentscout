@@ -76,9 +76,8 @@ class ReachabilityTests(unittest.TestCase):
         self.assertIsNotNone(card)
         hand = re.search(r'<div class="vs-row vs-hand">.*?</div>', card.group(1), re.S)
         self.assertIsNotNone(hand, "homepage card is missing the handshake running count")
-        # Probe commits update data/mcp-health/summary.json and do not rebuild
-        # index.html. The published row is the builder's rendering of the counts
-        # from the last page build, so it is not pinned to today's summary.
+        # The row on the page is the builder's rendering of the counts from the
+        # last page build. This test reads those counts back out of the HTML.
         shown = re.search(r"<b>([\d,]+) of ([\d,]+)</b>", hand.group(0))
         self.assertIsNotNone(shown, "homepage handshake row is missing its count")
         figs = re.findall(r"<b>([\d,]+)</b><span>(answered|asked for auth|failed)</span>", hand.group(0))

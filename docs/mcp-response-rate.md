@@ -87,7 +87,11 @@ Tool pages, `categories/mcp-servers.html`, and the ranked MCP lists are generate
 python3 scripts/mcp_response_rate.py --limit 600
 ```
 
-When `data/mcp-health/` changed, it commits only that directory as `github-actions[bot]` on a new branch `bot/mcp-health-<Pacific date>-<run id>` and opens a pull request. It does not push to `main`. A pull request opened with `GITHUB_TOKEN` does not start `pull_request` workflows, so the job dispatches the same checks as `refresh-pr-builds` (`guardrails.yml`, `security.yml`, `gitleaks.yml`, and `codeql.yml` via `workflow_dispatch`) and enables squash auto-merge. The repository's Allow auto-merge setting has to be on for that merge to queue. The ruleset still requires the `guardrails` check. An empty probe does not open a pull request. This job does not rebuild generated HTML. Tool pages and the handshake line read `summary.json` the next time the site is built. No secrets, no deploy, no Cloudflare worker changes. The link-check script is unchanged.
+When `data/mcp-health/` changed, it restamps the pages that read that directory (badges, Responds attributes, the Our check block, and the handshake count) and commits those pages with the health files. The branch is `bot/mcp-health-<Pacific date>-<run id>`, cut from `origin/main` at commit time, as `github-actions[bot]`. It does not push to `main`. If builders would add a sitemap URL, the job fails and does not open a pull request. The daily cap on new indexable pages still applies and is expected to be zero here.
+
+An older open `bot/mcp-health-*` pull request is carried forward (its jsonl rows and `state.json`) before the probe, then closed with a comment once the new pull request exists, so only one is open and an unmerged day is not dropped.
+
+A pull request opened with `GITHUB_TOKEN` does not start `pull_request` workflows. The ruleset requires the `guardrails` check on the head commit. The job dispatches the same checks as `refresh-pr-builds` (`guardrails.yml`, `security.yml`, `gitleaks.yml`, and `codeql.yml` via `workflow_dispatch`, which `GITHUB_TOKEN` is allowed to start) and enables squash auto-merge. No new secret is required for that. If `MCP_HEALTH_PR_TOKEN` is already stored, the pull request is opened with it and those `pull_request` workflows run instead of the dispatch. The repository's Allow auto-merge setting has to be on for the queued squash to merge. An empty tree does not open a pull request. No deploy, no Cloudflare worker changes. The link-check script is unchanged.
 
 ### Run locally
 

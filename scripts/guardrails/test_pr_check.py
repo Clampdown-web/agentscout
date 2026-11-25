@@ -98,7 +98,8 @@ class SourceRulesTest(unittest.TestCase):
 
     def test_snapshots_and_guardrail_scripts_are_not_page_sources(self) -> None:
         self.assertIsNone(pages.source_outputs("data/stars/2026-11-18.json"))
-        self.assertIsNone(pages.source_outputs("data/mcp-health/state.json"))
+        self.assertEqual(pages.source_outputs("data/mcp-health/state.json"), pages.BROAD)
+        self.assertEqual(pages.source_outputs("data/mcp-health/2026-11.jsonl"), pages.BROAD)
         self.assertIsNone(pages.source_outputs("scripts/guardrails/pr_check.py"))
         self.assertIsNone(pages.source_outputs(".github/workflows/guardrails.yml"))
         self.assertIsNone(pages.source_outputs("build_openapi.py"))
@@ -167,6 +168,32 @@ class PullRequestDiffTest(unittest.TestCase):
         self.repo.commit("prompts data and an unrelated tool page", TODAY_STAMP)
         failures = self._failures()
         self.assertTrue(any("data/prompts.json" in item for item in failures))
+
+    def test_mcp_health_without_html_fails(self) -> None:
+        self._seed_main()
+        self._start_pr()
+        self.repo.write("data/mcp-health/summary.json", '{"servers": {}}\n')
+        self.repo.write("data/mcp-health/2026-11.jsonl", '{"slug": "one"}\n')
+        self.repo.commit("health data only", TODAY_STAMP)
+        failures = self._failures()
+        self.assertEqual(len(failures), 1)
+        self.assertIn("data/mcp-health/summary.json", failures[0])
+        self.assertIn("data/mcp-health/2026-11.jsonl", failures[0])
+        self.assertIn("published *.html", failures[0])
+
+    def test_mcp_health_with_rebuilt_html_passes(self) -> None:
+        self._seed_main([f"{SITE}/tools/one.html"])
+        self.repo.write("tools/one.html", document(f"{SITE}/tools/one.html"))
+        self.repo.commit("tool page", YESTERDAY_STAMP)
+        self._start_pr()
+        self.repo.write("data/mcp-health/summary.json", '{"servers": {"one": {"display": "rate"}}}\n')
+        self.repo.write("data/mcp-health/state.json", '{"next_slug": "two"}\n')
+        self.repo.write(
+            "tools/one.html",
+            document(f"{SITE}/tools/one.html", body="Responded 3/3 checks in last 30 days."),
+        )
+        self.repo.commit("health data and the rebuilt page", TODAY_STAMP)
+        self.assertEqual(self._failures("New indexable pages in this PR: 0\n"), [])
 
     def test_generator_change_with_paired_page_passes(self) -> None:
         self._seed_main([f"{SITE}/prompts/"])
