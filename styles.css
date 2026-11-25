@@ -214,14 +214,15 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
   body.home .sprow{flex-wrap:wrap}
   body.home .sprow input{flex:1 1 100%;width:100%}
 }
-/* Keep the Turnstile check above the fixed consent bar and the corner buttons.
-   The side inset is the same on the left and the right, so the widget stays centered. */
+/* Keep the Turnstile check above the fixed consent bar when the page scrolls to it.
+   The builder loop sits under the form, so the form does not reserve a blank band there.
+   The widget is centered in the form. */
 html:has(#sf){scroll-padding-bottom:calc(280px + env(safe-area-inset-bottom))}
 #sf{scroll-margin-bottom:calc(280px + env(safe-area-inset-bottom))}
 #sf-turnstile{scroll-margin-top:24px;scroll-margin-bottom:calc(280px + env(safe-area-inset-bottom))}
 @media (max-width:430px){
-  #sf{padding-bottom:calc(220px + env(safe-area-inset-bottom));padding-left:0;padding-right:0}
-  #sf-turnstile{width:min(300px,calc(100% - 2 * (56px + env(safe-area-inset-right))));max-width:100%;margin-left:auto;margin-right:auto}
+  #sf{padding-bottom:0;padding-left:0;padding-right:0}
+  #sf-turnstile{display:flex;justify-content:center;width:100%;max-width:100%;margin-left:auto;margin-right:auto}
 }
 #serr,#sfts,.reqmark{color:#9f1239}
 html[data-theme=dark] #serr,html[data-theme=dark] #sfts,html[data-theme=dark] .reqmark{color:#fda4af}

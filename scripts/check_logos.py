@@ -50,6 +50,15 @@ def online(tools):
         if sum(abs(p-q) for p,q in zip(a,l))/256<20: bad.append((x["slug"],x["category"],f"logo is the personal GitHub avatar of {o}"))
     return bad
 CARD=re.compile(r'<a [^>]*href="(?:\.\./|/)?tools/([a-z0-9-]+)\.html"[^>]*>(.{0,400}?)</a>',re.S)
+def _inside_catmore(html, pos):
+    """True when pos sits in a ul.catmore that has not yet closed. Name-only lists, not cards."""
+    start = html.rfind("<ul", 0, pos)
+    if start < 0:
+        return False
+    end = html.find(">", start)
+    if end < 0 or end > pos or html.find("</ul>", end, pos) != -1:
+        return False
+    return "catmore" in html[start:end + 1]
 def live(tools):
     bad=[]
     s,ct,b=get(BASE+"sitemap.xml"); urls=re.findall(r"<loc>([^<]+)</loc>",b.decode())
@@ -68,6 +77,8 @@ def live(tools):
             for mm in CARD.finditer(main):
                 a_open=main[mm.start():main.find(">",mm.start())+1]; inner=mm.group(2)
                 pre=main[max(0,mm.start()-80):mm.start()]; li=re.search(r"<li[^>]*>\s*$",pre)
+                if _inside_catmore(main, mm.start()):  # name-only ul.catmore lists, same exemption as build_logocheck
+                    continue
                 if 'class="stretch"' in a_open:  # card whose link overlays it: the logo is a sibling inside the same <li>
                     end=main.find("</li>",mm.end()); inner=main[mm.end():end]
                     if "assets/logos/" not in inner: bad.append((u,mm.group(1),"tool card without a logo img"))
