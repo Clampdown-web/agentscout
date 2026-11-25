@@ -334,8 +334,9 @@ def _align_index_html_locs(text):
     """Rewrite every sitemap loc that ends in /index.html when it is not the page canonical.
 
     lastmod is kept. The row is dropped only when that canonical is already listed,
-    so a correction does not add a second URL. A loc whose canonical matches
-    (tasks/index.html) is left as it is.
+    so a correction does not add a second URL. A loc whose canonical is that same
+    index.html URL is left as it is. Directory hubs, including /tasks/, are listed
+    at the canonical directory URL.
     """
     existing = set(re.findall(r"<loc>([^<]+)</loc>", text))
     out = []
