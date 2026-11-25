@@ -83,7 +83,7 @@ def visit_rel(slug):
     """rel for a tool's outbound Visit link: sponsored for listed slugs, plain otherwise."""
     return "sponsored nofollow noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
 def sponsored_badge(slug):
-    """Visible affiliate label on a /best or /compare row. Grids do not use it."""
+    """Visible affiliate label. Same span on best, compare, category, leaderboard, and status rows."""
     return ' <span class="b">Affiliate link</span>' if slug in sponsored_slugs() else ""
 # Indexing quality (TASK-18): which alternatives pages stay indexable, and which URLs
 # must never reach sitemap.xml. The keep list lives in data/index_keep_alternatives.json
@@ -568,7 +568,7 @@ def card(x,d="../",sponsored=False):
     disc=is_disc(x)
     tag='<span class="b warn">Discontinued</span>' if disc else ""
     cls="card tile is-disc" if disc else "card tile"
-    return f'<a class="{cls}" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{tag}{sponsored_badge(x["slug"]) if sponsored else ""}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+    return f'<a class="{cls}" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{tag}{sponsored_badge(x["slug"])}{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():

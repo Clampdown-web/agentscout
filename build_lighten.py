@@ -223,6 +223,8 @@ def leaderboard(names):
             'c.addEventListener("change",go,true);if(/[?&](cat|free|os)=/.test(location.search))go()})()</script>')
         if "<!--lt:lbx-->" not in s: s=s.replace("</body>","<!--lt:lbx-->"+js+"</body>",1)
     s,nl=_linklist(s,removed,names,"More ranked tools (shown when you filter by category)")
+    import build_leaderboard
+    s=build_leaderboard.place_directory_badges(s)
     open(f,"w").write(_common(s)); print(f"lighten: leaderboard: {len(removed)} filter-only rows deferred to leaderboard/extra.json, {nl} text links kept")
 def shrink_heavy(f, names):
     """Pages already past the byte budget: drop the logo list, trim JSON-LD, paginate the rest."""

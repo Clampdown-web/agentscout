@@ -619,7 +619,7 @@ def write_dashboard(tools):
         shown = {"live": "Up", "down": "Down", "not yet checked": "Not yet checked"}.get(status, status)
         rows.append(
             f'<tr data-status="{e(status)}" data-name="{e(s["name"].lower())}">'
-            f'<td><a href="../../tools/{e(s["slug"])}.html">{e(s["name"])}</a></td>'
+            f'<td><a href="../../tools/{e(s["slug"])}.html">{e(s["name"])}</a>{X.sponsored_badge(s["slug"])}</td>'
             f'<td><span class="st-pill st-{e(status.replace(" ", "-"))}">{e(shown)}</span></td>'
             f'<td>{last}</td><td>{detail or "—"}</td><td><div class="st-hist">{e(hist_txt)}</div></td></tr>'
         )
