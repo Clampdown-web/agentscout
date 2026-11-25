@@ -79,9 +79,11 @@ def test_directory_index_sitemap_loc_matches_canonical():
         '</urlset>\n'
     )
     fixed = bp._align_index_html_locs(sample)
+    tasks = "https://agentscouthq.com/tasks/"
     assert f"<loc>{canon}</loc>" in fixed
     assert "prompts/index.html" not in fixed
-    assert "https://agentscouthq.com/tasks/index.html" in fixed
+    assert f"<loc>{tasks}</loc>" in fixed
+    assert "tasks/index.html" not in fixed
     assert "<lastmod>2026-11-18</lastmod>" in fixed
     assert fixed.count("<url>") == sample.count("<url>")
     both = sample.replace(
@@ -95,6 +97,8 @@ def test_directory_index_sitemap_loc_matches_canonical():
     sm = Path("sitemap.xml").read_text(encoding="utf-8")
     assert f"<loc>{canon}</loc>" in sm
     assert "/prompts/index.html" not in sm
+    assert "<loc>https://agentscouthq.com/tasks/</loc>" in sm
+    assert "/tasks/index.html" not in sm
 
 def test_homepage_filter_chips_nofollow_and_exact_counts():
     """Homepage ?cat= tiles are nofollow; VideoObject uses 6,000+/3,200+ floors; review-pages line is present."""

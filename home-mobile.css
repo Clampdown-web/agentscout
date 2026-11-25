@@ -106,8 +106,8 @@ body.home #directory{padding-top:4px;content-visibility:visible;contain-intrinsi
 body.home #directory .sh{margin-bottom:10px}
 body.home #list .card.tile,body.home .rcard,body.home .cattile,body.home .btcard{border-radius:14px}
 @media(max-width:720px){body.home #list.grid{grid-template-columns:minmax(0,1fr)}}
-body.home .home-later,body.home #about-directory,body.home #xfree,body.home .homegen,body.home #recent,body.home #feed,body.home #browse,body.home #xcats,body.home #xroles,body.home #bt-strip,body.home #epick{content-visibility:auto;contain-intrinsic-size:auto 480px}
-body.home #nlblock,body.home #services{content-visibility:visible;contain-intrinsic-size:none}
+body.home .homegen,body.home #recent,body.home #feed,body.home #browse,body.home #xcats,body.home #xroles,body.home #bt-strip,body.home #epick{content-visibility:auto;contain-intrinsic-size:auto 480px}
+body.home #nlblock,body.home #services,body.home #about-directory,body.home #verify-block,body.home #xfree{content-visibility:visible;contain-intrinsic-size:none}
 @media(min-width:960px){body.home .filter-more[open]>summary{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
 
 /* Phase 1 (Nov 9 2026): calm design system. Accent stays #5B5BF7 / #9393FF. */

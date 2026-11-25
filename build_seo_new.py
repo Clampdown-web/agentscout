@@ -369,19 +369,38 @@ def canonical_index_html(idx_s=None):
     return dedupe_menu_labels(ensure_video_guides_menu(ensure_prompts_menu_row(idx_s)))
 
 
+def footer_for(root_foot, rel, depth_prefix):
+    """Homepage footer for one page.
+
+    #services and #nlblock exist on the homepage. Every other page keeps
+    class="svc-back" and points that link at the homepage section. The
+    newsletter link points at #nl-foot, the signup the footer already contains.
+    """
+    foot = prefix_rel_links(root_foot, depth_prefix)
+    if rel == "index.html":
+        return foot
+    if depth_prefix in ("", "/"):
+        services = "/#services"
+    else:
+        services = depth_prefix + "#services"
+    foot = foot.replace('href="#services"', f'href="{services}"', 1)
+    foot = foot.replace('href="#nlblock"', 'href="#nl-foot"', 1)
+    return foot
+
+
 def chrome_for(depth_prefix, idx_html=None):
     """The index.html nav and footer, rewritten for a page at this relative depth.
 
     Extra links that homepage passes inject into the header are removed first,
     so a caller that runs before unify_all_nav_and_footer still gets the
-    canonical chrome.
+    canonical chrome. chrome_for is for a page other than the homepage.
     """
     idx = canonical_index_html(idx_html)
     nav = re.search(r'<nav[^>]*>.*?</nav>', idx, re.S)
     foot = re.search(r'<footer[^>]*>.*?</footer>', idx, re.S)
     if not (nav and foot):
         raise SystemExit("index.html is missing nav or footer")
-    return prefix_rel_links(nav.group(0), depth_prefix), prefix_rel_links(foot.group(0), depth_prefix)
+    return prefix_rel_links(nav.group(0), depth_prefix), footer_for(foot.group(0), "", depth_prefix)
 
 
 def _stamp_chrome(html, target_nav, target_foot):
@@ -436,7 +455,7 @@ def unify_all_nav_and_footer():
                 depth = rel.count("/")
                 d_pref = "../" * depth
             target_nav = prefix_rel_links(root_nav, d_pref)
-            target_foot = prefix_rel_links(root_foot, d_pref)
+            target_foot = footer_for(root_foot, rel, d_pref)
             s_new = _stamp_chrome(s, target_nav, target_foot)
             if s_new != s:
                 open(rel, "w", encoding="utf-8").write(s_new)
@@ -453,10 +472,16 @@ def unify_all_nav_and_footer():
 
 
 def _canon_chrome(html):
-    """Drop relative-depth prefixes so nav/footer from any directory compare equal."""
+    """Drop relative-depth prefixes so nav/footer from any directory compare equal.
+
+    The services link is #services on the homepage and {prefix}#services elsewhere.
+    The newsletter link is #nlblock on the homepage and #nl-foot elsewhere. Both
+    are the same footer link, so the comparison treats those fragments as one.
+    """
     html = re.sub(r'(href|src)=(["\'])(?:\.\./)+', r'\1=\2', html)
     html = re.sub(r'(href|src)=(["\'])\./', r'\1=\2', html)  # ./ home link (indexing hygiene, Nov 18 2026): same as ../
     html = re.sub(r'(href|src)=(["\'])/(?!/)', r'\1=\2', html)
+    html = re.sub(r'href=(["\'])#nl(?:block|-foot)\1', r'href=\1#nl\1', html)
     return re.sub(r'\s+', ' ', html).strip()
 
 
