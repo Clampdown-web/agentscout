@@ -96,13 +96,33 @@ def test_directory_index_sitemap_loc_matches_canonical():
     assert f"<loc>{canon}</loc>" in sm
     assert "/prompts/index.html" not in sm
 
+def test_homepage_filter_chips_nofollow_and_exact_counts():
+    """Homepage ?cat= tiles are nofollow; VideoObject uses exact listed counts, not N+ AI Agents."""
+    import re
+    import json as _json
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "index.html").read_text(encoding="utf-8")
+    tiles = list(re.finditer(r'<a class="cattile"[^>]{0,200}href="\?cat=', html))
+    assert tiles, "expected homepage cattile ?cat= links"
+    for m in tiles:
+        assert 'rel="nofollow"' in m.group(0), m.group(0)
+    title = re.search(r"<title>([^<]+)</title>", html)
+    assert title and "AI Agent Tools" in title.group(1)
+    assert not re.search(r"\d[\d,]*\+?\s+AI Agents", title.group(1))
+    tools = _json.loads((root / "tools.json").read_text(encoding="utf-8"))
+    n_tools = len(tools)
+    n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
+    assert f"({n_tools:,} AI agent tools & {n_mcp:,} MCP servers)" in html
+    assert f"({n_tools:,}+ AI Agents" not in html
+
 
 def main():
     test_sitemap_seed()
     test_canonical_hrefs()
     test_core_sitemap_selection()
     test_directory_index_sitemap_loc_matches_canonical()
-    print("indexing hygiene ok: sitemap seed, canonical hrefs, core sitemap selection")
+    test_homepage_filter_chips_nofollow_and_exact_counts()
+    print("indexing hygiene ok: sitemap seed, canonical hrefs, core sitemap selection, homepage filters and counts")
 
 
 if __name__ == "__main__":

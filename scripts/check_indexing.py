@@ -52,6 +52,32 @@ def check_a2():
     note(not bad, f"A2 use-case chips: {n} ?uc= chips with rel=nofollow, ../?uc= form" + ("" if not bad else f"; bad: {bad[:3]}"))
 
 
+
+def check_a2_homepage():
+    s = (ROOT / "index.html").read_text(encoding="utf-8", errors="ignore")
+    bad = []
+    n = 0
+    # JS templates and static anchors that point at ?uc= / ?cat= homepage filters
+    for m in re.finditer(r'<a\b[^>]{0,200}href="[^"]*\?(?:uc|cat)=', s):
+        tag = m.group(0)
+        n += 1
+        if "nofollow" not in tag:
+            bad.append(tag[:160])
+    note(not bad and n > 0,
+         f"A2 homepage filter chips: {n} ?uc=/?cat= links with rel=nofollow"
+         + ("" if not bad else f"; bad: {bad[:3]}"))
+    title = re.search(r"<title>([^<]+)</title>", s)
+    title_ok = bool(title) and not re.search(r"\d[\d,]*\+?\s+AI Agents", title.group(1))
+    tools = json.loads((ROOT / "tools.json").read_text(encoding="utf-8"))
+    n_tools = len(tools)
+    n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
+    want = f"({n_tools:,} AI agent tools & {n_mcp:,} MCP servers)"
+    vo_ok = want in s and f"({n_tools:,}+ AI Agents" not in s
+    note(title_ok and vo_ok,
+         f"homepage counts: title has no catalog total; VideoObject uses exact {n_tools:,} tools / {n_mcp:,} MCP servers"
+         + ("" if title_ok and vo_ok else "; title or VideoObject mismatch"))
+
+
 def check_a3():
     data = json.loads((ROOT / "data" / "sponsored_links.json").read_text())
     tools = {x["slug"]: x for x in json.loads((ROOT / "tools.json").read_text())}
@@ -139,6 +165,7 @@ def check_a8(sitemap_locs):
 def main():
     locs = check_a1()
     check_a2()
+    check_a2_homepage()
     check_a3()
     check_a4()
     check_a8(locs)

@@ -328,6 +328,16 @@ def _sync_index_counts():
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
     s = s.replace('fetch("tools.json",{cache:"no-cache"})', 'fetch("tools.json")')
+    # Filter chips (?uc= / ?cat=) are homepage query variants. Static GitHub Pages
+    # cannot emit a noindex robots meta only for those URLs, so the links themselves
+    # carry rel="nofollow". Idempotent: only the form without rel is rewritten.
+    s = s.replace('<a class="cattile" href="?cat=', '<a class="cattile" rel="nofollow" href="?cat=')
+    s = s.replace('<a class="cattile" href="?uc=', '<a class="cattile" rel="nofollow" href="?uc=')
+    # Homepage VideoObject / poster alt: exact listed counts, no "+" padding, and
+    # "AI agent tools" (not "AI Agents") so the claim matches tools.json / the stats bar.
+    s = s.replace(f"({n:,}+ AI Agents & {_mcp:,}+ MCP Servers)", f"({n:,} AI agent tools & {_mcp:,} MCP servers)")
+    s = s.replace(f"indexes {n:,}+ AI agent tools and {_mcp:,}+ MCP servers daily", f"indexes {n:,} AI agent tools and {_mcp:,} MCP servers daily")
+    s = s.replace(f"verifying {n:,}+ AI agent tools and {_mcp:,}+ MCP servers daily", f"verifying {n:,} AI agent tools and {_mcp:,} MCP servers daily")
     # main landmark for screen readers (a11y audit Oct 18 2026): hero through the newsletter box, footer stays outside
     if "<main" not in s and '<header class="hero">' in s and "<footer" in s:
         s = s.replace('<header class="hero">', '<main id="main"><header class="hero">', 1)
