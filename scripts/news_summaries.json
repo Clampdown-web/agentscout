@@ -747,5 +747,21 @@
  "https://vercel.com/changelog/agents-can-now-manage-ai-gateway-through-vercel-mcp": {
   "title": "Agents can now manage AI Gateway through Vercel MCP",
   "summary": "Vercel says an agent on Vercel MCP can now create virtual model IDs for AI Gateway, change routing rules, and set team or project budgets in plain language. Apps can call a name such as vmc/coding-agent, and the model behind it can change later without a redeploy. The caller's Vercel team permissions still apply."
+ },
+ "https://du.co/duco-mcp-server-brings-agentic-operations-for-post-trade-into-production/": {
+  "title": "Duco opens an MCP server for post-trade reconciliation agents",
+  "summary": "Duco made its MCP server generally available on 25 November 2026. Agents on any MCP client can search reconciliation breaks, label them, and match or clear exceptions under the user's existing permissions. Every action is written to Duco's audit log, and the server is available to Duco clients."
+ },
+ "https://www.altahq.com/blog/alta-mcp-claude-chatgpt-codex": {
+  "title": "Alta opens an MCP server so sales agents can prospect in chat",
+  "summary": "Alta opened Alta MCP in Claude, ChatGPT, and Codex on 25 November 2026. A rep can describe an audience, get verified contacts, and draft a multichannel campaign in the same chat. Campaigns stay drafts until a person launches them, and sending or resuming a campaign asks for confirmation first."
+ },
+ "https://www.einpresswire.com/article/957096938/magister-launches-a-marketing-mcp-server-that-connects-claude-chatgpt-codex-and-cursor-to-85-marketing-tools": {
+  "title": "Magister opens a marketing MCP server across 85 tools",
+  "summary": "Magister Marketing launched an MCP server on 25 November 2026 that connects Claude, ChatGPT, Codex, Cursor, and other MCP clients to 85 marketing tools. It can read analytics and ad accounts and draft posts, but anything that publishes, sends, or spends waits for a person to approve it. Connect is $29 a month and the Agent plan is $99 a month, after a free trial."
+ },
+ "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/": {
+  "title": "Meta puts its Muse AI agent inside Instagram DMs",
+  "summary": "TechCrunch reports Instagram is rolling out Meta's Muse agent inside DM threads, starting 24 November in the US, Canada, Mexico, Japan, and Singapore. People can share a post and ask Muse to add a place to a trip or look for a deal, and those chats also show up in the Muse app. Meta says nothing is shared or sent without approval."
  }
 }
