@@ -25,11 +25,13 @@ HEURISTIC = (
 BROAD = ("*",)
 
 # Historical logs and email copy. Changing them does not by itself publish a page.
+# data/mcp-health is not here. The badge, Responds attributes, Our check block,
+# and handshake line are built from that directory, so a change has to land with
+# the published HTML.
 SKIP_SOURCE_PREFIXES = (
     "data/stars/",
     "data/ratings/",
     "data/lb-ranks/",
-    "data/mcp-health/",
     "data/outreach/",
     "data/gen-bg-bank/",
     "data/fonts/",
@@ -306,6 +308,8 @@ def source_outputs(path: str) -> tuple[str, ...] | None:
     rel = path.replace("\\", "/")
     if rel in SKIP_SOURCE_EXACT or rel.startswith(SKIP_SOURCE_PREFIXES):
         return None
+    if rel.startswith("data/mcp-health/"):
+        return BROAD
     if rel.startswith("scripts/test_") or "/test_" in rel:
         return None
     if rel in SOURCE_OUTPUTS:

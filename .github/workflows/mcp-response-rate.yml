@@ -1,13 +1,21 @@
 name: mcp response rate
 
 # Daily read-only MCP initialize + tools/list for a rotating slice of listed
-# servers that publish a public remote endpoint. Appends data/mcp-health and
-# opens a pull request for that directory only. It does not push to main.
+# servers that publish a public remote endpoint. Appends data/mcp-health,
+# restamps the pages that read it, and opens one pull request. It does not
+# push to main.
+# The branch is cut from origin/main at commit time. Older open
+# bot/mcp-health pull requests are closed after the new one exists, and their
+# probe rows are carried forward so a day that did not merge is not dropped.
 # A pull request opened with GITHUB_TOKEN does not start pull_request workflows.
-# After the branch is pushed, this job dispatches the same checks as
-# refresh-pr-builds (workflow_dispatch is allowed for GITHUB_TOKEN) and enables
-# squash auto-merge. The ruleset still requires the guardrails check.
-# No secrets, no deploy, no tool calls.
+# The ruleset requires the guardrails check on the head commit. This job
+# dispatches guardrails, security, gitleaks, and codeql (workflow_dispatch is
+# allowed for GITHUB_TOKEN) so that check is reported, then waits until all
+# four have succeeded on the head commit before enabling squash auto-merge.
+# No new secret is
+# required. If the repository already has MCP_HEALTH_PR_TOKEN, the pull
+# request is opened with it and the pull_request workflows run on their own.
+# No deploy, no tool calls.
 on:
   schedule:
     # 15:15 UTC. 7:15 AM Pacific during standard time, 8:15 AM during daylight time.
@@ -31,7 +39,7 @@ concurrency:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -42,6 +50,10 @@ jobs:
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
+      - name: Carry unmerged handshake rows onto fresh main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/mcp_health_publish.py carry --repo "${GITHUB_WORKSPACE}" --slug "$GITHUB_REPOSITORY"
       - name: Probe
         run: |
           set -euo pipefail
@@ -52,76 +64,10 @@ jobs:
           python3 scripts/mcp_response_rate.py --limit "$limit"
         env:
           PROBE_LIMIT: ${{ github.event.inputs.limit }}
-      - name: Open a pull request for health data
+      - name: Rebuild pages and open one pull request
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          git add -- data/mcp-health
-          extra=$(git diff --cached --name-only | grep -v '^data/mcp-health/' || true)
-          if [ -n "$extra" ]; then
-            echo "refusing to commit unexpected paths" >&2
-            printf '%s\n' "$extra" >&2
-            exit 1
-          fi
-          if git diff --cached --quiet; then
-            echo "no health changes"
-            exit 0
-          fi
-          day=$(TZ=America/Los_Angeles date +%Y-%m-%d)
-          branch="bot/mcp-health-${day}-${GITHUB_RUN_ID}"
-          python3 - "$branch" <<'PY'
-          import sys
-          sys.path.insert(0, "scripts")
-          import refresh_pr_build as r
-          branch = sys.argv[1]
-          if (
-              not branch.startswith("bot/mcp-health-")
-              or branch == "main"
-              or "/main" in branch
-              or not r.safe_branch(branch)
-          ):
-              print(f"refusing branch name {branch}", file=sys.stderr)
-              sys.exit(1)
-          PY
-          base=$(git rev-parse HEAD)
-          git checkout -b "$branch"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config commit.gpgsign false
-          git commit -m "Record daily MCP response probes"
-          git push origin "HEAD:${branch}"
-          head=$(git rev-parse HEAD)
-          body_file="${RUNNER_TEMP}/mcp-health-pr.txt"
-          cat > "$body_file" <<EOF
-          Daily MCP handshake results for ${day} (America/Los_Angeles). Only data/mcp-health/ is updated.
-
-          Generated pages read that summary the next time the site is built. This job does not rebuild HTML.
-
-          New indexable pages in this PR: 0
-
-          Reason this page exists: daily MCP handshake results, no new indexable pages
-          EOF
-          url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --title "Record daily MCP response probes (${day})" --body-file "$body_file")
-          number=${url##*/}
-          case "$number" in
-            ''|*[!0-9]*)
-              echo "could not read the pull request number from ${url}" >&2
-              exit 1
-              ;;
-          esac
-          python3 scripts/refresh_pr_build.py dispatch-ci \
-            --repo "${GITHUB_WORKSPACE}" \
-            --slug "$GITHUB_REPOSITORY" \
-            --branch "$branch" \
-            --pr "$number" \
-            --head "$head" \
-            --base "$base" \
-            --no-wait
-          if ! gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --auto --squash; then
-            echo "squash auto-merge was not enabled for ${url}." >&2
-            echo "Allow auto-merge has to be on (Settings, General, Pull Requests). Squash merges are already allowed." >&2
-            echo "This job does not push to main, does not bypass repository rules, and does not admin-merge." >&2
-            exit 1
-          fi
-          echo "opened ${url}"
+          # Empty when the owner has not added it. The job still dispatches the
+          # required guardrails check with GITHUB_TOKEN. No new secret is required.
+          GH_TOKEN: ${{ secrets.MCP_HEALTH_PR_TOKEN != '' && secrets.MCP_HEALTH_PR_TOKEN || github.token }}
+          DISPATCH_CI: ${{ secrets.MCP_HEALTH_PR_TOKEN == '' && '1' || '0' }}
+        run: python3 scripts/mcp_health_publish.py publish --repo "${GITHUB_WORKSPACE}" --slug "$GITHUB_REPOSITORY" --run-id "$GITHUB_RUN_ID"

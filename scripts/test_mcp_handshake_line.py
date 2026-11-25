@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """The handshake line sits beside the link-check sentence and is counted from summary.json.
 
-The daily probe commits data/mcp-health without regenerating HTML, so published
-pages are checked for the builder's wording, not pinned to whatever summary.json
-says at test time. The builder itself is checked against the live summary.
+Published pages are checked for the builder's wording. The counts in the
+assertion are read back out of the HTML from the last page build. The builder
+itself is checked against the live summary.
 """
 import json
 import os
