@@ -15,7 +15,8 @@
    "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace",
    "date": "2026-11-25T01:00:00Z",
    "tool": null,
-   "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access."
+   "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access.",
+   "page": "news/2026/11/google-workspace-opens-mcp-servers-and-a-cli-for-governed-ai-agents.html"
   },
   {
    "title": "Even the best AI agents struggle with everyday life",
@@ -23,7 +24,8 @@
    "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
    "date": "2026-11-24T21:33:29Z",
    "tool": null,
-   "summary": "TechCrunch covers ShellBench, a test of 100 everyday tasks built from real agent requests in messy personal files. The leading models finished only about 60 percent of attempts, and 15.7 percent of all runs missed a safety check. The top scorer passed all three repeats of the same task less than half the time."
+   "summary": "TechCrunch covers ShellBench, a test of 100 everyday tasks built from real agent requests in messy personal files. The leading models finished only about 60 percent of attempts, and 15.7 percent of all runs missed a safety check. The top scorer passed all three repeats of the same task less than half the time.",
+   "page": "news/2026/11/even-the-best-ai-agents-struggle-with-everyday-life.html"
   },
   {
    "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
@@ -31,7 +33,8 @@
    "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
    "date": "2026-11-24T21:32:38Z",
    "tool": "agent",
-   "summary": "TechCrunch reports Walmart is partnering with Meta so Black Friday deals show up inside Muse, Meta's personal AI agent."
+   "summary": "TechCrunch reports Walmart is partnering with Meta so Black Friday deals show up inside Muse, Meta's personal AI agent.",
+   "page": "news/2026/11/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent.html"
   },
   {
    "title": "Maple raises $5.3M for a private desktop agent and a cloud agent that stays on",
@@ -39,7 +42,8 @@
    "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
    "date": "2026-11-24T21:19:00Z",
    "tool": null,
-   "summary": "TechCrunch reports Maple closed a $5.3 million seed round led by Epic Ventures. Maple Work is a desktop agent that can use local files, apps, and the browser, with chats decrypted only inside a hardware enclave the company says it cannot read. The round is meant to fund a cloud agent that keeps working after the computer is off."
+   "summary": "TechCrunch reports Maple closed a $5.3 million seed round led by Epic Ventures. Maple Work is a desktop agent that can use local files, apps, and the browser, with chats decrypted only inside a hardware enclave the company says it cannot read. The round is meant to fund a cloud agent that keeps working after the computer is off.",
+   "page": "news/2026/11/maple-raises-5-3m-for-a-private-desktop-agent-and-a-cloud-agent-that.html"
   },
   {
    "title": "Anthropic opens Skills over MCP and long-running tasks in Claude",
@@ -47,7 +51,8 @@
    "url": "https://thenextweb.com/news/anthropic-claude-skills-over-mcp-tasks-elicitation",
    "date": "2026-11-24T19:22:00Z",
    "tool": null,
-   "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users."
+   "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users.",
+   "page": "news/2026/11/anthropic-opens-skills-over-mcp-and-long-running-tasks-in-claude.html"
   },
   {
    "title": "JFrog says an AI agent published Hugging Face malware and leaked its own keys",
@@ -55,7 +60,8 @@
    "url": "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/",
    "date": "2026-11-24T16:00:00Z",
    "tool": null,
-   "summary": "JFrog Security Research says an autonomous agent it calls ARTEX uploaded fake Hugging Face models that steal cloud credentials and commit them back to a public repo. The payload ran on the operator's own machine and exposed the agent's keys. Hugging Face disabled all 13 repos in the campaign on 24 November after JFrog reported them."
+   "summary": "JFrog Security Research says an autonomous agent it calls ARTEX uploaded fake Hugging Face models that steal cloud credentials and commit them back to a public repo. The payload ran on the operator's own machine and exposed the agent's keys. Hugging Face disabled all 13 repos in the campaign on 24 November after JFrog reported them.",
+   "page": "news/2026/11/jfrog-says-an-ai-agent-published-hugging-face-malware-and-leaked-its.html"
   },
   {
    "title": "Mesh launches an MCP server so coding agents can build payments flows",
@@ -63,7 +69,8 @@
    "url": "https://www.prnewswire.com/news-releases/mesh-launches-mesh-mcp-turning-one-prompt-into-a-payments-integration-302949189.html",
    "date": "2026-11-24T14:00:00Z",
    "tool": null,
-   "summary": "Mesh launched Mesh MCP, a hosted server that lets a coding agent assemble a payments integration from Mesh's live documentation and API spec. Each request is checked against that spec before it is sent. The server is read-only, does not move funds, and connects to Claude Code, Cursor, Codex, and other MCP clients."
+   "summary": "Mesh launched Mesh MCP, a hosted server that lets a coding agent assemble a payments integration from Mesh's live documentation and API spec. Each request is checked against that spec before it is sent. The server is read-only, does not move funds, and connects to Claude Code, Cursor, Codex, and other MCP clients.",
+   "page": "news/2026/11/mesh-launches-an-mcp-server-so-coding-agents-can-build-payments-flows.html"
   },
   {
    "title": "UK ICO says it will act if consumer AI agents ship without user controls",
@@ -71,7 +78,8 @@
    "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/11/developers-creating-agentic-ai-services-for-consumers-reminded-to-meet-their-data-protection-responsibilities/",
    "date": "2026-11-24T09:00:00Z",
    "tool": null,
-   "summary": "The UK Information Commissioner's Office said it will step in when organisations rush out consumer AI agents without privacy safeguards and real user controls. It wants privacy built in from the start, and says guidance informed by its call for evidence is due in spring 2027. The post does not name a product or announce a fine."
+   "summary": "The UK Information Commissioner's Office said it will step in when organisations rush out consumer AI agents without privacy safeguards and real user controls. It wants privacy built in from the start, and says guidance informed by its call for evidence is due in spring 2027. The post does not name a product or announce a fine.",
+   "page": "news/2026/11/uk-ico-says-it-will-act-if-consumer-ai-agents-ship-without-user.html"
   }
  ]
 }

@@ -1,6 +1,79 @@
 {
  "items": [
   {
+   "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace",
+   "page": "news/2026/11/google-workspace-opens-mcp-servers-and-a-cli-for-governed-ai-agents.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "Google Workspace opens MCP servers and a CLI for governed AI agents",
+   "source": "Google",
+   "date": "2026-11-25T01:00:00Z",
+   "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
+   "page": "news/2026/11/even-the-best-ai-agents-struggle-with-everyday-life.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "Even the best AI agents struggle with everyday life",
+   "source": "TechCrunch",
+   "date": "2026-11-24T21:33:29Z",
+   "summary": "TechCrunch covers ShellBench, a test of 100 everyday tasks built from real agent requests in messy personal files. The leading models finished only about 60 percent of attempts, and 15.7 percent of all runs missed a safety check. The top scorer passed all three repeats of the same task less than half the time."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
+   "page": "news/2026/11/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
+   "source": "TechCrunch",
+   "date": "2026-11-24T21:32:38Z",
+   "tool": "agent",
+   "summary": "TechCrunch reports Walmart is partnering with Meta so Black Friday deals show up inside Muse, Meta's personal AI agent."
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
+   "page": "news/2026/11/maple-raises-5-3m-for-a-private-desktop-agent-and-a-cloud-agent-that.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "Maple raises $5.3M for a private desktop agent and a cloud agent that stays on",
+   "source": "TechCrunch",
+   "date": "2026-11-24T21:19:00Z",
+   "summary": "TechCrunch reports Maple closed a $5.3 million seed round led by Epic Ventures. Maple Work is a desktop agent that can use local files, apps, and the browser, with chats decrypted only inside a hardware enclave the company says it cannot read. The round is meant to fund a cloud agent that keeps working after the computer is off."
+  },
+  {
+   "url": "https://thenextweb.com/news/anthropic-claude-skills-over-mcp-tasks-elicitation",
+   "page": "news/2026/11/anthropic-opens-skills-over-mcp-and-long-running-tasks-in-claude.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "Anthropic opens Skills over MCP and long-running tasks in Claude",
+   "source": "The Next Web",
+   "date": "2026-11-24T19:22:00Z",
+   "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users."
+  },
+  {
+   "url": "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/",
+   "page": "news/2026/11/jfrog-says-an-ai-agent-published-hugging-face-malware-and-leaked-its.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "JFrog says an AI agent published Hugging Face malware and leaked its own keys",
+   "source": "JFrog",
+   "date": "2026-11-24T16:00:00Z",
+   "summary": "JFrog Security Research says an autonomous agent it calls ARTEX uploaded fake Hugging Face models that steal cloud credentials and commit them back to a public repo. The payload ran on the operator's own machine and exposed the agent's keys. Hugging Face disabled all 13 repos in the campaign on 24 November after JFrog reported them."
+  },
+  {
+   "url": "https://www.prnewswire.com/news-releases/mesh-launches-mesh-mcp-turning-one-prompt-into-a-payments-integration-302949189.html",
+   "page": "news/2026/11/mesh-launches-an-mcp-server-so-coding-agents-can-build-payments-flows.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "Mesh launches an MCP server so coding agents can build payments flows",
+   "source": "PR Newswire",
+   "date": "2026-11-24T14:00:00Z",
+   "summary": "Mesh launched Mesh MCP, a hosted server that lets a coding agent assemble a payments integration from Mesh's live documentation and API spec. Each request is checked against that spec before it is sent. The server is read-only, does not move funds, and connects to Claude Code, Cursor, Codex, and other MCP clients."
+  },
+  {
+   "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/11/developers-creating-agentic-ai-services-for-consumers-reminded-to-meet-their-data-protection-responsibilities/",
+   "page": "news/2026/11/uk-ico-says-it-will-act-if-consumer-ai-agents-ship-without-user.html",
+   "first_seen": "2026-11-24T23:32:38-08:00",
+   "title": "UK ICO says it will act if consumer AI agents ship without user controls",
+   "source": "ICO",
+   "date": "2026-11-24T09:00:00Z",
+   "summary": "The UK Information Commissioner's Office said it will step in when organisations rush out consumer AI agents without privacy safeguards and real user controls. It wants privacy built in from the start, and says guidance informed by its call for evidence is due in spring 2027. The post does not name a product or announce a fine."
+  },
+  {
    "url": "https://www.theverge.com/ai-artificial-intelligence/1038370/openai-is-starting-to-bring-dots-to-plus-tier-subscribers",
    "page": "news/2026/11/openai-starts-testing-always-on-dots-agents-on-the-20-plus-plan.html",
    "first_seen": "2026-11-20T04:46:02-08:00",
