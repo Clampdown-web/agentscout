@@ -6,6 +6,7 @@ host must carry rel="sponsored". Pure-function tests; no build needed.
 Run: python3 scripts/test_sponsored_links.py
 """
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -59,7 +60,39 @@ def main():
     assert X.sponsored_rel(sample, "cursor", "cursor.com") == sample
     assert X.sponsored_rel(sample, "botpress", "") == sample
     assert X.visit_rel("cursor") == "noopener noreferrer"
+    app = (root / "app.js").read_text(encoding="utf-8")
+    match = re.search(r"AS\.sponsored=\{([^}]+)\}", app)
+    assert match, "app.js is missing AS.sponsored"
+    js_slugs = set(re.findall(r'"([a-z0-9-]+)"', match.group(1)))
+    assert js_slugs == set(slugs), f"app.js sponsored set {sorted(js_slugs)} != {sorted(slugs)}"
+    missing = grid_badge_problems(root, set(slugs))
+    assert not missing, "sponsored grid without an Affiliate link label:\n" + "\n".join(missing[:12])
     print(f"sponsored links ok: {len(slugs)} slugs ({', '.join(slugs)})")
+
+
+def grid_badge_problems(root: Path, slugs: set[str]) -> list[str]:
+    """Cards, table rows, and leaderboard rows for a sponsored slug carry the same label."""
+    bad = []
+    link = re.compile(r'<a\b[^>]*href="(?:\.\./|/)*tools/([a-z0-9-]+)\.html"')
+    skip = {".git", "node_modules", "preview", "pagefind", "data", "scripts", "assets", "bot-packages"}
+    for dirpath, dirs, names in os.walk(root):
+        dirs[:] = [d for d in dirs if d not in skip and not d.startswith(".")]
+        for name in names:
+            if not name.endswith(".html"):
+                continue
+            path = Path(dirpath) / name
+            html = path.read_text(encoding="utf-8", errors="replace")
+            rel = str(path.relative_to(root))
+            for kind, pattern in (
+                ("card", re.compile(r'<a class="card[^"]*"[^>]*>.*?</a>', re.S)),
+                ("row", re.compile(r'<tr\b[^>]*>.*?</tr>', re.S)),
+                ("leaderboard", re.compile(r'<li class="lbr[^"]*"[^>]*>.*?</li>', re.S)),
+            ):
+                for block in pattern.findall(html):
+                    found = [slug for slug in link.findall(block) if slug in slugs]
+                    if found and "Affiliate link" not in block:
+                        bad.append(f"{rel} {kind} {found[0]}")
+    return bad
 
 
 if __name__ == "__main__":

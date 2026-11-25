@@ -1,6 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import worker from "../src/worker.js";
+
+test("wrangler.toml binds ROAST_RL and VOTE_RL at the worker's per-minute caps", () => {
+  const text = readFileSync(new URL("../wrangler.toml", import.meta.url), "utf8");
+  const blocks = [...text.matchAll(/\[\[ratelimits\]\][\s\S]*?(?=\[\[|$)/g)].map((m) => m[0]);
+  const byName = {};
+  for (const block of blocks) {
+    const name = block.match(/name = "([^"]+)"/);
+    const limit = block.match(/limit = (\d+)/);
+    const period = block.match(/period = (\d+)/);
+    if (name && limit && period) byName[name[1]] = { limit: Number(limit[1]), period: Number(period[1]) };
+  }
+  assert.deepEqual(byName.ROAST_RL, { limit: 8, period: 60 });
+  assert.deepEqual(byName.VOTE_RL, { limit: 30, period: 60 });
+});
 
 function kv() {
   const store = new Map();

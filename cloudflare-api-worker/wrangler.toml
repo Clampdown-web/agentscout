@@ -24,3 +24,15 @@ routes = [
 [[kv_namespaces]]
 binding = "VOTES"
 id = "ec20d8092d644a9fa24a6f05a8df0515"
+
+# Edge rate limits. Same numbers as ROAST_PER_MIN and VOTE_PER_MIN in src/worker.js.
+# The worker returns 429 when limit() does not report success. Do not deploy from CI.
+[[ratelimits]]
+name = "ROAST_RL"
+namespace_id = "1001"
+simple = { limit = 8, period = 60 }
+
+[[ratelimits]]
+name = "VOTE_RL"
+namespace_id = "1002"
+simple = { limit = 30, period = 60 }

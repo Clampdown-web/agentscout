@@ -683,7 +683,7 @@ def pages(t):
         except Exception: upd=""
     upd=upd or today(); os.makedirs("mcp",exist_ok=True); urls=[]
     cnt={k:sum(1 for x in M if ptype(x)==k) for k in("free","freemium","paid","unknown")}
-    link=lambda x:f'<a href="../tools/{e(x["slug"])}.html">{e(x["name"])}</a>'
+    link=lambda x:f'<a href="../tools/{e(x["slug"])}.html">{e(x["name"])}</a>{X.sponsored_badge(x["slug"])}'
     import build_counts
     cat=build_counts.metrics_catalog()
     tools_n, mcp_n = cat["tools"], cat["mcp"]

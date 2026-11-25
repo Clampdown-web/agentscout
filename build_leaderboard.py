@@ -45,7 +45,7 @@ def row(i,x,stat,mv="",extra=False):
     medal={1:"lb1",2:"lb2",3:"lb3"}.get(i,"")
     return (f'<li class="lbr {medal}" data-c="{e(x["category"])}" data-f="{1 if isfree(x) else 0}" data-o="{1 if isos(x) else 0}"{" data-x hidden" if extra else ""}>'
             f'<span class="lbn">{i}</span><a class="lbt" href="../tools/{e(x["slug"])}.html">{X.ico(x,"../","sm")}'
-            f'<span class="lbx"><b>{e(x["name"])}</b><span class="muted">{e(x["category"])}</span></span><span class="lbd muted">{e(short(x.get("description")))}</span></a><span class="lbs">{stat}{mv}</span>'
+            f'<span class="lbx"><b>{e(x["name"])}</b>{X.sponsored_badge(x["slug"])}<span class="muted">{e(x["category"])}</span></span><span class="lbd muted">{e(short(x.get("description")))}</span></a><span class="lbs">{stat}{mv}</span>'
             f'<a class="lbrate" href="../tools/{e(x["slug"])}.html#rv-form" aria-label="Rate {e(x["name"])}">Rate</a></li>')
 def short(d,n=100):  # tool's one-line description, cut at a word boundary (Oct 21 2026, owner-approved)
     d=" ".join(str(d or "").split())
