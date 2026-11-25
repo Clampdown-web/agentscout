@@ -41,6 +41,42 @@ def arrow(k,slug,rank,prev):
     if d>0: return f'<span class="lbm up" title="Up {d} since last week" aria-label="Up {d} since last week">▲{d}</span>'
     if d<0: return f'<span class="lbm dn" title="Down {-d} since last week" aria-label="Down {-d} since last week">▼{-d}</span>'
     return '<span class="lbm eq" title="Same rank as last week" aria-label="Same rank as last week">–</span>'
+_LIST_BADGE_CSS = (
+    ".alltools .linkpile a.icol .lbx{display:inline-flex;flex-direction:row;align-items:center;gap:6px;"
+    "flex:1 1 auto;min-width:0;max-width:none}"
+    ".alltools .linkpile a.icol .lbx .b{flex:0 0 auto;font-size:11px;line-height:1.2}"
+)
+def place_directory_badges(html):
+    """The 2-column directory list is a linkpile. The label sits in .lbx, inline with the name, like a Top 100 row.
+
+    A label after the </a> is a second line under the full-width link.
+    """
+    import build_extras as X
+    link = re.compile(
+        r'<a\b([^>]*?)href="((?:\.\./)*)tools/([a-z0-9-]+)\.html"([^>]*)>(.*?)</a>(\s*<span class="b">Affiliate link</span>)?',
+        re.S,
+    )
+    def fix_ul(m):
+        def one(a):
+            slug = a.group(3)
+            if slug not in X.sponsored_slugs():
+                return a.group(0)
+            inner = a.group(5)
+            if "Affiliate link" in inner:
+                return a.group(0).replace(a.group(6) or "", "", 1)
+            icon, name = "", inner.strip()
+            im = re.match(r'(.*</span>)\s*([^<]+)\s*$', inner, re.S)
+            if im:
+                icon, name = im.group(1), im.group(2).strip()
+            if not (name.startswith("<b>") and name.endswith("</b>")):
+                name = f"<b>{name}</b>"
+            badge = X.sponsored_badge(slug)
+            return f'<a{a.group(1)}href="{a.group(2)}tools/{slug}.html"{a.group(4)}>{icon}<span class="lbx">{name}{badge}</span></a>'
+        return link.sub(one, m.group(0))
+    html = re.sub(r'<ul class="linkpile">.*?</ul>', fix_ul, html, flags=re.S)
+    if _LIST_BADGE_CSS not in html:
+        html = html.replace("</style>", _LIST_BADGE_CSS + "</style>", 1)
+    return html
 def row(i,x,stat,mv="",extra=False):
     medal={1:"lb1",2:"lb2",3:"lb3"}.get(i,"")
     return (f'<li class="lbr {medal}" data-c="{e(x["category"])}" data-f="{1 if isfree(x) else 0}" data-o="{1 if isos(x) else 0}"{" data-x hidden" if extra else ""}>'
@@ -158,7 +194,8 @@ def pages(t):
          ".lbm{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}.lbm.up{color:#0d6b34}html[data-theme=dark] .lbm.up{color:#3dd678}.lbm.dn{color:#c14036}html[data-theme=dark] .lbm.dn{color:#da6b62}.lbm.eq{color:var(--muted,#888)}.lbf-on .lbm{display:none}"
          ".lbrate{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line,rgba(127,127,127,.35));color:inherit;text-decoration:none;font-size:13px;font-weight:600}.lbrate:hover{border-color:#6b8afd;color:#6b8afd}"
          ".lbe{padding:14px;border:1px dashed var(--line,rgba(127,127,127,.4));border-radius:12px;margin:12px 0}.lbe p{margin:0 0 10px}.lbe p:last-child{margin:0}"
-         "@media(max-width:480px){.lbr{gap:6px;padding:10px 2px;flex-wrap:wrap}.lbt{flex:1 1 calc(100% - 40px)}.lbs{flex:1 1 auto;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:4px 8px;padding-left:34px;text-align:left;font-size:12px}.lbctl select{flex:1 1 100%}}</style>")
+         "@media(max-width:480px){.lbr{gap:6px;padding:10px 2px;flex-wrap:wrap}.lbt{flex:1 1 calc(100% - 40px)}.lbs{flex:1 1 auto;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:4px 8px;padding-left:34px;text-align:left;font-size:12px}.lbctl select{flex:1 1 100%}}"
+         +_LIST_BADGE_CSS+"</style>")
     js=('<script>(function(){var b=document.querySelectorAll(".lbtabs button"),c=document.getElementById("lbctl"),sel=document.getElementById("lbcat"),fr=document.getElementById("lbfree"),os=document.getElementById("lbos"),ct=document.getElementById("lbcount"),cur="'+DEF+'";'
         'function filt(){var v=sel.value,f=fr.checked,o=os.checked,on=!!(v||f||o);document.querySelectorAll(".lb [role=tabpanel]").forEach(function(p){var n=0,cap=p.id==="lb-loved"?'+str(NL)+':'+str(TOPN)+';p.classList.toggle("lbf-on",on);p.querySelectorAll(".lbr").forEach(function(r){var ok=(!v||r.dataset.c===v)&&(!f||r.dataset.f==="1")&&(!o||r.dataset.o==="1");if(!on&&r.hasAttribute("data-x"))ok=false;if(ok&&n>=cap)ok=false;r.hidden=!ok;if(ok){n++;r.querySelector(".lbn").textContent=n;r.classList.remove("lb1","lb2","lb3");if(n<4)r.classList.add("lb"+n)}});var fe=p.querySelector(".lbf");if(fe)fe.hidden=!(on&&n===0&&p.querySelector(".lbr"));p.dataset.n=n});'
         'var cp=document.getElementById("lb-"+cur);ct.textContent=on?(cp.dataset.n+" ranked tool"+(cp.dataset.n==="1"?"":"s")+" shown"):"";try{var q=new URLSearchParams(location.search);v?q.set("cat",v):q.delete("cat");f?q.set("free","1"):q.delete("free");o?q.set("os","1"):q.delete("os");var s=q.toString();history.replaceState(null,"",location.pathname+(s?"?"+s:"")+location.hash)}catch(e){}}'
