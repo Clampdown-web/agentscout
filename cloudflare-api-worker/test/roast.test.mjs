@@ -1,6 +1,6 @@
-import test, { describe } from "node:test";
+import test, { beforeEach, describe } from "node:test";
 import assert from "node:assert/strict";
-import worker from "../src/worker.js";
+import worker, { CATALOG_CACHE_TTL_SECONDS, MAX_CATALOG_BYTES, expireCatalogCache, resetCatalogCache } from "../src/worker.js";
 
 const MAX_BYTES = 512_000;
 
@@ -28,6 +28,10 @@ function dns(ip) {
 }
 
 describe("roast body limit", { concurrency: false }, () => {
+  beforeEach(() => {
+    resetCatalogCache();
+  });
+
   test("a page larger than MAX_BYTES is scored from the head", async () => {
     const title = "Cursor The AI Code Editor";
     const pitch = "Agents write and review code in the repository beside the editor you already use daily.";
@@ -310,6 +314,201 @@ describe("roast body limit", { concurrency: false }, () => {
       assert.equal(tooLong.status, 400);
       assert.equal((await tooLong.json()).error, "Enter a public http or https URL.");
       assert.deepEqual(calls, []);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
+
+  test("a rate limit rejection is keyed by the client IP and does not fetch the catalog", async () => {
+    const calls = [];
+    const keys = [];
+    const gets = [];
+    const previous = globalThis.fetch;
+    globalThis.fetch = async (input) => {
+      calls.push(String(input));
+      throw new Error("fetched " + input);
+    };
+    const store = {
+      async get(key) { gets.push(key); return null; },
+      async put() { throw new Error("kv put"); },
+    };
+    try {
+      const roastRes = await worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          origin: "https://agentscouthq.com",
+          "cf-connecting-ip": "203.0.113.90",
+          "x-forwarded-for": "198.51.100.9",
+        },
+        body: JSON.stringify({ url: "https://example.com/" }),
+      }), {
+        VOTES: store,
+        ROAST_RL: { async limit({ key }) { keys.push(["roast", key]); return { success: false }; } },
+      });
+      assert.equal(roastRes.status, 429);
+      assert.equal((await roastRes.json()).error, "Too many checks. Try again in a minute.");
+      assert.equal(roastRes.headers.get("x-content-type-options"), "nosniff");
+      assert.equal(roastRes.headers.get("x-frame-options"), "DENY");
+      assert.equal(roastRes.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+      assert.equal(roastRes.headers.get("strict-transport-security"), "max-age=31536000; includeSubDomains");
+      assert.equal(roastRes.headers.get("content-security-policy"), "default-src 'none'; frame-ancestors 'none'");
+      assert.equal(roastRes.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
+      assert.equal(roastRes.headers.get("access-control-allow-credentials"), null);
+
+      const voteRes = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          origin: "https://www.agentscouthq.com",
+          "cf-connecting-ip": "203.0.113.90",
+          "x-forwarded-for": "198.51.100.9",
+        },
+        body: JSON.stringify({ slug: "cursor" }),
+      }), {
+        VOTES: store,
+        VOTE_RL: { async limit({ key }) { keys.push(["vote", key]); return { success: false }; } },
+      });
+      assert.equal(voteRes.status, 429);
+      assert.equal((await voteRes.json()).error, "Too many votes. Try again in a minute.");
+      assert.equal(voteRes.headers.get("access-control-allow-origin"), "https://www.agentscouthq.com");
+      assert.deepEqual(keys, [["roast", "203.0.113.90"], ["vote", "203.0.113.90"]]);
+      assert.deepEqual(calls, []);
+      assert.deepEqual(gets, []);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
+
+  function catalogFetch(catalog, fetches) {
+    return async (input, init) => {
+      const url = String(input);
+      if (url.startsWith("https://cloudflare-dns.com/")) return dns("1.1.1.1");
+      if (url.endsWith("/llms.txt")) return new Response("missing", { status: 404 });
+      if (url.includes("/api/tools.json")) {
+        fetches.count += 1;
+        fetches.inits.push(init);
+        if (fetches.hold) await fetches.hold;
+        const body = typeof catalog === "function" ? catalog(fetches.count) : catalog;
+        return body;
+      }
+      return new Response("<title>Example Public Tool Listing</title><p>Free plan.</p>", {
+        status: 200,
+        headers: { "content-type": "text/html" },
+      });
+    };
+  }
+
+  test("the catalog host index is reused until it expires", async () => {
+    const fetches = { count: 0, inits: [] };
+    const catalog = JSON.stringify([
+      { slug: "first", name: "First", website: "https://www.listed.example/path", url: "https://other.example/a" },
+      { slug: "second", name: "Second", website: "https://listed.example/other" },
+    ]);
+    const previous = globalThis.fetch;
+    globalThis.fetch = catalogFetch(() => new Response(catalog, { status: 200, headers: { "content-type": "application/json" } }), fetches);
+    try {
+      const listed = await roast("https://www.listed.example/pricing", "203.0.113.91");
+      assert.equal(listed.status, 200);
+      assert.equal(listed.headers.get("x-content-type-options"), "nosniff");
+      assert.equal(listed.headers.get("x-frame-options"), "DENY");
+      assert.equal(listed.headers.get("strict-transport-security"), "max-age=31536000; includeSubDomains");
+      assert.equal(listed.headers.get("content-security-policy"), "default-src 'none'; frame-ancestors 'none'");
+      assert.equal(listed.headers.get("access-control-allow-origin"), null);
+      const body = await listed.json();
+      assert.equal(body.ok, true);
+      assert.equal(body.final_url, "https://www.listed.example/pricing");
+      assert.equal(body.max, 100);
+      assert.equal(body.checks.length, 7);
+      assert.deepEqual(body.listed, {
+        slug: "first",
+        name: "First",
+        page: "https://agentscouthq.com/tools/first.html",
+      });
+      const viaUrl = await roast("https://other.example/docs", "203.0.113.91");
+      assert.deepEqual((await viaUrl.json()).listed, {
+        slug: "first",
+        name: "First",
+        page: "https://agentscouthq.com/tools/first.html",
+      });
+      const miss = await roast("https://missing.example/", "203.0.113.91");
+      assert.equal((await miss.json()).listed, null);
+      assert.equal(fetches.count, 1);
+      assert.equal(fetches.inits[0]?.cf?.cacheTtl, CATALOG_CACHE_TTL_SECONDS);
+      assert.equal(fetches.inits[0]?.cf?.cacheEverything, true);
+      expireCatalogCache();
+      const again = await roast("https://listed.example/", "203.0.113.91");
+      assert.equal(again.status, 200);
+      assert.equal((await again.json()).listed.slug, "first");
+      assert.equal(fetches.count, 2);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
+
+  test("parallel roasts share one in-flight catalog fetch", async () => {
+    let release;
+    const hold = new Promise((resolve) => { release = resolve; });
+    const fetches = { count: 0, inits: [], hold };
+    const previous = globalThis.fetch;
+    globalThis.fetch = catalogFetch(() => new Response(JSON.stringify([
+      { slug: "first", name: "First", website: "https://listed.example" },
+    ]), { status: 200, headers: { "content-type": "application/json" } }), fetches);
+    const env = {
+      VOTES: kv(),
+      ROAST_RL: { async limit({ key }) { assert.equal(key, "203.0.113.92"); return { success: true }; } },
+    };
+    try {
+      const pending = Promise.all([0, 1, 2].map(() => roast("https://listed.example/", "203.0.113.92", env)));
+      for (let i = 0; i < 50 && fetches.count < 1; i++) await new Promise((resolve) => setTimeout(resolve, 2));
+      assert.equal(fetches.count, 1);
+      await new Promise((resolve) => setTimeout(resolve, 30));
+      assert.equal(fetches.count, 1);
+      release();
+      const bodies = await Promise.all((await pending).map((res) => res.json()));
+      assert.equal(fetches.count, 1);
+      for (const body of bodies) {
+        assert.equal(body.ok, true);
+        assert.equal(body.final_url, "https://listed.example/");
+        assert.deepEqual(body.listed, {
+          slug: "first",
+          name: "First",
+          page: "https://agentscouthq.com/tools/first.html",
+        });
+      }
+    } finally {
+      release();
+      globalThis.fetch = previous;
+    }
+  });
+
+  test("an oversized catalog is not indexed and is not cached", async () => {
+    const fetches = { count: 0, inits: [] };
+    const previous = globalThis.fetch;
+    globalThis.fetch = catalogFetch((n) => {
+      if (n === 1) {
+        return new Response("[]", {
+          status: 200,
+          headers: { "content-type": "application/json", "content-length": String(MAX_CATALOG_BYTES + 1) },
+        });
+      }
+      return new Response(JSON.stringify([{ slug: "example", name: "Example", website: "https://listed.example" }]), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }, fetches);
+    try {
+      const blocked = await roast("https://listed.example/", "203.0.113.93");
+      assert.equal(blocked.status, 200);
+      assert.equal((await blocked.json()).listed, null);
+      const matched = await roast("https://listed.example/", "203.0.113.94");
+      assert.equal(matched.status, 200);
+      assert.deepEqual((await matched.json()).listed, {
+        slug: "example",
+        name: "Example",
+        page: "https://agentscouthq.com/tools/example.html",
+      });
+      assert.equal(fetches.count, 2);
     } finally {
       globalThis.fetch = previous;
     }

@@ -25,14 +25,20 @@ routes = [
 binding = "VOTES"
 id = "ec20d8092d644a9fa24a6f05a8df0515"
 
-# Edge rate limits. Same numbers as ROAST_PER_MIN and VOTE_PER_MIN in src/worker.js.
+# Account-wide Workers Rate Limiting namespaces. A namespace_id is shared by
+# every worker in the account that binds it, and the first configuration wins.
+# 1001, 1002, and 1003 are agentscout-image (TRACK_RL 20/60s, REVIEW_RL 6/60s,
+# READY_RL 10/60s). 481015 and 481060 are the MCP worker. 481201 and 481202 are
+# IMAGE_WRITE and IMAGE_READ. 481308 and 481330 are only this worker.
+# limit() is keyed by CF-Connecting-IP. Counters are per location and
+# eventually consistent, so a burst can overshoot the limit slightly.
 # The worker returns 429 when limit() does not report success. Do not deploy from CI.
 [[ratelimits]]
 name = "ROAST_RL"
-namespace_id = "1001"
+namespace_id = "481308"
 simple = { limit = 8, period = 60 }
 
 [[ratelimits]]
 name = "VOTE_RL"
-namespace_id = "1002"
+namespace_id = "481330"
 simple = { limit = 30, period = 60 }
