@@ -9,6 +9,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -17,6 +18,12 @@ import publish_gate
 
 APP = "/* Scroll buttons */\n(function(){var up=document.createElement('button');up.className='scrollbtn up';var down=document.createElement('button');down.className='scrollbtn down';})();\n"
 CSS = ".scrollbtns{}\n.scrollbtn.show{}\n"
+
+
+def _is_indexnow(url: str) -> bool:
+    """True when the URL host is indexnow.org or a subdomain of it."""
+    host = (urlsplit(url).hostname or "").lower()
+    return host == "indexnow.org" or host.endswith(".indexnow.org")
 
 
 def _chrome(rel: str) -> str:
@@ -230,7 +237,7 @@ class EntrypointTest(unittest.TestCase):
         self.assertEqual(result.problems, [], result.problems)
         self.assertIs(result.category_acceptance_claimed, False)
         self.assertFalse(any(url.endswith("/submit") and method == "POST" for url, method, _headers, _data in calls))
-        self.assertFalse(any("indexnow.org" in url for url, _method, _headers, _data in calls))
+        self.assertFalse(any(_is_indexnow(url) for url, _method, _headers, _data in calls))
         self.assertEqual(sum(1 for url, method, _h, _d in calls if method == "OPTIONS"), 2)
         self.assertTrue(any(method == "POST" and url.endswith("/mcp") for url, method, _h, _d in calls))
         self.assertNotIn("accepts all", " ".join(result.passes))
