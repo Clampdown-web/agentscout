@@ -252,7 +252,8 @@
         "Captions are a script, not a dump of every false start.",
         "Burned-in captions stay inside the safe center so interface buttons do not cover them.",
         "Music needs a license note. Silence is better than a track you cannot name.",
-        "One video, one job. Do not hide a second offer in the last second."
+        "One video, one job. Do not hide a second offer in the last second.",
+        "Export social MP4s at 30fps (higher framerates can cause upload rejections in schedulers such as Buffer)."
       ]
     },
     {
@@ -702,7 +703,9 @@
         "Three to five pillars. If you cannot name them, you are improvising.",
         "Reply to real comments before you invent tomorrow's post.",
         "Tag links with a source you can read later.",
-        "Best time is the time your own account already earns attention, not a generic chart."
+        "Best time is the time your own account already earns attention, not a generic chart.",
+        "Respect daily account caps (e.g., <=20 posts/day including replies) and publish at most one approved draft per owner confirmation.",
+        "Check prior replies first so you never repeat a point, and avoid unquoted domains or filenames (like AGENTS.md) that platforms auto-link."
       ]
     },
     {
@@ -799,10 +802,11 @@
       "heuristics": [
         "Pick a type and a color on purpose. A generic purple gradient is not a brand.",
         "The first screen holds one promise, one proof, and one button.",
-        "360px and 390px must not scroll sideways.",
+        "Phone (360px, 390px portrait and 844x390 landscape) and desktop (1280px, 1440px) must not scroll sideways.",
         "Text contrast aims for 4.5 against its background.",
         "Fixed pixel widths wider than the phone are a bug, not a look.",
-        "Empty image alts fail the page even if the picture is pretty."
+        "Empty image alts fail the page even if the picture is pretty.",
+        "Preview-test every visual change before publishing, then re-verify the live URL after deploy."
       ]
     },
     {
@@ -1152,7 +1156,8 @@
         "Price from cost and a target margin, then sense-check it against the buyer's alternative.",
         "Good, better, and best must be different products, not the same product with a louder adjective.",
         "The success metric has a baseline and a date.",
-        "Support email is live before the first charge."
+        "Support email is live before the first charge.",
+        "Preview-test phone and desktop before launch, verify live after deploy, and use unique rate-limit namespaces per worker/binding."
       ]
     },
     {
