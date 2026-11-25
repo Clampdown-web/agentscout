@@ -328,6 +328,33 @@ def _sync_index_counts():
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
     s = s.replace('fetch("tools.json",{cache:"no-cache"})', 'fetch("tools.json")')
+    # Filter chips (?uc= / ?cat=) are homepage query variants. Static GitHub Pages
+    # cannot emit a noindex robots meta only for those URLs, so the links themselves
+    # carry rel="nofollow". Idempotent: only the form without rel is rewritten.
+    s = s.replace('<a class="cattile" href="?cat=', '<a class="cattile" rel="nofollow" href="?cat=')
+    s = s.replace('<a class="cattile" href="?uc=', '<a class="cattile" rel="nofollow" href="?uc=')
+    # Homepage VideoObject / poster alt: floor-rounded public headlines
+    # (6,000+ / 3,200+) derived from tools.json, not a stale literal.
+    import build_counts as _bc
+    _ht = _bc.headline_tools_label(n)
+    _hm = _bc.headline_mcp_label(_mcp)
+    _nrev = _bc.indexable_tool_pages()
+    s = re.sub(
+        r"Live Verification Terminal \([^)]*AI [Aa]gents?[^)]*MCP [Ss]ervers?\)",
+        f"Live Verification Terminal ({_ht} & {_hm})",
+        s,
+    )
+    s = re.sub(
+        r"indexes [\d,]+(?:\+)? AI agent tools and [\d,]+(?:\+)? MCP servers daily",
+        f"indexes {_ht} and {_hm} daily",
+        s,
+    )
+    s = re.sub(
+        r"verifying [\d,]+(?:\+)? AI agent tools and [\d,]+(?:\+)? MCP servers daily",
+        f"verifying {_ht} and {_hm} daily",
+        s,
+    )
+    s = re.sub(r'(data-live-reviewed">)[\d,]*', lambda m: m.group(1) + f"{_nrev:,}", s, count=1)
     # main landmark for screen readers (a11y audit Oct 18 2026): hero through the newsletter box, footer stays outside
     if "<main" not in s and '<header class="hero">' in s and "<footer" in s:
         s = s.replace('<header class="hero">', '<main id="main"><header class="hero">', 1)

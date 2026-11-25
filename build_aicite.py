@@ -795,7 +795,7 @@ def connect_page(t):
         ("What is AgentScout's official MCP Registry ID and endpoint URL?",
          f"AgentScout's official MCP Registry ID is com.agentscouthq/directory. You can connect via Streamable HTTP at {MCP_URL} with no sign-up or API key."),
         ("How many AI agent tools and MCP servers does the AgentScout MCP server cover?",
-         f"The server searches {_c['tools']:,}+ curated AI agent tools and {M:,} MCP servers across {_c['categories']} categories. {uline}{_hs_suf}")
+         f"The server searches {_c['tools']:,} curated AI agent tools and {M:,} MCP servers across {_c['categories']} categories. {uline}{_hs_suf}")
     ]
     faq_html="".join(f'<details open class="faq" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)"><summary style="font-weight:600;cursor:pointer">{e(q)}</summary><p style="margin:8px 0 0;color:var(--muted);line-height:1.55">{e(a)}</p></details>' for q,a in faqs)
     rows=[[f'<code>{e(tool["name"])}</code>', e(tool.get("title") or tool["name"]), e(tool.get("description") or "")] for tool in live_tools]
@@ -838,12 +838,12 @@ def connect_page(t):
     open("mcp/connect.html","w").write(X.shell("../",title,desc,canon,body,ld))
     card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","name":"com.agentscouthq/directory","title":"AgentScout MCP server","version":"1.0.2","protocolVersion":"2025-06-18","endpoint":MCP_URL,
           "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.2"},
-          "description":f"Read-only search over {_c['tools']:,}+ AI agent tools and {M:,} MCP servers listed on AgentScout (com.agentscouthq/directory at https://mcp.agentscouthq.com/mcp). 100% free, public, no authentication or x402 wallet required.",
+          "description":f"Read-only search over {_c['tools']:,} AI agent tools and {M:,} MCP servers listed on AgentScout (com.agentscouthq/directory at https://mcp.agentscouthq.com/mcp). 100% free, public, no authentication or x402 wallet required.",
           "documentationUrl":canon,"transport":{"type":"streamable-http","endpoint":MCP_URL},"authentication":{"required":False},
           "capabilities":{"tools":{"listChanged":False}},"dataLocalityFilter":LOCAL_LINE,"tools":[{"name":tool["name"],"description":tool.get("description") or ""} for tool in live_tools]}
     os.makedirs(".well-known",exist_ok=True); open(".well-known/mcp.json","w").write(json.dumps(card,indent=2,ensure_ascii=False)+"\n")
     srv_reg={"$schema":"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json","name":"com.agentscouthq/directory","title":"AgentScout",
-             "description":f"Read-only search over {_c['tools']:,}+ AI agent tools and {M:,} MCP servers. Free, no sign-up needed.",
+             "description":f"Read-only search over {_c['tools']:,} AI agent tools and {M:,} MCP servers. Free, no sign-up needed.",
              "version":"1.0.2","websiteUrl":canon,"remotes":[{"type":"streamable-http","url":MCP_URL}]}
     open("server.json","w").write(json.dumps(srv_reg,indent=2,ensure_ascii=False)+"\n")
     if os.path.isdir("/workspace/mcp-registry"):
