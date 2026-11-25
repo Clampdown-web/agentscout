@@ -15,6 +15,10 @@ def is_week(x):
     mat=(x.get("maturity") or "")
     return (not x.get("catalog_only")) and (not x.get("seed")) and "discontinued" not in mat.lower() and (x.get("added") or "")>=(pt_today()-datetime.timedelta(days=6)).isoformat()
 def fmt(d): return datetime.date.fromisoformat(d).strftime("%b %-d, %Y")
+def checked_line():
+    """Page stamp for new.html. time.ago becomes today/yesterday/N days ago; the absolute date stays as the fallback and title."""
+    day=pt_today().isoformat(); label=fmt(day)
+    return f'<p class="updated">Checked <time class="ago" datetime="{day}" title="{e(label)}">{e(label)}</time></p>'
 def short(s,n=110): return s if len(s)<=n else s[:n].rsplit(" ",1)[0]+"…"
 def card(x,d):
     return (f'<a class="card rcard" href="{d}tools/{x["slug"]}.html"><div class="ct">{build_extras.ico(x,d,"sm")}<h3>{e(x["name"])}</h3></div>'
@@ -97,7 +101,7 @@ def _new_body(t):
     days={}
     for x in shown: days.setdefault(x["added"],[]).append(x)
     body=('<div class="crumb"><a href="./">AgentScout</a> / New tools</div><section class="calm">'
-          f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{lede}{seednote}</p>')
+          f'<h1 style="text-align:left">New AI agent tools</h1>{checked_line()}<p class="lede" style="margin-left:0;text-align:left">{lede}{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
     body+=makers_section(t)  # newest added first; count comes from the flagged rows
     for label,cond in (("This week",lambda d:d>=wk),("Earlier this month",lambda d:d<wk)):

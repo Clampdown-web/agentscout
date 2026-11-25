@@ -101,6 +101,13 @@ class NewCountTest(unittest.TestCase):
         body, _ld = build_recent._new_body(rows)
         self.assertIn("1 full tool added", body)
         self.assertIn("1 catalog-only listing", body)
+        # The checked line uses the frozen Pacific build date, not the wall clock.
+        stamp = 'Checked <time class="ago" datetime="2026-11-11" title="Nov 11, 2026">Nov 11, 2026</time>'
+        self.assertIn(stamp, body)
+        self.assertEqual(body.count("Checked <time"), 1)
+        self.assertLess(body.find("</h1>"), body.find(stamp))
+        self.assertLess(body.find(stamp), body.find('<p class="lede"'))
+        self.assertIn('Added <time class="ago" datetime="2026-11-11">Nov 11, 2026</time>', body)
         self.assertIn('href="tools/full.html"', body)
         self.assertNotIn('href="tools/bulk.html"', body)
         self.assertNotIn("tools/old.html", body)
