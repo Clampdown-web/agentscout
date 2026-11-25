@@ -242,6 +242,31 @@ def pitch_pages_floor(n):
     return thousand_floor(n)
 
 
+def hundred_floor(n):
+    """Floor used in homepage headlines: 6,007 -> 6,000+, 3,206 -> 3,200+.
+
+    A total under 100 stays exact. A headline must not say 0+.
+    """
+    n = int(n or 0)
+    floored = (n // 100) * 100
+    return floored if floored else n
+
+
+def headline_tools_label(n):
+    return f"{hundred_floor(n):,}+ AI agent tools"
+
+
+def headline_mcp_label(n):
+    return f"{hundred_floor(n):,}+ MCP servers"
+
+
+def indexable_tool_pages(path="sitemap.xml"):
+    """Tool URLs in sitemap.xml — the listings with full, indexable review pages."""
+    if not os.path.exists(path):
+        return 0
+    return len(re.findall(r"/tools/[^/<]+\.html", open(path, encoding="utf-8").read()))
+
+
 def metrics_catalog():
     """Directory totals for sentences baked into HTML.
 
