@@ -24,7 +24,15 @@ const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
 const MAX_JSON_BODY = 16_384;
 const MAX_URL_PARAM = 4_096;
 const MAX_SLUGS_PARAM = 40_000;
-const MAX_CATALOG_BYTES = 6_000_000;
+// The live directory (api/tools.json) is larger than 6MB. A lower cap made
+// catalogMatch give up before JSON.parse, or copy most of the file and still
+// miss. 16MB leaves room past the current ~7MB catalog. The host index below
+// is what a request keeps, not the parsed file.
+const MAX_CATALOG_BYTES = 16_000_000;
+const CATALOG_URL = "https://agentscouthq.com/api/tools.json";
+// Edge fetch cache and the per-isolate index use the same lifetime.
+export const CATALOG_CACHE_TTL_SECONDS = 3600;
+const CATALOG_TTL_MS = CATALOG_CACHE_TTL_SECONDS * 1000;
 const MAX_IP_LEN = 128;
 
 const SECURITY_HEADERS = {
@@ -185,10 +193,14 @@ export function countsFor(doc, slugs, day) {
   return { tools, today_total: todayTotal };
 }
 
-// ROAST_RL / VOTE_RL are optional Workers Rate Limiting bindings. They are shared
-// by isolates in one Cloudflare location. They are not a worldwide counter, and
-// this file does not create the namespaces. Without them, one isolate serializes
-// its own KV read-modify-write. Two isolates can still both pass.
+// ROAST_RL / VOTE_RL are the Workers Rate Limiting bindings from wrangler.toml.
+// limit() is keyed by the client IP (CF-Connecting-IP), not X-Forwarded-For.
+// When the binding exists it is the only counter: success must be true, and a
+// throw fails closed. The KV and in-memory fallbacks below do not run.
+// The binding is per Cloudflare location and eventually consistent, so a short
+// burst can overshoot the configured limit slightly. It is not one worldwide
+// counter. The fallback is only for an isolate started without the binding,
+// and that fallback is still one isolate.
 function rateBinding(env, bucket) {
   if (!env) return null;
   if (bucket === "roast") return env.ROAST_RL;
@@ -373,25 +385,96 @@ async function fetchPublic(target, depth = 0) {
   return { url: shape.url, status: response.status, text: body.text, addresses: dns.addresses };
 }
 
-async function catalogMatch(finalHost) {
-  const res = await fetch("https://agentscouthq.com/api/tools.json", { cf: { cacheTtl: 3600 } });
-  if (!res.ok) return null;
-  const body = await readCapped(res, MAX_CATALOG_BYTES);
-  if (body.error) return null;
-  const data = JSON.parse(body.text);
-  const tools = Array.isArray(data) ? data : data.tools || [];
-  const host = finalHost.replace(/^www\./, "");
+let catalogCache = null;
+let catalogPending = null;
+let catalogEpoch = 0;
+
+function hostFromUrl(value) {
+  try {
+    return new URL(value).hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+function indexCatalog(data) {
+  const tools = Array.isArray(data) ? data : (data && data.tools) || [];
+  const byHost = new Map();
   for (const tool of tools) {
+    if (!tool || typeof tool !== "object" || typeof tool.slug !== "string" || !tool.slug) continue;
+    const entry = {
+      slug: tool.slug,
+      name: tool.name,
+      page: `https://agentscouthq.com/tools/${tool.slug}.html`,
+    };
     for (const field of ["website", "url"]) {
-      try {
-        const h = new URL(tool[field]).hostname.replace(/^www\./, "").toLowerCase();
-        if (h && h === host) {
-          return { slug: tool.slug, name: tool.name, page: `https://agentscouthq.com/tools/${tool.slug}.html` };
-        }
-      } catch { /* skip bad urls */ }
+      const host = hostFromUrl(tool[field]);
+      if (host && !byHost.has(host)) byHost.set(host, entry);
     }
   }
-  return null;
+  return byHost;
+}
+
+async function fetchCatalogIndex() {
+  const epoch = catalogEpoch;
+  const res = await fetch(CATALOG_URL, {
+    cf: { cacheTtl: CATALOG_CACHE_TTL_SECONDS, cacheEverything: true },
+  });
+  if (!res.ok) return catalogCache ? catalogCache.byHost : null;
+  // A known length under the cap can be decoded once. Chunked bodies still
+  // stop at the cap, so a huge response is not parsed.
+  const declared = Number(res.headers.get("content-length"));
+  let text = "";
+  if (Number.isFinite(declared)) {
+    if (declared > MAX_CATALOG_BYTES) {
+      try { await res.body?.cancel(); } catch { /* already closed */ }
+      return catalogCache ? catalogCache.byHost : null;
+    }
+    text = typeof res.text === "function" ? await res.text() : "";
+    if (text.length > MAX_CATALOG_BYTES) return catalogCache ? catalogCache.byHost : null;
+  } else {
+    const body = await readCapped(res, MAX_CATALOG_BYTES);
+    if (body.error || !body.text) return catalogCache ? catalogCache.byHost : null;
+    text = body.text;
+  }
+  const data = JSON.parse(text);
+  const byHost = indexCatalog(data);
+  if (epoch !== catalogEpoch) return byHost;
+  catalogCache = { at: Date.now(), byHost };
+  return byHost;
+}
+
+async function catalogIndex() {
+  const now = Date.now();
+  if (catalogCache && now - catalogCache.at < CATALOG_TTL_MS) return catalogCache.byHost;
+  if (!catalogPending) {
+    const pending = fetchCatalogIndex();
+    catalogPending = pending;
+    pending.finally(() => {
+      if (catalogPending === pending) catalogPending = null;
+    }).catch(() => {});
+  }
+  return catalogPending;
+}
+
+// One host index per isolate. Parallel /roast calls share the in-flight
+// fetch, and later calls skip the download and JSON.parse until the TTL.
+async function catalogMatch(finalHost) {
+  const byHost = await catalogIndex();
+  if (!byHost) return null;
+  const host = String(finalHost || "").toLowerCase().replace(/^www\./, "");
+  if (!host) return null;
+  return byHost.get(host) || null;
+}
+
+export function resetCatalogCache() {
+  catalogEpoch += 1;
+  catalogCache = null;
+  catalogPending = null;
+}
+
+export function expireCatalogCache() {
+  if (catalogCache) catalogCache.at = 0;
 }
 
 async function roast(request, env) {
@@ -402,6 +485,7 @@ async function roast(request, env) {
     const declared = Number(request.headers.get("content-length"));
     if (Number.isFinite(declared) && declared > MAX_JSON_BODY) return json(request, { error: "Payload too large." }, 413);
   }
+  // Reject a flood before the body, DNS, the page fetch, or the catalog index.
   if (!(await rateLimit(env, "roast", ip, ROAST_PER_MIN))) return json(request, { error: "Too many checks. Try again in a minute." }, 429);
   const url = new URL(request.url);
   let target = url.searchParams.get("url") || "";
@@ -506,4 +590,4 @@ export default {
   },
 };
 
-export { isBlockedIp, ptDay, isoWeek };
+export { isBlockedIp, ptDay, isoWeek, MAX_CATALOG_BYTES };

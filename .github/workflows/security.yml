@@ -38,6 +38,7 @@ jobs:
           cloudflare-api-worker/test/votes.test.mjs
           cloudflare-api-worker/test/roast.test.mjs
           cloudflare-api-worker/test/ratelimit.test.mjs
+          cloudflare-api-worker/test/namespace-ids.test.mjs
           cloudflare-mcp-worker/test/rate-limit.test.mjs
           cloudflare-mcp-worker/test/catalog.test.mjs
           cloudflare-image-worker-patches/security.test.mjs
