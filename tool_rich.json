@@ -34487,5 +34487,45 @@
       "checked": "2026-11-24",
       "pricing_src": "https://wavegrain.com/pricing"
     }
+  },
+  "forkd": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-25",
+    "sources": [
+      "https://github.com/deeplethe/sandstorm",
+      "https://github.com/deeplethe/sandstorm/blob/dev/README.md",
+      "https://github.com/deeplethe/sandstorm/releases/tag/v0.6.0"
+    ],
+    "long": [
+      "Sandstorm, the project previously listed as forkd, is a Rust sandbox runtime for AI agents. The README says one machine can hold thousands of sandboxes because idle ones are paused and snapshotted to disk, then restored when a request arrives. Backends are gVisor containers and Firecracker microVMs. Each sandbox has its own network namespace.",
+      "The README status section says v0.6 is the current release: gVisor is the default backend, so a node needs no KVM, and Firecracker is chosen node by node. One sandstormd binary is the master, the node and the web console. GitHub release v0.6.0 was published on 1 Nov 2026. GitHub recorded Apache-2.0, 6,110 stars and 410 forks on 25 Nov 2026. The repo has no separate homepage."
+    ],
+    "who": "Engineers who want many AI-agent sandboxes on one Linux machine, with idle ones stored on disk instead of kept running.",
+    "features": [
+      "gVisor default and Firecracker as a second backend, chosen node by node",
+      "Idle sandboxes move through hot, frozen, snapshot and detached tiers",
+      "sandstormd is the master, the node and the web console",
+      "Apache-2.0. 6,110 GitHub stars and 410 forks on 25 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What changed in v0.6?",
+        "The README says gVisor becomes the default backend, Firecracker stays as a per-node second backend, and one host can act as a fleet. Release v0.6.0 was published on 1 Nov 2026."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records Apache-2.0. Checked 25 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/deeplethe/sandstorm",
+      "stars": 6110,
+      "forks": 410,
+      "checked": "2026-11-25",
+      "license": "Apache-2.0",
+      "osi": true
+    }
   }
 }

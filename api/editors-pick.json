@@ -1,12 +1,12 @@
 {
  "date": "2026-11-24",
- "slug": "mcp-go-sdk",
- "name": "MCP Go SDK",
- "why": "A standout MCP servers tool for builders: official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
- "category": "MCP servers",
- "description": "Official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
- "logo": "https://agentscouthq.com/assets/logos/mcp-go-sdk.png",
- "page": "https://agentscouthq.com/tools/mcp-go-sdk.html",
+ "slug": "nano-banana-gemini-image",
+ "name": "Nano Banana (Gemini image)",
+ "why": "A standout image generation tool for everyday users: google's Gemini image model.",
+ "category": "image generation",
+ "description": "Google's Gemini image model. Make and edit pictures by chatting, and keep the same character across edits.",
+ "logo": "https://agentscouthq.com/assets/logos/nano-banana-gemini-image.png",
+ "page": "https://agentscouthq.com/tools/nano-banana-gemini-image.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -150,7 +150,11 @@
   },
   {
    "date": "2026-11-24",
-   "slug": "mcp-go-sdk"
+   "slug": "nano-banana-gemini-image"
+  },
+  {
+   "date": "2026-11-25",
+   "slug": "veille"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T23:11:54Z",
+ "updated": "2026-11-25T04:24:29Z",
  "sources": [
   "TechCrunch",
   "The Verge",
@@ -9,6 +9,33 @@
   "X"
  ],
  "items": [
+  {
+   "title": "Duco opens an MCP server for post-trade reconciliation agents",
+   "source": "Duco",
+   "url": "https://du.co/duco-mcp-server-brings-agentic-operations-for-post-trade-into-production/",
+   "date": "2026-11-25T09:13:15Z",
+   "tool": null,
+   "summary": "Duco made its MCP server generally available on 25 November 2026. Agents on any MCP client can search reconciliation breaks, label them, and match or clear exceptions under the user's existing permissions. Every action is written to Duco's audit log, and the server is available to Duco clients.",
+   "page": "news/2026/11/duco-opens-an-mcp-server-for-post-trade-reconciliation-agents.html"
+  },
+  {
+   "title": "Alta opens an MCP server so sales agents can prospect in chat",
+   "source": "Alta",
+   "url": "https://www.altahq.com/blog/alta-mcp-claude-chatgpt-codex",
+   "date": "2026-11-25T08:00:00Z",
+   "tool": null,
+   "summary": "Alta opened Alta MCP in Claude, ChatGPT, and Codex on 25 November 2026. A rep can describe an audience, get verified contacts, and draft a multichannel campaign in the same chat. Campaigns stay drafts until a person launches them, and sending or resuming a campaign asks for confirmation first.",
+   "page": "news/2026/11/alta-opens-an-mcp-server-so-sales-agents-can-prospect-in-chat.html"
+  },
+  {
+   "title": "Magister opens a marketing MCP server across 85 tools",
+   "source": "EIN Presswire",
+   "url": "https://www.einpresswire.com/article/957096938/magister-launches-a-marketing-mcp-server-that-connects-claude-chatgpt-codex-and-cursor-to-85-marketing-tools",
+   "date": "2026-11-25T05:50:00Z",
+   "tool": null,
+   "summary": "Magister Marketing launched an MCP server on 25 November 2026 that connects Claude, ChatGPT, Codex, Cursor, and other MCP clients to 85 marketing tools. It can read analytics and ad accounts and draft posts, but anything that publishes, sends, or spends waits for a person to approve it. Connect is $29 a month and the Agent plan is $99 a month, after a free trial.",
+   "page": "news/2026/11/magister-opens-a-marketing-mcp-server-across-85-tools.html"
+  },
   {
    "title": "Google Workspace opens MCP servers and a CLI for governed AI agents",
    "source": "Google",
@@ -53,33 +80,6 @@
    "tool": null,
    "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users.",
    "page": "news/2026/11/anthropic-opens-skills-over-mcp-and-long-running-tasks-in-claude.html"
-  },
-  {
-   "title": "JFrog says an AI agent published Hugging Face malware and leaked its own keys",
-   "source": "JFrog",
-   "url": "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/",
-   "date": "2026-11-24T16:00:00Z",
-   "tool": null,
-   "summary": "JFrog Security Research says an autonomous agent it calls ARTEX uploaded fake Hugging Face models that steal cloud credentials and commit them back to a public repo. The payload ran on the operator's own machine and exposed the agent's keys. Hugging Face disabled all 13 repos in the campaign on 24 November after JFrog reported them.",
-   "page": "news/2026/11/jfrog-says-an-ai-agent-published-hugging-face-malware-and-leaked-its.html"
-  },
-  {
-   "title": "Mesh launches an MCP server so coding agents can build payments flows",
-   "source": "PR Newswire",
-   "url": "https://www.prnewswire.com/news-releases/mesh-launches-mesh-mcp-turning-one-prompt-into-a-payments-integration-302949189.html",
-   "date": "2026-11-24T14:00:00Z",
-   "tool": null,
-   "summary": "Mesh launched Mesh MCP, a hosted server that lets a coding agent assemble a payments integration from Mesh's live documentation and API spec. Each request is checked against that spec before it is sent. The server is read-only, does not move funds, and connects to Claude Code, Cursor, Codex, and other MCP clients.",
-   "page": "news/2026/11/mesh-launches-an-mcp-server-so-coding-agents-can-build-payments-flows.html"
-  },
-  {
-   "title": "UK ICO says it will act if consumer AI agents ship without user controls",
-   "source": "ICO",
-   "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/11/developers-creating-agentic-ai-services-for-consumers-reminded-to-meet-their-data-protection-responsibilities/",
-   "date": "2026-11-24T09:00:00Z",
-   "tool": null,
-   "summary": "The UK Information Commissioner's Office said it will step in when organisations rush out consumer AI agents without privacy safeguards and real user controls. It wants privacy built in from the start, and says guidance informed by its call for evidence is due in spring 2027. The post does not name a product or announce a fine.",
-   "page": "news/2026/11/uk-ico-says-it-will-act-if-consumer-ai-agents-ship-without-user.html"
   }
  ]
 }
