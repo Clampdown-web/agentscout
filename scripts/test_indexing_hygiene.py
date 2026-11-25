@@ -97,7 +97,7 @@ def test_directory_index_sitemap_loc_matches_canonical():
     assert "/prompts/index.html" not in sm
 
 def test_homepage_filter_chips_nofollow_and_exact_counts():
-    """Homepage ?cat= tiles are nofollow; VideoObject uses exact listed counts, not N+ AI Agents."""
+    """Homepage ?cat= tiles are nofollow; VideoObject uses 6,000+/3,200+ floors; review-pages line is present."""
     import re
     import json as _json
     root = Path(__file__).resolve().parents[1]
@@ -112,8 +112,17 @@ def test_homepage_filter_chips_nofollow_and_exact_counts():
     tools = _json.loads((root / "tools.json").read_text(encoding="utf-8"))
     n_tools = len(tools)
     n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
-    assert f"({n_tools:,} AI agent tools & {n_mcp:,} MCP servers)" in html
+    def _hfloor(v):
+        v = int(v or 0)
+        f = (v // 100) * 100
+        return f if f else v
+    assert f"({_hfloor(n_tools):,}+ AI agent tools & {_hfloor(n_mcp):,}+ MCP servers)" in html
     assert f"({n_tools:,}+ AI Agents" not in html
+    assert "5,962" not in html
+    nrev = len(re.findall(r"/tools/[^/<]+\.html", (root / "sitemap.xml").read_text(encoding="utf-8")))
+    assert f"data-live-reviewed>{nrev:,}" in html
+    assert "full review pages" in html
+
 
 
 def main():

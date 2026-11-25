@@ -333,11 +333,28 @@ def _sync_index_counts():
     # carry rel="nofollow". Idempotent: only the form without rel is rewritten.
     s = s.replace('<a class="cattile" href="?cat=', '<a class="cattile" rel="nofollow" href="?cat=')
     s = s.replace('<a class="cattile" href="?uc=', '<a class="cattile" rel="nofollow" href="?uc=')
-    # Homepage VideoObject / poster alt: exact listed counts, no "+" padding, and
-    # "AI agent tools" (not "AI Agents") so the claim matches tools.json / the stats bar.
-    s = s.replace(f"({n:,}+ AI Agents & {_mcp:,}+ MCP Servers)", f"({n:,} AI agent tools & {_mcp:,} MCP servers)")
-    s = s.replace(f"indexes {n:,}+ AI agent tools and {_mcp:,}+ MCP servers daily", f"indexes {n:,} AI agent tools and {_mcp:,} MCP servers daily")
-    s = s.replace(f"verifying {n:,}+ AI agent tools and {_mcp:,}+ MCP servers daily", f"verifying {n:,} AI agent tools and {_mcp:,} MCP servers daily")
+    # Homepage VideoObject / poster alt: floor-rounded public headlines
+    # (6,000+ / 3,200+) derived from tools.json, not a stale literal.
+    import build_counts as _bc
+    _ht = _bc.headline_tools_label(n)
+    _hm = _bc.headline_mcp_label(_mcp)
+    _nrev = _bc.indexable_tool_pages()
+    s = re.sub(
+        r"Live Verification Terminal \([^)]*AI [Aa]gents?[^)]*MCP [Ss]ervers?\)",
+        f"Live Verification Terminal ({_ht} & {_hm})",
+        s,
+    )
+    s = re.sub(
+        r"indexes [\d,]+(?:\+)? AI agent tools and [\d,]+(?:\+)? MCP servers daily",
+        f"indexes {_ht} and {_hm} daily",
+        s,
+    )
+    s = re.sub(
+        r"verifying [\d,]+(?:\+)? AI agent tools and [\d,]+(?:\+)? MCP servers daily",
+        f"verifying {_ht} and {_hm} daily",
+        s,
+    )
+    s = re.sub(r'(data-live-reviewed">)[\d,]*', lambda m: m.group(1) + f"{_nrev:,}", s, count=1)
     # main landmark for screen readers (a11y audit Oct 18 2026): hero through the newsletter box, footer stays outside
     if "<main" not in s and '<header class="hero">' in s and "<footer" in s:
         s = s.replace('<header class="hero">', '<main id="main"><header class="hero">', 1)

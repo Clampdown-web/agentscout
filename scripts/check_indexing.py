@@ -71,11 +71,17 @@ def check_a2_homepage():
     tools = json.loads((ROOT / "tools.json").read_text(encoding="utf-8"))
     n_tools = len(tools)
     n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
-    want = f"({n_tools:,} AI agent tools & {n_mcp:,} MCP servers)"
-    vo_ok = want in s and f"({n_tools:,}+ AI Agents" not in s
-    note(title_ok and vo_ok,
-         f"homepage counts: title has no catalog total; VideoObject uses exact {n_tools:,} tools / {n_mcp:,} MCP servers"
-         + ("" if title_ok and vo_ok else "; title or VideoObject mismatch"))
+    def _hfloor(v):
+        v = int(v or 0)
+        f = (v // 100) * 100
+        return f if f else v
+    want = f"({_hfloor(n_tools):,}+ AI agent tools & {_hfloor(n_mcp):,}+ MCP servers)"
+    vo_ok = want in s and f"({n_tools:,}+ AI Agents" not in s and "5,962" not in s
+    nrev = len(re.findall(r"/tools/[^/<]+\.html", (ROOT / "sitemap.xml").read_text(encoding="utf-8")))
+    reviewed_ok = f"data-live-reviewed>{nrev:,}" in s
+    note(title_ok and vo_ok and reviewed_ok,
+         f"homepage counts: title has no catalog total; VideoObject uses {_hfloor(n_tools):,}+ / {_hfloor(n_mcp):,}+; {nrev:,} with full review pages"
+         + ("" if title_ok and vo_ok and reviewed_ok else "; title, VideoObject, or review-pages line mismatch"))
 
 
 def check_a3():
