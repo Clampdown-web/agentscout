@@ -1,12 +1,12 @@
 {
- "date": "2026-11-22",
- "slug": "pixelary",
- "name": "Pixelary",
- "why": "A standout MCP servers tool for builders: meta, TikTok and ChatGPT Ads conversion tracking: stats, event log, audits and triggers.",
+ "date": "2026-11-24",
+ "slug": "mcp-go-sdk",
+ "name": "MCP Go SDK",
+ "why": "A standout MCP servers tool for builders: official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
  "category": "MCP servers",
- "description": "Meta, TikTok and ChatGPT Ads conversion tracking: stats, event log, audits and triggers.",
- "logo": "https://agentscouthq.com/assets/logos/pixelary.png",
- "page": "https://agentscouthq.com/tools/pixelary.html",
+ "description": "Official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
+ "logo": "https://agentscouthq.com/assets/logos/mcp-go-sdk.png",
+ "page": "https://agentscouthq.com/tools/mcp-go-sdk.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -147,6 +147,10 @@
   {
    "date": "2026-11-22",
    "slug": "pixelary"
+  },
+  {
+   "date": "2026-11-24",
+   "slug": "mcp-go-sdk"
   }
  ]
 }
