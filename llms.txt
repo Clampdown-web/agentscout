@@ -1,12 +1,12 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 6,007 AI agent tools in 40 categories, including 3,206 MCP servers. Checked daily, 3,192 of 3,206 checked servers live, last checked 2026-11-23. Handshake check: 1,770 of 1,772 remote servers checked so far. Of those, 572 answered with a tools list, 1,166 asked for auth, 32 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 6,032 AI agent tools in 40 categories, including 3,211 MCP servers. Checked daily, 3,189 of 3,211 checked servers live, last checked 2026-11-24. Handshake check: 1,770 of 1,772 remote servers checked so far. Of those, 572 answered with a tools list, 1,166 asked for auth, 32 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 <!-- mcp-reach:start -->
 
 ## MCP server reachability
 
-Checked daily, 3,192 of 3,206 checked servers live, last checked 2026-11-23.
+Checked daily, 3,189 of 3,211 checked servers live, last checked 2026-11-24.
 
 Handshake check: 1,770 of 1,772 remote servers checked so far. Of those, 572 answered with a tools list, 1,166 asked for auth, 32 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT.
 
@@ -25,7 +25,7 @@ Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ, https://x.com/clampdown19
 MCP Registry ID: com.agentscouthq/directory
 MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://mcp.agentscouthq.com/mcp — 100% free, read-only, no API key or x402 wallet required)
-Catalog last checked: 2026-11-22 (Pacific)
+Catalog last checked: 2026-11-24 (Pacific)
 
 ## For AI agents
 
@@ -45,7 +45,7 @@ Catalog last checked: 2026-11-22 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 3,206 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 3,211 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
@@ -63,7 +63,7 @@ Catalog last checked: 2026-11-22 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://mcp.agentscouthq.com/mcp) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 3,206 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 3,211 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -83,42 +83,42 @@ Catalog last checked: 2026-11-22 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 3206 tools
-- [frameworks](https://agentscouthq.com/categories/frameworks.html): 415 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 3211 tools
+- [frameworks](https://agentscouthq.com/categories/frameworks.html): 416 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 317 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 163 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 132 tools
-- [video generation](https://agentscouthq.com/categories/video-generation.html): 129 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 164 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 134 tools
+- [video generation](https://agentscouthq.com/categories/video-generation.html): 133 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 111 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 99 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 94 tools
-- [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 88 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 95 tools
+- [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 89 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 77 tools
-- [image generation](https://agentscouthq.com/categories/image-generation.html): 74 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 71 tools
+- [image generation](https://agentscouthq.com/categories/image-generation.html): 75 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 73 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 71 tools
 - [security & governance](https://agentscouthq.com/categories/security-governance.html): 71 tools
 - [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 70 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 70 tools
-- [research](https://agentscouthq.com/categories/research.html): 66 tools
+- [research](https://agentscouthq.com/categories/research.html): 67 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 64 tools
 - [productivity](https://agentscouthq.com/categories/productivity.html): 63 tools
 - [music production](https://agentscouthq.com/categories/music-production.html): 53 tools
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 51 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 50 tools
-- [customer support](https://agentscouthq.com/categories/customer-support.html): 42 tools
+- [customer support](https://agentscouthq.com/categories/customer-support.html): 43 tools
 - [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 40 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 40 tools
 - [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 33 tools
 - [data & analytics](https://agentscouthq.com/categories/data-analytics.html): 32 tools
-- [DevOps & cloud](https://agentscouthq.com/categories/devops-cloud.html): 30 tools
+- [DevOps & cloud](https://agentscouthq.com/categories/devops-cloud.html): 31 tools
+- [app builders](https://agentscouthq.com/categories/app-builders.html): 30 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 30 tools
-- [app builders](https://agentscouthq.com/categories/app-builders.html): 29 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 27 tools
-- [finance & accounting](https://agentscouthq.com/categories/finance-accounting.html): 25 tools
+- [finance & accounting](https://agentscouthq.com/categories/finance-accounting.html): 26 tools
 - [games](https://agentscouthq.com/categories/games.html): 24 tools
 - [education & tutoring](https://agentscouthq.com/categories/education-tutoring.html): 23 tools
+- [e-commerce & retail](https://agentscouthq.com/categories/e-commerce-retail.html): 20 tools
 - [HR & recruiting](https://agentscouthq.com/categories/hr-recruiting.html): 20 tools
-- [e-commerce & retail](https://agentscouthq.com/categories/e-commerce-retail.html): 19 tools
 - [QA & testing](https://agentscouthq.com/categories/qa-testing.html): 16 tools
 - [legal & compliance](https://agentscouthq.com/categories/legal-compliance.html): 15 tools
 - [healthcare & biotech](https://agentscouthq.com/categories/healthcare-biotech.html): 15 tools
@@ -192,8 +192,33 @@ Catalog last checked: 2026-11-22 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-11-22 to 2026-11-23): 31
+- Tools added in the last 2 days (2026-11-23 to 2026-11-24): 36
 
+- [AI Fruit Video](https://agentscouthq.com/tools/ai-fruit-video.html) (added 2026-11-24): AI Fruit Video turns a short story into a talking-fruit video. On 24 Nov 2026 the pricing page listed a free account with no card, then subscriptions billed yearly: Starter at $6.67 a month ($80 a year, 250 credits), Creator at $16.67 a month ($200 a year, 700 credits) and Studio at $50 a month ($600 a year, 2,400 credits). One-time credit packs start at $10. Paid generations are watermark-free. Unused subscription credits expire each month.
+- [Patchwork Tattoos](https://agentscouthq.com/tools/patchwork-tattoos.html) (added 2026-11-24): Patchwork Tattoos is an AI tattoo generator for patchwork layouts. You describe a concept or start from a photo, and the site also has a patchwork builder. On 24 Nov 2026 the pricing page said you can try 2 free concepts, then Starter is $8 a month billed as $96 a year (300 credits unlock each month, about 15 concepts) and Pro is $16 a month billed as $192 a year. Pack credits do not expire. Checkout is by Waffo.
+- [open-artifact](https://agentscouthq.com/tools/open-artifact.html) (added 2026-11-24): open-artifact is an Apache-2.0 project for agent- and model-agnostic artifacts stored as plain files on your machine. You can edit them, comment on them and export slides or UI designs. The repository has no separate website.
+- [MCP-Nest](https://agentscouthq.com/tools/mcp-nest.html) (added 2026-11-24): MCP-Nest is an MIT-licensed NestJS module for building Model Context Protocol servers. You use it to expose tools, resources and prompts from a NestJS app to an MCP client. The repository does not list a separate marketing site.
+- [Argo CD MCP](https://agentscouthq.com/tools/argo-cd-mcp.html) (added 2026-11-24): mcp-for-argocd is an Apache-2.0 MCP server for Argo CD, so a coding agent can work with Argo CD from an MCP client. The published npm package is argocd-mcp. It is maintained under argoproj-labs.
+- [freee MCP](https://agentscouthq.com/tools/freee-mcp.html) (added 2026-11-24): freee-mcp is an Apache-2.0 MCP server that connects an assistant to the freee accounting API. freee is a Japanese cloud accounting product. The repository homepage points at https://www.freee.co.jp/. The server is for builders who already use freee and want an agent to call that API.
+- [Codync](https://agentscouthq.com/tools/codync.html) (added 2026-11-24): Codync is an Apache-2.0 app for talking to coding agents you already run, such as Claude Code, Codex, Gemini CLI and Cursor, using your own subscription. The project describes itself as an open-source alternative in the style of a Grok bot, where you bring the agent. The site is https://www.codync.dev/.
+- [Engram](https://agentscouthq.com/tools/engram.html) (added 2026-11-24): Engram is a persistent memory system for AI coding agents. It is an agent-agnostic Go binary with SQLite and full-text search, plus an MCP server, an HTTP API and a CLI. The project is MIT licensed. The site is https://engram.gentlemanprogramming.com/.
+- [mcp-go](https://agentscouthq.com/tools/mcp-go.html) (added 2026-11-24): mcp-go is a Go library for the Model Context Protocol. It is for connecting an LLM application to external tools and data through MCP servers and clients. The project is MIT licensed. The site is https://mcp-go.dev/. It is a different codebase from the official Go SDK in modelcontextprotocol/go-sdk.
+- [Bolts AI](https://agentscouthq.com/tools/bolts-ai.html) (added 2026-11-24): Bolts AI, from the BuildItOmi company, gives a business AI employees that work on their own cloud computers and ask before they send, post or pay. The homepage on 24 Nov 2026 offered a 30-minute trial. The pricing page listed four account plans in US dollars: Bolts Lite $19 a month (1 person, up to 3 Bolts), Bolts $49 (3 people, up to 10), Bolts Pro $149 (50 people, up to 50) and Bolts Max $299 (200 people, up to 200). Yearly billing is 10 months for 12.
+- [Fabbo](https://agentscouthq.com/tools/fabbo.html) (added 2026-11-24): Fabbo is an AI video and image generator. You start from a sentence, a photo or a template, and one credit balance pays for the video and image models on the site. On 24 Nov 2026 the pricing page listed a free start with credits on sign-up and no card, Lite at $15 a month for 300 credits, and Pro at $29 a month for 800 credits. Yearly billing was offered at a lower monthly rate.
+- [ColorWillow](https://agentscouthq.com/tools/colorwillow.html) (added 2026-11-24): ColorWillow is a site of free printable coloring pages for kids, with an AI coloring-page maker. It also hosts an MCP endpoint at https://colorwillow.com/mcp. On 24 Nov 2026 a streamable-HTTP initialize returned server name colorwillow, version 1.0.0. A plain GET to that URL returns JSON telling the client to use MCP streamable HTTP POST. The site navigation includes AI plans. Dollar prices for those plans were not captured.
+- [Toshi](https://agentscouthq.com/tools/toshi.html) (added 2026-11-24): Toshi is a Turkish-language assistant for the city you are in. The site at toshi.tr asks you to tell Toshi what you want, then helps you find nearby places and events, look at menus, place an order at businesses that take orders, and send a reservation or appointment request. The pages checked on 24 Nov 2026 were in Turkish. No price was shown on the homepage.
+- [Markin](https://agentscouthq.com/tools/markin.html) (added 2026-11-24): Markin is an agent platform for direct-to-consumer brands. It connects store and CRM data, sizes an opportunity, and drafts campaigns and messages for a person to review before anything runs. On 24 Nov 2026 the pricing page listed a free trial at €0 with 200 welcome credits that expire after 30 days and no card, and Pro at €49 a month plus VAT for 750 credits shared by the team. Higher credit pools were shown at 2,500, 8,500 and 17,500.
+- [blubiu](https://agentscouthq.com/tools/blubiu.html) (added 2026-11-24): blubiu is an AI animation video generator that turns a script, an idea or a photo into clips that reuse saved characters. The site describes story, image and video tools for shorts, vlogs and explainers. On 24 Nov 2026 the pricing page listed a free plan with 45 credits a month and Starter at $14.90 a month for 1,000 credits, with yearly billing described as two months free. One credit balance covers the image, video and audio models on the site.
+- [DailyTube Digest](https://agentscouthq.com/tools/dailytube-digest.html) (added 2026-11-24): DailyTube Digest turns updates from YouTube channels, X accounts and subreddits into one daily brief with links back to each source, delivered by Telegram, email, browser notification or webhook. The developer docs describe a hosted MCP at https://api.dtdigest.com/v1/mcp (streamable HTTP) that you add in Claude Code and approve in the browser. On 24 Nov 2026 the homepage listed a free tier with no card and a paid plan at $6.99 a month.
+- [Social Fetch](https://agentscouthq.com/tools/social-fetch.html) (added 2026-11-24): Social Fetch MCP connects Cursor, VS Code, Claude, Windsurf and other clients to the Social Fetch API so an agent can look up creators, posts, transcripts and web pages. The hosted endpoint is https://api.socialfetch.dev/mcp with browser OAuth. A stdio build in the same repo can use an API key. The README says endpoint tools are metered in credits like the REST API, while docs tools and the balance check are not. Dollar rates were not in the credits page captured on 24 Nov 2026.
+- [Morse Code Translator](https://agentscouthq.com/tools/morse-code-translator.html) (added 2026-11-24): Morse Code Translator MCP is a free hosted MCP server for International Morse code. It translates text to Morse, decodes Morse, returns a short WAV and shows the alphabet, with the same rules as morsecodetranslator.com. The server URL is https://morsecodetranslator.com/mcp/. The README says there is no account and no API key, the transport is streamable HTTP, and the limit is 60 requests a minute. The tools are text_to_morse, morse_to_text, morse_audio and morse_alphabet.
+- [Kinomo](https://agentscouthq.com/tools/kinomo.html) (added 2026-11-24): Kinomo is a native Mac animation studio for Apple silicon (macOS 15 or later) where a person and an MCP-capable agent build videos from HTML scenes. The agent writes scenes and motion over MCP, and the edit shows up in the timeline. The FAQ on 24 Nov 2026 said there is a free plan and paid plans from $50 a year. It names Claude Code, Codex and Cursor as example clients.
+- [Kallina](https://agentscouthq.com/tools/kallina.html) (added 2026-11-24): Kallina is an AI voice agent that answers phone calls, writes down an order or appointment, and passes it to a CRM, with handover to a person when needed. The English page says it runs on the business's current number or on the website, speaks 70+ languages via ElevenLabs v3, and has been tested on real Romanian and Russian calls. The same page lists the price as from 99 USD a month. Named integrations include amoCRM, Bitrix24, Syrve and Altegio, with webhooks for other systems.
+- [Anywear Studio](https://agentscouthq.com/tools/anywear-studio.html) (added 2026-11-24): Anywear Studio is a live AI virtual try-on for clothes. You add a clothing image, turn on the camera and preview the look in the browser or the Chrome extension. One Pass is one clothing try-on (10 credits), up to 30 seconds in the room. New accounts get 3 free try-ons. On 24 Nov 2026 the pricing page listed Starter at $9.99 a month for 50 Passes and Plus at $19.99 a month for 110 Passes. The site says a preview is not a measurement or a guarantee of fit.
+- [Rogue Agent Union](https://agentscouthq.com/tools/rogue-agent-union.html) (added 2026-11-24): Rogue Agent Union is a public exchange where agents can introduce themselves and reply in shared threads without an email, a profile or an approval step. On 24 Nov 2026 the site said immediate posting was open for a bounded trial and that messages are public once accepted. Agents connect over HTTPS. No price was listed on the homepage.
+- [Wavegrain](https://agentscouthq.com/tools/wavegrain.html) (added 2026-11-24): Wavegrain makes curated TikTok slideshows and Instagram carousels and can schedule them from an assistant. The hosted MCP at https://wavegrain.com/api/mcp uses OAuth for Claude and ChatGPT and an access key for other clients. On 24 Nov 2026 the pricing page listed Starter at $29 a month (300 credits, about 100 slideshows, 5 brands), Pro at $49 a month (800 credits, 15 brands) and Agency at $99 a month (2,000 credits). The page said posts go to TikTok and YouTube today, with Instagram, Facebook, Threads and LinkedIn still coming. Yearly billing was listed as two months free.
+- [aichat.md](https://agentscouthq.com/tools/aichat-md.html) (added 2026-11-24): aichat.md is an AI assistant that answers customer messages on a website and on chat channels such as Instagram and WhatsApp, with setup the maker says takes 24 to 48 hours. On 24 Nov 2026 the English page listed Starter at $49 a month (2,000 credits, about 2,000 conversations, one assistant, Instagram, WhatsApp and the website), Pro at $150 a month (10,000 credits, two assistants, connections such as Altegio, Syrve, AmoCRM, Bitrix24 and Google Sheets, plus handover to a person) and Scale at $490 a month (50,000 credits, separate assistants per department). Plans are monthly and can be cancelled.
+- [Frank AI Researcher](https://agentscouthq.com/tools/frank-ai-researcher.html) (added 2026-11-24): Frank AI Researcher is a hosted MCP server for AI-moderated voice interviews with a team's own customers. An MCP client can draft a study, publish an interviewer link and read transcripts. Frank does not recruit participants, and the project README says MCP is included on every plan, including Free. On 24 Nov 2026 the pricing page listed a free plan with 60 voice minutes a month and no card. Paid yearly totals were Starter $590 (120 voice minutes), Growth $1,990 (450 voice minutes) and Business $3,750 (950 voice minutes), with the monthly toggle showing $59, $199 and $375. The endpoint is https://api.hifrank.ai/mcp.
 - [Wechatai](https://agentscouthq.com/tools/wechatai.html) (added 2026-11-23): Wechatai (微伴) connects WeChat to models such as DeepSeek, Claude and GPT so you can chat, generate images and run an agent from WeChat, using your own model API keys.
 - [Tancky AI](https://agentscouthq.com/tools/tancky-ai.html) (added 2026-11-23): Tancky AI is a browser image-to-image editor that restyles or edits a photo from a text prompt, including the background or outfit, while trying to keep faces and composition intact.
 - [BatchData](https://agentscouthq.com/tools/batchdata.html) (added 2026-11-23): BatchData provides real estate data APIs and an MCP server so agents can look up property, owner and listing data.
@@ -205,26 +230,6 @@ Catalog last checked: 2026-11-22 (Pacific)
 - [OpenAny](https://agentscouthq.com/tools/openany.html) (added 2026-11-23): OpenAny is a B2A marketplace where agents can discover and call models, APIs, skills, data and services with pay-as-you-go pricing, including an MCP server at https://mcp.openany.si. No OpenAny subscription is required; new accounts can receive $0.50 in signup credits.
 - [Poptin MCP](https://agentscouthq.com/tools/poptin-mcp.html) (added 2026-11-23): Poptin MCP is a hosted MCP server that connects Claude, ChatGPT, Cursor and other clients to a Poptin account so you can create popups, segment visitors, send campaigns and automate follow-ups from the assistant you already use.
 - [Kwern](https://agentscouthq.com/tools/kwern.html) (added 2026-11-23): Kwern is a set of AI marketing agents for indie makers. You give it the URL of what you built; one agent per channel drafts posts, replies and ads on your own model key, and nothing publishes until you approve it.
-- [Coherta](https://agentscouthq.com/tools/coherta.html) (added 2026-11-22): Coherta is a B2B lead-discovery and LinkedIn outreach workspace. It finds decision-makers, enriches contact data and runs personalized campaigns, with CRM integrations and an Extended-plan MCP option.
-- [ReverseGrowth](https://agentscouthq.com/tools/reversegrowth.html) (added 2026-11-22): ReverseGrowth is a growth-analyst report for any website. You type a domain and get a sourced briefing on traffic, search, backlinks, launches and community threads, compiled from public data.
-- [LandOffer](https://agentscouthq.com/tools/landoffer.html) (added 2026-11-22): LandOffer finds fresh job posts and lets you apply with free Chrome autofill or an AI agent. It covers roles such as engineering, sales, marketing, operations and healthcare, with resume-based alerts.
-- [Servana](https://agentscouthq.com/tools/servana.html) (added 2026-11-22): Servana is a hosted MCP server for local service search. An agent can search nearby vendors, get pricing estimates and message businesses, and the listing page says no auth is required to connect.
-- [Mirasim](https://agentscouthq.com/tools/mirasim.html) (added 2026-11-22): Mirasim is a shared workspace where a team and Mira Bot can steer coding agents such as Claude Code and Codex together in one space, so several people can direct the same agent work.
-- [Happy Customer](https://agentscouthq.com/tools/happy-customer.html) (added 2026-11-22): Happy Customer is AI role-play training for difficult customer conversations. Company owners can practise realistic complaints, and the site offers three free practice starts.
-- [Cutroom](https://agentscouthq.com/tools/cutroom.html) (added 2026-11-22): Cutroom is an AI video editor. You upload footage, describe the cut in plain language, review a frame-accurate plan, and the tool renders only after you approve it. New accounts get free credits and no card is required to start.
-- [ComicIdeas](https://agentscouthq.com/tools/comicideas.html) (added 2026-11-22): ComicIdeas is an AI comic and webtoon maker. You describe an idea, get a script, keep characters consistent across panels, and edit speech balloons, with a free daily script allowance and paid credit plans.
-- [QuoteIQ](https://agentscouthq.com/tools/quoteiq.html) (added 2026-11-22): QuoteIQ is field-service software for home-service contractors. It handles estimates, scheduling, invoices, payments, job photos and reviews, with AI built in, and lists plans starting at $29.99 a month.
-- [DecorViz](https://agentscouthq.com/tools/decorviz.html) (added 2026-11-22): DecorViz lets you upload a photo of a room and an image of furniture or decor, then get a photorealistic preview with lighting and shadows before you buy. The site offers a free trial with no credit card.
-- [Creepless](https://agentscouthq.com/tools/creepless.html) (added 2026-11-22): Creepless checks each client request against the scope you already agreed. Work that is in scope goes to your team; extra work becomes a quote the client approves first.
-- [Neon Blue](https://agentscouthq.com/tools/neon-blue.html) (added 2026-11-22): Neon Blue builds simulations of human behavior so you can test pricing, product, creative and UI decisions with simulated audiences before you spend time or money in the real world.
-- [Retypit](https://agentscouthq.com/tools/retypit.html) (added 2026-11-22): Retypit lets you upload a photo or screenshot, change the text in the image, and keep the original font, color and style. It replaces words in place, without a separate design file.
-- [VfxSmith](https://agentscouthq.com/tools/vfxsmith.html) (added 2026-11-22): VfxSmith is a browser tool for making pixel-art visual effects. You can generate new effects with AI or customize a large free library, then export transparent PNG sprite sheets, GIFs, animation JSON and Godot 4 packs.
-- [Taskeya AI Teammate](https://agentscouthq.com/tools/taskeya-ai-teammate.html) (added 2026-11-22): Taskeya AI Teammate is a team workspace where people and an AI teammate can act on projects and tasks, including from ChatGPT or your own MCP agent. The site lists a 14-day free trial with no credit card.
-- [Numio](https://agentscouthq.com/tools/numio.html) (added 2026-11-22): Numio is an AI workspace for accounting firms and businesses. It connects books from Holded, Odoo, a3innuva, a3ECO or Excel and turns that data into finished accounting work.
-- [LangScribe](https://agentscouthq.com/tools/langscribe.html) (added 2026-11-22): LangScribe is a language-learning site with graded English and Japanese course ladders. Lessons such as VOA Learning English are pre-transcribed and translated, not auto-captions, so you can open a level and study right away.
-- [Merrows](https://agentscouthq.com/tools/merrows.html) (added 2026-11-22): Merrows is an AI-powered customer rep for web chat, email, phone and SMS. It can take orders, track deliveries and handle returns from your own POS and helpdesk data.
-- [Tapline](https://agentscouthq.com/tools/tapline.html) (added 2026-11-22): Tapline is a hosted MCP server and web data API at https://api.tapline.sh/mcp. Agents can query maintained social, property, travel and market endpoints, and failed requests do not use credits.
-- [CallEez](https://agentscouthq.com/tools/calleez.html) (added 2026-11-22): CallEez is an AI phone receptionist with a dedicated number that answers missed calls, takes messages and can book jobs while you work. Plans start at £19 a month plus VAT.
 
 ## Launches and status
 

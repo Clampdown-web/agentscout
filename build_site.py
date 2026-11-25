@@ -354,12 +354,28 @@ def _sync_index_counts():
         f"verifying {_ht} and {_hm} daily",
         s,
     )
-    s = re.sub(r'(data-live-reviewed">)[\d,]*', lambda m: m.group(1) + f"{_nrev:,}", s, count=1)
+    s = _stamp_reviewed_count(s, _nrev)
     # main landmark for screen readers (a11y audit Oct 18 2026): hero through the newsletter box, footer stays outside
     if "<main" not in s and '<header class="hero">' in s and "<footer" in s:
         s = s.replace('<header class="hero">', '<main id="main"><header class="hero">', 1)
         i = s.rfind("<footer"); s = s[:i] + "</main>\n" + s[i:]
     open("index.html", "w").write(s)
+def _stamp_reviewed_count(s=None, nrev=None):
+    """Homepage 'full review pages' uses sitemap tool URLs, after the thin-page prune."""
+    import build_counts as _bc
+    write = s is None
+    if nrev is None:
+        nrev = _bc.indexable_tool_pages()
+    if s is None:
+        if not os.path.exists("index.html"):
+            return ""
+        s = open("index.html", encoding="utf-8").read()
+    # The live attribute is data-live-reviewed> with no quote. The quoted form
+    # never matched, so the sentence kept the pre-prune catalog total.
+    s2, _n = re.subn(r'(data-live-reviewed"?>)[\d,]*', lambda m: m.group(1) + f"{int(nrev):,}", s, count=1)
+    if write and s2 != s:
+        open("index.html", "w", encoding="utf-8").write(s2)
+    return s2
 _sync_index_counts()
 import build_recent
 build_recent.build(t)
@@ -599,6 +615,9 @@ def _quality_finish():
     _bsn_final.charset_first()
     import build_og as _bog
     _bog.stamp_share_tags()  # submit/sponsor are rewritten from the template after the image pass
+    # answer_blocks runs before catalog-only URLs leave the sitemap, so the
+    # "full review pages" count has to be rewritten from the final sitemap.
+    _stamp_reviewed_count()
     # Count check runs after catalog-only rows leave the sitemap. Checking earlier
     # fails the build on those URLs before the thin-page rule can drop them.
     if _sp.run([_sys.executable,"scripts/check_counts.py"]).returncode:

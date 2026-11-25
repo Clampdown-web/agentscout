@@ -59,6 +59,9 @@ def followers():
     clamp = int(old.get("clampdown19") or prev.get("x_clampdown19_followers") or 0)
     scout = int(old.get("agentscouthq") or prev.get("x_agentscouthq_followers") or 0)
     sb = {}
+    today = _now().strftime("%Y-%m-%d")
+    # A row fetched today wins, even when an earlier path is an older snapshot.
+    # The first readable file stays the fallback when none of them were fetched today.
     for p in (
         "/workspace/data/30-day-sprint-tracker.json",
         "/workspace/data/growth-sprint-30d.json",
@@ -66,17 +69,29 @@ def followers():
         "data/30-day-growth-scoreboard.json",
         "data/30-day-sprint-tracker.json",
     ):
-        if os.path.exists(p):
-            sb = _read(p)
-            if sb:
-                break
+        if not os.path.exists(p):
+            continue
+        candidate = _read(p)
+        if not candidate:
+            continue
+        cur_try = candidate.get("current") or {}
+        fetched_try = str(cur_try.get("x_followers_fetched_at") or cur_try.get("updated_at") or "")[:10]
+        fresh = (
+            fetched_try == today
+            and cur_try.get("clampdown19_followers")
+            and cur_try.get("agentscouthq_followers") is not None
+        )
+        if fresh:
+            sb = candidate
+            break
+        if not sb:
+            sb = candidate
     snap = {}
     for p in sorted(glob.glob("/workspace/notes/daily-traffic/*-snapshot.json"), reverse=True):
         snap = _read(p)
         if snap:
             break
     cur = sb.get("current") or {}
-    today = _now().strftime("%Y-%m-%d")
     fetched = str(cur.get("x_followers_fetched_at") or cur.get("updated_at") or "")[:10]
     if fetched == today and cur.get("clampdown19_followers") and cur.get("agentscouthq_followers") is not None:
         clamp = int(cur["clampdown19_followers"])

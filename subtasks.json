@@ -2614,7 +2614,8 @@
 "browser-automation",
 "sandboxes",
 "terminal-agents",
-"ide-agents"
+"ide-agents",
+"images-design"
 ],
 "agents-cli": [
 "evals",
@@ -2622,9 +2623,7 @@
 "rules-config"
 ],
 "21st-magic-mcp": [
-"mcp-servers",
-"ide-agents",
-"video-editing"
+"mcp-gateways"
 ],
 "apache-maka": [
 "evals",
@@ -3203,12 +3202,12 @@
 ],
 "manifest": [
 "token-costs",
+"voice-phone",
 "mcp-gateways",
 "local-models"
 ],
 "superagent": [
 "penetration-testing",
-"voice-phone",
 "guardrails",
 "agent-auth",
 "agent-frameworks",
@@ -4579,14 +4578,13 @@
 "images-design"
 ],
 "kling-ai": [
-"vector-rag",
 "agent-auth",
-"mcp-gateways",
 "terminal-agents",
+"ide-agents",
 "video-editing",
+"stem-separation",
 "video",
-"images-design",
-"rules-config"
+"images-design"
 ],
 "hailuo-ai": [
 "video"
@@ -4990,7 +4988,8 @@
 "images-design"
 ],
 "sd-next": [
-"local-models",
+"color-upscaling",
+"video-editing",
 "video",
 "images-design"
 ],
@@ -8978,7 +8977,10 @@
 "computer-use"
 ],
 "life-manager": [
-"email-agents"
+"voice-phone",
+"workflow-automation",
+"local-models",
+"video-editing"
 ],
 "kilobat-cli": [
 "mcp-servers",
@@ -20808,11 +20810,8 @@
 "the-engine": [
 "planning-tasks",
 "voice-phone",
-"email-agents",
 "sales-agents",
-"marketing-agents",
-"research-agents",
-"video"
+"marketing-agents"
 ],
 "aicost": [
 "planning-tasks",
@@ -21318,5 +21317,107 @@
 ],
 "wechatai": [
 "images-design"
+],
+"frank-ai-researcher": [
+"planning-tasks",
+"voice-phone",
+"research-agents",
+"mcp-servers",
+"subtitles-transcripts"
+],
+"aichat-md": [
+"planning-tasks",
+"chat-app-agents",
+"stem-separation"
+],
+"wavegrain": [],
+"rogue-agent-union": [
+"email-agents"
+],
+"anywear-studio": [
+"browser-automation",
+"images-design"
+],
+"kallina": [
+"voice-phone",
+"sales-agents"
+],
+"kinomo": [
+"planning-tasks",
+"video-editing",
+"video"
+],
+"morse-code-translator": [
+"mcp-servers",
+"rules-config"
+],
+"social-fetch": [
+"browser-automation",
+"ide-agents",
+"subtitles-transcripts"
+],
+"dailytube-digest": [
+"planning-tasks",
+"chat-app-agents",
+"email-agents",
+"browser-automation"
+],
+"blubiu": [
+"planning-tasks",
+"video-editing",
+"video",
+"images-design"
+],
+"markin": [
+"sales-agents"
+],
+"toshi": [],
+"colorwillow": [
+"planning-tasks"
+],
+"fabbo": [
+"agent-payments",
+"video",
+"images-design"
+],
+"bolts-ai": [
+"planning-tasks"
+],
+"mcp-go": [
+"codebase-context",
+"mcp-servers",
+"agent-frameworks",
+"vfx-compositing"
+],
+"engram": [
+"agent-memory",
+"mcp-servers",
+"terminal-agents"
+],
+"codync": [
+"terminal-agents"
+],
+"freee-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"argo-cd-mcp": [
+"mcp-servers"
+],
+"mcp-nest": [
+"marketing-agents",
+"vfx-compositing",
+"stem-separation"
+],
+"open-artifact": [
+"video-editing",
+"stem-separation",
+"images-design"
+],
+"patchwork-tattoos": [
+"agent-payments"
+],
+"ai-fruit-video": [
+"video"
 ]
 }

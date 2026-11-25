@@ -396,8 +396,17 @@ def _scroll_button_problems() -> list[str]:
         chunk = block.group(0) if block else ""
         if not chunk or "scrollbtn up" not in chunk or "scrollbtn down" not in chunk:
             problems.append("app.js no longer creates the up/down scroll buttons")
-        elif re.search(r"innerWidth\s*[<]=?\s*640|matchMedia\(\s*[\"'][^\"']*max-width\s*:\s*640px", chunk):
-            problems.append("app.js skips scroll buttons at max-width 640px")
+        else:
+            # A width check before the buttons are inserted skips them on phones.
+            # The handler may still use matchMedia(640) after appendChild to reveal
+            # the same buttons while the page is scrolling.
+            created = chunk.find("appendChild")
+            gate = re.search(
+                r"innerWidth\s*[<]=?\s*640|matchMedia\(\s*[\"'][^\"']*max-width\s*:\s*640px",
+                chunk,
+            )
+            if gate and (created < 0 or gate.start() < created):
+                problems.append("app.js skips scroll buttons at max-width 640px")
     return problems
 
 
@@ -706,7 +715,9 @@ SHARE_JS_OPTIONAL_FILES = {
     "how-it-started.html",
     "sponsor.html",
 }
-SHARE_JS_OPTIONAL_PREFIXES = ("videos/", "launches/", "bot-store/")
+# Prompt pages copy a link with their own button. Guide hubs have no share button.
+# Both match main: app.js, consent.js, and track.js, and not share.js.
+SHARE_JS_OPTIONAL_PREFIXES = ("videos/", "launches/", "bot-store/", "prompts/", "guides/")
 
 
 def _share_js_optional(rel: str) -> bool:
@@ -780,13 +791,17 @@ def _shared_script_problems() -> tuple[list[str], list[str]]:
         if rel == "sponsor.html" and "api/tools.json" in text:
             problems.append(f"{rel} still fetches api/tools.json; metrics.json already has the counts")
         for name in required:
-            defer = r" defer" if name in ("consent.js", "track.js") else ""
             if late:
                 found = re.search(rf'{re.escape(name)}\?v={version}', text)
-            elif name == "app.js" or (name == "share.js" and not rel.startswith("bot-templates/")):
-                found = re.search(rf'<script src="[^"]*{re.escape(name)}\?v={version}"(?: defer)?></script>', text)
             else:
-                found = re.search(rf'<script src="[^"]*{re.escape(name)}\?v={version}"{defer}></script>', text)
+                # defer may sit before or after src. The build writes defer first.
+                found = re.search(
+                    rf'<script\b[^>]*\bsrc="[^"]*{re.escape(name)}\?v={version}"[^>]*>\s*</script>',
+                    text,
+                    re.I,
+                )
+                if found and name in ("consent.js", "track.js") and not re.search(r"\bdefer\b", found.group(0), re.I):
+                    found = None
             if not found:
                 missing.append(f"{name}?v={version}")
             else:

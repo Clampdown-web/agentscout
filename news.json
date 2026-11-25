@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T04:19:19Z",
+ "updated": "2026-11-24T23:11:54Z",
  "sources": [
   "TechCrunch",
   "The Verge",
@@ -10,76 +10,76 @@
  ],
  "items": [
   {
-   "title": "OpenAI starts testing always-on Dots agents on the $20 Plus plan",
-   "source": "The Verge",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1038370/openai-is-starting-to-bring-dots-to-plus-tier-subscribers",
-   "date": "2026-11-20T08:50:33Z",
+   "title": "Google Workspace opens MCP servers and a CLI for governed AI agents",
+   "source": "Google",
+   "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace",
+   "date": "2026-11-25T01:00:00Z",
    "tool": null,
-   "summary": "The Verge reports OpenAI is testing its always-on Dots agents with a small number of $20 ChatGPT Plus subscribers. Dots had been limited to Pro and higher tiers, and they are also rolling out to every ChatGPT Business Standard user.",
-   "page": "news/2026/11/openai-starts-testing-always-on-dots-agents-on-the-20-plus-plan.html"
+   "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access.",
+   "page": "news/2026/11/google-workspace-opens-mcp-servers-and-a-cli-for-governed-ai-agents.html"
   },
   {
-   "title": "Kong says its Volcano agent cloud is live and looks for bugs on its own",
-   "source": "X News",
-   "url": "https://x.com/i/trending/2123599603068981629",
-   "date": "2026-11-20T02:14:47Z",
+   "title": "Even the best AI agents struggle with everyday life",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
+   "date": "2026-11-24T21:33:29Z",
    "tool": null,
-   "summary": "Kong's November 19 post says Volcano, its agent cloud, is live: one place to host agents and apps, with sandboxes, durable workflows, and a system that finds bugs and proposes fixes. Cursor, Codex, and Claude Code can deploy to it.",
-   "page": "news/2026/11/kong-says-its-volcano-agent-cloud-is-live-and-looks-for-bugs-on-its.html"
+   "summary": "TechCrunch covers ShellBench, a test of 100 everyday tasks built from real agent requests in messy personal files. The leading models finished only about 60 percent of attempts, and 15.7 percent of all runs missed a safety check. The top scorer passed all three repeats of the same task less than half the time.",
+   "page": "news/2026/11/even-the-best-ai-agents-struggle-with-everyday-life.html"
   },
   {
-   "title": "Apple may be developing its own AI agent that runs your Mac",
+   "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
    "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
-   "date": "2026-11-20T00:56:01Z",
+   "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
+   "date": "2026-11-24T21:32:38Z",
    "tool": "agent",
-   "summary": "Bloomberg found an Apple job listing for an AI agent that can browse, use apps, run commands, and write code on a Mac. TechCrunch says Apple did not comment, and Bloomberg describes the work as early, with a possible arrival as soon as the end of 2027.",
-   "page": "news/2026/11/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac.html"
+   "summary": "TechCrunch reports Walmart is partnering with Meta so Black Friday deals show up inside Muse, Meta's personal AI agent.",
+   "page": "news/2026/11/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent.html"
   },
   {
-   "title": "Apple is hiring engineers to build its own AI agent",
-   "source": "The Verge",
-   "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
-   "date": "2026-11-19T23:13:01Z",
-   "tool": "agent",
-   "summary": "The Verge reports Apple is hiring engineers to build its own AI agent, based on a job listing for software that can use a computer across apps, the web, and code.",
-   "page": "news/2026/11/apple-is-hiring-engineers-to-build-its-own-ai-agent.html"
-  },
-  {
-   "title": "Recent outages look like AI-era growing pains, not one attack",
+   "title": "Maple raises $5.3M for a private desktop agent and a cloud agent that stays on",
    "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
-   "date": "2026-11-19T21:42:31Z",
-   "tool": "agent",
-   "summary": "TechCrunch looks at a cluster of outages, including Apple Pay, NASA, the FAA, and Microsoft 365. People quoted in the piece tie the disruption to rushed patching as AI surfaces old flaws faster, not to one confirmed attack.",
-   "page": "news/2026/11/recent-outages-look-like-ai-era-growing-pains-not-one-attack.html"
-  },
-  {
-   "title": "Gemini can now use a Mac, working across apps, files, and the web",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
-   "date": "2026-11-19T18:09:11Z",
+   "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
+   "date": "2026-11-24T21:19:00Z",
    "tool": null,
-   "summary": "Google's Gemini app on macOS can now take actions on the computer: native apps, local files, and the web, with a live preview and a way to pause or approve steps. TechCrunch says it is in English in the US for Google AI Plus, Pro, and Ultra subscribers.",
-   "page": "news/2026/11/gemini-can-now-use-a-mac-working-across-apps-files-and-the-web.html"
+   "summary": "TechCrunch reports Maple closed a $5.3 million seed round led by Epic Ventures. Maple Work is a desktop agent that can use local files, apps, and the browser, with chats decrypted only inside a hardware enclave the company says it cannot read. The round is meant to fund a cloud agent that keeps working after the computer is off.",
+   "page": "news/2026/11/maple-raises-5-3m-for-a-private-desktop-agent-and-a-cloud-agent-that.html"
   },
   {
-   "title": "Meta employees say Muse mixed up chats and showed other people's data",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-   "date": "2026-11-19T17:38:40Z",
-   "tool": "agent",
-   "summary": "Reuters, via TechCrunch, says Meta employees testing Muse saw it mix up chats and surface other people's data, including bank balances and a Signal reminder. Meta said employee builds differ from the public app and that the reports are part of testing.",
-   "page": "news/2026/11/meta-employees-say-muse-mixed-up-chats-and-showed-other-peoples-data.html"
-  },
-  {
-   "title": "Superhuman rolls its Go agent out across Docs, Mail, and connected apps",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/",
-   "date": "2026-11-19T14:00:00Z",
+   "title": "Anthropic opens Skills over MCP and long-running tasks in Claude",
+   "source": "The Next Web",
+   "url": "https://thenextweb.com/news/anthropic-claude-skills-over-mcp-tasks-elicitation",
+   "date": "2026-11-24T19:22:00Z",
    "tool": null,
-   "summary": "Superhuman is rolling its Go assistant through Docs and Mail, where it can draft, search company context, and run other agents in the background. The update adds about 20 connected agents through the Go SDK, including DeepL, Amplitude, and Databricks.",
-   "page": "news/2026/11/superhuman-rolls-its-go-agent-out-across-docs-mail-and-connected-apps.html"
+   "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users.",
+   "page": "news/2026/11/anthropic-opens-skills-over-mcp-and-long-running-tasks-in-claude.html"
+  },
+  {
+   "title": "JFrog says an AI agent published Hugging Face malware and leaked its own keys",
+   "source": "JFrog",
+   "url": "https://research.jfrog.com/post/the-agent-that-robbed-itself-an-ai-driven-hugging-face-malware-campaign-leaks-its-own-operator/",
+   "date": "2026-11-24T16:00:00Z",
+   "tool": null,
+   "summary": "JFrog Security Research says an autonomous agent it calls ARTEX uploaded fake Hugging Face models that steal cloud credentials and commit them back to a public repo. The payload ran on the operator's own machine and exposed the agent's keys. Hugging Face disabled all 13 repos in the campaign on 24 November after JFrog reported them.",
+   "page": "news/2026/11/jfrog-says-an-ai-agent-published-hugging-face-malware-and-leaked-its.html"
+  },
+  {
+   "title": "Mesh launches an MCP server so coding agents can build payments flows",
+   "source": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/mesh-launches-mesh-mcp-turning-one-prompt-into-a-payments-integration-302949189.html",
+   "date": "2026-11-24T14:00:00Z",
+   "tool": null,
+   "summary": "Mesh launched Mesh MCP, a hosted server that lets a coding agent assemble a payments integration from Mesh's live documentation and API spec. Each request is checked against that spec before it is sent. The server is read-only, does not move funds, and connects to Claude Code, Cursor, Codex, and other MCP clients.",
+   "page": "news/2026/11/mesh-launches-an-mcp-server-so-coding-agents-can-build-payments-flows.html"
+  },
+  {
+   "title": "UK ICO says it will act if consumer AI agents ship without user controls",
+   "source": "ICO",
+   "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/11/developers-creating-agentic-ai-services-for-consumers-reminded-to-meet-their-data-protection-responsibilities/",
+   "date": "2026-11-24T09:00:00Z",
+   "tool": null,
+   "summary": "The UK Information Commissioner's Office said it will step in when organisations rush out consumer AI agents without privacy safeguards and real user controls. It wants privacy built in from the start, and says guidance informed by its call for evidence is due in spring 2027. The post does not name a product or announce a fine.",
+   "page": "news/2026/11/uk-ico-says-it-will-act-if-consumer-ai-agents-ship-without-user.html"
   }
  ]
 }
