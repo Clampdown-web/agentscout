@@ -524,6 +524,27 @@ def preview_listed_email(pages_label: str, followers_label: str) -> tuple[str, s
     return text, html
 
 
+def rendered_home_counts(html: str) -> list[str]:
+    """Counts index.html actually prints.
+
+    The sitemap total formatted as 1,567+ is not on the homepage. The live
+    check compares these rendered strings, not that token.
+    """
+    tokens = []
+    for pat in (
+        r'id="s-total">\s*([^<]+)',
+        r'id="s-mcp">\s*([^<]+)',
+        r'data-live-reviewed>\s*([^<]+)',
+    ):
+        match = re.search(pat, html or "")
+        if not match:
+            continue
+        text = re.sub(r"\s+", " ", match.group(1)).strip()
+        if text and text not in tokens:
+            tokens.append(text)
+    return tokens
+
+
 def _artifact_labels(root: Path) -> tuple[dict, list[str]]:
     problems = []
     metrics_path = root / "api" / "metrics.json"
@@ -539,7 +560,14 @@ def _artifact_labels(root: Path) -> tuple[dict, list[str]]:
         followers = f"{int(metrics['x_combined_followers']):,}+"
     except (KeyError, TypeError, ValueError) as exc:
         return {}, [f"api/metrics.json is missing a count ({exc})"]
-    return {"tools": tools, "pages": pages, "followers": followers}, problems
+    home = _read(root, "index.html")
+    rendered = rendered_home_counts(home)
+    reviewed = re.search(r'data-live-reviewed>\s*([^<]+)', home or "")
+    if reviewed:
+        pages = re.sub(r"\s+", " ", reviewed.group(1)).strip()
+    elif rendered:
+        pages = rendered[0]
+    return {"tools": tools, "pages": pages, "followers": followers, "rendered": rendered}, problems
 
 
 def indexnow_key_problems(root: Path) -> tuple[str, list[str]]:
@@ -856,7 +884,7 @@ def live(root: Path, fetch=None) -> AuditResult:
     )
     for item in mcp_body_problems(mcp_status, mcp_body):
         result.err(item)
-    live_pages(result, fetch)
+    live_pages(result, fetch, root)
     stripe_live(result, fetch)
     edge_live(result, fetch)
     indexnow_live(result, root, fetch)
@@ -867,7 +895,7 @@ def live(root: Path, fetch=None) -> AuditResult:
     return result
 
 
-def live_pages(result: AuditResult, fetch) -> None:
+def live_pages(result: AuditResult, fetch, root: Path | None = None) -> None:
     try:
         status, _headers, body = fetch("https://agentscouthq.com/api/metrics.json", "GET", None, None)
         metrics = json.loads(body) if status == 200 else {}
@@ -886,10 +914,20 @@ def live_pages(result: AuditResult, fetch) -> None:
         if page_status != 200 or stale:
             result.err(f"{url} HTTP {page_status} stale={stale}")
     home_status, _home_headers, home = fetch("https://agentscouthq.com/", "GET", None, None)
-    if pages not in home:
-        result.later(f"live homepage does not yet show {pages}; that is postdeploy lag, not an artifact failure")
-    else:
-        result.ok(f"live homepage shows {pages}")
+    if home_status != 200:
+        result.err(f"live homepage HTTP {home_status}")
+        return
+    local = _read(root, "index.html") if root is not None else ""
+    tokens = rendered_home_counts(local)
+    missing = [token for token in tokens if token not in home]
+    if missing:
+        result.later(
+            "live homepage does not yet show "
+            + ", ".join(missing)
+            + "; that is postdeploy lag, not an artifact failure"
+        )
+    elif tokens:
+        result.ok("live homepage shows " + ", ".join(tokens))
 
 
 def stripe_live(result: AuditResult, fetch) -> None:

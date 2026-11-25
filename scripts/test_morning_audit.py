@@ -235,6 +235,31 @@ class EntrypointTest(unittest.TestCase):
         self.assertTrue(any(method == "POST" and url.endswith("/mcp") for url, method, _h, _d in calls))
         self.assertNotIn("accepts all", " ".join(result.passes))
 
+    def test_live_homepage_compares_rendered_counts_not_the_sitemap_total(self):
+        root = _fixture()
+        index = (root / "index.html").read_text(encoding="utf-8")
+        index = index.replace(
+            "</body>",
+            '<b id="s-total">2</b><b id="s-mcp">1</b><span data-live-reviewed>9</span></body>',
+        )
+        (root / "index.html").write_text(index, encoding="utf-8")
+
+        def fetch(url, method="GET", data=None, headers=None):
+            if url.endswith("/api/metrics.json"):
+                return 200, {}, json.dumps({
+                    "tools_count": 2, "pages_count": 1567, "indexed_pages_count": 1567, "x_combined_followers": 3,
+                })
+            if url.rstrip("/") == "https://agentscouthq.com":
+                return 200, {"server": "cloudflare"}, index
+            return 200, {"server": "cloudflare"}, "checkout"
+
+        result = morning_audit.AuditResult()
+        morning_audit.live_pages(result, fetch, root)
+        self.assertEqual(result.problems, [], result.problems)
+        self.assertEqual(result.deferred, [])
+        self.assertTrue(any("live homepage shows 2, 1, 9" in line for line in result.passes))
+        self.assertFalse(any("1,567+" in line for line in result.deferred))
+
     def test_a_no_origin_204_and_a_pages_string_gap_are_not_confused(self):
         opened = publish_gate.preflight_problems(204, origin_present=False)
         self.assertEqual(opened, ["OPTIONS without Origin returned 204, expected 403"])
