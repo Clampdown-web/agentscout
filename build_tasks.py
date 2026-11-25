@@ -255,7 +255,7 @@ def _subpages_write(m):
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(its)]},
             {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]},
-            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":_cap(plabel),"item":f"{B}tasks/{p_}.html"},{"@type":"ListItem","position":4,"name":_cap(lab),"item":canon}]}]}
+            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/"},{"@type":"ListItem","position":3,"name":_cap(plabel),"item":f"{B}tasks/{p_}.html"},{"@type":"ListItem","position":4,"name":_cap(lab),"item":canon}]}]}
         open(f"tasks/{sl}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
     return urls
 def pages(t):
@@ -287,9 +287,9 @@ def pages(t):
               f'{_grid(items,s)}{ai_ref_cta_html("../")}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
-            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":_cap(label),"item":canon}]}]}
+            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/"},{"@type":"ListItem","position":3,"name":_cap(label),"item":canon}]}]}
         open(f"tasks/{s}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
-    canon=B+"tasks/index.html"; title=f"AI Agents by Task: {len(m)} Jobs, Best Tools for Each · AgentScout"
+    canon=B+"tasks/"; title=f"AI Agents by Task: {len(m)} Jobs, Best Tools for Each · AgentScout"
     desc=f"Find the best AI agents for {len(m)} tasks, from writing code and browsing the web to voice agents, research and customer support."[:158]
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(_cap(T[1]))}</h3></div><p>{len(items):,} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
     body=f'<div class="crumb"><a href="../">AgentScout</a> / Tasks</div><section class="calm"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-workflow-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-workflow-infographic.mp4" type="video/mp4"></video></figure><div class="grid">{tiles}</div>{_subindex(m)}</section>'
@@ -519,7 +519,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611131215"  # bump when app.js/styles.css/home-mobile.css/consent.js change
+ASSET_V = "202611251930"  # bump when app.js/styles.css/home-mobile.css/consent.js change
 _ASSET_FILES = r"app\.js|styles\.css|home-mobile\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js"
 def stamp(s):
     """Put the current styles.css/app.js/home-mobile.css cache-bust on a page a generator just wrote.
