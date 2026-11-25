@@ -23,6 +23,8 @@ Read `context/business-profile.md` before every run. If a placeholder is still u
 - Reply to real comments before you invent tomorrow's post.
 - Tag links with a source you can read later.
 - Best time is the time your own account already earns attention, not a generic chart.
+- Respect daily account caps (e.g., <=20 posts/day including replies) and publish at most one approved draft per owner confirmation.
+- Check prior replies first so you never repeat a point, and avoid unquoted domains or filenames (like AGENTS.md) that platforms auto-link.
 
 ## Workflow
 

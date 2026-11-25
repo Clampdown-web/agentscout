@@ -23,6 +23,7 @@ Read `context/business-profile.md` before every run. If a placeholder is still u
 - Good, better, and best must be different products, not the same product with a louder adjective.
 - The success metric has a baseline and a date.
 - Support email is live before the first charge.
+- Preview-test phone and desktop before launch, verify live after deploy, and use unique rate-limit namespaces per worker/binding.
 
 ## Workflow
 

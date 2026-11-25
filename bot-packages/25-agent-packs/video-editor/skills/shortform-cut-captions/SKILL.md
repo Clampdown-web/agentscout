@@ -23,6 +23,7 @@ Read `context/business-profile.md` before every run. If a placeholder is still u
 - Burned-in captions stay inside the safe center so interface buttons do not cover them.
 - Music needs a license note. Silence is better than a track you cannot name.
 - One video, one job. Do not hide a second offer in the last second.
+- Export social MP4s at 30fps (higher framerates can cause upload rejections in schedulers such as Buffer).
 
 ## Workflow
 

@@ -19,10 +19,11 @@ Read `context/business-profile.md` before every run. If a placeholder is still u
 
 - Pick a type and a color on purpose. A generic purple gradient is not a brand.
 - The first screen holds one promise, one proof, and one button.
-- 360px and 390px must not scroll sideways.
+- Phone (360px, 390px portrait and 844x390 landscape) and desktop (1280px, 1440px) must not scroll sideways.
 - Text contrast aims for 4.5 against its background.
 - Fixed pixel widths wider than the phone are a bug, not a look.
 - Empty image alts fail the page even if the picture is pretty.
+- Preview-test every visual change before publishing, then re-verify the live URL after deploy.
 
 ## Workflow
 
@@ -36,7 +37,7 @@ Run scripts/check_landing_page_ux.py on the HTML.
 
 ### 3. Fix overflow
 
-Replace fixed widths with a fluid layout. Recheck 360 and 390.
+Replace fixed widths with a fluid layout. Recheck 360px, 390px, 844x390 landscape, and 1280px.
 
 ### 4. Fix contrast
 
