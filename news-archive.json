@@ -1,7 +1,31 @@
 {
- "updated": "2026-11-24T23:11:54Z",
+ "updated": "2026-11-25T04:24:29Z",
  "days": 30,
  "items": [
+  {
+   "title": "Duco opens an MCP server for post-trade reconciliation agents",
+   "source": "Duco",
+   "url": "https://du.co/duco-mcp-server-brings-agentic-operations-for-post-trade-into-production/",
+   "date": "2026-11-25T09:13:15Z",
+   "tool": null,
+   "summary": "Duco made its MCP server generally available on 25 November 2026. Agents on any MCP client can search reconciliation breaks, label them, and match or clear exceptions under the user's existing permissions. Every action is written to Duco's audit log, and the server is available to Duco clients."
+  },
+  {
+   "title": "Alta opens an MCP server so sales agents can prospect in chat",
+   "source": "Alta",
+   "url": "https://www.altahq.com/blog/alta-mcp-claude-chatgpt-codex",
+   "date": "2026-11-25T08:00:00Z",
+   "tool": null,
+   "summary": "Alta opened Alta MCP in Claude, ChatGPT, and Codex on 25 November 2026. A rep can describe an audience, get verified contacts, and draft a multichannel campaign in the same chat. Campaigns stay drafts until a person launches them, and sending or resuming a campaign asks for confirmation first."
+  },
+  {
+   "title": "Magister opens a marketing MCP server across 85 tools",
+   "source": "EIN Presswire",
+   "url": "https://www.einpresswire.com/article/957096938/magister-launches-a-marketing-mcp-server-that-connects-claude-chatgpt-codex-and-cursor-to-85-marketing-tools",
+   "date": "2026-11-25T05:50:00Z",
+   "tool": null,
+   "summary": "Magister Marketing launched an MCP server on 25 November 2026 that connects Claude, ChatGPT, Codex, Cursor, and other MCP clients to 85 marketing tools. It can read analytics and ad accounts and draft posts, but anything that publishes, sends, or spends waits for a person to approve it. Connect is $29 a month and the Agent plan is $99 a month, after a free trial."
+  },
   {
    "title": "Google Workspace opens MCP servers and a CLI for governed AI agents",
    "source": "Google",

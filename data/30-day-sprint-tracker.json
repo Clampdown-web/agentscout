@@ -15,14 +15,22 @@
       "combined_followers": 2165,
       "source": "live_fetch",
       "fetched_at": "2026-11-24T23:09:06-0800"
+    },
+    {
+      "date": "2026-11-25",
+      "clampdown19_followers": 2149,
+      "agentscouthq_followers": 17,
+      "combined_followers": 2166,
+      "source": "live_fetch",
+      "fetched_at": "2026-11-25T04:25:05-0800"
     }
   ],
   "current": {
-    "x_followers_fetched_at": "2026-11-24T23:09:06-0800",
-    "clampdown19_followers": 2148,
+    "x_followers_fetched_at": "2026-11-25T04:25:05-0800",
+    "clampdown19_followers": 2149,
     "agentscouthq_followers": 17,
-    "combined_followers": 2165,
-    "as_of": "2026-11-24",
+    "combined_followers": 2166,
+    "as_of": "2026-11-25",
     "source": "live_fetch"
   }
 }

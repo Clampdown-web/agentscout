@@ -1,12 +1,12 @@
 {
- "date": "2026-11-24",
- "slug": "mcp-go-sdk",
- "name": "MCP Go SDK",
- "why": "A standout MCP servers tool for builders: official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
+ "date": "2026-11-25",
+ "slug": "veille",
+ "name": "Veille",
+ "why": "A standout MCP servers tool for builders: veille is an MCP server that gives agents a way to handle validate emails, domains, IPs, VAT numbers and IBANs in milliseconds to block.",
  "category": "MCP servers",
- "description": "Official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
- "logo": "https://agentscouthq.com/assets/logos/mcp-go-sdk.png",
- "page": "https://agentscouthq.com/tools/mcp-go-sdk.html",
+ "description": "Veille is an MCP server that gives agents a way to handle validate emails, domains, IPs, VAT numbers and IBANs in milliseconds to block.",
+ "logo": "https://agentscouthq.com/assets/logos/veille.png",
+ "page": "https://agentscouthq.com/tools/veille.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -151,6 +151,10 @@
   {
    "date": "2026-11-24",
    "slug": "mcp-go-sdk"
+  },
+  {
+   "date": "2026-11-25",
+   "slug": "veille"
   }
  ]
 }
