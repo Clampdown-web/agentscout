@@ -113,9 +113,12 @@ def hub(t,made,alt=()):
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Top {n}, ranked</p></a>' for _,h,n,s in made)
     old="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Curated list</p></a>' for s,h in OLD)
     old+='<a class="card" href="best-mcp-servers-2026.html"><div class="ct"><h3>Best MCP servers 2026</h3></div><p>Ranked by GitHub stars, live status from status.json</p></a>'
+    import build_tasks as _bt
+    _sh=_bt.start_here_html("best")
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":u} for u,h,_,_ in made]+[{"@type":"WebPage","name":h,"url":f"{B}best/{s}.html"} for s,h in OLD]},{"@type":"VideoObject","name":"Top 6 Trending AI Agent & MCP Stacks Benchmark Overview","description":"Animated benchmark and adoption overview across coding agents, browser automation and Model Context Protocol (MCP) servers on AgentScout.","thumbnailUrl":B+"assets/animations/agentscout-radar-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-radar-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
     body=(f'<div class="crumb"><a href="../">AgentScout</a> / Best lists</div><section class="calm"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Ranked lists built from the AgentScout directory. Each list says how it is ranked (GitHub stars or listing maturity). We use no invented scores and sell no placements.</p>'
+          f'{_sh}'
           f'<ul class="guide-list"><li><a href="../tasks/">AI agents by task</a></li><li><a href="../categories/">All categories</a></li><li><a href="../compare/">Comparisons</a></li></ul>'
           f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-radar-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-radar-infographic.mp4" type="video/mp4"></video></figure>'
           f'<h2 style="font-size:16px;margin:24px 0 10px">Ranked lists</h2><div class="grid">{tiles}</div><h2 style="font-size:16px;margin:32px 0 10px">MCP and coding guides</h2><div class="grid">{old}</div>'

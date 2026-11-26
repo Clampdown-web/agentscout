@@ -424,6 +424,9 @@ def apply_home(doc):
             swapped = s
     # The old chip-and-history card is not the homepage treatment.
     swapped = re.sub(r'<!--vs:list-->.*?<!--/vs:list-->', '', swapped, count=1, flags=re.S)
+    # Start here sits after this marker. home_slim() must not own that block.
+    import build_tasks
+    swapped = build_tasks.ensure_start_here(swapped, "home")
     if swapped != s:
         open(path, "w").write(swapped)
 
