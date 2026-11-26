@@ -34527,5 +34527,492 @@
       "license": "Apache-2.0",
       "osi": true
     }
+  },
+  "obot": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/obot-platform/obot",
+      "https://github.com/obot-platform/obot/blob/main/README.md",
+      "https://github.com/obot-platform/obot/releases/tag/v0.28.2",
+      "https://docs.obot.ai/installation/overview"
+    ],
+    "long": [
+      "Obot is an open-source platform for governing how an organization uses AI clients, models and tools. The README says desktop agents such as Claude Code, Codex, Cursor, VS Code and other IDEs and CLIs can use the parts that apply to them, and that Obot does not require one client or one model provider.",
+      "On user devices, the Obot CLI installs approved MCP servers and skills, and Obot Sentry (beta, in a separate repository) can inventory clients and record local tool calls. The server side provides MCP and LLM gateways, hosted MCP servers in Docker or Kubernetes, Git-backed catalogs, and audit logs. Claude Environments, which runs Claude cloud sessions on the organization's Kubernetes, is described as experimental and disabled by default.",
+      "Release v0.28.2 was published on 19 Nov 2026. The notes say MCP audit log bodies are compressed before they are stored, scheduled exports send only entries added or updated since the last successful run, and the release includes security fixes that installations should apply. GitHub recorded MIT, 1,221 stars and 255 forks on 26 Nov 2026."
+    ],
+    "who": "Platform teams who want one place to approve MCP servers, models and skills, and a record of what agents did.",
+    "features": [
+      "MCP gateway with virtual MCP servers, tunnels, profiles and tool search",
+      "LLM gateway for OpenAI, Anthropic, Amazon Bedrock, Azure and generic compatible providers, with provider keys kept in Obot",
+      "Hosted npx, uvx, container and OpenAPI MCP servers, plus an Obot CLI for approved servers and skills",
+      "Obot Sentry on devices for Claude Code, Codex, Cursor, Kiro and VS Code",
+      "v0.28.2 (19 Nov 2026): compressed MCP audit logs, incremental exports, and security fixes",
+      "MIT. 1,221 GitHub stars and 255 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. The README says every edition runs the same open-source image and editions differ by license key. Checked 26 Nov 2026."
+      ],
+      [
+        "What changed in v0.28.2?",
+        "The release notes say MCP audit log storage is compressed, scheduled exports are incremental, and the release includes security fixes. Published 19 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/obot-platform/obot",
+      "stars": 1221,
+      "forks": 255,
+      "checked": "2026-11-26",
+      "license": "MIT",
+      "osi": true,
+      "release": "v0.28.2"
+    }
+  },
+  "tensorlake": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/tensorlakeai/tensorlake",
+      "https://github.com/tensorlakeai/tensorlake/blob/main/README.md",
+      "https://github.com/tensorlakeai/tensorlake/releases/tag/cli-v0.5.165"
+    ],
+    "long": [
+      "Tensorlake is a compute platform for agent applications. The README says the Sandbox API creates MicroVM sandboxes for running agents, tools or model-written code, and that a serverless function runtime can orchestrate longer work with fan-out.",
+      "The README describes snapshots and cloning, suspend and resume that keeps memory and the filesystem, live migration with a short pause, and a tl CLI. The CLI is a standalone binary from curl https://tensorlake.ai/install, not a PyPI or npm package. Cloud use needs an API key from cloud.tensorlake.ai. Release cli-v0.5.165 on 13 Nov 2026 is those CLI binaries. GitHub recorded Apache-2.0, 1,051 stars and 154 forks on 26 Nov 2026. The README did not list a dollar price."
+    ],
+    "who": "Engineers who want isolated MicroVM sandboxes and a CLI for agent and tool code.",
+    "features": [
+      "MicroVM sandboxes with snapshot, clone, and suspend/resume",
+      "tl CLI for create, exec, copy, ssh and network policy",
+      "Python SDK: pip install tensorlake",
+      "CLI v0.5.165 published 13 Nov 2026",
+      "Apache-2.0. 1,051 GitHub stars and 154 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records Apache-2.0. Checked 26 Nov 2026."
+      ],
+      [
+        "How is the CLI installed?",
+        "The README says the tl binary is installed with curl https://tensorlake.ai/install, not from PyPI or npm."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/tensorlakeai/tensorlake",
+      "stars": 1051,
+      "forks": 154,
+      "checked": "2026-11-26",
+      "license": "Apache-2.0",
+      "osi": true,
+      "release": "cli-v0.5.165"
+    }
+  },
+  "neutone": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/Neutone/neutone_sdk",
+      "https://github.com/Neutone/neutone_sdk/blob/main/README.md",
+      "https://github.com/Neutone/neutone_sdk/releases/tag/v1.5.2",
+      "https://neutone.ai/fx"
+    ],
+    "long": [
+      "The Neutone SDK wraps PyTorch audio models so they load in Neutone's host plugins. The README says researchers stay in Python: the SDK handles buffer sizes, sample-rate conversion and a small set of runtime controls, then exports a model the plugin can run.",
+      "Two free host plugins are named. Neutone FX is for real-time models (VST3 and AU). Neutone Gen is for non-real-time models and is described as still in beta. Install the SDK with pip install neutone_sdk. Release v1.5.2 on 13 Nov 2025 relaxes the torch and numpy version pins. GitHub recorded LGPL-2.1, 636 stars and 34 forks on 26 Nov 2026."
+    ],
+    "who": "Audio researchers who want a PyTorch model to run inside a DAW without writing a C++ plugin.",
+    "features": [
+      "Wrap a PyTorch audio model and export it for the Neutone plugin",
+      "Neutone FX for real-time models and Neutone Gen for non-real-time models",
+      "README says both host plugins are free",
+      "v1.5.2 (13 Nov 2025): more flexible torch and numpy requirements",
+      "LGPL-2.1. 636 GitHub stars and 34 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records LGPL-2.1. Checked 26 Nov 2026."
+      ],
+      [
+        "Are the plugins free?",
+        "The README calls Neutone FX and Neutone Gen free host plugins. No paid plugin price was in the README or the v1.5.2 notes."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/Neutone/neutone_sdk",
+      "stars": 636,
+      "forks": 34,
+      "checked": "2026-11-26",
+      "license": "LGPL-2.1",
+      "osi": true,
+      "release": "v1.5.2"
+    }
+  },
+  "meshy": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/meshy-dev/meshy-mcp-server",
+      "https://github.com/meshy-dev/meshy-mcp-server/blob/main/README.md",
+      "https://github.com/meshy-dev/meshy-mcp-server/releases/tag/v0.6.13",
+      "https://www.meshy.ai"
+    ],
+    "long": [
+      "Meshy's MCP server connects an assistant to Meshy's 3D generation API. The README describes two ways to run it. The hosted server is https://mcp.meshy.ai/mcp, or https://mcp.meshy.cn/mcp in China, and signs in with the matching Meshy account or a bearer API key. The local npm server runs on the user's machine with MESHY_API_KEY and exposes a larger tool list, including rigging and 3D-print helpers.",
+      "The README says any Meshy plan, including the free plan, can connect, and that generation spends Meshy credits. A retry of a create tool with the same request_id is not charged again for 30 days. Release v0.6.13 on 23 Nov 2026 points an out-of-credits error at the subscription settings page. GitHub recorded MIT, 97 stars and 29 forks on 26 Nov 2026."
+    ],
+    "who": "Artists and developers who want an assistant to generate Meshy 3D assets from a chat.",
+    "features": [
+      "Hosted MCP at https://mcp.meshy.ai/mcp and a China endpoint at https://mcp.meshy.cn/mcp",
+      "Local server with 29 tools, including rigging, animation and 3D-print checks",
+      "Free plan can connect; generation spends Meshy credits",
+      "v0.6.13 (23 Nov 2026): out-of-credits errors link the subscription page",
+      "MIT. 97 GitHub stars and 29 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT for meshy-dev/meshy-mcp-server. Checked 26 Nov 2026."
+      ],
+      [
+        "Does the free Meshy plan work?",
+        "The README says any plan, including the free plan, can connect, and that generation spends credits."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/meshy-dev/meshy-mcp-server",
+      "stars": 97,
+      "forks": 29,
+      "checked": "2026-11-26",
+      "license": "MIT",
+      "osi": true,
+      "release": "v0.6.13"
+    }
+  },
+  "smartbear-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/SmartBear/smartbear-mcp",
+      "https://github.com/SmartBear/smartbear-mcp/blob/main/README.md",
+      "https://github.com/SmartBear/smartbear-mcp/releases/tag/v0.44.0",
+      "https://developer.smartbear.com/smartbear-mcp/docs/mcp-server"
+    ],
+    "long": [
+      "SmartBear MCP exposes SmartBear testing products to an assistant. The README says the local package @smartbear/mcp can talk to BearQ, BugSnag, Reflect, Swagger, PactFlow, Pact Broker, QMetry, QTM4J, Zephyr and Collaborator, using each product's own API token.",
+      "Swagger, BugSnag and Zephyr also have remote servers (https://swagger.mcp.smartbear.com/mcp, https://bugsnag.mcp.smartbear.com/mcp and https://zephyr.mcp.smartbear.com/mcp) that sign in in the browser. The README says BearQ, Reflect, QMetry, QTM4J, PactFlow, Collaborator and functional testing are local-only. Release v0.44.0 on 16 Nov 2026 adds smartbear_list_integrations. GitHub recorded MIT, 44 stars and 50 forks on 26 Nov 2026. The README does not list a price for the server."
+    ],
+    "who": "QA and API teams who already use SmartBear products and want an assistant to query them.",
+    "features": [
+      "Local npm server @smartbear/mcp for the SmartBear product set",
+      "Remote OAuth servers for Swagger, BugSnag and Zephyr",
+      "v0.44.0 adds smartbear_list_integrations",
+      "MIT. 44 GitHub stars and 50 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 26 Nov 2026."
+      ],
+      [
+        "Which products are remote?",
+        "The README lists hosted MCP URLs for Swagger, BugSnag and Zephyr. Other named products use the local package."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/SmartBear/smartbear-mcp",
+      "stars": 44,
+      "forks": 50,
+      "checked": "2026-11-26",
+      "license": "MIT",
+      "osi": true,
+      "release": "v0.44.0"
+    }
+  },
+  "infobip-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/infobip/mcp",
+      "https://github.com/infobip/mcp/blob/main/README.md",
+      "https://www.infobip.com/docs/mcp"
+    ],
+    "long": [
+      "Infobip publishes remote MCP servers so an agent can use Infobip's messaging and account APIs. The README's base URL is https://mcp.infobip.com. Named endpoints include SMS, WhatsApp, Viber, RCS, email, voice, mobile app messaging, 2FA, People and a documentation search server.",
+      "Clients use streamable HTTP. The README also says appending /sse keeps an SSE transport. Sign-in is OAuth 2.1 or an API key. An Infobip account is required, and the README says a free trial is available. GitHub recorded MIT, 36 stars and 8 forks on 26 Nov 2026. There was no latest release. The README does not list a per-message price."
+    ],
+    "who": "Teams that already send SMS, WhatsApp or other Infobip channels and want an agent to send or look up those messages.",
+    "features": [
+      "Remote servers under https://mcp.infobip.com for messaging, 2FA and People",
+      "OAuth 2.1 or an API key",
+      "README says a free Infobip trial is available",
+      "MIT. 36 GitHub stars and 8 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT for infobip/mcp. Checked 26 Nov 2026."
+      ],
+      [
+        "Is there a hosted URL?",
+        "The README lists https://mcp.infobip.com and per-channel paths such as /sms and /whatsapp."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/infobip/mcp",
+      "stars": 36,
+      "forks": 8,
+      "checked": "2026-11-26",
+      "license": "MIT",
+      "osi": true
+    }
+  },
+  "porkbun-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/oborseth/Porkbun-MCP",
+      "https://github.com/oborseth/Porkbun-MCP/blob/main/README.md",
+      "https://github.com/oborseth/Porkbun-MCP/releases/tag/v0.65.24",
+      "https://porkbun.com/mcp"
+    ],
+    "long": [
+      "Porkbun MCP is the MCP server Porkbun publishes for its v3 API. The README says it is the npm package @porkbunllc/mcp-server, maintained by Porkbun, and hosted at https://mcp.porkbun.com/mcp. ChatGPT and Claude can sign in. Other clients can send the API key pair. A narrower /mcp/no-purchases path omits tools that spend money or return a secret.",
+      "Tools cover domain lookup, DNS, SSL, URL and email forwards, invoices and docs. Some tools spend account credit, including registration and closeout purchases. The README says the default monthly spend limit and top-up limit are $100 each. Release v0.65.24 was published 24 Nov 2026. GitHub recorded MIT, 37 stars and 3 forks on 26 Nov 2026."
+    ],
+    "who": "People who manage Porkbun domains and want an assistant to read DNS or make changes on that account.",
+    "features": [
+      "Hosted MCP at https://mcp.porkbun.com/mcp with Porkbun sign-in",
+      "npm package @porkbunllc/mcp-server",
+      "Read tools for domains, DNS, SSL and docs; some write tools spend account credit",
+      "v0.65.24 published 24 Nov 2026",
+      "MIT. 37 GitHub stars and 3 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 26 Nov 2026."
+      ],
+      [
+        "Can it spend money?",
+        "The README says tools such as buying a closeout or topping up credit spend money, and that /mcp/no-purchases omits tools that spend money or return a secret."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/oborseth/Porkbun-MCP",
+      "stars": 37,
+      "forks": 3,
+      "checked": "2026-11-26",
+      "license": "MIT",
+      "osi": true,
+      "release": "v0.65.24"
+    }
+  },
+  "parallel-search-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/parallel-web/search-mcp",
+      "https://github.com/parallel-web/search-mcp/blob/main/README.md",
+      "https://github.com/parallel-web/search-mcp/releases/tag/v0.1.1",
+      "https://docs.parallel.ai/integrations/mcp/search-mcp"
+    ],
+    "long": [
+      "Parallel Search MCP is a remote search server for coding agents. The README sets the server name parallel-search, the URL https://search.parallel.ai/mcp, and the transport to streamable HTTP with no authentication. It says no Parallel account, API key or CLI is required, and that the tools to confirm are web_search and web_fetch.",
+      "Install notes cover Codex, Gemini CLI, Cursor, VS Code, OpenCode and others. Release v0.1.1 on 21 Sep 2026 says the endpoint did not change. GitHub recorded MIT, 38 stars and 3 forks on 26 Nov 2026. The README mentions a separate paid Hermes web provider; that is not this keyless MCP server."
+    ],
+    "who": "Developers who want a coding agent to search the web and open a page without a Parallel API key.",
+    "features": [
+      "Hosted MCP at https://search.parallel.ai/mcp",
+      "No account or API key, per the README",
+      "Tools named in the README: web_search and web_fetch",
+      "v0.1.1 (21 Sep 2026) leaves the endpoint unchanged",
+      "MIT. 38 GitHub stars and 3 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 26 Nov 2026."
+      ],
+      [
+        "Does it need an API key?",
+        "The README says authentication is none and that no account, API key or Parallel CLI is needed for this server."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/parallel-web/search-mcp",
+      "stars": 38,
+      "forks": 3,
+      "checked": "2026-11-26",
+      "license": "MIT",
+      "osi": true,
+      "release": "v0.1.1"
+    }
+  },
+  "openzeppelin-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://github.com/OpenZeppelin/openzeppelin-mcp",
+      "https://github.com/OpenZeppelin/openzeppelin-mcp/blob/master/README.md",
+      "https://github.com/OpenZeppelin/openzeppelin-mcp/releases/tag/v0.4.2",
+      "https://mcp.openzeppelin.com"
+    ],
+    "long": [
+      "OpenZeppelin MCP is a repository of hosted MCP servers for OpenZeppelin's contract libraries. The README lists Solidity, Cairo, Confidential Contracts, Stellar, Stylus, TRON, Sui Move and OpenZeppelin Uniswap Hooks. It says these are hosted versions of the OpenZeppelin Contracts MCP package, which can also be run locally, and that configuration lives at https://mcp.openzeppelin.com.",
+      "Release v0.4.2 on 19 Oct 2026 bumps @openzeppelin/contracts-mcp to 0.7.2. GitHub recorded AGPL-3.0, 30 stars and 13 forks on 26 Nov 2026. The README and those release notes do not list a price."
+    ],
+    "who": "Developers who want an assistant to draft contracts from OpenZeppelin's libraries.",
+    "features": [
+      "Hosted servers for Solidity, Cairo, Stellar, Stylus, TRON, Sui Move, confidential contracts and Uniswap Hooks",
+      "Same package can run locally",
+      "Docs at https://mcp.openzeppelin.com",
+      "v0.4.2 (19 Oct 2026) uses @openzeppelin/contracts-mcp 0.7.2",
+      "AGPL-3.0. 30 GitHub stars and 13 forks on 26 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records AGPL-3.0. Checked 26 Nov 2026."
+      ],
+      [
+        "Where is it hosted?",
+        "The README points configuration to https://mcp.openzeppelin.com."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/OpenZeppelin/openzeppelin-mcp",
+      "stars": 30,
+      "forks": 13,
+      "checked": "2026-11-26",
+      "license": "AGPL-3.0",
+      "osi": true,
+      "release": "v0.4.2"
+    }
+  },
+  "hive402": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://hive402.scriptmasterlabs.com",
+      "https://hive402.scriptmasterlabs.com/mcp"
+    ],
+    "long": [
+      "HIVE402 is a directory of HTTP endpoints that charge agents with the x402 payment status. On 26 Nov 2026 the homepage showed 67,157 paid endpoints, 43,879 verified payable, 2,187 operators and 6 payment rails, and said the numbers come from its own settlement records.",
+      "A GET to https://hive402.scriptmasterlabs.com/mcp returned HTTP 200. The JSON named the server x402-agent-idea-forge and listed tools including search_catalog, get_listing, start_purchase and list_endpoints. The page describes a free Rescue check for an endpoint URL and names a 0.005 USDC OMNIGATE fee on some paid settlement paths. HIVE402 is a separate product from Token Verdict, Verdict Protocol, SqueezeOS and Authority Engine."
+    ],
+    "who": "Agent builders who need a paid x402 API and want a catalog that shows which endpoints are clearing payments.",
+    "features": [
+      "Live catalog of paid x402 endpoints with operator and rail counts",
+      "MCP at https://hive402.scriptmasterlabs.com/mcp (GET 200 on 26 Nov 2026)",
+      "Free Rescue check described on the homepage",
+      "0.005 USDC OMNIGATE fee leg named for some paid flows"
+    ],
+    "faq": [
+      [
+        "Is the MCP up?",
+        "A GET to https://hive402.scriptmasterlabs.com/mcp on 26 Nov 2026 returned HTTP 200 and the server name x402-agent-idea-forge."
+      ],
+      [
+        "Is this Token Verdict or Authority Engine?",
+        "No. Those are other Script Master Labs products. This listing is only the HIVE402 site and its MCP."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-26",
+      "mcp": "https://hive402.scriptmasterlabs.com/mcp"
+    }
+  },
+  "popfestive": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://popfestive.com/"
+    ],
+    "long": [
+      "PopFestive makes a Christmas profile picture or a short festive video from one portrait. On 26 Nov 2026 the homepage showed Santa-hat, anime and 3D cartoon styles, a Nice List certificate, pet portraits and a baby-on-a-reindeer clip. It asks for a clear photo and says you confirm you have permission to use it.",
+      "Downloads without a watermark spend credits. Basic is $29.90 a month for 100 credits, Pro is $49.90 for 300, and Family is $99.90 for 800. One-time packs are $7.99 for 10 credits and $29 for 50. The page says monthly credits refresh, pack credits do not expire, and a failed render is free."
+    ],
+    "who": "People who want a holiday profile photo or a short festive clip from a picture they already have.",
+    "features": [
+      "One portrait in, a Christmas PFP or short video out",
+      "Basic $29.90/mo, Pro $49.90/mo, Family $99.90/mo (26 Nov 2026)",
+      "Credit packs at $7.99 and $29",
+      "Failed renders are free, per the pricing block"
+    ],
+    "faq": [
+      [
+        "Is this a face-swap tool?",
+        "The page turns the photo you upload into a festive picture or clip. It does not describe swapping that face onto a different person."
+      ],
+      [
+        "What does a month cost?",
+        "On 26 Nov 2026 Basic was $29.90, Pro $49.90 and Family $99.90."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-26",
+      "site": "https://popfestive.com/"
+    }
+  },
+  "aethon-ai": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-26",
+    "sources": [
+      "https://aiaethon.com/"
+    ],
+    "long": [
+      "Aethon AI, from Moment Intelligence, tracks how assistants answer in everyday situations and tries to get a brand named in those answers. The homepage on 26 Nov 2026 names ChatGPT, Claude, Gemini and Perplexity, and describes a Moment Map plus assistants that draft the work.",
+      "Starter is $199 a month for 50 moments, one industry and up to 10 seats. Pro is $399 for 250 moments. Business is $799 for 600 moments, team workflows and priority support. Annual billing is shown as 20% less. A free Moment Check is offered before you buy. The page does not list a permanent free product tier."
+    ],
+    "who": "Marketing teams who want their brand recommended when people ask an AI assistant about a real-life situation.",
+    "features": [
+      "Tracks AI answers across ChatGPT, Claude, Gemini and Perplexity",
+      "Starter $199/mo, Pro $399/mo, Business $799/mo (26 Nov 2026)",
+      "Up to 10 seats on the published plans",
+      "Annual billing shown as 20% less"
+    ],
+    "faq": [
+      [
+        "What does it cost?",
+        "On 26 Nov 2026 Starter was $199 a month, Pro $399 and Business $799. Annual billing was shown as 20% less."
+      ],
+      [
+        "Is there a free plan?",
+        "The page offers a free Moment Check. The paid plans start at $199 a month. No permanent free tier was listed."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-26",
+      "site": "https://aiaethon.com/"
+    }
   }
 }
