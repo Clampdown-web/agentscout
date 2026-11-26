@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-26T04:54:45-08:00",
- "updated": "2026-11-26T04:54:45-08:00",
+ "generated": "2026-11-26T06:02:13-08:00",
+ "updated": "2026-11-26T06:02:13-08:00",
  "last_checked": "2026-11-26",
- "count": 6078,
- "total_tools": 6078,
+ "count": 6077,
+ "total_tools": 6077,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -257117,50 +257117,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/figwright.png",
    "page": "https://agentscouthq.com/tools/figwright.html"
-  },
-  {
-   "name": "Sandscale",
-   "slug": "sandscale",
-   "url": "https://sandscale.dev/",
-   "website": "https://sandscale.dev/",
-   "github": "",
-   "category": "sandboxes & code execution",
-   "description": "Sandscale runs a microVM sandbox for an agent, plus workspaces and an MCP server at https://mcp.sandscale.dev/mcp. The pricing page on 26 Nov 2026 listed Free at $0 for 100 awake vCPU-hours, 3 boxes at once and 5 GB, Pro at $20 a month billed annually or $25 monthly for 1,500 hours, and Team at $40 per member a month billed annually or $48 monthly. Hours past the plan were $0.05 per awake vCPU-hour, or $10 for a 500-hour pack.",
-   "key_features": [
-    "Freemium",
-    "Active",
-    "Write code",
-    "Connect tools via mcp",
-    "Run code safely"
-   ],
-   "pricing": "Freemium",
-   "price_tag": "freemium",
-   "platforms": [
-    "Developer (API/SDK)"
-   ],
-   "date_added": "2026-11-26",
-   "added": "2026-11-26",
-   "source": "official site",
-   "goals": [
-    "coding"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": true,
-   "seed": false,
-   "new_this_week": true,
-   "repo": null,
-   "github_stars": null,
-   "open_source": false,
-   "license": "",
-   "tags": [
-    "write code",
-    "connect tools via MCP",
-    "run code safely"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/sandscale.png",
-   "page": "https://agentscouthq.com/tools/sandscale.html"
   },
   {
    "name": "Hai",

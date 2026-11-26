@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 6,078 AI agent tools in 40 categories, including 3,218 MCP servers. Checked daily, 3,195 of 3,218 checked servers live, last checked 2026-11-26. Handshake check: 1,772 of 1,782 remote servers checked so far. Of those, 571 answered with a tools list, 1,165 asked for auth, 36 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 6,077 AI agent tools in 40 categories, including 3,218 MCP servers. Checked daily, 3,195 of 3,218 checked servers live, last checked 2026-11-26. Handshake check: 1,772 of 1,782 remote servers checked so far. Of those, 571 answered with a tools list, 1,165 asked for auth, 36 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 <!-- mcp-reach:start -->
 
@@ -25,7 +25,7 @@ Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ, https://x.com/clampdown19
 MCP Registry ID: com.agentscouthq/directory
 MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://mcp.agentscouthq.com/mcp — 100% free, read-only, no API key or x402 wallet required)
-Catalog last checked: 2026-11-25 (Pacific)
+Catalog last checked: 2026-11-26 (Pacific)
 
 ## For AI agents
 
@@ -106,8 +106,8 @@ Catalog last checked: 2026-11-25 (Pacific)
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 51 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 50 tools
 - [customer support](https://agentscouthq.com/categories/customer-support.html): 44 tools
-- [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 41 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 41 tools
+- [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 40 tools
 - [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 33 tools
 - [data & analytics](https://agentscouthq.com/categories/data-analytics.html): 33 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 31 tools
@@ -192,11 +192,10 @@ Catalog last checked: 2026-11-25 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-11-25 to 2026-11-26): 46
+- Tools added in the last 2 days (2026-11-25 to 2026-11-26): 45
 
 - [earshot](https://agentscouthq.com/tools/earshot.html) (added 2026-11-26): earshot makes sound effects when a coding agent asks in words. The README says it renders from a catalogue of 922 designs, runs on the CPU, and ships as a CLI, a Python package and an MCP server. The PyPI name earshot belongs to another project, so the README says to install from GitHub. GitHub Leonxlnx/earshot showed 5,858 stars on 26 Nov 2026, license MIT.
 - [Hai](https://agentscouthq.com/tools/hai.html) (added 2026-11-26): Hai places phone calls from an assistant you already use. The homepage says the assistant shows the plan first and nothing is dialled until you say yes, then Hai calls in the local language, says it is an AI, and reports back in the chat. Setup is an MCP server at https://haicall.in/mcp. The site says new accounts are approved by hand. A POST initialize on 26 Nov 2026 returned HTTP 401 until you sign in. No public price was on the homepage.
-- [Sandscale](https://agentscouthq.com/tools/sandscale.html) (added 2026-11-26): Sandscale runs a microVM sandbox for an agent, plus workspaces and an MCP server at https://mcp.sandscale.dev/mcp. The pricing page on 26 Nov 2026 listed Free at $0 for 100 awake vCPU-hours, 3 boxes at once and 5 GB, Pro at $20 a month billed annually or $25 monthly for 1,500 hours, and Team at $40 per member a month billed annually or $48 monthly. Hours past the plan were $0.05 per awake vCPU-hour, or $10 for a 500-hour pack.
 - [Figwright](https://agentscouthq.com/tools/figwright.html) (added 2026-11-26): Figwright is a MIT MCP server that works with a Figma plugin over a local WebSocket, so an assistant can read a design and write changes back. The README says it is free and does not need a Figma Dev Mode seat. The npm package is @figwright/mcp. GitHub awdr74100/figwright showed 1,561 stars on 26 Nov 2026.
 - [GhidraMCP](https://agentscouthq.com/tools/ghidramcp.html) (added 2026-11-26): GhidraMCP is an Apache-2.0 MCP server and Ghidra plugin. The README says an assistant can decompile, list and rename methods and data inside a Ghidra project the user has open. It requires Ghidra. GitHub LaurieWired/GhidraMCP showed 12,055 stars on 26 Nov 2026.
 - [DonSeTch](https://agentscouthq.com/tools/donsetch.html) (added 2026-11-26): DonSeTch is an AGPL-3.0 local Rust program for search, fetch, crawl and screenshots. The README says one binary covers those jobs and that no API key or account is required. GitHub dondai44423/donsetch showed 1,188 stars on 26 Nov 2026.
@@ -528,6 +527,7 @@ Catalog last checked: 2026-11-25 (Pacific)
 - [Best AI agents for images and design (2026)](https://agentscouthq.com/tasks/making-images-and-design.html)
 - [Best AI agents for making videos (2026)](https://agentscouthq.com/tasks/making-videos.html)
 - [Best AI agents for marketing (2026)](https://agentscouthq.com/tasks/marketing.html)
+- [Eval and benchmark tools for monitoring agents in production](https://agentscouthq.com/tasks/monitoring-agents-evals.html)
 - [Best tools for monitoring agents in production (2026)](https://agentscouthq.com/tasks/monitoring-agents.html)
 - [Running many agents in parallel tools for building multi-agent systems](https://agentscouthq.com/tasks/multi-agent-systems-parallel-orchestration.html)
 - [Research and report agents for building multi-agent systems](https://agentscouthq.com/tasks/multi-agent-systems-research-agents.html)

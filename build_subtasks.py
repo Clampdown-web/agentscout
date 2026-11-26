@@ -148,7 +148,7 @@ def repo_table(items,d="../",title="GitHub repos"):
     if len(rows)<3: return ""
     haspush=any(r[3] for r in rows)
     th='<tr><th scope="col">Repo</th><th scope="col">GitHub stars</th><th scope="col">Licence</th>'+('<th scope="col">Last push</th>' if haspush else "")+'</tr>'
-    tr="".join(f'<tr><td><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a> <a class="ghx" href="{e(x["github"])}" target="_blank" rel="noopener noreferrer" aria-label="{e(x["name"])} on GitHub">↗</a></td><td>{s:,}</td><td>{e(l) or "—"}</td>'+(f'<td>{e(p[:10]) or "—"}</td>' if haspush else "")+'</tr>' for x,s,l,p in rows)
+    tr="".join(f'<tr><td><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a>{__import__("build_extras").sponsored_badge(x["slug"])} <a class="ghx" href="{e(x["github"])}" target="_blank" rel="noopener noreferrer" aria-label="{e(x["name"])} on GitHub">↗</a></td><td>{s:,}</td><td>{e(l) or "—"}</td>'+(f'<td>{e(p[:10]) or "—"}</td>' if haspush else "")+'</tr>' for x,s,l,p in rows)
     note=f"Top {len(rows):,} of {total:,} by stars." if total>len(rows) else f"{total:,} repos."
     return (f'<h2 id="repos" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(title)} <span style="color:var(--muted);font-weight:400">({total:,})</span></h2>'
             f'<div style="overflow-x:auto"><table class="cmp" style="width:100%;border-collapse:collapse;font-size:14px"><thead>{th}</thead><tbody>{tr}</tbody></table></div>'
@@ -219,6 +219,10 @@ def subpages(m,t,existing_sets):
         for sub in ALLOW.get(s) or []:
             if sub not in SUBDESC: continue
             if f"tasks/{s}-{sub}.html" in _REDIR: continue  # redirected page (redirects.json): never re-create it
+            # 2026-11-26: this 119-tool page sits just under the 70% Jaccard line with
+            # monitoring-agents. Emitting it retires the live monitoring-agents-evals
+            # page and would be another new indexable URL. Keep the existing page.
+            if f"{s}-{sub}" == "evaluating-agents-observability": continue
             its=[x for x in items if sub in tags(x)]; A={x["slug"] for x in its}
             if len(A)<8 or len(A)>.75*len(items): continue
             if any(len(A&B)/len(A)>=.7 for B in existing_sets): continue

@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 6,078 AI agent tools across 40 categories, including 3,218 Model Context Protocol (MCP) servers and 195 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
+> AgentScout is a curated, link-checked, read-only directory of 6,077 AI agent tools across 40 categories, including 3,218 Model Context Protocol (MCP) servers and 195 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
 
 <!-- mcp-reach:start -->
 
@@ -51,12 +51,12 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 6,078
+- **Total Verified AI Agent Tools**: 6,077
 - **Total Categories**: 40
 - **Verified MCP Servers**: 3,218
 - **Bot Templates & Installable Agent Skills**: 195 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
 - **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 2,304
-- **Free or Freemium Tools**: 3,129
+- **Free or Freemium Tools**: 3,128
 - **Local / Self-Hosted Tools (`runs_locally` filter)**: 2,252 (208 offline / on-device, 2,044 self-hosted)
 - **Catalog Last Link-Checked**: 2026-11-26 (America/Los_Angeles)
 
@@ -675,29 +675,6 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | CustomGPT.ai | Paid | No |  |  |  | write code, build apps without code | No-code platform for building AI agents grounded in your business content, with citations and anti-hallucination controls. | https://agentscouthq.com/tools/customgpt-ai.html | https://customgpt.ai |
 | 15 | Decagon | See site | No |  |  |  | sales & support | Platform for building, optimizing and scaling customer-facing AI support agents. | https://agentscouthq.com/tools/decagon.html | https://decagon.ai/ |
 
-### sandboxes & code execution (41 tools) — [https://agentscouthq.com/categories/sandboxes-code-execution.html](https://agentscouthq.com/categories/sandboxes-code-execution.html)
-
-- **At a glance**: 41 link-checked tools (34 open-source, 39 free or freemium, 34 local or self-hosted).
-- **Top picks**: [NVIDIA OpenShell](https://agentscouthq.com/tools/nvidia-openshell.html), [OpenSandbox](https://agentscouthq.com/tools/opensandbox.html), [E2B](https://agentscouthq.com/tools/e2b.html), [CubeSandbox](https://agentscouthq.com/tools/cubesandbox.html), [microsandbox](https://agentscouthq.com/tools/microsandbox.html).
-
-| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
-|---|---|---|---|---|---|---:|---|---|---|---|
-| 1 | NVIDIA OpenShell | Open source (Apache 2.0) | Yes | Apache-2.0 | Self-hosted | 20,733 | write code, run code safely | OpenShell is NVIDIA's Apache-2.0 safe, private runtime for fleets of autonomous AI agents: each agent runs in an isolated sandbox where declarative YAML policies control which files, networks, packages, APIs and credentials it can touch. The project is moving to the CNCF (ai-openshell); the 0.1.x line, at v0.1.8 on Nov 10, 2026, brought a stable release cadence, new isolation primitives, an expanded extension surface and new APIs. | https://agentscouthq.com/tools/nvidia-openshell.html | https://docs.nvidia.com/openshell/latest/ |
-| 2 | OpenSandbox | Open source | Yes |  | Self-hosted | 16,293 | write code, run code safely | Secure, fast sandbox runtime for AI agents to run code. | https://agentscouthq.com/tools/opensandbox.html | https://open-sandbox.ai/ |
-| 3 | E2B | Open source + paid cloud | Yes |  | Self-hosted | 14,618 | write code, run code safely | Secure cloud sandboxes for running agent-generated code. | https://agentscouthq.com/tools/e2b.html | https://e2b.dev |
-| 4 | CubeSandbox | Open source | Yes |  | Self-hosted | 13,107 | write code, run code safely | Lightweight, concurrent sandbox for running AI agent code securely. | https://agentscouthq.com/tools/cubesandbox.html | https://github.com/TencentCloud/CubeSandbox |
-| 5 | microsandbox | Open source | Yes |  | Offline | 8,871 | write code, run code safely | Local-first microVM runtime for running untrusted agent code safely. | https://agentscouthq.com/tools/microsandbox.html | https://docs.microsandbox.dev/getting-started/introduction |
-| 6 | smolvm | Open source | Yes |  | Offline | 6,882 | run code safely | Portable, branchable virtual machine for running agents safely on your computer. | https://agentscouthq.com/tools/smolvm.html | https://smolmachines.com/ |
-| 7 | AIO Sandbox | Free and open source (Apache-2.0). No paid AIO Sandbox plan was listed in the README on 24 Nov 2026. | Yes | Apache-2.0 | Self-hosted | 6,389 | write code, automate the browser | AIO Sandbox is an Apache-2.0 Docker image that gives an agent a browser, a shell, files, VS Code Server, Jupyter and MCP in one container. The README's quick start recommends turning on an API key so those services are not left open. The site is https://sandbox.agent-infra.com/. | https://agentscouthq.com/tools/aio-sandbox.html | https://sandbox.agent-infra.com/ |
-| 8 | agentOS | Free and open source; managed hosting through Rivet Cloud. | Yes |  | Self-hosted | 4,837 | run code safely, write code | A lightweight operating system for agents from Rivet that runs coding agents and their tools inside fast WebAssembly sandboxes with a file system, processes and networking, so you can spin up thousands cheaply. | https://agentscouthq.com/tools/agentos.html | https://rivet.dev/agentos/ |
-| 9 | nono | Open source | Yes |  | Self-hosted | 4,762 | write code, run code safely | Zero-trust sandboxing for agent runtimes. | https://agentscouthq.com/tools/nono.html | https://nono.sh/ |
-| 10 | Judge0 | Open source + cloud | Yes |  | Self-hosted | 4,499 | write code, run code safely | Sandboxed code execution system for running untrusted code from people and AI. | https://agentscouthq.com/tools/judge0.html | https://judge0.com/ |
-| 11 | Agent Sandbox (Kubernetes) | Open source | Yes |  | Self-hosted | 4,451 | run code safely, automate the browser | A Kubernetes project that adds a Sandbox resource for running isolated, stateful agent workloads such as code execution and browsers, with warm pools and fast startup on your own cluster. | https://agentscouthq.com/tools/agent-sandbox-kubernetes.html | https://agent-sandbox.sigs.k8s.io/ |
-| 12 | ArcBox | Open source | Yes |  | Self-hosted | 4,256 | write code, run code safely | Runs AI agents on isolated machines with their own kernel, filesystem and network. | https://agentscouthq.com/tools/arcbox.html | https://arcbox.dev/ |
-| 13 | Sandstorm (formerly forkd) | Free and open source (Apache-2.0). 6,110 GitHub stars and 410 forks on 25 Nov 2026. | Yes | Apache-2.0 | Self-hosted | 3,078 | write code, run code safely | Sandstorm, previously listed as forkd, is an Apache-2.0 sandbox runtime in Rust. It pauses idle AI-agent sandboxes and restores them from disk so one machine can hold more than it can run at once. The README for release v0.6.0, published 1 Nov 2026, says gVisor is the default backend, so a node needs no KVM, and Firecracker is a second backend chosen node by node. One sandstormd binary serves as master, node and web console. GitHub recorded 6,110 stars on 25 Nov 2026. | https://agentscouthq.com/tools/forkd.html | https://github.com/deeplethe/sandstorm |
-| 14 | BoxLite | Open source | Yes |  | Self-hosted | 2,644 | write code, run code safely | Embeddable micro-VM for running AI agents. | https://agentscouthq.com/tools/boxlite.html | https://boxlite.ai/ |
-| 15 | Zeroboot | Open source + cloud | Yes |  | Self-hosted | 2,467 | write code, run code safely | VM sandboxes for running agent code that start in under a millisecond by forking a warm snapshot with copy-on-write memory. | https://agentscouthq.com/tools/zeroboot.html | https://github.com/zerobootdev/zeroboot |
-
 ### no-code builders (41 tools) — [https://agentscouthq.com/categories/no-code-builders.html](https://agentscouthq.com/categories/no-code-builders.html)
 
 - **At a glance**: 41 link-checked tools (15 open-source, 27 free or freemium, 14 local or self-hosted).
@@ -720,6 +697,29 @@ Each category section below summarizes the verified tool count, open-source coun
 | 13 | Baserow | Free plan; Premium $10/user/mo yearly ($12 monthly), Advanced $18 ($22), Enterprise on request; self-host available (open core, MIT) | Yes | MIT | Self-hosted | 6,242 | write code, automate workflows | No-code platform for databases, apps, automations and AI agents, an Airtable alternative available as cloud or self-hosted. | https://agentscouthq.com/tools/baserow.html | https://baserow.io/ |
 | 14 | Nexent | Open source | Yes |  | Self-hosted | 6,087 | write code, build apps without code | Zero-code platform that generates AI agents from plain-language descriptions. | https://agentscouthq.com/tools/nexent.html | https://github.com/ModelEngine-Group/nexent |
 | 15 | PySpur | Open source | Yes |  | Self-hosted | 5,797 | write code, automate workflows | Visual playground for building and iterating on agent workflows. | https://agentscouthq.com/tools/pyspur.html | https://www.pyspur.dev/ |
+
+### sandboxes & code execution (40 tools) — [https://agentscouthq.com/categories/sandboxes-code-execution.html](https://agentscouthq.com/categories/sandboxes-code-execution.html)
+
+- **At a glance**: 40 link-checked tools (34 open-source, 38 free or freemium, 34 local or self-hosted).
+- **Top picks**: [NVIDIA OpenShell](https://agentscouthq.com/tools/nvidia-openshell.html), [OpenSandbox](https://agentscouthq.com/tools/opensandbox.html), [E2B](https://agentscouthq.com/tools/e2b.html), [CubeSandbox](https://agentscouthq.com/tools/cubesandbox.html), [microsandbox](https://agentscouthq.com/tools/microsandbox.html).
+
+| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
+|---|---|---|---|---|---|---:|---|---|---|---|
+| 1 | NVIDIA OpenShell | Open source (Apache 2.0) | Yes | Apache-2.0 | Self-hosted | 20,733 | write code, run code safely | OpenShell is NVIDIA's Apache-2.0 safe, private runtime for fleets of autonomous AI agents: each agent runs in an isolated sandbox where declarative YAML policies control which files, networks, packages, APIs and credentials it can touch. The project is moving to the CNCF (ai-openshell); the 0.1.x line, at v0.1.8 on Nov 10, 2026, brought a stable release cadence, new isolation primitives, an expanded extension surface and new APIs. | https://agentscouthq.com/tools/nvidia-openshell.html | https://docs.nvidia.com/openshell/latest/ |
+| 2 | OpenSandbox | Open source | Yes |  | Self-hosted | 16,293 | write code, run code safely | Secure, fast sandbox runtime for AI agents to run code. | https://agentscouthq.com/tools/opensandbox.html | https://open-sandbox.ai/ |
+| 3 | E2B | Open source + paid cloud | Yes |  | Self-hosted | 14,618 | write code, run code safely | Secure cloud sandboxes for running agent-generated code. | https://agentscouthq.com/tools/e2b.html | https://e2b.dev |
+| 4 | CubeSandbox | Open source | Yes |  | Self-hosted | 13,107 | write code, run code safely | Lightweight, concurrent sandbox for running AI agent code securely. | https://agentscouthq.com/tools/cubesandbox.html | https://github.com/TencentCloud/CubeSandbox |
+| 5 | microsandbox | Open source | Yes |  | Offline | 8,871 | write code, run code safely | Local-first microVM runtime for running untrusted agent code safely. | https://agentscouthq.com/tools/microsandbox.html | https://docs.microsandbox.dev/getting-started/introduction |
+| 6 | smolvm | Open source | Yes |  | Offline | 6,882 | run code safely | Portable, branchable virtual machine for running agents safely on your computer. | https://agentscouthq.com/tools/smolvm.html | https://smolmachines.com/ |
+| 7 | AIO Sandbox | Free and open source (Apache-2.0). No paid AIO Sandbox plan was listed in the README on 24 Nov 2026. | Yes | Apache-2.0 | Self-hosted | 6,389 | write code, automate the browser | AIO Sandbox is an Apache-2.0 Docker image that gives an agent a browser, a shell, files, VS Code Server, Jupyter and MCP in one container. The README's quick start recommends turning on an API key so those services are not left open. The site is https://sandbox.agent-infra.com/. | https://agentscouthq.com/tools/aio-sandbox.html | https://sandbox.agent-infra.com/ |
+| 8 | agentOS | Free and open source; managed hosting through Rivet Cloud. | Yes |  | Self-hosted | 4,837 | run code safely, write code | A lightweight operating system for agents from Rivet that runs coding agents and their tools inside fast WebAssembly sandboxes with a file system, processes and networking, so you can spin up thousands cheaply. | https://agentscouthq.com/tools/agentos.html | https://rivet.dev/agentos/ |
+| 9 | nono | Open source | Yes |  | Self-hosted | 4,762 | write code, run code safely | Zero-trust sandboxing for agent runtimes. | https://agentscouthq.com/tools/nono.html | https://nono.sh/ |
+| 10 | Judge0 | Open source + cloud | Yes |  | Self-hosted | 4,499 | write code, run code safely | Sandboxed code execution system for running untrusted code from people and AI. | https://agentscouthq.com/tools/judge0.html | https://judge0.com/ |
+| 11 | Agent Sandbox (Kubernetes) | Open source | Yes |  | Self-hosted | 4,451 | run code safely, automate the browser | A Kubernetes project that adds a Sandbox resource for running isolated, stateful agent workloads such as code execution and browsers, with warm pools and fast startup on your own cluster. | https://agentscouthq.com/tools/agent-sandbox-kubernetes.html | https://agent-sandbox.sigs.k8s.io/ |
+| 12 | ArcBox | Open source | Yes |  | Self-hosted | 4,256 | write code, run code safely | Runs AI agents on isolated machines with their own kernel, filesystem and network. | https://agentscouthq.com/tools/arcbox.html | https://arcbox.dev/ |
+| 13 | Sandstorm (formerly forkd) | Free and open source (Apache-2.0). 6,110 GitHub stars and 410 forks on 25 Nov 2026. | Yes | Apache-2.0 | Self-hosted | 3,078 | write code, run code safely | Sandstorm, previously listed as forkd, is an Apache-2.0 sandbox runtime in Rust. It pauses idle AI-agent sandboxes and restores them from disk so one machine can hold more than it can run at once. The README for release v0.6.0, published 1 Nov 2026, says gVisor is the default backend, so a node needs no KVM, and Firecracker is a second backend chosen node by node. One sandstormd binary serves as master, node and web console. GitHub recorded 6,110 stars on 25 Nov 2026. | https://agentscouthq.com/tools/forkd.html | https://github.com/deeplethe/sandstorm |
+| 14 | BoxLite | Open source | Yes |  | Self-hosted | 2,644 | write code, run code safely | Embeddable micro-VM for running AI agents. | https://agentscouthq.com/tools/boxlite.html | https://boxlite.ai/ |
+| 15 | Zeroboot | Open source + cloud | Yes |  | Self-hosted | 2,467 | write code, run code safely | VM sandboxes for running agent code that start in under a millisecond by forking a warm snapshot with copy-on-write memory. | https://agentscouthq.com/tools/zeroboot.html | https://github.com/zerobootdev/zeroboot |
 
 ### models & local runtimes (33 tools) — [https://agentscouthq.com/categories/models-local-runtimes.html](https://agentscouthq.com/categories/models-local-runtimes.html)
 
