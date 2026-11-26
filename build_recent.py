@@ -21,7 +21,7 @@ def checked_line():
     return f'<p class="updated">Checked <time class="ago" datetime="{day}" title="{e(label)}">{e(label)}</time></p>'
 def short(s,n=110): return s if len(s)<=n else s[:n].rsplit(" ",1)[0]+"…"
 def card(x,d):
-    return (f'<a class="card rcard" href="{d}tools/{x["slug"]}.html"><div class="ct">{build_extras.ico(x,d,"sm")}<h3>{e(x["name"])}</h3></div>'
+    return (f'<a class="card rcard" href="{d}tools/{x["slug"]}.html"><div class="ct">{build_extras.ico(x,d,"sm")}<h3>{e(x["name"])}</h3>{build_extras.sponsored_badge(x["slug"])}</div>'
             f'<p>{e(short(x["description"]))}</p><div class="rmeta">{"<span class=\"b new\">New</span>" if is_week(x) else ""}<span class="muted">Added <time class="ago" datetime="{e(x["added"])}">{e(fmt(x["added"]))}</time></span></div></a>')
 MAKER_PAGE=12  # first screen of /new.html#makers (3 rows at 4 columns, one column on a phone)
 MAKER_STEP=24

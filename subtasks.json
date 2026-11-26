@@ -3649,10 +3649,7 @@
 "mcp-servers",
 "mobile"
 ],
-"porkbun-mcp": [
-"mcp-servers",
-"rules-config"
-],
+"porkbun-mcp": [],
 "typeform-mcp": [
 "mcp-servers",
 "video-editing"
@@ -3682,7 +3679,9 @@
 "mcp-servers"
 ],
 "infobip-mcp": [
+"voice-phone",
 "chat-app-agents",
+"email-agents",
 "mcp-servers"
 ],
 "statsig-mcp": [
@@ -3875,9 +3874,9 @@
 ],
 "parallel-search-mcp": [
 "parallel-orchestration",
-"research-agents",
 "search-apis",
-"mcp-servers"
+"agent-auth",
+"terminal-agents"
 ],
 "supermetrics-mcp": [
 "marketing-agents",
@@ -3932,7 +3931,10 @@
 "mcp-servers"
 ],
 "smartbear-mcp": [
-"mcp-servers"
+"browser-automation",
+"observability",
+"local-models",
+"rules-config"
 ],
 "tenderly-mcp": [
 "mcp-servers"
@@ -4110,17 +4112,16 @@
 "agent-frameworks"
 ],
 "tensorlake": [
+"agent-memory",
 "sandboxes",
-"multi-agent"
+"multi-agent",
+"terminal-agents"
 ],
 "obot": [
-"guardrails",
-"agent-auth",
 "mcp-gateways",
 "mcp-servers",
 "terminal-agents",
 "ide-agents",
-"stem-separation",
 "rules-config"
 ],
 "jido": [
@@ -4256,8 +4257,9 @@
 "terminal-agents"
 ],
 "openzeppelin-mcp": [
-"smart-contracts",
-"mcp-servers"
+"vector-rag",
+"local-models",
+"vfx-compositing"
 ],
 "onesignal-mcp": [
 "email-agents",
@@ -4913,7 +4915,9 @@
 "voice-phone",
 "ai-dubbing-voices"
 ],
-"neutone": [],
+"neutone": [
+"agent-frameworks"
+],
 "midjourney": [
 "video-editing",
 "video",
@@ -5167,8 +5171,11 @@
 "vector-rag"
 ],
 "meshy": [
+"planning-tasks",
 "mcp-servers",
-"images-design"
+"local-models",
+"images-design",
+"rules-config"
 ],
 "zoo-zookeeper": [
 "video-editing",
@@ -21529,5 +21536,103 @@
 "incarnamind": [
 "computer-use",
 "stem-separation"
+],
+"hive402": [
+"agent-payments",
+"agent-auth",
+"vfx-compositing",
+"mastering"
+],
+"my-faceless-reels": [
+"trading-agents",
+"planning-tasks",
+"subtitles-transcripts",
+"ai-dubbing-voices",
+"video",
+"images-design"
+],
+"company-finders": [
+"marketing-agents",
+"local-models"
+],
+"movoa": [
+"planning-tasks",
+"video-editing",
+"video"
+],
+"unorouter": [],
+"lianex": [
+"mcp-gateways",
+"terminal-agents"
+],
+"hookr-mcp": [
+"trading-agents"
+],
+"popfestive": [
+"trading-agents",
+"agent-payments",
+"guardrails",
+"video-editing",
+"video"
+],
+"aethon-ai": [
+"planning-tasks",
+"workflow-automation"
+],
+"garage402": [
+"agent-payments",
+"voice-phone",
+"agent-auth",
+"mastering"
+],
+"exact": [
+"agent-frameworks",
+"stem-separation",
+"mobile"
+],
+"univer-workspace": [
+"parallel-orchestration",
+"sandboxes",
+"agent-frameworks",
+"video-editing",
+"stem-separation"
+],
+"a13n": [
+"sandboxes",
+"local-models"
+],
+"koed": [
+"agent-memory",
+"local-models"
+],
+"tigerless-agent-memory": [
+"agent-memory",
+"vector-rag",
+"local-models",
+"terminal-agents"
+],
+"donsetch": [
+"web-scraping",
+"local-models"
+],
+"ghidramcp": [
+"mcp-servers"
+],
+"figwright": [
+"mcp-servers",
+"local-models",
+"images-design"
+],
+"hai": [
+"planning-tasks",
+"voice-phone",
+"mcp-servers",
+"local-models"
+],
+"earshot": [
+"mcp-servers",
+"terminal-agents",
+"foley-sfx",
+"images-design"
 ]
 }

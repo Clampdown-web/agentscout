@@ -1,14 +1,49 @@
 {
- "updated": "2026-11-25T04:24:29Z",
+ "updated": "2026-11-26T04:26:13Z",
  "sources": [
   "TechCrunch",
   "The Verge",
-  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
+  {
+   "title": "Meta declined a UK watchdog's offer to test Muse before launch",
+   "source": "WIRED",
+   "url": "https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/",
+   "date": "2026-11-26T10:51:27Z",
+   "tool": null,
+   "summary": "WIRED reports that Meta turned down a Financial Conduct Authority suggestion to test Muse together in the regulator's sandbox before the UK rollout. Colin Payne, the FCA's head of innovation, said the agency wants to see how the agent handles payments and whether it acts for the customer. Meta said it has engaged with the relevant regulators. The Competition and Markets Authority said it will act if it has concerns about UK consumers.",
+   "page": "news/2026/11/meta-declined-a-uk-watchdogs-offer-to-test-muse-before-launch.html"
+  },
+  {
+   "title": "Gap uses Cognition's Devin to keep holiday shopping online",
+   "source": "Gap Inc.",
+   "url": "https://www.gapinc.com/en-us/articles/2026/11/gap-inc-taps-ai-to-help-keep-holiday-shopping-runn",
+   "date": "2026-11-25T18:13:00Z",
+   "tool": null,
+   "summary": "Gap Inc. said on 25 November 2026 that engineers use Cognition's Devin agent on its ecommerce sites. A daily site scan looks for shopper friction and system faults, then drafts a tested code fix for a person to review and publish. Gap says that work has helped recover millions in sales that downtime would have lost, and that people still approve every change.",
+   "page": "news/2026/11/gap-uses-cognitions-devin-to-keep-holiday-shopping-online.html"
+  },
+  {
+   "title": "Human Security sees AI agent traffic heading for a 150x Cyber Week",
+   "source": "Adweek",
+   "url": "https://www.adweek.com/commerce/ai-agent-traffic-to-surge-150x-this-cyber-week-driven-mostly-by-meta-muse/",
+   "date": "2026-11-25T14:13:52Z",
+   "tool": null,
+   "summary": "Adweek reports that Human Security expects AI agent traffic during Cyber Week, 26 to 30 November, to reach about 150 times last year's level, with checkout-page requests near 160 times. Meta's Muse accounts for about 70 percent of the agent traffic Human sees and 57 percent of checkout requests. The figures count page and search actions on sites Human protects, not completed orders.",
+   "page": "news/2026/11/human-security-sees-ai-agent-traffic-heading-for-a-150x-cyber-week.html"
+  },
+  {
+   "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
+   "date": "2026-11-25T14:10:18Z",
+   "tool": "agent",
+   "summary": "TechCrunch reports that Amazon and Meta have held talks about letting Muse shop on Amazon, according to Fortune. The open questions are how search results would appear and how advertising would work, and any deal would need both chief executives to approve it. Two months ago, Muse shoppers could not check out on Amazon. Neither company had commented.",
+   "page": "news/2026/11/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse.html"
+  },
   {
    "title": "Duco opens an MCP server for post-trade reconciliation agents",
    "source": "Duco",
@@ -44,42 +79,6 @@
    "tool": null,
    "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access.",
    "page": "news/2026/11/google-workspace-opens-mcp-servers-and-a-cli-for-governed-ai-agents.html"
-  },
-  {
-   "title": "Even the best AI agents struggle with everyday life",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
-   "date": "2026-11-24T21:33:29Z",
-   "tool": null,
-   "summary": "TechCrunch covers ShellBench, a test of 100 everyday tasks built from real agent requests in messy personal files. The leading models finished only about 60 percent of attempts, and 15.7 percent of all runs missed a safety check. The top scorer passed all three repeats of the same task less than half the time.",
-   "page": "news/2026/11/even-the-best-ai-agents-struggle-with-everyday-life.html"
-  },
-  {
-   "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
-   "date": "2026-11-24T21:32:38Z",
-   "tool": "agent",
-   "summary": "TechCrunch reports Walmart is partnering with Meta so Black Friday deals show up inside Muse, Meta's personal AI agent.",
-   "page": "news/2026/11/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent.html"
-  },
-  {
-   "title": "Maple raises $5.3M for a private desktop agent and a cloud agent that stays on",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
-   "date": "2026-11-24T21:19:00Z",
-   "tool": null,
-   "summary": "TechCrunch reports Maple closed a $5.3 million seed round led by Epic Ventures. Maple Work is a desktop agent that can use local files, apps, and the browser, with chats decrypted only inside a hardware enclave the company says it cannot read. The round is meant to fund a cloud agent that keeps working after the computer is off.",
-   "page": "news/2026/11/maple-raises-5-3m-for-a-private-desktop-agent-and-a-cloud-agent-that.html"
-  },
-  {
-   "title": "Anthropic opens Skills over MCP and long-running tasks in Claude",
-   "source": "The Next Web",
-   "url": "https://thenextweb.com/news/anthropic-claude-skills-over-mcp-tasks-elicitation",
-   "date": "2026-11-24T19:22:00Z",
-   "tool": null,
-   "summary": "Anthropic put Skills over MCP in public beta, so apps connected to Claude can ship step-by-step guides that load only when a task needs them. Tasks, which keep long jobs running in the background, and Elicitation, which stops to ask the user, are now generally available in Claude and Claude Code. Shopify, GitHub, and Supabase are among the first users.",
-   "page": "news/2026/11/anthropic-opens-skills-over-mcp-and-long-running-tasks-in-claude.html"
   }
  ]
 }
