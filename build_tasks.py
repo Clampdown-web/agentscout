@@ -519,7 +519,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611251930"  # bump when app.js/styles.css/home-mobile.css/consent.js change
+ASSET_V = "202611261141"  # bump when app.js/styles.css/home-mobile.css/consent.js change
 _ASSET_FILES = r"app\.js|styles\.css|home-mobile\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js"
 def stamp(s):
     """Put the current styles.css/app.js/home-mobile.css cache-bust on a page a generator just wrote.
@@ -549,6 +549,75 @@ def ensure_home_nav_script(s):
             s = s[:m.start()] + tag + s[m.start():]
         elif "</body>" in s:
             s = s.replace("</body>", tag + "</body>", 1)
+    return s
+# Responds is a sort (?sort=responds), not its own page. Same six destinations
+# on every hub; only the relative prefix and the Best MCP target change.
+# The best hub also links /mcp/ so that chip is not the only self-section link.
+_START_HERE_LINKS = {
+    "home": (
+        ("mcp/status/", "MCP status"),
+        ("mcp/?sort=responds", "Responds rankings"),
+        ("best/best-mcp-servers-2026.html", "Best MCP"),
+        ("guides/", "Guides"),
+        ("guides/how-to-automate-workflows-with-ai-agents.html", "Automate workflows"),
+        ("guides/how-to-crawl-websites-for-ai-agents.html", "Crawl websites"),
+    ),
+    "mcp": (
+        ("status/", "MCP status"),
+        ("?sort=responds", "Responds rankings"),
+        ("../best/best-mcp-servers-2026.html", "Best MCP"),
+        ("../guides/", "Guides"),
+        ("../guides/how-to-automate-workflows-with-ai-agents.html", "Automate workflows"),
+        ("../guides/how-to-crawl-websites-for-ai-agents.html", "Crawl websites"),
+    ),
+    "best": (
+        ("../mcp/status/", "MCP status"),
+        ("../mcp/?sort=responds", "Responds rankings"),
+        ("../mcp/", "MCP by task"),
+        ("best-mcp-servers-2026.html", "Best MCP"),
+        ("../guides/", "Guides"),
+        ("../guides/how-to-automate-workflows-with-ai-agents.html", "Automate workflows"),
+        ("../guides/how-to-crawl-websites-for-ai-agents.html", "Crawl websites"),
+    ),
+}
+_START_HERE_RE = re.compile(r"<!--start-here-->.*?<!--/start-here-->", re.S)
+def start_here_html(page):
+    """One compact chip row. A div, not a nav: the site's `nav` rule is sticky."""
+    chips = "".join(
+        f'<a href="{e(href)}">{e(label)}</a>' for href, label in _START_HERE_LINKS[page]
+    )
+    return (
+        '<!--start-here--><div class="start-here" role="navigation" aria-labelledby="start-here-label">'
+        '<h2 id="start-here-label" class="start-here-label">Start here</h2>'
+        f'<div class="start-here-chips">{chips}</div>'
+        "</div><!--/start-here-->"
+    )
+def ensure_start_here(s, page):
+    """Rewrite the marked block into its slot. Homepage: after verify-slim, before </header>."""
+    block = start_here_html(page)
+    s = _START_HERE_RE.sub("", s)
+    if page == "home":
+        if "<!--/vs:home-->" in s:
+            return s.replace("<!--/vs:home-->", "<!--/vs:home-->" + block, 1)
+        if "</header>" in s:
+            return s.replace("</header>", block + "</header>", 1)
+        return s
+    if page == "mcp":
+        # Before the link-check card. That card is long, and the chips have to sit
+        # with the lede, above the task list.
+        if "<!--vs:list-->" in s:
+            return s.replace("<!--vs:list-->", block + "<!--vs:list-->", 1)
+        m = re.search(r'<p class="lede"[^>]*>.*?</p>', s, flags=re.S)
+        if m:
+            return s[:m.end()] + block + s[m.end():]
+        return s
+    if page == "best":
+        if "<!--/qa:bestidx-->" in s:
+            return s.replace("<!--/qa:bestidx-->", "<!--/qa:bestidx-->" + block, 1)
+        m = re.search(r'<p class="lede"[^>]*>.*?</p>', s, flags=re.S)
+        if m:
+            return s[:m.end()] + block + s[m.end():]
+        return s
     return s
 _SERVICES_RE = re.compile(r'<section id="services" class="hsec".*?</section>', re.S)
 _SVC_BACK = '<!--svc:back--><a class="svc-back" href="#services">MCP server test and AI visibility reports</a><!--/svc:back-->'
@@ -1107,6 +1176,12 @@ def sitewide(t):
         # alternatives pages, bot templates) and data-driven links. Segment-aware
         # (tools/pageindex.html is a tool page) and leaves absolute URLs alone.
         s=__import__("build_extras").canonical_hrefs(s)
+        if f=="index.html":
+            s=ensure_start_here(s, "home")
+        elif f=="mcp/index.html":
+            s=ensure_start_here(s, "mcp")
+        elif f=="best/index.html":
+            s=ensure_start_here(s, "best")
         if s!=o: open(f,"w").write(s)
     import build_lovable; build_lovable.run()
 

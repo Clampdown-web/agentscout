@@ -79,6 +79,28 @@ def problems():
                 bad.append("index.html Services block is duplicated")
             if 'class="svc-back"' not in text:
                 bad.append("index.html is missing the footer link back to Services")
+            start = text.find("<!--start-here-->")
+            vs_end = text.find("<!--/vs:home-->")
+            header_end = text.find("</header>")
+            if start < 0 or vs_end < 0 or header_end < 0 or not (vs_end < start < header_end < svc):
+                bad.append("index.html Start here block is not after verify-slim and before Services")
+            end = text.find("<!--/start-here-->", start) if start >= 0 else -1
+            block = text[start:end] if end > start else ""
+            for href in (
+                "mcp/status/",
+                "mcp/?sort=responds",
+                "best/best-mcp-servers-2026.html",
+                "guides/",
+                "guides/how-to-automate-workflows-with-ai-agents.html",
+                "guides/how-to-crawl-websites-for-ai-agents.html",
+            ):
+                if f'href="{href}"' not in block:
+                    bad.append(f"index.html Start here is missing {href}")
+            if "nofollow" in block or "guide-list" in block:
+                bad.append("index.html Start here is a nofollow or guide-list pile")
+            vs_open = text.find("<!--vs:home-->")
+            if vs_open >= 0 and vs_end > vs_open and "start-here" in text[vs_open:vs_end]:
+                bad.append("index.html Start here is inside the verify-slim markers")
         if rel == "sponsor.html" and "api/tools.json" in text:
             bad.append("sponsor.html still fetches api/tools.json")
         if rel.endswith(".tpl") and 'class="sitenav"' in text:

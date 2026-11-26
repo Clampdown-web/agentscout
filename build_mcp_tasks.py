@@ -167,11 +167,14 @@ def pages(t):
                    f'<span class="when-disc-on">Showing {len(disc):,} discontinued servers</span></p>'
                    f'<ul data-responds-list style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in disc)}</ul>')
     jump='<ul class="guide-list">'+"".join(f'<li><a href="#{a[0]}">{e(a[2])}</a></li>' for a in made)+'<li><a href="#more">More tasks</a></li>'+(f'<li><a href="#discontinued">Discontinued ({len(disc)})</a></li>' if disc else "")+'</ul>'
+    import build_tasks as _bt
+    _sh=_bt.start_here_html("mcp")
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"hasPart":[{"@type":"WebPage","name":f"Best MCP servers for {a[1]}","url":f"{B}mcp/{a[0]}.html"} for a in made]},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":canon}]},{"@type":"VideoObject","name":"AgentScout MCP Command Center & Live JSON-RPC Stream","description":"Animated terminal and pipeline overview showing how Claude Code, Cursor, and Windsurf query AgentScout's free MCP server (com.agentscouthq/directory).","thumbnailUrl":B+"assets/animations/agentscout-mcp-terminal-poster.png","contentUrl":B+"assets/animations/agentscout-mcp-terminal.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT20S"}]}
     body=(f'<div class="crumb"><a href="../">AgentScout</a> / MCP servers by task</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">Best MCP servers by task (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">MCP (Model Context Protocol) servers plug Claude, Cursor, Codex and other AI clients into your databases, apps and data. Instead of one giant list, start with the job you need done. Each task links to a ranked page with a short guide to choosing.</p>'
+          f'{_sh}'
           f'<p style="font-size:14px">Use AgentScout from your AI client: <a href="connect.html">connect to the free AgentScout MCP server</a>.</p>'
           f'<p style="font-size:14px">Jump to</p>{jump}'
           f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-mcp-terminal-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-mcp-terminal.mp4" type="video/mp4"></video></figure>'
