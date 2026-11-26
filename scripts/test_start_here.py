@@ -112,7 +112,10 @@ class StartHereTests(unittest.TestCase):
             text = Path(ROOT, rel).read_text(encoding="utf-8")
             self.assertIn(src, text, rel)
         css = Path(ROOT, "styles.css").read_text(encoding="utf-8")
-        self.assertIn(".start-here-chips{display:flex;flex-wrap:wrap", css)
+        self.assertIn(".start-here-chips{display:flex;flex-wrap:wrap;justify-content:center", css)
+        home_css = Path(ROOT, "home-mobile.css").read_text(encoding="utf-8")
+        self.assertIn(".start-here-chips{display:flex;flex-wrap:wrap;justify-content:center", home_css)
+        self.assertIn(".start-here{margin:12px 0 4px;min-width:0;max-width:100%;box-sizing:border-box;text-align:center}", css)
         self.assertIn(".start-here-chips a:hover{border-color:var(--accent)", css)
         for folder, keep in (("mcp", "index.html"), ("best", "index.html")):
             base = os.path.join(ROOT, folder)
