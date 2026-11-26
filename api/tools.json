@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-25T09:31:43-08:00",
- "updated": "2026-11-25T09:31:43-08:00",
- "last_checked": "2026-11-25",
- "count": 6057,
- "total_tools": 6057,
+ "generated": "2026-11-26T04:54:45-08:00",
+ "updated": "2026-11-26T04:54:45-08:00",
+ "last_checked": "2026-11-26",
+ "count": 6078,
+ "total_tools": 6078,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -40606,14 +40606,15 @@
    "website": "https://porkbun.com/mcp",
    "github": "https://github.com/oborseth/Porkbun-MCP",
    "category": "MCP servers",
-   "description": "Official Porkbun MCP server for managing domains, DNS, SSL, hosting and Cloudflare settings through the Porkbun API.",
+   "description": "Porkbun MCP is Porkbun's own server for the Porkbun v3 API, published as @porkbunllc/mcp-server and hosted at https://mcp.porkbun.com/mcp. The README says ChatGPT and Claude can sign in without copying an API key, and that other clients can send the account's API key pair. Read tools cover domains, DNS, SSL and docs. Write tools can register, transfer and buy names and can charge the account. Release v0.65.24 was published 24 Nov 2026. GitHub oborseth/Porkbun-MCP showed 37 stars and 3 forks on 26 Nov 2026, license MIT.",
    "key_features": [
-    "Free",
+    "MIT. Hosted at https://mcp.porkbun.com/mcp. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
     "Active",
     "34 GitHub stars",
-    "Connect tools via mcp"
+    "Connect tools via mcp",
+    "Sales & support"
    ],
-   "pricing": "Free",
+   "pricing": "MIT. Hosted at https://mcp.porkbun.com/mcp. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)"
@@ -40622,7 +40623,8 @@
    "added": "2026-10-18",
    "source": "MCP registry",
    "goals": [
-    "automation"
+    "automation",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -40632,9 +40634,10 @@
    "repo": "oborseth/Porkbun-MCP",
    "github_stars": 34,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/porkbun-mcp.png",
@@ -40978,14 +40981,16 @@
    "website": "https://www.infobip.com/",
    "github": "https://github.com/infobip/mcp",
    "category": "MCP servers",
-   "description": "Infobip MCP servers for omnichannel messaging from agents, including SMS, RCS, WhatsApp and Viber.",
+   "description": "Infobip MCP Servers let an agent send messages and manage account data on the Infobip platform. The README lists remote streamable-HTTP servers under https://mcp.infobip.com for SMS, WhatsApp, Viber, RCS, email, voice, 2FA and People, among others, with OAuth 2.1 or an API key. It says an Infobip account is required and a free trial is available. GitHub infobip/mcp showed 36 stars and 8 forks on 26 Nov 2026, license MIT, and no latest release.",
    "key_features": [
-    "Requires Infobip: pay per message/channel usage; custom plans via sales",
+    "MIT for the docs repository. The README says an Infobip account is required and a free trial is available. No per-message price was in the README checked 26 Nov 2026. GitHub had no latest release.",
     "Active",
     "36 GitHub stars",
-    "Connect tools via mcp"
+    "Voice & phone calls",
+    "Connect tools via mcp",
+    "Sales & support"
    ],
-   "pricing": "Requires Infobip: pay per message/channel usage; custom plans via sales",
+   "pricing": "MIT for the docs repository. The README says an Infobip account is required and a free trial is available. No per-message price was in the README checked 26 Nov 2026. GitHub had no latest release.",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -40994,7 +40999,8 @@
    "added": "2026-10-18",
    "source": "MCP registry",
    "goals": [
-    "automation"
+    "automation",
+    "media"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -41004,9 +41010,11 @@
    "repo": "infobip/mcp",
    "github_stars": 36,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "connect tools via MCP"
+    "voice & phone calls",
+    "connect tools via MCP",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/infobip-mcp.png",
@@ -43023,15 +43031,16 @@
    "website": "https://parallel.ai/",
    "github": "https://github.com/parallel-web/search-mcp",
    "category": "MCP servers",
-   "description": "Parallel's MCP servers for web search and deep-research tasks built for AI agents.",
+   "description": "Parallel Search MCP is a hosted web search and page fetch server for coding agents. The README gives the server URL https://search.parallel.ai/mcp, streamable HTTP, and says authentication is none: no account, API key or Parallel CLI. It tells the agent to check that web_search and web_fetch are available. Release v0.1.1 on 21 Sep 2026 only tightens Hermes setup notes and says the endpoint is unchanged. GitHub parallel-web/search-mcp showed 38 stars and 3 forks on 26 Nov 2026, license MIT.",
    "key_features": [
-    "Pay-as-you-go per request with a $5 free monthly allowance",
+    "MIT. The README says the hosted search server at https://search.parallel.ai/mcp needs no account and no API key. A separate Hermes native provider is described as paid and is not this server.",
     "Active",
     "30 GitHub stars",
+    "Write code",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "Pay-as-you-go per request with a $5 free monthly allowance",
+   "pricing": "MIT. The README says the hosted search server at https://search.parallel.ai/mcp needs no account and no API key. A separate Hermes native provider is described as paid and is not this server.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -43050,8 +43059,9 @@
    "repo": "parallel-web/search-mcp",
    "github_stars": 30,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "write code",
     "research the web",
     "connect tools via MCP"
    ],
@@ -43579,14 +43589,16 @@
    "website": "https://www.smartbear.com/",
    "github": "https://github.com/SmartBear/smartbear-mcp",
    "category": "MCP servers",
-   "description": "SmartBear's MCP server giving AI tools access to BugSnag, Reflect, Swagger, PactFlow and QTM4J.",
+   "description": "SmartBear MCP gives an assistant the team's testing and monitoring tools. The README lists local tools for BearQ, BugSnag, Reflect, Swagger, PactFlow, Pact Broker, QMetry, QTM4J, Zephyr and Collaborator, started with npx @smartbear/mcp. It also lists hosted servers for Swagger, BugSnag and Zephyr that sign in with a browser and do not need a local Node process. Release v0.44.0 on 16 Nov 2026 adds smartbear_list_integrations, which reports which products are configured. GitHub SmartBear/smartbear-mcp showed 44 stars and 50 forks on 26 Nov 2026, license MIT.",
    "key_features": [
-    "See site",
+    "MIT. The README does not list a price for the MCP server. Product access still depends on the SmartBear account for each tool.",
     "Active",
     "44 GitHub stars",
+    "Write code",
+    "Automate the browser",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
+   "pricing": "MIT. The README does not list a price for the MCP server. Product access still depends on the SmartBear account for each tool.",
    "price_tag": "unknown",
    "platforms": [
     "Developer (API/SDK)"
@@ -43605,8 +43617,10 @@
    "repo": "SmartBear/smartbear-mcp",
    "github_stars": 44,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "write code",
+    "automate the browser",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -45423,15 +45437,16 @@
    "website": "https://www.tensorlake.ai/",
    "github": "https://github.com/tensorlakeai/tensorlake",
    "category": "sandboxes & code execution",
-   "description": "Serverless runtime that gives agents MicroVM sandboxes and durable orchestration for long-running background jobs.",
+   "description": "Tensorlake is an Apache-2.0 serverless runtime for agent sandboxes and background orchestration. The README says the Sandbox API starts MicroVM sandboxes for agents, tools or model-written code, with snapshots, clone, and suspend/resume that keeps memory and files. The tl CLI is a standalone binary installed from tensorlake.ai/install, not from PyPI. CLI v0.5.165 was published 13 Nov 2026. GitHub tensorlakeai/tensorlake showed 1,051 stars and 154 forks on 26 Nov 2026.",
    "key_features": [
-    "Open source + cloud",
+    "Apache-2.0. The README says cloud use needs an API key from cloud.tensorlake.ai. No dollar price was in the README or the CLI v0.5.165 notes checked 26 Nov 2026.",
     "Active",
     "1,031 GitHub stars",
     "Write code",
-    "Run code safely"
+    "Run code safely",
+    "Give agents memory"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Apache-2.0. The README says cloud use needs an API key from cloud.tensorlake.ai. No dollar price was in the README or the CLI v0.5.165 notes checked 26 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -45441,7 +45456,8 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "coding"
+    "coding",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -45451,10 +45467,11 @@
    "repo": "tensorlakeai/tensorlake",
    "github_stars": 1031,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
-    "run code safely"
+    "run code safely",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tensorlake.png",
@@ -45467,15 +45484,14 @@
    "website": "https://obot.ai/",
    "github": "https://github.com/obot-platform/obot",
    "category": "MCP servers",
-   "description": "Obot is an MIT-licensed platform for organisations to manage, secure and govern AI use: it provides MCP and LLM gateways, distributes approved MCP servers and skills through a CLI, manages agent credentials and permissions, and runs hosted MCP servers and Claude Environments sessions in isolation. On user devices, Obot Sentry audits and enforces policy, and it works with Claude Code, Codex, Cursor, VS Code and other clients; v0.28.0 shipped Nov 7, 2026.",
+   "description": "Obot is an MIT-licensed platform for an organization to govern AI clients, models and tools. The README describes MCP and LLM gateways, Git-backed catalogs of approved MCP servers and skills, an Obot CLI, hosted MCP servers, and Obot Sentry on user devices for Claude Code, Codex, Cursor, Kiro and VS Code. Claude Environments is described as experimental and off by default. GitHub obot-platform/obot showed 1,221 stars and 255 forks on 26 Nov 2026. Release v0.28.2, published 19 Nov 2026, says it compresses MCP audit log storage, makes scheduled audit exports incremental, and includes security fixes the project tells installations to apply.",
    "key_features": [
-    "Free and open source (MIT); a hosted cloud option is also offered at obot.ai (no price listed in this update).",
+    "MIT. The README says every edition runs the same open-source image and editions differ by license key. No dollar price was in the README or the v0.28.2 notes checked 26 Nov 2026.",
     "Active",
     "1,143 GitHub stars",
-    "Connect tools via mcp",
-    "Run code safely"
+    "Connect tools via mcp"
    ],
-   "pricing": "Free and open source (MIT); a hosted cloud option is also offered at obot.ai (no price listed in this update).",
+   "pricing": "MIT. The README says every edition runs the same open-source image and editions differ by license key. No dollar price was in the README or the v0.28.2 notes checked 26 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -45497,8 +45513,7 @@
    "open_source": true,
    "license": "MIT",
    "tags": [
-    "connect tools via MCP",
-    "run code safely"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/obot.png",
@@ -46744,16 +46759,15 @@
    "website": "https://mcp.openzeppelin.com/",
    "github": "https://github.com/OpenZeppelin/openzeppelin-mcp",
    "category": "crypto",
-   "description": "OpenZeppelin's official MCP servers that let agents generate secure smart contracts from audited OpenZeppelin libraries for Solidity, Cairo, Stellar and more.",
+   "description": "OpenZeppelin MCP is the hosted Model Context Protocol servers for OpenZeppelin contract libraries. The README lists servers for Solidity, Cairo, Confidential Contracts, Stellar, Stylus, TRON, Sui Move and Uniswap Hooks, and says they are hosted builds of the contracts-wizard MCP package, which can also run locally. Setup is documented at https://mcp.openzeppelin.com. Release v0.4.2 on 19 Oct 2026 bumps @openzeppelin/contracts-mcp to 0.7.2. GitHub OpenZeppelin/openzeppelin-mcp showed 30 stars and 13 forks on 26 Nov 2026, license AGPL-3.0.",
    "key_features": [
-    "Open source",
+    "AGPL-3.0. Hosted at https://mcp.openzeppelin.com. No separate MCP price was in the README or the v0.4.2 notes checked 26 Nov 2026.",
     "Active",
     "30 GitHub stars",
     "Connect tools via mcp",
-    "Run code safely",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "AGPL-3.0. Hosted at https://mcp.openzeppelin.com. No separate MCP price was in the README or the v0.4.2 notes checked 26 Nov 2026.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -46773,10 +46787,9 @@
    "repo": "OpenZeppelin/openzeppelin-mcp",
    "github_stars": 30,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
     "connect tools via MCP",
-    "run code safely",
     "monitor & evaluate agents"
    ],
    "hybrid": false,
@@ -52814,13 +52827,13 @@
    "website": "https://neutone.jp",
    "github": "https://github.com/Neutone/neutone_sdk",
    "category": "music production",
-   "description": "Plugin that runs neural audio models in your DAW in real time for new sounds and timbre transfer.",
+   "description": "Neutone SDK is an LGPL-2.1 Python framework that wraps PyTorch audio models so they run in a DAW through Neutone's host plugins. The README says Neutone FX is for real-time models and Neutone Gen, still in beta, is for non-real-time models, and that both host plugins are free. Release v1.5.2 on 13 Nov 2025 loosened the torch and numpy version requirements. GitHub Neutone/neutone_sdk showed 636 stars and 34 forks on 26 Nov 2026.",
    "key_features": [
-    "See site",
+    "LGPL-2.1. The README says the Neutone FX and Neutone Gen host plugins are free. No paid plugin price was in the README or the v1.5.2 notes checked 26 Nov 2026.",
     "Active",
     "633 GitHub stars"
    ],
-   "pricing": "See site",
+   "pricing": "LGPL-2.1. The README says the Neutone FX and Neutone Gen host plugins are free. No paid plugin price was in the README or the v1.5.2 notes checked 26 Nov 2026.",
    "price_tag": "unknown",
    "platforms": [
     "Web"
@@ -52839,7 +52852,7 @@
    "repo": "Neutone/neutone_sdk",
    "github_stars": 633,
    "open_source": false,
-   "license": "",
+   "license": "LGPL-2.1",
    "tags": [
     "music production"
    ],
@@ -55715,14 +55728,14 @@
    "website": "https://www.meshy.ai",
    "github": "https://github.com/meshy-dev/meshy-mcp-server",
    "category": "3D & concept art",
-   "description": "Text and image to textured 3D models, with rigging and animation, plus an official MCP server for AI agents.",
+   "description": "Meshy's MCP server lets an assistant create and download 3D models, textures, images, rigs and animations on the Meshy platform. The README describes a hosted server at https://mcp.meshy.ai/mcp (China: https://mcp.meshy.cn/mcp) that signs in with a Meshy account or an API key, and a local Node server that uses MESHY_API_KEY. It says any plan, including the free plan, can connect, and that generation spends Meshy credits. Release v0.6.13 on 23 Nov 2026 changes the out-of-credits error so it links the subscription settings page. GitHub meshy-dev/meshy-mcp-server showed 97 stars and 29 forks on 26 Nov 2026, license MIT.",
    "key_features": [
-    "Free; Pro $20/mo, Premium $40/mo, Ultra $100/mo (first month discounts)",
+    "MIT for the MCP server. The README says any Meshy plan, including the free plan, can connect, and generation spends Meshy credits. Dollar plan prices were not copied from a third party.",
     "Active",
     "86 GitHub stars",
     "Generate 3d"
    ],
-   "pricing": "Free; Pro $20/mo, Premium $40/mo, Ultra $100/mo (first month discounts)",
+   "pricing": "MIT for the MCP server. The README says any Meshy plan, including the free plan, can connect, and generation spends Meshy credits. Dollar plan prices were not copied from a third party.",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -55741,7 +55754,7 @@
    "repo": "meshy-dev/meshy-mcp-server",
    "github_stars": 86,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "generate 3D"
    ],
@@ -241614,7 +241627,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241657,7 +241670,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241700,7 +241713,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241745,7 +241758,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241788,7 +241801,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241831,7 +241844,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241875,7 +241888,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241917,7 +241930,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -241959,7 +241972,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242002,7 +242015,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242043,7 +242056,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242084,7 +242097,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242127,7 +242140,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242170,7 +242183,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242212,7 +242225,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242254,7 +242267,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242297,7 +242310,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242343,7 +242356,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -242392,7 +242405,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "pingdotgg/t3code",
@@ -242436,7 +242449,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "n8n-io/nod",
@@ -242481,7 +242494,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "trustgraph-ai/trustgraph",
@@ -242524,7 +242537,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "dstackai/dstack",
@@ -242568,7 +242581,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "sheprd-labs/sheprd",
@@ -242614,7 +242627,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "Lynpoint/CyberVerse",
@@ -242659,7 +242672,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "bubbuild/bub",
@@ -242703,7 +242716,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "antvis/AVA",
@@ -242747,7 +242760,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "openclaw/crabbox",
@@ -242791,7 +242804,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "agentes-chat/agentes-chat",
@@ -242833,7 +242846,7 @@
    "goals": [],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "genex-games/genex-desktop",
@@ -242875,7 +242888,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "FrigadeHQ/yogurt",
@@ -242920,7 +242933,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "solongate/agent-security",
@@ -242965,7 +242978,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "devvmhq/devvm",
@@ -243008,7 +243021,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "abacusai/abacusai-bot",
@@ -243053,7 +243066,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "silverstein/minutes",
@@ -243099,7 +243112,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "codeaholicguy/ai-devkit",
@@ -243146,7 +243159,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "JosssphZhou/poki",
@@ -249757,7 +249770,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -249802,7 +249815,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -249847,7 +249860,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -249891,7 +249904,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -249932,7 +249945,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -249974,7 +249987,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250015,7 +250028,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250057,7 +250070,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250101,7 +250114,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250146,7 +250159,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250192,7 +250205,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250238,7 +250251,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250284,7 +250297,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250329,7 +250342,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250374,7 +250387,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250418,7 +250431,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250464,7 +250477,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250510,7 +250523,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250556,7 +250569,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250602,7 +250615,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -250649,7 +250662,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "pixel-agents-hq/pixel-agents",
    "github_stars": 10295,
    "open_source": true,
@@ -250692,7 +250705,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "cookieY/Yearning",
    "github_stars": 8980,
    "open_source": true,
@@ -250733,7 +250746,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "larashero3-dotcom/lieflat-charts",
    "github_stars": 6927,
    "open_source": false,
@@ -250778,7 +250791,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "yuezhiai/jonex",
    "github_stars": 1712,
    "open_source": true,
@@ -250822,7 +250835,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "proxysoul/Empryo",
    "github_stars": 1628,
    "open_source": false,
@@ -250868,7 +250881,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "feimacode/open-design-agent-kit",
    "github_stars": 1157,
    "open_source": true,
@@ -250912,7 +250925,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "kubai087/kubai-icons",
    "github_stars": 1034,
    "open_source": true,
@@ -250954,7 +250967,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "artemnovitckii/claude-animation-skills",
    "github_stars": 938,
    "open_source": true,
@@ -250998,7 +251011,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "boringmarketer/boring-marketing-skills",
    "github_stars": 695,
    "open_source": true,
@@ -251042,7 +251055,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "StashDock/StashDock",
    "github_stars": 570,
    "open_source": true,
@@ -251089,7 +251102,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "swipt-automation/swipt",
    "github_stars": 531,
    "open_source": true,
@@ -256332,6 +256345,908 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/incarnamind.png",
    "page": "https://agentscouthq.com/tools/incarnamind.html"
+  },
+  {
+   "name": "HIVE402",
+   "slug": "hive402",
+   "url": "https://hive402.scriptmasterlabs.com",
+   "website": "https://hive402.scriptmasterlabs.com",
+   "github": "",
+   "category": "MCP servers",
+   "description": "HIVE402 is Script Master Labs' live directory of x402 endpoints that agents can pay. The homepage on 26 Nov 2026 showed 67,157 paid endpoints, 43,879 of them marked verified payable, 2,187 operators and 6 payment rails, and it said those figures are re-checked from settlement records. A GET to https://hive402.scriptmasterlabs.com/mcp returned HTTP 200 and named the server x402-agent-idea-forge, with tools such as search_catalog and get_listing. The page describes a free Rescue check that reads an endpoint's catalog state, and a 0.005 USDC OMNIGATE fee leg on some paid flows. This listing is only HIVE402. It is not SqueezeOS, Token Verdict, Verdict Protocol or Authority Engine.",
+   "key_features": [
+    "Homepage on 26 Nov 2026: a live paid-endpoint market. Rescue checks are described as free. A 0.005 USDC OMNIGATE fee leg is named on some paid flows. No monthly subscription price was on that page.",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Homepage on 26 Nov 2026: a live paid-endpoint market. Rescue checks are described as free. A 0.005 USDC OMNIGATE fee leg is named on some paid flows. No monthly subscription price was on that page.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hive402.png",
+   "page": "https://agentscouthq.com/tools/hive402.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-26"
+  },
+  {
+   "name": "My Faceless Reels",
+   "slug": "my-faceless-reels",
+   "url": "https://myfacelessreels.com/",
+   "website": "https://myfacelessreels.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "My Faceless Reels makes short videos from a topic or a script you supply, with narration, visuals and captions, for Instagram Reels, YouTube Shorts and TikTok. The homepage on 26 Nov 2026 said there were 23 templates, 22 voices and 9 languages, and that you download the file. Automatic posting was described as still in integration testing. The pricing block listed Starter at $20 a month (up to 15 videos), Pro at $35 (up to 30), Studio at $59 (up to 60) and Agency at $265 (up to 330), with yearly billing shown as 30% off. The page did not show a $0 plan in that block. This is a faceless-video generator. It is not a face-swap tool, and it is not Faceless at faceless.so.",
+   "key_features": [
+    "Starter $20/mo (up to 15 videos), Pro $35/mo (30), Studio $59/mo (60), Agency $265/mo (330). Yearly shown as 30% off (myfacelessreels.com, 26 Nov 2026). No $0 plan in that pricing block.",
+    "Active",
+    "Generate video",
+    "Subtitles & transcripts",
+    "Voiceover"
+   ],
+   "pricing": "Starter $20/mo (up to 15 videos), Pro $35/mo (30), Studio $59/mo (60), Agency $265/mo (330). Yearly shown as 30% off (myfacelessreels.com, 26 Nov 2026). No $0 plan in that pricing block.",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "subtitles & transcripts",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/my-faceless-reels.png",
+   "page": "https://agentscouthq.com/tools/my-faceless-reels.html"
+  },
+  {
+   "name": "Company Finders",
+   "slug": "company-finders",
+   "url": "https://companyfinders.com/",
+   "website": "https://companyfinders.com/",
+   "github": "",
+   "category": "data & analytics",
+   "description": "Company Finders counts local businesses that have no website, or a broken one, for people who sell websites. A count is free. A list is priced at $3 per 1,000 businesses, and the homepage's example on 26 Nov 2026 was plumbers near Austin: 74 with no website, 225 with one, the whole list $1, counted 19 Nov 2026. An SEO checker scores one site out of 100 for free. The MCP at https://companyfinders.com/mcp returned HTTP 405 to a bare GET. A POST initialize on 26 Nov 2026 returned HTTP 200 and serverInfo name company-finders, version 1.4.0.",
+   "key_features": [
+    "Free count and free SEO score. Lists are $3 per 1,000 businesses (companyfinders.com, 26 Nov 2026). Austin plumbers example: $1 for 299 businesses, counted 19 Nov 2026.",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free count and free SEO score. Lists are $3 per 1,000 businesses (companyfinders.com, 26 Nov 2026). Austin plumbers example: $1 for 299 businesses, counted 19 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/company-finders.png",
+   "page": "https://agentscouthq.com/tools/company-finders.html"
+  },
+  {
+   "name": "Movoa",
+   "slug": "movoa",
+   "url": "https://movoa.ai/",
+   "website": "https://movoa.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "Movoa is an AI video generator that returns a clip with sound. The homepage on 26 Nov 2026 said the first clip is free with no account, and that paid plans make MiniMax H3 clips with no monthly cap. Grok Imagine Video 1.5, Seedance and Veo 3.1 Fast use the fast credits included in each plan. Starter was $14.90 a month, Creator $29 a month and Pro $59 a month. Photo-to-video and text-to-video are both on the page. A Black Friday note said yearly plans get double fast credits for a year with the code BLACKFRIDAY until 29 Nov 2026. This is not MOVO at himovo.com. The page did not describe face swapping.",
+   "key_features": [
+    "1 free clip, no account. Starter $14.90/mo, Creator $29/mo, Pro $59/mo (movoa.ai, 26 Nov 2026). Paid plans: unlimited MiniMax H3; other models use included fast credits.",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "1 free clip, no account. Starter $14.90/mo, Creator $29/mo, Pro $59/mo (movoa.ai, 26 Nov 2026). Paid plans: unlimited MiniMax H3; other models use included fast credits.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/movoa.png",
+   "page": "https://agentscouthq.com/tools/movoa.html"
+  },
+  {
+   "name": "UnoRouter",
+   "slug": "unorouter",
+   "url": "https://unorouter.com/en",
+   "website": "https://unorouter.com/en",
+   "github": "",
+   "category": "agent infra",
+   "description": "UnoRouter is one OpenAI-compatible API key for many chat models. The English homepage on 26 Nov 2026 said it routed 277 models across 48 or more upstreams, with 134 models marked free and 143 paid, and that models whose names end in :free cost nothing at about one request a minute. Paid models are pay as you go and the page said that credit does not expire. The same key is described for coding agents (OpenCode, Cline and others) and for character-chat clients including Janitor.AI and SillyTavern. The site also hosts a chat box. No public source repository was checked for this listing, so the pricing label follows the free and paid models on the page rather than an open-source claim.",
+   "key_features": [
+    "Free models (name ends in :free) at about 1 request a minute. Paid models are pay as you go; the page says credit does not expire (unorouter.com/en, 26 Nov 2026).",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Free models (name ends in :free) at about 1 request a minute. Paid models are pay as you go; the page says credit does not expire (unorouter.com/en, 26 Nov 2026).",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/unorouter.png",
+   "page": "https://agentscouthq.com/tools/unorouter.html"
+  },
+  {
+   "name": "Lianex",
+   "slug": "lianex",
+   "url": "https://lianex.ai/",
+   "website": "https://lianex.ai/",
+   "github": "",
+   "category": "e-commerce & retail",
+   "description": "Lianex is a shopping assistant. The page's description on 26 Nov 2026 says you describe what you want and it searches a marketplace, narrows the choice with you, and points at a place to buy. A GET to https://api.lianex.ai/api/public/mcp returned HTTP 200 and a server card named ai.lianex/lianex, titled Lianex, Australian price comparison. The homepage HTML is a short chat shell. No price was stated on that page. The maker filed it as free.",
+   "key_features": [
+    "No price on the homepage on 26 Nov 2026. Public MCP GET https://api.lianex.ai/api/public/mcp returned 200.",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "No price on the homepage on 26 Nov 2026. Public MCP GET https://api.lianex.ai/api/public/mcp returned 200.",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lianex.png",
+   "page": "https://agentscouthq.com/tools/lianex.html"
+  },
+  {
+   "name": "Hookr MCP",
+   "slug": "hookr-mcp",
+   "url": "https://hookr.fun/agents",
+   "website": "https://hookr.fun/agents",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Hookr MCP lets an assistant read Hookr pools and quote or swap on them. The agents page on 26 Nov 2026 is about Hookr pools with a revenue token on Robinhood Chain, built on Uniswap. A bare GET to https://hookr.fun/api/mcp returned HTTP 405. A POST initialize the same day returned HTTP 200, serverInfo name hookr version 0.5.1, and instructions that say Hookr runs Uniswap v4 pools with Hook Blocks on Robinhood Chain. The maker filed the server as free. This listing does not repeat token prices from the page.",
+   "key_features": [
+    "Maker filed it as free. No separate MCP subscription was stated on the agents page on 26 Nov 2026. POST initialize https://hookr.fun/api/mcp returned 200.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Maker filed it as free. No separate MCP subscription was stated on the agents page on 26 Nov 2026. POST initialize https://hookr.fun/api/mcp returned 200.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hookr-mcp.png",
+   "page": "https://agentscouthq.com/tools/hookr-mcp.html"
+  },
+  {
+   "name": "PopFestive",
+   "slug": "popfestive",
+   "url": "https://popfestive.com/",
+   "website": "https://popfestive.com/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "PopFestive turns one portrait into a Christmas profile picture or a short festive video. The homepage on 26 Nov 2026 offered styles such as a Santa hat, anime, a 3D cartoon, a Nice List certificate, a pet portrait and a baby-on-a-reindeer clip. It asks for one clear photo of a face you have permission to use. Credits pay for downloads without a watermark. Basic is $29.90 a month for 100 credits, Pro is $49.90 for 300, and Family is $99.90 for 800. A 10-credit pack is $7.99 and a 50-credit pack is $29. The page says failed renders are free and that monthly credits refresh. This is a holiday photo effect, not a face-swap product.",
+   "key_features": [
+    "Basic $29.90/mo (100 credits), Pro $49.90/mo (300), Family $99.90/mo (800). Packs: 10 credits $7.99, 50 credits $29. Failed renders free (popfestive.com, 26 Nov 2026).",
+    "Active",
+    "Edit photos",
+    "Generate images"
+   ],
+   "pricing": "Basic $29.90/mo (100 credits), Pro $49.90/mo (300), Family $99.90/mo (800). Packs: 10 credits $7.99, 50 credits $29. Failed renders free (popfestive.com, 26 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit photos",
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/popfestive.png",
+   "page": "https://agentscouthq.com/tools/popfestive.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-26"
+  },
+  {
+   "name": "Aethon AI",
+   "slug": "aethon-ai",
+   "url": "https://aiaethon.com/",
+   "website": "https://aiaethon.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Aethon AI is a generative-engine-optimization product from Moment Intelligence. The homepage on 26 Nov 2026 says it finds the life moments when people ask ChatGPT, Claude, Gemini or Perplexity for help, then works to get a brand recommended in those answers. Plans are Starter at $199 a month (50 moments, one industry, up to 10 seats), Pro at $399 (250 moments) and Business at $799 (600 moments, team workflows). Annual billing is shown as 20% less. A free Moment Check is offered before a paid plan. The page did not describe a permanent free product tier.",
+   "key_features": [
+    "Starter $199/mo (50 moments, up to 10 seats), Pro $399/mo (250 moments), Business $799/mo (600 moments). Annual billing saves 20% (aiaethon.com, 26 Nov 2026).",
+    "Active",
+    "Automate workflows",
+    "Sales & support"
+   ],
+   "pricing": "Starter $199/mo (50 moments, up to 10 seats), Pro $399/mo (250 moments), Business $799/mo (600 moments). Annual billing saves 20% (aiaethon.com, 26 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Maker submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aethon-ai.png",
+   "page": "https://agentscouthq.com/tools/aethon-ai.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-26"
+  },
+  {
+   "name": "Garage402",
+   "slug": "garage402",
+   "url": "https://sml-authority-engine.timothy-walton45.workers.dev/garage",
+   "website": "https://sml-authority-engine.timothy-walton45.workers.dev/garage",
+   "github": "",
+   "category": "security & governance",
+   "description": "Garage402 is Script Master Labs' inspection page for x402 sellers an agent pays. The HTML page on 26 Nov 2026, not a JSON-only response, says a person can run a free check of up to 3 endpoints and see up to 3 red flags. Agents pay per call in USDC on Base: inspect is $0.05, recommend is $0.01, and route is $0.01. The page says each flag comes from a live probe or public Base data. This path is Garage402 only. The same host's root is Authority Engine, a different product whose publish date is 27 Nov 2026, and it is not listed here.",
+   "key_features": [
+    "Free human check: up to 3 endpoints, 3 red flags. Agents: inspect $0.05, recommend $0.01, route $0.01, USDC on Base via x402 (page checked 26 Nov 2026).",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free human check: up to 3 endpoints, 3 red flags. Agents: inspect $0.05, recommend $0.01, route $0.01, USDC on Base via x402 (page checked 26 Nov 2026).",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Reviewed submission",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/garage402.png",
+   "page": "https://agentscouthq.com/tools/garage402.html"
+  },
+  {
+   "name": "Exact",
+   "slug": "exact",
+   "url": "https://github.com/expo/exact",
+   "website": "",
+   "github": "https://github.com/expo/exact",
+   "category": "app builders",
+   "description": "Exact is Expo's MIT framework for building one app for the web, iOS, macOS, Android and Linux. The README says a coding agent can build, run, see and check that app on each platform, and that Exact is still pre-1.0 with no packaged release. GitHub expo/exact showed 5,150 stars on 26 Nov 2026. There is no separate product homepage; this listing points at the repository.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5,150 GitHub stars",
+    "Write code",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "expo/exact",
+   "github_stars": 5150,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/exact.png",
+   "page": "https://agentscouthq.com/tools/exact.html"
+  },
+  {
+   "name": "Univer Workspace",
+   "slug": "univer-workspace",
+   "url": "https://space.univer.ai/",
+   "website": "https://space.univer.ai/",
+   "github": "https://github.com/dream-num/univer-workspace",
+   "category": "productivity",
+   "description": "Univer Workspace is an Apache-2.0 office workspace on the Univer Office SDK for sheets, docs and slides. The README says agents edit in isolated worktrees and a person reviews what gets merged. GitHub dream-num/univer-workspace showed 2,233 stars on 26 Nov 2026. The space.univer.ai homepage returned almost no text that day, so this description follows the README.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2,233 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "dream-num/univer-workspace",
+   "github_stars": 2233,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/univer-workspace.png",
+   "page": "https://agentscouthq.com/tools/univer-workspace.html"
+  },
+  {
+   "name": "a13n",
+   "slug": "a13n",
+   "url": "https://a13n.dev/",
+   "website": "https://a13n.dev/",
+   "github": "https://github.com/converge-ai-labs/agent-foundation",
+   "category": "agent infra",
+   "description": "a13n is an Apache-2.0 runtime for running agents on your own machines. The README and a13n.dev describe a console, an HTTP API and Python, TypeScript, Go and Rust SDKs. You bring model, sandbox and search keys. A Docker Compose file starts the service. No dollar price was on a13n.dev on 26 Nov 2026. GitHub converge-ai-labs/agent-foundation showed 1,648 stars that day.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1,648 GitHub stars",
+    "Build an agent",
+    "Research the web",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "converge-ai-labs/agent-foundation",
+   "github_stars": 1648,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "build an agent",
+    "research the web",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/a13n.png",
+   "page": "https://agentscouthq.com/tools/a13n.html"
+  },
+  {
+   "name": "Koed",
+   "slug": "koed",
+   "url": "https://koed.ai/",
+   "website": "https://koed.ai/",
+   "github": "https://github.com/koed-labs/koed",
+   "category": "memory & RAG",
+   "description": "Koed is an Apache-2.0 memory layer for Codex, Claude Code and Pi. The README says it records coding sessions on a machine you run and lets the next session search them, with no extra model in the middle. koed.ai on 26 Nov 2026 listed self-hosted as free and said cloud, team and enterprise prices were not announced. GitHub koed-labs/koed showed 20 stars that day.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "20 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "koed-labs/koed",
+   "github_stars": 20,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "research the web",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/koed.png",
+   "page": "https://agentscouthq.com/tools/koed.html"
+  },
+  {
+   "name": "Tigerless Agent Memory",
+   "slug": "tigerless-agent-memory",
+   "url": "https://github.com/tigerless-labs/agent-memory",
+   "website": "",
+   "github": "https://github.com/tigerless-labs/agent-memory",
+   "category": "memory & RAG",
+   "description": "Tigerless Agent Memory is an MIT runtime that keeps one Markdown store for agents that can run a shell, including Claude Code, Codex CLI and Muse Code. The README says retrieval is local, writes happen at conversation boundaries, and no API key is required. GitHub tigerless-labs/agent-memory showed 4,291 stars on 26 Nov 2026. The repo has no homepage.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4,291 GitHub stars",
+    "Write code",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tigerless-labs/agent-memory",
+   "github_stars": 4291,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tigerless-agent-memory.png",
+   "page": "https://agentscouthq.com/tools/tigerless-agent-memory.html"
+  },
+  {
+   "name": "DonSeTch",
+   "slug": "donsetch",
+   "url": "https://github.com/dondai44423/donsetch",
+   "website": "",
+   "github": "https://github.com/dondai44423/donsetch",
+   "category": "research",
+   "description": "DonSeTch is an AGPL-3.0 local Rust program for search, fetch, crawl and screenshots. The README says one binary covers those jobs and that no API key or account is required. GitHub dondai44423/donsetch showed 1,188 stars on 26 Nov 2026.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1,188 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Sales & support"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "dondai44423/donsetch",
+   "github_stars": 1188,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "write code",
+    "research the web",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/donsetch.png",
+   "page": "https://agentscouthq.com/tools/donsetch.html"
+  },
+  {
+   "name": "GhidraMCP",
+   "slug": "ghidramcp",
+   "url": "https://github.com/LaurieWired/GhidraMCP",
+   "website": "",
+   "github": "https://github.com/LaurieWired/GhidraMCP",
+   "category": "MCP servers",
+   "description": "GhidraMCP is an Apache-2.0 MCP server and Ghidra plugin. The README says an assistant can decompile, list and rename methods and data inside a Ghidra project the user has open. It requires Ghidra. GitHub LaurieWired/GhidraMCP showed 12,055 stars on 26 Nov 2026.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "12,055 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "LaurieWired/GhidraMCP",
+   "github_stars": 12055,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ghidramcp.png",
+   "page": "https://agentscouthq.com/tools/ghidramcp.html"
+  },
+  {
+   "name": "Figwright",
+   "slug": "figwright",
+   "url": "https://github.com/awdr74100/figwright",
+   "website": "",
+   "github": "https://github.com/awdr74100/figwright",
+   "category": "MCP servers",
+   "description": "Figwright is a MIT MCP server that works with a Figma plugin over a local WebSocket, so an assistant can read a design and write changes back. The README says it is free and does not need a Figma Dev Mode seat. The npm package is @figwright/mcp. GitHub awdr74100/figwright showed 1,561 stars on 26 Nov 2026.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1,561 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "awdr74100/figwright",
+   "github_stars": 1561,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/figwright.png",
+   "page": "https://agentscouthq.com/tools/figwright.html"
+  },
+  {
+   "name": "Sandscale",
+   "slug": "sandscale",
+   "url": "https://sandscale.dev/",
+   "website": "https://sandscale.dev/",
+   "github": "",
+   "category": "sandboxes & code execution",
+   "description": "Sandscale runs a microVM sandbox for an agent, plus workspaces and an MCP server at https://mcp.sandscale.dev/mcp. The pricing page on 26 Nov 2026 listed Free at $0 for 100 awake vCPU-hours, 3 boxes at once and 5 GB, Pro at $20 a month billed annually or $25 monthly for 1,500 hours, and Team at $40 per member a month billed annually or $48 monthly. Hours past the plan were $0.05 per awake vCPU-hour, or $10 for a 500-hour pack.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "official site",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sandscale.png",
+   "page": "https://agentscouthq.com/tools/sandscale.html"
+  },
+  {
+   "name": "Hai",
+   "slug": "hai",
+   "url": "https://haicall.in/",
+   "website": "https://haicall.in/",
+   "github": "",
+   "category": "voice",
+   "description": "Hai places phone calls from an assistant you already use. The homepage says the assistant shows the plan first and nothing is dialled until you say yes, then Hai calls in the local language, says it is an AI, and reports back in the chat. Setup is an MCP server at https://haicall.in/mcp. The site says new accounts are approved by hand. A POST initialize on 26 Nov 2026 returned HTTP 401 until you sign in. No public price was on the homepage.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "Product Hunt",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hai.png",
+   "page": "https://agentscouthq.com/tools/hai.html"
+  },
+  {
+   "name": "earshot",
+   "slug": "earshot",
+   "url": "https://leonxlnx.github.io/earshot-site/",
+   "website": "https://leonxlnx.github.io/earshot-site/",
+   "github": "https://github.com/Leonxlnx/earshot",
+   "category": "film & TV audio",
+   "description": "earshot makes sound effects when a coding agent asks in words. The README says it renders from a catalogue of 922 designs, runs on the CPU, and ships as a CLI, a Python package and an MCP server. The PyPI name earshot belongs to another project, so the README says to install from GitHub. GitHub Leonxlnx/earshot showed 5,858 stars on 26 Nov 2026, license MIT.",
+   "key_features": [
+    "MIT. Install from GitHub; the README says the PyPI name earshot is a different project.",
+    "Active",
+    "5,858 GitHub stars",
+    "Sound effects & foley"
+   ],
+   "pricing": "MIT. Install from GitHub; the README says the PyPI name earshot is a different project.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-26",
+   "added": "2026-11-26",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Leonxlnx/earshot",
+   "github_stars": 5858,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/earshot.png",
+   "page": "https://agentscouthq.com/tools/earshot.html"
   }
  ]
 }

@@ -25341,7 +25341,8 @@
     "source": "MCP registry",
     "pricing_detail": "MIT. Hosted at https://mcp.porkbun.com/mcp. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
     "use_cases": [
-      "connect tools via MCP"
+      "connect tools via MCP",
+      "sales & support"
     ],
     "website": "https://porkbun.com/mcp",
     "github": "https://github.com/oborseth/Porkbun-MCP",
@@ -25349,8 +25350,8 @@
     "slug": "porkbun-mcp",
     "logo": "assets/logos/porkbun-mcp.png",
     "repo": "oborseth/Porkbun-MCP",
-    "github_stars": 37,
-    "stars_checked": "2026-11-26",
+    "github_stars": 34,
+    "stars_checked": "2026-10-30",
     "license": "MIT"
   },
   {
@@ -25562,7 +25563,9 @@
     "source": "MCP registry",
     "pricing_detail": "MIT for the docs repository. The README says an Infobip account is required and a free trial is available. No per-message price was in the README checked 26 Nov 2026. GitHub had no latest release.",
     "use_cases": [
-      "connect tools via MCP"
+      "voice & phone calls",
+      "connect tools via MCP",
+      "sales & support"
     ],
     "website": "https://www.infobip.com/",
     "github": "https://github.com/infobip/mcp",
@@ -25571,7 +25574,7 @@
     "logo": "assets/logos/infobip-mcp.png",
     "repo": "infobip/mcp",
     "github_stars": 36,
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "MIT"
   },
   {
@@ -26783,6 +26786,7 @@
     "source": "MCP registry",
     "pricing_detail": "MIT. The README says the hosted search server at https://search.parallel.ai/mcp needs no account and no API key. A separate Hermes native provider is described as paid and is not this server.",
     "use_cases": [
+      "write code",
       "research the web",
       "connect tools via MCP"
     ],
@@ -26792,8 +26796,8 @@
     "slug": "parallel-search-mcp",
     "logo": "assets/logos/parallel-search-mcp.png",
     "repo": "parallel-web/search-mcp",
-    "github_stars": 38,
-    "stars_checked": "2026-11-26",
+    "github_stars": 30,
+    "stars_checked": "2026-10-30",
     "license": "MIT"
   },
   {
@@ -27114,6 +27118,8 @@
     "source": "MCP registry",
     "pricing_detail": "MIT. The README does not list a price for the MCP server. Product access still depends on the SmartBear account for each tool.",
     "use_cases": [
+      "write code",
+      "automate the browser",
       "connect tools via MCP"
     ],
     "website": "https://www.smartbear.com/",
@@ -27123,7 +27129,7 @@
     "logo": "assets/logos/smartbear-mcp.png",
     "repo": "SmartBear/smartbear-mcp",
     "github_stars": 44,
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "MIT"
   },
   {
@@ -28214,16 +28220,17 @@
     "pricing_detail": "Apache-2.0. The README says cloud use needs an API key from cloud.tensorlake.ai. No dollar price was in the README or the CLI v0.5.165 notes checked 26 Nov 2026.",
     "use_cases": [
       "write code",
-      "run code safely"
+      "run code safely",
+      "give agents memory"
     ],
     "website": "https://www.tensorlake.ai/",
     "github": "https://github.com/tensorlakeai/tensorlake",
     "repo": "tensorlakeai/tensorlake",
-    "github_stars": 1051,
+    "github_stars": 1031,
     "id": 1092,
     "slug": "tensorlake",
     "logo": "assets/logos/tensorlake.png",
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "Apache-2.0"
   },
   {
@@ -28241,17 +28248,16 @@
     "source": "GitHub",
     "pricing_detail": "MIT. The README says every edition runs the same open-source image and editions differ by license key. No dollar price was in the README or the v0.28.2 notes checked 26 Nov 2026.",
     "use_cases": [
-      "connect tools via MCP",
-      "run code safely"
+      "connect tools via MCP"
     ],
     "website": "https://obot.ai/",
     "github": "https://github.com/obot-platform/obot",
     "repo": "obot-platform/obot",
-    "github_stars": 1221,
+    "github_stars": 1143,
     "id": 1093,
     "slug": "obot",
     "logo": "assets/logos/obot.png",
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "MIT"
   },
   {
@@ -29007,7 +29013,6 @@
     "pricing_detail": "AGPL-3.0. Hosted at https://mcp.openzeppelin.com. No separate MCP price was in the README or the v0.4.2 notes checked 26 Nov 2026.",
     "use_cases": [
       "connect tools via MCP",
-      "run code safely",
       "monitor & evaluate agents"
     ],
     "website": "https://mcp.openzeppelin.com/",
@@ -29017,7 +29022,7 @@
     "id": 1123,
     "slug": "openzeppelin-mcp",
     "logo": "assets/logos/openzeppelin-mcp.png",
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "AGPL-3.0"
   },
   {
@@ -32562,10 +32567,10 @@
     "github": "https://github.com/Neutone/neutone_sdk",
     "id": 1270,
     "repo": "Neutone/neutone_sdk",
-    "github_stars": 636,
+    "github_stars": 633,
     "slug": "neutone",
     "logo": "assets/logos/neutone.png",
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "LGPL-2.1"
   },
   {
@@ -34258,9 +34263,9 @@
     "slug": "meshy",
     "logo": "assets/logos/meshy.png",
     "repo": "meshy-dev/meshy-mcp-server",
-    "github_stars": 97,
+    "github_stars": 86,
     "agentic": true,
-    "stars_checked": "2026-11-26",
+    "stars_checked": "2026-10-30",
     "license": "MIT"
   },
   {
@@ -147457,7 +147462,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147482,7 +147487,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147508,7 +147513,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147533,7 +147538,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147560,7 +147565,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147585,7 +147590,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147611,7 +147616,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147637,7 +147642,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147662,7 +147667,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147687,7 +147692,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147712,7 +147717,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147737,7 +147742,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147762,7 +147767,7 @@
     "maturity": "Active",
     "audience": "enterprise",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147788,7 +147793,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147813,7 +147818,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147839,7 +147844,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147864,7 +147869,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147889,7 +147894,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "Maker submission",
@@ -147916,7 +147921,7 @@
     "maturity": "Mature",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -147943,7 +147948,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -147970,7 +147975,7 @@
     "maturity": "Active",
     "audience": "enterprise",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -147997,7 +148002,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148023,7 +148028,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148051,7 +148056,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148079,7 +148084,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148106,7 +148111,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148133,7 +148138,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148160,7 +148165,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148188,7 +148193,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148214,7 +148219,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148241,7 +148246,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148269,7 +148274,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148296,7 +148301,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148323,7 +148328,7 @@
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148351,7 +148356,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -148379,7 +148384,7 @@
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-11-23",
     "added": "2026-11-12",
     "source": "GitHub",
@@ -156411,6 +156416,7 @@
     "source": "Maker submission",
     "pricing_detail": "Homepage on 26 Nov 2026: a live paid-endpoint market. Rescue checks are described as free. A 0.005 USDC OMNIGATE fee leg is named on some paid flows. No monthly subscription price was on that page.",
     "use_cases": [
+      "research the web",
       "connect tools via MCP"
     ],
     "website": "https://hive402.scriptmasterlabs.com",
@@ -156439,7 +156445,8 @@
     "pricing_detail": "Starter $20/mo (up to 15 videos), Pro $35/mo (30), Studio $59/mo (60), Agency $265/mo (330). Yearly shown as 30% off (myfacelessreels.com, 26 Nov 2026). No $0 plan in that pricing block.",
     "use_cases": [
       "generate video",
-      "edit video"
+      "subtitles & transcripts",
+      "voiceover"
     ],
     "website": "https://myfacelessreels.com/",
     "github": "",
@@ -156514,7 +156521,6 @@
     "source": "Reviewed submission",
     "pricing_detail": "Free models (name ends in :free) at about 1 request a minute. Paid models are pay as you go; the page says credit does not expire (unorouter.com/en, 26 Nov 2026).",
     "use_cases": [
-      "build an agent",
       "write code"
     ],
     "website": "https://unorouter.com/en",
@@ -156539,7 +156545,7 @@
     "source": "Reviewed submission",
     "pricing_detail": "No price on the homepage on 26 Nov 2026. Public MCP GET https://api.lianex.ai/api/public/mcp returned 200.",
     "use_cases": [
-      "connect tools via MCP"
+      "research the web"
     ],
     "website": "https://lianex.ai/",
     "github": "",
@@ -156565,8 +156571,7 @@
     "source": "Reviewed submission",
     "pricing_detail": "Maker filed it as free. No separate MCP subscription was stated on the agents page on 26 Nov 2026. POST initialize https://hookr.fun/api/mcp returned 200.",
     "use_cases": [
-      "connect tools via MCP",
-      "crypto"
+      "connect tools via MCP"
     ],
     "website": "https://hookr.fun/agents",
     "github": "",
@@ -156618,8 +156623,8 @@
     "source": "Maker submission",
     "pricing_detail": "Starter $199/mo (50 moments, up to 10 seats), Pro $399/mo (250 moments), Business $799/mo (600 moments). Annual billing saves 20% (aiaethon.com, 26 Nov 2026).",
     "use_cases": [
-      "sales & support",
-      "research the web"
+      "automate workflows",
+      "sales & support"
     ],
     "website": "https://aiaethon.com/",
     "github": "",
@@ -156644,8 +156649,7 @@
     "source": "Reviewed submission",
     "pricing_detail": "Free human check: up to 3 endpoints, 3 red flags. Agents: inspect $0.05, recommend $0.01, route $0.01, USDC on Base via x402 (page checked 26 Nov 2026).",
     "use_cases": [
-      "monitor & evaluate agents",
-      "connect tools via MCP"
+      "voice & phone calls"
     ],
     "website": "https://sml-authority-engine.timothy-walton45.workers.dev/garage",
     "github": "",
@@ -156670,7 +156674,10 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build an agent"
+    ],
     "website": "",
     "github": "https://github.com/expo/exact",
     "catalog_only": true,
@@ -156696,7 +156703,9 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://space.univer.ai/",
     "github": "https://github.com/dream-num/univer-workspace",
     "catalog_only": true,
@@ -156722,7 +156731,11 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "research the web",
+      "run code safely"
+    ],
     "website": "https://a13n.dev/",
     "github": "https://github.com/converge-ai-labs/agent-foundation",
     "catalog_only": true,
@@ -156748,7 +156761,11 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "research the web",
+      "give agents memory"
+    ],
     "website": "https://koed.ai/",
     "github": "https://github.com/koed-labs/koed",
     "catalog_only": true,
@@ -156774,7 +156791,10 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "give agents memory"
+    ],
     "website": "",
     "github": "https://github.com/tigerless-labs/agent-memory",
     "catalog_only": true,
@@ -156800,7 +156820,11 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "research the web",
+      "sales & support"
+    ],
     "website": "",
     "github": "https://github.com/dondai44423/donsetch",
     "catalog_only": true,
@@ -156826,7 +156850,9 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "",
     "github": "https://github.com/LaurieWired/GhidraMCP",
     "catalog_only": true,
@@ -156852,7 +156878,9 @@
     "added": "2026-11-26",
     "source": "GitHub",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "",
     "github": "https://github.com/awdr74100/figwright",
     "catalog_only": true,
@@ -156878,7 +156906,11 @@
     "added": "2026-11-26",
     "source": "official site",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "run code safely"
+    ],
     "website": "https://sandscale.dev/",
     "github": "",
     "catalog_only": true,
@@ -156900,7 +156932,11 @@
     "added": "2026-11-26",
     "source": "Product Hunt",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "voice & phone calls",
+      "connect tools via MCP"
+    ],
     "website": "https://haicall.in/",
     "github": "",
     "catalog_only": true,
@@ -156923,8 +156959,7 @@
     "source": "GitHub",
     "pricing_detail": "MIT. Install from GitHub; the README says the PyPI name earshot is a different project.",
     "use_cases": [
-      "clean up audio",
-      "make music"
+      "sound effects & Foley"
     ],
     "website": "https://leonxlnx.github.io/earshot-site/",
     "github": "https://github.com/Leonxlnx/earshot",
