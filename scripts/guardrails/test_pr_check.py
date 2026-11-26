@@ -479,6 +479,78 @@ class LiveCheckTest(unittest.TestCase):
         self.assertTrue(any("no text in <main>" in item for item in problems))
         self.assertTrue(indexable)
 
+    def test_noindex_page_without_main_text_is_not_a_problem(self) -> None:
+        html = (
+            "<!doctype html><html><head><meta name=\"robots\" content=\"noindex, nofollow\">"
+            + f'<link rel="canonical" href="{SITE}/sponsor.html"></head><body></body></html>'
+        )
+        problems, indexable = post_deploy.page_problems(
+            "sponsor.html",
+            200,
+            {},
+            html,
+            f"{SITE}/sponsor.html",
+            {},
+            None,
+        )
+        self.assertEqual(problems, [])
+        self.assertFalse(indexable)
+
+    def test_report_kit_sample_without_main_is_not_a_problem(self) -> None:
+        path = "tools/report-kit/sample.html"
+        url = f"{SITE}/{path}"
+        html = (
+            "<!doctype html><html><head><meta name=\"robots\" content=\"noindex, nofollow\">"
+            + f'<link rel="canonical" href="{url}"></head><body></body></html>'
+        )
+        problems, indexable = post_deploy.page_problems(
+            path,
+            200,
+            {},
+            html,
+            url,
+            {},
+            None,
+        )
+        self.assertEqual(problems, [])
+        self.assertFalse(indexable)
+
+    def test_report_kit_sample_is_not_pinged_and_an_indexable_page_still_is(self) -> None:
+        sample = "tools/report-kit/ai-visibility/sample.html"
+        sample_url = f"{SITE}/{sample}"
+        ok = "guides/ok.html"
+        ok_url = f"{SITE}/{ok}"
+        sample_html = (
+            "<!doctype html><html><head><meta name=\"robots\" content=\"noindex, nofollow\">"
+            + f'<link rel="canonical" href="{sample_url}"></head><body></body></html>'
+        )
+        sha = self._commit_pair(
+            {"README.md": "x\n"},
+            {sample: sample_html, ok: document(ok_url)},
+        )
+        pinged: list[str] = []
+
+        def fetch(target: str):
+            if target.endswith("/sitemap.xml"):
+                return 200, {}, sitemap([ok_url]), target
+            if target == sample_url:
+                return 200, {}, sample_html, target
+            if target == ok_url:
+                return 200, {}, document(ok_url), target
+            raise AssertionError(target)
+
+        code = post_deploy.run(
+            self.repo.path,
+            sha,
+            fetch=fetch,
+            ping=pinged.extend,
+            sleep=lambda _seconds: None,
+            attempts=1,
+            workers=1,
+        )
+        self.assertEqual(code, 0)
+        self.assertEqual(pinged, [ok_url])
+
     def test_noindex_page_may_point_canonical_at_its_hub(self) -> None:
         problems, indexable = post_deploy.page_problems(
             "launches/page-2.html",

@@ -8,7 +8,9 @@ public URL with retries (the CDN can lag the deploy) and require:
 - a canonical that matches the public URL (index.html is the directory URL)
 - robots meta that agrees with sitemap.xml membership
 - a sitemap listing when the page is indexable
-- non-empty text inside <main>
+- non-empty text inside <main> (skipped for noindex pages and for
+  pages under tools/report-kit/, which include sample documents
+  that have no <main>)
 
 IndexNow is pinged only for indexable pages that passed, using
 scripts/indexnow_ping.py and the key file already in the repo. A failing page
@@ -126,6 +128,12 @@ def live_fetch(url: str) -> tuple[int, dict[str, str], str, str]:
         return status, headers, body, response.geturl()
 
 
+def skips_empty_main(path: str, noindex: bool) -> bool:
+    """Noindex pages and report-kit samples may omit visible <main> text."""
+    rel = path.replace("\\", "/").lstrip("/")
+    return noindex or rel == "tools/report-kit" or rel.startswith("tools/report-kit/")
+
+
 def page_problems(
     path: str,
     status: int,
@@ -165,7 +173,7 @@ def page_problems(
             problems.append(
                 f"{path} is indexable (no noindex), but the live sitemap.xml does not list {expected}."
             )
-        if not main_text(body):
+        if not main_text(body) and not skips_empty_main(path, noindex):
             problems.append(f"{path} has no text in <main>.")
         return problems, not noindex
     return problems, False
