@@ -330,7 +330,7 @@ def made_by_agentscout_html(total=None):
         '<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AgentScout Bot Templates","applicationCategory":"BusinessApplication","operatingSystem":"Grok Bot, Claude Code, Cursor, Codex","url":"https://agentscouthq.com/bot-templates/","author":{"@type":"Organization","name":"AgentScout","url":"https://agentscouthq.com"},"brand":{"@type":"Organization","name":"AgentScout","url":"https://agentscouthq.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>'
         '<div class="bt-hub-bar" aria-label="Jump to Bot Store or Free Community Templates">'
         '<div class="bt-hub-tabs">'
-        '<a class="bt-hub-tab pro" href="../bot-store/">🛒 Dedicated Bot Store ($39 / $59 / $59 / $69 · $149 Bundle) →</a>'
+        '<a class="bt-hub-tab pro" href="../bot-store/">🛒 Dedicated Bot Store (role packs from $35 · flagship bots $39–$69 · $149 bundle) →</a>'
         '<a class="bt-hub-tab comm" href="#made-by-agentscout">🤖 Quick-Buy Pro Bots Below ↓</a>'
         f'<a class="bt-hub-tab comm" href="#bt-featured">📚 Browse {total} Free Community Templates ↓</a>'
         '<a class="bt-hub-tab vid" href="../videos/">🎬 Watch Quick-Start Guides (8) →</a>'
