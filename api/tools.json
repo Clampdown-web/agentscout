@@ -28101,7 +28101,7 @@
    "website": "https://mempalaceofficial.com/",
    "github": "https://github.com/MemPalace/mempalace",
    "category": "memory & RAG",
-   "description": "MemPalace is an MIT-licensed, local-first memory system for AI agents that stores conversation history as verbatim text (it does not summarize or paraphrase) and retrieves it with semantic search. People and projects are organised as wings, topics as rooms and original content in drawers so searches can be scoped, and the retrieval backend is pluggable (ChromaDB by default) with no API calls required. Official docs are at mempalaceofficial.com; v3.11.0 shipped Oct 14, 2026.",
+   "description": "MemPalace is an MIT-licensed, local-first memory system for AI agents that stores conversation history as verbatim text (it does not summarize or paraphrase) and retrieves it with semantic search. People and projects are organised as wings, topics as rooms and original content in drawers so searches can be scoped, and the retrieval backend is pluggable (ChromaDB by default) with no API calls required. Official docs are on the MemPalace site. A release shipped on 14 Oct 2026.",
    "key_features": [
     "Free and open source (MIT).",
     "Mature",
@@ -28368,7 +28368,7 @@
    "website": "https://code-review-graph.com/",
    "github": "https://github.com/tirth8205/code-review-graph",
    "category": "coding",
-   "description": "code-review-graph is an MIT-licensed local code knowledge graph for AI coding tools. It parses your repository with Tree-sitter into a structural map of files, symbols and dependencies, keeps it updated incrementally as code changes, and serves compact review context over MCP, so an assistant reviewing a change reads only the files that change touches instead of re-reading large parts of the codebase. It also ships a GitHub Action and reproducible benchmarks; v2.4.0 was released in November 2026.",
+   "description": "code-review-graph is an MIT-licensed local code knowledge graph for AI coding tools. It parses your repository with Tree-sitter into a structural map of files, symbols and dependencies, keeps it updated incrementally as code changes, and serves compact review context over MCP, so an assistant reviewing a change reads only the files that change touches instead of re-reading large parts of the codebase. It also ships a GitHub Action and reproducible benchmarks. A release in November 2026 is the one noted here.",
    "key_features": [
     "Open source",
     "Mature",
@@ -28546,7 +28546,7 @@
    "website": "",
    "github": "https://github.com/yamadashy/repomix",
    "category": "coding",
-   "description": "Repomix is an MIT-licensed CLI and web tool (repomix.com) that packs a whole repository, local or remote, into one AI-friendly file in XML, Markdown or plain text, so you can hand a codebase to Claude, ChatGPT, Gemini or a coding agent in one go. It respects .gitignore, shows token counts per file, can compress code to signatures, and scans the output with Secretlint so secrets are not shared. It also runs as an MCP server; v1.19.0 shipped in November 2026.",
+   "description": "Repomix is an MIT-licensed CLI and web tool that packs a whole repository, local or remote, into one AI-friendly file in XML, Markdown or plain text, so you can hand a codebase to Claude, ChatGPT, Gemini or a coding agent in one go. It respects .gitignore, shows token counts per file, can compress code to signatures, and scans the output with Secretlint so secrets are not shared. It also runs as an MCP server. A release shipped in November 2026.",
    "key_features": [
     "Open source",
     "Mature",
@@ -29559,7 +29559,7 @@
    "website": "https://deepchat.thinkinai.xyz/",
    "github": "https://github.com/ThinkInAIXYZ/deepchat",
    "category": "personal agents",
-   "description": "DeepChat is an open-source, local-first desktop client for AI agents, with MCP, skills, ACP and remote control from messaging apps. Release v1.1.4 on 12 Nov 2026 refreshed the sidebar, settings search and message minimap. Apache-2.0. You bring model keys or run a local model.",
+   "description": "DeepChat is an open-source, local-first desktop client for AI agents, with MCP, skills, ACP and remote control from messaging apps. A release on 12 Nov 2026 refreshed the sidebar, settings search and message minimap. Apache-2.0. You bring model keys or run a local model.",
    "key_features": [
     "Free and open source (Apache-2.0). Model keys or local models are separate.",
     "Mature",
@@ -40606,15 +40606,15 @@
    "website": "https://porkbun.com/mcp",
    "github": "https://github.com/oborseth/Porkbun-MCP",
    "category": "MCP servers",
-   "description": "Porkbun MCP is Porkbun's own server for the Porkbun v3 API, published as @porkbunllc/mcp-server and hosted at https://mcp.porkbun.com/mcp. The README says ChatGPT and Claude can sign in without copying an API key, and that other clients can send the account's API key pair. Read tools cover domains, DNS, SSL and docs. Write tools can register, transfer and buy names and can charge the account. Release v0.65.24 was published 24 Nov 2026. GitHub oborseth/Porkbun-MCP showed 37 stars and 3 forks on 26 Nov 2026, license MIT.",
+   "description": "Porkbun MCP is Porkbun's own server for the Porkbun v3 API, published as @porkbunllc/mcp-server and also hosted for sign-in. The README says ChatGPT and Claude can sign in without copying an API key, and that other clients can send the account's API key pair. Read tools cover domains, DNS, SSL and docs. Write tools can register, transfer and buy names and can charge the account. A release was published 24 Nov 2026. GitHub oborseth/Porkbun-MCP showed 37 stars and 3 forks on 26 Nov 2026, license MIT.",
    "key_features": [
-    "MIT. Hosted at https://mcp.porkbun.com/mcp. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
+    "MIT. The server is hosted. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
     "Active",
     "34 GitHub stars",
     "Connect tools via mcp",
     "Sales & support"
    ],
-   "pricing": "MIT. Hosted at https://mcp.porkbun.com/mcp. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
+   "pricing": "MIT. The server is hosted. The README says some tools spend Porkbun account credit, and that the default monthly spend limit and top-up limit are $100 each.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)"
@@ -43125,15 +43125,15 @@
    "website": "https://aiven.io/mcp",
    "github": "https://github.com/Aiven-Open/mcp-aiven",
    "category": "MCP servers",
-   "description": "Aiven MCP is an Apache-2.0 server for the Aiven cloud data platform. The README says an assistant can manage PostgreSQL, Apache Kafka, applications and other Aiven services, and that the same account permissions apply, including create and delete. The hosted server is https://mcp.aiven.live/mcp, with ?read_only=true to drop write tools. Release v1.21.0, published 20 Nov 2026, adds application build visibility and release management. GitHub Aiven-Open/mcp-aiven showed 28 stars and 23 forks on 27 Nov 2026.",
+   "description": "Aiven MCP is an Apache-2.0 server for the Aiven cloud data platform. The README says an assistant can manage PostgreSQL, Apache Kafka, applications and other Aiven services, and that the same account permissions apply, including create and delete. The hosted server can take a read-only flag that drops write tools. A release published 20 Nov 2026 adds application build visibility and release management. GitHub Aiven-Open/mcp-aiven showed 28 stars and 23 forks on 27 Nov 2026.",
    "key_features": [
-    "Apache-2.0. Hosted at https://mcp.aiven.live/mcp. The README does not list a dollar price for the server. Checked 27 Nov 2026.",
+    "Apache-2.0. The server is hosted. The README does not list a dollar price for the server. Checked 27 Nov 2026.",
     "Active",
     "28 GitHub stars",
     "Connect tools via mcp",
     "Sales & support"
    ],
-   "pricing": "Apache-2.0. Hosted at https://mcp.aiven.live/mcp. The README does not list a dollar price for the server. Checked 27 Nov 2026.",
+   "pricing": "Apache-2.0. The server is hosted. The README does not list a dollar price for the server. Checked 27 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -43213,9 +43213,9 @@
    "website": "https://docs.brandfetch.com/mcp/overview",
    "github": "https://github.com/Brandfetch/brandfetch-mcp-server",
    "category": "MCP servers",
-   "description": "Brandfetch MCP gives an assistant Brandfetch's brand search, logos and company data. The README lists brand_search, get_brand, get_brand_data, get_brands (up to 25 in one call), enrich_transaction, get_brand_context, build_logo_urls and send_feedback. On hosts that support MCP Apps, get_brand can render an interactive brand card. Release v1.6.2, published 23 Oct 2026, adds Cursor listing. GitHub Brandfetch/brandfetch-mcp-server recorded MIT, 10 stars and 0 forks on 27 Nov 2026.",
+   "description": "Brandfetch MCP gives an assistant Brandfetch's brand search, logos and company data. The README lists brand search, a full brand lookup, compact brand data, a batch of up to 25 brands, matching a merchant from a statement string, brand context, logo addresses and a feedback tool. On hosts that support MCP Apps, the brand lookup can render an interactive brand card. A release published 23 Oct 2026 adds a Cursor listing. GitHub Brandfetch/brandfetch-mcp-server recorded MIT, 10 stars and 0 forks on 27 Nov 2026.",
    "key_features": [
-    "MIT. The README and the v1.6.2 notes do not list a dollar price for the MCP server. Checked 27 Nov 2026.",
+    "MIT. The README and the 23 Oct 2026 release notes do not list a dollar price for the MCP server. Checked 27 Nov 2026.",
     "Active",
     "9 GitHub stars",
     "Research the web",
@@ -43223,7 +43223,7 @@
     "Connect tools via mcp",
     "Logos & branding"
    ],
-   "pricing": "MIT. The README and the v1.6.2 notes do not list a dollar price for the MCP server. Checked 27 Nov 2026.",
+   "pricing": "MIT. The README and the 23 Oct 2026 release notes do not list a dollar price for the MCP server. Checked 27 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -43600,7 +43600,7 @@
    "website": "https://www.smartbear.com/",
    "github": "https://github.com/SmartBear/smartbear-mcp",
    "category": "MCP servers",
-   "description": "SmartBear MCP gives an assistant the team's testing and monitoring tools. The README lists local tools for BearQ, BugSnag, Reflect, Swagger, PactFlow, Pact Broker, QMetry, QTM4J, Zephyr and Collaborator, started with npx @smartbear/mcp. It also lists hosted servers for Swagger, BugSnag and Zephyr that sign in with a browser and do not need a local Node process. Release v0.44.0 on 16 Nov 2026 adds smartbear_list_integrations, which reports which products are configured. GitHub SmartBear/smartbear-mcp showed 44 stars and 50 forks on 26 Nov 2026, license MIT.",
+   "description": "SmartBear MCP gives an assistant the team's testing and monitoring tools. The README lists local tools for BearQ, BugSnag, Reflect, Swagger, PactFlow, Pact Broker, QMetry, QTM4J, Zephyr and Collaborator, started from the npm package @smartbear/mcp. It also lists hosted servers for Swagger, BugSnag and Zephyr that sign in with a browser and do not need a local Node process. A release on 16 Nov 2026 adds a tool that reports which products are configured. GitHub SmartBear/smartbear-mcp showed 44 stars and 50 forks on 26 Nov 2026, license MIT.",
    "key_features": [
     "MIT. The README does not list a price for the MCP server. Product access still depends on the SmartBear account for each tool.",
     "Active",
@@ -43730,15 +43730,15 @@
    "website": "https://www.automox.com/",
    "github": "https://github.com/AutomoxCommunity/automox-mcp",
    "category": "MCP servers",
-   "description": "Automox MCP connects an assistant to an Automox console so it can ask about devices, patches and policies. The README says version 3.0 adds a hosted server at https://console.automox.com/api/mcp that uses the existing Automox API key, beside the self-hosted package. GitHub's latest release tag on 27 Nov 2026 was v2.2.10, published 20 Nov 2026. GitHub AutomoxCommunity/automox-mcp recorded MIT, 15 stars and 5 forks that day.",
+   "description": "Automox MCP connects an assistant to an Automox console so it can ask about devices, patches and policies. The README says release 3.0 adds a hosted server that uses the existing Automox API key, beside the self-hosted package. GitHub's latest release on 27 Nov 2026 was published 20 Nov 2026. GitHub AutomoxCommunity/automox-mcp recorded MIT, 15 stars and 5 forks that day.",
    "key_features": [
-    "MIT. The README does not list a separate price for the MCP server. Hosted URL in the README: https://console.automox.com/api/mcp. Checked 27 Nov 2026.",
+    "MIT. The README does not list a separate price for the MCP server. The hosted address is in the README. Checked 27 Nov 2026.",
     "Active",
     "14 GitHub stars",
     "Connect tools via mcp",
     "Run code safely"
    ],
-   "pricing": "MIT. The README does not list a separate price for the MCP server. Hosted URL in the README: https://console.automox.com/api/mcp. Checked 27 Nov 2026.",
+   "pricing": "MIT. The README does not list a separate price for the MCP server. The hosted address is in the README. Checked 27 Nov 2026.",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -45450,16 +45450,16 @@
    "website": "https://www.tensorlake.ai/",
    "github": "https://github.com/tensorlakeai/tensorlake",
    "category": "sandboxes & code execution",
-   "description": "Tensorlake is an Apache-2.0 serverless runtime for agent sandboxes and background orchestration. The README says the Sandbox API starts MicroVM sandboxes for agents, tools or model-written code, with snapshots, clone, and suspend/resume that keeps memory and files. The tl CLI is a standalone binary installed from tensorlake.ai/install, not from PyPI. CLI v0.5.165 was published 13 Nov 2026. GitHub tensorlakeai/tensorlake showed 1,051 stars and 154 forks on 26 Nov 2026.",
+   "description": "Tensorlake is an Apache-2.0 serverless runtime for agent sandboxes and background orchestration. The README says the Sandbox API starts MicroVM sandboxes for agents, tools or model-written code, with snapshots, clone, and suspend/resume that keeps memory and files. The tl CLI is a standalone binary installed from the Tensorlake site, not from PyPI. The CLI release was published 13 Nov 2026. GitHub tensorlakeai/tensorlake showed 1,051 stars and 154 forks on 26 Nov 2026.",
    "key_features": [
-    "Apache-2.0. The README says cloud use needs an API key from cloud.tensorlake.ai. No dollar price was in the README or the CLI v0.5.165 notes checked 26 Nov 2026.",
+    "Apache-2.0. The README says cloud use needs an API key from the Tensorlake cloud console. No dollar price was in the README or the 13 Nov 2026 CLI notes checked 26 Nov 2026.",
     "Active",
     "1,031 GitHub stars",
     "Write code",
     "Run code safely",
     "Give agents memory"
    ],
-   "pricing": "Apache-2.0. The README says cloud use needs an API key from cloud.tensorlake.ai. No dollar price was in the README or the CLI v0.5.165 notes checked 26 Nov 2026.",
+   "pricing": "Apache-2.0. The README says cloud use needs an API key from the Tensorlake cloud console. No dollar price was in the README or the 13 Nov 2026 CLI notes checked 26 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -46772,15 +46772,15 @@
    "website": "https://mcp.openzeppelin.com/",
    "github": "https://github.com/OpenZeppelin/openzeppelin-mcp",
    "category": "crypto",
-   "description": "OpenZeppelin MCP is the hosted Model Context Protocol servers for OpenZeppelin contract libraries. The README lists servers for Solidity, Cairo, Confidential Contracts, Stellar, Stylus, TRON, Sui Move and Uniswap Hooks, and says they are hosted builds of the contracts-wizard MCP package, which can also run locally. Setup is documented at https://mcp.openzeppelin.com. Release v0.4.2 on 19 Oct 2026 bumps @openzeppelin/contracts-mcp to 0.7.2. GitHub OpenZeppelin/openzeppelin-mcp showed 30 stars and 13 forks on 26 Nov 2026, license AGPL-3.0.",
+   "description": "OpenZeppelin MCP is the hosted Model Context Protocol servers for OpenZeppelin contract libraries. The README lists servers for Solidity, Cairo, Confidential Contracts, Stellar, Stylus, TRON, Sui Move and Uniswap Hooks, and says they are hosted builds of the contracts-wizard MCP package, which can also run locally. Setup is documented on the OpenZeppelin site. A release on 19 Oct 2026 moves the contracts MCP package to 0.7.2. GitHub OpenZeppelin/openzeppelin-mcp showed 30 stars and 13 forks on 26 Nov 2026, license AGPL-3.0.",
    "key_features": [
-    "AGPL-3.0. Hosted at https://mcp.openzeppelin.com. No separate MCP price was in the README or the v0.4.2 notes checked 26 Nov 2026.",
+    "AGPL-3.0. Setup is documented on the OpenZeppelin site. No separate MCP price was in the README or the 19 Oct 2026 notes checked 26 Nov 2026.",
     "Active",
     "30 GitHub stars",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "AGPL-3.0. Hosted at https://mcp.openzeppelin.com. No separate MCP price was in the README or the v0.4.2 notes checked 26 Nov 2026.",
+   "pricing": "AGPL-3.0. Setup is documented on the OpenZeppelin site. No separate MCP price was in the README or the 19 Oct 2026 notes checked 26 Nov 2026.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -52840,13 +52840,13 @@
    "website": "https://neutone.jp",
    "github": "https://github.com/Neutone/neutone_sdk",
    "category": "music production",
-   "description": "Neutone SDK is an LGPL-2.1 Python framework that wraps PyTorch audio models so they run in a DAW through Neutone's host plugins. The README says Neutone FX is for real-time models and Neutone Gen, still in beta, is for non-real-time models, and that both host plugins are free. Release v1.5.2 on 13 Nov 2025 loosened the torch and numpy version requirements. GitHub Neutone/neutone_sdk showed 636 stars and 34 forks on 26 Nov 2026.",
+   "description": "Neutone SDK is an LGPL-2.1 Python framework that wraps PyTorch audio models so they run in a DAW through Neutone's host plugins. The README says Neutone FX is for real-time models and Neutone Gen, still in beta, is for non-real-time models, and that both host plugins are free. A release on 13 Nov 2025 loosened the torch and numpy version requirements. The Neutone SDK repository showed 636 stars and 34 forks on 26 Nov 2026.",
    "key_features": [
-    "LGPL-2.1. The README says the Neutone FX and Neutone Gen host plugins are free. No paid plugin price was in the README or the v1.5.2 notes checked 26 Nov 2026.",
+    "LGPL-2.1. The README says the Neutone FX and Neutone Gen host plugins are free. No paid plugin price was in the README or the 13 Nov 2025 release notes checked 26 Nov 2026.",
     "Active",
     "633 GitHub stars"
    ],
-   "pricing": "LGPL-2.1. The README says the Neutone FX and Neutone Gen host plugins are free. No paid plugin price was in the README or the v1.5.2 notes checked 26 Nov 2026.",
+   "pricing": "LGPL-2.1. The README says the Neutone FX and Neutone Gen host plugins are free. No paid plugin price was in the README or the 13 Nov 2025 release notes checked 26 Nov 2026.",
    "price_tag": "unknown",
    "platforms": [
     "Web"
@@ -55741,7 +55741,7 @@
    "website": "https://www.meshy.ai",
    "github": "https://github.com/meshy-dev/meshy-mcp-server",
    "category": "3D & concept art",
-   "description": "Meshy's MCP server lets an assistant create and download 3D models, textures, images, rigs and animations on the Meshy platform. The README describes a hosted server at https://mcp.meshy.ai/mcp (China: https://mcp.meshy.cn/mcp) that signs in with a Meshy account or an API key, and a local Node server that uses MESHY_API_KEY. It says any plan, including the free plan, can connect, and that generation spends Meshy credits. Release v0.6.13 on 23 Nov 2026 changes the out-of-credits error so it links the subscription settings page. GitHub meshy-dev/meshy-mcp-server showed 97 stars and 29 forks on 26 Nov 2026, license MIT.",
+   "description": "Meshy's MCP server lets an assistant create and download 3D models, textures, images, rigs and animations on the Meshy platform. The README describes a hosted server you sign in to with a Meshy account or an API key, including a separate address for China, and a local Node server that uses a Meshy API key. It says any plan, including the free plan, can connect, and that generation spends Meshy credits. A release on 23 Nov 2026 changes the out-of-credits error so it links the subscription settings page. GitHub meshy-dev/meshy-mcp-server showed 97 stars and 29 forks on 26 Nov 2026, license MIT.",
    "key_features": [
     "MIT for the MCP server. The README says any Meshy plan, including the free plan, can connect, and generation spends Meshy credits. Dollar plan prices were not copied from a third party.",
     "Active",
@@ -64723,7 +64723,7 @@
    "website": "https://www.drawio.com/mcp/",
    "github": "https://github.com/jgraph/drawio-mcp",
    "category": "productivity",
-   "description": "The official draw.io MCP server, so Claude, ChatGPT, Cursor and other assistants can create and edit flowcharts, architecture diagrams and other draw.io diagrams right in the chat. Free and needs no sign-in.",
+   "description": "The official MCP server from the JGraph team, so Claude, ChatGPT, Cursor and other assistants can create and edit flowcharts, architecture diagrams and other diagrams right in the chat. Free, and it needs no sign-in.",
    "key_features": [
     "Free; hosted MCP App server needs no sign-in.",
     "Mature",
@@ -72074,7 +72074,7 @@
    "website": "https://www.vidmoat.com/",
    "github": "",
    "category": "video generation",
-   "description": "Vidmoat is a hosted AI video editor you direct in chat. Describe the edit and its agent cuts dead air, adds word-synced captions, grades and reframes your footage on a real timeline, where you can review and change any cut by hand before rendering an MP4. It works in the browser, on Telegram (@vidmoat_bot) and over MCP (https://api.vidmoat.com/api/mcp, OAuth), so Claude, ChatGPT or Cursor can drive edits too.",
+   "description": "Vidmoat is a hosted AI video editor you direct in chat. Describe the edit and its agent cuts dead air, adds word-synced captions, grades and reframes your footage on a real timeline, where you can review and change any cut by hand before rendering an MP4. It works in the browser, on Telegram and over MCP with OAuth, so Claude, ChatGPT or Cursor can drive edits too.",
    "key_features": [
     "Hobby $0 (no card, 40 AI credits/mo, 720p with watermark); Creator $19/mo; Studio $49/mo; Team $29/seat/mo (min 3 seats); day passes from $2.99",
     "Active",
@@ -74415,15 +74415,15 @@
    "website": "https://wenbu.app/",
    "github": "https://github.com/wenbu-app/wenbu",
    "category": "MCP servers",
-   "description": "Wenbu is a hosted Streamable HTTP MCP server (wenbu 1.5.0 at wenbu.app/mcp, listed in the official MCP Registry as app.wenbu/mcp) and web app for traditional Chinese cultural systems and reflection. Connect Claude, Cursor or any MCP client with no API key required to call seven tools—calculate_bazi, cast_iching, draw_tarot, calculate_ziwei, search_library, read_library and get_daily_card—or run the MIT-licensed server locally.",
+   "description": "Wenbu is a hosted streamable HTTP MCP server (wenbu 1.5.0, listed in the official MCP Registry as app.wenbu/mcp) and web app for traditional Chinese cultural systems and reflection. Connect Claude, Cursor or any MCP client with no API key required to call seven tools: calculate a bazi chart, cast the I Ching, draw tarot, calculate a zi wei chart, search a library, read a library item, and get a daily card. You can also run the MIT-licensed server locally.",
    "key_features": [
-    "Free and open source (MIT license; hosted Streamable HTTP MCP endpoint at wenbu.app/mcp requires no API key or sign-up)",
+    "Free and open source (MIT license). The hosted streamable HTTP MCP endpoint requires no API key or sign-up.",
     "Active",
     "Build an agent",
     "Research the web",
     "Voice & phone calls"
    ],
-   "pricing": "Free and open source (MIT license; hosted Streamable HTTP MCP endpoint at wenbu.app/mcp requires no API key or sign-up)",
+   "pricing": "Free and open source (MIT license). The hosted streamable HTTP MCP endpoint requires no API key or sign-up.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)"
@@ -80950,7 +80950,7 @@
    "website": "https://www.jeecg.com/",
    "github": "https://github.com/jeecgboot/JeecgBoot",
    "category": "memory & RAG",
-   "description": "【 v2.0， 】 AI ， 。 AI Skills 、 、 、 。 AI ：AI 、 、 、MCP ， 。 AI 「Skills → → → - AI 」 ， Java 90% ， 。",
+   "description": "JeecgBoot is an Apache-2.0 low-code platform on the v2.0 line. You describe a system in a sentence and it builds tables, front-end and back-end code, menus and pages. It also has a zero-code mode meant to stand up a business app in about five minutes, an AI app layer with chat, workflows, MCP and plugins across major models, and a generator for single tables, trees, and one-to-one or one-to-many models. The code is published on GitHub as jeecgboot/JeecgBoot.",
    "key_features": [
     "Open source + cloud",
     "Mature",
@@ -246363,14 +246363,14 @@
    "website": "https://aihot.news/",
    "github": "https://github.com/KKKKhazix/AIHOT",
    "category": "MCP servers",
-   "description": "AIHOT publishes a read-only remote MCP for its Chinese AI news desk. The connect page at https://aihot.news/agent?tab=mcp says access is anonymous, with no API key, and shows the endpoint https://aihot.news/api/mcp with an aihot_actor query parameter. The page's own summary says the server exposes 11 tools for clients such as Claude Desktop and Cursor, covering the curated feed, hot list and daily brief. The older /api/public paths were retired on 31 Oct 2026 in favor of /api/v1. The listing stays catalog-only.",
+   "description": "AIHOT publishes a read-only remote MCP for its Chinese AI news desk. The connect page says access is anonymous, with no API key, and the endpoint takes an actor query parameter. The page's own summary says the server exposes 11 tools for clients such as Claude Desktop and Cursor, covering the curated feed, hot list and daily brief. The older public paths were retired on 31 Oct 2026 in favor of a versioned API. The listing stays catalog-only.",
    "key_features": [
-    "Anonymous read-only MCP, no API key, as stated on aihot.news/agent?tab=mcp on 20 Nov 2026.",
+    "Anonymous read-only MCP, no API key, as stated on the connect page on 20 Nov 2026.",
     "Mature",
     "10,724 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Anonymous read-only MCP, no API key, as stated on aihot.news/agent?tab=mcp on 20 Nov 2026.",
+   "pricing": "Anonymous read-only MCP, no API key, as stated on the connect page on 20 Nov 2026.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)"
@@ -247948,7 +247948,7 @@
    "website": "https://coworkingview.com/en",
    "github": "",
    "category": "MCP servers",
-   "description": "CoworkingView MCP is a free, read-only remote MCP server (https://mcp.coworkingview.com/mcp) that lets an AI assistant search real coworking spaces, private offices, desks and meeting rooms, with the prices operators publish, in Berlin, Madrid, London, Munich, Dubai and 70+ other cities. It needs no API key or sign-up, every tool is marked read-only (nothing books, pays or contacts anyone), and it uses the same catalogue as coworkingview.com. It is listed in the official MCP registry as com.coworkingview/mcp.",
+   "description": "CoworkingView MCP is a free, read-only remote MCP server that lets an AI assistant search real coworking spaces, private offices, desks and meeting rooms, with the prices operators publish, in Berlin, Madrid, London, Munich, Dubai and 70+ other cities. It needs no API key or sign-up, every tool is marked read-only (nothing books, pays or contacts anyone), and it uses the same catalogue as the CoworkingView site. It is listed in the official MCP registry.",
    "key_features": [
     "Free",
     "Active",
@@ -249718,7 +249718,7 @@
    "website": "https://www.1lookup.io/",
    "github": "",
    "category": "MCP servers",
-   "description": "1Lookup MCP is a hosted MCP server at https://app.1lookup.io/api/mcp. Add that URL in Claude or Cursor, sign in, and the agent can validate phone numbers, emails and IP addresses without an API key pasted into the client. It exposes five tools (validate_phone, verify_email, ip_lookup, bulk_verify and get_account) and spends the same credits as the 1Lookup API. 1Lookup lists 76 data products on one credit balance; only these five tools are on the MCP server.",
+   "description": "1Lookup MCP is a hosted MCP server. Add it in Claude or Cursor, sign in, and the agent can validate phone numbers, emails and IP addresses without an API key pasted into the client. It exposes five tools: validate a phone, verify an email, look up an IP, bulk-check a list, and read the account. Calls spend the same credits as the 1Lookup API. 1Lookup lists 76 data products on one credit balance; only these five tools are on the MCP server.",
    "key_features": [
     "Paid plans from $99/month for 20,000 credits to $1,999/month for 1,000,000 credits. Every plan includes a 7-day trial. MCP calls need a paid plan. Core phone, email and IP checks are 1 credit each, with no separate MCP fee",
     "Active",
@@ -254540,7 +254540,7 @@
    "website": "https://morsecodetranslator.com/",
    "github": "https://github.com/morse-translator/mcp-server",
    "category": "MCP servers",
-   "description": "Morse Code Translator MCP is a free hosted MCP server for International Morse code. It translates text to Morse, decodes Morse, returns a short WAV and shows the alphabet, with the same rules as morsecodetranslator.com. The server URL is https://morsecodetranslator.com/mcp/. The README says there is no account and no API key, the transport is streamable HTTP, and the limit is 60 requests a minute. The tools are text_to_morse, morse_to_text, morse_audio and morse_alphabet.",
+   "description": "Morse Code Translator MCP is a free hosted MCP server for International Morse code. It translates text to Morse, decodes Morse, returns a short WAV and shows the alphabet, with the same rules as the Morse Code Translator site. The server address is on the MCP page linked from this listing. The README says there is no account and no API key, the transport is streamable HTTP, and the limit is 60 requests a minute. The tools turn text into Morse, turn Morse back into text, make a short audio clip, and show the alphabet.",
    "key_features": [
     "Free hosted MCP. No account and no API key. README limit: 60 requests a minute (24 Nov 2026).",
     "Active",
@@ -257776,7 +257776,7 @@
    "website": "https://kaeso.app/",
    "github": "https://github.com/logicplanes/kaeso",
    "category": "agent infra",
-   "description": "Kaeso is a self-hosted AI gateway in Rust. The homepage on 27 Nov 2026 says apps call one API while provider keys stay on the gateway, encrypted with AES-256-GCM under a master key you hold, and that a hard budget can refuse a request before any provider is called. The page showed version 0.7.4 and said that release stops a CPU-heavy merge of a tool schema after 4,096 schemas. Docs include an MCP portal at https://docs.kaeso.app/concepts/mcp-portal. GitHub logicplanes/kaeso recorded MIT, 62 stars and 3 forks on 27 Nov 2026. The homepage sample prices are pass-through provider rates in the demo console, not a Kaeso subscription.",
+   "description": "Kaeso is a self-hosted AI gateway in Rust. The homepage on 27 Nov 2026 says apps call one API while provider keys stay on the gateway, encrypted with AES-256-GCM under a master key you hold, and that a hard budget can refuse a request before any provider is called. The page showed a release that stops a CPU-heavy merge of a tool schema after 4,096 schemas. The docs include an MCP portal. GitHub logicplanes/kaeso recorded MIT, 62 stars and 3 forks on 27 Nov 2026. The homepage sample prices are pass-through provider rates in the demo console, not a Kaeso subscription.",
    "key_features": [
     "MIT. Self-hosted. The homepage did not list a Kaeso subscription price on 27 Nov 2026.",
     "Active",
@@ -257955,16 +257955,16 @@
    "website": "https://laravel.com/framework/docs/13.x/boost",
    "github": "https://github.com/laravel/boost",
    "category": "MCP servers",
-   "description": "Laravel Boost is an MIT package that gives a coding agent Laravel-specific context so the code it writes matches a Laravel app. The README points documentation at the Laravel site. That docs page returned HTTP 200 on 27 Nov 2026 at https://laravel.com/framework/docs/13.x/boost. Release v2.10.4 was published 29 Oct 2026 and adds a command to re-index rules. GitHub laravel/boost showed 3,697 stars and 393 forks on 27 Nov 2026.",
+   "description": "Laravel Boost is an MIT package that gives a coding agent Laravel-specific context so the code it writes matches a Laravel app. The README points documentation at the Laravel docs, and that docs page was reachable when this listing was checked on 27 Nov 2026. A release published 29 Oct 2026 adds a command to re-index rules. GitHub laravel/boost showed 3,697 stars and 393 forks on 27 Nov 2026.",
    "key_features": [
-    "MIT. No dollar price in the README or the v2.10.4 notes checked on 27 Nov 2026.",
+    "MIT. No dollar price was listed in the README or the 29 Oct 2026 release notes. Checked 27 Nov 2026.",
     "Active",
     "3,697 GitHub stars",
     "Write code",
     "Build an agent",
     "Connect tools via mcp"
    ],
-   "pricing": "MIT. No dollar price in the README or the v2.10.4 notes checked on 27 Nov 2026.",
+   "pricing": "MIT. No dollar price was listed in the README or the 29 Oct 2026 release notes. Checked 27 Nov 2026.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
