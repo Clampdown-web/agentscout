@@ -2,8 +2,10 @@
 """Fail a pull request that publishes pages without the matching build output.
 
 Reads the diff of BASE_SHA...HEAD_SHA and the pull-request body in PR_BODY.
-MAIN_REF is the branch already on main (origin/main in CI). The daily cap uses
-that history and the America/Los_Angeles committer date.
+MAIN_REF is the branch already on main (origin/main in CI). The daily free cap
+(DAILY_CAP) and paid sub-cap (PAID_DAILY_CAP) use that history, tools.json on
+main and the PR head, and the America/Los_Angeles committer date. Paid listings
+are excluded from the free cap.
 
 Exit 1 prints every failure. Exit 0 means the pull request passed.
 """
@@ -20,7 +22,9 @@ from zoneinfo import ZoneInfo
 from pages import (
     DAILY_CAP,
     HEURISTIC,
+    PAID_DAILY_CAP,
     canonical_problem,
+    classify_indexable,
     describe_outputs,
     is_noindex,
     is_published_html,
@@ -28,6 +32,7 @@ from pages import (
     normalize_url,
     output_satisfies,
     page_public_url,
+    paid_slugs_from_tools_json,
     reason_problem,
     sitemap_locs,
     source_outputs,
@@ -208,15 +213,40 @@ def evaluate(repo: Path, base: str, head: str, body: str, main_ref: str, today: 
         failures.append(history_error)
     elif capped_labels:
         already_norms = {normalize_url(url) for url in already}
-        combined = pr_norms | already_norms
-        if len(combined) > DAILY_CAP:
+        paid_slugs = paid_slugs_from_tools_json(_blob(repo, head, "tools.json") or "")
+        paid_slugs |= paid_slugs_from_tools_json(_blob(repo, main_ref, "tools.json") or "")
+        paid_slugs |= paid_slugs_from_tools_json(_blob(repo, sitemap_base, "tools.json") or "")
+        already_list = list(already_norms)
+        pr_list = list(pr_norms)
+        already_free, already_paid = classify_indexable(already_list, paid_slugs)
+        pr_free, pr_paid = classify_indexable(pr_list, paid_slugs)
+        # URLs in both the PR and main today should not be double-counted.
+        already_free = [u for u in already_free if u not in pr_norms]
+        already_paid = [u for u in already_paid if u not in pr_norms]
+        free_combined = set(pr_free) | set(already_free)
+        paid_combined = set(pr_paid) | set(already_paid)
+        if len(free_combined) > DAILY_CAP:
             failures.append(
-                f"This PR adds {len(pr_norms)} new indexable "
-                f"{'page' if len(pr_norms) == 1 else 'pages'} that sitemap.xml newly lists, "
-                f"and main already added {len(already_norms)} sitemap "
-                f"{'URL' if len(already_norms) == 1 else 'URLs'} on {today.isoformat()} "
-                f"(America/Los_Angeles). Together that is {len(combined)} distinct "
-                f"{'URL' if len(combined) == 1 else 'URLs'}, which is over the daily cap of {DAILY_CAP}. "
+                f"This PR adds {len(pr_free)} new free indexable "
+                f"{'page' if len(pr_free) == 1 else 'pages'} that sitemap.xml newly lists, "
+                f"and main already added {len(already_free)} free sitemap "
+                f"{'URL' if len(already_free) == 1 else 'URLs'} on {today.isoformat()} "
+                f"(America/Los_Angeles). Together that is {len(free_combined)} distinct free "
+                f"{'URL' if len(free_combined) == 1 else 'URLs'}, which is over the daily free cap of {DAILY_CAP}. "
+                f"Paid listings are excluded from this count. "
+                f"This PR: {_format_list(capped_labels)}. "
+                f"Already merged to main today: {_format_list(already)}."
+            )
+        if len(paid_combined) > PAID_DAILY_CAP:
+            failures.append(
+                f"This PR adds {len(pr_paid)} new paid indexable "
+                f"{'page' if len(pr_paid) == 1 else 'pages'} that sitemap.xml newly lists, "
+                f"and main already added {len(already_paid)} paid sitemap "
+                f"{'URL' if len(already_paid) == 1 else 'URLs'} on {today.isoformat()} "
+                f"(America/Los_Angeles). Together that is {len(paid_combined)} distinct paid "
+                f"{'URL' if len(paid_combined) == 1 else 'URLs'}, which is over the daily paid cap of {PAID_DAILY_CAP}. "
+                f"Ship extra paid pages as noindex/out of the sitemap; the next morning build "
+                f"will promote them first, ahead of free listings. "
                 f"This PR: {_format_list(capped_labels)}. "
                 f"Already merged to main today: {_format_list(already)}."
             )

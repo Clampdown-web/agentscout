@@ -292,7 +292,7 @@ class PullRequestDiffTest(unittest.TestCase):
         self.repo.write("sitemap.xml", current)
         self.repo.commit("two new guides", TODAY_STAMP)
         failures = pr_check.evaluate(self.repo.path, "main", "HEAD", REASON, "main", TODAY)
-        self.assertTrue(any("daily cap of 3" in item for item in failures), failures)
+        self.assertTrue(any("daily free cap of 3" in item for item in failures), failures)
         self.assertTrue(any("guides/alpha.html" in item for item in failures))
         self.assertTrue(any(f"{SITE}/tools/one.html" in item for item in failures))
 
@@ -324,6 +324,133 @@ class PullRequestDiffTest(unittest.TestCase):
         self.repo.write("sitemap.xml", sitemap(urls + [url]))
         self.repo.commit("one today on the branch", TODAY_STAMP)
         failures = pr_check.evaluate(self.repo.path, "main", "HEAD", REASON, "main", TODAY)
+        self.assertEqual(failures, [], failures)
+
+    def _write_tools(self, entries: list[dict]) -> None:
+        import json
+        self.repo.write("tools.json", json.dumps(entries))
+
+    def test_paid_page_on_main_does_not_consume_the_free_cap(self) -> None:
+        """2 free + 1 paid already today, plus 1 free in the PR, is 3 free and must pass."""
+        self.repo.write("sitemap.xml", sitemap([f"{SITE}/old.html"]))
+        self._write_tools([
+            {"slug": "one", "name": "One"},
+            {"slug": "two", "name": "Two"},
+            {"slug": "kurodyne", "name": "Kurodyne", "fast_track": True},
+        ])
+        self.repo.commit("yesterday", YESTERDAY_STAMP)
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([
+                f"{SITE}/old.html",
+                f"{SITE}/tools/one.html",
+                f"{SITE}/tools/two.html",
+                f"{SITE}/tools/kurodyne.html",
+            ]),
+        )
+        self.repo.commit("two free and one paid today", TODAY_STAMP)
+        self.repo.git("checkout", "-b", "pr")
+        path = "guides/alpha.html"
+        url = f"{SITE}/{path}"
+        self.repo.write(path, document(url))
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([
+                f"{SITE}/old.html",
+                f"{SITE}/tools/one.html",
+                f"{SITE}/tools/two.html",
+                f"{SITE}/tools/kurodyne.html",
+                url,
+            ]),
+        )
+        self.repo.commit("one free guide", TODAY_STAMP)
+        failures = pr_check.evaluate(self.repo.path, "main", "HEAD", REASON, "main", TODAY)
+        self.assertEqual(failures, [], failures)
+
+    def test_paid_page_in_the_pr_is_read_from_head_tools_json(self) -> None:
+        """3 free already on main; a Fast-Track in this PR must not trip the free cap."""
+        self.repo.write("sitemap.xml", sitemap([]))
+        self._write_tools([])
+        self.repo.commit("yesterday", YESTERDAY_STAMP)
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([f"{SITE}/tools/one.html", f"{SITE}/tools/two.html", f"{SITE}/guides/alpha.html"]),
+        )
+        self.repo.write("guides/alpha.html", document(f"{SITE}/guides/alpha.html"))
+        self.repo.write("tools/one.html", document(f"{SITE}/tools/one.html"))
+        self.repo.write("tools/two.html", document(f"{SITE}/tools/two.html"))
+        self.repo.commit("three free today", TODAY_STAMP)
+        self.repo.git("checkout", "-b", "pr")
+        path = "tools/kurodyne.html"
+        url = f"{SITE}/{path}"
+        self.repo.write(path, document(url))
+        self._write_tools([{"slug": "kurodyne", "name": "Kurodyne", "fast_track": True}])
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([
+                f"{SITE}/tools/one.html",
+                f"{SITE}/tools/two.html",
+                f"{SITE}/guides/alpha.html",
+                url,
+            ]),
+        )
+        self.repo.commit("paid fast-track", TODAY_STAMP)
+        failures = pr_check.evaluate(self.repo.path, "main", "HEAD", REASON, "main", TODAY)
+        self.assertEqual(failures, [], failures)
+
+    def test_third_paid_page_fails_the_paid_cap(self) -> None:
+        self.repo.write("sitemap.xml", sitemap([]))
+        self._write_tools([
+            {"slug": "pin-a", "listing_tier": "category_pin"},
+            {"slug": "sponsor-a", "listing_tier": "weekly_sponsor"},
+        ])
+        self.repo.commit("yesterday", YESTERDAY_STAMP)
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([f"{SITE}/tools/pin-a.html", f"{SITE}/tools/sponsor-a.html"]),
+        )
+        self.repo.commit("two paid today", TODAY_STAMP)
+        self.repo.git("checkout", "-b", "pr")
+        path = "tools/kurodyne.html"
+        url = f"{SITE}/{path}"
+        self.repo.write(path, document(url))
+        self._write_tools([
+            {"slug": "pin-a", "listing_tier": "category_pin"},
+            {"slug": "sponsor-a", "listing_tier": "weekly_sponsor"},
+            {"slug": "kurodyne", "fast_track": True},
+        ])
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([f"{SITE}/tools/pin-a.html", f"{SITE}/tools/sponsor-a.html", url]),
+        )
+        self.repo.commit("third paid", TODAY_STAMP)
+        failures = pr_check.evaluate(self.repo.path, "main", "HEAD", REASON, "main", TODAY)
+        self.assertTrue(any("daily paid cap of 2" in item for item in failures), failures)
+        self.assertFalse(any("daily free cap" in item for item in failures), failures)
+
+    def test_three_free_and_two_paid_pass(self) -> None:
+        self.repo.write("sitemap.xml", sitemap([]))
+        self._write_tools([
+            {"slug": "kurodyne", "fast_track": True},
+            {"slug": "pin-me", "listing_tier": "category_pin"},
+        ])
+        self.repo.commit("yesterday", YESTERDAY_STAMP)
+        self.repo.write(
+            "sitemap.xml",
+            sitemap([
+                f"{SITE}/tools/one.html",
+                f"{SITE}/tools/two.html",
+                f"{SITE}/guides/alpha.html",
+                f"{SITE}/tools/kurodyne.html",
+                f"{SITE}/tools/pin-me.html",
+            ]),
+        )
+        self.repo.commit("three free and two paid", TODAY_STAMP)
+        self.repo.git("checkout", "-b", "pr")
+        # No new pages; a tools.json typo fix should not fail the cap.
+        self.repo.write("README.md", "note\n")
+        self.repo.commit("docs only", TODAY_STAMP)
+        failures = pr_check.evaluate(self.repo.path, "main", "HEAD", "n/a", "main", TODAY)
         self.assertEqual(failures, [], failures)
 
     def test_guardrail_and_star_snapshot_changes_do_not_require_html(self) -> None:
