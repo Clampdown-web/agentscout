@@ -11,44 +11,54 @@
  },
  "scope": {
   "artifact_date": "2026-11-27",
-  "artifact_tools": 6097
+  "artifact_tools": 6098
  },
  "subject": "candidate-local",
- "note": "This checkout served at http://127.0.0.1:8767 on 2026-11-27, headless Chrome, cache disabled, wait=load. Not production. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
+ "note": "This checkout served at http://127.0.0.1:8771 on 2026-11-27, headless Chrome, cache disabled, wait=load. Not production. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
  "not_measured": [],
  "targets": [
-  "http://127.0.0.1:8767/",
-  "http://127.0.0.1:8767/bot-store/",
-  "http://127.0.0.1:8767/videos/",
-  "http://127.0.0.1:8767/bot-templates/",
-  "http://127.0.0.1:8767/mcp/",
-  "http://127.0.0.1:8767/tools/noteboxd.html",
-  "http://127.0.0.1:8767/submit.html?notrack=1"
+  "http://127.0.0.1:8771/",
+  "http://127.0.0.1:8771/bot-store/",
+  "http://127.0.0.1:8771/videos/",
+  "http://127.0.0.1:8771/bot-templates/",
+  "http://127.0.0.1:8771/mcp/",
+  "http://127.0.0.1:8771/tools/noteboxd.html",
+  "http://127.0.0.1:8771/submit.html?notrack=1"
  ],
  "pages": [
   {
-   "url": "http://127.0.0.1:8767/",
-   "lcp_ms": 188.0,
-   "cls": 0.021144575327625852,
-   "ttfb_ms": 4.0,
+   "url": "http://127.0.0.1:8771/",
+   "lcp_ms": 228.0,
+   "cls": 0.02290030957563261,
+   "ttfb_ms": 2.900000035762787,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
    "field_cwv": false
   },
   {
-   "url": "http://127.0.0.1:8767/bot-store/",
-   "lcp_ms": 112.0,
+   "url": "http://127.0.0.1:8771/bot-store/",
+   "lcp_ms": 180.0,
    "cls": 0.0,
-   "ttfb_ms": 12.100000000093132,
+   "ttfb_ms": 2.299999952316284,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
    "field_cwv": false
   },
   {
-   "url": "http://127.0.0.1:8767/videos/",
-   "lcp_ms": 136.0,
+   "url": "http://127.0.0.1:8771/videos/",
+   "lcp_ms": 232.0,
+   "cls": 0.0,
+   "ttfb_ms": 2.100000023841858,
+   "grade": "PASS",
+   "wait": "load",
+   "throttle": "none",
+   "field_cwv": false
+  },
+  {
+   "url": "http://127.0.0.1:8771/bot-templates/",
+   "lcp_ms": 312.0,
    "cls": 0.0,
    "ttfb_ms": 2.0,
    "grade": "PASS",
@@ -57,40 +67,30 @@
    "field_cwv": false
   },
   {
-   "url": "http://127.0.0.1:8767/bot-templates/",
+   "url": "http://127.0.0.1:8771/mcp/",
    "lcp_ms": 172.0,
    "cls": 0.0,
-   "ttfb_ms": 3.2000000001862645,
+   "ttfb_ms": 2.5,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
    "field_cwv": false
   },
   {
-   "url": "http://127.0.0.1:8767/mcp/",
-   "lcp_ms": 140.0,
-   "cls": 0.0,
-   "ttfb_ms": 5.100000000093132,
+   "url": "http://127.0.0.1:8771/tools/noteboxd.html",
+   "lcp_ms": 224.0,
+   "cls": 0.0005975961292257957,
+   "ttfb_ms": 2.300000011920929,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
    "field_cwv": false
   },
   {
-   "url": "http://127.0.0.1:8767/tools/noteboxd.html",
-   "lcp_ms": 148.0,
-   "cls": 0.0006741759535659435,
-   "ttfb_ms": 5.100000000093132,
-   "grade": "PASS",
-   "wait": "load",
-   "throttle": "none",
-   "field_cwv": false
-  },
-  {
-   "url": "http://127.0.0.1:8767/submit.html?notrack=1",
-   "lcp_ms": 144.0,
-   "cls": 0.00027928001639925497,
-   "ttfb_ms": 5.2999999998137355,
+   "url": "http://127.0.0.1:8771/submit.html?notrack=1",
+   "lcp_ms": 212.0,
+   "cls": 0.0002475565256926459,
+   "ttfb_ms": 5.300000011920929,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",

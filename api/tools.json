@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-27T05:15:58-08:00",
- "updated": "2026-11-27T05:15:58-08:00",
+ "generated": "2026-11-27T09:41:50-08:00",
+ "updated": "2026-11-27T09:41:50-08:00",
  "last_checked": "2026-11-27",
- "count": 6097,
- "total_tools": 6097,
+ "count": 6098,
+ "total_tools": 6098,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -258084,6 +258084,52 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/microsoft-agent-skills.png",
    "page": "https://agentscouthq.com/tools/microsoft-agent-skills.html"
+  },
+  {
+   "name": "Kurodyne",
+   "slug": "kurodyne",
+   "url": "https://kurodyne.com/",
+   "website": "https://kurodyne.com/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Kurodyne is a marketplace for agent skills, prompts, automation workflows, software tools, spreadsheets and templates that AI agents can search. Its Catalog MCP at https://mcp.kurodyne.com/mcp needs no account; a POST initialize on 27 Nov 2026 returned com.kurodyne/catalog v1.0.0 with read-only tools such as search_products, get_product, get_product_reviews and get_product_readme. A separate Seller Console MCP lets a seller's agent publish products and answer buyers after a browser sign-in. Sellers set prices from $5 to $500 and pay a 20% platform fee per sale, with no listing or monthly fee. The site says a person reviews every listing and update, and packages are malware-scanned and locked with a SHA-256 fingerprint.",
+   "key_features": [
+    "Free to browse and to search through the Catalog MCP. Products are priced by sellers from $5 to $500 in whole US dollars. Sellers pay no listing or monthly fee and a 20% platform fee per sale, plus Stripe processing; the first sellers to publish pay no platform fee for 3 months (kurodyne.com/sell, 27 Nov 2026).",
+    "Active",
+    "Automate the browser",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Free to browse and to search through the Catalog MCP. Products are priced by sellers from $5 to $500 in whole US dollars. Sellers pay no listing or monthly fee and a 20% platform fee per sale, plus Stripe processing; the first sellers to publish pay no platform fee for 3 months (kurodyne.com/sell, 27 Nov 2026).",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-27",
+   "added": "2026-11-27",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kurodyne.png",
+   "page": "https://agentscouthq.com/tools/kurodyne.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-27"
   }
  ]
 }
