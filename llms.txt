@@ -1,12 +1,12 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 6,097 AI agent tools in 40 categories, including 3,221 MCP servers. Checked daily, 3,200 of 3,221 checked servers live, last checked 2026-11-27. Handshake check: 1,772 of 1,782 remote servers checked so far. Of those, 571 answered with a tools list, 1,165 asked for auth, 36 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 6,098 AI agent tools in 40 categories, including 3,222 MCP servers. Checked daily, 3,200 of 3,221 checked servers live, last checked 2026-11-27. +1 listed, not yet checked. Handshake check: 1,772 of 1,782 remote servers checked so far. Of those, 571 answered with a tools list, 1,165 asked for auth, 36 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 <!-- mcp-reach:start -->
 
 ## MCP server reachability
 
-Checked daily, 3,200 of 3,221 checked servers live, last checked 2026-11-27.
+Checked daily, 3,200 of 3,221 checked servers live, last checked 2026-11-27. +1 listed, not yet checked.
 
 Handshake check: 1,772 of 1,782 remote servers checked so far. Of those, 571 answered with a tools list, 1,165 asked for auth, 36 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT.
 
@@ -45,7 +45,7 @@ Catalog last checked: 2026-11-27 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 3,221 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 3,222 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
@@ -63,7 +63,7 @@ Catalog last checked: 2026-11-27 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://mcp.agentscouthq.com/mcp) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 3,221 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 3,222 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -83,7 +83,7 @@ Catalog last checked: 2026-11-27 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 3221 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 3222 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 418 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 323 tools
 - [agent infra](https://agentscouthq.com/categories/agent-infra.html): 172 tools
@@ -192,8 +192,9 @@ Catalog last checked: 2026-11-27 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-11-26 to 2026-11-27): 40
+- Tools added in the last 2 days (2026-11-26 to 2026-11-27): 41
 
+- [Kurodyne](https://agentscouthq.com/tools/kurodyne.html) (added 2026-11-27): Kurodyne is a marketplace for agent skills, prompts, automation workflows, software tools, spreadsheets and templates that AI agents can search. Its Catalog MCP at https://mcp.kurodyne.com/mcp needs no account; a POST initialize on 27 Nov 2026 returned com.kurodyne/catalog v1.0.0 with read-only tools such as search_products, get_product, get_product_reviews and get_product_readme. A separate Seller Console MCP lets a seller's agent publish products and answer buyers after a browser sign-in. Sellers set prices from $5 to $500 and pay a 20% platform fee per sale, with no listing or monthly fee. The site says a person reviews every listing and update, and packages are malware-scanned and locked with a SHA-256 fingerprint.
 - [Microsoft Agent Skills](https://agentscouthq.com/tools/microsoft-agent-skills.html) (added 2026-11-27): Microsoft Agent Skills is an MIT collection of skills, custom agents, AGENTS.md templates and MCP configuration for coding agents that use Azure SDKs and Microsoft AI Foundry. The README says the repo is still in progress and that the skill explorer lists 175 skills. Install is npx skills add microsoft/skills. The explorer at https://microsoft.github.io/skills/ returned HTTP 200 on 27 Nov 2026. GitHub microsoft/skills showed 3,255 stars and 376 forks that day.
 - [Agent Toolkit for AWS](https://agentscouthq.com/tools/agent-toolkit-for-aws.html) (added 2026-11-27): The Agent Toolkit for AWS gives coding agents tools, knowledge and guardrails for building on AWS. The README says it works with Claude Code, Codex, Cursor, Devin, Kiro and fx, and that the AWS CLI command is aws configure agent-toolkit. The CLI guide at that docs URL returned HTTP 200 on 27 Nov 2026. Plugins also install from Anthropic's Claude Code marketplace, including an aws-core plugin. GitHub aws/agent-toolkit-for-aws recorded Apache-2.0, 3,594 stars and 487 forks on 27 Nov 2026. The README did not list a separate toolkit price.
 - [Laravel Boost](https://agentscouthq.com/tools/laravel-boost.html) (added 2026-11-27): Laravel Boost is an MIT package that gives a coding agent Laravel-specific context so the code it writes matches a Laravel app. The README points documentation at the Laravel site. That docs page returned HTTP 200 on 27 Nov 2026 at https://laravel.com/framework/docs/13.x/boost. Release v2.10.4 was published 29 Oct 2026 and adds a command to re-index rules. GitHub laravel/boost showed 3,697 stars and 393 forks on 27 Nov 2026.

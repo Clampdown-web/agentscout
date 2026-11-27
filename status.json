@@ -1,17 +1,17 @@
 {
  "catalog": {
-  "mcp_servers": 3221,
+  "mcp_servers": 3222,
   "live": 3200,
   "down": 21,
   "checked": 3221,
-  "not_yet_checked": 0,
+  "not_yet_checked": 1,
   "directory_last_checked": "2026-11-27",
   "mcp_last_checked": "2026-11-27 04:46",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-27",
-    "note": "3,200 of 3,221 checked servers live, 21 down",
+    "note": "3,200 of 3,221 checked servers live, 21 down, +1 listed, not yet checked",
     "time": "04:46"
    },
    {
@@ -27018,6 +27018,13 @@
      "time": "04:46"
     }
    ]
+  },
+  {
+   "slug": "kurodyne",
+   "name": "Kurodyne",
+   "page": "https://agentscouthq.com/tools/kurodyne.html",
+   "status": "not yet checked",
+   "unverified": true
   },
   {
    "slug": "kuvasz",
