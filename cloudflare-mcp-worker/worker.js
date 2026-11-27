@@ -235,7 +235,7 @@ const TOOL_DEFS = [
   {
     name: "list_packages",
     title: "List AgentScout maker packages & pre-trained bots",
-    description: "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, $49 category pin, $99/wk sponsor) and the Made by AgentScout pre-trained bot lineup. The $99 weekly sponsorship includes submissions to about 25 other AI directories. That work is not a separate listing tier.",
+    description: "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Google sitemap submission and a Bing and IndexNow ping, $49 category pin, $99/wk sponsor) and the Made by AgentScout pre-trained bot lineup. The $99 weekly sponsorship includes submissions to about 25 other AI directories. That work is not a separate listing tier.",
     inputSchema: {
       type: "object",
       additionalProperties: false,
