@@ -504,7 +504,7 @@ def free_tools():
         ("badge", "Optional: add your AgentScout badge. It does not change your rank."),
         ("x", "Post the launch on X."),
         ("news", "Tell your newsletter list."),
-        ("index", "Ping Bing and IndexNow. This does not include Google."),
+        ("index", "Submit your sitemap to Google, and ping Bing and IndexNow."),
         ("roast", "Run Roast My AI Tool Listing on the URL."),
     ]
     lis = "".join(f'<li><label><input type="checkbox" value="{i}"> {e(lab)}</label></li>' for i, lab in check_items)
@@ -603,23 +603,23 @@ def insert_launch_pack():
 def patch_indexnow(text):
     pairs = [
         ("and a dedicated launch post on @AgentScoutHQ.",
-         "and a dedicated launch post on @AgentScoutHQ. Same-day indexing ping to Bing and IndexNow search engines (does not include Google)."),
+         "and a dedicated launch post on @AgentScoutHQ. Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow."),
         ("and a launch post on @AgentScoutHQ.",
-         "and a launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google)."),
+         "and a launch post on @AgentScoutHQ. Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow."),
         ("Launch post on @AgentScoutHQ</span>",
-         "Launch post on @AgentScoutHQ · Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</span>"),
+         "Launch post on @AgentScoutHQ · Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow.</span>"),
         ("Launch post on <b>@AgentScoutHQ</b></span>",
-         "Launch post on <b>@AgentScoutHQ</b> · <b>Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b></span>"),
+         "Launch post on <b>@AgentScoutHQ</b> · <b>Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow.</b></span>"),
     ]
     for old, new in pairs:
         if old in text and new not in text:
             text = text.replace(old, new)
-    bullet = '<li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b></span></li>'
-    if "pkg-chk-fast" in text and "Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b> Bing" not in text and "Launch post on X:" in text:
+    bullet = '<li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow.</b></span></li>'
+    if "pkg-chk-fast" in text and "Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow.</b> Bing" not in text and "Launch post on X:" in text:
         text = text.replace("Launch post on X:</b>", "Launch post on X:</b>", 1)
         text = re.sub(
             r'(Launch post on X:</b>.*?</li>)',
-            lambda m: m.group(1) + bullet if "Same-day indexing ping" not in m.group(1) else m.group(1),
+            lambda m: m.group(1) + bullet if "Submitted to Google via sitemap" not in m.group(1) and "Same-day indexing ping" not in m.group(1) else m.group(1),
             text,
             count=2,
             flags=re.S,

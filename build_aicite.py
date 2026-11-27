@@ -718,7 +718,7 @@ MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (
            ("list_packages","List AgentScout's 4 maker listing & sponsorship tiers ($0 Free, $15 Fast-Track, $49 30-Day Category Pin, $99/wk Weekly Sponsor) with direct Stripe Checkout URLs, plus the Made by AgentScout pre-trained bot catalog.")]
 LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance."
 LIST_PACKAGES_DESC = (
-    "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, "
+    "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Google sitemap submission and a Bing and IndexNow ping, "
     "$49 category pin, $99/wk sponsor), and the Made by AgentScout pre-trained bot lineup. "
     "The $99 weekly sponsorship includes submissions to about 25 other AI directories, with a report of the links."
 )
