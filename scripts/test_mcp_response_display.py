@@ -182,7 +182,26 @@ class PageTests(unittest.TestCase):
         blob = data["g0"]
         self.assertGreater(blob.count('data-mcp-health="1">Not yet checked</span>'), 1000)
         self.assertIn('data-resp="0"', blob)
-        self.assertNotIn('data-resp="1"', blob)
+        # Once a server has MIN_PROBES counted checks its deferred card may sort
+        # by rate (data-resp="1"). Each such card must carry the rate, a thick
+        # enough sample, and the matching "Responded x/n" badge.
+        cards = re.findall(r'<a class="card tile"[^>]*data-resp="[01]"[^>]*>.*?</a>', blob, re.S)
+        self.assertGreater(len(cards), 1000)
+        for card in cards:
+            head = card[: card.index(">") + 1]
+            badge = BADGE.search(card)
+            self.assertIsNotNone(badge, head)
+            if 'data-resp="1"' not in head:
+                self.assertIn('data-resp="0"', head)
+                self.assertNotIn("data-rr=", head)
+                continue
+            rr = re.search(r'data-rr="([0-9.]+)"', head)
+            rn = re.search(r'data-rn="([0-9]+)"', head)
+            self.assertIsNotNone(rr, head)
+            self.assertIsNotNone(rn, head)
+            self.assertGreaterEqual(int(rn.group(1)), mrr.MIN_PROBES, head)
+            self.assertTrue(0.0 <= float(rr.group(1)) <= 1.0, head)
+            self.assertRegex(badge.group(1), rf"^Responded \d+/{rn.group(1)} checks", head)
 
     def test_sort_script_ignores_anything_that_is_not_a_thick_rate(self):
         js = (ROOT / "mcp-responds.js").read_text(encoding="utf-8")
