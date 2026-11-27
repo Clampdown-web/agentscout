@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import re
 from html import unescape
+from urllib.parse import urlparse
 
 SITE = "https://agentscouthq.com"
 DAILY_CAP = 3  # free new indexable pages per PT day; raise this single constant (e.g. to 5) later
@@ -446,14 +447,14 @@ def reason_problem(body: str, pages: list[str]) -> str | None:
 
 def tool_slug_from_url(url: str) -> str | None:
     """Slug for a tool page URL such as /tools/kurodyne or /tools/kurodyne.html; else None."""
-    text = normalize_url(url)
-    if text.lower().startswith("https://www."):
-        text = "https://" + text[12:]
-    if text.lower().startswith("http://"):
-        text = "https://" + text[7:]
-    path = text
-    if path.lower().startswith("https://agentscouthq.com"):
-        path = path[len("https://agentscouthq.com"):]
+    parsed = urlparse(normalize_url(url))
+    host = (parsed.hostname or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    # Only the AgentScout host (or a bare path with no host) can yield a slug.
+    if host not in ("", "agentscouthq.com"):
+        return None
+    path = parsed.path or ""
     m = re.match(r"^/tools/([^/]+?)/?$", path)
     if not m:
         return None

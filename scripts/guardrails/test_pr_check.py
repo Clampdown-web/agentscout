@@ -105,6 +105,11 @@ class SourceRulesTest(unittest.TestCase):
         self.assertIsNone(pages.source_outputs("build_openapi.py"))
         self.assertIsNone(pages.source_outputs("build_og_neon.py"))
 
+    def test_lookalike_host_is_not_a_tool_slug(self) -> None:
+        self.assertEqual(pages.tool_slug_from_url(f"{SITE}/tools/kurodyne.html"), "kurodyne")
+        self.assertIsNone(pages.tool_slug_from_url("https://agentscouthq.com.evil.com/tools/kurodyne.html"))
+        self.assertIsNone(pages.tool_slug_from_url("https://notagentscouthq.com/tools/kurodyne.html"))
+
     def test_index_html_normalizes_to_the_directory_url(self) -> None:
         self.assertEqual(pages.page_public_url("prompts/index.html"), f"{SITE}/prompts/")
         self.assertEqual(pages.page_public_url("index.html"), f"{SITE}/")
