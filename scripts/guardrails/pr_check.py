@@ -8,7 +8,9 @@ main and the PR head, and the America/Los_Angeles committer date. Paid listings
 are excluded from the free cap.
 
 It also runs scripts/lint_listing_copy.py on listing fields added or
-changed in the PR (description, pricing_detail, long, features, FAQ answers).
+changed in the PR (description, pricing_detail, long, features, FAQ answers),
+and scripts/lint_seo_terms.py so a rewrite cannot drop product, client,
+category, protocol, or official MCP/docs terms from a listing title or meta.
 
 Exit 1 prints every failure. Exit 0 means the pull request passed.
 """
@@ -26,6 +28,7 @@ SCRIPTS = Path(__file__).resolve().parents[1]
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 import lint_listing_copy
+import lint_seo_terms
 
 from pages import (
     DAILY_CAP,
@@ -259,6 +262,7 @@ def evaluate(repo: Path, base: str, head: str, body: str, main_ref: str, today: 
                 f"Already merged to main today: {_format_list(already)}."
             )
     failures.extend(lint_listing_copy.failures(repo, base, head))
+    failures.extend(lint_seo_terms.failures(repo, base, head))
     return failures
 
 
