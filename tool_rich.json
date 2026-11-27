@@ -35014,5 +35014,404 @@
       "checked": "2026-11-26",
       "site": "https://aiaethon.com/"
     }
+  },
+  "aiven-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/Aiven-Open/mcp-aiven",
+      "https://github.com/Aiven-Open/mcp-aiven/blob/main/README.md",
+      "https://github.com/Aiven-Open/mcp-aiven/releases/tag/v1.21.0"
+    ],
+    "long": [
+      "Aiven MCP is a server for Aiven's cloud data platform. The README says an assistant can manage PostgreSQL, Apache Kafka, applications and other Aiven services. Access follows the signed-in Aiven user's permissions, and the README warns that an agent can create, change or delete services.",
+      "The hosted server is https://mcp.aiven.live/mcp. Adding ?read_only=true removes write tools. Release v1.21.0, published 20 Nov 2026, adds application build visibility and release management. GitHub recorded Apache-2.0, 28 stars and 23 forks on 27 Nov 2026."
+    ],
+    "who": "Engineers who want an assistant to operate Aiven services under their existing account permissions.",
+    "features": [
+      "Hosted MCP at https://mcp.aiven.live/mcp, with a read-only query flag",
+      "Covers PostgreSQL, Apache Kafka, applications and other Aiven services",
+      "v1.21.0 (20 Nov 2026): application build visibility and release management",
+      "Apache-2.0. 28 GitHub stars and 23 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records Apache-2.0. Checked 27 Nov 2026."
+      ],
+      [
+        "Can it be read-only?",
+        "The README says adding ?read_only=true to the hosted URL excludes write operations."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/Aiven-Open/mcp-aiven",
+      "stars": 28,
+      "forks": 23,
+      "checked": "2026-11-27",
+      "license": "Apache-2.0",
+      "osi": true,
+      "release": "v1.21.0"
+    }
+  },
+  "uptimerobot-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/uptimerobot/ai",
+      "https://github.com/uptimerobot/ai/blob/main/README.md",
+      "https://github.com/uptimerobot/ai/releases/tag/0.2.0"
+    ],
+    "long": [
+      "UptimeRobot publishes its agent integrations from the uptimerobot/ai repo. The README says Claude Code, Cursor and Codex connect to https://mcp.uptimerobot.com/mcp and complete OAuth in the browser. The server is hosted. The repo also ships skills for monitor setup, status pages, maintenance windows and incident response.",
+      "Release 0.2.0, published 2 Jul 2026, says the tool inventory grew from 10 tools to 32. GitHub recorded MIT, 24 stars and 0 forks on 27 Nov 2026. The default branch was pushed on 25 Nov 2026. The README does not list a price for monitors."
+    ],
+    "who": "People who already use UptimeRobot and want an assistant to check monitors and incidents.",
+    "features": [
+      "Hosted MCP at https://mcp.uptimerobot.com/mcp with browser OAuth",
+      "Release 0.2.0 grew the tool list from 10 to 32",
+      "Skills for monitors, status pages, maintenance windows and incidents",
+      "MIT. 24 GitHub stars and 0 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 27 Nov 2026."
+      ],
+      [
+        "Where does the server run?",
+        "The README says the client connects to the hosted URL and does not run a local server."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/uptimerobot/ai",
+      "stars": 24,
+      "forks": 0,
+      "checked": "2026-11-27",
+      "license": "MIT",
+      "osi": true,
+      "release": "0.2.0"
+    }
+  },
+  "idealo-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/idealo/mcp-server-guide",
+      "https://github.com/idealo/mcp-server-guide/blob/main/README.md",
+      "https://mcp.idealo.com/mcp"
+    ],
+    "long": [
+      "idealo's MCP server searches products and shop offers on six European idealo marketplaces: Germany, Austria, Britain, France, Italy and Spain. The README describes catalog search, a product profile with a 30-day price trend, and paginated offers with shop, delivery and shipping fields.",
+      "The server URL in the README is https://mcp.idealo.com/mcp. A GET on 27 Nov 2026 returned HTTP 204. Trial access is OAuth and is capped at 3 requests a second, a burst of 6 and 500 calls a day. Partner access is 10 requests a second, a burst of 30 and 10,000 calls a day. GitHub recorded MIT, 29 stars and 0 forks. There was no release. The old flights.idealo.com URL on this listing was the flight site, not this server."
+    ],
+    "who": "Shoppers and developers who want an assistant to compare idealo prices in those six markets.",
+    "features": [
+      "Product search, offer lists and 30-day price history",
+      "Six markets: DE, AT, GB, FR, IT, ES",
+      "Trial limits: 3 req/s, burst 6, 500 calls/day",
+      "MIT. 29 GitHub stars and 0 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 27 Nov 2026."
+      ],
+      [
+        "Is there a free tier?",
+        "The README describes a self-serve Trial tier with daily call limits. It does not list a dollar price."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/idealo/mcp-server-guide",
+      "stars": 29,
+      "forks": 0,
+      "checked": "2026-11-27",
+      "license": "MIT",
+      "osi": true
+    }
+  },
+  "devcycle-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/DevCycleHQ/cli",
+      "https://github.com/DevCycleHQ/cli/blob/main/README.md",
+      "https://github.com/DevCycleHQ/cli/releases/tag/v6.6.2",
+      "https://docs.devcycle.com/"
+    ],
+    "long": [
+      "The DevCycle CLI manages feature flags from the terminal and includes an MCP server for coding assistants. The README says it can manage features, variables, variations and targeting rules, list where variables are used, set self-targeting overrides, and generate TypeScript types.",
+      "Release v6.6.2 was published 24 Nov 2026. The notes only record the release. GitHub recorded MIT, 20 stars and 5 forks on 27 Nov 2026. The README does not list a dollar price."
+    ],
+    "who": "Developers who want an assistant to read and change DevCycle feature flags in a repo.",
+    "features": [
+      "CLI plus an MCP server for DevCycle feature flags",
+      "Variable usage search, targeting overrides and TypeScript types",
+      "v6.6.2 published 24 Nov 2026",
+      "MIT. 20 GitHub stars and 5 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 27 Nov 2026."
+      ],
+      [
+        "What changed in v6.6.2?",
+        "The release notes published 24 Nov 2026 only record the release itself."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/DevCycleHQ/cli",
+      "stars": 20,
+      "forks": 5,
+      "checked": "2026-11-27",
+      "license": "MIT",
+      "osi": true,
+      "release": "v6.6.2"
+    }
+  },
+  "automox-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/AutomoxCommunity/automox-mcp",
+      "https://github.com/AutomoxCommunity/automox-mcp/blob/main/README.md",
+      "https://github.com/AutomoxCommunity/automox-mcp/releases/tag/v2.2.10"
+    ],
+    "long": [
+      "Automox MCP lets an assistant ask an Automox console about devices, compliance and patch policy. The README says release 3.0 adds a hosted server at https://console.automox.com/api/mcp that uses the account's existing API key, and keeps a self-hosted option.",
+      "GitHub's latest release tag on 27 Nov 2026 was v2.2.10, published 20 Nov 2026. GitHub recorded MIT, 15 stars and 5 forks. The README does not list a separate price for the server."
+    ],
+    "who": "IT teams who already use Automox and want an assistant to query devices and patches.",
+    "features": [
+      "Hosted server at https://console.automox.com/api/mcp, plus a self-hosted package",
+      "Asks about devices, compliance and patch policy",
+      "Latest GitHub tag v2.2.10, published 20 Nov 2026",
+      "MIT. 15 GitHub stars and 5 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 27 Nov 2026."
+      ],
+      [
+        "Is there a hosted server?",
+        "The README documents https://console.automox.com/api/mcp and says it uses an existing Automox API key."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/AutomoxCommunity/automox-mcp",
+      "stars": 15,
+      "forks": 5,
+      "checked": "2026-11-27",
+      "license": "MIT",
+      "osi": true,
+      "release": "v2.2.10"
+    }
+  },
+  "whimsical-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/WhimsicalCode/mcp-server-guide",
+      "https://github.com/WhimsicalCode/mcp-server-guide/blob/main/README.md",
+      "https://whimsical.com/mcp"
+    ],
+    "long": [
+      "Whimsical's MCP server creates and edits boards from a chat. The README's endpoint is https://mcp.whimsical.com/mcp. Sign-in is OAuth. The server can make flowcharts, mind maps, sequence diagrams, wireframes and docs, and can search or comment on existing boards.",
+      "The README says every tool works on the free plan, which includes up to 50 board objects a month, and that paid plans have no object limit. It does not list the paid prices. GitHub recorded MIT, 11 stars and 0 forks on 27 Nov 2026. There was no release."
+    ],
+    "who": "Teams who want an assistant to create a Whimsical board instead of a static image.",
+    "features": [
+      "Hosted MCP at https://mcp.whimsical.com/mcp with OAuth",
+      "Flowcharts, mind maps, sequence diagrams, wireframes and docs",
+      "Free plan: up to 50 board objects a month",
+      "MIT. 11 GitHub stars and 0 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 27 Nov 2026."
+      ],
+      [
+        "Does the free plan work?",
+        "The README says every tool works on the free plan, up to 50 board objects a month."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/WhimsicalCode/mcp-server-guide",
+      "stars": 11,
+      "forks": 0,
+      "checked": "2026-11-27",
+      "license": "MIT",
+      "osi": true
+    }
+  },
+  "lovable-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/lovablelabs/mcp",
+      "https://github.com/lovablelabs/mcp/blob/main/README.md",
+      "https://mcp.lovable.dev"
+    ],
+    "long": [
+      "The Lovable plugin connects Claude to Lovable's app builder. The README says Claude drafts the work and Lovable builds, hosts and gives the app a database and a URL. The plugin includes the MCP server at https://mcp.lovable.dev, 13 skills and three commands.",
+      "The README says a skill reads the workspace profile first, asks before it spends credits, reports what a call cost, and stops before publishing. A GET to https://mcp.lovable.dev returned HTTP 200 on 27 Nov 2026. GitHub recorded Apache-2.0, 13 stars and 9 forks. There was no release and no dollar price in the README."
+    ],
+    "who": "People who want Claude to create or change a Lovable app without leaving the chat.",
+    "features": [
+      "MCP server at https://mcp.lovable.dev",
+      "13 skills that ask before spending credits and stop before publish",
+      "Installs as a Claude plugin or from this repository",
+      "Apache-2.0. 13 GitHub stars and 9 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records Apache-2.0. Checked 27 Nov 2026."
+      ],
+      [
+        "Does it publish on its own?",
+        "The README says skills stop before publishing."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/lovablelabs/mcp",
+      "stars": 13,
+      "forks": 9,
+      "checked": "2026-11-27",
+      "license": "Apache-2.0",
+      "osi": true
+    }
+  },
+  "brandfetch-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://github.com/Brandfetch/brandfetch-mcp-server",
+      "https://github.com/Brandfetch/brandfetch-mcp-server/blob/main/README.md",
+      "https://github.com/Brandfetch/brandfetch-mcp-server/releases/tag/v.1.6.2",
+      "https://brandfetch.com/developers/mcp"
+    ],
+    "long": [
+      "Brandfetch MCP exposes Brandfetch search and brand assets to an assistant. The README's tools include brand search, a full brand lookup, a compact lookup, a batch of up to 25 brands, merchant matching from a statement string, brand context, logo CDN URLs and a feedback tool.",
+      "On MCP Apps hosts, get_brand can draw an interactive card. Release v1.6.2, published 23 Oct 2026, adds Cursor listing. GitHub recorded MIT, 10 stars and 0 forks on 27 Nov 2026. The README does not list a dollar price."
+    ],
+    "who": "Designers and developers who want an assistant to pull a company's logo and brand data.",
+    "features": [
+      "Brand search, logos, company data and statement-string matching",
+      "Batch lookup of up to 25 brands",
+      "v1.6.2 (23 Oct 2026) adds Cursor listing",
+      "MIT. 10 GitHub stars and 0 forks on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 27 Nov 2026."
+      ],
+      [
+        "What did v1.6.2 add?",
+        "The release notes say it adds Cursor listing. Published 23 Oct 2026."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/Brandfetch/brandfetch-mcp-server",
+      "stars": 10,
+      "forks": 0,
+      "checked": "2026-11-27",
+      "license": "MIT",
+      "osi": true,
+      "release": "v1.6.2"
+    }
+  },
+  "provider-trust": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://scriptmasterlabs.com/provider-trust",
+      "https://provider-trust-mcp.onrender.com/mcp"
+    ],
+    "long": [
+      "Provider Trust checks a provider before an agent relies on it. The product page on 27 Nov 2026 says the check covers provider identity, source ownership and observable trust signals, and that a live domain or a valid certificate is not an endorsement by itself.",
+      "The canonical MCP URL on the page is https://provider-trust-mcp.onrender.com/mcp. A GET and a POST initialize that day both returned HTTP 200. The server name was provider-trust, version 1.2.0. The page did not list a dollar price. This page is not Agent Verify, Garage402 or Authority Engine."
+    ],
+    "who": "Agent builders who want a check of who is behind a source before the agent quotes it or pays it.",
+    "features": [
+      "Checks provider identity, source ownership and observable trust signals",
+      "MCP at https://provider-trust-mcp.onrender.com/mcp (initialize 200 on 27 Nov 2026)",
+      "Server provider-trust version 1.2.0",
+      "No dollar price was on the product page that day"
+    ],
+    "faq": [
+      [
+        "Is the MCP up?",
+        "GET and POST initialize to https://provider-trust-mcp.onrender.com/mcp on 27 Nov 2026 returned HTTP 200 and serverInfo name provider-trust, version 1.2.0."
+      ],
+      [
+        "What does a check cost?",
+        "The product page did not list a dollar price on 27 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-27",
+      "mcp": "https://provider-trust-mcp.onrender.com/mcp"
+    }
+  },
+  "sandscale": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-27",
+    "sources": [
+      "https://sandscale.dev/",
+      "https://sandscale.dev/pricing",
+      "https://mcp.sandscale.dev/mcp"
+    ],
+    "long": [
+      "Sandscale starts isolated Firecracker microVMs for agent runs, plus workspaces and build machines. The site documents an SDK, a CLI and an MCP server at https://mcp.sandscale.dev/mcp.",
+      "On 27 Nov 2026 the pricing page listed Free at $0 a month (100 awake vCPU-hours, 3 at once, 5 GB), Pro at $20 a month billed annually or $25 monthly (1,500 vCPU-hours), and Team at $40 per member annually or $48 monthly. Extra awake hours were $0.05 each. A POST initialize without a session returned HTTP 401 and asked the caller to sign in to Sandscale."
+    ],
+    "who": "Engineers who want a separate microVM for each agent run, with a published hourly price.",
+    "features": [
+      "Firecracker microVM sandboxes, workspaces and build hosts",
+      "Free plan and paid Pro and Team plans with published vCPU-hour prices",
+      "MCP URL https://mcp.sandscale.dev/mcp",
+      "Unauthenticated initialize returned HTTP 401 on 27 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What does Pro cost?",
+        "On 27 Nov 2026 Pro was $20 a month billed annually or $25 billed monthly, with 1,500 awake vCPU-hours."
+      ],
+      [
+        "Does the MCP require a sign-in?",
+        "A POST initialize without a session on 27 Nov 2026 returned HTTP 401 and the message to sign in to Sandscale."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-27",
+      "site": "https://sandscale.dev/",
+      "mcp": "https://mcp.sandscale.dev/mcp"
+    }
   }
 }
