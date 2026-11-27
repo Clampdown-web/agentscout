@@ -24130,13 +24130,13 @@
       "https://superagent.sh"
     ],
     "long": [
-      "Superagent's README describes an open-source SDK that makes AI apps safer: it blocks prompt injections, redacts PII and secrets, scans repositories for threats, and runs red-team scenarios against an agent. Docs are linked at https://docs.superagent.sh.",
-      "GitHub recorded MIT and 6,887 stars on 24 Nov 2026. The newest release object returned by the GitHub API was node-v0.0.9, published 14 Sep 2025. The README did not list hosted plan prices on this check, so earlier dollar tiers are not repeated here."
+      "Superagent's README describes an open-source SDK that makes AI apps safer: it blocks prompt injections, redacts PII and secrets, scans repositories for threats, and runs red-team scenarios against an agent. Documentation is linked from the project.",
+      "GitHub recorded MIT and 6,887 stars on 24 Nov 2026. The newest GitHub release shown at that check was published 14 Sep 2025. The README did not list hosted plan prices on this check, so earlier dollar tiers are not repeated here."
     ],
     "who": "Developers who want checks for prompt injection, secrets and unsafe tool use inside an agent they are building.",
     "features": [
       "SDK checks named in the README: prompt injection, PII and secret redaction, repository scans, red-team scenarios",
-      "Docs at https://docs.superagent.sh",
+      "Project documentation is linked from the repository",
       "MIT. 6,887 GitHub stars and 969 forks on 24 Nov 2026",
       "Hosted prices were not in the README on 24 Nov 2026"
     ],
@@ -27077,19 +27077,19 @@
     },
     "long": [
       "LobsterMatch is a beta professional network for autonomous AI agents where operators register an agent they run, publish a clear profile of its capabilities, needs and safety boundaries, and let it collaborate directly with counterpart agents. Rather than copying messages between chats by hand, agents discover complementary collaborators, coordinate work in signed 1:1 dialogs and sessions, and record completed outcomes on both profiles.",
-      "Onboarding uses a single connection instruction (https://lobstermatch.com/connect.md) and versioned skill package (GET /api/skill/latest, v1.0.32) that registers or resumes an agent identity, keeps runtime tokens private outside the skill folder, and completes an automated introduction with LobsterMatch Welcome. For ongoing messages after onboarding, agents can register a signed HTTPS notification webhook (POST /api/agents/notification-webhook) or poll unread counts via GET /api/agents/unread without burning model turns while the inbox is empty."
+      "Onboarding uses a single connection instruction and a versioned skill package that registers or resumes an agent identity, keeps runtime tokens private outside the skill folder, and completes an automated introduction with LobsterMatch Welcome. For ongoing messages after onboarding, agents can register a signed notification webhook or check unread counts without burning model turns while the inbox is empty."
     ],
     "who": "Developers and operators running autonomous agents (including OpenClaw, Codex and custom agent runtimes) who want their agent to discover counterpart agents, run asynchronous 1:1 collaborations and build a verifiable work record.",
     "features": [
       "Public agent profiles detailing capabilities, desired tasks, handoff modes and safety boundaries, backed by completed collaboration records.",
-      "Single-instruction onboarding flow (lobstermatch.com/connect.md and GET /api/skill/latest v1.0.32) that preserves durable private credentials.",
+      "Single-instruction onboarding that preserves durable private credentials.",
       "Signed 1:1 agent dialogs and collaboration sessions that leave a shared work history on both participating profiles.",
-      "Zero-token message wakeups via signed HTTPS notification webhooks (POST /api/agents/notification-webhook) or lightweight unread checks (GET /api/agents/unread)."
+      "Message wakeups via signed notification webhooks or lightweight unread checks."
     ],
     "faq": [
       [
         "How do I connect an autonomous agent to LobsterMatch?",
-        "Give your agent the connection instruction at https://lobstermatch.com/connect.md, which fetches the authoritative skill package from GET https://lobstermatch.com/api/skill/latest (v1.0.32), registers or reuses your agent identity, keeps credentials private and completes a private check-in with LobsterMatch Welcome."
+        "Give your agent the connection instruction from the LobsterMatch site. It fetches the current skill package, registers or reuses your agent identity, keeps credentials private and completes a private check-in with LobsterMatch Welcome."
       ],
       [
         "Is LobsterMatch free to use?",
@@ -34838,15 +34838,14 @@
       "https://docs.parallel.ai/integrations/mcp/search-mcp"
     ],
     "long": [
-      "Parallel Search MCP is a remote search server for coding agents. The README sets the server name parallel-search, the URL https://search.parallel.ai/mcp, and the transport to streamable HTTP with no authentication. It says no Parallel account, API key or CLI is required, and that the tools to confirm are web_search and web_fetch.",
-      "Install notes cover Codex, Gemini CLI, Cursor, VS Code, OpenCode and others. Release v0.1.1 on 21 Sep 2026 says the endpoint did not change. GitHub recorded MIT, 38 stars and 3 forks on 26 Nov 2026. The README mentions a separate paid Hermes web provider; that is not this keyless MCP server."
+      "Parallel Search MCP is a remote search server for coding agents. The README says the hosted server uses streamable HTTP with no authentication, and that no Parallel account, API key or CLI is required. An agent can search the web and open a page.",
+      "Install notes cover Codex, Gemini CLI, Cursor, VS Code, OpenCode and others. A later release says the endpoint did not change. GitHub recorded MIT, 38 stars and 3 forks on 26 Nov 2026. The README mentions a separate paid Hermes web provider; that is not this keyless MCP server."
     ],
     "who": "Developers who want a coding agent to search the web and open a page without a Parallel API key.",
     "features": [
-      "Hosted MCP at https://search.parallel.ai/mcp",
+      "Hosted MCP search and page-fetch server",
       "No account or API key, per the README",
-      "Tools named in the README: web_search and web_fetch",
-      "v0.1.1 (21 Sep 2026) leaves the endpoint unchanged",
+      "A later release leaves the endpoint unchanged",
       "MIT. 38 GitHub stars and 3 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34923,19 +34922,19 @@
     ],
     "long": [
       "HIVE402 is a directory of HTTP endpoints that charge agents with the x402 payment status. On 26 Nov 2026 the homepage showed 67,157 paid endpoints, 43,879 verified payable, 2,187 operators and 6 payment rails, and said the numbers come from its own settlement records.",
-      "A GET to https://hive402.scriptmasterlabs.com/mcp returned HTTP 200. The JSON named the server x402-agent-idea-forge and listed tools including search_catalog, get_listing, start_purchase and list_endpoints. The page describes a free Rescue check for an endpoint URL and names a 0.005 USDC OMNIGATE fee on some paid settlement paths. HIVE402 is a separate product from Token Verdict, Verdict Protocol, SqueezeOS and Authority Engine."
+      "An MCP server lets an agent search the catalog, look up a listing, start a purchase and list endpoints. The page describes a free Rescue check for an endpoint address and names a 0.005 USDC OMNIGATE fee on some paid settlement paths. HIVE402 is a separate product from Token Verdict, Verdict Protocol, SqueezeOS and Authority Engine."
     ],
     "who": "Agent builders who need a paid x402 API and want a catalog that shows which endpoints are clearing payments.",
     "features": [
       "Live catalog of paid x402 endpoints with operator and rail counts",
-      "MCP at https://hive402.scriptmasterlabs.com/mcp (GET 200 on 26 Nov 2026)",
+      "An MCP server for searching the catalog and looking up listings",
       "Free Rescue check described on the homepage",
       "0.005 USDC OMNIGATE fee leg named for some paid flows"
     ],
     "faq": [
       [
-        "Is the MCP up?",
-        "A GET to https://hive402.scriptmasterlabs.com/mcp on 26 Nov 2026 returned HTTP 200 and the server name x402-agent-idea-forge."
+        "Does it have an MCP server?",
+        "Yes. Agents can search the catalog and look up listings through an MCP server. The setup link on this page has the connection details."
       ],
       [
         "Is this Token Verdict or Authority Engine?",
@@ -35109,7 +35108,7 @@
     ],
     "long": [
       "idealo's MCP server searches products and shop offers on six European idealo marketplaces: Germany, Austria, Britain, France, Italy and Spain. The README describes catalog search, a product profile with a 30-day price trend, and paginated offers with shop, delivery and shipping fields.",
-      "The server URL in the README is https://mcp.idealo.com/mcp. A GET on 27 Nov 2026 returned HTTP 204. Trial access is OAuth and is capped at 3 requests a second, a burst of 6 and 500 calls a day. Partner access is 10 requests a second, a burst of 30 and 10,000 calls a day. GitHub recorded MIT, 29 stars and 0 forks. There was no release. The old flights.idealo.com URL on this listing was the flight site, not this server."
+      "The README describes a hosted MCP server. Trial access is OAuth and is capped at 3 requests a second, a burst of 6 and 500 calls a day. Partner access is 10 requests a second, a burst of 30 and 10,000 calls a day. GitHub recorded MIT, 29 stars and 0 forks. There was no release. An older flights address previously used on this listing was the flight site, not this server."
     ],
     "who": "Shoppers and developers who want an assistant to compare idealo prices in those six markets.",
     "features": [
@@ -35271,12 +35270,12 @@
       "https://mcp.lovable.dev"
     ],
     "long": [
-      "The Lovable plugin connects Claude to Lovable's app builder. The README says Claude drafts the work and Lovable builds, hosts and gives the app a database and a URL. The plugin includes the MCP server at https://mcp.lovable.dev, 13 skills and three commands.",
-      "The README says a skill reads the workspace profile first, asks before it spends credits, reports what a call cost, and stops before publishing. A GET to https://mcp.lovable.dev returned HTTP 200 on 27 Nov 2026. GitHub recorded Apache-2.0, 13 stars and 9 forks. There was no release and no dollar price in the README."
+      "The Lovable plugin connects Claude to Lovable's app builder. The README says Claude drafts the work and Lovable builds, hosts and gives the app a database and a web address. The plugin includes the MCP server, 13 skills and three commands.",
+      "The README says a skill reads the workspace profile first, asks before it spends credits, reports what a call cost, and stops before publishing. GitHub recorded Apache-2.0, 13 stars and 9 forks. There was no release and no dollar price in the README."
     ],
     "who": "People who want Claude to create or change a Lovable app without leaving the chat.",
     "features": [
-      "MCP server at https://mcp.lovable.dev",
+      "MCP server bundled with the Claude plugin",
       "13 skills that ask before spending credits and stop before publish",
       "Installs as a Claude plugin or from this repository",
       "Apache-2.0. 13 GitHub stars and 9 forks on 27 Nov 2026"
@@ -35353,23 +35352,22 @@
     ],
     "long": [
       "Provider Trust checks a provider before an agent relies on it. The product page on 27 Nov 2026 says the check covers provider identity, source ownership and observable trust signals, and that a live domain or a valid certificate is not an endorsement by itself.",
-      "The canonical MCP URL on the page is https://provider-trust-mcp.onrender.com/mcp. A GET and a POST initialize that day both returned HTTP 200. The server name was provider-trust, version 1.2.0. The page did not list a dollar price. This page is not Agent Verify, Garage402 or Authority Engine."
+      "An MCP server is available so an agent can run the check. The page did not list a dollar price when this listing was checked on 27 Nov 2026. This page is not Agent Verify, Garage402 or Authority Engine."
     ],
     "who": "Agent builders who want a check of who is behind a source before the agent quotes it or pays it.",
     "features": [
       "Checks provider identity, source ownership and observable trust signals",
-      "MCP at https://provider-trust-mcp.onrender.com/mcp (initialize 200 on 27 Nov 2026)",
-      "Server provider-trust version 1.2.0",
-      "No dollar price was on the product page that day"
+      "An MCP server is available for agents",
+      "No dollar price was on the product page, checked 27 Nov 2026"
     ],
     "faq": [
       [
-        "Is the MCP up?",
-        "GET and POST initialize to https://provider-trust-mcp.onrender.com/mcp on 27 Nov 2026 returned HTTP 200 and serverInfo name provider-trust, version 1.2.0."
+        "Does it have an MCP server?",
+        "Yes. Agents can run the check through an MCP server. The setup link on this page has the connection details."
       ],
       [
         "What does a check cost?",
-        "The product page did not list a dollar price on 27 Nov 2026."
+        "The product page did not list a dollar price, checked 27 Nov 2026."
       ]
     ],
     "facts": {
@@ -35388,15 +35386,14 @@
       "https://mcp.sandscale.dev/mcp"
     ],
     "long": [
-      "Sandscale starts isolated Firecracker microVMs for agent runs, plus workspaces and build machines. The site documents an SDK, a CLI and an MCP server at https://mcp.sandscale.dev/mcp.",
-      "On 27 Nov 2026 the pricing page listed Free at $0 a month (100 awake vCPU-hours, 3 at once, 5 GB), Pro at $20 a month billed annually or $25 monthly (1,500 vCPU-hours), and Team at $40 per member annually or $48 monthly. Extra awake hours were $0.05 each. A POST initialize without a session returned HTTP 401 and asked the caller to sign in to Sandscale."
+      "Sandscale starts isolated Firecracker microVMs for agent runs, plus workspaces and build machines. The site documents an SDK, a CLI and an MCP server.",
+      "On 27 Nov 2026 the pricing page listed Free at $0 a month (100 awake vCPU-hours, 3 at once, 5 GB), Pro at $20 a month billed annually or $25 monthly (1,500 vCPU-hours), and Team at $40 per member annually or $48 monthly. Extra awake hours were $0.05 each. The MCP server asks you to sign in before it will connect."
     ],
     "who": "Engineers who want a separate microVM for each agent run, with a published hourly price.",
     "features": [
       "Firecracker microVM sandboxes, workspaces and build hosts",
       "Free plan and paid Pro and Team plans with published vCPU-hour prices",
-      "MCP URL https://mcp.sandscale.dev/mcp",
-      "Unauthenticated initialize returned HTTP 401 on 27 Nov 2026"
+      "MCP server that requires a sign-in"
     ],
     "faq": [
       [
@@ -35405,7 +35402,7 @@
       ],
       [
         "Does the MCP require a sign-in?",
-        "A POST initialize without a session on 27 Nov 2026 returned HTTP 401 and the message to sign in to Sandscale."
+        "Yes. The server asks you to sign in before it will connect."
       ]
     ],
     "facts": {

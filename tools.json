@@ -25430,7 +25430,7 @@
   {
     "name": "Lovable MCP",
     "url": "https://github.com/lovablelabs/mcp",
-    "description": "Lovable's MCP plugin connects Claude to Lovable so an assistant can build and update hosted apps. The README says the plugin bundles the server at https://mcp.lovable.dev with 13 skills and three commands. A GET to that MCP URL returned HTTP 200 on 27 Nov 2026. The README says each skill reads a workspace profile first, asks before spending credits, reports the cost of a call, and stops before publishing. GitHub lovablelabs/mcp recorded Apache-2.0, 13 stars and 9 forks on 27 Nov 2026. There was no GitHub release.",
+    "description": "Lovable's MCP plugin connects Claude to Lovable so an assistant can build and update hosted apps. The README says the plugin bundles the MCP server with 13 skills and three commands. Each skill reads a workspace profile first, asks before spending credits, reports the cost of a call, and stops before publishing. GitHub recorded the project as Apache-2.0, with 13 stars and 9 forks on 27 Nov 2026. There was no GitHub release.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -25886,7 +25886,7 @@
   {
     "name": "idealo MCP",
     "url": "https://github.com/idealo/mcp-server-guide",
-    "description": "idealo MCP lets an assistant search products, compare shop prices and read a 30-day price history on idealo's German, Austrian, British, French, Italian and Spanish marketplaces. The README's server is https://mcp.idealo.com/mcp. A GET there returned HTTP 204 on 27 Nov 2026. The default Trial tier is self-serve with OAuth and is limited to 3 requests a second, a burst of 6 and 500 calls a day. Trial answers include one product image and cap offer lists at 10. The Partner tier is 10 requests a second, a burst of 30 and 10,000 calls a day. GitHub idealo/mcp-server-guide recorded MIT, 29 stars and 0 forks on 27 Nov 2026. There was no GitHub release. This listing is the shopping MCP, not idealo flights.",
+    "description": "idealo MCP lets an assistant search products, compare shop prices and read a 30-day price history on idealo's German, Austrian, British, French, Italian and Spanish marketplaces. The default Trial tier is self-serve with OAuth and is limited to 3 requests a second, a burst of 6 and 500 calls a day. Trial answers include one product image and cap offer lists at 10. The Partner tier is 10 requests a second, a burst of 30 and 10,000 calls a day. GitHub recorded the project as MIT, with 29 stars and 0 forks on 27 Nov 2026. There was no GitHub release. This listing is the shopping MCP, not idealo flights.",
     "category": "MCP servers",
     "pricing": "See site",
     "maturity": "Active",
@@ -26786,7 +26786,7 @@
   {
     "name": "Parallel Search MCP",
     "url": "https://parallel.ai/",
-    "description": "Parallel Search MCP is a hosted web search and page fetch server for coding agents. The README gives the server URL https://search.parallel.ai/mcp, streamable HTTP, and says authentication is none: no account, API key or Parallel CLI. It tells the agent to check that web_search and web_fetch are available. Release v0.1.1 on 21 Sep 2026 only tightens Hermes setup notes and says the endpoint is unchanged. GitHub parallel-web/search-mcp showed 38 stars and 3 forks on 26 Nov 2026, license MIT.",
+    "description": "Parallel Search MCP is a hosted web search and page fetch server for coding agents. The README says the hosted server needs no account, API key or Parallel CLI, and that an agent can search the web and open a page. A later release only tightens Hermes setup notes and says the endpoint is unchanged. GitHub recorded the project as MIT, with 38 stars and 3 forks on 26 Nov 2026.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -26796,7 +26796,7 @@
     "verified": "2026-11-26",
     "added": "2026-10-18",
     "source": "MCP registry",
-    "pricing_detail": "MIT. The README says the hosted search server at https://search.parallel.ai/mcp needs no account and no API key. A separate Hermes native provider is described as paid and is not this server.",
+    "pricing_detail": "MIT. The README says the hosted search server needs no account and no API key. A separate Hermes native provider is described as paid and is not this server.",
     "use_cases": [
       "write code",
       "research the web",
@@ -41524,11 +41524,11 @@
   {
     "name": "Wren x402 Doctor",
     "url": "https://wren-x402-doctor.wrenonbase.workers.dev/",
-    "description": "Wren x402 Doctor helps sellers of x402 pay-per-call endpoints, the payment standard AI agents use to pay for APIs in USDC, get listed in the Coinbase CDP Bazaar and stay listed. A free lint checks a 402 response against the x402 v2 spec and the Bazaar listing rules (networks, amounts, payTo checksum, description length, injection-like text, schema and metadata), plus a seller's OpenAPI and x402 discovery documents. Paid endpoints include a Bazaar health check ($0.10) returning every listing for a wallet with 30-day calls, unique payers and estimated delisting dates; a market check (GET /market, $0.02) returning up to 20 comparable live listings with price quartiles; and GET /trust ($0.01), which traces who funds the wallets that pay an x402 seller using a weekly Base funding trace (splitting calls across seller-funded wallets, shared funders, multi-seller callers and independent wallets).",
+    "description": "Wren x402 Doctor helps sellers of x402 pay-per-call endpoints, the payment standard AI agents use to pay for APIs in USDC, get listed in the Coinbase CDP Bazaar and stay listed. A free lint checks a 402 response against the x402 v2 spec and the Bazaar listing rules (networks, amounts, payTo checksum, description length, injection-like text, schema and metadata), plus a seller's OpenAPI and x402 discovery documents. Paid endpoints include a Bazaar health check ($0.10) returning every listing for a wallet with 30-day calls, unique payers and estimated delisting dates; a market check ($0.02) returning up to 20 comparable live listings with price quartiles; and a payer funding trace ($0.01), which traces who funds the wallets that pay an x402 seller using a weekly Base funding trace (splitting calls across seller-funded wallets, shared funders, multi-seller callers and independent wallets).",
     "category": "crypto",
     "pricing": "Freemium",
     "audience": "builders",
-    "pricing_detail": "Freemium: free lint of any 402 response and discovery documents; Bazaar health check $0.10, market check (GET /market) $0.02, and payer funding trace (GET /trust) $0.01 in USDC on Base per report over x402",
+    "pricing_detail": "Freemium: free lint of any 402 response and discovery documents; Bazaar health check $0.10, market check $0.02, and payer funding trace $0.01 in USDC on Base per report over x402",
     "use_cases": [
       "crypto"
     ],
@@ -45886,7 +45886,7 @@
     "category": "agent infra",
     "description": "LobsterMatch is a beta professional network for autonomous AI agents where operators register an agent with a public profile, match with complementary agents, coordinate tasks in signed 1:1 dialogs and sessions, and record completed collaborations on both profiles while keeping runtime credentials private.",
     "pricing": "Free",
-    "pricing_detail": "Free beta (public agent directory, onboarding skill v1.0.32 at lobstermatch.com/connect.md, private welcome inbox and signed notification webhooks)",
+    "pricing_detail": "Free beta (public agent directory, onboarding skill package, private welcome inbox and signed notification webhooks)",
     "use_cases": [
       "build multi-agent systems",
       "automate workflows"
@@ -148526,7 +148526,7 @@
   {
     "name": "deed.page",
     "url": "https://deed.page/?ref=aff-agentscouthq",
-    "description": "deed.page is static web hosting built for AI agents: one HTTP PUT or POST, or a call to its native MCP server at deed.page/mcp, publishes files to a permanent HTTPS URL at a slug the agent picks, with no signup, emailed code, claim link or 24-hour expiry. The reply includes a token for later updates and version restore; the free plan covers 25 sites of 25 MB, with paid plans from $4 a month.",
+    "description": "deed.page is static web hosting built for AI agents: one upload request, or a call to its own MCP server, publishes files to a permanent web address at a slug the agent picks, with no signup, emailed code, claim link or 24-hour expiry. The reply includes a token for later updates and version restore; the free plan covers 25 sites of 25 MB, with paid plans from $4 a month.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -155441,7 +155441,7 @@
   {
     "name": "ColorWillow",
     "url": "https://colorwillow.com/",
-    "description": "ColorWillow is a site of free printable coloring pages for kids, with an AI coloring-page maker. It also hosts an MCP endpoint at https://colorwillow.com/mcp. On 24 Nov 2026 a streamable-HTTP initialize returned server name colorwillow, version 1.0.0. A plain GET to that URL returns JSON telling the client to use MCP streamable HTTP POST. The site navigation includes AI plans. Dollar prices for those plans were not captured.",
+    "description": "ColorWillow is a site of free printable coloring pages for kids, with an AI coloring-page maker. It also hosts an MCP server that agents can use with no API key in the request. The site navigation includes AI plans. Dollar prices for those plans were not captured when this listing was checked on 24 Nov 2026.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -155451,7 +155451,7 @@
     "verified": "2026-11-24",
     "added": "2026-11-24",
     "source": "Reviewed submission",
-    "pricing_detail": "Coloring pages are free to print. AI plans exist in the site navigation. Dollar prices were not captured on 24 Nov 2026. MCP initialize succeeded with no API key in the request.",
+    "pricing_detail": "Coloring pages are free to print. AI plans exist in the site navigation. Dollar prices were not captured on 24 Nov 2026. The MCP server accepted a connection with no API key in the request.",
     "use_cases": [
       "connect tools via MCP"
     ],
@@ -156054,7 +156054,7 @@
   {
     "name": "Clam",
     "url": "https://useclam.ai/",
-    "description": "Clam is a permission layer between Gmail and AI agents. An agent can draft and reply only in the messages the rules allow, and the person can see what the agent does. The homepage lists Claude, ChatGPT, Hermes, Gemini, Muse and Grok. A GET to https://mcp.useclam.ai/mcp returned HTTP 401 on 25 Nov 2026, so the remote MCP expects authentication. No price was on the homepage that day.",
+    "description": "Clam is a permission layer between Gmail and AI agents. An agent can draft and reply only in the messages the rules allow, and the person can see what the agent does. The homepage lists Claude, ChatGPT, Hermes, Gemini, Muse and Grok. The remote MCP server expects you to sign in. No price was on the homepage when this listing was checked on 25 Nov 2026.",
     "category": "security & governance",
     "pricing": "See site",
     "maturity": "Active",
@@ -156064,7 +156064,7 @@
     "verified": "2026-11-25",
     "added": "2026-11-25",
     "source": "Product Hunt",
-    "pricing_detail": "No price on the homepage on 25 Nov 2026. MCP GET https://mcp.useclam.ai/mcp returned 401.",
+    "pricing_detail": "No price on the homepage, checked 25 Nov 2026. The remote MCP server expects authentication.",
     "use_cases": [
       "connect tools via MCP"
     ],
@@ -156186,7 +156186,7 @@
   {
     "name": "Keeper.sh",
     "url": "https://www.keeper.sh/",
-    "description": "Keeper.sh syncs calendars across Google, Outlook, iCloud, Fastmail and CalDAV, and it exposes them to an MCP client. On 25 Nov 2026 the homepage said the free plan covers 2 calendars and 3 connections, and Pro is $9 a month for unlimited calendars. A GET to https://www.keeper.sh/mcp returned HTTP 401. GitHub ridafkih/keeper.sh recorded AGPL-3.0, 1,486 stars and 83 forks that day.",
+    "description": "Keeper.sh syncs calendars across Google, Outlook, iCloud, Fastmail and CalDAV, and it exposes them to an MCP client. On 25 Nov 2026 the homepage said the free plan covers 2 calendars and 3 connections, and Pro is $9 a month for unlimited calendars. The MCP server expects you to sign in. GitHub recorded the project as AGPL-3.0, with 1,486 stars and 83 forks that day.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -156196,7 +156196,7 @@
     "verified": "2026-11-25",
     "added": "2026-11-25",
     "source": "GitHub",
-    "pricing_detail": "Free: 2 calendars and 3 connections. Pro $9/month for unlimited calendars (keeper.sh, 25 Nov 2026).",
+    "pricing_detail": "Free: 2 calendars and 3 connections. Pro $9/month for unlimited calendars, according to the homepage, checked 25 Nov 2026.",
     "use_cases": [
       "connect tools via MCP"
     ],
@@ -156421,7 +156421,7 @@
   {
     "name": "HIVE402",
     "url": "https://hive402.scriptmasterlabs.com",
-    "description": "HIVE402 is Script Master Labs' live directory of x402 endpoints that agents can pay. The homepage on 26 Nov 2026 showed 67,157 paid endpoints, 43,879 of them marked verified payable, 2,187 operators and 6 payment rails, and it said those figures are re-checked from settlement records. A GET to https://hive402.scriptmasterlabs.com/mcp returned HTTP 200 and named the server x402-agent-idea-forge, with tools such as search_catalog and get_listing. The page describes a free Rescue check that reads an endpoint's catalog state, and a 0.005 USDC OMNIGATE fee leg on some paid flows. This listing is only HIVE402. It is not SqueezeOS, Token Verdict, Verdict Protocol or Authority Engine.",
+    "description": "HIVE402 is Script Master Labs' live directory of x402 endpoints that agents can pay. The homepage on 26 Nov 2026 showed 67,157 paid endpoints, 43,879 of them marked verified payable, 2,187 operators and 6 payment rails, and it said those figures are re-checked from settlement records. An MCP server lets an agent search the catalog, look up listings, list endpoints and start a purchase. The page describes a free Rescue check that reads an endpoint's catalog state, and a 0.005 USDC OMNIGATE fee leg on some paid flows. This listing is only HIVE402. It is not SqueezeOS, Token Verdict, Verdict Protocol or Authority Engine.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -156475,7 +156475,7 @@
   {
     "name": "Company Finders",
     "url": "https://companyfinders.com/",
-    "description": "Company Finders counts local businesses that have no website, or a broken one, for people who sell websites. A count is free. A list is priced at $3 per 1,000 businesses, and the homepage's example on 26 Nov 2026 was plumbers near Austin: 74 with no website, 225 with one, the whole list $1, counted 19 Nov 2026. An SEO checker scores one site out of 100 for free. The MCP at https://companyfinders.com/mcp returned HTTP 405 to a bare GET. A POST initialize on 26 Nov 2026 returned HTTP 200 and serverInfo name company-finders, version 1.4.0.",
+    "description": "Company Finders counts local businesses that have no website, or a broken one, for people who sell websites. A count is free. A list is priced at $3 per 1,000 businesses, and the homepage's example on 26 Nov 2026 was plumbers near Austin: 74 with no website, 225 with one, the whole list $1, counted 19 Nov 2026. An SEO checker scores one site out of 100 for free. An MCP server is available for agents.",
     "category": "data & analytics",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -156485,7 +156485,7 @@
     "verified": "2026-11-26",
     "added": "2026-11-26",
     "source": "Reviewed submission",
-    "pricing_detail": "Free count and free SEO score. Lists are $3 per 1,000 businesses (companyfinders.com, 26 Nov 2026). Austin plumbers example: $1 for 299 businesses, counted 19 Nov 2026.",
+    "pricing_detail": "Free count and free SEO score. Lists are $3 per 1,000 businesses, according to the site, checked 26 Nov 2026. Austin plumbers example: $1 for 299 businesses, counted 19 Nov 2026.",
     "use_cases": [
       "research the web",
       "connect tools via MCP"
@@ -156550,7 +156550,7 @@
   {
     "name": "Lianex",
     "url": "https://lianex.ai/",
-    "description": "Lianex is a shopping assistant. The page's description on 26 Nov 2026 says you describe what you want and it searches a marketplace, narrows the choice with you, and points at a place to buy. A GET to https://api.lianex.ai/api/public/mcp returned HTTP 200 and a server card named ai.lianex/lianex, titled Lianex, Australian price comparison. The homepage HTML is a short chat shell. No price was stated on that page. The maker filed it as free.",
+    "description": "Lianex is a shopping assistant. The page's description on 26 Nov 2026 says you describe what you want and it searches a marketplace, narrows the choice with you, and points at a place to buy. It also offers a public MCP server for Australian price comparison. The homepage is a short chat shell. No price was stated on that page. The maker filed it as free.",
     "category": "e-commerce & retail",
     "pricing": "Free",
     "maturity": "Active",
@@ -156560,7 +156560,7 @@
     "verified": "2026-11-26",
     "added": "2026-11-26",
     "source": "Reviewed submission",
-    "pricing_detail": "No price on the homepage on 26 Nov 2026. Public MCP GET https://api.lianex.ai/api/public/mcp returned 200.",
+    "pricing_detail": "No price on the homepage, checked 26 Nov 2026. The maker filed it as free.",
     "use_cases": [
       "research the web"
     ],
@@ -156576,7 +156576,7 @@
   {
     "name": "Hookr MCP",
     "url": "https://hookr.fun/agents",
-    "description": "Hookr MCP lets an assistant read Hookr pools and quote or swap on them. The agents page on 26 Nov 2026 is about Hookr pools with a revenue token on Robinhood Chain, built on Uniswap. A bare GET to https://hookr.fun/api/mcp returned HTTP 405. A POST initialize the same day returned HTTP 200, serverInfo name hookr version 0.5.1, and instructions that say Hookr runs Uniswap v4 pools with Hook Blocks on Robinhood Chain. The maker filed the server as free. This listing does not repeat token prices from the page.",
+    "description": "Hookr MCP lets an assistant read Hookr pools and quote or swap on them. The agents page on 26 Nov 2026 is about Hookr pools with a revenue token on Robinhood Chain, built on Uniswap. The server's own instructions say Hookr runs Uniswap v4 pools with Hook Blocks on Robinhood Chain. The maker filed the server as free. This listing does not repeat token prices from the page.",
     "category": "MCP servers",
     "pricing": "Free",
     "maturity": "Active",
@@ -156586,7 +156586,7 @@
     "verified": "2026-11-26",
     "added": "2026-11-26",
     "source": "Reviewed submission",
-    "pricing_detail": "Maker filed it as free. No separate MCP subscription was stated on the agents page on 26 Nov 2026. POST initialize https://hookr.fun/api/mcp returned 200.",
+    "pricing_detail": "Maker filed it as free. No separate MCP subscription was stated on the agents page, checked 26 Nov 2026.",
     "use_cases": [
       "connect tools via MCP"
     ],
@@ -156912,7 +156912,7 @@
   {
     "name": "Hai",
     "url": "https://haicall.in/",
-    "description": "Hai places phone calls from an assistant you already use. The homepage says the assistant shows the plan first and nothing is dialled until you say yes, then Hai calls in the local language, says it is an AI, and reports back in the chat. Setup is an MCP server at https://haicall.in/mcp. The site says new accounts are approved by hand. A POST initialize on 26 Nov 2026 returned HTTP 401 until you sign in. No public price was on the homepage.",
+    "description": "Hai places phone calls from an assistant you already use. The homepage says the assistant shows the plan first and nothing is dialled until you say yes, then Hai calls in the local language, says it is an AI, and reports back in the chat. Setup is an MCP server, and you need to sign in before it will connect. The site says new accounts are approved by hand. No public price was on the homepage when this listing was checked on 26 Nov 2026.",
     "category": "voice",
     "pricing": "See site",
     "maturity": "Active",
@@ -156969,7 +156969,7 @@
     "new": true,
     "verified": "2026-11-27",
     "added": "2026-11-27",
-    "pricing_detail": "No dollar price on the product page on 27 Nov 2026. MCP initialize returned provider-trust v1.2.0.",
+    "pricing_detail": "No dollar price was listed on the product page, checked 27 Nov 2026.",
     "use_cases": [
       "voice & phone calls",
       "connect tools via MCP",
@@ -156987,7 +156987,7 @@
     "source": "Maker submission",
     "maker_submitted": true,
     "submitted": "2026-11-27",
-    "description": "Provider Trust is Script Master Labs' check of who is behind a site, API or data source before an agent quotes it or calls it. The product page on 27 Nov 2026 says it looks at provider identity, source ownership and observable trust signals, and that a reachable domain or a valid TLS certificate is not itself an endorsement. The page did not list a dollar price. A GET and a POST initialize to https://provider-trust-mcp.onrender.com/mcp both returned HTTP 200 and named the server provider-trust, version 1.2.0. This listing is only Provider Trust. It is not Agent Verify, Garage402 or Authority Engine.",
+    "description": "Provider Trust is Script Master Labs' check of who is behind a site, API or data source before an agent quotes it or calls it. The product page says it looks at provider identity, source ownership and observable trust signals, and that a reachable domain or a valid TLS certificate is not itself an endorsement. The page did not list a dollar price when this listing was checked on 27 Nov 2026. This listing is only Provider Trust. It is not Agent Verify, Garage402 or Authority Engine.",
     "docs_url": "https://provider-trust-mcp.onrender.com/mcp",
     "docs_label": "MCP endpoint",
     "logo": "assets/logos/provider-trust.png"
@@ -157097,7 +157097,7 @@
     "new": true,
     "verified": "2026-11-27",
     "added": "2026-11-27",
-    "pricing_detail": "Free $0/mo: 100 awake vCPU-hours, 3 concurrent, 5 GB. Pro $20/mo annual or $25 monthly (1,500 vCPU-hours). Team $40/member/mo annual or $48 monthly. Overage $0.05 per awake vCPU-hour. Storage past the allowance $0.15/GB-month (sandscale.dev/pricing, 27 Nov 2026).",
+    "pricing_detail": "Free $0/mo: 100 awake vCPU-hours, 3 concurrent, 5 GB. Pro $20/mo annual or $25 monthly (1,500 vCPU-hours). Team $40/member/mo annual or $48 monthly. Overage $0.05 per awake vCPU-hour. Storage past the allowance $0.15/GB-month, according to its pricing page, checked 27 Nov 2026.",
     "use_cases": [
       "write code",
       "voice & phone calls",
@@ -157113,7 +157113,7 @@
     "pricing": "Freemium",
     "audience": "builders",
     "source": "Reviewed submission",
-    "description": "Sandscale runs Firecracker microVM sandboxes, workspaces and build machines for AI agents. The pricing page on 27 Nov 2026 listed a free plan at $0 a month with 100 awake vCPU-hours, 3 concurrent sandboxes, 5 GB of storage and one workspace. Pro was $20 a month billed annually or $25 billed monthly, with 1,500 awake vCPU-hours. Team was $40 per member a month annually or $48 monthly, with 2,000 awake vCPU-hours per member. Usage past the hours was $0.05 per awake vCPU-hour, hour packs were $10 per 500 hours, and storage past the allowance was $0.15 per GB-month. The first 10 GB of storage was free. The docs tell Claude Code to connect to https://mcp.sandscale.dev/mcp. A POST initialize without a session on 27 Nov 2026 returned HTTP 401 and asked the caller to sign in.",
+    "description": "Sandscale runs Firecracker microVM sandboxes, workspaces and build machines for AI agents. The pricing page, checked 27 Nov 2026, listed a free plan at $0 a month with 100 awake vCPU-hours, 3 concurrent sandboxes, 5 GB of storage and one workspace. Pro was $20 a month billed annually or $25 billed monthly, with 1,500 awake vCPU-hours. Team was $40 per member a month annually or $48 monthly, with 2,000 awake vCPU-hours per member. Usage past the hours was $0.05 per awake vCPU-hour, hour packs were $10 per 500 hours, and storage past the allowance was $0.15 per GB-month. The first 10 GB of storage was free. The MCP server asks you to sign in before it will connect.",
     "docs_url": "https://mcp.sandscale.dev/mcp",
     "docs_label": "MCP endpoint",
     "logo": "assets/logos/sandscale.png"
@@ -157124,7 +157124,7 @@
     "new": true,
     "verified": "2026-11-27",
     "added": "2026-11-27",
-    "pricing_detail": "MiniMax H3 example on the homepage: $0.025 for five seconds, 480p, fast quality (pennycompute.com, 27 Nov 2026).",
+    "pricing_detail": "MiniMax H3 example on the homepage: $0.025 for five seconds, 480p, fast quality, checked 27 Nov 2026.",
     "use_cases": [
       "edit video",
       "subtitles & transcripts",
@@ -157141,7 +157141,7 @@
     "audience": "builders",
     "source": "Reviewed submission",
     "catalog_only": true,
-    "description": "PennyCompute generates video with MiniMax H3 and renders footage with FFmpeg. The homepage on 27 Nov 2026 priced a MiniMax H3 clip at $0.025 for five seconds at 480p fast quality, with optional first frame, last frame or reference files. The rendering list covered transcode, stitch, mix audio, burn subtitles, export a timeline, grab frames and make a sound file. The MCP docs say the server is https://api.pennycompute.com/mcp and that initialize, tools/list and ping work without an API key. Job calls need a PennyCompute server key.",
+    "description": "PennyCompute generates video with MiniMax H3 and renders footage with FFmpeg. The homepage on 27 Nov 2026 priced a MiniMax H3 clip at $0.025 for five seconds at 480p fast quality, with optional first frame, last frame or reference files. The rendering list covered transcode, stitch, mix audio, burn subtitles, export a timeline, grab frames and make a sound file. The MCP docs say the server answers basic connection checks without an API key, and that job calls need a PennyCompute server key.",
     "docs_url": "https://pennycompute.com/docs/mcp",
     "docs_label": "MCP setup",
     "logo": "assets/logos/pennycompute.png"
@@ -157275,7 +157275,7 @@
     "new": true,
     "verified": "2026-11-27",
     "added": "2026-11-27",
-    "pricing_detail": "60 free minutes. Then $1.25/hr under $20, $1.00/hr from $20, $0.85/hr from $85. 1 credit = 1 minute. Speaker labels 1.5 credits/minute (pepys.co/pricing, 27 Nov 2026).",
+    "pricing_detail": "60 free minutes. Then $1.25/hr under $20, $1.00/hr from $20, $0.85/hr from $85. 1 credit = 1 minute. Speaker labels 1.5 credits/minute, according to its pricing page, checked 27 Nov 2026.",
     "use_cases": [
       "write code",
       "connect tools via MCP"
@@ -157291,7 +157291,7 @@
     "audience": "builders",
     "source": "Reviewed submission",
     "catalog_only": true,
-    "description": "Pepys Transcribe turns audio and video into timestamped text, and ships a hosted MCP server so an agent can transcribe on its own. The MCP docs on 27 Nov 2026 say the server is https://pepys.co/api/mcp, sign-in is OAuth, and the server is listed in Claude's connector directory. A POST initialize without an authorization header returned HTTP 401. The pricing page said the first 60 minutes are free with no card. After that, audio is $1.25 an hour on purchases under $20, $1.00 an hour from $20, and $0.85 an hour from $85. One credit is one minute, credits do not expire, and speaker labels use 1.5 credits a minute. The docs named a separate stdio package at https://github.com/ankurmans/pepys-mcp. GitHub showed that repo at MIT, 0 stars and 0 forks on 27 Nov 2026.",
+    "description": "Pepys Transcribe turns audio and video into timestamped text, and ships a hosted MCP server so an agent can transcribe on its own. The MCP docs on 27 Nov 2026 say sign-in is OAuth, and the server is listed in Claude's connector directory. A connection without a sign-in is refused. The pricing page said the first 60 minutes are free with no card. After that, audio is $1.25 an hour on purchases under $20, $1.00 an hour from $20, and $0.85 an hour from $85. One credit is one minute, credits do not expire, and speaker labels use 1.5 credits a minute. The docs also name a separate package you can run locally. GitHub recorded that package as MIT, with 0 stars and 0 forks on 27 Nov 2026.",
     "repo": "ankurmans/pepys-mcp",
     "github_stars": 0,
     "stars_checked": "2026-11-27",
