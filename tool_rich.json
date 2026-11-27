@@ -20128,7 +20128,7 @@
     "src_kind": "README",
     "long": [
       "MemPalace is a local-first memory system for AI agents. It stores your conversation history as verbatim text and retrieves it with semantic search, without summarizing or paraphrasing it.",
-      "Its index is structured so searches can be scoped (people and projects become wings, topics become rooms), and the retrieval backend is pluggable, with ChromaDB as the default. Nothing leaves your machine unless you opt in. Its README warns that the only official sources are the GitHub repo, the PyPI package and mempalaceofficial.com."
+      "Its index is structured so searches can be scoped (people and projects become wings, topics become rooms), and the retrieval backend is pluggable, with ChromaDB as the default. Nothing leaves your machine unless you opt in. Its README warns that the only official sources are the GitHub repo, the PyPI package and the MemPalace site."
     ],
     "who": "Developers using coding agents such as Claude Code who want long-term, local memory of past sessions that they can search.",
     "features": [
@@ -20719,14 +20719,14 @@
     "src_kind": "README",
     "long": [
       "Repomix packs an entire code repository into a single, AI-friendly file, so you can feed your codebase to LLMs and AI tools such as Claude, ChatGPT, DeepSeek, Perplexity and Gemini.",
-      "It is distributed on npm and can also be used online at repomix.com."
+      "It is distributed on npm and can also be used on the Repomix website."
     ],
     "who": "Developers who want to give a chat assistant or LLM the full context of a codebase in one file.",
     "features": [
       "Packs a whole repository into one AI-friendly file",
       "Works with Claude, ChatGPT, Gemini, DeepSeek and other LLMs",
       "npm package and command-line tool",
-      "Web version at repomix.com"
+      "Web version on the Repomix site"
     ],
     "faq": [],
     "sources": [
@@ -24286,14 +24286,14 @@
       "https://deepchat.thinkinai.xyz/"
     ],
     "long": [
-      "DeepChat's README calls it an open-source, local-first AI agent desktop client with MCP, skills, ACP and remote control from messaging apps. The default branch is dev. The project site is https://deepchat.thinkinai.xyz/.",
-      "Release v1.1.4 (12 Nov 2026) says the desktop UI gained a unified sidebar, searchable settings, compact ACP agent details and a message minimap, and that a new chat can pick an agent while keeping that agent's drafts and model. GitHub recorded Apache-2.0 and 6,410 stars on 24 Nov 2026. No DeepChat subscription was in the README."
+      "DeepChat's README calls it an open-source, local-first AI agent desktop client with MCP, skills, ACP and remote control from messaging apps. The default branch is dev. The README points to the project site.",
+      "A release on 12 Nov 2026 says the desktop UI gained a unified sidebar, searchable settings, compact ACP agent details and a message minimap, and that a new chat can pick an agent while keeping that agent's drafts and model. GitHub recorded Apache-2.0 and 6,410 stars on 24 Nov 2026. No DeepChat subscription was in the README."
     ],
     "who": "People who want a desktop agent they run locally, with their own model keys, and MCP tools attached.",
     "features": [
       "Local-first desktop client with MCP, skills and ACP",
       "Remote control from messaging apps, as named in the README",
-      "v1.1.4 (12 Nov 2026) sidebar, settings search and message minimap",
+      "A release on 12 Nov 2026 refreshed the sidebar, settings search and message minimap",
       "Apache-2.0. 6,410 GitHub stars and 790 forks on 24 Nov 2026"
     ],
     "faq": [
@@ -26979,15 +26979,15 @@
       "status": "Active hosted Streamable HTTP MCP server (tanatasa.sg/mcp), REST API and MIT-licensed CLI (@tanatasa/cli)"
     },
     "long": [
-      "Tanatasa Beauty MCP is a hosted Streamable HTTP Model Context Protocol server (tanatasa-shopping 1.0.0 at https://tanatasa.sg/mcp), public REST API (https://tanatasa.sg/agent/v1) and MIT-licensed CLI (@tanatasa/cli) for Tanatasa, a Singapore online retailer specializing in authentic Korean and Japanese skincare and beauty products. AI assistants can connect immediately with no API key or sign-in to search the live catalog, read product descriptions, ingredient lists and usage guides, and verify real-time stock and Singapore Dollar (SGD) pricing.",
-      "For shopping workflows, the server exposes ten MCP tools covering catalog discovery, guest or signed-in cart management, promo code quoting and checkout handoff, plus a read-only endpoint at https://tanatasa.sg/mcp/catalog with just search_products and get_product. Calling create_cart issues a private guest_token, and create_checkout locks the cart and returns a 1-hour checkout link on tanatasa.sg where the buyer enters a Singapore delivery address and completes payment via Stripe (with optional OAuth + PKCE scopes catalog:read, cart:write and orders:read for linked customer accounts)."
+      "Tanatasa Beauty MCP is a hosted streamable HTTP Model Context Protocol server, public REST API and MIT-licensed CLI for Tanatasa, a Singapore online retailer specializing in authentic Korean and Japanese skincare and beauty products. AI assistants can connect immediately with no API key or sign-in to search the live catalog, read product descriptions, ingredient lists and usage guides, and verify real-time stock and Singapore dollar pricing.",
+      "For shopping workflows, the server exposes ten MCP tools covering catalog discovery, guest or signed-in cart management, promo code quoting and checkout handoff, plus a read-only catalog address with just product search and product lookup. Creating a cart issues a private guest token, and creating a checkout locks the cart and returns a 1-hour checkout link on the Tanatasa site where the buyer enters a Singapore delivery address and completes payment via Stripe (with optional OAuth and PKCE scopes for catalog read, cart write and orders read on linked customer accounts)."
     ],
     "who": "Shoppers in Singapore and developers building shopping or personal-assistant workflows in Claude, Cursor or custom MCP clients who want live skincare and beauty search, inventory checks and human-in-the-loop checkout links.",
     "features": [
-      "Hosted Streamable HTTP MCP server at https://tanatasa.sg/mcp (10 tools) and read-only catalog endpoint at https://tanatasa.sg/mcp/catalog (2 tools) with zero API key setup.",
+      "Hosted streamable HTTP MCP server with 10 tools, and a read-only catalog address with 2 tools, with no API key.",
       "Live search and product lookup across authentic Korean and Japanese skincare and beauty products in Singapore, including ingredients, how-to-use instructions, stock status and integer SGD cent pricing.",
-      "Guest cart and checkout handoff: create_cart issues a guest_token, quote_cart previews promo discounts and free Singapore shipping, and create_checkout generates a 1-hour Stripe checkout review URL.",
-      "Multi-surface access via MCP, OpenAPI 3.1 REST endpoints (https://tanatasa.sg/agent/v1/openapi.json), the @tanatasa/cli npm package and an installable SKILL.md agent skill."
+      "Guest cart and checkout handoff: creating a cart issues a guest token, quoting a cart previews promo discounts and free Singapore shipping, and creating a checkout generates a 1-hour Stripe checkout review link.",
+      "Multi-surface access via MCP, an OpenAPI 3.1 REST API, the @tanatasa/cli npm package and an installable agent skill."
     ],
     "mcp": {
       "endpoint": "https://tanatasa.sg/mcp",
@@ -27041,11 +27041,11 @@
     "faq": [
       [
         "How do I connect Tanatasa Beauty MCP to Claude, Cursor or another MCP client?",
-        "Add https://tanatasa.sg/mcp as a remote Streamable HTTP MCP server (or https://tanatasa.sg/mcp/catalog for read-only product search). No API key or account is required to search products, create a guest cart or generate a checkout link."
+        "Add the hosted streamable HTTP address as a remote MCP server, or the read-only catalog address for product search. No API key or account is required to search products, create a guest cart or generate a checkout link. The address is on the Tanatasa docs linked from the store."
       ],
       [
         "Does Tanatasa Beauty MCP charge a buyer's card automatically?",
-        "No. An AI agent can search products, build a guest cart, apply a coupon and call create_checkout, which locks the cart for 1 hour and returns a checkout URL on tanatasa.sg. The human shopper opens that link to enter their Singapore delivery address and complete payment via Stripe."
+        "No. An AI agent can search products, build a guest cart, apply a coupon and create a checkout, which locks the cart for 1 hour and returns a checkout link on the Tanatasa site. The human shopper opens that link to enter their Singapore delivery address and complete payment via Stripe."
       ]
     ],
     "sources": [
@@ -27599,7 +27599,7 @@
     "src_kind": "README",
     "long": [
       "Qwen Audio Agent is a real-time voice runtime from the Qwen Audio team built around \"agent presence\": the agent keeps talking with you while it thinks, calls tools or works on a longer task, then tells you when the result is ready instead of going silent.",
-      "Version 2.0.0 (September 2026) rebuilt the orchestration runtime with a unified client protocol and ACP and A2A backend integration, widened voice and video model support, improved frontend tools, memory and knowledge libraries, and added a desktop conversation panel and remote mobile access. It ships on npm under Apache-2.0 with an accompanying paper."
+      "A September 2026 release rebuilt the orchestration runtime with a unified client protocol and ACP and A2A backend integration, widened voice and video model support, improved frontend tools, memory and knowledge libraries, and added a desktop conversation panel and remote mobile access. It ships on npm under Apache-2.0 with an accompanying paper."
     ],
     "who": "Developers building voice agents that must stay conversational while doing background work.",
     "features": [
@@ -27611,7 +27611,7 @@
     ],
     "faq": [
       [
-        "What changed in v2.0.0?",
+        "What changed in the September 2026 release?",
         "A rebuilt orchestration runtime with a unified client protocol, ACP/A2A backends, more voice and video models, a desktop panel and remote mobile access."
       ]
     ],
@@ -28376,8 +28376,8 @@
     "kind": "lite",
     "src_kind": "README",
     "long": [
-      "HolyClaude is a containerized AI coding workstation that bundles Claude Code with a web UI, a headless Chromium browser with Playwright, eight AI command-line tools and more than 50 developer tools, so the whole setup starts with a single docker compose up.",
-      "It works with an existing Claude Code subscription (Pro or Max) or an API key. Release v1.6.8 refreshed the bundled CLIs and tools from official upstream releases for AMD64 and ARM64, and the project publishes accepted upstream vulnerabilities with versions and available fixes. The image is MIT-licensed, and a separate hosted always-on version is offered at holycode.cloud."
+      "HolyClaude is a containerized AI coding workstation that bundles Claude Code with a web UI, a headless Chromium browser with Playwright, eight AI command-line tools and more than 50 developer tools, so the whole setup starts with one Docker Compose command.",
+      "It works with an existing Claude Code subscription (Pro or Max) or an API key. A release refreshed the bundled CLIs and tools from official upstream releases for AMD64 and ARM64, and the project publishes accepted upstream vulnerabilities with versions and available fixes. The image is MIT-licensed, and a separate hosted always-on version is offered."
     ],
     "who": "Developers who want a ready-made, self-hosted Claude Code environment in Docker.",
     "features": [
@@ -30293,15 +30293,15 @@
     "kind": "lite",
     "src_kind": "README",
     "long": [
-      "Kagi MCP is Kagi's official MCP server, backed by the Kagi API. It gives agents kagi_search_fetch for web, news, video, podcast and image search with optional page extracts, filters and Kagi lenses, and kagi_extract to fetch a full page as Markdown.",
-      "Kagi runs a hosted server at https://mcp.kagi.com/mcp that you call with your Kagi API key as a Bearer token, or you can run it locally with `uvx kagimcp` in Claude Desktop, Claude Code, Codex CLI and other clients, or self-host the HTTP server. It needs a Kagi API key, and API usage is billed by Kagi. MIT."
+      "Kagi MCP is Kagi's official MCP server, backed by the Kagi API. It gives agents a search tool for web, news, video, podcast and image search with optional page extracts, filters and Kagi lenses, and a second tool that fetches a full page as Markdown.",
+      "Kagi runs a hosted server that you call with your Kagi API key as a bearer token, or you can run it locally in Claude Desktop, Claude Code, Codex CLI and other clients, or self-host the HTTP server. It needs a Kagi API key, and API usage is billed by Kagi. MIT."
     ],
     "who": "Developers who want privacy-focused Kagi search inside their agents.",
     "features": [
-      "kagi_search_fetch for web, news, video and images",
-      "kagi_extract returns pages as Markdown",
-      "Hosted endpoint at mcp.kagi.com",
-      "Local uvx install or self-hosting",
+      "Search across web, news, video and images",
+      "Page extract returned as Markdown",
+      "Hosted endpoint you call with a Kagi API key",
+      "Local install or self-hosting",
       "Kagi lenses and filters"
     ],
     "faq": [
@@ -30902,15 +30902,15 @@
     "kind": "lite",
     "src_kind": "README",
     "long": [
-      "AUR https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg https://github.com/jeecgboot/JeecgBoot/blob/master/LICENSE https://img.shields.io/badge/Author-北京国炬软件-orange.svg https://jeecg.com https://img.shields.io/badge/blog-技术博客-orange.svg https://www.toutiao.com/c/user/token/CiZtC9Gn_yl2qDcTF9Kqhh9LV7tW1.",
-      "It is published on GitHub as jeecgboot/JeecgBoot under the Apache-2.0 license."
+      "JeecgBoot is published on GitHub as jeecgboot/JeecgBoot under the Apache-2.0 license.",
+      "The project describes generating a full system from a sentence, a zero-code mode that can stand up a business app in about five minutes, an AI layer with chat, workflows, MCP and plugins, and a code generator for several table shapes."
     ],
     "who": "Builders and teams looking for an open-source memory & RAG option they can self-host or extend.",
     "features": [
-      "一句话生成完整系统： 使用自然语言描述需求，AI 自动完成建表、生成前后端 CRUD 代码、配置菜单权限和页面渲染，实现从需求到可运行系统的全流程自动化。",
-      "零代码模式： 提供在线应用搭建能力，无需编写代码，5 分钟即可快速创建完整业务系统，让业务人员也能轻松参与企业数字化建设。",
-      "AI 应用平台： 提供 AI 应用管理、模型配置、智能聊天、流程编排、MCP 和插件等能力，兼容多种主流大模型，帮助企业快速构建和发布智能应用。",
-      "强大代码生成器： 支持单表、树表、一对一、一对多等多种数据模型，一键生成前后端代码、建表 SQL 和菜单权限，生成后可直接运行，也可继续扩展。"
+      "Describe a system in one sentence. The AI creates the tables, front-end and back-end code, menu permissions and pages, from the request through to a runnable system.",
+      "Zero-code mode: build an application online without writing code, and stand up a business system in about five minutes.",
+      "AI application platform: manage apps, configure models, chat, orchestrate workflows, and use MCP and plugins, across several major models.",
+      "Code generator for single tables, tree tables, one-to-one and one-to-many models. One click generates front-end and back-end code, table SQL and menu permissions that can run as generated or be extended."
     ],
     "sources": [
       "https://github.com/jeecgboot/JeecgBoot"
@@ -31748,8 +31748,8 @@
   "palmier-pro": {
     "long": [
       "Palmier Pro is a Swift-native macOS video editor modelled on Premiere-style timeline editing, with generative video and image models such as Seedance, Kling and Nano Banana Pro available directly inside the timeline.",
-      "While the app is open it runs a local MCP server at http://127.0.0.1:19789/mcp, so Claude Code, Codex, Cursor or Claude Desktop (via a bundled one-click extension) can create and edit on the same project as you, or you can use the built-in in-app agent.",
-      "Releases through v0.7.6 and the last-gpl-source branch were published under GPLv3; later binary releases are proprietary and their source is not published, so the GitHub repository now mainly hosts binaries and historical source."
+      "While the app is open it runs a local MCP server on your machine, so Claude Code, Codex, Cursor or Claude Desktop (via a bundled one-click extension) can create and edit on the same project as you, or you can use the built-in in-app agent.",
+      "Releases through 0.7.6 and the last-gpl-source branch were published under GPLv3; later binary releases are proprietary and their source is not published, so the GitHub repository now mainly hosts binaries and historical source."
     ],
     "who": "Mac video editors and creators on Apple Silicon (macOS 26 Tahoe) who want an AI agent to search footage, assemble cuts and generate clips on a real editing timeline.",
     "features": [
@@ -31763,11 +31763,11 @@
     "faq": [
       [
         "Is Palmier Pro open source?",
-        "Only partly. Releases up to v0.7.6 and the last-gpl-source branch are GPLv3; newer binary releases are proprietary and their source code is not published."
+        "Only partly. Releases up to 0.7.6 and the last-gpl-source branch are GPLv3; newer binary releases are proprietary and their source code is not published."
       ],
       [
         "How do I connect Claude Code to Palmier Pro?",
-        "With the app open, run: claude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp."
+        "With the app open, add Palmier's local MCP server in Claude Code. The README shows the command, and the server only answers while the app is open."
       ]
     ],
     "facts": {
@@ -31942,22 +31942,22 @@
   },
   "draw-io-mcp": {
     "long": [
-      "The draw.io MCP server is the official integration from the draw.io team (JGraph) that lets AI assistants create and open diagrams in draw.io.",
-      "It offers four approaches: a hosted MCP App server at mcp.draw.io that renders interactive diagrams inline in Claude.ai, ChatGPT, VS Code and other MCP Apps hosts; an npm MCP tool server that opens diagrams in the draw.io editor; plugins for Claude Code, Codex CLI, GitHub Copilot and others that write .drawio files; and project instructions that need no MCP at all. Diagrams can be generated from draw.io XML, CSV or Mermaid."
+      "This MCP server is the official integration from the JGraph team that lets AI assistants create and open diagrams in the editor.",
+      "It offers four approaches: a hosted MCP app that renders interactive diagrams inline in Claude, ChatGPT, VS Code and other MCP Apps hosts; an npm MCP tool server that opens diagrams in the editor; plugins for Claude Code, Codex CLI, GitHub Copilot and others that write diagram files; and project instructions that need no MCP at all. Diagrams can be generated from the editor's XML, CSV or Mermaid."
     ],
     "who": "Anyone who wants an AI assistant to draw flowcharts, architecture diagrams or org charts that stay editable in draw.io.",
     "features": [
-      "Official server from the draw.io team",
-      "Hosted MCP App at mcp.draw.io with inline interactive diagrams",
-      "Local npm MCP tool server that opens the draw.io editor",
+      "Official server from the JGraph team",
+      "Hosted MCP app with inline interactive diagrams",
+      "Local npm MCP tool server that opens the editor",
       "Plugins for Claude Code, Codex CLI, GitHub Copilot, Cursor and OpenCode",
-      "Accepts draw.io XML, CSV and Mermaid input",
-      "Diagrams stay fully editable in draw.io"
+      "Accepts the editor's XML, CSV and Mermaid input",
+      "Diagrams stay fully editable in the editor"
     ],
     "faq": [
       [
         "Do I need to install anything to use the draw.io MCP server?",
-        "Not for the hosted MCP App server at mcp.draw.io; the local tool server is an npm package."
+        "Not for the hosted MCP app; the local tool server is an npm package."
       ]
     ],
     "facts": {
@@ -33249,8 +33249,8 @@
       "https://modelcontextprotocol.io/examples"
     ],
     "long": [
-      "The Filesystem MCP Server is the official reference server from the Model Context Protocol project for giving an AI agent file access on your own machine. It is a Node.js server that runs locally over stdio, published on npm as @modelcontextprotocol/server-filesystem (version 2.2.0 when we checked on Nov 9, 2026) and as the mcp/filesystem Docker image. It can only touch the allowed directories you pass on the command line, and every requested path is resolved and checked against them, including paths reached through symlinks.",
-      "The README lists tools to read text files, media files and several files at once; write, append to and edit files, with a dry-run diff preview for edit_file; create and list directories, with optional file sizes; move, rename and copy files; find files by name with glob patterns; return a JSON directory tree; read file metadata; and show the allowed directories. Starting it with --read-only registers only the read and list tools. Clients on the 2025-era protocol can swap the allowed directories through MCP Roots, which is deprecated in the 2026-07-28 protocol, and --confine-roots keeps those Roots inside the command-line folders. The MCP project describes the servers in this repository as reference implementations and educational examples rather than production-ready solutions, so check its access rules against your own security needs."
+      "The Filesystem MCP Server is the official reference server from the Model Context Protocol project for giving an AI agent file access on your own machine. It is a Node.js server that runs locally over stdio, published on npm as @modelcontextprotocol/server-filesystem (checked Nov 9, 2026) and as the mcp/filesystem Docker image. It can only touch the allowed directories you pass on the command line, and every requested path is resolved and checked against them, including paths reached through symlinks.",
+      "The README lists tools to read text files, media files and several files at once; write, append to and edit files, with a dry-run diff preview for an edit; create and list directories, with optional file sizes; move, rename and copy files; find files by name with glob patterns; return a JSON directory tree; read file metadata; and show the allowed directories. Starting it with --read-only registers only the read and list tools. Clients on the 2025-era protocol can swap the allowed directories through MCP Roots, which is deprecated in the 2026-07-28 protocol, and --confine-roots keeps those Roots inside the command-line folders. The MCP project describes the servers in this repository as reference implementations and educational examples rather than production-ready solutions, so check its access rules against your own security needs."
     ],
     "who": "Developers who want Claude Desktop, Claude Code, Cursor, VS Code or another MCP client to read and edit files in a few chosen project folders, with a hard limit on what the agent can reach.",
     "features": [
@@ -33354,11 +33354,11 @@
     "faq": [
       [
         "Can the Filesystem MCP Server access my whole computer?",
-        "No. It only works inside the allowed directories you pass when it starts, and the list_allowed_directories tool shows them. Clients on the older 2025-era protocol can replace that list through MCP Roots unless you start the server with --confine-roots."
+        "No. It only works inside the allowed directories you pass when it starts, and a tool lists those allowed directories. Clients on the older 2025-era protocol can replace that list through MCP Roots unless you start the server with --confine-roots."
       ],
       [
         "Can I make the Filesystem MCP Server read-only?",
-        "Yes. Start it with --read-only and it registers only the tools that read and list files, so write_file, edit_file and the other write tools are not available. With Docker you can also mount folders with the ro flag."
+        "Yes. Start it with --read-only and it registers only the tools that read and list files, so the write and edit tools are not available. With Docker you can also mount folders with the ro flag."
       ]
     ],
     "facts": {
@@ -33448,7 +33448,7 @@
     ],
     "long": [
       "MausBot, published on GitHub as OpenMausBot by Milind Soni and contributors, is a desktop chat app where each contact is an AI bot with its own job. You create a bot, give it a name, pick the engine and model it thinks with, and talk to it like a person in a messaging app. The bots run in parallel on your machine and come back to you when something needs a decision. The project calls itself an open-source alternative to Grok Bot and similar hosted assistants, and states it is independent and not affiliated with xAI. The repository had about 23,100 GitHub stars when we checked on Nov 15, 2026.",
-      "Under the hood, one local harness server on 127.0.0.1 owns every agent process. It drives the claude, codex and grok CLIs you already have installed and signed in, so bots use your own subscriptions or API keys with no proxy in between, and the model picker also lists engines such as Cursor, Kimi, Qwen, OpenCode, Hermes, Pi, Antigravity and Droid. Transcripts, keys and events stay in ~/.openmausbot on your disk. Bots can get a cloud desktop with a live screen preview (via boat.dev, using the Cua driver) or work on the local computer, use Gmail, Slack, GitHub, Notion, Linear and other apps through Composio, and run on schedules or webhooks set up from one sentence. Supported actions show an approval request in chat first, though the project notes that approval coverage depends on the engine and tool.",
+      "Under the hood, one local harness server on 127.0.0.1 owns every agent process. It drives the claude, codex and grok CLIs you already have installed and signed in, so bots use your own subscriptions or API keys with no proxy in between, and the model picker also lists engines such as Cursor, Kimi, Qwen, OpenCode, Hermes, Pi, Antigravity and Droid. Transcripts, keys and events stay in ~/.openmausbot on your disk. Bots can get a cloud desktop with a live screen preview (using the Cua driver) or work on the local computer, use Gmail, Slack, GitHub, Notion, Linear and other apps through Composio, and run on schedules or webhooks set up from one sentence. Supported actions show an approval request in chat first, though the project notes that approval coverage depends on the engine and tool.",
       "The desktop app is free under Apache 2.0 for macOS (Apple silicon and Intel), Windows x64 and Ubuntu 24.04 x64 (beta), in 10 languages, with Android and iOS companion apps. It also ships a stdio MCP server so Claude Desktop or Cursor can manage bots, and an openmausbot command for scripts and CI. MausBot Cloud is optional: Starter at $15 a month, Pro at $49 and Max at $99 give the bots an always-on cloud machine with monthly computer-hour and voice allowances, and a Team plan lets up to 5 people share bots. Model usage is billed separately by your provider. The README calls the project early: hosted and mobile connectivity are still being built, and webhook triggers use a local receiver."
     ],
     "who": "People and small teams who already pay for Claude, ChatGPT or Grok and want several always-available AI helpers (inbox triage, sales follow-ups, bookkeeping reminders, bug fixing, research) in one local app, without handing their data and logins to a hosted service.",
@@ -33796,18 +33796,18 @@
       "https://www.1lookup.io/about"
     ],
     "long": [
-      "1Lookup MCP is the hosted MCP server for 1Lookup, a Momentum Labs data-verification product. The maker, Robby Frank (founder, per 1lookup.io/about), describes it as a way for Claude or Cursor to validate phone numbers, emails and IPs: add one URL, sign in, and do not paste an API key. The endpoint 1Lookup publishes is https://app.1lookup.io/api/mcp. Transport is streamable HTTP. SSE is disabled. Auth is OAuth 2.1 with PKCE (S256 required), dynamic client registration and a browser consent screen. The client receives a scoped token, not the account API key.",
-      "The server card and the Claude and Cursor setup pages list five tools. validate_phone confirms a number is real and active and returns line type, carrier, DNC status and a risk level (1 credit). verify_email checks that an address exists and is deliverable, and flags disposable, role-based and risky addresses (1 credit). ip_lookup returns geolocation and connection type, and flags proxy, VPN, Tor and datacenter ranges (1 credit). bulk_verify validates up to 50 phones, emails or IPs of one type in one call and returns a per-item result (1 credit per record). get_account returns the plan, subscription status and remaining credits and spends nothing. 1Lookup's pricing page says the platform has 76 data products on the same credits. Its llms.txt says everything beyond those five tools is on the REST API at https://app.1lookup.io/api/v1, not over MCP.",
-      "Tool calls spend the same universal credits as the REST API. There is no separate MCP fee. On the pricing page, monthly plans are Starter at $99 for 20,000 credits (about $4.95 per 1,000 core lookups), Growth at $299 for 85,000 (about $3.52), Professional at $799 for 250,000 (about $3.20) and Enterprise at $1,999 for 1,000,000 (about $2.00). Annual billing takes the equivalent of two months off. Every plan includes a 7-day trial (Starter includes $5 in credits; Growth and above include $20) and nothing is charged on the day you start. A free-plan account receives HTTP 403 UPGRADE_REQUIRED on every tool call. Identical lookups are served from cache for 7 days. The MCP spec lists a rate limit of 1,000 requests per minute, shared with API keys. Access tokens last one hour. Refresh tokens last 30 days and rotate on use."
+      "1Lookup MCP is the hosted MCP server for 1Lookup, a Momentum Labs data-verification product. The maker, Robby Frank (founder, per the about page), describes it as a way for Claude or Cursor to validate phone numbers, emails and IPs: add the hosted address, sign in, and do not paste an API key. Transport is streamable HTTP. SSE is disabled. Auth is OAuth 2.1 with PKCE (S256 required), dynamic client registration and a browser consent screen. The client receives a scoped token, not the account API key.",
+      "The server card and the Claude and Cursor setup pages list five tools. Validating a phone confirms a number is real and active and returns line type, carrier, Do-Not-Call status and a risk level (1 credit). Verifying an email checks that an address exists and is deliverable, and flags disposable, role-based and risky addresses (1 credit). Looking up an IP returns geolocation and connection type, and flags proxy, VPN, Tor and datacenter ranges (1 credit). A bulk check validates up to 50 phones, emails or IPs of one type in one call and returns a per-item result (1 credit per record). Reading the account returns the plan, subscription status and remaining credits and spends nothing. 1Lookup's pricing page says the platform has 76 data products on the same credits. Everything beyond those five tools is on the REST API, not over MCP.",
+      "Tool calls spend the same universal credits as the REST API. There is no separate MCP fee. On the pricing page, monthly plans are Starter at $99 for 20,000 credits (about $4.95 per 1,000 core lookups), Growth at $299 for 85,000 (about $3.52), Professional at $799 for 250,000 (about $3.20) and Enterprise at $1,999 for 1,000,000 (about $2.00). Annual billing takes the equivalent of two months off. Every plan includes a 7-day trial (Starter includes $5 in credits; Growth and above include $20) and nothing is charged on the day you start. A free-plan account is refused on every tool call. Identical lookups are served from cache for 7 days. The spec lists a rate limit of 1,000 requests per minute, shared with API keys. Access tokens last one hour. Refresh tokens last 30 days and rotate on use."
     ],
     "who": "People running outreach, enrichment or signup agents inside Claude or Cursor who want a phone, an email or an IP checked in the same chat, and who would rather approve a browser sign-in than paste an API key into the client.",
     "features": [
-      "validate_phone: line type, carrier, Do-Not-Call status and a risk level for one number (1 credit)",
-      "verify_email: deliverability, plus disposable, role-based and risky-address flags (1 credit)",
-      "ip_lookup: geolocation, connection type, and proxy, VPN, Tor and datacenter flags (1 credit)",
-      "bulk_verify: up to 50 phones, emails or IPs of one type, with a result per item (1 credit per record)",
-      "get_account: plan, subscription status and remaining credits, so an agent can pace a run (free)",
-      "OAuth 2.1 with PKCE S256 on a hosted streamable-HTTP endpoint, so the published Claude and Cursor configs contain the URL and no API key"
+      "Validate a phone: line type, carrier, Do-Not-Call status and a risk level for one number (1 credit)",
+      "Verify an email: deliverability, plus disposable, role-based and risky-address flags (1 credit)",
+      "Look up an IP: geolocation, connection type, and proxy, VPN, Tor and datacenter flags (1 credit)",
+      "Bulk check: up to 50 phones, emails or IPs of one type, with a result per item (1 credit per record)",
+      "Read the account: plan, subscription status and remaining credits, so an agent can pace a run (free)",
+      "OAuth 2.1 with PKCE S256 on a hosted streamable HTTP endpoint, so the published Claude and Cursor configs contain the address and no API key"
     ],
     "pros": [
       "The published Claude and Cursor setup is one URL, https://app.1lookup.io/api/mcp, plus a browser approval. The mcp.json entry has no API key.",
@@ -33888,19 +33888,19 @@
     "faq": [
       [
         "Which tools does the 1Lookup MCP server expose?",
-        "Five: validate_phone, verify_email, ip_lookup, bulk_verify and get_account. The server card at https://www.1lookup.io/.well-known/mcp/server-card.json and the Claude and Cursor setup pages use those names. 1Lookup's llms.txt says the rest of the catalog is on the REST API at https://app.1lookup.io/api/v1, not over MCP."
+        "Five: validate a phone, verify an email, look up an IP, bulk-check a list, and read the account. The server card and the Claude and Cursor setup pages use those jobs. 1Lookup says the rest of the catalog is on the REST API, not over MCP."
       ],
       [
         "Do I paste an API key into Claude or Cursor?",
-        "Not for the setup those pages publish. You add https://app.1lookup.io/api/mcp and approve a browser sign-in. The client gets a scoped token. If you already have an account, API & MCP then Connect your AI makes a key and hands you a personal link instead of the sign-in window."
+        "Not for the setup those pages publish. You add the hosted address and approve a browser sign-in. The client gets a scoped token. If you already have an account, API & MCP then Connect your AI makes a key and hands you a personal link instead of the sign-in window."
       ],
       [
         "Will a free 1Lookup plan run these tools?",
-        "No. The Claude and Cursor setup pages say a free-plan account receives HTTP 403 UPGRADE_REQUIRED on every tool call. They point to the 7-day trial for testing the connection."
+        "No. The Claude and Cursor setup pages say a free-plan account is refused on every tool call. They point to the 7-day trial for testing the connection."
       ],
       [
         "What does one MCP call cost?",
-        "The same credits as the REST API, with no separate MCP fee. One credit per phone, email or IP lookup, one credit per bulk_verify record, and get_account is free. On the pricing page checked 18 Nov 2026, Starter is $99 a month for 20,000 credits (about $4.95 per 1,000 core lookups), Growth is $299 for 85,000, Professional is $799 for 250,000, and Enterprise is $1,999 for 1,000,000."
+        "The same credits as the REST API, with no separate MCP fee. One credit per phone, email or IP lookup, one credit per record in a bulk check, and reading the account is free. On the pricing page checked 18 Nov 2026, Starter is $99 a month for 20,000 credits (about $4.95 per 1,000 core lookups), Growth is $299 for 85,000, Professional is $799 for 250,000, and Enterprise is $1,999 for 1,000,000."
       ]
     ]
   },
@@ -34022,7 +34022,7 @@
     ],
     "long": [
       "Solari is cloud infrastructure for AI agents with three products behind one API key: cloud Chrome browsers an agent drives with Playwright or any CDP client, headless Linux sandboxes for running code and tools, and full Linux desktops (VMs) an agent or a person can watch and control over VNC. All of them run on hardware-isolated Cloud Hypervisor microVMs and start from memory snapshots, so they are live in milliseconds instead of booting. SDKs cover TypeScript, Python, Go, Rust and C++, with a raw HTTP API.",
-      "Browsers come with saved profiles that keep logins across runs, sign-in through 1Password, residential proxies by country, captcha solving, stealth mode and session recordings for replay. Sandboxes and VMs support templates, snapshots you can fork later and persistent volumes. A hosted MCP server at https://mcp.getsolari.com/mcp exposes 49 tools so Claude, Cursor, Windsurf or another MCP client can open a browser or a sandbox directly; it authenticates with a Solari API key sent as a Bearer header, and a local npx server is also available. Migration guides cover Browserbase, E2B, Daytona and Runloop.",
+      "Browsers come with saved profiles that keep logins across runs, sign-in through 1Password, residential proxies by country, captcha solving, stealth mode and session recordings for replay. Sandboxes and VMs support templates, snapshots you can fork later and persistent volumes. A hosted MCP server exposes 49 tools so Claude, Cursor, Windsurf or another MCP client can open a browser or a sandbox directly; it authenticates with a Solari API key sent as a Bearer header, and a local npx server is also available. Migration guides cover Browserbase, E2B, Daytona and Runloop.",
       "Environments are billed per second while they run. The Free plan includes starter credits, 3 concurrent browsers, 1 sandbox or desktop and 1-hour sessions. Starter is $20 a month (20 browsers, 2 sandboxes, 5-hour sessions, stealth included) and Professional $200 a month (150 browsers, 10 sandboxes, 24-hour sessions); Team and Enterprise are custom, with HIPAA compliance. Solari publishes per-hour comparisons dated October 6, 2026, listing its Team rate at $0.05 per browser hour and $0.114 per 4 vCPU / 8 GB sandbox hour, along with its own latency benchmarks against Browserbase, Steel, Kernel and Hyperbrowser."
     ],
     "who": "Developers building agents that need to browse and log in to websites, run untrusted code or operate a full desktop, and who want browsers, sandboxes and VMs from one provider and one bill.",
@@ -34031,7 +34031,7 @@
       "Headless Linux sandboxes for running commands and code, with templates, snapshots and volumes",
       "Full Linux desktops (VMs) controllable over VNC for computer-use agents",
       "Hardware-isolated microVMs that start from memory snapshots in milliseconds",
-      "Hosted MCP server (https://mcp.getsolari.com/mcp) with 49 tools, plus a local npx server",
+      "Hosted MCP server with 49 tools, plus a local npx server",
       "SDKs for TypeScript, Python, Go, Rust and C++; migration guides from Browserbase, E2B, Daytona and Runloop"
     ],
     "pros": [
@@ -34585,14 +34585,14 @@
     ],
     "long": [
       "Tensorlake is a compute platform for agent applications. The README says the Sandbox API creates MicroVM sandboxes for running agents, tools or model-written code, and that a serverless function runtime can orchestrate longer work with fan-out.",
-      "The README describes snapshots and cloning, suspend and resume that keeps memory and the filesystem, live migration with a short pause, and a tl CLI. The CLI is a standalone binary from curl https://tensorlake.ai/install, not a PyPI or npm package. Cloud use needs an API key from cloud.tensorlake.ai. Release cli-v0.5.165 on 13 Nov 2026 is those CLI binaries. GitHub recorded Apache-2.0, 1,051 stars and 154 forks on 26 Nov 2026. The README did not list a dollar price."
+      "The README describes snapshots and cloning, suspend and resume that keeps memory and the filesystem, live migration with a short pause, and a tl CLI. The CLI is a standalone binary from the install command on the Tensorlake site, not a PyPI or npm package. Cloud use needs an API key from the Tensorlake cloud console. The CLI release on 13 Nov 2026 is those CLI binaries. GitHub recorded Apache-2.0, 1,051 stars and 154 forks on 26 Nov 2026. The README did not list a dollar price."
     ],
     "who": "Engineers who want isolated MicroVM sandboxes and a CLI for agent and tool code.",
     "features": [
       "MicroVM sandboxes with snapshot, clone, and suspend/resume",
       "tl CLI for create, exec, copy, ssh and network policy",
-      "Python SDK: pip install tensorlake",
-      "CLI v0.5.165 published 13 Nov 2026",
+      "Python SDK, installed with pip",
+      "CLI release published 13 Nov 2026",
       "Apache-2.0. 1,051 GitHub stars and 154 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34602,7 +34602,7 @@
       ],
       [
         "How is the CLI installed?",
-        "The README says the tl binary is installed with curl https://tensorlake.ai/install, not from PyPI or npm."
+        "The README says the tl binary is installed from the Tensorlake site, not from PyPI or npm."
       ]
     ],
     "facts": {
@@ -34628,14 +34628,14 @@
     ],
     "long": [
       "The Neutone SDK wraps PyTorch audio models so they load in Neutone's host plugins. The README says researchers stay in Python: the SDK handles buffer sizes, sample-rate conversion and a small set of runtime controls, then exports a model the plugin can run.",
-      "Two free host plugins are named. Neutone FX is for real-time models (VST3 and AU). Neutone Gen is for non-real-time models and is described as still in beta. Install the SDK with pip install neutone_sdk. Release v1.5.2 on 13 Nov 2025 relaxes the torch and numpy version pins. GitHub recorded LGPL-2.1, 636 stars and 34 forks on 26 Nov 2026."
+      "Two free host plugins are named. Neutone FX is for real-time models (VST3 and AU). Neutone Gen is for non-real-time models and is described as still in beta. Install the SDK with pip, using the package named in the README. A release on 13 Nov 2025 relaxes the torch and numpy version pins. GitHub recorded LGPL-2.1, 636 stars and 34 forks on 26 Nov 2026."
     ],
     "who": "Audio researchers who want a PyTorch model to run inside a DAW without writing a C++ plugin.",
     "features": [
       "Wrap a PyTorch audio model and export it for the Neutone plugin",
       "Neutone FX for real-time models and Neutone Gen for non-real-time models",
       "README says both host plugins are free",
-      "v1.5.2 (13 Nov 2025): more flexible torch and numpy requirements",
+      "A release on 13 Nov 2025: more flexible torch and numpy requirements",
       "LGPL-2.1. 636 GitHub stars and 34 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34645,7 +34645,7 @@
       ],
       [
         "Are the plugins free?",
-        "The README calls Neutone FX and Neutone Gen free host plugins. No paid plugin price was in the README or the v1.5.2 notes."
+        "The README calls Neutone FX and Neutone Gen free host plugins. No paid plugin price was in the README or the 13 Nov 2025 notes."
       ]
     ],
     "facts": {
@@ -34670,15 +34670,15 @@
       "https://www.meshy.ai"
     ],
     "long": [
-      "Meshy's MCP server connects an assistant to Meshy's 3D generation API. The README describes two ways to run it. The hosted server is https://mcp.meshy.ai/mcp, or https://mcp.meshy.cn/mcp in China, and signs in with the matching Meshy account or a bearer API key. The local npm server runs on the user's machine with MESHY_API_KEY and exposes a larger tool list, including rigging and 3D-print helpers.",
-      "The README says any Meshy plan, including the free plan, can connect, and that generation spends Meshy credits. A retry of a create tool with the same request_id is not charged again for 30 days. Release v0.6.13 on 23 Nov 2026 points an out-of-credits error at the subscription settings page. GitHub recorded MIT, 97 stars and 29 forks on 26 Nov 2026."
+      "Meshy's MCP server connects an assistant to Meshy's 3D generation API. The README describes two ways to run it. The hosted server signs in with the matching Meshy account or a bearer API key, and there is a separate address for China. The local npm server runs on the user's machine with a Meshy API key and exposes a larger tool list, including rigging and 3D-print helpers.",
+      "The README says any Meshy plan, including the free plan, can connect, and that generation spends Meshy credits. A retry of a create tool with the same request id is not charged again for 30 days. A release on 23 Nov 2026 points an out-of-credits error at the subscription settings page. GitHub recorded MIT, 97 stars and 29 forks on 26 Nov 2026."
     ],
     "who": "Artists and developers who want an assistant to generate Meshy 3D assets from a chat.",
     "features": [
-      "Hosted MCP at https://mcp.meshy.ai/mcp and a China endpoint at https://mcp.meshy.cn/mcp",
+      "Hosted MCP, plus a separate endpoint for China",
       "Local server with 29 tools, including rigging, animation and 3D-print checks",
       "Free plan can connect; generation spends Meshy credits",
-      "v0.6.13 (23 Nov 2026): out-of-credits errors link the subscription page",
+      "A release on 23 Nov 2026 points an out-of-credits error at the subscription page",
       "MIT. 97 GitHub stars and 29 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34714,13 +34714,13 @@
     ],
     "long": [
       "SmartBear MCP exposes SmartBear testing products to an assistant. The README says the local package @smartbear/mcp can talk to BearQ, BugSnag, Reflect, Swagger, PactFlow, Pact Broker, QMetry, QTM4J, Zephyr and Collaborator, using each product's own API token.",
-      "Swagger, BugSnag and Zephyr also have remote servers (https://swagger.mcp.smartbear.com/mcp, https://bugsnag.mcp.smartbear.com/mcp and https://zephyr.mcp.smartbear.com/mcp) that sign in in the browser. The README says BearQ, Reflect, QMetry, QTM4J, PactFlow, Collaborator and functional testing are local-only. Release v0.44.0 on 16 Nov 2026 adds smartbear_list_integrations. GitHub recorded MIT, 44 stars and 50 forks on 26 Nov 2026. The README does not list a price for the server."
+      "Swagger, BugSnag and Zephyr also have remote servers that sign in in the browser. The README says BearQ, Reflect, QMetry, QTM4J, PactFlow, Collaborator and functional testing are local-only. A release on 16 Nov 2026 adds a tool that reports which products are configured. GitHub recorded MIT, 44 stars and 50 forks on 26 Nov 2026. The README does not list a price for the server."
     ],
     "who": "QA and API teams who already use SmartBear products and want an assistant to query them.",
     "features": [
       "Local npm server @smartbear/mcp for the SmartBear product set",
       "Remote OAuth servers for Swagger, BugSnag and Zephyr",
-      "v0.44.0 adds smartbear_list_integrations",
+      "A release on 16 Nov 2026 adds a tool that lists which products are configured",
       "MIT. 44 GitHub stars and 50 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34795,15 +34795,15 @@
       "https://porkbun.com/mcp"
     ],
     "long": [
-      "Porkbun MCP is the MCP server Porkbun publishes for its v3 API. The README says it is the npm package @porkbunllc/mcp-server, maintained by Porkbun, and hosted at https://mcp.porkbun.com/mcp. ChatGPT and Claude can sign in. Other clients can send the API key pair. A narrower /mcp/no-purchases path omits tools that spend money or return a secret.",
-      "Tools cover domain lookup, DNS, SSL, URL and email forwards, invoices and docs. Some tools spend account credit, including registration and closeout purchases. The README says the default monthly spend limit and top-up limit are $100 each. Release v0.65.24 was published 24 Nov 2026. GitHub recorded MIT, 37 stars and 3 forks on 26 Nov 2026."
+      "Porkbun MCP is the MCP server Porkbun publishes for its v3 API. The README says it is the npm package @porkbunllc/mcp-server, maintained by Porkbun, and hosted for sign-in. ChatGPT and Claude can sign in. Other clients can send the API key pair. A narrower path omits tools that spend money or return a secret.",
+      "Tools cover domain lookup, DNS, SSL, URL and email forwards, invoices and docs. Some tools spend account credit, including registration and closeout purchases. The README says the default monthly spend limit and top-up limit are $100 each. A release was published 24 Nov 2026. GitHub recorded MIT, 37 stars and 3 forks on 26 Nov 2026."
     ],
     "who": "People who manage Porkbun domains and want an assistant to read DNS or make changes on that account.",
     "features": [
-      "Hosted MCP at https://mcp.porkbun.com/mcp with Porkbun sign-in",
+      "Hosted MCP with Porkbun sign-in",
       "npm package @porkbunllc/mcp-server",
       "Read tools for domains, DNS, SSL and docs; some write tools spend account credit",
-      "v0.65.24 published 24 Nov 2026",
+      "A release published 24 Nov 2026",
       "MIT. 37 GitHub stars and 3 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34813,7 +34813,7 @@
       ],
       [
         "Can it spend money?",
-        "The README says tools such as buying a closeout or topping up credit spend money, and that /mcp/no-purchases omits tools that spend money or return a secret."
+        "The README says tools such as buying a closeout or topping up credit spend money, and that a separate no-purchases path omits tools that spend money or return a secret."
       ]
     ],
     "facts": {
@@ -34880,15 +34880,15 @@
       "https://mcp.openzeppelin.com"
     ],
     "long": [
-      "OpenZeppelin MCP is a repository of hosted MCP servers for OpenZeppelin's contract libraries. The README lists Solidity, Cairo, Confidential Contracts, Stellar, Stylus, TRON, Sui Move and OpenZeppelin Uniswap Hooks. It says these are hosted versions of the OpenZeppelin Contracts MCP package, which can also be run locally, and that configuration lives at https://mcp.openzeppelin.com.",
-      "Release v0.4.2 on 19 Oct 2026 bumps @openzeppelin/contracts-mcp to 0.7.2. GitHub recorded AGPL-3.0, 30 stars and 13 forks on 26 Nov 2026. The README and those release notes do not list a price."
+      "OpenZeppelin MCP is a repository of hosted MCP servers for OpenZeppelin's contract libraries. The README lists Solidity, Cairo, Confidential Contracts, Stellar, Stylus, TRON, Sui Move and OpenZeppelin Uniswap Hooks. It says these are hosted versions of the OpenZeppelin Contracts MCP package, which can also be run locally, and that configuration lives on the OpenZeppelin site.",
+      "A release on 19 Oct 2026 moves the contracts MCP package to 0.7.2. GitHub recorded AGPL-3.0, 30 stars and 13 forks on 26 Nov 2026. The README and those release notes do not list a price."
     ],
     "who": "Developers who want an assistant to draft contracts from OpenZeppelin's libraries.",
     "features": [
       "Hosted servers for Solidity, Cairo, Stellar, Stylus, TRON, Sui Move, confidential contracts and Uniswap Hooks",
       "Same package can run locally",
-      "Docs at https://mcp.openzeppelin.com",
-      "v0.4.2 (19 Oct 2026) uses @openzeppelin/contracts-mcp 0.7.2",
+      "Docs on the OpenZeppelin site",
+      "A release on 19 Oct 2026 uses the contracts MCP package at 0.7.2",
       "AGPL-3.0. 30 GitHub stars and 13 forks on 26 Nov 2026"
     ],
     "faq": [
@@ -34898,7 +34898,7 @@
       ],
       [
         "Where is it hosted?",
-        "The README points configuration to https://mcp.openzeppelin.com."
+        "The README points configuration to the OpenZeppelin site."
       ]
     ],
     "facts": {
@@ -35026,13 +35026,13 @@
     ],
     "long": [
       "Aiven MCP is a server for Aiven's cloud data platform. The README says an assistant can manage PostgreSQL, Apache Kafka, applications and other Aiven services. Access follows the signed-in Aiven user's permissions, and the README warns that an agent can create, change or delete services.",
-      "The hosted server is https://mcp.aiven.live/mcp. Adding ?read_only=true removes write tools. Release v1.21.0, published 20 Nov 2026, adds application build visibility and release management. GitHub recorded Apache-2.0, 28 stars and 23 forks on 27 Nov 2026."
+      "The hosted server can take a read-only flag that removes write tools. A release published 20 Nov 2026 adds application build visibility and release management. GitHub recorded Apache-2.0, 28 stars and 23 forks on 27 Nov 2026."
     ],
     "who": "Engineers who want an assistant to operate Aiven services under their existing account permissions.",
     "features": [
-      "Hosted MCP at https://mcp.aiven.live/mcp, with a read-only query flag",
+      "Hosted MCP with a read-only flag that drops write tools",
       "Covers PostgreSQL, Apache Kafka, applications and other Aiven services",
-      "v1.21.0 (20 Nov 2026): application build visibility and release management",
+      "A release on 20 Nov 2026 adds application build visibility and release management",
       "Apache-2.0. 28 GitHub stars and 23 forks on 27 Nov 2026"
     ],
     "faq": [
@@ -35042,7 +35042,7 @@
       ],
       [
         "Can it be read-only?",
-        "The README says adding ?read_only=true to the hosted URL excludes write operations."
+        "The README says a read-only flag on the hosted address excludes write operations."
       ]
     ],
     "facts": {
@@ -35189,14 +35189,14 @@
       "https://github.com/AutomoxCommunity/automox-mcp/releases/tag/v2.2.10"
     ],
     "long": [
-      "Automox MCP lets an assistant ask an Automox console about devices, compliance and patch policy. The README says release 3.0 adds a hosted server at https://console.automox.com/api/mcp that uses the account's existing API key, and keeps a self-hosted option.",
-      "GitHub's latest release tag on 27 Nov 2026 was v2.2.10, published 20 Nov 2026. GitHub recorded MIT, 15 stars and 5 forks. The README does not list a separate price for the server."
+      "Automox MCP lets an assistant ask an Automox console about devices, compliance and patch policy. The README says release 3.0 adds a hosted server that uses the account's existing API key, and keeps a self-hosted option.",
+      "GitHub's latest release on 27 Nov 2026 was published 20 Nov 2026. GitHub recorded MIT, 15 stars and 5 forks. The README does not list a separate price for the server."
     ],
     "who": "IT teams who already use Automox and want an assistant to query devices and patches.",
     "features": [
-      "Hosted server at https://console.automox.com/api/mcp, plus a self-hosted package",
+      "Hosted server on the Automox console, plus a self-hosted package",
       "Asks about devices, compliance and patch policy",
-      "Latest GitHub tag v2.2.10, published 20 Nov 2026",
+      "Latest GitHub release published 20 Nov 2026",
       "MIT. 15 GitHub stars and 5 forks on 27 Nov 2026"
     ],
     "faq": [
@@ -35206,7 +35206,7 @@
       ],
       [
         "Is there a hosted server?",
-        "The README documents https://console.automox.com/api/mcp and says it uses an existing Automox API key."
+        "The README documents a hosted address on the Automox console and says it uses an existing Automox API key."
       ]
     ],
     "facts": {
@@ -35311,14 +35311,14 @@
       "https://brandfetch.com/developers/mcp"
     ],
     "long": [
-      "Brandfetch MCP exposes Brandfetch search and brand assets to an assistant. The README's tools include brand search, a full brand lookup, a compact lookup, a batch of up to 25 brands, merchant matching from a statement string, brand context, logo CDN URLs and a feedback tool.",
-      "On MCP Apps hosts, get_brand can draw an interactive card. Release v1.6.2, published 23 Oct 2026, adds Cursor listing. GitHub recorded MIT, 10 stars and 0 forks on 27 Nov 2026. The README does not list a dollar price."
+      "Brandfetch MCP exposes Brandfetch search and brand assets to an assistant. The README's tools include brand search, a full brand lookup, a compact lookup, a batch of up to 25 brands, merchant matching from a statement string, brand context, logo addresses and a feedback tool.",
+      "On MCP Apps hosts, the brand lookup can draw an interactive card. A release published 23 Oct 2026 adds a Cursor listing. GitHub recorded MIT, 10 stars and 0 forks on 27 Nov 2026. The README does not list a dollar price."
     ],
     "who": "Designers and developers who want an assistant to pull a company's logo and brand data.",
     "features": [
       "Brand search, logos, company data and statement-string matching",
       "Batch lookup of up to 25 brands",
-      "v1.6.2 (23 Oct 2026) adds Cursor listing",
+      "A release on 23 Oct 2026 adds a Cursor listing",
       "MIT. 10 GitHub stars and 0 forks on 27 Nov 2026"
     ],
     "faq": [
