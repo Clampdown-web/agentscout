@@ -9,11 +9,15 @@ with the HTML or sitemap that file is known to write.
 
 from __future__ import annotations
 
+import json
 import re
 from html import unescape
+from urllib.parse import urlparse
 
 SITE = "https://agentscouthq.com"
-DAILY_CAP = 3
+DAILY_CAP = 3  # free new indexable pages per PT day; raise this single constant (e.g. to 5) later
+PAID_DAILY_CAP = 2  # paid indexable pages allowed the same day, outside the free cap
+PAID_TIERS = frozenset({"fast_track", "category_pin", "featured_49", "sponsor", "weekly_sponsor"})
 HEURISTIC = (
     "This check does not rebuild the site in CI. build_site.py calls the network, "
     "rewrites tools.json, and stamps the Pacific date, and later passes rewrite the HTML, "
@@ -440,3 +444,68 @@ def reason_problem(body: str, pages: list[str]) -> str | None:
         '"Reason this page exists:" line is empty or still a placeholder. '
         "Name a real search query or user need."
     )
+
+def tool_slug_from_url(url: str) -> str | None:
+    """Slug for a tool page URL such as /tools/kurodyne or /tools/kurodyne.html; else None."""
+    parsed = urlparse(normalize_url(url))
+    host = (parsed.hostname or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    # Only the AgentScout host (or a bare path with no host) can yield a slug.
+    if host not in ("", "agentscouthq.com"):
+        return None
+    path = parsed.path or ""
+    m = re.match(r"^/tools/([^/]+?)/?$", path)
+    if not m:
+        return None
+    slug = m.group(1)
+    if slug.lower().endswith(".html"):
+        slug = slug[:-5]
+    slug = slug.strip().lower()
+    if not slug or slug == "index":
+        return None
+    return slug
+
+
+def is_paid_listing(entry: dict) -> bool:
+    """Match build_extras._paid_listing / build_growth: fast_track or listing_tier (also tier)."""
+    if not isinstance(entry, dict):
+        return False
+    tier = str(entry.get("listing_tier") or entry.get("tier") or "").lower().replace("-", "_")
+    return bool(entry.get("fast_track") or tier in PAID_TIERS)
+
+
+def paid_slugs_from_tools_json(raw: str) -> set[str]:
+    if not (raw or "").strip():
+        return set()
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return set()
+    if isinstance(data, list):
+        items = data
+    elif isinstance(data, dict):
+        items = data.get("tools") or data.get("items") or []
+    else:
+        return set()
+    slugs: set[str] = set()
+    for item in items:
+        if not isinstance(item, dict) or not is_paid_listing(item):
+            continue
+        slug = str(item.get("slug") or "").strip().lower()
+        if slug:
+            slugs.add(slug)
+    return slugs
+
+
+def classify_indexable(urls: list[str], paid_slugs: set[str]) -> tuple[list[str], list[str]]:
+    """Split sitemap URLs into (free, paid). Non-tool URLs are free."""
+    free, paid = [], []
+    paid_slugs = {s.lower() for s in paid_slugs}
+    for url in urls:
+        slug = tool_slug_from_url(url)
+        if slug and slug in paid_slugs:
+            paid.append(url)
+        else:
+            free.append(url)
+    return free, paid
