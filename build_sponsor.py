@@ -9,7 +9,7 @@ STRIPE_FAST_URL = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
 STRIPE_FAST = STRIPE_FAST_URL
 STRIPE_49 = "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00"
 STRIPE_99 = "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01"
-FAST_TRACK_INDEX_LINE = "Same-day indexing ping to Bing and IndexNow search engines (does not include Google)."
+FAST_TRACK_INDEX_LINE = "Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow."
 # Included with the $99 weekly sponsorship. Not a separate price and not its own checkout.
 SPONSOR_INCLUDED_LINE = "Includes submissions to about 25 other AI directories, with a report of the links."
 X_CLAMPDOWN = "https://x.com/clampdown19"
@@ -272,7 +272,7 @@ def build(t):
         <tr><th>Permanent tool profile (<code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code>)</th><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td></tr>
         <tr><th>Listed in <code style="font-size:12.5px">llms.txt</code> &amp; MCP server (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</th><td>✓ Standard listing</td><td>✓ Standard listing</td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td></tr>
         <tr><th>Review turnaround</th><td>Standard queue (5-day review)</td><td><b>⚡ Same-day priority review</b></td><td><b>⚡ Same-day priority review</b></td><td><b>⚡ Immediate same-day setup</b></td></tr>
-        <tr><th>Indexing ping</th><td>—</td><td><b>{FAST_TRACK_INDEX_LINE}</b></td><td>Included with Fast-Track benefits</td><td>Included with Fast-Track benefits</td></tr>
+        <tr><th>Search engine submission</th><td>—</td><td><b>{FAST_TRACK_INDEX_LINE}</b></td><td>Included with Fast-Track benefits</td><td>Included with Fast-Track benefits</td></tr>
         <tr><th>Profile enrichment (FAQ Page schema + pros/cons)</th><td>Standard overview</td><td><b>✓ Full FAQ Page + pros/cons</b></td><td><b>✓ Full FAQ Page + pros/cons</b></td><td><b>✓ Full FAQ Page + pros/cons</b></td></tr>
         <tr><th>Featured pin duration</th><td>—</td><td><b>7-day pin</b> on <code style="font-size:12.5px">/new.html</code> &amp; category New &amp; Featured row</td><td><b>30-day #1 category top pin</b> + homepage Makers strip (4x+ longer!)</td><td><b>30-day #1 category top pin</b> + homepage <code style="font-size:12.5px">#makers</code> showcase</td></tr>
         <tr><th>Permanent <code style="font-size:12.5px">/best/*-alternatives</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</th><td>Organic editorial only</td><td>Organic editorial only</td><td><b>✓ Permanent comparison table inclusion</b></td><td><b>✓ Permanent comparison table inclusion</b></td></tr>
@@ -334,7 +334,7 @@ def build(t):
                     "price": "15",
                     "priceCurrency": "USD",
                     "url": STRIPE_FAST_URL,
-                    "description": "Same-day priority review (live in the next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google)."
+                    "description": "Same-day priority review (live in the next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on @AgentScoutHQ. Submitted to Google via sitemap the same day, and pinged to Bing and IndexNow."
                 },
                 {
                     "@type": "Offer",
