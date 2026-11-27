@@ -31,11 +31,14 @@ def card(x,f,d):
     return (f'<li class="card fcard"><a class="stretch" href="{href}" aria-label="{e(x["name"])} on AgentScout"></a>'
             f'<span class="flabel">{lab}</span><div class="ct">{build_extras.ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3>'
             f'<div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{out}</li>')
-def block(items,d):
+def block(items,d,home=False):
     paid=any(f.get("paid") for _,f,_ in items)
     note="Sponsored and featured placements are labeled. They don't affect our listings or ratings." if paid else "Featured placements are labeled and don't affect our listings or ratings."
-    return (f'{S}<section id="featlist" aria-labelledby="feat-h"><div class="wrap"><h2 id="feat-h" class="feat-h">Featured</h2>'
-            f'<ul class="fgrid">{"".join(card(x,f,d) for x,f,_ in items)}</ul><p class="fnote">{note}</p></div></section>{E}')
+    inner=(f'<h2 id="feat-h" class="feat-h">Featured</h2>'
+           f'<ul class="fgrid">{"".join(card(x,f,d) for x,f,_ in items)}</ul><p class="fnote">{note}</p>')
+    if home:
+        return f'{S}<section id="featlist" class="hsec" aria-labelledby="feat-h">{inner}</section>{E}'
+    return f'{S}<section id="featlist" aria-labelledby="feat-h"><div class="wrap">{inner}</div></section>{E}'
 def put(path,html_,anchor,before=True):
     s=open(path).read(); s0=s
     s=re.sub(re.escape(S)+".*?"+re.escape(E),"",s,flags=re.S)
@@ -48,7 +51,7 @@ def put(path,html_,anchor,before=True):
 def run():
     A=load()
     home=[a for a in A if "homepage" in a[2]]
-    put("index.html",block(home,"") if home else "","<!--/dir:top-->",before=False)
+    put("index.html",block(home,"",home=True) if home else "",'<section id="mcp-home"',before=True)
     for p in glob.glob("categories/*.html"):
         slug=os.path.basename(p)[:-5]
         if slug=="index": continue
