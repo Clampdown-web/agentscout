@@ -793,6 +793,18 @@ class ListingCopyLintTests(unittest.TestCase):
         if result.returncode != 0:
             self.fail(result.stdout + "\n" + result.stderr)
 
+    def test_seo_terms_unit_tests_pass(self) -> None:
+        """Keep SEO term-guard tests in this job; the repo token cannot update workflows."""
+        script = ROOT / "scripts" / "test_seo_terms.py"
+        result = subprocess.run(
+            [sys.executable, str(script)],
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            self.fail(result.stdout + "\n" + result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

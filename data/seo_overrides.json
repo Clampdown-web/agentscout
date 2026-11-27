@@ -190,5 +190,81 @@
  "best/conductor-alternatives.html": [
   "10 Best Conductor Alternatives & Competitors (2026)",
   "Compare the 10 closest Conductor (conductor.build) competitors and alternatives for running coding agents in parallel: Superset, Paseo, Maestro, Orca and more."
+ ],
+ "tools/provider-trust.html": [
+  "Provider Trust: MCP server for source identity checks",
+  "Provider Trust is Script Master Labs' MCP server for checking who is behind a site, API or data source before an agent quotes it."
+ ],
+ "tools/sandscale.html": [
+  "Sandscale: Firecracker sandboxes for Claude Code",
+  "Sandscale runs Firecracker microVM sandboxes for Claude Code and other agents, with an MCP server at mcp.sandscale.dev. Sign-in is required to connect."
+ ],
+ "tools/hive402.html": [
+  "HIVE402: live x402 directory and MCP server",
+  "HIVE402 is a live directory of x402 endpoints that agents can pay, with an MCP server to search the catalog and start a purchase."
+ ],
+ "tools/company-finders.html": [
+  "Company Finders: find local businesses via MCP",
+  "Company Finders counts local businesses with no website, or a broken one, and offers an MCP server so agents can run those counts."
+ ],
+ "tools/hookr-mcp.html": [
+  "Hookr MCP: read and swap Hookr pools with agents",
+  "Hookr MCP is an MCP server that lets an assistant read Hookr pools and quote or swap on them, on Robinhood Chain. The maker filed the server as free."
+ ],
+ "tools/colorwillow.html": [
+  "ColorWillow: coloring pages and streamable HTTP MCP",
+  "ColorWillow has free coloring pages and an AI page maker, plus a streamable HTTP MCP server at colorwillow.com/mcp that needs no API key."
+ ],
+ "tools/idealo-mcp.html": [
+  "idealo MCP: compare shop prices with an MCP server",
+  "idealo MCP is an MCP server for searching products, comparing shop prices and reading 30-day price history on idealo marketplaces."
+ ],
+ "tools/lovable-mcp.html": [
+  "Lovable MCP: connect Claude to hosted Lovable apps",
+  "Lovable's MCP plugin connects Claude to Lovable so an assistant can build hosted apps. The MCP server is at mcp.lovable.dev."
+ ],
+ "tools/parallel-search-mcp.html": [
+  "Parallel Search MCP: streamable HTTP web search",
+  "Parallel Search MCP is a hosted web search MCP server for coding agents, over streamable HTTP at search.parallel.ai/mcp, with no API key."
+ ],
+ "tools/pepys.html": [
+  "Pepys: transcription MCP listed for Claude",
+  "Pepys Transcribe turns audio and video into text via an MCP server at pepys.co/api/mcp, with OAuth authorization, a Claude connector, and a stdio package."
+ ],
+ "tools/hai.html": [
+  "Hai: phone calls from your assistant, via MCP",
+  "Hai places phone calls from an assistant you already use, through an MCP server at haicall.in/mcp. You approve the plan first, then sign in to connect."
+ ],
+ "tools/pennycompute.html": [
+  "PennyCompute: MiniMax H3 video and FFmpeg renders",
+  "PennyCompute generates video with MiniMax H3 and renders footage with FFmpeg. Pricing, features and alternatives are on the listing."
+ ],
+ "tools/clam.html": [
+  "Clam: Gmail permission layer for AI agents",
+  "Clam is a permission layer between Gmail and AI agents. An agent can draft and reply only in the messages the rules allow."
+ ],
+ "tools/keeper-sh.html": [
+  "Keeper.sh: calendar sync with an MCP client",
+  "Keeper.sh syncs calendars across Google, Outlook, iCloud, Fastmail and CalDAV, and exposes them to an MCP client. The MCP server expects a sign-in."
+ ],
+ "tools/lianex.html": [
+  "Lianex: shopping assistant with an MCP server",
+  "Lianex is a shopping assistant with an MCP server: you describe what you want and it searches a marketplace, then narrows the results."
+ ],
+ "tools/superagent.html": [
+  "Superagent: AI app safety SDK and docs.superagent.sh",
+  "Superagent is an open-source SDK for AI app safety: it blocks prompt injections and redacts secrets. Docs are at docs.superagent.sh."
+ ],
+ "tools/lobstermatch.html": [
+  "LobsterMatch: professional network for AI agents",
+  "LobsterMatch is a beta professional network for autonomous AI agents, where operators register an agent and match with others."
+ ],
+ "tools/deed-page.html": [
+  "deed.page: HTTP PUT hosting and deed.page/mcp",
+  "deed.page is static hosting for AI agents: an HTTP PUT, or the MCP server at deed.page/mcp, publishes files to a permanent web address."
+ ],
+ "tools/wren-x402-doctor.html": [
+  "Wren x402 Doctor: GET /market and GET /trust checks",
+  "Wren x402 Doctor helps x402 sellers get listed in the Coinbase CDP Bazaar, with 402 linting plus GET /market and GET /trust paid checks."
  ]
 }
