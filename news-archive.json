@@ -1,7 +1,63 @@
 {
- "updated": "2026-11-26T04:26:13Z",
+ "updated": "2026-11-27T04:33:30Z",
  "days": 30,
  "items": [
+  {
+   "title": "Switzerland says AI agents broke into four of five targets",
+   "source": "The Next Web",
+   "url": "https://thenextweb.com/news/switzerland-ai-agent-cyberattacks-critical-infrastructure",
+   "date": "2026-11-27T10:48:00Z",
+   "tool": null,
+   "summary": "The Next Web reports that Switzerland's National Cyber Security Centre has five confirmed cases of cyberattacks carried out with AI agents, and that attackers got into systems in four of them. Director Florian Schütz told SRF on Thursday that three cases targeted critical-infrastructure operators and two of those succeeded, with no major outages. The centre's Tuesday notice had said every known case succeeded. It wants critical updates on internet-facing systems within 24 hours, and multi-factor authentication or passkeys on services such as webmail and VPNs."
+  },
+  {
+   "title": "Papa John's order is the UK's first cardless AI agent payment",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer",
+   "date": "2026-11-27T09:53:00Z",
+   "tool": null,
+   "summary": "The Guardian reports that an order of nine Papa John's mini pizzas is the first UK purchase in which an AI agent paid a retailer without a card. The Financial Conduct Authority sandbox trial used Lloyds Bank and TrueLayer. The agent had a spend cap per transaction and per month, and no account security details were shared. TrueLayer chief executive Francesco Simoneschi said the customer described the occasion, confirmed the order, and existing buyer-protection rules still apply if the agent orders the wrong thing."
+  },
+  {
+   "title": "Black Friday tests shopping agents, and most shoppers will not let them pay",
+   "source": "Fortune",
+   "url": "https://fortune.com/2026/11/27/black-friday-ai-agentic-shopping-consumer-trust/",
+   "date": "2026-11-27T08:00:00Z",
+   "tool": null,
+   "summary": "Fortune reports that a Morning Consult poll for Visa found 54 percent of adults have used AI for at least one shopping task, while 23 percent trust generative AI to handle a payment. In a Visa trial, 22 personal agents shopped for a TV, a laptop, and a hair appliance, and only 57 percent of 15 trips each ended in a suitable purchase or suggestion. An American Express survey found 52 percent would let an agent buy low-cost essentials, and 15 percent would let it buy big-ticket electronics."
+  },
+  {
+   "title": "Mail opens an MCP server for email, cloud files, and calendar",
+   "source": "VK",
+   "url": "https://vk.company/ru/press/releases/12535/",
+   "date": "2026-11-27T07:07:00Z",
+   "tool": null,
+   "summary": "VK's Mail opened an MCP server on 27 November 2026 so an AI agent can work in Mail, Cloud, and Calendar for every user. In mail it can find messages and attachments, summarize a thread, and draft or send mail. In cloud storage it can upload, download, and sort files. In the calendar it can find a free time, create an event from a message, and add a call link. The server only sees what that user can already see, and the person signs in and chooses what to allow."
+  },
+  {
+   "title": "UK retailers ask who pays if a shopping agent gets the order wrong",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/business/2026/nov/27/retailers-ai-shopping-assistants-black-friday-brands-meta-muse",
+   "date": "2026-11-27T07:00:00Z",
+   "tool": null,
+   "summary": "The Guardian reports that Meta's Muse, which launched in the UK on Tuesday, is working with Marks & Spencer, Sainsbury's, JD Sports, and Currys. A YouGov poll found a third of people planning to shop Black Friday intend to get help from AI, up from 19 percent last year, while KPMG found 12 percent plan to use an AI tool specifically to find deals. Muse must ask before it buys or sends email. Retailers told the paper they will not hand over checkout until it is clear who is liable when an agent gets an order wrong."
+  },
+  {
+   "title": "Linux 7.5 is set to gain in-tree skills for coding agents",
+   "source": "Phoronix",
+   "url": "https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready",
+   "date": "2026-11-26T20:55:00Z",
+   "tool": null,
+   "summary": "Phoronix reports that NVIDIA's Sasha Levin, who co-maintains the Linux long-term kernels, plans to send an agents/skills directory to Linus Torvalds for the Linux 7.5 merge window in late December. He asked for the branch to be dropped from linux-next because it is ready for mainline. The first skills cover Fixes tags, stable tags, finding other copies of a bug, commit messages, and KUnit tests."
+  },
+  {
+   "title": "Enhancv opens a resume MCP server inside Claude and ChatGPT",
+   "source": "EIN Presswire",
+   "url": "https://www.einpresswire.com/article/959232898/enhancv-launches-resume-mcp-letting-job-seekers-tailor-their-real-resume-inside-claude-and-chatgpt",
+   "date": "2026-11-26T19:33:00Z",
+   "tool": null,
+   "summary": "Enhancv launched a remote MCP server on 26 November 2026 that lets Claude, ChatGPT, Cursor, and VS Code edit the resume stored in a person's Enhancv account. Changes show up in the editor to keep or undo, and the connector is told to ask when a bullet needs a number the person has not given. It cannot delete resumes or reach billing. Reading and job search work on the free plan. Editing, tailoring, cover letters, and PDF downloads need Enhancv Pro."
+  },
   {
    "title": "Meta declined a UK watchdog's offer to test Muse before launch",
    "source": "WIRED",
@@ -1177,40 +1233,6 @@
    "date": "2026-10-28T12:06:47Z",
    "tool": "layer",
    "page": "news/2026/10/etraveli-group-adds-mcp-layer-to-flight-content.html"
-  },
-  {
-   "title": "Judgment Labs opens its AI agent monitoring platform to everyone",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115193410134987191",
-   "date": "2026-10-28T00:22:00Z",
-   "tool": null,
-   "summary": "Judgment Labs made its agent monitoring platform generally available: it captures full execution traces from long-running agents, runs customisable judges over them and uses a built-in agent to surface failure patterns, alerts and tests. The $32M-backed startup already counts Fluidstack and Modal as customers.",
-   "page": "news/2026/10/judgment-labs-opens-its-ai-agent-monitoring-platform-to-everyone.html"
-  },
-  {
-   "title": "Hex raises $100M at a $1.2B valuation and rebuilds its product for AI agents",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115127969333047789",
-   "date": "2026-10-27T20:31:00Z",
-   "tool": null,
-   "summary": "Data platform Hex closed a $100M round at a $1.2B valuation and launched Hex 4.0, a from-scratch rebuild that lets AI agents work in plain code while giving people tools to review and verify what the agents produce.",
-   "page": "news/2026/10/hex-raises-100m-at-a-1-2b-valuation-and-rebuilds-its-product-for-ai.html"
-  },
-  {
-   "title": "Make AI agent answers predictable and trustworthy with Analytic views in Autonomous AI…",
-   "source": "Oracle Blogs",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUzBzWUlOZ1RiZlFYS283bWNUemxRRkEtWEp4YlFzQ245T1dQV05rN3U2M05MNW1RQ1lmOW5Ua182NjhSVUlaVVZmamJiM1plaFhTRFJKYUFacVpvRzZXa0xlYi1DbVRZaVdVc1RXalRmVDVXcklPMGYxTjRNcE1zWXZnZDVLeTllS0pjdXRoN0NWRVdnQXJEczM0Zno0ZzFTclNtaFhta01ySTBDd3o0alRsMDBGUUgwdlJGaWRwSFBvREhXOU9hUVR0Z3hoWTJlMWNYc2NDT2Z0RUVM?oc=5",
-   "date": "2026-10-27T13:29:19Z",
-   "tool": "make",
-   "page": "news/2026/10/make-ai-agent-answers-predictable-and-trustworthy-with-analytic-views.html"
-  },
-  {
-   "title": "Cursor turns its coding agent into a TypeScript SDK anyone can build on",
-   "source": "Startup Fortune",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTDYzTWVQbzlrTFY2TzhBSVdkWExubjl6MmUzSUVUakF5cElQMDdVVlN1NlU1d3hqcDczMEN3NTgtTUpEcWtoUllPdHQzekJtYUxiTzhOVWgyZkI0RnJlNmVCVHJoaWRaTkZ3d1UxTlNRVzJyZnp6YU1BbHc5bzlYUUtUT19LUnhDbjY5SUFLR1VkVExLYWE0OURlZHMtQjRM?oc=5",
-   "date": "2026-10-27T04:27:54Z",
-   "tool": "cursor",
-   "page": "news/2026/10/cursor-turns-its-coding-agent-into-a-typescript-sdk-anyone-can-build.html"
   }
  ]
 }
