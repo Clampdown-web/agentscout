@@ -87,7 +87,7 @@ footer .about{max-width:460px}
 a.b.uc:hover{border-color:var(--accent);color:var(--accent)}
 .cardfoot{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .card{position:relative}
-.card .stretch{position:absolute;inset:0;z-index:0}.card .acts,.card .badges a{position:relative;z-index:1}
+.card .stretch{position:absolute;inset:0;z-index:0}.card .acts,.card .badges a,.card .fvisit{position:relative;z-index:1}.card .stretch:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .stars{font-size:12px;color:var(--faint)}
 .ucbar{display:flex;gap:6px;flex-wrap:wrap;margin:-6px 0 16px;align-items:center;font-size:13px;color:var(--faint)}
 .detail{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
@@ -342,9 +342,10 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .feat-h{font-size:1.1rem;margin:0 0 12px}
 .fgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
 .card.fcard{position:relative;border:1px solid var(--accent);background:linear-gradient(135deg,var(--accent-soft),var(--card) 75%)}
-.card.fcard h3 a{color:inherit;text-decoration:none}.card.fcard h3 a:hover,.card.fcard h3 a:focus-visible{text-decoration:underline}
-.flabel{position:absolute;top:10px;right:10px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:var(--accent);color:#fff}
+.card.fcard:has(>a.stretch:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.flabel{position:absolute;top:10px;right:10px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:var(--accent);color:#fff;z-index:1;pointer-events:none}
 .fvisit{display:inline-block;margin-top:8px;font-weight:600}
+.fvisit:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 .fnote{font-size:.8rem;opacity:.75;margin:8px 0 0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .card.fcard .tn{padding-right:84px}

@@ -27,7 +27,9 @@ def card(x,f,d):
     paid=bool(f.get("paid")); lab="Sponsored" if paid else "Featured"
     rel="sponsored nofollow noopener noreferrer" if paid else "noopener noreferrer"; url=x.get("website") or x.get("url") or ""
     out=f'<a class="fvisit" href="{e(url)}" target="_blank" rel="{rel}">Visit site<span class="sr-only"> for {e(x["name"])} (opens in new tab)</span> ↗</a>' if url else ""
-    return (f'<li class="card fcard"><span class="flabel">{lab}</span><div class="ct">{build_extras.ico(x,d)}<div class="tn"><h3><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a></h3>'
+    href=f'{d}tools/{x["slug"]}.html'
+    return (f'<li class="card fcard"><a class="stretch" href="{href}" aria-label="{e(x["name"])} on AgentScout"></a>'
+            f'<span class="flabel">{lab}</span><div class="ct">{build_extras.ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3>'
             f'<div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{out}</li>')
 def block(items,d):
     paid=any(f.get("paid") for _,f,_ in items)
@@ -46,12 +48,12 @@ def put(path,html_,anchor,before=True):
 def run():
     A=load()
     home=[a for a in A if "homepage" in a[2]]
-    put("index.html",block(home,"") if home else "",'<div class="wrap"><section class="homegen"')
+    put("index.html",block(home,"") if home else "","<!--/dir:top-->",before=False)
     for p in glob.glob("categories/*.html"):
         slug=os.path.basename(p)[:-5]
         if slug=="index": continue
         it=[a for a in A if slug in a[2]]
-        # inside the category section, right above the tool grid
-        put(p,block(it,"../").replace('<div class="wrap">','<div>',1) if it else "",'<div class="grid">')
+        # above the main category list (#cgrid), not a later related-tools grid
+        put(p,block(it,"../").replace('<div class="wrap">','<div>',1) if it else "",'<div class="grid" id="cgrid')
     print("featured active:",len(A))
 if __name__=="__main__": run()
