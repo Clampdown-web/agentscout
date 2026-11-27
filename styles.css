@@ -345,7 +345,10 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .card.fcard{position:relative;width:100%;justify-self:stretch;box-sizing:border-box;padding:22px 24px;border-radius:16px;border:1px solid var(--accent);background:linear-gradient(135deg,var(--accent-soft),var(--card) 75%)}
 .card.fcard:has(>a.stretch:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
 .card.fcard h3{font-size:1.15rem}
-.flabel{position:absolute;top:12px;right:12px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:var(--accent);color:#fff;z-index:1;pointer-events:none}
+.card.fcard .ct{display:flex;justify-content:flex-start;align-items:center;gap:16px}
+.card.fcard .ico{flex:0 0 52px;width:52px;height:52px}
+.card.fcard .tn{flex:0 1 auto;text-align:left}
+.flabel,.card.fcard .flabel{position:absolute;top:12px;right:12px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 10px;border-radius:999px;background:var(--accent);color:#fff;z-index:2;pointer-events:none}
 .fvisit{display:inline-block;margin-top:10px;font-weight:600}
 .fvisit:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 .fnote{font-size:.8rem;opacity:.75;margin:10px 0 0}
