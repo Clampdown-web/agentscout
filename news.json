@@ -1,13 +1,77 @@
 {
- "updated": "2026-11-26T04:26:13Z",
+ "updated": "2026-11-27T04:33:30Z",
  "sources": [
   "TechCrunch",
   "The Verge",
+  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
+  {
+   "title": "Switzerland says AI agents broke into four of five targets",
+   "source": "The Next Web",
+   "url": "https://thenextweb.com/news/switzerland-ai-agent-cyberattacks-critical-infrastructure",
+   "date": "2026-11-27T10:48:00Z",
+   "tool": null,
+   "summary": "The Next Web reports that Switzerland's National Cyber Security Centre has five confirmed cases of cyberattacks carried out with AI agents, and that attackers got into systems in four of them. Director Florian Schütz told SRF on Thursday that three cases targeted critical-infrastructure operators and two of those succeeded, with no major outages. The centre's Tuesday notice had said every known case succeeded. It wants critical updates on internet-facing systems within 24 hours, and multi-factor authentication or passkeys on services such as webmail and VPNs.",
+   "page": "news/2026/11/switzerland-says-ai-agents-broke-into-four-of-five-targets.html"
+  },
+  {
+   "title": "Papa John's order is the UK's first cardless AI agent payment",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer",
+   "date": "2026-11-27T09:53:00Z",
+   "tool": null,
+   "summary": "The Guardian reports that an order of nine Papa John's mini pizzas is the first UK purchase in which an AI agent paid a retailer without a card. The Financial Conduct Authority sandbox trial used Lloyds Bank and TrueLayer. The agent had a spend cap per transaction and per month, and no account security details were shared. TrueLayer chief executive Francesco Simoneschi said the customer described the occasion, confirmed the order, and existing buyer-protection rules still apply if the agent orders the wrong thing.",
+   "page": "news/2026/11/papa-johns-order-is-the-uks-first-cardless-ai-agent-payment.html"
+  },
+  {
+   "title": "Black Friday tests shopping agents, and most shoppers will not let them pay",
+   "source": "Fortune",
+   "url": "https://fortune.com/2026/11/27/black-friday-ai-agentic-shopping-consumer-trust/",
+   "date": "2026-11-27T08:00:00Z",
+   "tool": null,
+   "summary": "Fortune reports that a Morning Consult poll for Visa found 54 percent of adults have used AI for at least one shopping task, while 23 percent trust generative AI to handle a payment. In a Visa trial, 22 personal agents shopped for a TV, a laptop, and a hair appliance, and only 57 percent of 15 trips each ended in a suitable purchase or suggestion. An American Express survey found 52 percent would let an agent buy low-cost essentials, and 15 percent would let it buy big-ticket electronics.",
+   "page": "news/2026/11/black-friday-tests-shopping-agents-and-most-shoppers-will-not-let.html"
+  },
+  {
+   "title": "Mail opens an MCP server for email, cloud files, and calendar",
+   "source": "VK",
+   "url": "https://vk.company/ru/press/releases/12535/",
+   "date": "2026-11-27T07:07:00Z",
+   "tool": null,
+   "summary": "VK's Mail opened an MCP server on 27 November 2026 so an AI agent can work in Mail, Cloud, and Calendar for every user. In mail it can find messages and attachments, summarize a thread, and draft or send mail. In cloud storage it can upload, download, and sort files. In the calendar it can find a free time, create an event from a message, and add a call link. The server only sees what that user can already see, and the person signs in and chooses what to allow.",
+   "page": "news/2026/11/mail-opens-an-mcp-server-for-email-cloud-files-and-calendar.html"
+  },
+  {
+   "title": "UK retailers ask who pays if a shopping agent gets the order wrong",
+   "source": "The Guardian",
+   "url": "https://www.theguardian.com/business/2026/nov/27/retailers-ai-shopping-assistants-black-friday-brands-meta-muse",
+   "date": "2026-11-27T07:00:00Z",
+   "tool": null,
+   "summary": "The Guardian reports that Meta's Muse, which launched in the UK on Tuesday, is working with Marks & Spencer, Sainsbury's, JD Sports, and Currys. A YouGov poll found a third of people planning to shop Black Friday intend to get help from AI, up from 19 percent last year, while KPMG found 12 percent plan to use an AI tool specifically to find deals. Muse must ask before it buys or sends email. Retailers told the paper they will not hand over checkout until it is clear who is liable when an agent gets an order wrong.",
+   "page": "news/2026/11/uk-retailers-ask-who-pays-if-a-shopping-agent-gets-the-order-wrong.html"
+  },
+  {
+   "title": "Linux 7.5 is set to gain in-tree skills for coding agents",
+   "source": "Phoronix",
+   "url": "https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready",
+   "date": "2026-11-26T20:55:00Z",
+   "tool": null,
+   "summary": "Phoronix reports that NVIDIA's Sasha Levin, who co-maintains the Linux long-term kernels, plans to send an agents/skills directory to Linus Torvalds for the Linux 7.5 merge window in late December. He asked for the branch to be dropped from linux-next because it is ready for mainline. The first skills cover Fixes tags, stable tags, finding other copies of a bug, commit messages, and KUnit tests.",
+   "page": "news/2026/11/linux-7-5-is-set-to-gain-in-tree-skills-for-coding-agents.html"
+  },
+  {
+   "title": "Enhancv opens a resume MCP server inside Claude and ChatGPT",
+   "source": "EIN Presswire",
+   "url": "https://www.einpresswire.com/article/959232898/enhancv-launches-resume-mcp-letting-job-seekers-tailor-their-real-resume-inside-claude-and-chatgpt",
+   "date": "2026-11-26T19:33:00Z",
+   "tool": null,
+   "summary": "Enhancv launched a remote MCP server on 26 November 2026 that lets Claude, ChatGPT, Cursor, and VS Code edit the resume stored in a person's Enhancv account. Changes show up in the editor to keep or undo, and the connector is told to ask when a bullet needs a number the person has not given. It cannot delete resumes or reach billing. Reading and job search work on the free plan. Editing, tailoring, cover letters, and PDF downloads need Enhancv Pro.",
+   "page": "news/2026/11/enhancv-opens-a-resume-mcp-server-inside-claude-and-chatgpt.html"
+  },
   {
    "title": "Meta declined a UK watchdog's offer to test Muse before launch",
    "source": "WIRED",
@@ -16,69 +80,6 @@
    "tool": null,
    "summary": "WIRED reports that Meta turned down a Financial Conduct Authority suggestion to test Muse together in the regulator's sandbox before the UK rollout. Colin Payne, the FCA's head of innovation, said the agency wants to see how the agent handles payments and whether it acts for the customer. Meta said it has engaged with the relevant regulators. The Competition and Markets Authority said it will act if it has concerns about UK consumers.",
    "page": "news/2026/11/meta-declined-a-uk-watchdogs-offer-to-test-muse-before-launch.html"
-  },
-  {
-   "title": "Gap uses Cognition's Devin to keep holiday shopping online",
-   "source": "Gap Inc.",
-   "url": "https://www.gapinc.com/en-us/articles/2026/11/gap-inc-taps-ai-to-help-keep-holiday-shopping-runn",
-   "date": "2026-11-25T18:13:00Z",
-   "tool": null,
-   "summary": "Gap Inc. said on 25 November 2026 that engineers use Cognition's Devin agent on its ecommerce sites. A daily site scan looks for shopper friction and system faults, then drafts a tested code fix for a person to review and publish. Gap says that work has helped recover millions in sales that downtime would have lost, and that people still approve every change.",
-   "page": "news/2026/11/gap-uses-cognitions-devin-to-keep-holiday-shopping-online.html"
-  },
-  {
-   "title": "Human Security sees AI agent traffic heading for a 150x Cyber Week",
-   "source": "Adweek",
-   "url": "https://www.adweek.com/commerce/ai-agent-traffic-to-surge-150x-this-cyber-week-driven-mostly-by-meta-muse/",
-   "date": "2026-11-25T14:13:52Z",
-   "tool": null,
-   "summary": "Adweek reports that Human Security expects AI agent traffic during Cyber Week, 26 to 30 November, to reach about 150 times last year's level, with checkout-page requests near 160 times. Meta's Muse accounts for about 70 percent of the agent traffic Human sees and 57 percent of checkout requests. The figures count page and search actions on sites Human protects, not completed orders.",
-   "page": "news/2026/11/human-security-sees-ai-agent-traffic-heading-for-a-150x-cyber-week.html"
-  },
-  {
-   "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
-   "date": "2026-11-25T14:10:18Z",
-   "tool": "agent",
-   "summary": "TechCrunch reports that Amazon and Meta have held talks about letting Muse shop on Amazon, according to Fortune. The open questions are how search results would appear and how advertising would work, and any deal would need both chief executives to approve it. Two months ago, Muse shoppers could not check out on Amazon. Neither company had commented.",
-   "page": "news/2026/11/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse.html"
-  },
-  {
-   "title": "Duco opens an MCP server for post-trade reconciliation agents",
-   "source": "Duco",
-   "url": "https://du.co/duco-mcp-server-brings-agentic-operations-for-post-trade-into-production/",
-   "date": "2026-11-25T09:13:15Z",
-   "tool": null,
-   "summary": "Duco made its MCP server generally available on 25 November 2026. Agents on any MCP client can search reconciliation breaks, label them, and match or clear exceptions under the user's existing permissions. Every action is written to Duco's audit log, and the server is available to Duco clients.",
-   "page": "news/2026/11/duco-opens-an-mcp-server-for-post-trade-reconciliation-agents.html"
-  },
-  {
-   "title": "Alta opens an MCP server so sales agents can prospect in chat",
-   "source": "Alta",
-   "url": "https://www.altahq.com/blog/alta-mcp-claude-chatgpt-codex",
-   "date": "2026-11-25T08:00:00Z",
-   "tool": null,
-   "summary": "Alta opened Alta MCP in Claude, ChatGPT, and Codex on 25 November 2026. A rep can describe an audience, get verified contacts, and draft a multichannel campaign in the same chat. Campaigns stay drafts until a person launches them, and sending or resuming a campaign asks for confirmation first.",
-   "page": "news/2026/11/alta-opens-an-mcp-server-so-sales-agents-can-prospect-in-chat.html"
-  },
-  {
-   "title": "Magister opens a marketing MCP server across 85 tools",
-   "source": "EIN Presswire",
-   "url": "https://www.einpresswire.com/article/957096938/magister-launches-a-marketing-mcp-server-that-connects-claude-chatgpt-codex-and-cursor-to-85-marketing-tools",
-   "date": "2026-11-25T05:50:00Z",
-   "tool": null,
-   "summary": "Magister Marketing launched an MCP server on 25 November 2026 that connects Claude, ChatGPT, Codex, Cursor, and other MCP clients to 85 marketing tools. It can read analytics and ad accounts and draft posts, but anything that publishes, sends, or spends waits for a person to approve it. Connect is $29 a month and the Agent plan is $99 a month, after a free trial.",
-   "page": "news/2026/11/magister-opens-a-marketing-mcp-server-across-85-tools.html"
-  },
-  {
-   "title": "Google Workspace opens MCP servers and a CLI for governed AI agents",
-   "source": "Google",
-   "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace",
-   "date": "2026-11-25T01:00:00Z",
-   "tool": null,
-   "summary": "Google made Workspace MCP servers and a Workspace CLI generally available, giving agents a managed way into Gmail, Drive, Docs, Sheets, and other Workspace apps. A new addendum tells agents to use those doors instead of REST APIs, with technical enforcement starting 1 February 2027. Admins can require confirmations, read audit logs, and revoke access.",
-   "page": "news/2026/11/google-workspace-opens-mcp-servers-and-a-cli-for-governed-ai-agents.html"
   }
  ]
 }

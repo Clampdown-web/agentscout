@@ -3661,8 +3661,8 @@
 "mcp-servers"
 ],
 "lovable-mcp": [
-"mcp-servers",
-"no-code-apps"
+"voice-phone",
+"rules-config"
 ],
 "parse-ly-mcp": [
 "mcp-servers"
@@ -3691,9 +3691,9 @@
 "mcp-servers"
 ],
 "uptimerobot-mcp": [
-"ai-sre",
+"browser-automation",
 "observability",
-"mcp-servers"
+"rules-config"
 ],
 "scite-mcp": [
 "research-agents",
@@ -3736,7 +3736,9 @@
 "mcp-servers"
 ],
 "idealo-mcp": [
-"mcp-servers"
+"voice-phone",
+"mcp-gateways",
+"images-design"
 ],
 "lucid-mcp": [
 "vector-rag",
@@ -3747,7 +3749,10 @@
 "mcp-servers"
 ],
 "devcycle-mcp": [
-"mcp-servers"
+"codebase-context",
+"mcp-servers",
+"terminal-agents",
+"rules-config"
 ],
 "mindmeister-mcp": [
 "mcp-servers",
@@ -3884,7 +3889,7 @@
 ],
 "aiven-mcp": [
 "text-to-sql",
-"mcp-servers"
+"guardrails"
 ],
 "extend-mcp": [
 "vector-rag",
@@ -3892,9 +3897,7 @@
 "mcp-servers"
 ],
 "brandfetch-mcp": [
-"vector-rag",
-"mcp-servers",
-"images-design"
+"voice-phone"
 ],
 "picsart-genai-mcp": [
 "mcp-servers",
@@ -3940,12 +3943,13 @@
 "mcp-servers"
 ],
 "whimsical-mcp": [
-"mcp-servers",
-"video-editing"
+"planning-tasks",
+"video-editing",
+"images-design"
 ],
 "automox-mcp": [
 "guardrails",
-"mcp-servers"
+"local-models"
 ],
 "gtmetrix-mcp": [
 "mcp-servers",
@@ -21634,5 +21638,117 @@
 "terminal-agents",
 "foley-sfx",
 "images-design"
+],
+"provider-trust": [
+"voice-phone",
+"agent-auth",
+"observability",
+"mastering"
+],
+"skillbox": [
+"agent-frameworks",
+"rules-config"
+],
+"blendcanvas": [
+"vector-rag",
+"video",
+"images-design"
+],
+"kdpbook": [
+"planning-tasks",
+"agent-auth",
+"images-design",
+"rules-config"
+],
+"idol-max": [
+"token-costs",
+"images-design"
+],
+"sandscale": [
+"planning-tasks",
+"sandboxes"
+],
+"pennycompute": [
+"voice-phone",
+"subtitles-transcripts",
+"video-editing",
+"mixing",
+"video"
+],
+"songduet": [
+"planning-tasks",
+"stem-separation"
+],
+"ofox-chat": [
+"computer-use",
+"terminal-agents",
+"video",
+"images-design"
+],
+"koma": [
+"planning-tasks",
+"local-models",
+"terminal-agents",
+"storyboards-previs",
+"video",
+"images-design",
+"rules-config"
+],
+"we0": [
+"agent-payments",
+"agent-auth",
+"multi-agent",
+"images-design"
+],
+"motifdeck": [
+"images-design",
+"games"
+],
+"pepys": [
+"agent-auth",
+"mcp-servers",
+"subtitles-transcripts",
+"stem-separation",
+"video"
+],
+"kaeso": [
+"voice-phone",
+"mcp-gateways",
+"local-models",
+"mastering"
+],
+"freebuff": [
+"agent-payments",
+"marketing-agents",
+"computer-use",
+"local-models",
+"terminal-agents"
+],
+"simlock": [
+"voice-phone",
+"mcp-gateways",
+"mobile"
+],
+"opengame": [
+"voice-phone",
+"local-models",
+"video",
+"games"
+],
+"laravel-boost": [
+"vector-rag",
+"agent-frameworks",
+"rules-config"
+],
+"agent-toolkit-for-aws": [
+"guardrails",
+"mcp-gateways",
+"agent-frameworks",
+"terminal-agents",
+"stem-separation",
+"rules-config"
+],
+"microsoft-agent-skills": [
+"rules-config"
 ]
 }
