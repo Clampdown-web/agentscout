@@ -303,6 +303,51 @@ class CheckWaitTests(unittest.TestCase):
         )
         self.assertEqual(failed, ["gitleaks.yml failure"])
 
+    def test_approval_gated_pull_request_runs_are_ignored(self):
+        # Nov 25-26: the pull_request runs landed at action_required seconds
+        # after the PR opened and the job gave up before the dispatched runs ended.
+        def rows_for(_workflow):
+            return [
+                {
+                    "headSha": "abc",
+                    "status": "completed",
+                    "conclusion": "action_required",
+                    "createdAt": "2026-11-27T00:06:31Z",
+                },
+                {
+                    "headSha": "abc",
+                    "status": "completed",
+                    "conclusion": "success",
+                    "createdAt": "2026-11-27T00:06:30Z",
+                },
+            ]
+
+        failed = publish.wait_for_checks(
+            "owner/repo", "branch", "abc",
+            run=self._run(rows_for), sleep=lambda _seconds: None, clock=lambda: 0, timeout=30, poll=15,
+        )
+        self.assertEqual(failed, [])
+
+    def test_only_approval_gated_runs_means_still_waiting(self):
+        now = {"t": 0}
+
+        def sleep(seconds):
+            now["t"] += seconds
+
+        def rows_for(_workflow):
+            return [{
+                "headSha": "abc",
+                "status": "completed",
+                "conclusion": "action_required",
+                "createdAt": "2026-11-27T00:06:30Z",
+            }]
+
+        failed = publish.wait_for_checks(
+            "owner/repo", "branch", "abc",
+            run=self._run(rows_for), sleep=sleep, clock=lambda: now["t"], timeout=30, poll=15,
+        )
+        self.assertEqual(sorted(failed), sorted(publish.CI_WORKFLOWS))
+
     def test_timeout_leaves_the_unfinished_workflows(self):
         now = {"t": 0}
 

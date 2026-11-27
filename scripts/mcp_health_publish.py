@@ -365,7 +365,14 @@ def wait_for_checks(
                     "--json", "databaseId,headSha,status,conclusion,createdAt",
                 ]
             )
-            matches = [row for row in _listed_runs(listed) if row.get("headSha") == head]
+            # A pull request opened with GITHUB_TOKEN gets pull_request runs that
+            # GitHub parks at action_required (waiting for maintainer approval).
+            # They never run and report no check on the commit, so they are not a
+            # result. The dispatched runs on the same head are what count.
+            matches = [
+                row for row in _listed_runs(listed)
+                if row.get("headSha") == head and row.get("conclusion") != "action_required"
+            ]
             matches.sort(key=lambda row: str(row.get("createdAt") or ""), reverse=True)
             if not matches or matches[0].get("status") != "completed":
                 still.append(workflow)
