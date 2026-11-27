@@ -7,6 +7,9 @@ MAIN_REF is the branch already on main (origin/main in CI). The daily free cap
 main and the PR head, and the America/Los_Angeles committer date. Paid listings
 are excluded from the free cap.
 
+It also runs scripts/lint_listing_copy.py on listing fields added or
+changed in the PR (description, pricing_detail, long, features, FAQ answers).
+
 Exit 1 prints every failure. Exit 0 means the pull request passed.
 """
 
@@ -18,6 +21,11 @@ import sys
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+SCRIPTS = Path(__file__).resolve().parents[1]
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+import lint_listing_copy
 
 from pages import (
     DAILY_CAP,
@@ -250,6 +258,7 @@ def evaluate(repo: Path, base: str, head: str, body: str, main_ref: str, today: 
                 f"This PR: {_format_list(capped_labels)}. "
                 f"Already merged to main today: {_format_list(already)}."
             )
+    failures.extend(lint_listing_copy.failures(repo, base, head))
     return failures
 
 

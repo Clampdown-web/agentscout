@@ -779,5 +779,20 @@ class WorkflowWiringTest(unittest.TestCase):
         self.assertIn("New indexable pages in this PR:", template)
 
 
+
+class ListingCopyLintTests(unittest.TestCase):
+    def test_listing_copy_unit_tests_pass(self) -> None:
+        """Keep listing-copy tests in this job; the repo token cannot update workflows."""
+        script = ROOT / "scripts" / "test_listing_copy.py"
+        result = subprocess.run(
+            [sys.executable, str(script)],
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            self.fail(result.stdout + "\n" + result.stderr)
+
+
 if __name__ == "__main__":
     unittest.main()
