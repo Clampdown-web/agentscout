@@ -35428,15 +35428,15 @@
     ],
     "long": [
       "Kurodyne is a marketplace for digital products: agent skills and prompts, automation workflows, software tools, spreadsheets, document and workspace templates, and guides. Buyers can browse on the site or let their own agent search the Catalog through MCP. Kurodyne LLC says it launched the marketplace on October 20, 2026.",
-      "The Catalog MCP at https://mcp.kurodyne.com/mcp uses Streamable HTTP and needs no sign-in. On 27 Nov 2026 a POST initialize returned com.kurodyne/catalog v1.0.0, and tools/list showed search_products, get_product, get_product_reviews, get_seller, get_product_files, get_product_readme, list_product_types, list_categories and get_trending_products. It is read-only and cannot buy anything. A second Seller Console MCP at https://mcp.kurodyne.com/seller/mcp lets a seller's agent edit products, read sales totals and answer buyers, with permissions approved in the browser.",
-      "Selling is free to list with no monthly fee. Sellers set prices from $5 to $500 and pay a 20% platform fee per sale plus Stripe processing; the first sellers to publish pay no platform fee for 3 months. The security page says every package goes through more than one malware engine, a person reviews every listing and update, and approved packages are locked with a SHA-256 fingerprint buyers can check."
+      "The Catalog MCP server is free to use with no account, so an agent can search products, read reviews, pull each product's README, and look up sellers, files, categories and trending products. It is read-only and cannot buy anything. A separate Seller Console MCP lets a seller's own agent publish or edit products, read sales totals and answer buyers, with permissions approved in the browser.",
+      "Selling is free to list with no monthly fee. Sellers set prices from $5 to $500 and pay a 20% platform fee per sale plus Stripe processing; the first sellers to publish pay no platform fee for 3 months. The security page says every package goes through more than one malware engine, a person reviews every listing and update, and approved packages are locked with a fingerprint buyers can check."
     ],
     "who": "Builders who want their agent to find ready-made skills, prompts and templates, and makers who want to sell agent skills or tools they built for themselves.",
     "features": [
-      "Catalog MCP at https://mcp.kurodyne.com/mcp with no account needed",
+      "Catalog MCP that needs no account, so agents can search for free",
       "Seller Console MCP for publishing products and answering buyers from an agent",
       "Agent skills, prompts, workflows, software tools, spreadsheets and templates priced $5 to $500",
-      "Human review of every listing and update, multi-engine malware scans and SHA-256 fingerprints",
+      "Human review of every listing and update, multi-engine malware scans and fingerprints",
       "20% platform fee for sellers, no listing or monthly fee"
     ],
     "pros": [
@@ -35452,11 +35452,11 @@
     "faq": [
       [
         "Does Kurodyne's MCP need an account?",
-        "No. The Catalog MCP at https://mcp.kurodyne.com/mcp needs no sign-in. On 27 Nov 2026 it answered initialize as com.kurodyne/catalog v1.0.0 with read-only search tools."
+        "No. The Catalog MCP needs no sign-in and is free to use. Agents can search products and read their details without an account."
       ],
       [
         "What does it cost to sell on Kurodyne?",
-        "Listing is free with no monthly fee. Kurodyne takes a 20% platform fee per sale, and Stripe processing fees apply separately (kurodyne.com/sell, 27 Nov 2026)."
+        "Listing is free with no monthly fee. Kurodyne takes a 20% platform fee per sale, and Stripe processing fees apply separately, according to its selling page, checked 27 Nov 2026."
       ],
       [
         "What can buyers find there?",
