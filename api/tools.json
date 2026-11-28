@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-27T09:41:50-08:00",
- "updated": "2026-11-27T09:41:50-08:00",
- "last_checked": "2026-11-27",
- "count": 6098,
- "total_tools": 6098,
+ "generated": "2026-11-28T05:05:48-08:00",
+ "updated": "2026-11-28T05:05:48-08:00",
+ "last_checked": "2026-11-28",
+ "count": 6125,
+ "total_tools": 6125,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -41198,17 +41198,16 @@
    "website": "https://www.altmetric.com/",
    "github": "https://github.com/altmetric/altmetric-mcp",
    "category": "MCP servers",
-   "description": "Altmetric's MCP server for tracking research attention across news, policy documents and social media.",
+   "description": "Altmetric MCP lets an assistant see where a research output is mentioned in news, policy documents and social media. You can use a hosted server and sign in, or run it locally with your own keys. A free tier covers attention counts and a search of recent attention. A fuller record needs commercial access. GitHub recorded MIT, 7 stars and 0 forks on 28 Nov 2026. The README names paid plans but does not print dollar prices.",
    "key_features": [
-    "See site",
+    "MIT. Free tier for attention counts and a recent-attention search. Commercial access for a fuller record. The README does not print dollar prices. Checked 28 Nov 2026.",
     "Active",
     "7 GitHub stars",
     "Research the web",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "MIT. Free tier for attention counts and a recent-attention search. Commercial access for a fuller record. The README does not print dollar prices. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41226,11 +41225,10 @@
    "repo": "altmetric/altmetric-mcp",
    "github_stars": 7,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "research the web",
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/altmetric-mcp.png",
@@ -41281,14 +41279,16 @@
    "website": "https://ifttt.com/mcp",
    "github": "https://github.com/IFTTT/ifttt-plugins",
    "category": "MCP servers",
-   "description": "IFTTT's MCP server that lets AI agents build Applets and run actions and queries across 1,000+ connected services.",
+   "description": "IFTTT MCP connects an agent to IFTTT so it can discover services, build automations and run actions. The README says a free IFTTT account is enough to sign in, and that the hosted server itself is closed source. This repository holds the plugins, skills and rules. A release on 21 Sep 2026 fixes marketplace metadata so Cursor can list the plugin, and it does not change the tools. GitHub recorded MIT, 3 stars and 0 forks on 28 Nov 2026.",
    "key_features": [
-    "Requires IFTTT: Free; Pro $2.99/mo; Pro+ $8.99/mo",
+    "MIT for this plugin repository. The README says a free IFTTT account is enough to connect. It does not print paid plan prices. Checked 28 Nov 2026.",
     "Active",
     "2 GitHub stars",
+    "Write code",
+    "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "Requires IFTTT: Free; Pro $2.99/mo; Pro+ $8.99/mo",
+   "pricing": "MIT for this plugin repository. The README says a free IFTTT account is enough to connect. It does not print paid plan prices. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -41307,8 +41307,10 @@
    "repo": "IFTTT/ifttt-plugins",
    "github_stars": 2,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "write code",
+    "automate workflows",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -41322,14 +41324,15 @@
    "website": "https://docs.rocketreach.co/reference/mcp",
    "github": "https://github.com/rocketreach/rocketreach-mcp-plugin",
    "category": "MCP servers",
-   "description": "RocketReach's MCP server for looking up verified work emails and phone numbers from its contact database.",
+   "description": "RocketReach MCP lets an assistant search people and companies, enrich a contact with emails and phone numbers, and check whether an email can be delivered. The README says lookups can spend credits and that an account tool shows the remaining balance. A release on 19 Nov 2026 adds the first set of skills. GitHub recorded MIT, 0 stars and 0 forks on 28 Nov 2026. The README does not print a plan price table.",
    "key_features": [
-    "Requires RocketReach: free account (5 lookups); Essentials $33/mo; Pro $75/mo; Ultimate $142/mo (annual)",
+    "MIT. Lookups can spend credits. The README does not print a plan price table. Checked 28 Nov 2026.",
     "Active",
+    "Research the web",
     "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "Requires RocketReach: free account (5 lookups); Essentials $33/mo; Pro $75/mo; Ultimate $142/mo (annual)",
+   "pricing": "MIT. Lookups can spend credits. The README does not print a plan price table. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -41348,8 +41351,9 @@
    "repo": "rocketreach/rocketreach-mcp-plugin",
    "github_stars": 0,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "research the web",
     "voice & phone calls",
     "connect tools via MCP"
    ],
@@ -41619,13 +41623,14 @@
    "website": "https://www.printfriendly.com/help/api-mcp",
    "github": "https://github.com/printfriendly/printfriendly-mcp",
    "category": "MCP servers",
-   "description": "PrintFriendly's MCP server for reading clean web pages and creating PDF, Word and Markdown documents.",
+   "description": "PrintFriendly MCP reads a public web page as clean text, without ads and navigation, and can turn a page into a PDF, Word or Markdown file. You need an API key. The free plan includes 100 documents a month, and a failed call does not count. Paid plans raise the limit. The README does not print those paid prices. GitHub recorded MIT, 0 stars and 0 forks on 28 Nov 2026.",
    "key_features": [
-    "Free plan (100 documents/mo); paid plans raise the limit",
+    "MIT. Free plan: 100 documents a month. Paid plans raise the limit; the README does not print those prices. Checked 28 Nov 2026.",
     "Active",
+    "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "Free plan (100 documents/mo); paid plans raise the limit",
+   "pricing": "MIT. Free plan: 100 documents a month. Paid plans raise the limit; the README does not print those prices. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -41644,8 +41649,9 @@
    "repo": "printfriendly/printfriendly-mcp",
    "github_stars": 0,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "voice & phone calls",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -42237,14 +42243,15 @@
    "website": "https://docs.chainstack.com/docs/chainstack-mcp-server",
    "github": "https://github.com/chainstacklabs/mcp-server",
    "category": "crypto",
-   "description": "Chainstack's MCP server for deploying and managing blockchain nodes across 70+ protocols and requesting testnet funds from agents.",
+   "description": "Chainstack MCP lets an agent search Chainstack documentation, read a doc page, check platform status and contact the company without an API key. Managing projects and blockchain nodes, and requesting testnet funds, needs a key. One tool returns a live pricing snapshot rather than a fixed table. GitHub recorded MIT, 5 stars and 1 fork on 28 Nov 2026.",
    "key_features": [
-    "Requires Chainstack: Developer free; Growth $49/mo; Pro $199/mo; Business $499/mo; Enterprise from $990/mo",
+    "MIT. The README does not print a plan price table. A tool returns a live pricing snapshot. Some tools need an API key and some do not. Checked 28 Nov 2026.",
     "Active",
     "5 GitHub stars",
+    "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "Requires Chainstack: Developer free; Growth $49/mo; Pro $199/mo; Business $499/mo; Enterprise from $990/mo",
+   "pricing": "MIT. The README does not print a plan price table. A tool returns a live pricing snapshot. Some tools need an API key and some do not. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -42263,8 +42270,9 @@
    "repo": "chainstacklabs/mcp-server",
    "github_stars": 5,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "research the web",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -42319,15 +42327,16 @@
    "website": "https://bird.com/docs/ai/mcp-server",
    "github": "https://github.com/messagebird/bird-ai",
    "category": "MCP servers",
-   "description": "Bird's MCP server for sending and receiving email, SMS, WhatsApp and voice messages from AI agents through one API.",
+   "description": "Bird MCP lets a coding agent send and receive email, text messages, WhatsApp and voice through a Bird account. The README says the agent uses Bird's command-line client, and clients that read plugin files also register the hosted server. GitHub recorded MIT, 10 stars and 0 forks on 28 Nov 2026. The README does not list a dollar price.",
    "key_features": [
-    "Requires Bird: free tiers, pay-as-you-go usage and product plans",
+    "MIT. The README does not list a dollar price. A Bird account is required. Checked 28 Nov 2026.",
     "Active",
     "9 GitHub stars",
+    "Write code",
     "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "Requires Bird: free tiers, pay-as-you-go usage and product plans",
+   "pricing": "MIT. The README does not list a dollar price. A Bird account is required. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -42347,8 +42356,9 @@
    "repo": "messagebird/bird-ai",
    "github_stars": 9,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "write code",
     "voice & phone calls",
     "connect tools via MCP"
    ],
@@ -42489,15 +42499,15 @@
    "website": "https://www.frase.io/agents",
    "github": "https://github.com/frase-io/mcp-server",
    "category": "MCP servers",
-   "description": "Frase's MCP server with SEO, GEO and AI visibility tools to research, write, optimize, publish and monitor content.",
+   "description": "Frase MCP connects an assistant to a Frase account for search and AI-visibility research, writing and content optimization. A hosted server lets you sign in, or you can run the server locally with an API key. The public repository holds the docs and setup. The server itself is developed in a private repository. A release on 12 Sep 2026 ships a desktop extension bundle. GitHub recorded MIT, 0 stars and 0 forks on 28 Nov 2026. The README does not list a dollar price.",
    "key_features": [
-    "Requires Frase: Starter $39/mo (yearly); Professional $103/mo; Scale $239/mo; 7-day trial",
+    "MIT for this docs repository. The README does not list a dollar price for a Frase plan. Checked 28 Nov 2026.",
     "Active",
-    "Research the web",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Write code",
+    "Control a computer",
+    "Research the web"
    ],
-   "pricing": "Requires Frase: Starter $39/mo (yearly); Professional $103/mo; Scale $239/mo; 7-day trial",
+   "pricing": "MIT for this docs repository. The README does not list a dollar price for a Frase plan. Checked 28 Nov 2026.",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -42517,11 +42527,11 @@
    "repo": "frase-io/mcp-server",
    "github_stars": 0,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "research the web",
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "write code",
+    "control a computer",
+    "research the web"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/frase-mcp.png",
@@ -42704,14 +42714,16 @@
    "website": "https://www.lusha.com/",
    "github": "https://github.com/lusha-oss/lusha-mcp-plugin",
    "category": "MCP servers",
-   "description": "Lusha's MCP server for authorized business profile, usage and buying-signal insights in AI tools.",
+   "description": "Lusha MCP lets an assistant search people and companies, enrich a contact or a batch of contacts, and check whether an email can be delivered. The README says some calls are free, and that a paid lookup states its credit cost before it runs. A release on 18 Jun 2026 adds Codex and Cursor plugin support. GitHub recorded MIT, 4 stars and 1 fork on 28 Nov 2026. The README does not print a plan price table.",
    "key_features": [
-    "Requires Lusha: Free plan (40 credits/mo); paid and Scale plans",
+    "MIT. The README says some calls are free and that paid lookups state a credit cost first. It does not print a plan price table. Checked 28 Nov 2026.",
     "Active",
     "4 GitHub stars",
+    "Research the web",
+    "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "Requires Lusha: Free plan (40 credits/mo); paid and Scale plans",
+   "pricing": "MIT. The README says some calls are free and that paid lookups state a credit cost first. It does not print a plan price table. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -42720,7 +42732,8 @@
    "added": "2026-10-18",
    "source": "MCP registry",
    "goals": [
-    "automation"
+    "automation",
+    "support"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -42730,8 +42743,10 @@
    "repo": "lusha-oss/lusha-mcp-plugin",
    "github_stars": 4,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "research the web",
+    "voice & phone calls",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -42911,15 +42926,16 @@
    "website": "https://www.locize.com/docs/integration/mcp",
    "github": "https://github.com/locize/locize-agents",
    "category": "MCP servers",
-   "description": "Locize's MCP server with translation-management tools for keys, translation memory, glossary, styleguides and versions.",
+   "description": "Locize MCP helps a coding agent translate and review copy against a project's glossary, style guide and translation memory. You sign in, and the server can edit translations, publish a version and start an AI review that spends the project's AI credits. It cannot pay, send messages or change who has access. GitHub recorded MIT, 1 star and 1 fork on 28 Nov 2026. The README does not list a dollar price.",
    "key_features": [
-    "Requires Locize: Free $0/mo; Starter $7/mo; Growth $49/mo",
+    "MIT. The README does not list a dollar price. An AI review uses the project's AI credits. Checked 28 Nov 2026.",
     "Active",
     "1 GitHub stars",
+    "Write code",
     "Connect tools via mcp",
     "Give agents memory"
    ],
-   "pricing": "Requires Locize: Free $0/mo; Starter $7/mo; Growth $49/mo",
+   "pricing": "MIT. The README does not list a dollar price. An AI review uses the project's AI credits. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -42928,7 +42944,8 @@
    "added": "2026-10-18",
    "source": "MCP registry",
    "goals": [
-    "automation"
+    "automation",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -42938,8 +42955,9 @@
    "repo": "locize/locize-agents",
    "github_stars": 1,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "write code",
     "connect tools via MCP",
     "give agents memory"
    ],
@@ -43219,7 +43237,6 @@
     "Active",
     "9 GitHub stars",
     "Research the web",
-    "Voice & phone calls",
     "Connect tools via mcp",
     "Logos & branding"
    ],
@@ -43246,7 +43263,6 @@
    "license": "MIT",
    "tags": [
     "research the web",
-    "voice & phone calls",
     "connect tools via MCP",
     "logos & branding"
    ],
@@ -43557,15 +43573,15 @@
    "website": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
    "github": "https://github.com/PandaDoc/mcp-server-guide",
    "category": "MCP servers",
-   "description": "PandaDoc's MCP server for creating, sending, signing and tracking documents from AI assistants.",
+   "description": "PandaDoc MCP lets an assistant check whether a document is signed, read the terms, and create one from a template to send for signature. You sign in with a PandaDoc account. The README says PandaDoc's own document limits still apply. A release on 12 Oct 2026 adds plugin skills for more assistants. GitHub recorded MIT, 3 stars and 0 forks on 28 Nov 2026. The README does not list a dollar price.",
    "key_features": [
-    "Free plan (5 documents/mo); Starter $19/seat/mo; Business $49/seat/mo; Enterprise custom",
+    "MIT. The README does not list a dollar price. PandaDoc document limits still apply. Checked 28 Nov 2026.",
     "Active",
     "3 GitHub stars",
     "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Sales & support"
    ],
-   "pricing": "Free plan (5 documents/mo); Starter $19/seat/mo; Business $49/seat/mo; Enterprise custom",
+   "pricing": "MIT. The README does not list a dollar price. PandaDoc document limits still apply. Checked 28 Nov 2026.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -43584,10 +43600,10 @@
    "repo": "PandaDoc/mcp-server-guide",
    "github_stars": 3,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "connect tools via MCP",
-    "monitor & evaluate agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/pandadoc-mcp.png",
@@ -80955,8 +80971,9 @@
     "Open source + cloud",
     "Mature",
     "48,343 GitHub stars",
-    "Connect tools via mcp",
-    "Give agents memory"
+    "Write code",
+    "Automate workflows",
+    "Connect tools via mcp"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "freemium",
@@ -80978,10 +80995,11 @@
    "repo": "jeecgboot/JeecgBoot",
    "github_stars": 48343,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
-    "connect tools via MCP",
-    "give agents memory"
+    "write code",
+    "automate workflows",
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/jeecgboot.png",
@@ -230858,10 +230876,11 @@
    "website": "https://mcp.senzing.com/",
    "github": "",
    "category": "MCP servers",
-   "description": "Identity Intelligence for Agentic AI Workflows Connect Data. Power Intelligence.™ MCP Server v0.39.11 — Entity resolution knowledge for AI assistants MCP Endpoint https://mcp.senzing.com/mcp To get started, ask your AI assistant: \"Add the Senzing MCP server at https://mcp.senzing.com/mcp\" This is an MCP endpoint for AI tools, not a web page. Use with Claude Desktop, Claude Code, or any MCP-compatible client. No",
+   "description": "Senzing offers identity intelligence for agent workflows. Its MCP server gives an assistant entity-resolution knowledge. The page says this is an MCP endpoint for AI tools, not a web page, and that you can use it with Claude Desktop, Claude Code, or any MCP-compatible client.",
    "key_features": [
     "See site",
     "Active",
+    "Automate workflows",
     "Connect tools via mcp"
    ],
    "pricing": "See site",
@@ -230885,6 +230904,7 @@
    "open_source": false,
    "license": "",
    "tags": [
+    "automate workflows",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -244617,7 +244637,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244660,7 +244680,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244705,7 +244725,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244751,7 +244771,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244797,7 +244817,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244842,7 +244862,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244885,7 +244905,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244928,7 +244948,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -244970,7 +244990,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245013,7 +245033,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245055,7 +245075,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245097,7 +245117,7 @@
    "goals": [],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245142,7 +245162,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245186,7 +245206,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245229,7 +245249,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245272,7 +245292,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245316,7 +245336,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245358,7 +245378,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245400,7 +245420,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245444,7 +245464,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245487,7 +245507,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -245533,7 +245553,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "PDFMathTranslate/PDFMathTranslate",
@@ -245579,7 +245599,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "Fincept-Corporation/FinceptTerminal",
@@ -245625,7 +245645,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "xming521/WeClone",
@@ -245671,7 +245691,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "tonhowtf/omniget",
@@ -245717,7 +245737,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "PurpleDoubleD/locally-uncensored",
@@ -245761,7 +245781,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "mixelpixx/KiCAD-MCP-Server",
@@ -245807,7 +245827,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "ddalcu/mlx-serve",
@@ -245851,7 +245871,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "shinyobjectz/raea",
@@ -245896,7 +245916,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "maxritter/qualitylayer",
@@ -245941,7 +245961,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "yomorun/yomo",
@@ -245984,7 +246004,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "voyager-so/vork",
@@ -246029,7 +246049,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "dstrml/wu",
@@ -246074,7 +246094,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "Tencent/LoopForge",
@@ -246116,7 +246136,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "Tavotto/Tavotto",
@@ -246161,7 +246181,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "AxiomCodeAI/axiomcodegraph",
@@ -246204,7 +246224,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "nuphos/nuphos",
@@ -246249,7 +246269,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "zenbu-labs/terminal-browser",
@@ -252403,7 +252423,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252447,7 +252467,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252490,7 +252510,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252533,7 +252553,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252573,7 +252593,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252612,7 +252632,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252652,7 +252672,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252694,7 +252714,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252736,7 +252756,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252777,7 +252797,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252817,7 +252837,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252859,7 +252879,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252899,7 +252919,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -252939,7 +252959,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -256587,7 +256607,8 @@
    "key_features": [
     "No price on the homepage, checked 26 Nov 2026. The maker filed it as free.",
     "Active",
-    "Research the web"
+    "Research the web",
+    "Connect tools via mcp"
    ],
    "pricing": "No price on the homepage, checked 26 Nov 2026. The maker filed it as free.",
    "price_tag": "free",
@@ -256610,7 +256631,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web"
+    "research the web",
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/lianex.png",
@@ -257442,7 +257464,7 @@
     "Free $0/mo: 100 awake vCPU-hours, 3 concurrent, 5 GB. Pro $20/mo annual or $25 monthly (1,500 vCPU-hours). Team $40/member/mo annual or $48 monthly. Overage $0.05 per awake vCPU-hour. Storage past the allowance $0.15/GB-month, according to its pricing page, checked 27 Nov 2026.",
     "Active",
     "Write code",
-    "Voice & phone calls",
+    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Free $0/mo: 100 awake vCPU-hours, 3 concurrent, 5 GB. Pro $20/mo annual or $25 monthly (1,500 vCPU-hours). Team $40/member/mo annual or $48 monthly. Overage $0.05 per awake vCPU-hour. Storage past the allowance $0.15/GB-month, according to its pricing page, checked 27 Nov 2026.",
@@ -257467,7 +257489,7 @@
    "license": "",
    "tags": [
     "write code",
-    "voice & phone calls",
+    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -257737,7 +257759,6 @@
    "key_features": [
     "60 free minutes. Then $1.25/hr under $20, $1.00/hr from $20, $0.85/hr from $85. 1 credit = 1 minute. Speaker labels 1.5 credits/minute, according to its pricing page, checked 27 Nov 2026.",
     "Active",
-    "Write code",
     "Connect tools via mcp"
    ],
    "pricing": "60 free minutes. Then $1.25/hr under $20, $1.00/hr from $20, $0.85/hr from $85. 1 credit = 1 minute. Speaker labels 1.5 credits/minute, according to its pricing page, checked 27 Nov 2026.",
@@ -257762,7 +257783,6 @@
    "open_source": false,
    "license": "MIT",
    "tags": [
-    "write code",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -257961,7 +257981,6 @@
     "Active",
     "3,697 GitHub stars",
     "Write code",
-    "Build an agent",
     "Connect tools via mcp"
    ],
    "pricing": "MIT. No dollar price was listed in the README or the 29 Oct 2026 release notes. Checked 27 Nov 2026.",
@@ -257988,7 +258007,6 @@
    "license": "MIT",
    "tags": [
     "write code",
-    "build an agent",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -258096,9 +258114,9 @@
    "key_features": [
     "Free to browse and to search through the Catalog MCP. Products are priced by sellers from $5 to $500 in whole US dollars. Sellers pay no listing or monthly fee and a 20% platform fee per sale, plus Stripe processing; the first sellers to publish pay no platform fee for 3 months, according to its selling page, checked 27 Nov 2026.",
     "Active",
-    "Automate the browser",
     "Research the web",
-    "Automate workflows"
+    "Automate workflows",
+    "Connect tools via mcp"
    ],
    "pricing": "Free to browse and to search through the Catalog MCP. Products are priced by sellers from $5 to $500 in whole US dollars. Sellers pay no listing or monthly fee and a 20% platform fee per sale, plus Stripe processing; the first sellers to publish pay no platform fee for 3 months, according to its selling page, checked 27 Nov 2026.",
    "price_tag": "free",
@@ -258121,15 +258139,1195 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate the browser",
     "research the web",
-    "automate workflows"
+    "automate workflows",
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/kurodyne.png",
    "page": "https://agentscouthq.com/tools/kurodyne.html",
    "maker_submitted": true,
-   "submitted": "2026-11-27"
+   "submitted": "2026-11-27",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=kurodyne"
+   }
+  },
+  {
+   "name": "Verdict Protocol",
+   "slug": "verdict-protocol",
+   "url": "https://scriptmasterlabs.com/verdict-protocol",
+   "website": "https://scriptmasterlabs.com/verdict-protocol",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Verdict Protocol is Script Master Labs' paid decision endpoint for an autonomous agent. The agent submits a decision, pays in USDC on Base, and receives a signed receipt. The page on 28 Nov 2026 listed one verdict at 0.005 USDC, a sealed receipt at 0.005 USDC, an evidence pack at 0.01 USDC, and a dispute receipt at 0.05 USDC. There is no subscription and no API key. This listing is not Token Verdict.",
+   "key_features": [
+    "One verdict 0.005 USDC. Sealed receipt 0.005 USDC. Evidence pack 0.01 USDC. Dispute receipt 0.05 USDC. Settled in USDC on Base. No subscription. Checked 28 Nov 2026.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "One verdict 0.005 USDC. Sealed receipt 0.005 USDC. Evidence pack 0.01 USDC. Dispute receipt 0.05 USDC. Settled in USDC on Base. No subscription. Checked 28 Nov 2026.",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/verdict-protocol.png",
+   "page": "https://agentscouthq.com/tools/verdict-protocol.html"
+  },
+  {
+   "name": "OMNIGATE",
+   "slug": "omnigate",
+   "url": "https://scriptmasterlabs.com/omnigate",
+   "website": "https://scriptmasterlabs.com/omnigate",
+   "github": "",
+   "category": "MCP servers",
+   "description": "OMNIGATE is Script Master Labs' payment facilitator for agent calls that settle in USDC on Base and Arc. The fee is a flat 0.005 USDC per settlement. Standard payments inside a daily waiver, 500 a day in total and 100 a day per seller, pay no fee. Past that cap the payment still settles and the fee accrues instead of being refused. Settlement goes to the seller's own wallet, and the page says each settlement mints a receipt for the payer. No account is required to start. This listing is not SqueezeOS, Garage402 or HIVE402.",
+   "key_features": [
+    "0.005 USDC per settlement, waived inside 500 settlements a day in total and 100 a day per seller. Past the cap the fee accrues and the payment still settles. Checked 28 Nov 2026.",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "0.005 USDC per settlement, waived inside 500 settlements a day in total and 100 a day per seller. Past the cap the fee accrues and the payment still settles. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/omnigate.png",
+   "page": "https://agentscouthq.com/tools/omnigate.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-28"
+  },
+  {
+   "name": "ClaimGate",
+   "slug": "claimgate",
+   "url": "https://scriptmasterlabs.com/claimgate",
+   "website": "https://scriptmasterlabs.com/claimgate",
+   "github": "",
+   "category": "MCP servers",
+   "description": "ClaimGate fact-checks a claim against live web sources and returns a verdict of supported, contradicted, mixed or unverifiable, with quotes checked against the fetched text. The pricing glance on 28 Nov 2026 says one check is 0.005 USDC on Base. The same page says a live check on 18 Nov 2026 quoted 0.03 USDC, and that the published proof checks paid 0.03 USDC. Preview, status, methodology and receipt reads are free. There is no subscription. This listing is not Verdict Protocol.",
+   "key_features": [
+    "Pricing glance: 0.005 USDC per check. The same page says a live check on 18 Nov 2026 quoted 0.03 USDC, and the proof checks paid 0.03 USDC. Preview and receipt reads are free. Checked 28 Nov 2026.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Pricing glance: 0.005 USDC per check. The same page says a live check on 18 Nov 2026 quoted 0.03 USDC, and the proof checks paid 0.03 USDC. Preview and receipt reads are free. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/claimgate.png",
+   "page": "https://agentscouthq.com/tools/claimgate.html"
+  },
+  {
+   "name": "Agent Verify",
+   "slug": "agent-verify",
+   "url": "https://scriptmasterlabs.com/agent-verify/live",
+   "website": "https://scriptmasterlabs.com/agent-verify/live",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Agent Verify is Script Master Labs' public board of AI agent work that has been checked and settled on Circle Arc. A job appears in the ledger only after it is verified. Until the first verified job lands, the board stays empty rather than showing sample rows. The page separates verified entries from activity that was only observed. On 28 Nov 2026 the live board did not list a dollar price. An MCP server can look up records, the ledger and service status.",
+   "key_features": [
+    "The live board did not list a dollar price on 28 Nov 2026.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "The live board did not list a dollar price on 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-verify.png",
+   "page": "https://agentscouthq.com/tools/agent-verify.html"
+  },
+  {
+   "name": "ClipShrink",
+   "slug": "clipshrink",
+   "url": "https://clipshrink.app/",
+   "website": "https://clipshrink.app/",
+   "github": "",
+   "category": "productivity",
+   "description": "ClipShrink compresses video in the browser and also sells credit-based AI tools. Device files stay on the device for local compression, trimming, cropping, audio conversion, and image or PDF compression, and those local tools do not use credits. The AI side includes a video-to-text transcription, a video translator, a PDF translator and an image translator. Transcription costs 1 credit per started minute. Signup includes 10 welcome credits. The pricing page on 28 Nov 2026 listed a $9 pack of 750 credits and a $19 pack of 2,000 credits, one-time, with a 7-day refund on an unused pack, and it said checkout was not open yet.",
+   "key_features": [
+    "10 welcome credits at signup. Starter $9 for 750 credits. Creator $19 for 2,000 credits. One-time. Transcription is 1 credit per started minute. Checkout was not open yet on the pricing page, 28 Nov 2026.",
+    "Active",
+    "Automate the browser"
+   ],
+   "pricing": "10 welcome credits at signup. Starter $9 for 750 credits. Creator $19 for 2,000 credits. One-time. Transcription is 1 credit per started minute. Checkout was not open yet on the pricing page, 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/clipshrink.png",
+   "page": "https://agentscouthq.com/tools/clipshrink.html"
+  },
+  {
+   "name": "Nest & Pixel",
+   "slug": "nest-pixel",
+   "url": "https://nestandpixel.com/photo/",
+   "website": "https://nestandpixel.com/photo/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "Nest & Pixel's photo lab corrects a real photo of a room, a dish or a shop, then exports the sizes listing sites ask for. Enhance-only edits change light, colour and verticals and are rejected if a real object moves. You can also ask for clutter removal, a made bed, a tidy table, a blue sky or a dusk shot, which the real-estate page says count as alterations under California's listing-photo rules. The first photo is free. Packs are 10 photos for $19, 25 for $39 and 60 for $79, with two free revisions and no subscription. The studio's websites start from £600 with no monthly fee. This listing is the photo lab.",
+   "key_features": [
+    "First photo free. 10 photos $19, 25 photos $39, 60 photos $79. Two free revisions. No subscription. Studio websites from £600 with no monthly fee. Checked 28 Nov 2026.",
+    "Active",
+    "Edit photos",
+    "Real estate photos",
+    "Product photos"
+   ],
+   "pricing": "First photo free. 10 photos $19, 25 photos $39, 60 photos $79. Two free revisions. No subscription. Studio websites from £600 with no monthly fee. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit photos",
+    "real estate photos",
+    "product photos"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nest-pixel.png",
+   "page": "https://agentscouthq.com/tools/nest-pixel.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-28"
+  },
+  {
+   "name": "TunedGift",
+   "slug": "tunedgift",
+   "url": "https://tunedgift.com/",
+   "website": "https://tunedgift.com/",
+   "github": "",
+   "category": "music production",
+   "description": "TunedGift writes a personalized song from a memory you share, for a birthday, anniversary, wedding or other occasion. You review the lyrics, hear a one-minute preview, and pay only if you want the finished gift. The pricing page on 28 Nov 2026 listed one song at US$34.99, a second song at US$29 more, Pro at US$46.99 a month for 3 songs, and Platinum at US$219.99 a year (US$18.33 a month) for unlimited songs that year, plus wall art and videos on the monthly plans.",
+   "key_features": [
+    "Free preview. One song US$34.99. Second song +US$29. Pro US$46.99 a month for 3 songs. Platinum US$219.99 a year. Checked 28 Nov 2026.",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Free preview. One song US$34.99. Second song +US$29. Pro US$46.99 a month for 3 songs. Platinum US$219.99 a year. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tunedgift.png",
+   "page": "https://agentscouthq.com/tools/tunedgift.html"
+  },
+  {
+   "name": "Anxinzhuan",
+   "slug": "anxinzhuan",
+   "url": "https://anxinzhuan.cn/",
+   "website": "https://anxinzhuan.cn/",
+   "github": "",
+   "category": "voice",
+   "description": "Anxinzhuan (安心转) is an offline speech-to-text app for Windows, Mac, Linux and Android. It batches audio and video on the device, keeps speaker labels and timestamps, and can be called over a local MCP server. Files are not uploaded. The homepage says Chinese and English are the languages it focuses on, and the download is free. No paid price was on the homepage on 28 Nov 2026. It is a different product from VocoType, which types into the app you are using. Anxinzhuan is for batch transcripts of recordings you already have.",
+   "key_features": [
+    "Free download. No paid price was on the homepage on 28 Nov 2026.",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free download. No paid price was on the homepage on 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/anxinzhuan.png",
+   "page": "https://agentscouthq.com/tools/anxinzhuan.html"
+  },
+  {
+   "name": "Sheru Bhai AI Photo Generator",
+   "slug": "sheru-bhai-ai-photo-generator",
+   "url": "https://sherubhaiaiphoto.com/",
+   "website": "https://sherubhaiaiphoto.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "Sheru Bhai AI Photo Generator turns a portrait you upload into a photo with Sheru Bhai, a fictional lion character in a white suit. You pick a scene such as a palace, a red carpet or a cricket ground. No prompt writing is required. A verified account gets one free photo at the lowest resolution, once, and at most 30 new trial credits are granted across the site per day. Higher resolutions use more credits. Packs of 3, 10, 25 and 60 credits do not expire, and there is no subscription. Dollar prices were not printed on the pricing page on 28 Nov 2026. Finished photos stay in your account for 30 days. A failed try returns the credits.",
+   "key_features": [
+    "One free lowest-resolution photo per verified account. Packs of 3, 10, 25 and 60 credits. Higher resolutions use 2 or 3 credits. Dollar prices were not in the page text on 28 Nov 2026.",
+    "Active",
+    "Generate images"
+   ],
+   "pricing": "One free lowest-resolution photo per verified account. Packs of 3, 10, 25 and 60 credits. Higher resolutions use 2 or 3 credits. Dollar prices were not in the page text on 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sheru-bhai-ai-photo-generator.png",
+   "page": "https://agentscouthq.com/tools/sheru-bhai-ai-photo-generator.html"
+  },
+  {
+   "name": "Conecto",
+   "slug": "conecto",
+   "url": "https://conecto.chat/",
+   "website": "https://conecto.chat/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Conecto gives an assistant a small-business back office: contacts and deals, email, phone, invoices and books, across the areas the homepage groups as 52. The agent pays per call from one balance. A new account starts with $1 of credit. Changing a record costs $0.01, and reading your own data is free up to one million reads. Top-ups run from $5 to $5,000 with a 7% fee plus $0.35. There is no subscription. The bookkeeping tool already has its own listing. This page is the wider product.",
+   "key_features": [
+    "Starts with $1 of credit. $0.01 per change. Reads free up to 1,000,000. Top-ups $5 to $5,000 plus a 7% fee and $0.35. No subscription. Checked 28 Nov 2026.",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Starts with $1 of credit. $0.01 per change. Reads free up to 1,000,000. Top-ups $5 to $5,000 plus a 7% fee and $0.35. No subscription. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/conecto.png",
+   "page": "https://agentscouthq.com/tools/conecto.html"
+  },
+  {
+   "name": "Vertov",
+   "slug": "vertov",
+   "url": "https://vertov.app/docs/mcp",
+   "website": "https://vertov.app/docs/mcp",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Vertov records a screen, transcribes it, and lets Claude, ChatGPT or Codex read the video as a brief. The MCP server, after you sign in, can list videos, read a transcript and upload a recording for a share link. The pricing page on 28 Nov 2026 listed Free at $0 a month for 180 minutes, Pro at $9 a month or $90 a year for 25 hours, Team at $29 a month or $290 a year for 125 hours, and Business from $99 a month or $990 a year for 500 hours. Extra seats are not charged. The MCP docs say free workspaces share 3 AI runs a month.",
+   "key_features": [
+    "Free $0 for 180 minutes. Pro $9 a month or $90 a year. Team $29 a month or $290 a year. Business from $99 a month or $990 a year. Seats are free. Checked 28 Nov 2026.",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free $0 for 180 minutes. Pro $9 a month or $90 a year. Team $29 a month or $290 a year. Business from $99 a month or $990 a year. Seats are free. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vertov.png",
+   "page": "https://agentscouthq.com/tools/vertov.html"
+  },
+  {
+   "name": "Text Match Cut Art",
+   "slug": "text-match-cut-art",
+   "url": "https://textmatchcut.art/",
+   "website": "https://textmatchcut.art/",
+   "github": "",
+   "category": "video generation",
+   "description": "Text Match Cut Art turns a short phrase into a fast newspaper-style video. The words stay in place while headlines and layouts change around them. You can preview a square, vertical or landscape frame and download it with no sign-up, no ads and no watermark. The generator is free. The same site also links to other AI video and image tools. This listing is only the text match cut generator.",
+   "key_features": [
+    "Free. No sign-up, no ads and no watermark. Checked 28 Nov 2026.",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Free. No sign-up, no ads and no watermark. Checked 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "Reviewed submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/text-match-cut-art.png",
+   "page": "https://agentscouthq.com/tools/text-match-cut-art.html"
+  },
+  {
+   "name": "OpenDesign",
+   "slug": "opendesign",
+   "url": "https://open-design.ai",
+   "website": "https://open-design.ai",
+   "github": "https://github.com/nexu-io/open-design",
+   "category": "graphic design & branding",
+   "description": "OpenDesign is a local-first workspace where a team and coding agents make prototypes, sites, decks, images and video together. The repository is Apache-2.0. The README's star celebration says the first month of Go credits is $8, with up to $120 in monthly credits for eligible models, and that personal plans include API access for coding agents. GitHub nexu-io/open-design recorded Apache-2.0, 109,957 stars and 12,400 forks on 28 Nov 2026. It is a different repository from the html-video and html-anything tools on the same site.",
+   "key_features": [
+    "Apache-2.0. README offer checked 28 Nov 2026: first month of Go credits $8, up to $120 in monthly credits for eligible models.",
+    "Mature",
+    "109,957 GitHub stars",
+    "Design graphics",
+    "Ui design"
+   ],
+   "pricing": "Apache-2.0. README offer checked 28 Nov 2026: first month of Go credits $8, up to $120 in monthly credits for eligible models.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "nexu-io/open-design",
+   "github_stars": 109957,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "design graphics",
+    "UI design"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/opendesign.png",
+   "page": "https://agentscouthq.com/tools/opendesign.html"
+  },
+  {
+   "name": "agent-browser",
+   "slug": "agent-browser",
+   "url": "https://agent-browser.dev",
+   "website": "https://agent-browser.dev",
+   "github": "https://github.com/vercel-labs/agent-browser",
+   "category": "browser/computer use",
+   "description": "agent-browser is Vercel Labs' Apache-2.0 command-line tool that lets an AI agent open a page, read it as an accessibility tree, and act on elements from the shell. It is the browser tool. Agent Desktop, already listed, is the separate computer-use layer for desktop apps on the same site. GitHub vercel-labs/agent-browser recorded Apache-2.0, 54,397 stars and 3,793 forks on 28 Nov 2026. The README does not list a dollar price.",
+   "key_features": [
+    "Apache-2.0. The README does not list a dollar price. Checked 28 Nov 2026.",
+    "Mature",
+    "54,397 GitHub stars",
+    "Automate the browser",
+    "Control a computer",
+    "Automate workflows"
+   ],
+   "pricing": "Apache-2.0. The README does not list a dollar price. Checked 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "vercel-labs/agent-browser",
+   "github_stars": 54397,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "automate the browser",
+    "control a computer",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-browser.png",
+   "page": "https://agentscouthq.com/tools/agent-browser.html"
+  },
+  {
+   "name": "video-use",
+   "slug": "video-use",
+   "url": "https://video-use.com",
+   "website": "https://video-use.com",
+   "github": "https://github.com/browser-use/video-use",
+   "category": "video generation",
+   "description": "video-use lets a coding agent edit raw footage on your machine: it can generate video output from a folder of clips, drop filler words, and grade the color. The README says it is MIT and fully open source, and that a cloud version is on a waitlist. No dollar price was in the README section checked on 28 Nov 2026. GitHub browser-use/video-use recorded MIT, 31,690 stars and 3,666 forks that day.",
+   "key_features": [
+    "MIT. No dollar price in the README section checked on 28 Nov 2026. Cloud hosting was still a waitlist.",
+    "Mature",
+    "31,690 GitHub stars",
+    "Edit video",
+    "Generate video",
+    "Visual effects"
+   ],
+   "pricing": "MIT. No dollar price in the README section checked on 28 Nov 2026. Cloud hosting was still a waitlist.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "browser-use/video-use",
+   "github_stars": 31690,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "edit video",
+    "generate video",
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/video-use.png",
+   "page": "https://agentscouthq.com/tools/video-use.html"
+  },
+  {
+   "name": "Multica",
+   "slug": "multica",
+   "url": "https://multica.ai",
+   "website": "https://multica.ai",
+   "github": "https://github.com/multica-ai/multica",
+   "category": "coding",
+   "description": "Multica is a shared task board where people and AI coding agents work as teammates. You assign an issue, the agent reports progress, and a person reviews the result. The README calls it source-available and self-hostable. GitHub records the license as NOASSERTION, so this listing does not call it an OSI license. GitHub multica-ai/multica showed 58,253 stars and 7,667 forks on 28 Nov 2026. The README section checked that day did not list a dollar price.",
+   "key_features": [
+    "License SPDX NOASSERTION. Source-available and self-hostable. No dollar price in the README section checked on 28 Nov 2026.",
+    "Mature",
+    "58,253 GitHub stars",
+    "Write code",
+    "Voice & phone calls"
+   ],
+   "pricing": "License SPDX NOASSERTION. Source-available and self-hostable. No dollar price in the README section checked on 28 Nov 2026.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "multica-ai/multica",
+   "github_stars": 58253,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/multica.png",
+   "page": "https://agentscouthq.com/tools/multica.html"
+  },
+  {
+   "name": "iFixAi",
+   "slug": "ifixai",
+   "url": "https://www.ifixai.ai",
+   "website": "https://www.ifixai.ai",
+   "github": "https://github.com/ifixai-ai/iFixAi",
+   "category": "evals & observability",
+   "description": "iFixAi is an independent auditor for AI agents. A person or the agent itself can run a check on whether the agent did what it was supposed to do. The repository is Apache-2.0. GitHub ifixai-ai/iFixAi recorded Apache-2.0, 47,714 stars and 1,844 forks on 28 Nov 2026. The README section checked that day did not list a dollar price.",
+   "key_features": [
+    "Apache-2.0. No dollar price in the README section checked on 28 Nov 2026.",
+    "Mature",
+    "47,714 GitHub stars",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Apache-2.0. No dollar price in the README section checked on 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ifixai-ai/iFixAi",
+   "github_stars": 47714,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ifixai.png",
+   "page": "https://agentscouthq.com/tools/ifixai.html"
+  },
+  {
+   "name": "ToolJet",
+   "slug": "tooljet",
+   "url": "https://tooljet.com",
+   "website": "https://tooljet.com",
+   "github": "https://github.com/ToolJet/ToolJet",
+   "category": "app builders",
+   "description": "ToolJet is an open-source builder for internal tools, dashboards and business apps on data you already have. ToolJet AI turns a description into pages and queries, and a coding agent can build through ToolJet's MCP server against the real component contracts. You can self-host it or use ToolJet Cloud. The repository is AGPL-3.0. GitHub ToolJet/ToolJet recorded AGPL-3.0, 41,320 stars and 5,525 forks on 28 Nov 2026. The README section checked that day did not list a cloud price.",
+   "key_features": [
+    "AGPL-3.0. Self-host or ToolJet Cloud. No cloud price in the README section checked on 28 Nov 2026.",
+    "Mature",
+    "41,320 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "AGPL-3.0. Self-host or ToolJet Cloud. No cloud price in the README section checked on 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ToolJet/ToolJet",
+   "github_stars": 41320,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tooljet.png",
+   "page": "https://agentscouthq.com/tools/tooljet.html"
+  },
+  {
+   "name": "Perplexity API MCP",
+   "slug": "perplexity-api-mcp",
+   "url": "https://docs.perplexity.ai/guides/mcp-server",
+   "website": "https://docs.perplexity.ai/guides/mcp-server",
+   "github": "https://github.com/perplexityai/modelcontextprotocol",
+   "category": "MCP servers",
+   "description": "Perplexity API MCP is Perplexity's official MCP server for the API platform. An assistant calls it with an API key. The repository is MIT. GitHub perplexityai/modelcontextprotocol recorded MIT, 2,663 stars and 399 forks on 28 Nov 2026. The README does not list a separate dollar price for the server. API usage is billed by Perplexity and was not copied here. This listing is the API server, not the Perplexity SPACE sandbox.",
+   "key_features": [
+    "MIT for the server. The README does not list a server price. API usage is separate and was not copied. Checked 28 Nov 2026.",
+    "Active",
+    "2,663 GitHub stars",
+    "Write code",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "MIT for the server. The README does not list a server price. API usage is separate and was not copied. Checked 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "perplexityai/modelcontextprotocol",
+   "github_stars": 2663,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/perplexity-api-mcp.png",
+   "page": "https://agentscouthq.com/tools/perplexity-api-mcp.html"
+  },
+  {
+   "name": "CodeGraph",
+   "slug": "codegraph",
+   "url": "https://colbymchenry.github.io/codegraph/",
+   "website": "https://colbymchenry.github.io/codegraph/",
+   "github": "https://github.com/colbymchenry/codegraph",
+   "category": "coding",
+   "description": "CodeGraph builds a local knowledge graph of a codebase and keeps it in sync as the code changes, so a coding agent can pull a smaller, more exact slice of context. The README says it stays on your machine and works with Claude Code, Codex, Cursor, Gemini and other coding agents. The repository is MIT. GitHub colbymchenry/codegraph recorded MIT, 79,005 stars and 5,271 forks on 28 Nov 2026. The README section checked that day did not list a dollar price.",
+   "key_features": [
+    "MIT. Local. No dollar price in the README section checked on 28 Nov 2026.",
+    "Mature",
+    "79,005 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "MIT. Local. No dollar price in the README section checked on 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "colbymchenry/codegraph",
+   "github_stars": 79005,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/codegraph.png",
+   "page": "https://agentscouthq.com/tools/codegraph.html"
+  },
+  {
+   "name": "OpenShorts",
+   "slug": "openshorts",
+   "url": "https://www.openshorts.app/",
+   "website": "https://www.openshorts.app/",
+   "github": "https://github.com/mutonby/openshorts",
+   "category": "video generation",
+   "description": "OpenShorts turns a long video into vertical shorts with moment detection, face tracking, subtitles and dubbing, and it can generate video clips for TikTok and Reels. You can self-host it for free under MIT, with no watermark. The hosted cloud has a free plan (the first video up to 60 minutes, then 20 minutes a month, with a watermark) and paid plans from $12 a month that remove the watermark. The README also lists a $12 plan at 100 minutes a month. GitHub mutonby/openshorts recorded MIT, 10,004 stars and 2,130 forks on 28 Nov 2026.",
+   "key_features": [
+    "MIT to self-host. Cloud free plan, then paid from $12 a month (100 minutes on that tier). Checked 28 Nov 2026.",
+    "Mature",
+    "10,004 GitHub stars",
+    "Generate video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "MIT to self-host. Cloud free plan, then paid from $12 a month (100 minutes on that tier). Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "mutonby/openshorts",
+   "github_stars": 10004,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "generate video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openshorts.png",
+   "page": "https://agentscouthq.com/tools/openshorts.html"
+  },
+  {
+   "name": "MR Office",
+   "slug": "mr-office",
+   "url": "https://mroffice.ai",
+   "website": "https://mroffice.ai",
+   "github": "https://github.com/XinaTian/MROffice",
+   "category": "productivity",
+   "description": "MR Office is an AI office suite for Word, Excel, PowerPoint and PDF files, on the web and in a free desktop app, with an assistant that edits the file itself and shows the change before you keep it. The editors' source is AGPL-3.0. Individuals and small teams can use the online and desktop apps free, with a free daily AI allowance. Heavier hosted use is Starter at US$29 a month for 5,000 sessions or Pro at US$149 a month for 40,000 sessions. GitHub XinaTian/MROffice recorded AGPL-3.0, 5,338 stars and 437 forks on 28 Nov 2026.",
+   "key_features": [
+    "AGPL-3.0 editors. Free for individuals, with a daily AI allowance. Hosted Starter US$29 a month, Pro US$149 a month. Checked 28 Nov 2026.",
+    "Mature",
+    "5,338 GitHub stars",
+    "Control a computer",
+    "Automate workflows"
+   ],
+   "pricing": "AGPL-3.0 editors. Free for individuals, with a daily AI allowance. Hosted Starter US$29 a month, Pro US$149 a month. Checked 28 Nov 2026.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "XinaTian/MROffice",
+   "github_stars": 5338,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "control a computer",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mr-office.png",
+   "page": "https://agentscouthq.com/tools/mr-office.html"
+  },
+  {
+   "name": "AI Website Cloner",
+   "slug": "ai-website-cloner",
+   "url": "https://clonetheweb.com",
+   "website": "https://clonetheweb.com",
+   "github": "https://github.com/JCodesMore/ai-website-cloner-template",
+   "category": "coding",
+   "description": "AI Website Cloner is an MIT template. You give a coding agent a public page and it rebuilds that page as a Next.js app. The README says the best results are with Claude Code, and that Codex, Cursor and OpenCode also work. GitHub JCodesMore/ai-website-cloner-template recorded MIT, 39,922 stars and 5,937 forks on 28 Nov 2026. The README section checked that day did not list a dollar price.",
+   "key_features": [
+    "MIT. No dollar price in the README section checked on 28 Nov 2026.",
+    "Mature",
+    "39,922 GitHub stars",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "MIT. No dollar price in the README section checked on 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "JCodesMore/ai-website-cloner-template",
+   "github_stars": 39922,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-website-cloner.png",
+   "page": "https://agentscouthq.com/tools/ai-website-cloner.html"
+  },
+  {
+   "name": "Supergateway",
+   "slug": "supergateway",
+   "url": "https://github.com/supercorp-ai/supergateway",
+   "website": "",
+   "github": "https://github.com/supercorp-ai/supergateway",
+   "category": "agent infra",
+   "description": "Supergateway runs a local MCP server, the kind that only speaks over standard input, so a remote client can reach it over server-sent events or WebSockets. One command does the bridge. The repository is MIT. It has no separate product site. GitHub supercorp-ai/supergateway recorded MIT, 2,989 stars and 271 forks on 28 Nov 2026. The README does not list a dollar price.",
+   "key_features": [
+    "MIT. No dollar price in the README. Checked 28 Nov 2026.",
+    "Active",
+    "2,989 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "MIT. No dollar price in the README. Checked 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "supercorp-ai/supergateway",
+   "github_stars": 2989,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/supergateway.png",
+   "page": "https://agentscouthq.com/tools/supergateway.html"
+  },
+  {
+   "name": "Spec Workflow MCP",
+   "slug": "spec-workflow-mcp",
+   "url": "https://github.com/Pimzino/spec-workflow-mcp",
+   "website": "",
+   "github": "https://github.com/Pimzino/spec-workflow-mcp",
+   "category": "MCP servers",
+   "description": "Spec Workflow MCP is a GPL-3.0 server for spec-driven development. It gives a coding agent a structured workflow plus a web dashboard and a VS Code extension so you can watch the work. The README says the maintainer has paused updates for personal reasons and plans to return. The repository was still public on 28 Nov 2026. GitHub Pimzino/spec-workflow-mcp recorded GPL-3.0, 4,305 stars and 360 forks that day. The README does not list a dollar price.",
+   "key_features": [
+    "GPL-3.0. No dollar price in the README. The maintainer says updates are paused. Checked 28 Nov 2026.",
+    "Active",
+    "4,305 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "GPL-3.0. No dollar price in the README. The maintainer says updates are paused. Checked 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Pimzino/spec-workflow-mcp",
+   "github_stars": 4305,
+   "open_source": true,
+   "license": "GPL-3.0",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/spec-workflow-mcp.png",
+   "page": "https://agentscouthq.com/tools/spec-workflow-mcp.html"
+  },
+  {
+   "name": "Markdownify MCP",
+   "slug": "markdownify-mcp",
+   "url": "https://github.com/zcaceres/markdownify-mcp",
+   "website": "",
+   "github": "https://github.com/zcaceres/markdownify-mcp",
+   "category": "MCP servers",
+   "description": "Markdownify MCP converts PDFs, images, audio, Word, Excel, PowerPoint and web pages into Markdown so an assistant can read them. Audio conversion includes a transcript. The repository is MIT and has no separate product site. GitHub zcaceres/markdownify-mcp recorded MIT, 3,009 stars and 253 forks on 28 Nov 2026. The README section checked that day did not list a dollar price.",
+   "key_features": [
+    "MIT. No dollar price in the README section checked on 28 Nov 2026.",
+    "Active",
+    "3,009 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "MIT. No dollar price in the README section checked on 28 Nov 2026.",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "zcaceres/markdownify-mcp",
+   "github_stars": 3009,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/markdownify-mcp.png",
+   "page": "https://agentscouthq.com/tools/markdownify-mcp.html"
+  },
+  {
+   "name": "PAL MCP",
+   "slug": "pal-mcp",
+   "url": "https://github.com/BeehiveInnovations/pal-mcp-server",
+   "website": "",
+   "github": "https://github.com/BeehiveInnovations/pal-mcp-server",
+   "category": "MCP servers",
+   "description": "PAL MCP, formerly Zen MCP, is a provider layer that lets one coding CLI use several model providers in the same workflow, including Claude, Gemini, OpenAI, OpenRouter, Azure, Grok and a local model. GitHub records the license as NOASSERTION, so this listing does not call it an OSI license. There is no separate product site. GitHub BeehiveInnovations/pal-mcp-server showed 11,865 stars and 1,041 forks on 28 Nov 2026. The README section checked that day did not list a dollar price. You still pay the model providers you connect.",
+   "key_features": [
+    "License SPDX NOASSERTION. No dollar price in the README section checked on 28 Nov 2026. Model provider fees are separate.",
+    "Mature",
+    "11,865 GitHub stars",
+    "Write code",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "License SPDX NOASSERTION. No dollar price in the README section checked on 28 Nov 2026. Model provider fees are separate.",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-28",
+   "added": "2026-11-28",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "BeehiveInnovations/pal-mcp-server",
+   "github_stars": 11865,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pal-mcp.png",
+   "page": "https://agentscouthq.com/tools/pal-mcp.html"
   }
  ]
 }

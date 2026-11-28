@@ -357,6 +357,12 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .fnote{font-size:.8rem;opacity:.75;margin:10px 0 0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .card.fcard .tn{padding-right:84px}
+/* Portrait phones at larger text: the featured label's padding must stay inside the card. */
+@media(max-width:430px){
+  .card.fcard .ct{min-width:0;max-width:100%}
+  .card.fcard .tn{flex:1 1 0;min-width:0;max-width:100%;overflow:hidden}
+  .card.fcard h3{overflow-wrap:anywhere}
+}
 
 .addedago{margin:6px 0 0;font-size:12px;color:var(--faint)}
 /* Oct 18 2026: portrait phones (nav links wrap) - "Submit a tool" gets its own row, centered. The hidden Saved link becomes an invisible full-width line break. Landscape/tablet/desktop unchanged. */

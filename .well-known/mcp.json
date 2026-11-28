@@ -10,7 +10,7 @@
     "title": "AgentScout directory",
     "version": "1.0.2"
   },
-  "description": "Read-only search over 6,098 AI agent tools and 3,222 MCP servers listed on AgentScout (com.agentscouthq/directory at https://mcp.agentscouthq.com/mcp). 100% free, public, no authentication or x402 wallet required.",
+  "description": "Read-only search over 6,125 AI agent tools and 3,232 MCP servers listed on AgentScout (com.agentscouthq/directory at https://mcp.agentscouthq.com/mcp). 100% free, public, no authentication or x402 wallet required.",
   "documentationUrl": "https://agentscouthq.com/mcp/connect.html",
   "transport": {
     "type": "streamable-http",
@@ -44,7 +44,7 @@
     },
     {
       "name": "list_packages",
-      "description": "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, $49 category pin, $99/wk sponsor), and the Made by AgentScout pre-trained bot lineup. The $99 weekly sponsorship includes submissions to about 25 other AI directories, with a report of the links."
+      "description": "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Google sitemap submission and a Bing and IndexNow ping, $49 category pin, $99/wk sponsor), and the Made by AgentScout pre-trained bot lineup. The $99 weekly sponsorship includes submissions to about 25 other AI directories, with a report of the links."
     }
   ]
 }
