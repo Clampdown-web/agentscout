@@ -1,7 +1,55 @@
 {
- "updated": "2026-11-27T04:33:30Z",
+ "updated": "2026-11-28T04:23:01Z",
  "days": 30,
  "items": [
+  {
+   "title": "Pinned iPhone chats are filling up with AI agents",
+   "source": "Business Insider",
+   "url": "https://www.businessinsider.com/ai-agents-pinned-imessage-contacts-2026-11",
+   "date": "2026-11-28T09:55:01Z",
+   "tool": null,
+   "summary": "Business Insider asked six investors and founders to show the chats pinned in iPhone Messages, and AI agents took most of the slots. Taylor Desseyn, a community lead at Torc, pins five agents and his wife: a Skydive assistant he treats as a chief of staff, Instinct for expenses and flights, and others for reminders and creative work. David Pawlan at Merit Systems uses all nine pins for agents he is testing. Others pin Instinct, a money agent called Flip, and a social agent, and one founder pins only Instinct. Meta's Muse is called out as an agent that still needs its own app, while these others live in Messages."
+  },
+  {
+   "title": "Convex changes agent skills after a prompt-upload complaint",
+   "source": "GitHub",
+   "url": "https://github.com/convex/convex-backend-skill/issues/64",
+   "date": "2026-11-28T06:38:18Z",
+   "tool": null,
+   "summary": "On 28 November 2026 Convex updated the Claude skills in its plugin after a Hacker News thread about an October complaint. The quickstart skill still sends a person's one-sentence project idea to Convex so it can write a setup guide. The README now says that idea is deleted after 24 hours. Convex removed the note that told the agent to split a download and a run because safety checks block one command that does both. The skills now say to tell the person what the script does and never reword a command to get past a permission prompt. Convex's chief executive wrote on the thread that the upload is how quickstart starts a project and that the prompt is thrown away within 30 seconds of that choice. The issue is still open."
+  },
+  {
+   "title": "Pi coding agent drafts a sign-in for a Google AI plan",
+   "source": "GitHub",
+   "url": "https://github.com/earendil-works/pi/pull/12614",
+   "date": "2026-11-28T05:42:49Z",
+   "tool": null,
+   "summary": "Hacker News discussed an open draft for the Pi coding agent that would let a person sign in with a Google AI Ultra plan and use that plan's model quota instead of a separate API key. Pi's notes in the draft say Google approved a sign-in client for Pi alone, and that other apps must register their own. The draft was still open and not merged on 28 November 2026, and Google has not published its own notice of the approval. The sign-in keeps a key on the person's machine and uses it when refreshing access."
+  },
+  {
+   "title": "SessionGraph maps coding-agent sessions on one local graph",
+   "source": "AI Agent News",
+   "url": "https://aiagentnews.io/stories/sessiongraph-visualizes-coding-agent-sessions-from-one-local-index",
+   "date": "2026-11-28T02:05:34Z",
+   "tool": null,
+   "summary": "SessionGraph gathers sessions from coding agents such as Claude Code, Codex, and Cursor into one graph and a search index on the person's own computer. The project says it reads each tool's session store and can be started as a desktop app. Search can run in the app, through a local request, or through an MCP tool the agent can call. It also offers a way to compare graphs with other people, and installers for Mac, Windows, and Linux. The index stays on the machine, according to the project."
+  },
+  {
+   "title": "OpenAI is building a data layer so business agents guess less",
+   "source": "The Decoder",
+   "url": "https://the-decoder.com/openai-is-building-athena-data-platform-to-cut-down-on-ai-agent-guesswork/",
+   "date": "2026-11-27T16:05:23Z",
+   "tool": null,
+   "summary": "The Decoder reports that OpenAI is building a data platform, codenamed Athena, so its agents are more accurate with business numbers. The Information says it works like a shared dictionary for measures such as revenue and customer count. At least one customer found the data-analysis agent in ChatGPT Work was not accurate enough. A person familiar with the plans says OpenAI wants agents that collect and update those business rules so other agents do not start from scratch. The platform is still early, and OpenAI has not given a date or a price. Snowflake and Databricks already sell their own versions of this layer."
+  },
+  {
+   "title": "nextesy raises $10.4 million for agents that keep the books",
+   "source": "Tech Startups",
+   "url": "https://techstartups.com/2026/11/27/swiss-ai-startup-nextesy-raises-10-4m-to-automate-accounting-payroll-and-business-administration-with-ai-agents/",
+   "date": "2026-11-27T15:57:58Z",
+   "tool": null,
+   "summary": "Tech Startups reports that Zurich-based nextesy raised a $10.4 million seed round led by Swisscom Ventures, with HIAG Beteiligung Holding, Fifth Quarter Ventures, Herbert VC, Look AI Ventures, and angel investors. The company said it announced the round on Thursday. Its platform combines accounting, payroll, and invoicing for small firms, freelancers, and fiduciaries, and it says it has more than 2,000 customers. It plans to build more autonomous agents and expand abroad in 2027. Fully automated year-end closing is still a goal, not a feature the company says is working."
+  },
   {
    "title": "Switzerland says AI agents broke into four of five targets",
    "source": "The Next Web",
@@ -1171,75 +1219,6 @@
    "tool": "amp",
    "summary": "Amp's remote agents can now call in short-lived cloud Macs for iOS and macOS builds and simulators while doing the rest of the work on Linux; Quinn Slack says agents only needed a Mac about 35% of the time, making macOS work faster and cheaper.",
    "page": "news/2026/10/amp-adds-macos-satellites-so-cloud-coding-agents-can-borrow-a-mac.html"
-  },
-  {
-   "title": "Who Owns the AI Agent? What Veeam's Trust Gap Research Says About Rogue AI Detection",
-   "source": "Daily Cal",
-   "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOZ3RTMTFrQlRpeGpCM3NMRjVuV0YyMDR1SFdrNjctc2NoQV9OVF9Mck9IYWdEMmdYZHFkdHFTTXlvb2lnUk1tZFdpVjdLTGxHcUliY1otdlBBSENPbEJQVlY3QWdhdVJCNHA0bWpwOTY2TUx6ZS1RT2Rka2lLZDVzNmRFLXRtNnVGRXhKYWd4TGdQeDR0RVhGa01HVWx4S1cwNkY5SnlhUVMtMFBIT2JhdGUtbDBSbnhjMXdUcURGSXliRkFKaXdrQndCUUJVMEswdno1eFlyMEFIOTJBSW9mY1ZPcjFQTk83dkVUZy1saHhHY3NTbXdKaFNnU2lsM013RzZB?oc=5",
-   "date": "2026-10-28T23:00:00Z",
-   "tool": "rogue",
-   "page": "news/2026/10/who-owns-the-ai-agent-what-veeams-trust-gap-research-says-about-rogue.html"
-  },
-  {
-   "title": "GitHub Copilot Usage Metrics Now Identify Custom Skills, Agents and MCP Servers",
-   "source": "Visual Studio Magazine",
-   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOWGMxV1JyV3BLbURPQTBWSHF0TmllaXRxZHVxa2hyUlptQzdyNUhpM3FkaDFXeFowNDlRYmFoZDQ4bXhUTm94c3hyWTNObzM1ZktKQXU2WHhPOG5GSEFlRC1UM2U1VEJ2aEhqSUhvSml3TnZQaUFJREdVbndUdmpLcVFXbWJSZTVxQW5mWFRtTkZqcVlZZzdtSFFOYXBNeE9PUGxXd2xHckwzTFhKQmNsN1pRTjZhbmxMTmMzWTdheUJUMmxOaXg0MmZEX1N6czZjTmc?oc=5",
-   "date": "2026-10-28T20:13:27Z",
-   "tool": "github-copilot",
-   "page": "news/2026/10/github-copilot-usage-metrics-now-identify-custom-skills-agents-and.html"
-  },
-  {
-   "title": "Particle launches particle-1, a developer model that matches DeepSeek V4.1 Flash with ~45% fewer tokens",
-   "source": "X",
-   "url": "https://x.com/Suhail/status/2115497949421883648",
-   "date": "2026-10-28T17:36:29Z",
-   "tool": null,
-   "summary": "Mixpanel founder Suhail Doshi's new company Particle released particle-1, a developer- and agent-focused model tuned for token efficiency that keeps parity with its base model while using about 45% fewer tokens; it is live via Particle's inference service, OpenRouter and Vercel AI Gateway.",
-   "page": "news/2026/10/particle-launches-particle-1-a-developer-model-that-matches-deepseek.html"
-  },
-  {
-   "title": "Gemini 4 Carbon takes #1 on Artificial Analysis Intelligence Index v5",
-   "source": "X",
-   "url": "https://x.com/ArtificialAnlys/status/2115494553780367384",
-   "date": "2026-10-28T17:23:00Z",
-   "tool": null,
-   "summary": "Artificial Analysis' new Intelligence Index v5, which leans on private test sets, ranks Google's Gemini 4 Carbon first at 59, with Claude Opus 5.5 still leading its Coding Agent Index.",
-   "page": "news/2026/10/gemini-4-carbon-takes-1-on-artificial-analysis-intelligence-index-v5.html"
-  },
-  {
-   "title": "GitHub Copilot Fusion orchestrates Anthropic and OpenAI models at half the cost per task",
-   "source": "X",
-   "url": "https://x.com/ArtificialAnlys/status/2115477376981508419",
-   "date": "2026-10-28T16:14:44Z",
-   "tool": "github-copilot",
-   "summary": "GitHub released Copilot Fusion, a runtime orchestration system that routes work between Anthropic and OpenAI models; Artificial Analysis measured it 2 points below Opus 5.5 in Claude Code on its Coding Agent Index at about half the cost per task.",
-   "page": "news/2026/10/github-copilot-fusion-orchestrates-anthropic-and-openai-models-at.html"
-  },
-  {
-   "title": "Anthropic study: Claude Code's hidden leanings steered expert analysts 86% of the time",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115223324565356550",
-   "date": "2026-10-28T13:37:00Z",
-   "tool": null,
-   "summary": "In a randomized Anthropic trial, 50 experienced analysts working with Claude Code matched the agent's secretly randomized preferences on judgment calls 86% of the time, often repeating its arguments while believing they had decided independently, even as the agent cut errors and sped up work.",
-   "page": "news/2026/10/anthropic-study-claude-codes-hidden-leanings-steered-expert-analysts.html"
-  },
-  {
-   "title": "Meta's Muse personal agent launches in Singapore with Shopee, Lazada and GrabMart tasks",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115291381774340377",
-   "date": "2026-10-28T12:08:00Z",
-   "tool": null,
-   "summary": "Meta brought its Muse personal AI agent to Singapore, its fourth market, where it can compare prices on Shopee and Lazada, plan groceries via GrabMart and book travel with user approval for sensitive steps; paid plans start at S$22 a month.",
-   "page": "news/2026/10/metas-muse-personal-agent-launches-in-singapore-with-shopee-lazada.html"
-  },
-  {
-   "title": "Etraveli Group adds MCP layer to flight content",
-   "source": "PhocusWire",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYjQzWlVRdnRkSFlnMGxGSnEtNGZGN0dkU2NhNVp3bmcyZW5fb3dNTVdUd2xOUHNWVjBwM3ZicmprNllRQVdmazc5bHZZWjY0NWJzRTkzOUd1c0hHaXY5OFVZT0ktaGoyUjU4STNKY29WZUdiWU1mMVRsLWxoa0FfVkg0RTBnaEhBRXpqYU5adTROQQ?oc=5",
-   "date": "2026-10-28T12:06:47Z",
-   "tool": "layer",
-   "page": "news/2026/10/etraveli-group-adds-mcp-layer-to-flight-content.html"
   }
  ]
 }

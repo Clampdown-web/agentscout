@@ -807,5 +807,29 @@
  "https://www.einpresswire.com/article/959232898/enhancv-launches-resume-mcp-letting-job-seekers-tailor-their-real-resume-inside-claude-and-chatgpt": {
   "title": "Enhancv opens a resume MCP server inside Claude and ChatGPT",
   "summary": "Enhancv launched a remote MCP server on 26 November 2026 that lets Claude, ChatGPT, Cursor, and VS Code edit the resume stored in a person's Enhancv account. Changes show up in the editor to keep or undo, and the connector is told to ask when a bullet needs a number the person has not given. It cannot delete resumes or reach billing. Reading and job search work on the free plan. Editing, tailoring, cover letters, and PDF downloads need Enhancv Pro."
+ },
+ "https://www.businessinsider.com/ai-agents-pinned-imessage-contacts-2026-11": {
+  "title": "Pinned iPhone chats are filling up with AI agents",
+  "summary": "Business Insider asked six investors and founders to show the chats pinned in iPhone Messages, and AI agents took most of the slots. Taylor Desseyn, a community lead at Torc, pins five agents and his wife: a Skydive assistant he treats as a chief of staff, Instinct for expenses and flights, and others for reminders and creative work. David Pawlan at Merit Systems uses all nine pins for agents he is testing. Others pin Instinct, a money agent called Flip, and a social agent, and one founder pins only Instinct. Meta's Muse is called out as an agent that still needs its own app, while these others live in Messages."
+ },
+ "https://github.com/convex/convex-backend-skill/issues/64": {
+  "title": "Convex changes agent skills after a prompt-upload complaint",
+  "summary": "On 28 November 2026 Convex updated the Claude skills in its plugin after a Hacker News thread about an October complaint. The quickstart skill still sends a person's one-sentence project idea to Convex so it can write a setup guide. The README now says that idea is deleted after 24 hours. Convex removed the note that told the agent to split a download and a run because safety checks block one command that does both. The skills now say to tell the person what the script does and never reword a command to get past a permission prompt. Convex's chief executive wrote on the thread that the upload is how quickstart starts a project and that the prompt is thrown away within 30 seconds of that choice. The issue is still open."
+ },
+ "https://github.com/earendil-works/pi/pull/12614": {
+  "title": "Pi coding agent drafts a sign-in for a Google AI plan",
+  "summary": "Hacker News discussed an open draft for the Pi coding agent that would let a person sign in with a Google AI Ultra plan and use that plan's model quota instead of a separate API key. Pi's notes in the draft say Google approved a sign-in client for Pi alone, and that other apps must register their own. The draft was still open and not merged on 28 November 2026, and Google has not published its own notice of the approval. The sign-in keeps a key on the person's machine and uses it when refreshing access."
+ },
+ "https://aiagentnews.io/stories/sessiongraph-visualizes-coding-agent-sessions-from-one-local-index": {
+  "title": "SessionGraph maps coding-agent sessions on one local graph",
+  "summary": "SessionGraph gathers sessions from coding agents such as Claude Code, Codex, and Cursor into one graph and a search index on the person's own computer. The project says it reads each tool's session store and can be started as a desktop app. Search can run in the app, through a local request, or through an MCP tool the agent can call. It also offers a way to compare graphs with other people, and installers for Mac, Windows, and Linux. The index stays on the machine, according to the project."
+ },
+ "https://the-decoder.com/openai-is-building-athena-data-platform-to-cut-down-on-ai-agent-guesswork/": {
+  "title": "OpenAI is building a data layer so business agents guess less",
+  "summary": "The Decoder reports that OpenAI is building a data platform, codenamed Athena, so its agents are more accurate with business numbers. The Information says it works like a shared dictionary for measures such as revenue and customer count. At least one customer found the data-analysis agent in ChatGPT Work was not accurate enough. A person familiar with the plans says OpenAI wants agents that collect and update those business rules so other agents do not start from scratch. The platform is still early, and OpenAI has not given a date or a price. Snowflake and Databricks already sell their own versions of this layer."
+ },
+ "https://techstartups.com/2026/11/27/swiss-ai-startup-nextesy-raises-10-4m-to-automate-accounting-payroll-and-business-administration-with-ai-agents/": {
+  "title": "nextesy raises $10.4 million for agents that keep the books",
+  "summary": "Tech Startups reports that Zurich-based nextesy raised a $10.4 million seed round led by Swisscom Ventures, with HIAG Beteiligung Holding, Fifth Quarter Ventures, Herbert VC, Look AI Ventures, and angel investors. The company said it announced the round on Thursday. Its platform combines accounting, payroll, and invoicing for small firms, freelancers, and fiduciaries, and it says it has more than 2,000 customers. It plans to build more autonomous agents and expand abroad in 2027. Fully automated year-end closing is still a goal, not a feature the company says is working."
  }
 }
