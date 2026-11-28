@@ -650,7 +650,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("--limit 600", source)
         self.assertIn("--limit 20 --dry-run", source)
         self.assertIn("timeout-minutes: 120", text)
-        self.assertIn('cron: "15 15 * * *"', text)
+        self.assertIn('cron: "0 21 * * *"', text)
         self.assertIn("pull-requests: write", text)
         self.assertIn("actions: write", text)
         self.assertIn("mcp_health_publish.py carry", text)
