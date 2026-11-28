@@ -34,6 +34,11 @@ body.home .hero .eyebrow{margin-bottom:6px}
 body.home .spanel{margin:0 0 10px;padding:0;border:0;background:transparent;box-shadow:none}
 body.home .sprow{margin:0}
 body.home .sprow input,body.home .sprow .btn{min-height:48px}
+/* styles.css stacks this row after first paint. Doing it here keeps .hero-chips from dropping when that sheet arrives. */
+@media(max-width:640px){
+  body.home .sprow{flex-wrap:wrap}
+  body.home .sprow input{flex:1 1 100%;width:100%}
+}
 body.home .filter-more{margin-top:2px}
 body.home .filter-more>summary{min-height:36px;display:flex;align-items:center;color:var(--accent);font-weight:650;cursor:pointer}
 body.home .hero-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
@@ -213,12 +218,12 @@ h2.sech{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(-
 .pkg-card h2.pkg-h{font-size:18px;font-weight:700;letter-spacing:-.02em;margin:8px 0}
 
 /* Homepage cards */
-body.home .hero-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;margin:0 0 4px;scrollbar-width:none}
+body.home .hero-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;margin:0 0 4px;scrollbar-width:none;min-height:50px}
 body.home .hero-chips::-webkit-scrollbar{display:none}
 body.home .hero-chips a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:650;font-size:14px}
 body.home .hero-chips a:hover{border-color:var(--accent);color:var(--accent)}
 /* Phones: the hidden scroller cut the next chip off at the edge. Wrap instead, once the row no longer fits. */
-@media(max-width:640px){body.home .hero-chips{flex-wrap:wrap;overflow:visible}}
+@media(max-width:640px){body.home .hero-chips{flex-wrap:wrap;overflow:visible;min-height:98px}}
 /* Same Start here row as styles.css. Homepage loads this sheet last. */
 .start-here{margin:12px 0 4px;min-width:0;max-width:100%;box-sizing:border-box;text-align:center}
 .start-here-label{display:block;margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:0;line-height:1.3;color:var(--text);scroll-margin-top:73px}
