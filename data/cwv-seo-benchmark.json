@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27",
+ "generated_at": "2026-11-28",
  "source": "lab-unthrottled-benchmark",
  "method": "cwv_seo_benchmark.measure_url",
  "throttle": "none",
@@ -10,11 +10,11 @@
   "ttfb_ms": 800
  },
  "scope": {
-  "artifact_date": "2026-11-27",
-  "artifact_tools": 6098
+  "artifact_date": "2026-11-28",
+  "artifact_tools": 6125
  },
  "subject": "current-live",
- "note": "https://agentscouthq.com measured 2026-11-27 before the Kurodyne Fast-Track push with headless Chrome, cache disabled, wait=load. This is production main before the push, not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
+ "note": "https://agentscouthq.com measured 2026-11-28 with headless Chrome, cache disabled, wait=load. Production main, not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
  "not_measured": [],
  "targets": [
   "https://agentscouthq.com/",
@@ -28,9 +28,9 @@
  "pages": [
   {
    "url": "https://agentscouthq.com/",
-   "lcp_ms": 536.0,
-   "cls": 0.013085891186075777,
-   "ttfb_ms": 153.69999998807907,
+   "lcp_ms": 508.0,
+   "cls": 0.012082614472929057,
+   "ttfb_ms": 103.10000000009313,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
@@ -38,9 +38,9 @@
   },
   {
    "url": "https://agentscouthq.com/bot-store/",
-   "lcp_ms": 340.0,
+   "lcp_ms": 276.0,
    "cls": 0.0,
-   "ttfb_ms": 164.0999999642372,
+   "ttfb_ms": 202.20000000018626,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
@@ -48,9 +48,9 @@
   },
   {
    "url": "https://agentscouthq.com/videos/",
-   "lcp_ms": 428.0,
+   "lcp_ms": 368.0,
    "cls": 0.0,
-   "ttfb_ms": 142.19999998807907,
+   "ttfb_ms": 237.3000000002794,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
@@ -58,9 +58,9 @@
   },
   {
    "url": "https://agentscouthq.com/bot-templates/",
-   "lcp_ms": 468.0,
+   "lcp_ms": 376.0,
    "cls": 0.0,
-   "ttfb_ms": 184.10000002384186,
+   "ttfb_ms": 227.89999999990687,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
@@ -68,9 +68,9 @@
   },
   {
    "url": "https://agentscouthq.com/mcp/",
-   "lcp_ms": 380.0,
+   "lcp_ms": 316.0,
    "cls": 0.0,
-   "ttfb_ms": 132.20000004768372,
+   "ttfb_ms": 209.70000000018626,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
@@ -78,9 +78,9 @@
   },
   {
    "url": "https://agentscouthq.com/tools/noteboxd.html",
-   "lcp_ms": 396.0,
-   "cls": 0.0005975961292257957,
-   "ttfb_ms": 135.60000002384186,
+   "lcp_ms": 292.0,
+   "cls": 0.0006741759535659435,
+   "ttfb_ms": 172.60000000009313,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",
@@ -88,9 +88,9 @@
   },
   {
    "url": "https://agentscouthq.com/submit.html?notrack=1",
-   "lcp_ms": 420.0,
-   "cls": 0.0002475565256926459,
-   "ttfb_ms": 205.80000001192093,
+   "lcp_ms": 300.0,
+   "cls": 0.00027928001639925497,
+   "ttfb_ms": 197.70000000018626,
    "grade": "PASS",
    "wait": "load",
    "throttle": "none",

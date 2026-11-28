@@ -3662,6 +3662,7 @@
 ],
 "lovable-mcp": [
 "voice-phone",
+"mcp-servers",
 "rules-config"
 ],
 "parse-ly-mcp": [
@@ -3700,24 +3701,27 @@
 "mcp-servers"
 ],
 "altmetric-mcp": [
+"planning-tasks",
 "vector-rag",
 "marketing-agents",
 "research-agents",
 "guardrails",
-"mcp-servers"
+"local-models"
 ],
 "playgama-mcp": [
 "mcp-servers",
 "games"
 ],
 "ifttt-mcp": [
-"mcp-servers"
+"mcp-gateways",
+"rules-config"
 ],
 "rocketreach-mcp": [
-"text-to-sql",
+"planning-tasks",
+"token-costs",
 "voice-phone",
 "email-agents",
-"mcp-servers"
+"rules-config"
 ],
 "sonatype-mcp": [
 "mcp-servers"
@@ -3745,8 +3749,10 @@
 "video-editing"
 ],
 "printfriendly-mcp": [
+"planning-tasks",
 "vector-rag",
-"mcp-servers"
+"voice-phone",
+"marketing-agents"
 ],
 "devcycle-mcp": [
 "codebase-context",
@@ -3803,8 +3809,7 @@
 "mcp-servers"
 ],
 "chainstack-mcp": [
-"mcp-servers",
-"vfx-compositing"
+"vector-rag"
 ],
 "polar-analytics-mcp": [
 "marketing-agents",
@@ -3814,7 +3819,7 @@
 "voice-phone",
 "chat-app-agents",
 "email-agents",
-"mcp-servers"
+"terminal-agents"
 ],
 "daily-dev-mcp": [
 "mcp-servers"
@@ -3827,10 +3832,9 @@
 "mcp-servers"
 ],
 "frase-mcp": [
-"marketing-agents",
 "research-agents",
-"observability",
-"mcp-servers"
+"computer-use",
+"local-models"
 ],
 "cypress-cloud-mcp": [
 "mcp-servers",
@@ -3849,8 +3853,9 @@
 "mcp-servers"
 ],
 "lusha-mcp": [
-"agent-auth",
-"mcp-servers"
+"planning-tasks",
+"voice-phone",
+"email-agents"
 ],
 "logo-dev-mcp": [
 "mcp-servers"
@@ -3869,7 +3874,7 @@
 ],
 "locize-mcp": [
 "agent-memory",
-"mcp-servers"
+"video-editing"
 ],
 "unleash-mcp": [
 "mcp-servers"
@@ -3880,7 +3885,6 @@
 "parallel-search-mcp": [
 "parallel-orchestration",
 "search-apis",
-"agent-auth",
 "terminal-agents"
 ],
 "supermetrics-mcp": [
@@ -3896,9 +3900,7 @@
 "web-scraping",
 "mcp-servers"
 ],
-"brandfetch-mcp": [
-"voice-phone"
-],
+"brandfetch-mcp": [],
 "picsart-genai-mcp": [
 "mcp-servers",
 "video-editing",
@@ -3931,7 +3933,7 @@
 ],
 "pandadoc-mcp": [
 "vector-rag",
-"mcp-servers"
+"rules-config"
 ],
 "smartbear-mcp": [
 "browser-automation",
@@ -5178,6 +5180,7 @@
 "planning-tasks",
 "mcp-servers",
 "local-models",
+"stem-separation",
 "images-design",
 "rules-config"
 ],
@@ -7722,7 +7725,7 @@
 "images-design"
 ],
 "jeecgboot": [
-"rules-config"
+"workflow-automation"
 ],
 "ods": [],
 "yuxi": [
@@ -20797,6 +20800,7 @@
 "local-models"
 ],
 "1lookup": [
+"token-costs",
 "voice-phone",
 "email-agents",
 "mcp-servers"
@@ -21360,6 +21364,7 @@
 ],
 "morse-code-translator": [
 "mcp-servers",
+"video-editing",
 "rules-config"
 ],
 "social-fetch": [
@@ -21384,7 +21389,8 @@
 ],
 "toshi": [],
 "colorwillow": [
-"planning-tasks"
+"planning-tasks",
+"mcp-servers"
 ],
 "fabbo": [
 "agent-payments",
@@ -21489,7 +21495,7 @@
 "clam": [
 "email-agents",
 "guardrails",
-"agent-auth",
+"mcp-servers",
 "rules-config"
 ],
 "granular": [
@@ -21507,7 +21513,8 @@
 "computer-use"
 ],
 "keeper-sh": [
-"planning-tasks"
+"planning-tasks",
+"mcp-servers"
 ],
 "inkeep": [
 "voice-phone",
@@ -21544,6 +21551,7 @@
 "hive402": [
 "agent-payments",
 "agent-auth",
+"mcp-servers",
 "vfx-compositing",
 "mastering"
 ],
@@ -21557,6 +21565,7 @@
 ],
 "company-finders": [
 "marketing-agents",
+"mcp-servers",
 "local-models"
 ],
 "movoa": [
@@ -21567,6 +21576,7 @@
 "unorouter": [],
 "lianex": [
 "mcp-gateways",
+"mcp-servers",
 "terminal-agents"
 ],
 "hookr-mcp": [
@@ -21666,7 +21676,8 @@
 ],
 "sandscale": [
 "planning-tasks",
-"sandboxes"
+"sandboxes",
+"mcp-servers"
 ],
 "pennycompute": [
 "voice-phone",
@@ -21705,8 +21716,8 @@
 "games"
 ],
 "pepys": [
-"agent-auth",
 "mcp-servers",
+"local-models",
 "subtitles-transcripts",
 "stem-separation",
 "video"
@@ -21737,7 +21748,6 @@
 ],
 "laravel-boost": [
 "vector-rag",
-"agent-frameworks",
 "rules-config"
 ],
 "agent-toolkit-for-aws": [
@@ -21752,10 +21762,152 @@
 "rules-config"
 ],
 "kurodyne": [
-"browser-automation",
 "mcp-gateways",
+"mcp-servers",
 "workflow-automation",
 "stem-separation",
 "rules-config"
+],
+"verdict-protocol": [
+"vfx-compositing",
+"mastering"
+],
+"omnigate": [
+"agent-wallets",
+"agent-payments",
+"voice-phone",
+"mastering"
+],
+"claimgate": [
+"vfx-compositing",
+"mixing"
+],
+"agent-verify": [
+"mcp-servers",
+"stem-separation",
+"mastering"
+],
+"clipshrink": [
+"agent-payments",
+"vector-rag",
+"browser-automation",
+"local-models",
+"subtitles-transcripts",
+"video",
+"images-design"
+],
+"nest-pixel": [
+"color-upscaling",
+"video-editing",
+"rules-config"
+],
+"tunedgift": [
+"agent-memory",
+"planning-tasks",
+"video"
+],
+"anxinzhuan": [
+"voice-phone",
+"mcp-servers",
+"local-models",
+"subtitles-transcripts",
+"dialogue-cleanup",
+"video",
+"mobile"
+],
+"sheru-bhai-ai-photo-generator": [],
+"conecto": [
+"voice-phone",
+"email-agents",
+"ai-dubbing-voices"
+],
+"vertov": [
+"computer-use",
+"mcp-servers",
+"subtitles-transcripts",
+"video"
+],
+"text-match-cut-art": [
+"marketing-agents",
+"video",
+"images-design"
+],
+"opendesign": [
+"planning-tasks",
+"local-models",
+"vfx-compositing",
+"video",
+"images-design"
+],
+"agent-browser": [
+"browser-automation",
+"computer-use",
+"terminal-agents",
+"stem-separation"
+],
+"video-use": [
+"browser-automation",
+"video-editing",
+"dialogue-cleanup",
+"video"
+],
+"multica": [
+"planning-tasks",
+"voice-phone"
+],
+"ifixai": [],
+"tooljet": [
+"observability",
+"mcp-servers"
+],
+"perplexity-api-mcp": [
+"voice-phone",
+"sandboxes",
+"mcp-servers",
+"vfx-compositing",
+"stem-separation"
+],
+"codegraph": [
+"codebase-context",
+"local-models"
+],
+"openshorts": [
+"planning-tasks",
+"subtitles-transcripts",
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"mr-office": [
+"vector-rag",
+"computer-use",
+"ide-agents",
+"video-editing"
+],
+"ai-website-cloner": [],
+"supergateway": [
+"mcp-gateways",
+"mcp-servers",
+"local-models",
+"stem-separation"
+],
+"spec-workflow-mcp": [
+"planning-tasks",
+"observability",
+"workflow-automation",
+"ide-agents"
+],
+"markdownify-mcp": [
+"vector-rag",
+"subtitles-transcripts",
+"stem-separation",
+"images-design"
+],
+"pal-mcp": [
+"voice-phone",
+"workflow-automation",
+"local-models",
+"terminal-agents",
+"stem-separation"
 ]
 }

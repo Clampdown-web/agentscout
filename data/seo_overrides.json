@@ -266,5 +266,73 @@
  "tools/wren-x402-doctor.html": [
   "Wren x402 Doctor: GET /market and GET /trust checks",
   "Wren x402 Doctor helps x402 sellers get listed in the Coinbase CDP Bazaar, with 402 linting plus GET /market and GET /trust paid checks."
+ ],
+ "tools/1lookup.html": [
+  "1Lookup MCP: what it does, pricing and alternatives · AgentScout",
+  "1Lookup MCP is a hosted MCP server at app.1lookup.io/api/mcp. Add it in Claude or Cursor, sign in, and the agent can validate phone numbers, emails and IP addresses."
+ ],
+ "tools/aihot.html": [
+  "AIHOT: what it does, pricing and alternatives · AgentScout",
+  "AIHOT publishes a read-only remote MCP for its Chinese AI news desk. The connect page at aihot.news says access is anonymous, with no API key."
+ ],
+ "tools/altmetric-mcp.html": [
+  "Altmetric MCP: what it does, pricing and alternatives",
+  "Altmetric MCP is an MCP server that lets an assistant see where a research output is mentioned in news, policy documents and social media. Listed with other MCP servers."
+ ],
+ "tools/bird-mcp.html": [
+  "Bird MCP: what it does, pricing and alternatives · AgentScout",
+  "Bird MCP is an MCP server that lets a coding agent send and receive email, text messages, WhatsApp and voice through a Bird account. Listed with other MCP servers."
+ ],
+ "tools/chainstack-mcp.html": [
+  "Chainstack MCP: what it does, pricing and alternatives",
+  "Chainstack MCP is an MCP server that lets an agent search Chainstack documentation, read a doc page, check platform status and contact the company without an API key."
+ ],
+ "tools/coworkingview-mcp.html": [
+  "CoworkingView MCP: what it does, pricing and alternatives",
+  "CoworkingView MCP is a free, read-only remote MCP server at mcp.coworkingview.com/mcp that lets an assistant search coworking spaces, private offices and published prices."
+ ],
+ "tools/frase-mcp.html": [
+  "Frase MCP: what it does, pricing and alternatives · AgentScout",
+  "Frase MCP is an MCP server that connects an assistant to a Frase account for search and AI-visibility research, writing and content optimization. Listed with other MCP servers."
+ ],
+ "tools/ifttt-mcp.html": [
+  "IFTTT MCP: what it does, pricing and alternatives · AgentScout",
+  "IFTTT MCP is an MCP server that connects an agent to IFTTT so it can discover services, build automations and run actions. A free IFTTT account is enough to sign in. Listed with other MCP servers."
+ ],
+ "tools/locize-mcp.html": [
+  "Locize MCP: what it does, pricing and alternatives · AgentScout",
+  "Locize MCP is an MCP server that helps a coding agent translate and review copy against a project's glossary, style guide and translation memory. Listed with other MCP servers."
+ ],
+ "tools/lusha-mcp.html": [
+  "Lusha MCP: what it does, pricing and alternatives · AgentScout",
+  "Lusha MCP is an MCP server that lets an assistant search people and companies, enrich a contact, and check whether an email can be delivered. Listed with other MCP servers."
+ ],
+ "tools/pandadoc-mcp.html": [
+  "PandaDoc MCP: what it does, pricing and alternatives · AgentScout",
+  "PandaDoc MCP is an MCP server that lets an assistant check whether a document is signed, read the terms, and create one from a template to send for signature. Listed with other MCP servers."
+ ],
+ "tools/porkbun-mcp.html": [
+  "Porkbun MCP: what it does, pricing and alternatives · AgentScout",
+  "Porkbun MCP is Porkbun's own server for the Porkbun API, also hosted at mcp.porkbun.com/mcp. Some calls can spend account credit."
+ ],
+ "tools/printfriendly-mcp.html": [
+  "PrintFriendly MCP: what it does, pricing and alternatives",
+  "PrintFriendly MCP is an MCP server that reads a public web page as clean text and can turn a page into a PDF, Word or Markdown file. Listed with other MCP servers."
+ ],
+ "tools/repomix.html": [
+  "Repomix: what it does, pricing and alternatives · AgentScout",
+  "Repomix (repomix.com) packs a repository into one AI-friendly file for Claude and other assistants, and it can also run as an MCP server."
+ ],
+ "tools/rocketreach-mcp.html": [
+  "RocketReach MCP: what it does, pricing and alternatives",
+  "RocketReach MCP is an MCP server that lets an assistant search people and companies and enrich a contact with emails and phone numbers. Listed with other MCP servers."
+ ],
+ "tools/senzing.html": [
+  "Senzing: what it does, pricing and alternatives · AgentScout",
+  "Senzing MCP server v0.39.11 gives an assistant entity-resolution knowledge. The page says it is an endpoint for Claude Desktop and Claude Code, not a web page."
+ ],
+ "tools/wenbu.html": [
+  "Wenbu: what it does, pricing and alternatives · AgentScout",
+  "Wenbu is a hosted streamable HTTP MCP server at wenbu.app/mcp (wenbu 1.5.0, listed as app.wenbu/mcp) and a web app for traditional Chinese cultural systems."
  ]
 }

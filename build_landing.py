@@ -266,6 +266,10 @@ def modifier_pages(t,m,made,inT):
 BROWSER=lambda x,k:x["category"]=="browser/computer use" or k("browsing-the-web")
 # slug -> list of filters; the page shows the union of the top 25 of each (ranked), so both old lists survive the merge
 MERGED={"open-source-browser-agents":[lambda x,k:BROWSER(x,k) and x["pricing"] in OS,lambda x,k:BROWSER(x,k) and isfree(x)]}
+# Search pages that stay noindex,follow and out of the sitemap until they are
+# deliberately promoted. 2026-11-28: open-source-local-ai-agents replaced
+# s/self-hosted-local-ai-agents and would have been a third free indexable page.
+NOINDEX_SEARCH={"open-source-local-ai-agents"}
 def site_stats(t):
     """Directory-wide numbers for stat callouts, computed from tools.json at build time (never hand-written)."""
     return {"total":len(t),"categories":len({x["category"] for x in t})}
@@ -356,7 +360,9 @@ def search_pages(t,m,asof):
             body=re.sub(r'<p class="lede".*?</p>'+re.escape(facts),lambda _:stat+lede+why+f'<h2 style="font-size:18px;margin:28px 0 6px">The {len(items)} tools</h2>',body,count=1,flags=re.S)
             body=body.replace(f'<p style="margin-top:28px">Related: ',relh+f'<p style="margin-top:20px">Related: ',1)
             body=body.replace('<p class="disclose">',f'<p style="margin-top:20px">Browser agents are one corner of AgentScout. <a href="../#directory">Browse all {ST["total"]:,} tools across {ST["categories"]} categories</a> to find the rest of your agent stack.</p><p class="disclose">',1)
-        open(f"s/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld))
+        page=X.shell("../",title,desc,canon,body,ld)
+        if s in NOINDEX_SEARCH: page=X.add_noindex(page)
+        open(f"s/{s}.html","w").write(page)
     canon=B+"s/"; title="Popular AI Agent Tool Lists (2026) · AgentScout"
     desc=f"{len(made)} focused lists of AI agent tools: free coding agents, open-source browser agents, Python frameworks, MCP servers, voice and more."[:158]
     tiles="".join(f'<a class="card" href="{a[0]}.html"><div class="ct"><h3>{e(a[1])}</h3></div><p>{a[3]} tools · {e(", ".join(x["name"] for x in a[4][:3]))}</p></a>' for a in made)
@@ -365,7 +371,7 @@ def search_pages(t,m,asof):
           f'<p class="lede" style="margin-left:0;text-align:left">Quick answers to the searches people make most, each built from the AgentScout directory with the ranking method stated.</p><div class="grid">{tiles}</div>'
           f'<p style="margin-top:24px">See also: <a href="../for/">AI agents by role</a> · <a href="../best/">Best lists</a> · <a href="../tasks/">AI agents by task</a> · <a href="../free-tools.html">Free tools</a></p></section>')
     open("s/index.html","w").write(X.shell("../",title,desc,canon,body,ld))
-    return [canon]+[f"{B}s/{a[0]}.html" for a in made],made
+    return [canon]+[f"{B}s/{a[0]}.html" for a in made if a[0] not in NOINDEX_SEARCH],made
 # Short commercial-use and copyright note on role pages (Oct 18, 2026); also linked from the art task pages
 ROLE_NOTE={"artists":'<div id="copyright" class="note" style="margin:10px 0;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px"><strong>Commercial use and copyright, in short.</strong> This is general information, not legal advice. In the US, the Copyright Office registers only work with real human authorship, and prompts alone usually don\'t count. The Supreme Court declined to hear <em>Thaler v. Perlmutter</em> on Mar 2, 2026, which leaves that rule in place. Training-data cases are still open: Getty mostly lost its UK case against Stability AI in Nov 2025 and can appeal, and Disney and Universal are suing Midjourney in the US. Before you sell AI-assisted work, read each tool\'s license terms. Some models, such as Adobe Firefly, Bria and Getty\'s generator, are trained only on licensed images and offer indemnity. To keep your own art out of training sets and style copies, look at <a href="../tools/glaze.html">Glaze</a> and <a href="https://cara.app" rel="nofollow noopener noreferrer">Cara</a>.</div>'}
 def role_pages(t,m,made):
