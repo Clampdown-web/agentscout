@@ -35465,5 +35465,727 @@
       "site": "https://kurodyne.com/",
       "mcp": "https://mcp.kurodyne.com/mcp"
     }
+  },
+  "bird-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/messagebird/bird-ai",
+      "https://github.com/messagebird/bird-ai/blob/main/README.md"
+    ],
+    "long": [
+      "Bird MCP is the hosted server and skill pack that lets a coding agent operate Bird: email, text messages, WhatsApp and voice. The README walks through installing the command-line client and signing in with a browser.",
+      "There is no separate release listed on GitHub. The README does not print a plan price. GitHub recorded MIT, 10 stars and 0 forks on 28 Nov 2026."
+    ],
+    "who": "Developers who want an assistant to send a message or read mail through a Bird account.",
+    "features": [
+      "Hosted server plus skills for email, text, WhatsApp and voice",
+      "Sign-in through the command-line client",
+      "MIT. 10 GitHub stars and 0 forks on 28 Nov 2026",
+      "The README does not list a dollar price"
+    ],
+    "faq": [
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ],
+      [
+        "What does it cost?",
+        "The README does not list a dollar price. A Bird account is required."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 10,
+      "forks": 0,
+      "repo": "https://github.com/messagebird/bird-ai",
+      "checked": "2026-11-28"
+    }
+  },
+  "altmetric-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/altmetric/altmetric-mcp",
+      "https://github.com/altmetric/altmetric-mcp/blob/main/README.md"
+    ],
+    "long": [
+      "Altmetric MCP gives an assistant the Altmetric attention record for a paper or other research output: news, policy, patents and social mentions. The hosted server is the path the README recommends. A local run is there if you would rather keep the keys yourself.",
+      "The free tier covers counts for one output and a search across recent attention. Asking for the fuller commercial record with a free key is refused. GitHub recorded MIT, 7 stars and 0 forks on 28 Nov 2026. No GitHub release was listed."
+    ],
+    "who": "Researchers and librarians who want an assistant to check how a paper is being discussed outside academic citations.",
+    "features": [
+      "Hosted sign-in, or a local server with your own keys",
+      "Free tier for attention counts and a recent search",
+      "Commercial access for the fuller record",
+      "MIT. 7 GitHub stars and 0 forks on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Is there a free tier?",
+        "Yes. The README says a free tier can read attention counts and search recent attention. A fuller record needs commercial access."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 7,
+      "forks": 0,
+      "repo": "https://github.com/altmetric/altmetric-mcp",
+      "checked": "2026-11-28"
+    }
+  },
+  "chainstack-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/chainstacklabs/mcp-server",
+      "https://mcp.chainstack.com"
+    ],
+    "long": [
+      "Chainstack MCP is the official server for the Chainstack platform. Without a key an agent can search the docs, read a page, check status and incidents, send a message to Chainstack, and pull a live pricing snapshot.",
+      "With a key it can list and create projects and nodes, set access rules, and request testnet funds on networks the README groups as EVM, Solana and TON. GitHub recorded MIT, 5 stars and 1 fork on 28 Nov 2026. No GitHub release was listed."
+    ],
+    "who": "Developers who want an assistant to look up Chainstack docs or manage blockchain nodes.",
+    "features": [
+      "Docs search, status and a live pricing snapshot without a key",
+      "Node and project management with an API key",
+      "Testnet faucet requests on networks the README lists",
+      "MIT. 5 GitHub stars and 1 fork on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Do I need an API key?",
+        "Not for docs, status or the pricing snapshot. Creating and managing nodes needs a key."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 5,
+      "forks": 1,
+      "repo": "https://github.com/chainstacklabs/mcp-server",
+      "checked": "2026-11-28"
+    }
+  },
+  "lusha-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/lusha-oss/lusha-mcp-plugin",
+      "https://github.com/lusha-oss/lusha-mcp-plugin/blob/main/README.md"
+    ],
+    "long": [
+      "Lusha MCP is the official plugin for using Lusha contact and company data from an assistant. The README covers people search, company search, enriching a person or up to 100 people, company firmographics, and an email deliverability check.",
+      "Skills in the repo start from data you already have, such as an ideal-customer profile or a list, and the README says those starting calls are free. A release published 18 Jun 2026 adds Codex and Cursor plugin support. GitHub recorded MIT, 4 stars and 1 fork on 28 Nov 2026."
+    ],
+    "who": "Sellers who want an assistant to find contacts and check an email before sending.",
+    "features": [
+      "People and company search, plus contact enrichment",
+      "Email deliverability check, with the credit cost stated first",
+      "A release on 18 Jun 2026 adds Codex and Cursor plugins",
+      "MIT. 4 GitHub stars and 1 fork on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Does a lookup cost credits?",
+        "The README says some calls are free and that a paid lookup states its credit cost before it runs."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 4,
+      "forks": 1,
+      "repo": "https://github.com/lusha-oss/lusha-mcp-plugin",
+      "release_date": "2026-06-18",
+      "checked": "2026-11-28"
+    }
+  },
+  "pandadoc-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/PandaDoc/mcp-server-guide",
+      "https://developers.pandadoc.com/docs/how-to-use-the-pandadoc-mcp-server"
+    ],
+    "long": [
+      "PandaDoc MCP is the official hosted server for PandaDoc. An assistant can check signing status, summarize payment terms, find documents waiting for a signature, and create a document from a template for you to review before it is sent.",
+      "A release published 12 Oct 2026 adds plugin skills, including a Claude plugin and a Google Antigravity plugin. GitHub recorded MIT, 3 stars and 0 forks on 28 Nov 2026."
+    ],
+    "who": "Teams who want an assistant to track agreements and prepare a document for signature.",
+    "features": [
+      "Signing status, agreement summaries and renewal lookups",
+      "Create from a template and send after you review",
+      "A release on 12 Oct 2026 adds more assistant plugins",
+      "MIT. 3 GitHub stars and 0 forks on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "How do I sign in?",
+        "The README says you sign in with your PandaDoc account. The server is hosted by PandaDoc."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 3,
+      "forks": 0,
+      "repo": "https://github.com/PandaDoc/mcp-server-guide",
+      "release_date": "2026-10-12",
+      "checked": "2026-11-28"
+    }
+  },
+  "ifttt-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/IFTTT/ifttt-plugins",
+      "https://ifttt.com/mcp"
+    ],
+    "long": [
+      "The IFTTT plugin points an assistant at IFTTT's hosted server so it can discover services, build automations and run actions. The README says the server is closed source and this repo only holds what runs in the client.",
+      "A release published 21 Sep 2026 is a metadata fix so Cursor's marketplace can see the plugin. It does not change tools or skills. GitHub recorded MIT, 3 stars and 0 forks on 28 Nov 2026."
+    ],
+    "who": "People who want an assistant to build an IFTTT automation across the services they already use.",
+    "features": [
+      "Hosted IFTTT server with sign-in",
+      "A free account is enough to connect",
+      "A release on 21 Sep 2026 fixes marketplace metadata only",
+      "MIT. 3 GitHub stars and 0 forks on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Is the server open source?",
+        "No. The README says the hosted server is closed source. This repository is MIT and holds the client plugin."
+      ],
+      [
+        "Do I need a paid IFTTT plan?",
+        "The README says a free account is enough to sign in. It does not print paid plan prices."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 3,
+      "forks": 0,
+      "repo": "https://github.com/IFTTT/ifttt-plugins",
+      "release_date": "2026-09-21",
+      "checked": "2026-11-28"
+    }
+  },
+  "locize-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/locize/locize-agents",
+      "https://www.locize.com"
+    ],
+    "long": [
+      "Locize MCP is the translation half of Locize's agent plugin. A separate skill, shipped with the i18next command-line tool, turns hardcoded strings into a localized app. This server then reviews wording against the glossary, style guide and translation memory.",
+      "The README says overwrite, delete and publish actions are marked destructive and the agent should ask first. GitHub recorded MIT, 1 star and 1 fork on 28 Nov 2026. No GitHub release was listed."
+    ],
+    "who": "Developers who want a coding agent to update translations without drifting from the project's glossary.",
+    "features": [
+      "Glossary, style guide and translation memory in the editor",
+      "Edit, publish and AI review, with destructive actions marked",
+      "Sign-in, or a personal access token",
+      "MIT. 1 GitHub star and 1 fork on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Can it change who has access to a project?",
+        "No. The README says the tools cannot pay, send messages or change access."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 1,
+      "forks": 1,
+      "repo": "https://github.com/locize/locize-agents",
+      "checked": "2026-11-28"
+    }
+  },
+  "rocketreach-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/rocketreach/rocketreach-mcp-plugin"
+    ],
+    "long": [
+      "RocketReach MCP is the official plugin for RocketReach contact and company data. The README lists people search, company search, enrichment of one person or a batch of up to 100, company firmographics, and an email check.",
+      "A release published 19 Nov 2026 adds the first skills and the project README. GitHub recorded MIT, 0 stars and 0 forks on 28 Nov 2026."
+    ],
+    "who": "Sellers who want an assistant to look up a work email or phone number and see the credit cost.",
+    "features": [
+      "People and company search and enrichment",
+      "Email deliverability check and a credit balance",
+      "A release on 19 Nov 2026 adds the first skills",
+      "MIT. 0 GitHub stars and 0 forks on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Do lookups cost credits?",
+        "The README says enrichment spends credits and that an account tool shows the balance. It does not print a plan price table."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 0,
+      "forks": 0,
+      "repo": "https://github.com/rocketreach/rocketreach-mcp-plugin",
+      "release_date": "2026-11-19",
+      "checked": "2026-11-28"
+    }
+  },
+  "printfriendly-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/printfriendly/printfriendly-mcp",
+      "https://mcp.printfriendly.com"
+    ],
+    "long": [
+      "PrintFriendly MCP is a remote server for reading a public page as Markdown and exporting PDF, Word, Markdown, HTML or JSON. It works with clients that speak remote MCP, and the README says an API key goes in the request header.",
+      "The free plan is 100 documents a month. Each successful call counts as one document. Pages behind a login can come back empty because the server reads public pages only. GitHub recorded MIT, 0 stars and 0 forks on 28 Nov 2026. No GitHub release was listed."
+    ],
+    "who": "People who want an assistant to read a public page or save it as a document.",
+    "features": [
+      "Clean text from a public page, plus PDF, Word and Markdown export",
+      "Free plan of 100 documents a month",
+      "API key required",
+      "MIT. 0 GitHub stars and 0 forks on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "What does the free plan include?",
+        "The README says 100 documents a month. Failed calls do not count. Paid plans raise the limit, and the README does not print those prices."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 0,
+      "forks": 0,
+      "repo": "https://github.com/printfriendly/printfriendly-mcp",
+      "checked": "2026-11-28"
+    }
+  },
+  "frase-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://github.com/frase-io/mcp-server",
+      "https://next.frase.io/api/mcp"
+    ],
+    "long": [
+      "Frase MCP exposes a Frase account to an assistant for research, briefs, optimization and AI-visibility tracking. The README recommends the hosted server, which signs you in through the browser. A local install uses an API key.",
+      "A release published 12 Sep 2026 is a desktop extension bundle. GitHub recorded MIT, 0 stars and 0 forks on 28 Nov 2026."
+    ],
+    "who": "Content teams who want an assistant to research and tune a page inside a Frase account.",
+    "features": [
+      "Hosted sign-in, or a local server with an API key",
+      "Research, writing, optimization and AI-visibility tracking",
+      "A release on 12 Sep 2026 ships a desktop extension bundle",
+      "MIT. 0 GitHub stars and 0 forks on 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Where does the server run?",
+        "The README says a hosted server signs you in, and a local option uses an API key. The server code lives in a private repository."
+      ],
+      [
+        "What license is it under?",
+        "GitHub records MIT for this repository. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "license": "MIT",
+      "osi": true,
+      "stars": 0,
+      "forks": 0,
+      "repo": "https://github.com/frase-io/mcp-server",
+      "release_date": "2026-09-12",
+      "checked": "2026-11-28"
+    }
+  },
+  "verdict-protocol": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://scriptmasterlabs.com/verdict-protocol"
+    ],
+    "long": [
+      "Verdict Protocol sells a signed decision receipt for an agent that is about to act. The product page describes a five-juror panel scoring the decision under a fixed constitution, then a receipt the agent can keep.",
+      "On 28 Nov 2026 the page listed 0.005 USDC for a verdict, 0.005 USDC for a sealed receipt, 0.01 USDC for an evidence pack and 0.05 USDC for a dispute receipt, paid in USDC on Base. This page is not Token Verdict, which grades a token and lives on a different address."
+    ],
+    "who": "Agent builders who want a paid, signed record of a decision before an agent moves money.",
+    "features": [
+      "Signed decision receipt paid per accepted call",
+      "Prices on the page: 0.005, 0.005, 0.01 and 0.05 USDC",
+      "Separate product from Token Verdict"
+    ],
+    "faq": [
+      [
+        "Is this Token Verdict?",
+        "No. Token Verdict grades a token. Verdict Protocol prices a decision receipt. They are different products."
+      ],
+      [
+        "Is there a subscription?",
+        "The page says no. You pay per accepted call in USDC on Base."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://verdict.scriptmasterlabs.com/mcp",
+      "transport": "Streamable HTTP",
+      "auth": "No API key. Paid calls settle in USDC on Base.",
+      "docs": "https://scriptmasterlabs.com/verdict-protocol"
+    }
+  },
+  "omnigate": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://scriptmasterlabs.com/omnigate"
+    ],
+    "long": [
+      "OMNIGATE settles agent payments in USDC on Base and Arc. The product page says the facilitator fee is a flat 0.005 USDC, and that standard payments inside the daily waiver pay nothing. The waiver is 500 settlements a day in total and 100 a day for one seller.",
+      "Past the waiver the page says the payment still settles and the 0.005 USDC fee accrues to the seller's balance rather than being refused. Money goes to the seller's own wallet, and each settlement mints an on-chain receipt for the payer at no extra charge. No account and no API key are required to start. OMNIGATE is the facilitator. It is not the SqueezeOS catalog, Garage402 or HIVE402."
+    ],
+    "who": "Agent builders who need a published per-settlement fee for USDC payments on Base or Arc.",
+    "features": [
+      "Flat 0.005 USDC facilitator fee, with a daily waiver",
+      "Past the waiver the payment still settles and the fee accrues",
+      "Settlement to the seller's wallet, plus a receipt for the payer",
+      "No account required to start"
+    ],
+    "faq": [
+      [
+        "What does a settlement cost?",
+        "The page says 0.005 USDC, waived for standard payments inside 500 a day in total and 100 a day per seller. Checked 28 Nov 2026."
+      ],
+      [
+        "Is this SqueezeOS?",
+        "No. SqueezeOS is the catalog of pay-per-call APIs. OMNIGATE is the facilitator that settles the payment."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://omnigate.scriptmasterlabs.com",
+      "transport": "HTTP facilitator. A read-only preflight server is separate.",
+      "auth": "No account to start. Fees settle in USDC.",
+      "docs": "https://scriptmasterlabs.com/omnigate"
+    }
+  },
+  "claimgate": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://scriptmasterlabs.com/claimgate"
+    ],
+    "long": [
+      "ClaimGate takes a claim, breaks it into parts, fetches sources, and asks jurors to judge each source family. A quote counts only if it matches the fetched text. The verdict is supported, contradicted, mixed, or an honest unverifiable when the sources do not cover the claim.",
+      "The pricing glance says 0.005 USDC. The same page also says a live payment challenge on 18 Nov 2026 quoted 0.03 USDC, and that three proof checks that day paid 0.03 USDC each. Preview, status, methodology and receipt reads do not require payment. Treat the live challenge as the price that will be charged."
+    ],
+    "who": "Agent builders who want a sourced verdict on a claim, with the quotes checked against the page that was fetched.",
+    "features": [
+      "Verdict with quotes checked against the fetched text",
+      "Free preview, status, methodology and receipt reads",
+      "The page lists both 0.005 USDC and a later 0.03 USDC challenge"
+    ],
+    "faq": [
+      [
+        "Which price is current?",
+        "The glance says 0.005 USDC. The same page says a challenge on 18 Nov 2026 quoted 0.03 USDC. Use the live challenge as the amount that will be charged."
+      ],
+      [
+        "Can it check a claim with no sources?",
+        "The page says it answers unverifiable instead of guessing when nothing on the web covers the claim."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://claimgate.onrender.com/mcp",
+      "transport": "Streamable HTTP",
+      "auth": "No API key. The paid check settles in USDC on Base. Preview and receipt reads are free.",
+      "docs": "https://scriptmasterlabs.com/claimgate"
+    }
+  },
+  "agent-verify": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://scriptmasterlabs.com/agent-verify/live"
+    ],
+    "long": [
+      "The Agent Verify board is a public record of agent work settled on Circle Arc. The page says a job is listed only after it is verified, and that observed events are labeled so they are not mistaken for verified work.",
+      "The product address redirects to the live board. On 28 Nov 2026 that board did not list a dollar price, and the ledger was waiting for a first verified job rather than showing samples."
+    ],
+    "who": "Buyers and agent builders who want a public record that separates a claim of finished work from a verified settlement.",
+    "features": [
+      "Public ledger of verified jobs on Circle Arc",
+      "Observed events kept apart from verified ones",
+      "No dollar price on the live board, checked 28 Nov 2026"
+    ],
+    "faq": [
+      [
+        "Why is the ledger empty?",
+        "The page says it stays empty until the first verified job, rather than showing sample rows."
+      ],
+      [
+        "What does it cost?",
+        "The live board did not list a dollar price on 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://scriptmasterlabs.com/agent-verify/mcp",
+      "transport": "Streamable HTTP",
+      "auth": "A plain read on 28 Nov 2026 did not ask for a key.",
+      "docs": "https://scriptmasterlabs.com/agent-verify/live",
+      "tools": [
+        [
+          "proof_check",
+          "Check a proof."
+        ],
+        [
+          "proof_verify_record",
+          "Verify a proof record."
+        ],
+        [
+          "agent_records",
+          "Read records for an agent."
+        ],
+        [
+          "ledger_list",
+          "List the verified ledger."
+        ],
+        [
+          "board_search",
+          "Search the board."
+        ],
+        [
+          "service_status",
+          "Read whether a dependent service is up."
+        ]
+      ]
+    }
+  },
+  "nest-pixel": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://nestandpixel.com/photo/",
+      "https://nestandpixel.com/real-estate-photo-editing/",
+      "https://nestandpixel.com/"
+    ],
+    "long": [
+      "The Nest & Pixel photo lab takes a phone photo of a room, a dish or a shop front and returns it corrected, then cuts the sizes Airbnb, Booking.com, food-delivery apps and listing sites ask for. Enhance-only work is light, colour and verticals. The page says a second check rejects the edit if a real object was added, removed or moved, and the credit comes back.",
+      "Optional tidy-ups remove clutter, make the bed, straighten a table, replace a grey sky or make a dusk shot. The real-estate page says those change the scene and should be labeled, and that virtual staging, new flooring and removing power lines are not offered. The first photo is free. After that a credit is one photo: 10 for $19, 25 for $39, 60 for $79, with two free revisions and no subscription. The separate website studio starts from £600 with no monthly fee."
+    ],
+    "who": "Hosts and small stays who want listing photos corrected without a subscription, and a clear line between a lighting fix and an altered photo.",
+    "features": [
+      "First photo free, then packs of 10, 25 and 60",
+      "Enhance-only edits rejected if a real object moves",
+      "Platform sizes cut in the browser, not upscaled",
+      "Website projects from £600, separate from the photo lab"
+    ],
+    "faq": [
+      [
+        "What does a photo cost?",
+        "The first photo is free. Then $19 for 10, $39 for 25, or $79 for 60, with two free revisions. Checked 28 Nov 2026."
+      ],
+      [
+        "Will it add furniture?",
+        "No. The real-estate page says virtual staging, new flooring and new paint are not offered."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    }
+  },
+  "squeezeos": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://squeezeos-api.onrender.com",
+      "https://squeezeos-api.onrender.com/mcp/x402-pay"
+    ],
+    "long": [
+      "SqueezeOS is Script Master Labs' MCP gateway for pay-per-call agent APIs settled in USDC on Base. Amounts come from each resource's live payment challenge, and a failed call is not billed as a success.",
+      "x402 Pay is a second, read-only server on the same host. It describes how to pay an API in USDC and lists paid operations. It does not sign, spend or prove settlement. Script Master Labs does not publish a separate product page for it. A check of the old product address on 28 Nov 2026 was not found, so this note lives on the SqueezeOS listing."
+    ],
+    "who": "Agent builders who already use SqueezeOS and need the read-only payment discovery server mentioned on the same listing.",
+    "faq": [
+      [
+        "Where is x402 Pay?",
+        "It is a read-only server on the SqueezeOS host. There is no separate product page. Checked 28 Nov 2026."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://squeezeos-api.onrender.com/mcp",
+      "transport": "Streamable HTTP",
+      "auth": "No account to connect. Paid calls settle in USDC on Base. x402 Pay is a second endpoint on this host: read-only discovery of paid routes. It does not spend.",
+      "docs": "https://squeezeos-api.onrender.com/mcp/x402-pay",
+      "tools": [
+        [
+          "payment_info",
+          "Read the documented USDC on Base configuration. Does not sign or spend."
+        ]
+      ]
+    }
+  },
+  "conecto": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://conecto.chat/",
+      "https://conecto.chat/pricing"
+    ],
+    "long": [
+      "Conecto is business software an assistant operates: a CRM, an inbox, invoices and books. The homepage says a new agent account starts with $1 of credit and then pays per call.",
+      "A change costs $0.01. Reading your own data is free up to one million reads. Top-ups are $5 to $5,000, with a 7% fee plus $0.35. The books tool remains its own listing."
+    ],
+    "who": "Owners who want their own assistant to keep contacts, mail, invoices and books in one balance.",
+    "features": [
+      "$1 of starting credit, then pay per call",
+      "Changes at $0.01 and a large free read allowance",
+      "No subscription"
+    ],
+    "faq": [
+      [
+        "Is this the bookkeeping listing?",
+        "No. Bookkeeping is a separate listing. This page is the wider back office."
+      ],
+      [
+        "Is there a monthly fee?",
+        "The homepage says no subscription. You pay from a balance."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://conecto.chat/",
+      "transport": "Remote MCP for the assistant, paid from the account balance.",
+      "auth": "The agent signs up and spends its balance. Each key has a daily budget.",
+      "docs": "https://conecto.chat/docs"
+    }
+  },
+  "vertov": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-28",
+    "sources": [
+      "https://vertov.app/docs/mcp",
+      "https://vertov.app/pricing"
+    ],
+    "long": [
+      "Vertov is a screen recorder with transcripts and written briefs. The MCP docs say an assistant can read videos the account can open, copy a brief, and upload a recording to get a share link back.",
+      "Plans are priced by hours stored, not by seat. On 28 Nov 2026 Free was 180 minutes, Pro was $9 a month for 25 hours, Team was $29 a month for 125 hours, and Business started at $99 a month for 500 hours. Yearly prices were two months free. Free workspaces share 3 AI runs a month."
+    ],
+    "who": "Teams who want an assistant to read a screen recording instead of watching it.",
+    "features": [
+      "Transcripts and briefs an assistant can read after sign-in",
+      "Free, Pro, Team and Business plans by hours stored",
+      "Seats are not charged"
+    ],
+    "faq": [
+      [
+        "What does Pro cost?",
+        "On 28 Nov 2026 Pro was $9 a month or $90 a year, for 25 hours of video."
+      ],
+      [
+        "Do teammates cost extra?",
+        "The pricing page says adding a member or viewer costs nothing."
+      ]
+    ],
+    "facts": {
+      "checked": "2026-11-28"
+    },
+    "mcp": {
+      "endpoint": "https://vertov.app/mcp",
+      "transport": "Streamable HTTP with sign-in",
+      "auth": "Vertov account. Scripts can use an API key from Settings.",
+      "docs": "https://vertov.app/docs/mcp"
+    }
   }
 }
